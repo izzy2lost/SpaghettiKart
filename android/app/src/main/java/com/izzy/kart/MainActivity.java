@@ -44,7 +44,7 @@ public class MainActivity extends SDLActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        preferences = getSharedPreferences("com.dishii.mm.prefs",Context.MODE_PRIVATE);
+        preferences = getSharedPreferences("com.izzy.kart.prefs",Context.MODE_PRIVATE);
 
         // Check if storage permissions are granted
         if (hasStoragePermission()) {
@@ -79,10 +79,10 @@ public class MainActivity extends SDLActivity{
     }
 
     private void deleteOutdatedAssets() {
-        File targetRootFolder = new File(Environment.getExternalStorageDirectory(), "2S2H");
+        File targetRootFolder = new File(Environment.getExternalStorageDirectory(), "SpaghettiKart");
 
-        File sohFile = new File(targetRootFolder, "2ship.o2r");
-        File ootFile = new File(targetRootFolder, "mm.o2r");
+        File sohFile = new File(targetRootFolder, "spaghetti.o2r");
+        File ootFile = new File(targetRootFolder, "SK.o2r");
         File assetsFolder = new File(targetRootFolder, "assets");
 
         deleteIfExists(sohFile);
@@ -162,9 +162,9 @@ public class MainActivity extends SDLActivity{
     }
 
     public void checkAndSetupFiles() {
-        File targetRootFolder = new File(Environment.getExternalStorageDirectory(), "2S2H");
+        File targetRootFolder = new File(Environment.getExternalStorageDirectory(), "SpaghettiKart");
         File assetsFolder = new File(targetRootFolder, "assets");
-        File sohOtrFile = new File(targetRootFolder, "2ship.o2r");
+        File sohOtrFile = new File(targetRootFolder, "spaghetti.o2r");
 
         boolean isMissingAssets = !assetsFolder.exists() || assetsFolder.listFiles() == null || assetsFolder.listFiles().length == 0;
         boolean isMissingSohOtr = !sohOtrFile.exists();
@@ -201,7 +201,7 @@ public class MainActivity extends SDLActivity{
             if (sourceFiles != null) {
                 for (File file : sourceFiles) {
                     String name = file.getName();
-                    if (name.equals("assets") || name.equals("2ship.o2r") || name.equals("mm.o2r")) {
+                    if (name.equals("assets") || name.equals("spaghetti.o2r") || name.equals("SK.o2r")) {
                         continue; // Skip these
                     }
 
@@ -251,9 +251,9 @@ public class MainActivity extends SDLActivity{
             runOnUiThread(() -> Toast.makeText(this, "Error copying assets", Toast.LENGTH_LONG).show());
         }
 
-        // Copy 2ship.o2r from internal assets
-        File targetOtrFile = new File(targetRootFolder, "2ship.o2r");
-        try (InputStream in = getAssets().open("2ship.o2r");
+        // Copy spaghetti.o2r from internal assets
+        File targetOtrFile = new File(targetRootFolder, "spaghetti.o2r");
+        try (InputStream in = getAssets().open("spaghetti.o2r");
              OutputStream out = new FileOutputStream(targetOtrFile)) {
 
             byte[] buffer = new byte[1024];
@@ -262,11 +262,11 @@ public class MainActivity extends SDLActivity{
                 out.write(buffer, 0, read);
             }
 
-            runOnUiThread(() -> Toast.makeText(this, "2ship.o2r copied", Toast.LENGTH_SHORT).show());
+            runOnUiThread(() -> Toast.makeText(this, "spaghetti.o2r copied", Toast.LENGTH_SHORT).show());
 
         } catch (IOException e) {
             e.printStackTrace();
-            runOnUiThread(() -> Toast.makeText(this, "Error copying 2ship.o2r", Toast.LENGTH_LONG).show());
+            runOnUiThread(() -> Toast.makeText(this, "Error copying spaghetti.o2r", Toast.LENGTH_LONG).show());
         }
 
         setupLatch.countDown();
@@ -284,9 +284,9 @@ public class MainActivity extends SDLActivity{
         if (requestCode == FILE_PICKER_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
             // Handle file selection
             Uri selectedFileUri = data.getData();
-            String fileName = "MM.z64";
+            String fileName = "SK.z64";
 
-            File destinationDirectory = new File(Environment.getExternalStorageDirectory(), "2S2H");
+            File destinationDirectory = new File(Environment.getExternalStorageDirectory(), "SpaghettiKart");
             File destinationFile = new File(destinationDirectory, fileName);
 
             if (destinationDirectory != null && selectedFileUri != null) {
