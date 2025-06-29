@@ -1,6 +1,5 @@
 var NAVTREEINDEX65 =
 {
-"staff__ghosts_8c.html#a94a9fd37bc978ee3987b8ed7778501ba":[12,0,3,65,33],
 "staff__ghosts_8c.html#a9889b807d1818bc337287c012231d90b":[12,0,3,65,34],
 "staff__ghosts_8c.html#a992511932a32279879ff11219e11285e":[12,0,3,65,47],
 "staff__ghosts_8c.html#a9bd326daa05418a0ab296791b3ac9913":[12,0,3,65,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX65 =
 "structALSound__s.html#a359b8901cc1233fafd17a3507b93a0a4":[11,0,53,1],
 "structALSound__s.html#a649e0313749f127e30ce6754fbd81324":[11,0,53,3],
 "structALSound__s.html#a8bb355521feffe02dfa992b5fd23ae87":[11,0,53,5],
-"structALSound__s.html#ad9afec6b6e6f1a31b982630d40d67f49":[11,0,53,4]
+"structALSound__s.html#ad9afec6b6e6f1a31b982630d40d67f49":[11,0,53,4],
+"structALSound__s.html#ae6cc6bf2664502a9c86ed4531391fd7f":[11,0,53,0]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX41 =
 {
-"math__util__2_8h.html#a3b8a4e7411829eec9d307da607e8602f":[12,0,3,48,25],
 "math__util__2_8h.html#a3cd04b1ba067544946d7dafefc98544d":[12,0,3,48,14],
 "math__util__2_8h.html#a3d04ad1c09ccf355292d4044a3f0e0cb":[12,0,3,48,67],
 "math__util__2_8h.html#a3e33711c2fe0592a76c1cd096814e879":[12,0,3,48,69],
@@ -141,14 +140,14 @@ var NAVTREEINDEX41 =
 "md_docs_2BUILDING.html#generating-the-distributable":[2,0,1],
 "md_docs_2BUILDING.html#getting-ci-to-work-on-your-fork":[2,3],
 "md_docs_2BUILDING.html#install-dependencies":[2,1,0],
-"md_docs_2BUILDING.html#linux-1":[2,1],
+"md_docs_2BUILDING.html#linux":[2,1],
 "md_docs_2BUILDING.html#macos-1":[2,2],
 "md_docs_2BUILDING.html#opensuse":[2,1,0,3],
 "md_docs_2BUILDING.html#runner-on-unix-systems":[2,3,1],
 "md_docs_2BUILDING.html#runner-on-windows":[2,3,0],
 "md_docs_2BUILDING.html#visual-studio":[2,0,0,0],
 "md_docs_2BUILDING.html#visual-studio-code-or-another-editor":[2,0,0,1],
-"md_docs_2BUILDING.html#windows-1":[2,0],
+"md_docs_2BUILDING.html#windows":[2,0],
 "md_docs_2custom-track.html":[4],
 "md_docs_2custom-track.html#dependencies":[4,0],
 "md_docs_2custom-track.html#export":[4,2],
@@ -249,5 +248,6 @@ var NAVTREEINDEX41 =
 "memory_8c.html#afd9f9417375e240cc2a11ab2ce813a83":[12,0,3,11,10,84],
 "memory_8c.html#afecc630f19df4cce5411739acf477ed9":[12,0,3,11,10,52],
 "memory_8h.html":[12,0,3,11,11],
-"memory_8h.html#a02b90920a307907aab16d7d44a9da700":[12,0,3,11,11,56]
+"memory_8h.html#a02b90920a307907aab16d7d44a9da700":[12,0,3,11,11,56],
+"memory_8h.html#a125651826edd8b6e662bbf425fdd9283":[12,0,3,11,11,21]
 };

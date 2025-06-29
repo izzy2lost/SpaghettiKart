@@ -1,6 +1,5 @@
 var NAVTREEINDEX40 =
 {
-"mario__kart_8h_source.html":[12,0,2,0,42],
 "mario__raceway_2course__displaylists_8h.html":[12,0,0,12,0],
 "mario__raceway_2course__displaylists_8h.html#aaeedc3a43672f39a193383e39476b3f4":[12,0,0,12,0,0],
 "mario__raceway_2course__displaylists_8h_source.html":[12,0,0,12,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX40 =
 "math__util__2_8h.html#a30981b9b507ba557889f16efd8bf1c4a":[12,0,3,48,41],
 "math__util__2_8h.html#a34d61ee823586951bd5f565affccb663":[12,0,3,48,8],
 "math__util__2_8h.html#a37ea9961b422d8530750888cd770a14f":[12,0,3,48,5],
-"math__util__2_8h.html#a3b2d9ee1212855f3716d21fee5ebeca6":[12,0,3,48,30]
+"math__util__2_8h.html#a3b2d9ee1212855f3716d21fee5ebeca6":[12,0,3,48,30],
+"math__util__2_8h.html#a3b8a4e7411829eec9d307da607e8602f":[12,0,3,48,25]
 };
