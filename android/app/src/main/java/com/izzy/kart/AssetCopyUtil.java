@@ -1,4 +1,4 @@
-package com.dishii.mm;
+package com.izzy.kart;
 
 import android.content.Context;
 import android.content.res.AssetManager;
