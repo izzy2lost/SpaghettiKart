@@ -1,0 +1,75 @@
+var MenuTypes_8h =
+[
+    [ "WidgetInfo", "structWidgetInfo.html", "structWidgetInfo" ],
+    [ "WidgetPath", "structWidgetPath.html", "structWidgetPath" ],
+    [ "disabledInfo", "structdisabledInfo.html", "structdisabledInfo" ],
+    [ "SidebarEntry", "structSidebarEntry.html", "structSidebarEntry" ],
+    [ "MainMenuEntry", "structMainMenuEntry.html", "structMainMenuEntry" ],
+    [ "MenuInit", "structMenuInit.html", "structMenuInit" ],
+    [ "RegisterMenuInitFunc", "structRegisterMenuInitFunc.html", "structRegisterMenuInitFunc" ],
+    [ "RegisterMenuUpdateFunc", "structRegisterMenuUpdateFunc.html", "structRegisterMenuUpdateFunc" ],
+    [ "CVarVariant", "MenuTypes_8h.html#a087c40096a263f0722c06c9d69a3d771", null ],
+    [ "DisableInfoFunc", "MenuTypes_8h.html#a7f83dae7476f761084cb97030776728c", null ],
+    [ "DisableVec", "MenuTypes_8h.html#afc61bc4dacc96d5874f1c5f96597b80e", null ],
+    [ "OptionsVariant", "MenuTypes_8h.html#a9114623e1b8cc98091f24939b27d3c5f", null ],
+    [ "VoidFunc", "MenuTypes_8h.html#a4f61fa1067b6dd7114364805eb8437dd", null ],
+    [ "WidgetFunc", "MenuTypes_8h.html#a9fa3a4cd5c44306165fda0c88c04f8a4", null ],
+    [ "DebugLogOption", "MenuTypes_8h.html#a9cf6dfc1528e36be4693d119793e8238", [
+      [ "DEBUG_LOG_TRACE", "MenuTypes_8h.html#a9cf6dfc1528e36be4693d119793e8238a6f9a629ceee9dbe6cea52ba92e8cd4d6", null ],
+      [ "DEBUG_LOG_DEBUG", "MenuTypes_8h.html#a9cf6dfc1528e36be4693d119793e8238a93c9d699a7a41f390face85b67d8a5dd", null ],
+      [ "DEBUG_LOG_INFO", "MenuTypes_8h.html#a9cf6dfc1528e36be4693d119793e8238a3efa3a99af6e6326228f1e9b82fa2ed4", null ],
+      [ "DEBUG_LOG_WARN", "MenuTypes_8h.html#a9cf6dfc1528e36be4693d119793e8238a1d872967a8f54fff4fcabc82e24de579", null ],
+      [ "DEBUG_LOG_ERROR", "MenuTypes_8h.html#a9cf6dfc1528e36be4693d119793e8238a415b849dc621049dd72b5f851b437970", null ],
+      [ "DEBUG_LOG_CRITICAL", "MenuTypes_8h.html#a9cf6dfc1528e36be4693d119793e8238ac5f4a26feb8eeee4b58c995a0b3864ee", null ],
+      [ "DEBUG_LOG_OFF", "MenuTypes_8h.html#a9cf6dfc1528e36be4693d119793e8238a6ed9e6baa30d9adeafb6d7caf3f9bd5e", null ]
+    ] ],
+    [ "DisableOption", "MenuTypes_8h.html#a697cc769219ec155f54a4572d99d3432", [
+      [ "DISABLE_FOR_FREE_CAM_ON", "MenuTypes_8h.html#a697cc769219ec155f54a4572d99d3432a96e73960af5d49a68ac88f0e1b0ef869", null ],
+      [ "DISABLE_FOR_FREE_CAM_OFF", "MenuTypes_8h.html#a697cc769219ec155f54a4572d99d3432a1278770b7c65171ce26a1556b44ac7ab", null ],
+      [ "DISABLE_FOR_EDITOR_ON", "MenuTypes_8h.html#a697cc769219ec155f54a4572d99d3432a365f8c89f56a37504829b48df44c3113", null ],
+      [ "DISABLE_FOR_EDITOR_OFF", "MenuTypes_8h.html#a697cc769219ec155f54a4572d99d3432a7c8ad9f63afec94c8cbe75fee7fbe9bd", null ],
+      [ "DISABLE_FOR_DEBUG_MODE_OFF", "MenuTypes_8h.html#a697cc769219ec155f54a4572d99d3432a17b99f42a855203d20ca41b8dd67f2bb", null ],
+      [ "DISABLE_FOR_NO_VSYNC", "MenuTypes_8h.html#a697cc769219ec155f54a4572d99d3432a758ba3617d25632fa5c070d43184b403", null ],
+      [ "DISABLE_FOR_NO_WINDOWED_FULLSCREEN", "MenuTypes_8h.html#a697cc769219ec155f54a4572d99d3432a6b9c8d0fec82a4e2c6e7162f933d4f99", null ],
+      [ "DISABLE_FOR_NO_MULTI_VIEWPORT", "MenuTypes_8h.html#a697cc769219ec155f54a4572d99d3432a69079efe0c9562f56c3e12be550272c9", null ],
+      [ "DISABLE_FOR_NOT_DIRECTX", "MenuTypes_8h.html#a697cc769219ec155f54a4572d99d3432aed5b58dd7eed1762f2461c3b2e3dcc72", null ],
+      [ "DISABLE_FOR_DIRECTX", "MenuTypes_8h.html#a697cc769219ec155f54a4572d99d3432af4d2edbab172147c5b2367a910d743ce", null ],
+      [ "DISABLE_FOR_MATCH_REFRESH_RATE_ON", "MenuTypes_8h.html#a697cc769219ec155f54a4572d99d3432a3c768d8bc410eea7c6535688c4aa62bc", null ],
+      [ "DISABLE_FOR_ADVANCED_RESOLUTION_ON", "MenuTypes_8h.html#a697cc769219ec155f54a4572d99d3432ab91ca4a392e8814f1ecf08f99b2d1224", null ],
+      [ "DISABLE_FOR_VERTICAL_RES_TOGGLE_ON", "MenuTypes_8h.html#a697cc769219ec155f54a4572d99d3432a17f8274aa1680aa2a92f9676acb5951c", null ],
+      [ "DISABLE_FOR_LOW_RES_MODE_ON", "MenuTypes_8h.html#a697cc769219ec155f54a4572d99d3432a48d0fbb0a8902cc2b870cac44380ed56", null ]
+    ] ],
+    [ "MotionBlurOption", "MenuTypes_8h.html#a15cb71ee758e7abb2c7d48e09ac0883e", [
+      [ "MOTION_BLUR_DYNAMIC", "MenuTypes_8h.html#a15cb71ee758e7abb2c7d48e09ac0883ea26eb9c05b79963913909c05333a37d63", null ],
+      [ "MOTION_BLUR_ALWAYS_OFF", "MenuTypes_8h.html#a15cb71ee758e7abb2c7d48e09ac0883ea8418529445d6b849960bae1c0d798ce8", null ],
+      [ "MOTION_BLUR_ALWAYS_ON", "MenuTypes_8h.html#a15cb71ee758e7abb2c7d48e09ac0883ea66165326692a1d3745d0b025b3db23a3", null ]
+    ] ],
+    [ "SectionColumns", "MenuTypes_8h.html#afb8a56beaffa992b282449dd13970bae", [
+      [ "SECTION_COLUMN_1", "MenuTypes_8h.html#afb8a56beaffa992b282449dd13970baeae574093fc722f384e7c982e3a261b861", null ],
+      [ "SECTION_COLUMN_2", "MenuTypes_8h.html#afb8a56beaffa992b282449dd13970baea2a287a7a1366562a13ff26fd8eb8a0d8", null ],
+      [ "SECTION_COLUMN_3", "MenuTypes_8h.html#afb8a56beaffa992b282449dd13970baeabbb1799fc40e90cf8f5690674f860c77", null ]
+    ] ],
+    [ "WidgetType", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452", [
+      [ "WIDGET_CHECKBOX", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452aa73f0c01b6d28ead2ca5ac7aaf7e0632", null ],
+      [ "WIDGET_COMBOBOX", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452a1f47b641804b876d7ea69ae73acd56f1", null ],
+      [ "WIDGET_SLIDER_INT", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452acfa8c635fc4ed4f6f36b23e446958e2a", null ],
+      [ "WIDGET_SLIDER_FLOAT", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452ad10e539ce7feb370c045ad1854c763ff", null ],
+      [ "WIDGET_CVAR_CHECKBOX", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452a400efbf85c6d665ddf4fb28ff4f7ccee", null ],
+      [ "WIDGET_CVAR_COMBOBOX", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452a59af517e6eec21e61d79cd350233a179", null ],
+      [ "WIDGET_CVAR_SLIDER_INT", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452abb890d100f7765bb1b1c9a347bb2e20e", null ],
+      [ "WIDGET_CVAR_SLIDER_FLOAT", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452a7d62719a80f836cdc1b6da6757de26a8", null ],
+      [ "WIDGET_BUTTON", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452a614a80360877accb031652479303e41c", null ],
+      [ "WIDGET_COLOR_24", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452abf6e120e68acaade6dddcba702b097f3", null ],
+      [ "WIDGET_COLOR_32", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452a8430fd33a17bb0e053b7b6cbde9a3828", null ],
+      [ "WIDGET_SEARCH", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452a8b7540efb54ed72e3fc2fd3e103e97da", null ],
+      [ "WIDGET_SEPARATOR", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452a498ceb442e0cc612a26a6db28e3932cc", null ],
+      [ "WIDGET_SEPARATOR_TEXT", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452ab6fc931756798e4cbd1cf3756c2fc09d", null ],
+      [ "WIDGET_TEXT", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452a0b62fde5dc30ec8c3c115c41ddecf21d", null ],
+      [ "WIDGET_WINDOW_BUTTON", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452a6e47ece22853d1d6509df6f5f6644579", null ],
+      [ "WIDGET_AUDIO_BACKEND", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452a33ac1946a312c08f6c88f26a26f20a57", null ],
+      [ "WIDGET_VIDEO_BACKEND", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452af32b0a5d45ecec7688a123d7f6278d10", null ],
+      [ "WIDGET_CUSTOM", "MenuTypes_8h.html#a7b98518122eb2e94554d2b99d29d1452ab06ba654e370d62a33e9faa9c730fa24", null ]
+    ] ],
+    [ "audioBackendsMap", "MenuTypes_8h.html#a3b2157d66ffbaad0696904367e9ae983", null ],
+    [ "windowBackendsMap", "MenuTypes_8h.html#aa64b99963f4be54218510d673eb5bb05", null ]
+];

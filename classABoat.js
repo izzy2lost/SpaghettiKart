@@ -1,0 +1,26 @@
+var classABoat =
+[
+    [ "ABoat", "classABoat.html#aa9e9b76e89e18bdb1310e99d91da6020", null ],
+    [ "~ABoat", "classABoat.html#ab12dd7e28af71b65fbe47b19d9707060", null ],
+    [ "AddSmoke", "classABoat.html#a3bf4384ddc2a42e84bef6c6ca038bd7e", null ],
+    [ "Draw", "classABoat.html#ae546640529b04b08ae2ee3dee9e308ee", null ],
+    [ "GetCount", "classABoat.html#ac2372fa5085cf7920cfbfc65e7c7fc5b", null ],
+    [ "IsMod", "classABoat.html#ad8389b108bf97c6c021b5f69a21d00f0", null ],
+    [ "Tick", "classABoat.html#a9edd4ca53a59cadb0e65f49bd5502bc1", null ],
+    [ "VehicleCollision", "classABoat.html#af8c2fe7da0757f60649de40ec229b70a", null ],
+    [ "_count", "classABoat.html#a470612ef40cc3cb151f9e3811e1004be", null ],
+    [ "ActorIndex", "classABoat.html#a9d2e59206ef9749f0feeef8563c7da1d", null ],
+    [ "AnotherSmokeTimer", "classABoat.html#a51dec625c85f685f944eb59ccfb7434c", null ],
+    [ "Index", "classABoat.html#a09306d5e2396bf8200cf2feca851bb0a", null ],
+    [ "IsActive", "classABoat.html#a53492199e9a1f7bbab9dbf94fb751bf7", null ],
+    [ "NextParticlePtr", "classABoat.html#a36ecdd44644442a11e82a8c143b5437d", null ],
+    [ "Position", "classABoat.html#a35f072194d0838ae1927e42eaf16859c", null ],
+    [ "RotY", "classABoat.html#ae19c10542253ba558e28a0e24ef3f822", null ],
+    [ "SmokeParticles", "classABoat.html#a742f9b1119de3f9e231a690580150235", null ],
+    [ "SmokeTimer", "classABoat.html#a170e99b97896226e5dc4a8c8161c9135", null ],
+    [ "SomeFlags", "classABoat.html#a434f70c923427d41ace4906fa06ecad7", null ],
+    [ "Speed", "classABoat.html#a9bc99f87805fba0890bd8d2609309813", null ],
+    [ "Type", "classABoat.html#afc66ec3c19d1ee4bd0e908ed0cc38379", null ],
+    [ "Velocity", "classABoat.html#ac6ad887070d979c80d1ed9b6bb52ef83", null ],
+    [ "WaypointIndex", "classABoat.html#ae68bab7a1eba74ccccf23c02b447b66c", null ]
+];

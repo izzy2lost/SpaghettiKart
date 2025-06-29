@@ -1,0 +1,25 @@
+var classOSnowman =
+[
+    [ "OSnowman", "classOSnowman.html#a32940bf9857a85b80f7ad16b8eb41474", null ],
+    [ "~OSnowman", "classOSnowman.html#af420809ffa701177e36c084fb129c0ce", null ],
+    [ "Draw", "classOSnowman.html#a43b2b34a94dbde2f174d971bfa763ac0", null ],
+    [ "DrawBody", "classOSnowman.html#abb32ca3bd6c2d1e50779e2b58b94607f", null ],
+    [ "DrawHead", "classOSnowman.html#a6a4b52c8ea89554b32436640a1c9dd80", null ],
+    [ "func_80073D0C", "classOSnowman.html#ab008c50a3a4d6607147b0a5d07d65693", null ],
+    [ "func_80083538", "classOSnowman.html#a2b5f29ddc51fd99ecdfb54b04fe98d2b", null ],
+    [ "func_800836F0", "classOSnowman.html#a3133da2c8a369a3e131dada84ea0ac5e", null ],
+    [ "func_8008379C", "classOSnowman.html#a68333c5789c2848c7729c6abe146e91a", null ],
+    [ "func_80083868", "classOSnowman.html#a7da2e88a097b76ce683e5317ac7a8b71", null ],
+    [ "func_80083948", "classOSnowman.html#a1d589cb7de864ebc8942ea1bc10d155a", null ],
+    [ "func_80083A94", "classOSnowman.html#ad8f7afbec39a4816e2c2b4237d15b294", null ],
+    [ "func_80083B0C", "classOSnowman.html#acb3eaa80d095fc3599d8ada2ee628de8", null ],
+    [ "func_80083BE4", "classOSnowman.html#a1499c98a5fa8db7da8225623989d30ce", null ],
+    [ "func_80083C04", "classOSnowman.html#a677828897f8c77109e75feb9b7620a5e", null ],
+    [ "GetCount", "classOSnowman.html#ad16e097f2d3da9709acf796eb963dce4", null ],
+    [ "Tick", "classOSnowman.html#ae84de267ff70c7e2ac5748b9bd738ada", null ],
+    [ "_bodyIndex", "classOSnowman.html#a5506eb12573f3bf31aa8e3d0c953fc41", null ],
+    [ "_count", "classOSnowman.html#ae4da43baafec1ce6ae94c4228ed02041", null ],
+    [ "_headIndex", "classOSnowman.html#a0217cd01efce681e431f99568ec9cb0a", null ],
+    [ "_idx", "classOSnowman.html#a42f78b45cb45cfa206f110e6697c192b", null ],
+    [ "_pos", "classOSnowman.html#a18494cf99ba834bb8d378bf7662a402f", null ]
+];

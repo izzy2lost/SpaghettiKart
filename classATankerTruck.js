@@ -1,0 +1,26 @@
+var classATankerTruck =
+[
+    [ "ATankerTruck", "classATankerTruck.html#a1de2135bfd639bd6f077b29dab92b1b0", null ],
+    [ "~ATankerTruck", "classATankerTruck.html#ae04e1b93a88b1289a6faa3129f95be66", null ],
+    [ "Draw", "classATankerTruck.html#ae76615ed127a1f3e85b3faa0f701c80d", null ],
+    [ "GetCount", "classATankerTruck.html#a0e38cb856d7c641bce7aa9dec5b8964a", null ],
+    [ "IsMod", "classATankerTruck.html#aa510e571609e5945c36252c292195d4d", null ],
+    [ "Tick", "classATankerTruck.html#a7a57be806639c04fa4d391a47bf09ab3", null ],
+    [ "VehicleCollision", "classATankerTruck.html#a078da317114c1c0cb7b1d1ab2aa052f0", null ],
+    [ "_count", "classATankerTruck.html#a89afb9b77f011d75c222899c8725644c", null ],
+    [ "ActorIndex", "classATankerTruck.html#addd8d533acd8268c477b13044a4ee24a", null ],
+    [ "Index", "classATankerTruck.html#af467ebfdbcea80056c60e7ce1a0a08d8", null ],
+    [ "Position", "classATankerTruck.html#a54c67a7d41e7d9ba7a928c86ee81f4ab", null ],
+    [ "Rotation", "classATankerTruck.html#a3eed140edd010469c66427a27a0d8e8b", null ],
+    [ "SomeArg3", "classATankerTruck.html#a34f00052df48bbee80f859305b9346b4", null ],
+    [ "SomeArg4", "classATankerTruck.html#a756635d3376e722f8681e20ff46b82f3", null ],
+    [ "SomeFlags", "classATankerTruck.html#adf83736f872c6294fcfcc51bb1c34742", null ],
+    [ "SomeFlagsTheSequel", "classATankerTruck.html#af017ff6a39bc68da826cb9d3c6307969", null ],
+    [ "SomeMultiplierTheSequel", "classATankerTruck.html#a6583b60d6cbd6d1470e026a118907afb", null ],
+    [ "SomeType", "classATankerTruck.html#a52dc3d626053c65a10da9149a91f6004", null ],
+    [ "SoundBits", "classATankerTruck.html#a3ce0e4c11c0732eafdf09ba2b6f5889c", null ],
+    [ "Speed", "classATankerTruck.html#ac250fed1be85254962815b78f80df6da", null ],
+    [ "Type", "classATankerTruck.html#ae9c72c0903ea86cbd22c464d93f2a9ad", null ],
+    [ "Velocity", "classATankerTruck.html#a1489d8e7a4b38412f8ad4f24a43a568d", null ],
+    [ "WaypointIndex", "classATankerTruck.html#a0d16855480e9d60da61fb5b0bbf94e8b", null ]
+];

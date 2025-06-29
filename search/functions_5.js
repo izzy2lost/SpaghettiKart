@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['ease_5fout_5ftransition_0',['ease_out_transition',['../ceremony__and__credits_8c.html#a7911afc431919fd2a51378fe3105159b',1,'ease_out_transition(s16 *var, s16 dest, s16 speed_factor):&#160;ceremony_and_credits.c'],['../ceremony__and__credits_8h.html#a3acaa50587ce585b5be43962512dd109',1,'ease_out_transition(s16 *, s16, s16):&#160;ceremony_and_credits.c']]],
+  ['editor_5faddlight_1',['Editor_AddLight',['../Game_8cpp.html#ae4bce122ba57e0ca1cd36dcb4d7feed1',1,'Editor_AddLight(s8 *direction):&#160;Game.cpp'],['../Game_8h.html#ae4bce122ba57e0ca1cd36dcb4d7feed1',1,'Editor_AddLight(s8 *direction):&#160;Game.cpp']]],
+  ['editor_5faddmatrix_2',['Editor_AddMatrix',['../EditorMath_8cpp.html#a36bc6050f7e632a94460f767706e9042',1,'Editor_AddMatrix(Mat4 mtx, int32_t flags):&#160;EditorMath.cpp'],['../EditorMath_8h.html#a36bc6050f7e632a94460f767706e9042',1,'Editor_AddMatrix(Mat4 mtx, int32_t flags):&#160;EditorMath.cpp']]],
+  ['editor_5fclearmatrix_3',['Editor_ClearMatrix',['../Game_8cpp.html#a929f192c4ae16f29f0f63fa455c29190',1,'Editor_ClearMatrix():&#160;Game.cpp'],['../Game_8h.html#a929f192c4ae16f29f0f63fa455c29190',1,'Editor_ClearMatrix():&#160;Game.cpp']]],
+  ['editor_5fmatrixidentity_4',['Editor_MatrixIdentity',['../EditorMath_8cpp.html#a43e4c5ec2396f2fe6c491865170c303e',1,'Editor_MatrixIdentity(Mat4 mtx):&#160;EditorMath.cpp'],['../EditorMath_8h.html#a43e4c5ec2396f2fe6c491865170c303e',1,'Editor_MatrixIdentity(Mat4 mtx):&#160;EditorMath.cpp']]],
+  ['emit_5',['Emit',['../classStarEmitter.html#aefc0e47ab167903bdd3826262a40104c',1,'StarEmitter']]],
+  ['emperorpenguin_6',['EmperorPenguin',['../classOPenguin.html#a1ec4a3b20ac1a6a2a83157fdda4eedf2',1,'OPenguin']]],
+  ['end_5fmaster_5fdisplay_5flist_7',['end_master_display_list',['../main_8c.html#a6ac5e1df596c8c0b12e3ffac501eaa4d',1,'end_master_display_list(void):&#160;main.c'],['../main_8h.html#a6ac5e1df596c8c0b12e3ffac501eaa4d',1,'end_master_display_list(void):&#160;main.c']]],
+  ['ends_5fwith_8',['ends_with',['../namespacepfd_1_1internal.html#aaf263cbe957efd58a37827691b430371',1,'pfd::internal']]],
+  ['envsettings_9',['EnvSettings',['../classSF64_1_1EnvSettings.html#a0d70341c432cdc2faae9cf0fbfb9c1df',1,'SF64::EnvSettings']]],
+  ['eu_5fprocess_5faudio_5fcmd_10',['eu_process_audio_cmd',['../port__eu_8c.html#af9631ae86d86a13a1cbdb83aec196fc3',1,'eu_process_audio_cmd(struct EuAudioCmd *cmd):&#160;port_eu.c'],['../port__eu_8h.html#aa44d4718ff663c0dac97aa3622e7bf5f',1,'eu_process_audio_cmd(struct EuAudioCmd *):&#160;port_eu.c']]],
+  ['evaluate_5factor_5fcollision_5fbetween_5ftwo_5fdestructible_5factors_11',['evaluate_actor_collision_between_two_destructible_actors',['../actors_8c.html#abaeba2c5e7821d4ace731cf123a6ee17',1,'actors.c']]],
+  ['evaluate_5fcollision_5fbetween_5fplayer_5factor_12',['evaluate_collision_between_player_actor',['../actors_8c.html#a074bb86cc794d40a8b569035fcb5bbe9',1,'actors.c']]],
+  ['evaluate_5fcollision_5ffor_5fdestructible_5factors_13',['evaluate_collision_for_destructible_actors',['../actors_8c.html#a4b201e7d945d6be6ef527df902a6bcc8',1,'actors.c']]],
+  ['evaluate_5fcollision_5ffor_5fplayers_5fand_5factors_14',['evaluate_collision_for_players_and_actors',['../actors_8c.html#a32f79cecda45391057f8bdaebf84a478',1,'actors.c']]],
+  ['evaluate_5fcollision_5fplayer_5fpalm_5ftrees_15',['evaluate_collision_player_palm_trees',['../actors_8c.html#a55dd52d90732891552d43874931866cb',1,'actors.c']]],
+  ['evaluate_5fcollision_5fplayers_5fpalm_5ftrees_16',['evaluate_collision_players_palm_trees',['../actors_8c.html#a3f5880ec8c497fe310d631e9e4518d90',1,'actors.c']]],
+  ['evaluate_5fcubic_5fspline_17',['evaluate_cubic_spline',['../ceremony__and__credits_8c.html#a53bc41b708fd9b7fb8e0b8c3a0ef32e3',1,'evaluate_cubic_spline(f32 arg0, Vec3f point, f32 *arg2, f32 controlPoints1[], f32 controlPoints2[], f32 controlPoints3[], f32 controlPoints4[]):&#160;ceremony_and_credits.c'],['../ceremony__and__credits_8h.html#aea05f618f158918d416b886c83d08c7d',1,'evaluate_cubic_spline(f32, Vec3f, f32 *, f32[], f32[], f32[], f32[]):&#160;ceremony_and_credits.c']]],
+  ['exec_5fdisplay_5flist_18',['exec_display_list',['../main_8c.html#a6dfb2e914880b246ffe72d37f975d658',1,'exec_display_list(struct SPTask *spTask):&#160;main.c'],['../main_8h.html#a38a4e512ff60dd55adb533c7abb821f1',1,'exec_display_list(struct SPTask *):&#160;main.c']]],
+  ['expire_19',['Expire',['../classOObject.html#af83224b938e210c3f4f856ec1e9dec7a',1,'OObject']]],
+  ['exponent_5fby_5fsquaring_20',['exponent_by_squaring',['../menu__items_8c.html#a588742e39aadb10158a7afdf054afccc',1,'exponent_by_squaring(f64 base, s32 exponent):&#160;menu_items.c'],['../menu__items_8h.html#a693c6f9d8d1377e9edc1c7f8af5d7a0b',1,'exponent_by_squaring(f64, s32):&#160;menu_items.c']]],
+  ['extract_21',['Extract',['../classModelLoader.html#a4be93e4e4c67207ac012298c9388c6d7',1,'ModelLoader']]]
+];

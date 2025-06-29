@@ -1,0 +1,28 @@
+var dir_d44c64559bbebec7f509842c48db8b23 =
+[
+    [ "assets", "dir_301e8dae696844292dc8e7f8761dfb77.html", "dir_301e8dae696844292dc8e7f8761dfb77" ],
+    [ "libc", "dir_f9f386f816a45f0ffce9eeb77a177fce.html", "dir_f9f386f816a45f0ffce9eeb77a177fce" ],
+    [ "PR", "dir_83efb4269fa89047a37e895c24f65331.html", "dir_83efb4269fa89047a37e895c24f65331" ],
+    [ "actor_types.h", "actor__types_8h.html", "actor__types_8h" ],
+    [ "align_asset_macro.h", "align__asset__macro_8h.html", "align__asset__macro_8h" ],
+    [ "bomb_kart.h", "bomb__kart_8h.html", "bomb__kart_8h" ],
+    [ "common_structs.h", "common__structs_8h.html", "common__structs_8h" ],
+    [ "course.h", "course_8h.html", "course_8h" ],
+    [ "course_offsets.h", "course__offsets_8h.html", "course__offsets_8h" ],
+    [ "debug.h", "debug_8h.html", "debug_8h" ],
+    [ "decode.h", "decode_8h.html", "decode_8h" ],
+    [ "defines.h", "defines_8h.html", "defines_8h" ],
+    [ "kart_attributes.h", "kart__attributes_8h.html", "kart__attributes_8h" ],
+    [ "macros.h", "macros_8h.html", "macros_8h" ],
+    [ "macros.inc", "macros_8inc.html", null ],
+    [ "mk64.h", "mk64_8h.html", "mk64_8h" ],
+    [ "objects.h", "objects_8h.html", "objects_8h" ],
+    [ "portable-file-dialogs.h", "portable-file-dialogs_8h.html", "portable-file-dialogs_8h" ],
+    [ "save_data.h", "save__data_8h.html", "save__data_8h" ],
+    [ "segments.h", "segments_8h.html", "segments_8h" ],
+    [ "sounds.h", "sounds_8h.html", "sounds_8h" ],
+    [ "spline.h", "spline_8h.html", "spline_8h" ],
+    [ "stubs.h", "stubs_8h.html", "stubs_8h" ],
+    [ "vehicles.h", "vehicles_8h.html", "vehicles_8h" ],
+    [ "waypoints.h", "waypoints_8h.html", "waypoints_8h" ]
+];

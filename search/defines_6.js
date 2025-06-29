@@ -1,0 +1,24 @@
+var searchData=
+[
+  ['facing_5fx_5faxis_0',['FACING_X_AXIS',['../defines_8h.html#a03b6b926e5ab24b48b5c759b9ae84f22',1,'defines.h']]],
+  ['facing_5fy_5faxis_1',['FACING_Y_AXIS',['../defines_8h.html#ab99b761699bab6f3ac0435fd1b88892f',1,'defines.h']]],
+  ['facing_5fz_5faxis_2',['FACING_Z_AXIS',['../defines_8h.html#a3711c100883700bebfe59ceef3041078',1,'defines.h']]],
+  ['fake_5fitem_5fbox_5fon_5fground_3',['FAKE_ITEM_BOX_ON_GROUND',['../actor__types_8h.html#affb5ffde510634c5c1e09a5b934d29c3',1,'actor_types.h']]],
+  ['finite_4',['FINITE',['../__Ldtob_8c.html#ab0a1bd42784a08f303ec2dbff66f2a93',1,'_Ldtob.c']]],
+  ['fixtof_5',['FIXTOF',['../macros_8h.html#a6ee57cbc899a869579ce6c9a9d91481e',1,'macros.h']]],
+  ['fixtoi_6',['FIXTOI',['../macros_8h.html#ace18d13c8231a0f9fa2367c88bda5d62',1,'macros.h']]],
+  ['flags_5fhash_7',['FLAGS_HASH',['../printf_8h.html#a4e4ed2c9a700bf9cfddabb05debd4790',1,'printf.h']]],
+  ['flags_5fminus_8',['FLAGS_MINUS',['../printf_8h.html#a9abccbcd9326e1cc999367bbc0bec548',1,'printf.h']]],
+  ['flags_5fplus_9',['FLAGS_PLUS',['../printf_8h.html#a3d8b1bd3dd657ac7856e8aa67b170fee',1,'printf.h']]],
+  ['flags_5fspace_10',['FLAGS_SPACE',['../printf_8h.html#a2c249ce13d36626995f96880028b3d0a',1,'printf.h']]],
+  ['flags_5fzero_11',['FLAGS_ZERO',['../printf_8h.html#ae2270595ff6744883da0fe3ff9a3ca7e',1,'printf.h']]],
+  ['float_5fcast_12',['FLOAT_CAST',['../internal_8h.html#a4bd7653c9384c1ed461fa054d7f283a1',1,'internal.h']]],
+  ['four_5fplayers_5fselected_13',['FOUR_PLAYERS_SELECTED',['../defines_8h.html#ad5f6bfcf926d23f155e7043b052df3ab',1,'defines.h']]],
+  ['fpart_14',['FPART',['../matrix_8h.html#a3244a53f2dede654eb1b69fa4359242e',1,'matrix.h']]],
+  ['frames_5fsince_5fcrossing_5factivated_15',['FRAMES_SINCE_CROSSING_ACTIVATED',['../vehicles_8h.html#a79f6ae5571281e79af1c94439a24fe2f',1,'FRAMES_SINCE_CROSSING_ACTIVATED:&#160;vehicles.h'],['../vehicles_8h.html#a79f6ae5571281e79af1c94439a24fe2f',1,'FRAMES_SINCE_CROSSING_ACTIVATED:&#160;vehicles.h']]],
+  ['front_5fleft_16',['FRONT_LEFT',['../common__structs_8h.html#a9d354e0b06ec23c0722f8a8538cad2a0',1,'common_structs.h']]],
+  ['front_5fright_17',['FRONT_RIGHT',['../common__structs_8h.html#ab93bd6395d36692d43a18c9f1d70bd39',1,'common_structs.h']]],
+  ['ftofix_18',['FTOFIX',['../macros_8h.html#a10664b2f9bc7d6aca323c2176607ed25',1,'macros.h']]],
+  ['ftofrac8_19',['FTOFRAC8',['../guLookAtRef_8c.html#a9da9a415e1f610f081cce566853e5724',1,'guLookAtRef.c']]],
+  ['func_5f800adf48def_20',['FUNC_800ADF48DEF',['../menu__items_8c.html#a11e6483e492601ac964925d87320ab15',1,'menu_items.c']]]
+];

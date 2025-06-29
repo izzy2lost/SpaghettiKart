@@ -1,0 +1,27 @@
+var Engine_8h =
+[
+    [ "LOAD_ASSET", "Engine_8h.html#a79a4b47022d9d400a75e30aecb495845", null ],
+    [ "LOAD_ASSET_RAW", "Engine_8h.html#a8b59e27ac08d0690cb93f94535229a8f", null ],
+    [ "GameEngine_GetAspectRatio", "Engine_8h.html#a9d643d4ad53ffb04036755be5496c72e", null ],
+    [ "GameEngine_GetSampleRate", "Engine_8h.html#a20514c4a46730dc918ea1e5bf293aa42", null ],
+    [ "GameEngine_GetSamplesPerFrame", "Engine_8h.html#a9722639d948bb7c0f3935bfb71101cec", null ],
+    [ "GameEngine_GetSequenceCount", "Engine_8h.html#a56d00bd3255f1c650350b11da90ddc74", null ],
+    [ "GameEngine_IsBankLoaded", "Engine_8h.html#a2d37754f01009848451075cdb66784ba", null ],
+    [ "GameEngine_IsSequenceLoaded", "Engine_8h.html#a8f49f767130615bc8d98a4d428a5a49f", null ],
+    [ "GameEngine_LoadBank", "Engine_8h.html#a6efd084dccf3fe3a1293f6c86d2d45ed", null ],
+    [ "GameEngine_LoadSequence", "Engine_8h.html#ac7bc08bf26369dc0cacc664b072a427f", null ],
+    [ "GameEngine_ProcessGfxCommands", "Engine_8h.html#a46ad9315bfdcb31c03bf3541a1fb935f", null ],
+    [ "GameEngine_UnloadBank", "Engine_8h.html#a2cade37b28aec2f0c4e7b546a12939f4", null ],
+    [ "GameEngine_UnloadSequence", "Engine_8h.html#a090be9f36d74b54951798478450cf472", null ],
+    [ "OTRCalculateCenterOfAreaFromLeftEdge", "Engine_8h.html#acb7976888628f12ad709757f72eabffb", null ],
+    [ "OTRCalculateCenterOfAreaFromRightEdge", "Engine_8h.html#a1ec290d3c3dc1016cef4b580d79bfe97", null ],
+    [ "OTRGetAspectRatio", "Engine_8h.html#a99a39f70b8e523ef5dbce40ab2e41d56", null ],
+    [ "OTRGetDimensionFromLeftEdge", "Engine_8h.html#afc8b077c3a02d35419cae70c83942941", null ],
+    [ "OTRGetDimensionFromRightEdge", "Engine_8h.html#a17495ab17d6e9c65b2a76e3c88a7f718", null ],
+    [ "OTRGetGameRenderHeight", "Engine_8h.html#a3aed03197767a229028ca182c1256591", null ],
+    [ "OTRGetGameRenderWidth", "Engine_8h.html#aedcf1c364ee3212fb6667ed5caf51271", null ],
+    [ "OTRGetGameViewportHeight", "Engine_8h.html#ac9a41747a729cf288ae92fba19ba2f9a", null ],
+    [ "OTRGetGameViewportWidth", "Engine_8h.html#a148024822cf8878855266d03c21a0bd8", null ],
+    [ "OTRGetRectDimensionFromLeftEdge", "Engine_8h.html#af8ad96e953b60eb630f5261745844e45", null ],
+    [ "OTRGetRectDimensionFromRightEdge", "Engine_8h.html#a6a4636ed76942d3a15e97f85ff3196fb", null ]
+];

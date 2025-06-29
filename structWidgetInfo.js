@@ -1,0 +1,27 @@
+var structWidgetInfo =
+[
+    [ "Callback", "structWidgetInfo.html#a63678e013cb28e918508e58d8c6f2aec", null ],
+    [ "CustomFunction", "structWidgetInfo.html#aee6211a7d208c0a8d6a41996d5aaeb40", null ],
+    [ "CVar", "structWidgetInfo.html#a90231c4f7b3b153e6ede3f853748db3a", null ],
+    [ "Options", "structWidgetInfo.html#a8fb193d773f8f491d161798ec34a3569", null ],
+    [ "Options", "structWidgetInfo.html#aadb3e457e4b7c3dad98e7f98adae5292", null ],
+    [ "PostFunc", "structWidgetInfo.html#ab6b5355f237e032c584fb0dafa9822d3", null ],
+    [ "PreFunc", "structWidgetInfo.html#aa5a2f8ac208a9a4bb743df31284b9823", null ],
+    [ "ResetDisables", "structWidgetInfo.html#a31d40206a297372d1527c53c82f61c2b", null ],
+    [ "SameLine", "structWidgetInfo.html#a5fedbe00431ae3b0d1c72af3dbf8ff19", null ],
+    [ "ValuePointer", "structWidgetInfo.html#a989db9af6c076da6263e8d8b5430f4b8", null ],
+    [ "WindowName", "structWidgetInfo.html#aeea77b4ba4faf5a2440b454857c019e5", null ],
+    [ "activeDisables", "structWidgetInfo.html#aac59e2bef248ffb7babe4375a462d21a", null ],
+    [ "callback", "structWidgetInfo.html#ad1fe63ce380b367cb5098593f26d5eeb", null ],
+    [ "customFunction", "structWidgetInfo.html#a98bc1b74a65a165e272fc0f9b4ea4717", null ],
+    [ "cVar", "structWidgetInfo.html#ab649cb65726062878d63b6cf978616ab", null ],
+    [ "isHidden", "structWidgetInfo.html#aa1c1c5dc58b7185aa1f69a77f449f6e0", null ],
+    [ "name", "structWidgetInfo.html#ac01c86f24fcddb58cf3bfc250bbee734", null ],
+    [ "options", "structWidgetInfo.html#a1ec9c6db27a66f88ec750045282e46f3", null ],
+    [ "postFunc", "structWidgetInfo.html#ae596dfd77b56a36b7505d7f63291c008", null ],
+    [ "preFunc", "structWidgetInfo.html#a2ac569a44c89eded7195693d250f6c16", null ],
+    [ "sameLine", "structWidgetInfo.html#a900627e28d52ace9bf326209d9d79b8c", null ],
+    [ "type", "structWidgetInfo.html#a987c9785a0a57b97e5a48fb9bea0c453", null ],
+    [ "valuePointer", "structWidgetInfo.html#a563f62120cb5a60ad347cd28ebf517fd", null ],
+    [ "windowName", "structWidgetInfo.html#a3f87fb7af882a2c3c86c135be60c7179", null ]
+];

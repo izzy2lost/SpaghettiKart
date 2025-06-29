@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['r_0',['R',['../common__structs_8h.html#a5d202d94ae5f52685624a11fe72ecc7ba1784b1a3d7cbd43c45ff82c72d05e4ae',1,'common_structs.h']]],
+  ['race_1',['RACE',['../classOCheepCheep.html#ab849039ff9800afd54d47f8d97a14517aa21e7da6b4979f506f55218020b52a14',1,'OCheepCheep']]],
+  ['ramp_2',['RAMP',['../mk64_8h.html#a5344f2bdca4f9506c40f044e08ea8c98a291e3bb43cd8449155161d1fa023348b',1,'mk64.h']]],
+  ['rdp_5fcomplete_3',['RDP_COMPLETE',['../profiler_8h.html#af588a3a9b27840d837d5417d4be531e8aa3296314d0bb67d38b2cb84ce4f8e4d1',1,'profiler.h']]],
+  ['red_4',['Red',['../namespaceUIWidgets.html#ab518b3979a369a95a6e490c6d8f87d26a197d0422f331777e7c59bbf3d5215250',1,'UIWidgets']]],
+  ['red_5fshell_5flock_5fon_5',['RED_SHELL_LOCK_ON',['../actor__types_8h.html#ac01c8e97d91d8f2968ca1f8d4eb0495baed8383aa36b27a569d33434e6638551d',1,'actor_types.h']]],
+  ['released_5fshell_6',['RELEASED_SHELL',['../actor__types_8h.html#ac01c8e97d91d8f2968ca1f8d4eb0495ba6bccf5be381532660e62c226008d6382',1,'actor_types.h']]],
+  ['render_5fmodel_5for_5fadd_5fpos_7',['RENDER_MODEL_OR_ADD_POS',['../animation_8h.html#a52e412534f1af21caf39f50ea61280cea89e2160937075058c35008e43581de7e',1,'animation.h']]],
+  ['replay_8',['REPLAY',['../menu__items_8h.html#a4d8bd027afc3c0a143597992067ad859ac8765fc3274cf354ca7df9eec128e2de',1,'menu_items.h']]],
+  ['retry_9',['RETRY',['../menu__items_8h.html#a4d8bd027afc3c0a143597992067ad859a76d44342c42b85edbde0cae33f14c5de',1,'menu_items.h']]],
+  ['retry_10',['retry',['../namespacepfd.html#aad4fba5e0884b6d814006a7e92ade679a165e6d21e0a2cc9ebb32ca05f90e0fa7',1,'pfd']]],
+  ['retry_5fcancel_11',['retry_cancel',['../namespacepfd.html#a70b4c2a87aca3443a4de387bedae49e8a7928e609b1665227bcb71b20d431fd6a',1,'pfd']]],
+  ['reverse_12',['REVERSE',['../classOLakitu.html#ab2298e9648e9926d5cc3fce76bb53e4da38ea661e0df5c7a5d3d73525b64af5c8',1,'OLakitu']]],
+  ['right_13',['Right',['../namespaceUIWidgets.html#a24213ddadaf03dbf74f3eb862f6aa146af6923559a1318261c8e43594bd8bd91f',1,'UIWidgets']]],
+  ['right_5fcurve_14',['RIGHT_CURVE',['../waypoints_8h.html#aca1c5b9f70ed93deab3561079a9db1b8aa35d9f5783edccc7753e19721692bbd5',1,'waypoints.h']]],
+  ['right_5fleaning_5fcurve_15',['RIGHT_LEANING_CURVE',['../waypoints_8h.html#aca1c5b9f70ed93deab3561079a9db1b8a8eed2bfb653b7f5f95657b28ab366f8c',1,'waypoints.h']]],
+  ['right_5ftext_16',['RIGHT_TEXT',['../menu__items_8h.html#a37c0662e1116d4c21e0d494de2fa86bca182b84b35f49e4e57b7d4d5b9e894cec',1,'menu_items.h']]],
+  ['room_17',['Room',['../namespaceMK64.html#a7bd07479273b52e702ac4baf9081791dacc3abcf4426bff80257d22999d0eda8f',1,'MK64']]],
+  ['roomcommand_18',['RoomCommand',['../namespaceMK64.html#a7bd07479273b52e702ac4baf9081791daed72c6bc2e4c0ca8969ad56e01e3c2ed',1,'MK64']]],
+  ['rope_5fbridge_19',['ROPE_BRIDGE',['../mk64_8h.html#a5344f2bdca4f9506c40f044e08ea8c98a840c6af15539978eb506fbb93491bde4',1,'mk64.h']]],
+  ['rotate_20',['ROTATE',['../classOTrophy.html#a00b69561b52ab9167e373ce37702aea0a6d93e325790f0aa030f838f5705c772f',1,'OTrophy']]],
+  ['rotate_21',['Rotate',['../classEditor_1_1Gizmo.html#a4079af999abf79844f52386284a43c51a8d2de5368588552fbae54044ac5c7b3d',1,'Editor::Gizmo']]],
+  ['rotate2_22',['ROTATE2',['../classOTrophy.html#a00b69561b52ab9167e373ce37702aea0ab9d9b4988c1cfb6199d200b20a817a6a',1,'OTrophy']]],
+  ['rsp_5fcomplete_23',['RSP_COMPLETE',['../profiler_8h.html#af588a3a9b27840d837d5417d4be531e8a7bf6fe6348b92ac9975f5ac8b1777759',1,'profiler.h']]]
+];

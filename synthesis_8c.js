@@ -1,0 +1,26 @@
+var synthesis_8c =
+[
+    [ "VolumeChange", "structVolumeChange.html", "structVolumeChange" ],
+    [ "aSetLoadBufferPair", "synthesis_8c.html#a5adf95c0704d3aec13cd975d0438f38b", null ],
+    [ "aSetSaveBufferPair", "synthesis_8c.html#a67fb91e0a54fb1f28d378c3338863d5f", null ],
+    [ "final_resample", "synthesis_8c.html#afdb8a3b2a3566c114fc20078eb07ba4c", null ],
+    [ "func_800B6FB4", "synthesis_8c.html#a831c7a9542071eed3e68885bd89e505b", null ],
+    [ "load_wave_samples", "synthesis_8c.html#aed4d56af55356360afaebcb4f194407c", null ],
+    [ "note_apply_headset_pan_effects", "synthesis_8c.html#ab6acf42e1089301d7b1959b332d22233", null ],
+    [ "prepare_reverb_ring_buffer", "synthesis_8c.html#a9964410947181858fecd99e63c47d6a8", null ],
+    [ "process_envelope", "synthesis_8c.html#aa52f464beeceef6ff37fea7dc6b71267", null ],
+    [ "synthesis_do_one_audio_update", "synthesis_8c.html#aec35bddc85303be6c4d1c22e44a77b06", null ],
+    [ "synthesis_execute", "synthesis_8c.html#a2994f1f3d3603607ed9bca3243c1d5cf", null ],
+    [ "synthesis_load_note_subs_eu", "synthesis_8c.html#ab469a6d9522ccd7bdcef898769a46a7a", null ],
+    [ "synthesis_load_reverb_ring_buffer", "synthesis_8c.html#a56c377279f4c167258dd3b24d90cd107", null ],
+    [ "synthesis_resample_and_mix_reverb", "synthesis_8c.html#aaf9767ca9ae81766b960502e1161e025", null ],
+    [ "synthesis_save_reverb_ring_buffer", "synthesis_8c.html#a96e7d7b7eac8a9748d790519ae8151f9", null ],
+    [ "synthesis_save_reverb_samples", "synthesis_8c.html#a1ed91750a5ecb20a5a76d4742c39311d", null ],
+    [ "gSynthesisReverbs", "synthesis_8c.html#a46dbb82b200402601c2819f7deab8c04", null ],
+    [ "sAudioSynthesisPad", "synthesis_8c.html#a1f59143a489c5aae5608107c2e9519e2", null ],
+    [ "synthesisAudioString0", "synthesis_8c.html#a6e7a1a2460ba7da6f3f087e4d649d124", null ],
+    [ "synthesisAudioString1", "synthesis_8c.html#a3dcffd88e7671a667e3fe58c03161919", null ],
+    [ "synthesisAudioString2", "synthesis_8c.html#a58d0854d34c453a6a28c2fc499a59e11", null ],
+    [ "synthesisAudioString3", "synthesis_8c.html#a8e93587f631d9b3e3bdbf3e3af2f83b1", null ],
+    [ "synthesisAudioString4", "synthesis_8c.html#a1571fe691859656c7de7f8b8974381e0", null ]
+];
