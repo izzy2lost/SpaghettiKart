@@ -333,8 +333,7 @@ jobs:
             config.yml
             assets
             gamecontrollerdb.txt
-
-
+            
   build-android:
     needs: generate-port-o2r
     runs-on: ubuntu-24.04
@@ -349,6 +348,8 @@ jobs:
       with:
         name: spaghetti.o2r
         path: Android/app/src/main/assets
+    - name: Configure Gradle permissions
+      run: chmod +x Android/gradlew
     - name: Build Spaghetti Kart
       run: |
         cd android/
