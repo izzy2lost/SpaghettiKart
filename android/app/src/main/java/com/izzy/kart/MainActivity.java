@@ -1,5 +1,5 @@
 
-package com.dishii.mm;
+package com.izzy.kart;
 import org.libsdl.app.SDLActivity;
 
 import android.app.AlertDialog;
