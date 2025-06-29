@@ -349,7 +349,7 @@ jobs:
         name: spaghetti.o2r
         path: Android/app/src/main/assets
     - name: Configure Gradle permissions
-      run: chmod +x Android/gradlew
+      run: chmod +x android/gradlew
     - name: Build Spaghetti Kart
       run: |
         cd android/
