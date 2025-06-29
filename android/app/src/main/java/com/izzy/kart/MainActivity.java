@@ -81,12 +81,12 @@ public class MainActivity extends SDLActivity{
     private void deleteOutdatedAssets() {
         File targetRootFolder = new File(Environment.getExternalStorageDirectory(), "SpaghettiKart");
 
-        File sohFile = new File(targetRootFolder, "spaghetti.o2r");
-        File ootFile = new File(targetRootFolder, "SK.o2r");
+        File skFile = new File(targetRootFolder, "spaghetti.o2r");
+        File mkFile = new File(targetRootFolder, "SK.o2r");
         File assetsFolder = new File(targetRootFolder, "assets");
 
-        deleteIfExists(sohFile);
-        deleteIfExists(ootFile);
+        deleteIfExists(skFile);
+        deleteIfExists(mkFile);
         deleteRecursiveIfExists(assetsFolder);
     }
 
@@ -164,12 +164,12 @@ public class MainActivity extends SDLActivity{
     public void checkAndSetupFiles() {
         File targetRootFolder = new File(Environment.getExternalStorageDirectory(), "SpaghettiKart");
         File assetsFolder = new File(targetRootFolder, "assets");
-        File sohOtrFile = new File(targetRootFolder, "spaghetti.o2r");
+        File skOtrFile = new File(targetRootFolder, "spaghetti.o2r");
 
         boolean isMissingAssets = !assetsFolder.exists() || assetsFolder.listFiles() == null || assetsFolder.listFiles().length == 0;
-        boolean isMissingSohOtr = !sohOtrFile.exists();
+        boolean isMissingskOtr = !skOtrFile.exists();
 
-        if (!targetRootFolder.exists() || isMissingAssets || isMissingSohOtr) {
+        if (!targetRootFolder.exists() || isMissingAssets || isMissingskOtr) {
             new AlertDialog.Builder(this)
                     .setTitle("Setup Required")
                     .setMessage("Some required files are missing. The app will create them (~30s). Press OK to begin.")
