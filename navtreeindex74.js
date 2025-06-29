@@ -1,5 +1,6 @@
 var NAVTREEINDEX74 =
 {
+"structUIWidgets_1_1TextFilters.html#ae6cf3be6aa2f9541b22ecb3f499cf89e":[11,0,7,5,1],
 "structUIWidgets_1_1WidgetOptions.html":[10,0,11,7],
 "structUIWidgets_1_1WidgetOptions.html":[11,0,7,6],
 "structUIWidgets_1_1WidgetOptions.html#a5d0081abd63540671dca5d3a3ad61b63":[10,0,11,7,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX74 =
 "structVibratoState.html#ac7b0ebaf890134933a4888c2be0fbfc9":[11,0,334,2],
 "structVibratoState.html#ad999ff2598868fa4ebe80cf441e4fe11":[11,0,334,6],
 "structVibratoState.html#afe16472a2e442cf2e9a5fe8450c07a67":[11,0,334,3],
-"structVolumeChange.html":[11,0,335],
-"structVolumeChange.html#a021b049e75d04ef9d7fffcfd237b38d2":[11,0,335,2]
+"structVolumeChange.html":[11,0,335]
 };

@@ -301,7 +301,7 @@ var searchData=
   ['max_5fflag_298',['max_flag',['../classpfd_1_1settings.html#a61077e0fd48da6de7bb0f5dd9d9d1aada73b7af539db867cb9edf24a3cb7b8a36',1,'pfd::settings']]],
   ['max_5fintegerscalefactor_299',['max_integerScaleFactor',['../namespaceGameUI.html#abf0be3caa6c7db8c5bc8da2911a26f95',1,'GameUI']]],
   ['max_5fkeys_300',['MAX_KEYS',['../freecam_8cpp.html#a3077ecca3770bdee50e6a17dfb55d002',1,'freecam.cpp']]],
-  ['max_5flaps_301',['MAX_LAPS',['../banana_2update_8inc_8c.html#a77588e5ce0483d6845d1f5c362111401',1,'MAX_LAPS:&#160;update.inc.c'],['../defines_8h.html#a77588e5ce0483d6845d1f5c362111401',1,'MAX_LAPS:&#160;defines.h']]],
+  ['max_5flaps_301',['MAX_LAPS',['../banana_2update_8inc_8c.html#a77588e5ce0483d6845d1f5c362111401',1,'MAX_LAPS:&#160;update.inc.c'],['../blue__and__red__shells_2update_8inc_8c.html#a77588e5ce0483d6845d1f5c362111401',1,'MAX_LAPS:&#160;update.inc.c'],['../defines_8h.html#a77588e5ce0483d6845d1f5c362111401',1,'MAX_LAPS:&#160;defines.h']]],
   ['max_5fnum_5fmain_5fmenu_5fgame_5ftypes_302',['MAX_NUM_MAIN_MENU_GAME_TYPES',['../defines_8h.html#a8b908739bebbf30a8a0178fd74ff5356',1,'defines.h']]],
   ['max_5ftime_303',['MAX_TIME',['../defines_8h.html#a5320d4457a472d8888ec1905bc0e0a1c',1,'defines.h']]],
   ['max_5fupdates_5fper_5fframe_304',['MAX_UPDATES_PER_FRAME',['../synthesis_8h.html#ad36e3defa1b07b00d70bd03887843525',1,'synthesis.h']]],

@@ -1,5 +1,6 @@
 var NAVTREEINDEX49 =
 {
+"mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88ab491e3c35f36dc6baccdb5ca3a2eff60":[12,0,2,15,20,21],
 "mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88ac2de96c4eae26b588aa604ccfdfe17a7":[12,0,2,15,20,9],
 "mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88ac825c98c8fe3f1d9bc84ea81d2fcb7e5":[12,0,2,15,20,18],
 "mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88adffb845d6b01049394cea12e2eea5b01":[12,0,2,15,20,12],
@@ -248,6 +249,5 @@ var NAVTREEINDEX49 =
 "namespaceSM64.html":[10,0,10],
 "namespaceSM64.html#aa8b779a22183b4b8999f929f85bfd887":[10,0,10,5],
 "namespaceSM64.html#ac354c4417e89d6b3b924da1432a0e831":[10,0,10,6],
-"namespaceShip.html":[10,0,9],
-"namespaceShip.html#a15782f9eb4b414d15beceda17c652ebc":[10,0,9,13]
+"namespaceShip.html":[10,0,9]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX66 =
 {
+"structALSound__s.html#ae6cc6bf2664502a9c86ed4531391fd7f":[11,0,53,0],
 "structALSound__s.html#aff53a80677e56bccd8a77015b3fa8c47":[11,0,53,2],
 "structALWaveTable__s.html":[11,0,54],
 "structALWaveTable__s.html#a060714d86b9c3bab38781ac4efad3e1b":[11,0,54,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX66 =
 "structCamera.html#ace6326d21c5f4e8aad4314a99839bafd":[11,0,83,22],
 "structCamera.html#acfaf2e76657f585308818aeb81e08c22":[11,0,83,6],
 "structCamera.html#ae16ab2b8e885264666d7e7e20bb872a1":[11,0,83,2],
-"structCamera.html#ae2b9d79428dd1f7c54beb7960e2f8df8":[11,0,83,19],
-"structCamera.html#ae7e6b48883a5943ec6a5fea35724b343":[11,0,83,7]
+"structCamera.html#ae2b9d79428dd1f7c54beb7960e2f8df8":[11,0,83,19]
 };

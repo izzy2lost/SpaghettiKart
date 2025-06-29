@@ -1,5 +1,6 @@
 var NAVTREEINDEX39 =
 {
+"main_8c.html#aa285c58f3f109ce4c2b6909ce20dcbc5":[12,0,3,45,80],
 "main_8c.html#aa37e242ad2d1d9edfdeabd209a48c8d4":[12,0,3,45,103],
 "main_8c.html#aa798c2a430f62a3781ff50cf91f33c98":[12,0,3,45,66],
 "main_8c.html#aa8dc26f597bff4ebfabd037bc0d21f3b":[12,0,3,45,126],
@@ -248,6 +249,5 @@ var NAVTREEINDEX39 =
 "main_8h_source.html":[12,0,3,46],
 "mario__kart_8h.html":[12,0,2,0,42],
 "mario__kart_8h.html#a38e7b70c75aece188a1cef39c72f5f61":[12,0,2,0,42,0],
-"mario__kart_8h.html#ab481657707e6f0a434573598e09bb389":[12,0,2,0,42,1],
-"mario__kart_8h_source.html":[12,0,2,0,42]
+"mario__kart_8h.html#ab481657707e6f0a434573598e09bb389":[12,0,2,0,42,1]
 };

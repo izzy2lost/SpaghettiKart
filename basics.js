@@ -2,8 +2,8 @@ var basics =
 [
     [ "Installing mk64 Decomp", "compiling.html", [
       [ "Build Instructions", "compiling.html#build-instructions", null ],
-      [ "Linux", "compiling.html#linux-1", null ],
-      [ "Windows", "compiling.html#windows-1", null ],
+      [ "Linux", "compiling.html#linux", null ],
+      [ "Windows", "compiling.html#windows", null ],
       [ "macOS", "compiling.html#macos", null ],
       [ "Docker", "compiling.html#docker", null ],
       [ "Building US", "compiling.html#building-us", null ],
@@ -24,7 +24,7 @@ var basics =
       [ "Code Breakdown", "controlflow.html#code-breakdown", [
         [ "Menus", "controlflow.html#menus", null ],
         [ "Players", "controlflow.html#players", null ],
-        [ "Actors", "controlflow.html#actors-1", null ],
+        [ "Actors", "controlflow.html#actors", null ],
         [ "Objects", "controlflow.html#objects-1", null ],
         [ "Courses", "controlflow.html#courses", [
           [ "Course Folder", "controlflow.html#course-folder", null ]
