@@ -351,7 +351,7 @@ jobs:
         path: Android/app/src/main/assets
     - name: Build Spaghetti Kart
       run: |
-        cd Android/
+        cd android/
         ./gradlew assembleDebug -P elfBuildType=RelWithDebInfo
         mv app/build/outputs/apk/debug/app-debug.apk ../spaghettikart.apk
     - name: Upload APK artifact
