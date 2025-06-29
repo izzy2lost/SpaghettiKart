@@ -528,7 +528,7 @@ var searchData=
   ['courserecordsmenuselectiontypes_525',['CourseRecordsMenuSelectionTypes',['../menus_8h.html#a692cee32dee79047b93531b8284fdf2e',1,'menus.h']]],
   ['courserecordssubmenuselectiontypes_526',['CourseRecordsSubMenuSelectionTypes',['../menus_8h.html#aa8db4705a38fb4254f7ec67212635423',1,'menus.h']]],
   ['courses_527',['COURSES',['../mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88',1,'mk64.h']]],
-  ['courses_528',['Courses',['../classCup.html#a6ce7fe0c344427a390e7f48fc13f6804',1,'Cup::Courses'],['../classWorld.html#a598535aed98bd024616b0df887b6d714',1,'World::Courses'],['../courses.html',1,'Courses'],['../coursesmenu.html',1,'Courses'],['../courses.html#courses-1',1,'Courses'],['../controlflow.html#courses',1,'Courses']]],
+  ['courses_528',['Courses',['../classCup.html#a6ce7fe0c344427a390e7f48fc13f6804',1,'Cup::Courses'],['../classWorld.html#a598535aed98bd024616b0df887b6d714',1,'World::Courses'],['../courses.html',1,'Courses'],['../coursesmenu.html',1,'Courses'],['../controlflow.html#courses',1,'Courses'],['../courses.html#courses-1',1,'Courses']]],
   ['courses_2emd_529',['courses.md',['../courses_8md.html',1,'']]],
   ['coursesmenu_2emd_530',['coursesmenu.md',['../coursesmenu_8md.html',1,'']]],
   ['coursetable_531',['CourseTable',['../structCourseTable.html',1,'']]],
