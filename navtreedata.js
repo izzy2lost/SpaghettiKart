@@ -28,7 +28,7 @@ var NAVTREE =
     [ "Actors", "actorsmenu.html", "actorsmenu" ],
     [ "Understanding the Basics", "basics.html", "basics" ],
     [ "Building SpagettiKart", "md_docs_2BUILDING.html", [
-      [ "Windows", "md_docs_2BUILDING.html#windows", [
+      [ "Windows", "md_docs_2BUILDING.html#windows-1", [
         [ "Developing SpaghettiKart", "md_docs_2BUILDING.html#developing-spaghettikart", [
           [ "Visual Studio", "md_docs_2BUILDING.html#visual-studio", null ],
           [ "Visual Studio Code or another editor", "md_docs_2BUILDING.html#visual-studio-code-or-another-editor", null ]
@@ -38,11 +38,11 @@ var NAVTREE =
           [ "Clean", "md_docs_2BUILDING.html#clean", null ]
         ] ]
       ] ],
-      [ "Linux", "md_docs_2BUILDING.html#linux", [
+      [ "Linux", "md_docs_2BUILDING.html#linux-1", [
         [ "Install dependencies", "md_docs_2BUILDING.html#install-dependencies", [
           [ "Debian/Ubuntu", "md_docs_2BUILDING.html#debianubuntu", null ],
-          [ "Arch", "md_docs_2BUILDING.html#arch", null ],
-          [ "Fedora", "md_docs_2BUILDING.html#fedora", null ],
+          [ "Arch", "md_docs_2BUILDING.html#arch-1", null ],
+          [ "Fedora", "md_docs_2BUILDING.html#fedora-1", null ],
           [ "openSUSE", "md_docs_2BUILDING.html#opensuse", null ]
         ] ],
         [ "Build", "md_docs_2BUILDING.html#build", null ],
@@ -51,7 +51,7 @@ var NAVTREE =
           [ "Clean", "md_docs_2BUILDING.html#clean-1", null ]
         ] ]
       ] ],
-      [ "macOS", "md_docs_2BUILDING.html#macos", [
+      [ "macOS", "md_docs_2BUILDING.html#macos-1", [
         [ "Generating a distributable", "md_docs_2BUILDING.html#generating-a-distributable", null ],
         [ "Additional CMake Targets", "md_docs_2BUILDING.html#additional-cmake-targets-2", [
           [ "Clean", "md_docs_2BUILDING.html#clean-2", null ]
