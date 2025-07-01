@@ -130,14 +130,14 @@ add_compile_definitions(
 )
 
 # Find necessary libraries
-if (UNIX AND NOT APPLE AND NOT ANDROID)
-find_package(OpenGL REQUIRED)
+if(UNIX AND NOT APPLE AND NOT ANDROID)
+    find_package(OpenGL REQUIRED)
 endif()
 
-if (NOT CMAKE_SYSTEM_NAME STREQUAL "Android")
-    add_executable(${PROJECT_NAME} ${ALL_FILES})Add commentMore actions
-else()
+if(ANDROID)
     add_library(${PROJECT_NAME} SHARED ${ALL_FILES})
+else()
+    add_executable(${PROJECT_NAME} ${ALL_FILES})
 endif()
 
 if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
