@@ -97,7 +97,7 @@ endif()
 ################################################################################
 # Global configuration types
 ################################################################################
-if (CMAKE_SYSTEM_NAME STREQUAL "NintendoSwitch")
+if (CMAKE_SYSTEM_NAME STREQUAL "NintendoSwitch|Android")
 set(CMAKE_C_FLAGS_DEBUG "-g -ffast-math -DDEBUG")
 set(CMAKE_CXX_FLAGS_DEBUG "-g -ffast-math -DDEBUG")
 set(CMAKE_C_FLAGS_RELEASE "-O3 -ffast-math -DNDEBUG")
@@ -132,6 +132,12 @@ add_compile_definitions(
 # Find necessary libraries
 if (UNIX AND NOT APPLE AND NOT ANDROID)
 find_package(OpenGL REQUIRED)
+endif()
+
+if (NOT CMAKE_SYSTEM_NAME STREQUAL "Android")
+    add_executable(${PROJECT_NAME} ${ALL_FILES})Add commentMore actions
+else()
+    add_library(${PROJECT_NAME} SHARED ${ALL_FILES})
 endif()
 
 if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
@@ -626,6 +632,29 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang|AppleClang")
               -Wno-stringop-overflow
           >
       )
+   elseif (CMAKE_SYSTEM_NAME STREQUAL "Android")
+        target_compile_options(${PROJECT_NAME} PRIVATE
+            -O2
+
+            -Wno-error
+            -Wno-format-security
+            # disable some warnings to not clutter output
+            -Wno-multichar
+            -Wno-return-type
+            -Wno-narrowing
+            -Wno-switch-outside-range
+            $<$<COMPILE_LANGUAGE:C>:
+                -Werror-implicit-function-declaration
+                -Wno-incompatible-pointer-types
+                -Wno-discarded-array-qualifiers
+                -Wno-discarded-qualifiers
+                -Wno-int-conversion
+                -Wno-builtin-declaration-mismatch
+                -Wno-switch-unreachable
+                -Wno-stringop-overflowAdd commentMore actions
+                -Wno-implicit-int
+            >
+        )   
   else()
       if(CMAKE_SYSTEM_PROCESSOR MATCHES "x86_64")
         set(CPU_OPTION -msse2 -mfpmath=sse)
@@ -731,5 +760,7 @@ elseif(CMAKE_SYSTEM_NAME MATCHES "Darwin")
     set(CPACK_GENERATOR "Bundle")
 endif()
 
-set(CPACK_PROJECT_CONFIG_FILE ${CMAKE_SOURCE_DIR}/cmake/configure-packaging.cmake)
-include(cmake/packaging.cmake)
+if(NOT CMAKE_SYSTEM_NAME STREQUAL "Android")
+    set(CPACK_PROJECT_CONFIG_FILE ${CMAKE_SOURCE_DIR}/CMake/Packaging-2.cmake)Add commentMore actions
+    include(CMake/Packaging.cmake)
+endif()
