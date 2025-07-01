@@ -21,7 +21,7 @@ android {
         minSdkVersion 24
         targetSdkVersion 33
         versionCode 5
-        versionName "1.1.2"
+        versionName "1.0.0"
         externalNativeBuild {
             //ndkBuild {
             //    arguments "APP_PLATFORM=android-23"
@@ -54,7 +54,7 @@ android {
             //}
             cmake {
                  path '../../CMakeLists.txt'
-                 version "3.28.3"
+                 version "3.31.5"
             }
         }
        
