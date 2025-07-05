@@ -49,7 +49,7 @@
 <script type="application/ecmascript">
 var viewWidth = 600;
 var viewHeight = 113;
-var sectionId = 'dynsection-6';
+var sectionId = 'dynsection-5';
 </script>
 <script type="application/ecmascript" xlink:href="svg.min.js"/>
 <svg id="graph" class="graph">
@@ -83,19 +83,19 @@ var sectionId = 'dynsection-6';
 </a>
 </g>
 </g>
-<!-- Node6 -->
-<g id="Node000006" class="node">
-<title>Node6</title>
-<g id="a_Node000006"><a xlink:href="podium__ceremony__actors_8c.html#ab4a2b3023e104635f01e66a08874f578" target="_top" xlink:title=" ">
+<!-- Node5 -->
+<g id="Node000005" class="node">
+<title>Node5</title>
+<g id="a_Node000005"><a xlink:href="podium__ceremony__actors_8c.html#ab4a2b3023e104635f01e66a08874f578" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="276,-27.5 160,-27.5 160,-8.5 276,-8.5 276,-27.5"/>
 <text text-anchor="middle" x="218" y="-15.5" font-family="Helvetica,sans-Serif" font-size="10.00">random_who_knows</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node6 -->
-<g id="edge5_Node000001_Node000006" class="edge">
-<title>Node1&#45;&gt;Node6</title>
-<g id="a_edge5_Node000001_Node000006"><a xlink:title=" ">
+<!-- Node1&#45;&gt;Node5 -->
+<g id="edge4_Node000001_Node000005" class="edge">
+<title>Node1&#45;&gt;Node5</title>
+<g id="a_edge4_Node000001_Node000005"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M124.31,-28.83C132.66,-27.86 141.26,-26.85 149.71,-25.87"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="150.38,-29.31 159.91,-24.67 149.57,-22.36 150.38,-29.31"/>
 </a>
@@ -119,49 +119,49 @@ var sectionId = 'dynsection-6';
 </a>
 </g>
 </g>
-<!-- Node5 -->
-<g id="Node000005" class="node">
-<title>Node5</title>
-<g id="a_Node000005"><a xlink:href="podium__ceremony__actors_8c.html#ade046f0ae71fd0bf16b218c94452509d" target="_top" xlink:title=" ">
+<!-- Node4 -->
+<g id="Node000004" class="node">
+<title>Node4</title>
+<g id="a_Node000004"><a xlink:href="podium__ceremony__actors_8c.html#ade046f0ae71fd0bf16b218c94452509d" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="430.5,-67.5 321.5,-67.5 321.5,-48.5 430.5,-48.5 430.5,-67.5"/>
 <text text-anchor="middle" x="376" y="-55.5" font-family="Helvetica,sans-Serif" font-size="10.00">set_initial_position</text>
 </a>
 </g>
 </g>
-<!-- Node2&#45;&gt;Node5 -->
-<g id="edge4_Node000002_Node000005" class="edge">
-<title>Node2&#45;&gt;Node5</title>
-<g id="a_edge4_Node000002_Node000005"><a xlink:title=" ">
+<!-- Node2&#45;&gt;Node4 -->
+<g id="edge3_Node000002_Node000004" class="edge">
+<title>Node2&#45;&gt;Node4</title>
+<g id="a_edge3_Node000002_Node000004"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M251.7,-58C268.98,-58 290.79,-58 311.24,-58"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="311.47,-61.5 321.47,-58 311.47,-54.5 311.47,-61.5"/>
 </a>
 </g>
 </g>
-<!-- Node4 -->
-<g id="Node000004" class="node">
-<title>Node4</title>
-<g id="a_Node000004"><a xlink:href="bstring_8h.html#ab828ad07c8ebf898973f27778c543651" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="556,-104.5 512,-104.5 512,-85.5 556,-85.5 556,-104.5"/>
-<text text-anchor="middle" x="534" y="-92.5" font-family="Helvetica,sans-Serif" font-size="10.00">bzero</text>
+<!-- Node6 -->
+<g id="Node000006" class="node">
+<title>Node6</title>
+<g id="a_Node000006"><a xlink:href="podium__ceremony__actors_8c.html#a75ee72f9d8cc3f7bbb219fdeb11a3916" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="440,-30 312,-30 312,0 440,0 440,-30"/>
+<text text-anchor="start" x="320" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">random_float_between</text>
+<text text-anchor="middle" x="376" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_0_and_1</text>
 </a>
 </g>
 </g>
-<!-- Node3&#45;&gt;Node4 -->
-<g id="edge3_Node000003_Node000004" class="edge">
-<title>Node3&#45;&gt;Node4</title>
-<g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M434.2,-95C457.09,-95 482.56,-95 501.91,-95"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="501.97,-98.5 511.97,-95 501.97,-91.5 501.97,-98.5"/>
+<!-- Node5&#45;&gt;Node6 -->
+<g id="edge5_Node000005_Node000006" class="edge">
+<title>Node5&#45;&gt;Node6</title>
+<g id="a_edge5_Node000005_Node000006"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M276.2,-16.9C284.52,-16.74 293.17,-16.57 301.74,-16.41"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="301.82,-19.91 311.75,-16.22 301.69,-12.91 301.82,-19.91"/>
 </a>
 </g>
 </g>
 <!-- Node7 -->
 <g id="Node000007" class="node">
 <title>Node7</title>
-<g id="a_Node000007"><a xlink:href="podium__ceremony__actors_8c.html#a75ee72f9d8cc3f7bbb219fdeb11a3916" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="440,-30 312,-30 312,0 440,0 440,-30"/>
-<text text-anchor="start" x="320" y="-18" font-family="Helvetica,sans-Serif" font-size="10.00">random_float_between</text>
-<text text-anchor="middle" x="376" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">_0_and_1</text>
+<g id="a_Node000007"><a xlink:href="podium__ceremony__actors_8c.html#a1ac704186b642f21eef90523a8545c17" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="592,-24.5 476,-24.5 476,-5.5 592,-5.5 592,-24.5"/>
+<text text-anchor="middle" x="534" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">random_u16_credits</text>
 </a>
 </g>
 </g>
@@ -169,24 +169,6 @@ var sectionId = 'dynsection-6';
 <g id="edge6_Node000006_Node000007" class="edge">
 <title>Node6&#45;&gt;Node7</title>
 <g id="a_edge6_Node000006_Node000007"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M276.2,-16.9C284.52,-16.74 293.17,-16.57 301.74,-16.41"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="301.82,-19.91 311.75,-16.22 301.69,-12.91 301.82,-19.91"/>
-</a>
-</g>
-</g>
-<!-- Node8 -->
-<g id="Node000008" class="node">
-<title>Node8</title>
-<g id="a_Node000008"><a xlink:href="podium__ceremony__actors_8c.html#a1ac704186b642f21eef90523a8545c17" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="592,-24.5 476,-24.5 476,-5.5 592,-5.5 592,-24.5"/>
-<text text-anchor="middle" x="534" y="-12.5" font-family="Helvetica,sans-Serif" font-size="10.00">random_u16_credits</text>
-</a>
-</g>
-</g>
-<!-- Node7&#45;&gt;Node8 -->
-<g id="edge7_Node000007_Node000008" class="edge">
-<title>Node7&#45;&gt;Node8</title>
-<g id="a_edge7_Node000007_Node000008"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M440,-15C448.42,-15 457.08,-15 465.57,-15"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="465.81,-18.5 475.81,-15 465.81,-11.5 465.81,-18.5"/>
 </a>
