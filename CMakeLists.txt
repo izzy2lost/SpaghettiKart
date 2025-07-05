@@ -636,7 +636,6 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang|AppleClang")
 
             -Wno-error
             -Wno-format-security
-            # disable some warnings to not clutter output
             -Wno-multichar
             -Wno-return-type
             -Wno-narrowing
@@ -649,7 +648,7 @@ if (CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang|AppleClang")
                 -Wno-int-conversion
                 -Wno-builtin-declaration-mismatch
                 -Wno-switch-unreachable
-                -Wno-stringop-overflowAdd commentMore actions
+                -Wno-stringop-overflow
                 -Wno-implicit-int
             >
         )   
