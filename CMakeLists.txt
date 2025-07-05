@@ -134,28 +134,6 @@ if(UNIX AND NOT APPLE AND NOT ANDROID)
     find_package(OpenGL REQUIRED)
 endif()
 
-if(ANDROID)
-    add_library(${PROJECT_NAME} SHARED ${ALL_FILES})
-elseif(CMAKE_SYSTEM_NAME STREQUAL "iOS")
-    # iOS special stuff
-    set(IOS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/libultraship/ios)
-    set(STORYBOARD_FILE ${IOS_DIR}/Launch.storyboard)
-    set(IMAGE_FILES ${IOS_DIR}/PoweredBy.png)
-    set(ICON_FILES ${IOS_DIR}/Icon.png)
-    list(APPEND ALL_FILES ${STORYBOARD_FILE} ${IMAGE_FILES} ${ICON_FILES})
-    add_executable(${PROJECT_NAME} ${ALL_FILES})
-    set_xcode_property(${PROJECT_NAME} PRODUCT_BUNDLE_IDENTIFIER ${PROJECT_ID} All)
-    set_target_properties(
-        ${PROJECT_NAME}
-        PROPERTIES
-        MACOSX_BUNDLE TRUE
-        MACOSX_BUNDLE_INFO_PLIST ${IOS_DIR}/plist.in
-        RESOURCE "${IMAGE_FILES};${STORYBOARD_FILE};${ICON_FILES}"
-    )
-else()
-    add_executable(${PROJECT_NAME} ${ALL_FILES})
-endif()
-
 # Include directories
 include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}
@@ -237,6 +215,27 @@ list(APPEND ALL_FILES ${ALL_FILES_ROOT})
 # Exclude specific files from the ALL_FILES list
 list(FILTER ALL_FILES EXCLUDE REGEX ".*.inc.c")
 list(FILTER ALL_FILES EXCLUDE REGEX "./src/debug/crash_screen_enhancement.c")
+
+if(ANDROID)
+    add_library(${PROJECT_NAME} SHARED ${ALL_FILES})
+elseif(CMAKE_SYSTEM_NAME STREQUAL "iOS")
+    set(IOS_DIR ${CMAKE_CURRENT_SOURCE_DIR}/libultraship/ios)
+    set(STORYBOARD_FILE ${IOS_DIR}/Launch.storyboard)
+    set(IMAGE_FILES ${IOS_DIR}/PoweredBy.png)
+    set(ICON_FILES ${IOS_DIR}/Icon.png)
+    list(APPEND ALL_FILES ${STORYBOARD_FILE} ${IMAGE_FILES} ${ICON_FILES})
+    add_executable(${PROJECT_NAME} ${ALL_FILES})
+    set_xcode_property(${PROJECT_NAME} PRODUCT_BUNDLE_IDENTIFIER ${PROJECT_ID} All)
+    set_target_properties(
+        ${PROJECT_NAME}
+        PROPERTIES
+        MACOSX_BUNDLE TRUE
+        MACOSX_BUNDLE_INFO_PLIST ${IOS_DIR}/plist.in
+        RESOURCE "${IMAGE_FILES};${STORYBOARD_FILE};${ICON_FILES}"
+    )
+else()
+    add_executable(${PROJECT_NAME} ${ALL_FILES})
+endif()
 
 ################################################################################
 # MSVC runtime library
