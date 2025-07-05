@@ -12,6 +12,18 @@ if (NOT ${SDL2_FOUND})
     FetchContent_MakeAvailable(SDL2)
 endif()
 
+#=================== SDL2_net ===================
+find_package(SDL2_net QUIET)
+if (NOT SDL2_net_FOUND)
+    FetchContent_Declare(
+        SDL2_net
+        GIT_REPOSITORY https://github.com/libsdl-org/SDL_net.git
+        GIT_TAG release-2.2.0 
+        OVERRIDE_FIND_PACKAGE
+    )
+    FetchContent_MakeAvailable(SDL2_net)
+endif()
+
 #=================== nlohmann-json ===================
 find_package(nlohmann_json QUIET)
 if (NOT ${nlohmann_json_FOUND})
@@ -69,4 +81,4 @@ if (NOT ${libzip_FOUND})
     list(APPEND ADDITIONAL_LIB_INCLUDES ${libzip_SOURCE_DIR}/lib ${libzip_BINARY_DIR})
 endif()
 
-target_link_libraries(ImGui PUBLIC SDL2::SDL2)
+target_link_libraries(ImGui PUBLIC SDL2::SDL2 SDL2_net::SDL2_net)
