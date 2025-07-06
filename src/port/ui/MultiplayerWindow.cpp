@@ -11,7 +11,7 @@
 
 extern "C" {
 #include "main.h"
-#include "networking/networking.h"
+// #include "networking/networking.h"
 #include "actor_types.h"
 #include "code_800029B0.h"
 extern struct Actor gActorList[];
