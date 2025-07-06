@@ -25,7 +25,7 @@ enum {
 };
 
 typedef struct {
-    bool enabled; // Enables networking
+    bool disabled; // Enables networking
     TCPsocket tcpSocket;
     IPaddress address;
     Player* localPlayer;
