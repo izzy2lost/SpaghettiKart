@@ -2,7 +2,7 @@
 #include <defines.h>
 #include "main.h"
 #include "spawn_players.h"
-#include "networking.h"
+// #include "networking.h"
 #include "code_800029B0.h"
 #include "menus.h"
 #include "audio/external.h"
