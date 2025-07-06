@@ -110,7 +110,6 @@ endif()
 
 # Set game compilation version
 set(VERSION us)
-set(USE_NETWORKING OFF)
 set(SKIP_XCODE_VERSION_CHECK ON)
 
 # TODO: Sorry i broke this
@@ -423,23 +422,6 @@ else()
         "Vorbis::vorbisenc"
         "Vorbis::vorbisfile"
 	)
-endif()
-
-if(USE_NETWORKING)
-    if(MSVC)
-        vcpkg_install_packages(sdl2-net)
-    endif()
-    include_directories(${SDL2_NET_INCLUDE_DIRS})
-    target_compile_definitions(${PROJECT_NAME} PRIVATE USE_NETWORKING)
-    if(CMAKE_SYSTEM_NAME STREQUAL "NintendoSwitch")
-        target_link_libraries(${PROJECT_NAME} PRIVATE SDL2_net)
-    elseif(CMAKE_SYSTEM_NAME STREQUAL "Linux|Android")
-        find_package(SDL2_net REQUIRED)
-        target_link_libraries(${PROJECT_NAME} PRIVATE $<IF:$<TARGET_EXISTS:SDL2_net::SDL2_net>,SDL2_net::SDL2_net,SDL2_net::SDL2_net-static>) 
-    else()
-        find_package(SDL2_net REQUIRED)
-        target_link_libraries(${PROJECT_NAME} PRIVATE SDL2_net::SDL2_net-static)
-    endif()
 endif()
 
 option(USE_STANDALONE "Build as a standalone executable" OFF)
