@@ -1,7 +1,7 @@
 #include "ImguiUI.h"
 #include "UIWidgets.h"
 #include "ResolutionEditor.h"
-#include "MultiplayerWindow.h"
+// #include "MultiplayerWindow.h"
 #include "FreecamWindow.h"
 #include "Tools.h"
 #include "SceneExplorer.h"
