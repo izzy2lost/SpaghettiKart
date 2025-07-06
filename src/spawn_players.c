@@ -549,9 +549,6 @@ void spawn_players_gp_one_player(f32* arg0, f32* arg1, f32 arg2) {
                      PLAYER_EXISTS | PLAYER_CPU | PLAYER_START_SEQUENCE);
         D_80164A28 = 0;
     } else {
-        if (gNetwork.enabled) {
-            spawn_network_players(arg0, arg1, arg2);
-        } else {
             spawn_player(gPlayerOneCopy, 0, arg0[D_80165270[0]], arg1[D_80165270[0]] + 250.0f, arg2, 32768.0f,
                          gCharacterSelections[0],
                          PLAYER_EXISTS | PLAYER_STAGING | PLAYER_START_SEQUENCE | PLAYER_HUMAN);
