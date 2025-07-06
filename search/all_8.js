@@ -449,7 +449,7 @@ var searchData=
   ['func_5f800388b0_446',['func_800388B0',['../player__controller_8c.html#a6ab60cd01fe159bb7f6c60d06d9e16a6',1,'func_800388B0(struct Controller *controller):&#160;player_controller.c'],['../player__controller_8h.html#afd26a2c8fac8023bf5f2ce556981e00c',1,'func_800388B0(struct Controller *):&#160;player_controller.c']]],
   ['func_5f80038be4_447',['func_80038BE4',['../player__controller_8c.html#ac7de2240e53129599337038bade1f4fc',1,'func_80038BE4(Player *player, s16 arg1):&#160;player_controller.c'],['../player__controller_8h.html#a9f92d6bdc3e11b8a805496c4ab1465ae',1,'func_80038BE4(Player *, s16):&#160;player_controller.c']]],
   ['func_5f80038c6c_448',['func_80038C6C',['../player__controller_8c.html#a105e6b6fca9198633b8990b0da71cd25',1,'func_80038C6C(Player *player, UNUSED Camera *camera, s8 arg2, s8 playerId):&#160;player_controller.c'],['../player__controller_8h.html#af29a6502ef921511f0a4de4af49ff474',1,'func_80038C6C(Player *, Camera *, s8, s8):&#160;player_controller.h']]],
-  ['func_5f80039ae4_449',['func_80039AE4',['../spawn__players_8c.html#a1ef01690d08edebb46104bed8651c847',1,'spawn_players.c']]],
+  ['func_5f80039ae4_449',['func_80039AE4',['../spawn__players_8c.html#aaf045f37f3075bb689c5b6605e96d247',1,'spawn_players.c']]],
   ['func_5f80039da4_450',['func_80039DA4',['../spawn__players_8c.html#aaf1f89a8f58a74d28fb1481e50c2f790',1,'spawn_players.c']]],
   ['func_5f8003b318_451',['func_8003B318',['../spawn__players_8c.html#aad65f7f49de2e2ccf1801dd5e4a0a6ea',1,'spawn_players.c']]],
   ['func_5f8003b870_452',['func_8003B870',['../spawn__players_8c.html#a3ea50428784e3649615581f5b821cbe0',1,'spawn_players.c']]],
