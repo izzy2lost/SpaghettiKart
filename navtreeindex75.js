@@ -1,5 +1,6 @@
 var NAVTREEINDEX75 =
 {
+"structVolumeChange.html#a021b049e75d04ef9d7fffcfd237b38d2":[11,0,335,2],
 "structVolumeChange.html#a5a54284947f770817436ddd65c195c19":[11,0,335,0],
 "structVolumeChange.html#abbc6c7d5ee5a6e4acf7314ff0b112a09":[11,0,335,1],
 "structVolumeChange.html#ace77b1c1e7a1f002fcbdd5d10c9c9159":[11,0,335,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX75 =
 "structhud__player.html#a3205152fc7348ae6dd2e8b936d898df5":[11,0,135,32],
 "structhud__player.html#a3594f7ddf2ed7da7f966f62f3208b7a2":[11,0,135,25],
 "structhud__player.html#a39d038181833bc2042d448ebfd933445":[11,0,135,30],
-"structhud__player.html#a3bf6c6d74d60d7cf19c5aa483a8edde5":[11,0,135,0],
-"structhud__player.html#a3cf517a018092913129c5455f6496867":[11,0,135,56]
+"structhud__player.html#a3bf6c6d74d60d7cf19c5aa483a8edde5":[11,0,135,0]
 };

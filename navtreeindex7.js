@@ -1,5 +1,6 @@
 var NAVTREEINDEX7 =
 {
+"bstring_8h.html#a8f1a0f470802fada1c57bec05015a780":[12,0,3,9,31,2],
 "bstring_8h.html#aa4c3aee2deb111efd7af25f98541c29a":[12,0,3,9,31,1],
 "bstring_8h.html#ab828ad07c8ebf898973f27778c543651":[12,0,3,9,31,3],
 "bstring_8h_source.html":[12,0,3,9,31],
@@ -248,6 +249,5 @@ var NAVTREEINDEX7 =
 "ceremony__and__credits_8c.html#af042d7aa62f3c06f1a9274cdfd33534f":[12,0,3,5,2,130],
 "ceremony__and__credits_8c.html#af416b1f15fb96b9e7782ea43479fb102":[12,0,3,5,2,134],
 "ceremony__and__credits_8c.html#af67d4dc7e1b9e9e331291a7c0d6d9ff6":[12,0,3,5,2,139],
-"ceremony__and__credits_8c.html#af7a1a2054e6f94f51aa530e619c674aa":[12,0,3,5,2,12],
-"ceremony__and__credits_8c.html#af7c9d3f6d74811705fa49a08c7fb222e":[12,0,3,5,2,56]
+"ceremony__and__credits_8c.html#af7a1a2054e6f94f51aa530e619c674aa":[12,0,3,5,2,12]
 };
