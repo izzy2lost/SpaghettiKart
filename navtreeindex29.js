@@ -1,6 +1,5 @@
 var NAVTREEINDEX29 =
 {
-"defines_8h.html#afd95aa649c35f54671dc41e1f757b89c":[12,0,2,11,131],
 "defines_8h_source.html":[12,0,2,11],
 "deprecated.html":[9],
 "dir_00af227302e88d94a0c5bc4ff969c991.html":[12,0,3,5],
@@ -249,5 +248,6 @@ var NAVTREEINDEX29 =
 "effects_8h.html#a1592f0d5d4718b7c1aaf90860a6e0909":[12,0,3,39,11],
 "effects_8h.html#a1811f91d5c796e6504090b2ba419eeaf":[12,0,3,39,51],
 "effects_8h.html#a189393f804f5330285542a918bbf8a40":[12,0,3,39,13],
-"effects_8h.html#a1ee78e702e3bee237576a69b7db24387":[12,0,3,39,78]
+"effects_8h.html#a1ee78e702e3bee237576a69b7db24387":[12,0,3,39,78],
+"effects_8h.html#a20abfe660afd31bd7c2fc8cea7786ea5":[12,0,3,39,27]
 };

@@ -1,6 +1,5 @@
 var NAVTREEINDEX9 =
 {
-"classABus.html#a8a59bbe1cde63435e20b6bfeed793bd7":[11,0,27,10],
 "classABus.html#a954222562ab4454e12369db9c644d026":[11,0,27,14],
 "classABus.html#a9bed69b35f192f67a63bf62a1635a74d":[11,0,27,2],
 "classABus.html#ac8c9cc430310ad190f4b33238f0661a7":[11,0,27,17],
@@ -249,5 +248,6 @@ var NAVTREEINDEX9 =
 "classChocoMountain.html#a2fedbb1b96c35a5e5ae5b5cecd737b7f":[11,0,86,12],
 "classChocoMountain.html#a3d03c052d8c7ab1ec69d611107d55289":[11,0,86,9],
 "classChocoMountain.html#a4dcd16b706ce38bbc0dfe0c21395b395":[11,0,86,10],
-"classChocoMountain.html#a521275f305c9782092a6530ecd33b9a7":[11,0,86,5]
+"classChocoMountain.html#a521275f305c9782092a6530ecd33b9a7":[11,0,86,5],
+"classChocoMountain.html#a5998b1d9c3a1a93f19728b9dacea0ebc":[11,0,86,0]
 };

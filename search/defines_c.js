@@ -11,7 +11,7 @@ var searchData=
   ['max_8',['MAX',['../macros_8h.html#afa99ec4acc4ecb2dc3c2d05da15d0e3f',1,'macros.h']]],
   ['max3_9',['MAX3',['../collision_8c.html#a25cec12cb73a08cf253084e285058350',1,'collision.c']]],
   ['max_5fkeys_10',['MAX_KEYS',['../freecam_8cpp.html#a3077ecca3770bdee50e6a17dfb55d002',1,'freecam.cpp']]],
-  ['max_5flaps_11',['MAX_LAPS',['../banana_2update_8inc_8c.html#a77588e5ce0483d6845d1f5c362111401',1,'MAX_LAPS:&#160;update.inc.c'],['../blue__and__red__shells_2update_8inc_8c.html#a77588e5ce0483d6845d1f5c362111401',1,'MAX_LAPS:&#160;update.inc.c'],['../defines_8h.html#a77588e5ce0483d6845d1f5c362111401',1,'MAX_LAPS:&#160;defines.h']]],
+  ['max_5flaps_11',['MAX_LAPS',['../banana_2update_8inc_8c.html#a77588e5ce0483d6845d1f5c362111401',1,'MAX_LAPS:&#160;update.inc.c'],['../defines_8h.html#a77588e5ce0483d6845d1f5c362111401',1,'MAX_LAPS:&#160;defines.h']]],
   ['max_5fnum_5fmain_5fmenu_5fgame_5ftypes_12',['MAX_NUM_MAIN_MENU_GAME_TYPES',['../defines_8h.html#a8b908739bebbf30a8a0178fd74ff5356',1,'defines.h']]],
   ['max_5ftime_13',['MAX_TIME',['../defines_8h.html#a5320d4457a472d8888ec1905bc0e0a1c',1,'defines.h']]],
   ['max_5fupdates_5fper_5fframe_14',['MAX_UPDATES_PER_FRAME',['../synthesis_8h.html#ad36e3defa1b07b00d70bd03887843525',1,'synthesis.h']]],

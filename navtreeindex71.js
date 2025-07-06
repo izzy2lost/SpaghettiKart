@@ -1,6 +1,5 @@
 var NAVTREEINDEX71 =
 {
-"structRGBA5551.html#a886e94fc0c29271f17deda549e7a156a":[11,0,234,2],
 "structRGBA5551.html#a8e4b93a16be5353df9973a8672ef6d28":[11,0,234,0],
 "structRGBA5551.html#a9bf78153ebe70ec31632082c59c89eab":[11,0,234,1],
 "structRailroadCrossing.html":[11,0,222],
@@ -249,5 +248,6 @@ var NAVTREEINDEX71 =
 "structSF64_1_1Vec4s.html#ac2ab7d3df0b314d32c8da655f02fce12":[11,0,4,32,3],
 "structSPTask.html":[11,0,256],
 "structSPTask.html#a1cfd221ed795c4f717e289f36c9e552e":[11,0,256,2],
-"structSPTask.html#a4363043b6daf924a156887fca2f3a560":[11,0,256,0]
+"structSPTask.html#a4363043b6daf924a156887fca2f3a560":[11,0,256,0],
+"structSPTask.html#ac8f151d1e297976743cca4fe8f282a6b":[11,0,256,1]
 };
