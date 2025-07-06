@@ -36,7 +36,7 @@ var searchData=
   ['objectpicker_2ecpp_33',['ObjectPicker.cpp',['../ObjectPicker_8cpp.html',1,'']]],
   ['objectpicker_2eh_34',['ObjectPicker.h',['../ObjectPicker_8h.html',1,'']]],
   ['objectreplication_35',['ObjectReplication',['../replication_8c.html#a51d6551124e4a1946bb006ba096d6726',1,'replication.c']]],
-  ['objects_36',['Objects',['../structWorld_1_1Matrix.html#a9ffe24e9a3a0b5365aa5fcf5287d9619',1,'World::Matrix::Objects'],['../classWorld.html#a6cbf7696cb1102cd7f07b937b8e42648',1,'World::Objects'],['../objects.html',1,'Objects'],['../objects.html#objects',1,'Objects'],['../controlflow.html#objects-1',1,'Objects']]],
+  ['objects_36',['Objects',['../structWorld_1_1Matrix.html#a9ffe24e9a3a0b5365aa5fcf5287d9619',1,'World::Matrix::Objects'],['../classWorld.html#a6cbf7696cb1102cd7f07b937b8e42648',1,'World::Objects'],['../objects.html',1,'Objects'],['../controlflow.html#objects',1,'Objects'],['../objects.html#objects-1',1,'Objects']]],
   ['objects_2eh_37',['objects.h',['../objects_8h.html',1,'']]],
   ['objects_2emd_38',['objects.md',['../objects_8md.html',1,'']]],
   ['obombkart_39',['OBombKart',['../classOBombKart.html',1,'OBombKart'],['../classOBombKart.html#adce8f46e3608e94dd14e465b61db900b',1,'OBombKart::OBombKart()']]],

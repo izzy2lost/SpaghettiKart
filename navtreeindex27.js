@@ -179,7 +179,7 @@ var NAVTREEINDEX27 =
 "course__offsets_8h.html#af7c3d5a48e591b30ff6c2b2f23e8d2cc":[12,0,2,8,7],
 "course__offsets_8h_source.html":[12,0,2,8],
 "courses.html":[3,0],
-"courses.html#courses":[3,0,0],
+"courses.html#courses-1":[3,0,0],
 "courses_2test__course_2data_8c.html":[12,0,0,17,0],
 "courses_2test__course_2data_8c.html#a5776e9da61369423652d9d1c875f2abd":[12,0,0,17,0,0],
 "courses_2test__course_2data_8c.html#a5b6179834eac70a4585df8f3519be920":[12,0,0,17,0,1],
