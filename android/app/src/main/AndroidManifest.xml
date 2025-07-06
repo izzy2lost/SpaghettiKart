@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Replace com.test.game with the identifier of your game below, e.g.
-     com.gamemaker.game
--->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.izzy.kart"
-    android:versionCode="5"
-    android:versionName="1.1.2"
+    android:versionCode="1"
+    android:versionName="1.0.0"
     android:installLocation="auto">
 
     <!-- OpenGL ES 3.0 -->
