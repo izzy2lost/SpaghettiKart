@@ -1,9 +1,9 @@
-#ifndef NETWORKING_H
-#define NETWORKING_H
+// #ifndef NETWORKING_H
+// #define NETWORKING_H
 
 #include <libultraship.h>
 #include <common_structs.h>
-#include <SDL2/SDL_net.h>
+// #include <SDL2/SDL_net.h>
 
 #define NETWORK_MAX_PLAYERS 8
 #define NETWORK_USERNAME_LENGTH 32
