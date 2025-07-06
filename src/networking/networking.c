@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_net.h>
+// #include <SDL2/SDL_net.h>
 
-#include "networking.h"
+// #include "networking.h"
 #include "main.h"
 
 #define BUFFER_SIZE 10240
