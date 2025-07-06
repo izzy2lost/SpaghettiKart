@@ -1,6 +1,6 @@
 #include <libultraship.h>
-#include <SDL2/SDL_net.h>
-#include "networking.h"
+// #include <SDL2/SDL_net.h>
+// #include "networking.h"
 #include "code_800029B0.h"
 
 void handleJoinPacket(const char* data) {
