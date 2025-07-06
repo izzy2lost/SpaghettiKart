@@ -145,7 +145,6 @@ include_directories(
     ${CMAKE_CURRENT_SOURCE_DIR}/src/buffers
     ${CMAKE_CURRENT_SOURCE_DIR}/src/audio
     ${CMAKE_CURRENT_SOURCE_DIR}/src/debug
-    ${CMAKE_CURRENT_SOURCE_DIR}/src/networking
     ${CMAKE_CURRENT_SOURCE_DIR}/src/engine
     ${CMAKE_CURRENT_SOURCE_DIR}/src/engine/courses
     ${CMAKE_CURRENT_SOURCE_DIR}/src/engine/objects
@@ -188,9 +187,7 @@ file(GLOB_RECURSE ALL_FILES RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
     "src/port/*.cpp"
     "assets/code/*.c"
     "courses/*.c"
-    "courses/*.h"
-    "src/networking/*.c"
-    "src/networking/*.h"
+    "courses/*.h"    
     "src/engine/*.cpp"
     "src/engine/*.h"
     "src/engine/courses/*.c"
