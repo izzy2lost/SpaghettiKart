@@ -463,9 +463,8 @@ var searchData=
   ['used_460',['used',['../structUnkEntry.html#a5694063a75aaf50db1cb7d687e46bdc6',1,'UnkEntry']]],
   ['usedspace_461',['usedSpace',['../structAllocOnlyPool.html#a35f92b08706806346c9579f39bd2b820',1,'AllocOnlyPool']]],
   ['usereverb_462',['useReverb',['../structSynthesisReverb.html#a5b14756d9ad6c5588fdb97041605f43e',1,'SynthesisReverb']]],
-  ['username_463',['username',['../structNetworkClient.html#a7d252043369012a60cac7e533a92601c',1,'NetworkClient']]],
-  ['usesheadsetpaneffects_464',['usesHeadsetPanEffects',['../structReverbBitsData.html#aa908f813a0564ca417bb72f3574c4bfd',1,'ReverbBitsData::usesHeadsetPanEffects'],['../structNoteSubEu.html#a348ed95a1f9f39ce69ce1ae82c696e8f',1,'NoteSubEu::usesHeadsetPanEffects']]],
-  ['utils_2ecpp_465',['Utils.cpp',['../Utils_8cpp.html',1,'']]],
-  ['utils_2eh_466',['Utils.h',['../Utils_8h.html',1,'']]],
-  ['uuid_467',['uuid',['../classAActor.html#ad0d300f6ac4f1daa02669c340c7c523f',1,'AActor::uuid'],['../classOObject.html#a7811ae54fed1f16c7bc34088b99b89b7',1,'OObject::uuid']]]
+  ['usesheadsetpaneffects_463',['usesHeadsetPanEffects',['../structReverbBitsData.html#aa908f813a0564ca417bb72f3574c4bfd',1,'ReverbBitsData::usesHeadsetPanEffects'],['../structNoteSubEu.html#a348ed95a1f9f39ce69ce1ae82c696e8f',1,'NoteSubEu::usesHeadsetPanEffects']]],
+  ['utils_2ecpp_464',['Utils.cpp',['../Utils_8cpp.html',1,'']]],
+  ['utils_2eh_465',['Utils.h',['../Utils_8h.html',1,'']]],
+  ['uuid_466',['uuid',['../classAActor.html#ad0d300f6ac4f1daa02669c340c7c523f',1,'AActor::uuid'],['../classOObject.html#a7811ae54fed1f16c7bc34088b99b89b7',1,'OObject::uuid']]]
 ];

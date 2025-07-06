@@ -1,6 +1,5 @@
 var NAVTREEINDEX32 =
 {
-"functions_func_~.html":[11,3,1,23],
 "functions_g.html":[11,3,0,7],
 "functions_h.html":[11,3,0,8],
 "functions_i.html":[11,3,0,9],
@@ -51,9 +50,9 @@ var NAVTREEINDEX32 =
 "functions_y.html":[11,3,0,25],
 "functions_z.html":[11,3,0,26],
 "functions_~.html":[11,3,0,27],
-"gbiMacro_8c.html":[12,0,3,40],
-"gbiMacro_8c.html#a91e00c88992534bc111983d1e6c75826":[12,0,3,40,1],
-"gbiMacro_8c.html#ae1ee5e86b52f3b5fd6474ffc7868168f":[12,0,3,40,0],
+"gbiMacro_8c.html":[12,0,3,39],
+"gbiMacro_8c.html#a91e00c88992534bc111983d1e6c75826":[12,0,3,39,1],
+"gbiMacro_8c.html#ae1ee5e86b52f3b5fd6474ffc7868168f":[12,0,3,39,0],
 "gfx__output__buffer_8c.html":[12,0,3,2,3],
 "gfx__output__buffer_8c.html#a1d3d09175f95d66b361a83b7a94446f7":[12,0,3,2,3,1],
 "gfx__output__buffer_8c.html#af0d217c24247928253c3da04e1837d0b":[12,0,3,2,3,0],
@@ -249,5 +248,6 @@ var NAVTREEINDEX32 =
 "globals_func_v.html":[12,1,1,21],
 "globals_func_w.html":[12,1,1,22],
 "globals_func_y.html":[12,1,1,23],
-"globals_g.html":[12,1,0,7]
+"globals_g.html":[12,1,0,7],
+"globals_h.html":[12,1,0,8]
 };

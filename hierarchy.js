@@ -201,8 +201,6 @@ var hierarchy =
     [ "SF64::MsgLookup", "structSF64_1_1MsgLookup.html", null ],
     [ "Mtx2", "unionMtx2.html", null ],
     [ "Mtx_u", "structMtx__u.html", null ],
-    [ "Network", "structNetwork.html", null ],
-    [ "NetworkClient", "structNetworkClient.html", null ],
     [ "Note", "structNote.html", null ],
     [ "NoteAttributes", "structNoteAttributes.html", null ],
     [ "NotePlaybackState", "structNotePlaybackState.html", null ],

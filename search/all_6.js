@@ -2360,7 +2360,7 @@ var searchData=
   ['disable_5ffor_5fvertical_5fres_5ftoggle_5fon_2357',['DISABLE_FOR_VERTICAL_RES_TOGGLE_ON',['../MenuTypes_8h.html#a697cc769219ec155f54a4572d99d3432a17f8274aa1680aa2a92f9676acb5951c',1,'MenuTypes.h']]],
   ['disabled_2358',['DISABLED',['../classOBombKart.html#a8e4601861010249f2213d909b9daa116ade3bb30db386f1a4530ede4cf2726632',1,'OBombKart::DISABLED'],['../classOPenguin.html#a244dc193ddbb26b50017386fb1777fcfa8bf00723e91a80531b46c7219cea804a',1,'OPenguin::DISABLED'],['../classOThwomp.html#ab058a1bffedb77d79e477fc5acbc4e6aa587133edf7e4c3c968098c0367d4cc00',1,'OThwomp::DISABLED'],['../classPlayerBombKart.html#abe29bc9eaaac4f37f32fc1c67a19a1dda57d27cb4dd5224dfab2ff95ae0b33f50',1,'PlayerBombKart::DISABLED']]],
   ['disabled_2359',['Disabled',['../structUIWidgets_1_1WidgetOptions.html#a9fa6d466caa94b2116376c4197bce67c',1,'UIWidgets::WidgetOptions']]],
-  ['disabled_2360',['disabled',['../structNotePool.html#ac2528778f49b1dcfba89a73e952a52b8',1,'NotePool::disabled'],['../structNetwork.html#a74eb68341ab7a3e0724fbae69709ab9c',1,'Network::disabled'],['../structUIWidgets_1_1WidgetOptions.html#ad1d148b8544d0cb6b45586ff381a45a2',1,'UIWidgets::WidgetOptions::disabled']]],
+  ['disabled_2360',['disabled',['../structNotePool.html#ac2528778f49b1dcfba89a73e952a52b8',1,'NotePool::disabled'],['../structUIWidgets_1_1WidgetOptions.html#ad1d148b8544d0cb6b45586ff381a45a2',1,'UIWidgets::WidgetOptions::disabled']]],
   ['disabled_5feverything_2361',['disabled_everything',['../namespaceGameUI.html#a798f4742aaeaebfac85698b7872fa99d',1,'GameUI']]],
   ['disabled_5fpixelcount_2362',['disabled_pixelCount',['../namespaceGameUI.html#acd54167732cc642bf12c0c84bb052c97',1,'GameUI']]],
   ['disabledinfo_2363',['disabledInfo',['../structdisabledInfo.html',1,'']]],
@@ -2499,11 +2499,10 @@ var searchData=
   ['du_2496',['du',['../uniondu.html',1,'']]],
   ['dummy_2497',['dummy',['../struct____OSContReadFormat.html#a4a0069791ce30d82145ae10c1edb936c',1,'__OSContReadFormat::dummy'],['../struct____OSContRequesFormat.html#ac985b2af423216dd556852044841e1df',1,'__OSContRequesFormat::dummy'],['../struct____OSContRamReadFormat.html#a75c88f8a5de1a5fc696b01053addee2a',1,'__OSContRamReadFormat::dummy']]],
   ['dummy1_2498',['dummy1',['../struct____OSContRequesFormat.html#af67fa1b58e4d63b2d57338f7002de3ea',1,'__OSContRequesFormat']]],
-  ['dummyclient_2499',['dummyClient',['../networking_8c.html#a678fa6b5dcf329b34042645d60f8f4c9',1,'dummyClient:&#160;networking.c'],['../networking_8h.html#a678fa6b5dcf329b34042645d60f8f4c9',1,'dummyClient:&#160;networking.c']]],
-  ['duration_2500',['duration',['../structSequenceChannelLayer.html#a16047605637da65df5b360788dd80f53',1,'SequenceChannelLayer::duration'],['../structCutscene.html#adf71ab9b7e76c8a387d4934437caa7e2',1,'Cutscene::duration']]],
-  ['dvdl_2501',['DVDL',['../debug_8h.html#a24dcc0e2be4e5fd7da6da57d3477edea',1,'debug.h']]],
-  ['dx_2502',['dX',['../structMenuTexture.html#a50aaffcef2cdfba5469e2aea064b1bae',1,'MenuTexture']]],
-  ['dy_2503',['dY',['../structMenuTexture.html#a7672db2036937a0c928775cb102613ba',1,'MenuTexture']]],
-  ['dynamicradius_2504',['DynamicRadius',['../classTrainCrossing.html#ac970fd4517e90d51ee11e8718347a662',1,'TrainCrossing']]],
-  ['dyntable_2505',['dynTable',['../structSequenceChannel.html#a2df4dd94b4ca99190ac1310b345a26e9',1,'SequenceChannel']]]
+  ['duration_2499',['duration',['../structSequenceChannelLayer.html#a16047605637da65df5b360788dd80f53',1,'SequenceChannelLayer::duration'],['../structCutscene.html#adf71ab9b7e76c8a387d4934437caa7e2',1,'Cutscene::duration']]],
+  ['dvdl_2500',['DVDL',['../debug_8h.html#a24dcc0e2be4e5fd7da6da57d3477edea',1,'debug.h']]],
+  ['dx_2501',['dX',['../structMenuTexture.html#a50aaffcef2cdfba5469e2aea064b1bae',1,'MenuTexture']]],
+  ['dy_2502',['dY',['../structMenuTexture.html#a7672db2036937a0c928775cb102613ba',1,'MenuTexture']]],
+  ['dynamicradius_2503',['DynamicRadius',['../classTrainCrossing.html#ac970fd4517e90d51ee11e8718347a662',1,'TrainCrossing']]],
+  ['dyntable_2504',['dynTable',['../structSequenceChannel.html#a2df4dd94b4ca99190ac1310b345a26e9',1,'SequenceChannel']]]
 ];

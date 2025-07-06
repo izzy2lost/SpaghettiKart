@@ -18,7 +18,7 @@ var searchData=
   ['actorspawndatalist_15',['ActorSpawnDataList',['../classMK64_1_1ActorSpawn.html#a8f3483e6282b40f432465798de4a9822',1,'MK64::ActorSpawn']]],
   ['actortimer_16',['actorTimer',['../structstruct__D__802874D8.html#a81915496d06fe4f254ed97b7aec7904e',1,'struct_D_802874D8']]],
   ['addr_17',['addr',['../structTrackSectionsI.html#aff11083f81a72bfe003420a1d7a3bec2',1,'TrackSectionsI::addr'],['../structTrackSectionsO2R.html#a0deba07df881ceb9c2f11fe082af3bd9',1,'TrackSectionsO2R::addr'],['../structTrackSections.html#a095fe08228ac18a98e54f01c5ecc5a71',1,'TrackSections::addr'],['../structcourse__texture.html#a547f8da8ca10c726467cb6c716e4ce27',1,'course_texture::addr']]],
-  ['address_18',['address',['../structNetwork.html#a1e08fd78390a42b42e8bf874340c8603',1,'Network::address'],['../struct____OSContRamReadFormat.html#adac20edde85fef49f024ca4167c8720b',1,'__OSContRamReadFormat::address'],['../struct____OSContEepromFormat.html#a526294f348ee31c4f9ab2fbfae16175c',1,'__OSContEepromFormat::address']]],
+  ['address_18',['address',['../struct____OSContRamReadFormat.html#adac20edde85fef49f024ca4167c8720b',1,'__OSContRamReadFormat::address'],['../struct____OSContEepromFormat.html#a526294f348ee31c4f9ab2fbfae16175c',1,'__OSContEepromFormat::address']]],
   ['adpcm_5floop_5fstate_19',['adpcm_loop_state',['../mixer_8c.html#a38f5d90cf0e52d72f5f26f4675ba81d8',1,'mixer.c']]],
   ['adpcm_5ftable_20',['adpcm_table',['../mixer_8c.html#a12b66e6c33854313c545c4d8b604cac5',1,'mixer.c']]],
   ['adpcmdecstate_21',['adpcmdecState',['../structNoteSynthesisBuffers.html#a9d4d07634479fb01af35a8ca7ff09228',1,'NoteSynthesisBuffers']]],

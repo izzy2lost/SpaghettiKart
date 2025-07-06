@@ -270,8 +270,6 @@ var annotated_dup =
     [ "MooMooFarm", "classMooMooFarm.html", "classMooMooFarm" ],
     [ "Mtx2", "unionMtx2.html", "unionMtx2" ],
     [ "Mtx_u", "structMtx__u.html", "structMtx__u" ],
-    [ "Network", "structNetwork.html", "structNetwork" ],
-    [ "NetworkClient", "structNetworkClient.html", "structNetworkClient" ],
     [ "Note", "structNote.html", "structNote" ],
     [ "NoteAttributes", "structNoteAttributes.html", "structNoteAttributes" ],
     [ "NotePlaybackState", "structNotePlaybackState.html", "structNotePlaybackState" ],

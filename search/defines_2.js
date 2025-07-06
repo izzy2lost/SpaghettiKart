@@ -39,6 +39,5 @@ var searchData=
   ['buffer_5fmanager_5ferror_36',['BUFFER_MANAGER_ERROR',['../hardware_8h.html#a5ffc9b4a1a0b44ff997295302fc0c1a3',1,'hardware.h']]],
   ['buffer_5fmanager_5finterrupt_37',['BUFFER_MANAGER_INTERRUPT',['../hardware_8h.html#a3949e617d780b9c8f577690ab7e875b5',1,'hardware.h']]],
   ['buffer_5fmanager_5freset_38',['BUFFER_MANAGER_RESET',['../hardware_8h.html#a0a11bb115bc7b87616fd4eff7f76b784',1,'hardware.h']]],
-  ['buffer_5fsize_39',['BUFFER_SIZE',['../networking_8c.html#a6b20d41d6252e9871430c242cb1a56e7',1,'BUFFER_SIZE:&#160;networking.c'],['../packets_8c.html#a6b20d41d6252e9871430c242cb1a56e7',1,'BUFFER_SIZE:&#160;packets.c']]],
-  ['busy_5fstate_40',['BUSY_STATE',['../hardware_8h.html#a4821f69a5605c2618cd4dc4d3f60979c',1,'hardware.h']]]
+  ['busy_5fstate_39',['BUSY_STATE',['../hardware_8h.html#a4821f69a5605c2618cd4dc4d3f60979c',1,'hardware.h']]]
 ];

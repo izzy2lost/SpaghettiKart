@@ -2205,7 +2205,7 @@ var searchData=
   ['dir_2202',['Dir',['../structEditor_1_1ContentBrowserWindow_1_1Tracks.html#ae242e83bf1f60e8399c497e8cd0b5bd3',1,'Editor::ContentBrowserWindow::Tracks']]],
   ['direction_2203',['Direction',['../structRay.html#a64d5e3df9c043edcf8bf970ae1608084',1,'Ray::Direction'],['../classEditor_1_1LightObject.html#aa58b8af8c7c52bda64e1224ac95d424e',1,'Editor::LightObject::Direction']]],
   ['direction_5fangle_2204',['direction_angle',['../structObject.html#a0375df4e95a5de9772d897da1d97be18',1,'Object::direction_angle'],['../structItemWindowObjects.html#a8618dba6b9c74342fe3b97a32068fa59',1,'ItemWindowObjects::direction_angle']]],
-  ['disabled_2205',['disabled',['../structNotePool.html#ac2528778f49b1dcfba89a73e952a52b8',1,'NotePool::disabled'],['../structNetwork.html#a74eb68341ab7a3e0724fbae69709ab9c',1,'Network::disabled'],['../structUIWidgets_1_1WidgetOptions.html#ad1d148b8544d0cb6b45586ff381a45a2',1,'UIWidgets::WidgetOptions::disabled']]],
+  ['disabled_2205',['disabled',['../structNotePool.html#ac2528778f49b1dcfba89a73e952a52b8',1,'NotePool::disabled'],['../structUIWidgets_1_1WidgetOptions.html#ad1d148b8544d0cb6b45586ff381a45a2',1,'UIWidgets::WidgetOptions::disabled']]],
   ['disabled_5feverything_2206',['disabled_everything',['../namespaceGameUI.html#a798f4742aaeaebfac85698b7872fa99d',1,'GameUI']]],
   ['disabled_5fpixelcount_2207',['disabled_pixelCount',['../namespaceGameUI.html#acd54167732cc642bf12c0c84bb052c97',1,'GameUI']]],
   ['disabledmap_2208',['disabledMap',['../classShip_1_1Menu.html#a7c39da4612e1b8305359949bed202dfb',1,'Ship::Menu']]],
@@ -2232,9 +2232,8 @@ var searchData=
   ['dstaddr_2229',['dstAddr',['../structUnkEntry.html#aef0e777becde602f5c36c02e7146019f',1,'UnkEntry']]],
   ['dummy_2230',['dummy',['../struct____OSContReadFormat.html#a4a0069791ce30d82145ae10c1edb936c',1,'__OSContReadFormat::dummy'],['../struct____OSContRequesFormat.html#ac985b2af423216dd556852044841e1df',1,'__OSContRequesFormat::dummy'],['../struct____OSContRamReadFormat.html#a75c88f8a5de1a5fc696b01053addee2a',1,'__OSContRamReadFormat::dummy']]],
   ['dummy1_2231',['dummy1',['../struct____OSContRequesFormat.html#af67fa1b58e4d63b2d57338f7002de3ea',1,'__OSContRequesFormat']]],
-  ['dummyclient_2232',['dummyClient',['../networking_8c.html#a678fa6b5dcf329b34042645d60f8f4c9',1,'dummyClient:&#160;networking.c'],['../networking_8h.html#a678fa6b5dcf329b34042645d60f8f4c9',1,'dummyClient:&#160;networking.c']]],
-  ['duration_2233',['duration',['../structSequenceChannelLayer.html#a16047605637da65df5b360788dd80f53',1,'SequenceChannelLayer::duration'],['../structCutscene.html#adf71ab9b7e76c8a387d4934437caa7e2',1,'Cutscene::duration']]],
-  ['dx_2234',['dX',['../structMenuTexture.html#a50aaffcef2cdfba5469e2aea064b1bae',1,'MenuTexture']]],
-  ['dy_2235',['dY',['../structMenuTexture.html#a7672db2036937a0c928775cb102613ba',1,'MenuTexture']]],
-  ['dyntable_2236',['dynTable',['../structSequenceChannel.html#a2df4dd94b4ca99190ac1310b345a26e9',1,'SequenceChannel']]]
+  ['duration_2232',['duration',['../structSequenceChannelLayer.html#a16047605637da65df5b360788dd80f53',1,'SequenceChannelLayer::duration'],['../structCutscene.html#adf71ab9b7e76c8a387d4934437caa7e2',1,'Cutscene::duration']]],
+  ['dx_2233',['dX',['../structMenuTexture.html#a50aaffcef2cdfba5469e2aea064b1bae',1,'MenuTexture']]],
+  ['dy_2234',['dY',['../structMenuTexture.html#a7672db2036937a0c928775cb102613ba',1,'MenuTexture']]],
+  ['dyntable_2235',['dynTable',['../structSequenceChannel.html#a2df4dd94b4ca99190ac1310b345a26e9',1,'SequenceChannel']]]
 ];
