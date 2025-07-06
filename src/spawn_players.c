@@ -1,7 +1,7 @@
 #include <defines.h>
 #include <mk64.h>
 #include <stubs.h>
-#include "networking/networking.h"
+// #include "networking/networking.h"
 
 #include "spawn_players.h"
 #include "code_800029B0.h"
