@@ -1,7 +1,5 @@
 var NAVTREEINDEX11 =
 {
-"classEditor_1_1LightObject.html#a1a62bcd48672714d707298585874e2aa":[10,0,1,4,11],
-"classEditor_1_1LightObject.html#a1a62bcd48672714d707298585874e2aa":[11,0,0,4,11],
 "classEditor_1_1LightObject.html#a1be1c7f94b7022b86b89c1955fabe2eb":[10,0,1,4,3],
 "classEditor_1_1LightObject.html#a1be1c7f94b7022b86b89c1955fabe2eb":[11,0,0,4,3],
 "classEditor_1_1LightObject.html#a22a7552f25266c081973a9c694a4816a":[10,0,1,4,12],
@@ -249,5 +247,7 @@ var NAVTREEINDEX11 =
 "classMK64_1_1CPU.html":[10,0,5,3],
 "classMK64_1_1CPU.html":[11,0,2,3],
 "classMK64_1_1CPU.html#a8079e8944ccddb75d021e60b9e860ef4":[10,0,5,3,0],
-"classMK64_1_1CPU.html#a8079e8944ccddb75d021e60b9e860ef4":[11,0,2,3,0]
+"classMK64_1_1CPU.html#a8079e8944ccddb75d021e60b9e860ef4":[11,0,2,3,0],
+"classMK64_1_1CPU.html#a8b8ba9a17e122deb2e205d775fa2c3b8":[10,0,5,3,1],
+"classMK64_1_1CPU.html#a8b8ba9a17e122deb2e205d775fa2c3b8":[11,0,2,3,1]
 };

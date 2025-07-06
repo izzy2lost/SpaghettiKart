@@ -6,7 +6,6 @@ var namespaces_dup =
     [ "Freecam", "namespaceFreecam.html", null ],
     [ "GameUI", "namespaceGameUI.html", "namespaceGameUI" ],
     [ "MK64", "namespaceMK64.html", "namespaceMK64" ],
-    [ "Multiplayer", "namespaceMultiplayer.html", null ],
     [ "pfd", "namespacepfd.html", "namespacepfd" ],
     [ "SF64", "namespaceSF64.html", "namespaceSF64" ],
     [ "Ship", "namespaceShip.html", "namespaceShip" ],

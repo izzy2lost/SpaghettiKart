@@ -1,8 +1,5 @@
 var NAVTREEINDEX74 =
 {
-"structUIWidgets_1_1WidgetOptions.html#ad1d148b8544d0cb6b45586ff381a45a2":[11,0,7,6,4],
-"structUnk1Pool.html":[11,0,305],
-"structUnk1Pool.html#a286138829ca5382e9e3bbd3f79f8f12a":[11,0,305,1],
 "structUnk1Pool.html#acd0c0850a2885a27818620587bd67670":[11,0,305,0],
 "structUnkActorSpawnData.html":[11,0,310],
 "structUnkActorSpawnData.html#a0504e28886dacafd17078992a6ec9239":[11,0,310,0],
@@ -249,5 +246,8 @@ var NAVTREEINDEX74 =
 "structWidgetInfo.html#a2ac569a44c89eded7195693d250f6c16":[11,0,338,19],
 "structWidgetInfo.html#a31d40206a297372d1527c53c82f61c2b":[11,0,338,7],
 "structWidgetInfo.html#a3f87fb7af882a2c3c86c135be60c7179":[11,0,338,23],
-"structWidgetInfo.html#a563f62120cb5a60ad347cd28ebf517fd":[11,0,338,22]
+"structWidgetInfo.html#a563f62120cb5a60ad347cd28ebf517fd":[11,0,338,22],
+"structWidgetInfo.html#a5fedbe00431ae3b0d1c72af3dbf8ff19":[11,0,338,8],
+"structWidgetInfo.html#a63678e013cb28e918508e58d8c6f2aec":[11,0,338,0],
+"structWidgetInfo.html#a8fb193d773f8f491d161798ec34a3569":[11,0,338,3]
 };

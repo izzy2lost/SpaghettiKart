@@ -1,7 +1,5 @@
 var NAVTREEINDEX32 =
 {
-"functions_func_w.html":[11,3,1,21],
-"functions_func_y.html":[11,3,1,22],
 "functions_func_~.html":[11,3,1,23],
 "functions_g.html":[11,3,0,7],
 "functions_h.html":[11,3,0,8],
@@ -249,5 +247,7 @@ var NAVTREEINDEX32 =
 "globals_func_t.html":[12,1,1,19],
 "globals_func_u.html":[12,1,1,20],
 "globals_func_v.html":[12,1,1,21],
-"globals_func_w.html":[12,1,1,22]
+"globals_func_w.html":[12,1,1,22],
+"globals_func_y.html":[12,1,1,23],
+"globals_g.html":[12,1,0,7]
 };

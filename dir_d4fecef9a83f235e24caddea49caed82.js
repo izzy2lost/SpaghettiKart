@@ -9,7 +9,6 @@ var dir_d4fecef9a83f235e24caddea49caed82 =
     [ "Menu.cpp", "Menu_8cpp.html", "Menu_8cpp" ],
     [ "Menu.h", "Menu_8h.html", "Menu_8h" ],
     [ "MenuTypes.h", "MenuTypes_8h.html", "MenuTypes_8h" ],
-    [ "MultiplayerWindow.h", "MultiplayerWindow_8h.html", null ],
     [ "PortMenu.cpp", "PortMenu_8cpp.html", "PortMenu_8cpp" ],
     [ "PortMenu.h", "PortMenu_8h.html", "PortMenu_8h" ],
     [ "Properties.cpp", "Properties_8cpp.html", null ],

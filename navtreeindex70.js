@@ -1,8 +1,5 @@
 var NAVTREEINDEX70 =
 {
-"structOnlyBestTimeTrialRecords.html#ae870e3959d821975470b9c07fd83cdc6":[11,0,192,2],
-"structPaddleBoatStuff.html":[11,0,206],
-"structPaddleBoatStuff.html#a169f12ddbb73e08ad2ded1a087d78fd0":[11,0,206,4],
 "structPaddleBoatStuff.html#a47d8702fd8d878d10eca86c938eaa3f2":[11,0,206,6],
 "structPaddleBoatStuff.html#a49e0adc54004639404a64e1d48a0c739":[11,0,206,1],
 "structPaddleBoatStuff.html#a76c7c3f2c51a1d177c8ac68c77663865":[11,0,206,5],
@@ -249,5 +246,8 @@ var NAVTREEINDEX70 =
 "structRailroadCrossing.html#adb9d15641f3264973cacf57821f9eab9":[11,0,222,4],
 "structRailroadCrossing.html#ae8dffede0df7f0e6c6eef1e9c9a131d8":[11,0,222,6],
 "structRailroadCrossing.html#afc917a6db89b2c263cfbf6a512719ba6":[11,0,222,3],
-"structRay.html":[11,0,224]
+"structRay.html":[11,0,224],
+"structRay.html#a64d5e3df9c043edcf8bf970ae1608084":[11,0,224,0],
+"structRay.html#a80b34482481bc9f87e0201974db3bb55":[11,0,224,1],
+"structRegisterMenuInitFunc.html":[11,0,225]
 };

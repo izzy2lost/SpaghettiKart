@@ -1,8 +1,5 @@
 var NAVTREEINDEX66 =
 {
-"structActor.html#ac722b487dbdddd92acbc81e998952643":[11,0,30,2],
-"structActor.html#acd34f66c2555a2b2dba239da10475057":[11,0,30,7],
-"structActor.html#adcfb3392dc0eb67986f52f2c51fc2b5d":[11,0,30,9],
 "structActor.html#ae96f9783bff4ee28d963be1c0a277e5f":[11,0,30,8],
 "structActor.html#af49bb0c1202a06dc594529a2e77249c6":[11,0,30,1],
 "structActor.html#afa1455dbf1a4698584ed8c501439692f":[11,0,30,3],
@@ -249,5 +246,8 @@ var NAVTREEINDEX66 =
 "structCeremonyActor.html#a69c20526dea2316424da2fd93f55ea74":[11,0,84,19],
 "structCeremonyActor.html#a7e5c8dba1d5745f8fdb28425cfbf86c0":[11,0,84,11],
 "structCeremonyActor.html#a86c9ff71293d7c786e38366ee82923fb":[11,0,84,15],
-"structCeremonyActor.html#a914b59d131ff77b2620ed88ed49a1838":[11,0,84,1]
+"structCeremonyActor.html#a914b59d131ff77b2620ed88ed49a1838":[11,0,84,1],
+"structCeremonyActor.html#a95401c826ee7781ad6f979d5fb2eaa44":[11,0,84,16],
+"structCeremonyActor.html#aa070d6425710935e0df26514ac991c0c":[11,0,84,14],
+"structCeremonyActor.html#aa2f4470ee38cb390a32c098ad0d6ef99":[11,0,84,22]
 };

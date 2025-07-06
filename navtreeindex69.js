@@ -1,8 +1,5 @@
 var NAVTREEINDEX69 =
 {
-"structMenuItem.html#a92c53c4ef833b1e9b8b7e9334c6b087f":[11,0,158,0],
-"structMenuItem.html#aa6840ccc4680596ace4856ffdef43023":[11,0,158,3],
-"structMenuItem.html#ad817c527be44caab0662ee34d4f6709a":[11,0,158,6],
 "structMenuItem.html#ada1141f10163f02617b99f726083a94e":[11,0,158,5],
 "structMenuItem.html#adf11cb3c94415da3aa858bd43b277490":[11,0,158,10],
 "structMenuItem.html#afb70ec8c731301bbd654c80325d00067":[11,0,158,4],
@@ -249,5 +246,8 @@ var NAVTREEINDEX69 =
 "structObjectInterpData2.html#ad8fab87ab718c66ca894a6300c49ef4e":[11,0,179,2],
 "structOnlyBestTimeTrialRecords.html":[11,0,192],
 "structOnlyBestTimeTrialRecords.html#a056f1511f8f72a87d18f2b31de8edf95":[11,0,192,0],
-"structOnlyBestTimeTrialRecords.html#a893ecb20d3c6f02ba0e40428899c896c":[11,0,192,1]
+"structOnlyBestTimeTrialRecords.html#a893ecb20d3c6f02ba0e40428899c896c":[11,0,192,1],
+"structOnlyBestTimeTrialRecords.html#ae870e3959d821975470b9c07fd83cdc6":[11,0,192,2],
+"structPaddleBoatStuff.html":[11,0,206],
+"structPaddleBoatStuff.html#a169f12ddbb73e08ad2ded1a087d78fd0":[11,0,206,4]
 };
