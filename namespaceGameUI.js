@@ -9,16 +9,6 @@ var namespaceGameUI =
       [ "initFunc", "namespaceGameUI_1_1Freecam.html#a81d194b3b16b9c397e3aaaa61a2ef511", null ],
       [ "sReadyUpBool", "namespaceGameUI_1_1Freecam.html#a4ed9ea924f4f812b591e82c55e59cd00", null ]
     ] ],
-    [ "Multiplayer", "namespaceGameUI_1_1Multiplayer.html", [
-      [ "DrawColumn1", "namespaceGameUI_1_1Multiplayer.html#a82477c0920d435faed20e3dd60161438", null ],
-      [ "DrawColumn2", "namespaceGameUI_1_1Multiplayer.html#af5f299cda6639c8105bd8d29ab94be3a", null ],
-      [ "RegisterMultiplayerWidgets", "namespaceGameUI_1_1Multiplayer.html#a09b2157b08aba0383c13dfc3ef8c2ef5", null ],
-      [ "initFunc", "namespaceGameUI_1_1Multiplayer.html#aaad8b6eb73bb7b2e242125cf7e0eb797", null ],
-      [ "sCharacter", "namespaceGameUI_1_1Multiplayer.html#ae7fff9e6c9cef887e83a6fda8430e0bd", null ],
-      [ "sConnectedBool", "namespaceGameUI_1_1Multiplayer.html#a506c2ec562dd456ed7abdac83962ef5d", null ],
-      [ "sCup", "namespaceGameUI_1_1Multiplayer.html#abe4ae8f6e1cfab88e2096b2fc98d849e", null ],
-      [ "sReadyUpBool", "namespaceGameUI_1_1Multiplayer.html#a651a0a642651b0014245a320aaaa9366", null ]
-    ] ],
     [ "PortMenu", "classGameUI_1_1PortMenu.html", "classGameUI_1_1PortMenu" ],
     [ "messageType", "namespaceGameUI.html#aa9e407716aed9d3d8c1bbc634b8c9b79", [
       [ "MESSAGE_ERROR", "namespaceGameUI.html#aa9e407716aed9d3d8c1bbc634b8c9b79adf3fcc5e91173aa6ef87d0b4e987e974", null ],

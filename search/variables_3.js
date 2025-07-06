@@ -10,7 +10,7 @@ var searchData=
   ['camera_5finterpolation_7',['camera_interpolation',['../FrameInterpolation_8cpp.html#a23b1472c873aa4bd5e7afd6270450944',1,'FrameInterpolation.cpp']]],
   ['cameraheight_8',['cameraHeight',['../structUnkStruct__800DC5EC.html#aa1f509e1bf24852a1116f0b12921f651',1,'UnkStruct_800DC5EC']]],
   ['cameraid_9',['cameraId',['../structSound.html#ab9d2762840c1e7690e3dc064d3723909',1,'Sound::cameraId'],['../structUnk__8018EFD8.html#a22884c91110b60d26e1222763c643ba3',1,'Unk_8018EFD8::cameraId'],['../structSoundCharacteristics.html#aef79409427b23e6314bcbe12e4157729',1,'SoundCharacteristics::cameraId'],['../structCamera.html#a15388e5b99931adebdf818711a3724e0',1,'Camera::cameraId']]],
-  ['cameras_10',['cameras',['../camera_8c.html#a65385cad0aa796cc1e17b6c5bd24fcc5',1,'cameras:&#160;camera.c'],['../camera_8h.html#a8f5ed94c43a83ee4c33fba816f1e4ee5',1,'cameras:&#160;camera.c'],['../MultiplayerWindow_8cpp.html#a8f5ed94c43a83ee4c33fba816f1e4ee5',1,'cameras:&#160;camera.c']]],
+  ['cameras_10',['cameras',['../camera_8c.html#a65385cad0aa796cc1e17b6c5bd24fcc5',1,'cameras:&#160;camera.c'],['../camera_8h.html#a8f5ed94c43a83ee4c33fba816f1e4ee5',1,'cameras:&#160;camera.c']]],
   ['cartromhandle_11',['CartRomHandle',['../osCartRomInit_8c.html#a9ca42de4a02fb061fd253676827be77e',1,'CartRomHandle:&#160;osCartRomInit.c'],['../piint_8h.html#a9ca42de4a02fb061fd253676827be77e',1,'CartRomHandle:&#160;osCartRomInit.c']]],
   ['castle_5fbars1_5fci8_12',['castle_bars1_ci8',['../track_8h.html#a52ae97eae3c3a586d5d71fca28322131',1,'track.h']]],
   ['castle_5fbars1_5fpal_5frgba16_13',['castle_bars1_pal_rgba16',['../track_8h.html#ab7a5d7673e25b9139647600278e9217f',1,'track.h']]],

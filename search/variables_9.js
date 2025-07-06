@@ -16,7 +16,7 @@ var searchData=
   ['initburst_13',['initBurst',['../podium__ceremony__actors_8c.html#a5fa04bd88237c86735fa038902368d1c',1,'initBurst:&#160;podium_ceremony_actors.c'],['../podium__ceremony__actors_8h.html#a5fa04bd88237c86735fa038902368d1c',1,'initBurst:&#160;podium_ceremony_actors.c']]],
   ['initcone_14',['initCone',['../podium__ceremony__actors_8c.html#ae26375ec0f4f77b7ff9296000eebec17',1,'initCone:&#160;podium_ceremony_actors.c'],['../podium__ceremony__actors_8h.html#ae26375ec0f4f77b7ff9296000eebec17',1,'initCone:&#160;podium_ceremony_actors.c']]],
   ['initdummy_15',['initDummy',['../podium__ceremony__actors_8c.html#a7c371812edff549f45991d545e9d88c4',1,'podium_ceremony_actors.c']]],
-  ['initfunc_16',['initFunc',['../namespaceGameUI_1_1Freecam.html#a81d194b3b16b9c397e3aaaa61a2ef511',1,'GameUI::Freecam::initFunc'],['../namespaceGameUI_1_1Multiplayer.html#aaad8b6eb73bb7b2e242125cf7e0eb797',1,'GameUI::Multiplayer::initFunc'],['../namespaceGameUI.html#a436744b57259e1aca1d4cf06b5153cde',1,'GameUI::initFunc']]],
+  ['initfunc_16',['initFunc',['../namespaceGameUI_1_1Freecam.html#a81d194b3b16b9c397e3aaaa61a2ef511',1,'GameUI::Freecam::initFunc'],['../namespaceGameUI.html#a436744b57259e1aca1d4cf06b5153cde',1,'GameUI::initFunc']]],
   ['initialrotation_17',['InitialRotation',['../classEditor_1_1Gizmo.html#ae9133216073166cb1b7039a653eb74fd',1,'Editor::Gizmo']]],
   ['initialscale_18',['InitialScale',['../classEditor_1_1Gizmo.html#ac3e49574444cdab285e061b8ffd3d12f',1,'Editor::Gizmo']]],
   ['initinitunk_19',['initInitUnk',['../podium__ceremony__actors_8h.html#ac6b3cb8c42cbca043f27d1d28c577415',1,'podium_ceremony_actors.h']]],

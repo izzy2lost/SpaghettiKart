@@ -1,12 +1,5 @@
 var NAVTREEINDEX7 =
 {
-"bstring_8h.html#a8f1a0f470802fada1c57bec05015a780":[12,0,3,9,31,2],
-"bstring_8h.html#aa4c3aee2deb111efd7af25f98541c29a":[12,0,3,9,31,1],
-"bstring_8h.html#ab828ad07c8ebf898973f27778c543651":[12,0,3,9,31,3],
-"bstring_8h_source.html":[12,0,3,9,31],
-"buffers_8c.html":[12,0,3,2,2],
-"buffers_8c.html#a3c3037936f404262e994e5d5b6c62d3a":[12,0,3,2,2,5],
-"buffers_8c.html#a5249b7a9cf7e5c7d6a23b907760b9b81":[12,0,3,2,2,3],
 "buffers_8c.html#a581599f845be593317d08c0d97a43818":[12,0,3,2,2,1],
 "buffers_8c.html#a63346feaff86835bf7e5b03bfcd0086d":[12,0,3,2,2,6],
 "buffers_8c.html#a95aecdc8fb209e4ec86f831451880008":[12,0,3,2,2,4],
@@ -249,5 +242,12 @@ var NAVTREEINDEX7 =
 "ceremony__and__credits_8c.html#af042d7aa62f3c06f1a9274cdfd33534f":[12,0,3,5,2,130],
 "ceremony__and__credits_8c.html#af416b1f15fb96b9e7782ea43479fb102":[12,0,3,5,2,134],
 "ceremony__and__credits_8c.html#af67d4dc7e1b9e9e331291a7c0d6d9ff6":[12,0,3,5,2,139],
-"ceremony__and__credits_8c.html#af7a1a2054e6f94f51aa530e619c674aa":[12,0,3,5,2,12]
+"ceremony__and__credits_8c.html#af7a1a2054e6f94f51aa530e619c674aa":[12,0,3,5,2,12],
+"ceremony__and__credits_8c.html#af7c9d3f6d74811705fa49a08c7fb222e":[12,0,3,5,2,56],
+"ceremony__and__credits_8c.html#af891ee7c37f3086d9b5a380683a01225":[12,0,3,5,2,146],
+"ceremony__and__credits_8c.html#af8f1dc93204108709dd06e0ddc184b9e":[12,0,3,5,2,141],
+"ceremony__and__credits_8c.html#afc7ecb2ba6018ae3a7c60cc87adbe8b5":[12,0,3,5,2,32],
+"ceremony__and__credits_8c.html#afd4e1538000b2bdc1bf39d253cd5af30":[12,0,3,5,2,88],
+"ceremony__and__credits_8c.html#afe61160e002f2caa9d9d0ac57e9b4249":[12,0,3,5,2,70],
+"ceremony__and__credits_8c.html#aff512a83bcf648cbc9086b9b8eab28c3":[12,0,3,5,2,39]
 };
