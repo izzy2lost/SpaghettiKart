@@ -2205,7 +2205,7 @@ var searchData=
   ['dir_2202',['Dir',['../structEditor_1_1ContentBrowserWindow_1_1Tracks.html#ae242e83bf1f60e8399c497e8cd0b5bd3',1,'Editor::ContentBrowserWindow::Tracks']]],
   ['direction_2203',['Direction',['../structRay.html#a64d5e3df9c043edcf8bf970ae1608084',1,'Ray::Direction'],['../classEditor_1_1LightObject.html#aa58b8af8c7c52bda64e1224ac95d424e',1,'Editor::LightObject::Direction']]],
   ['direction_5fangle_2204',['direction_angle',['../structObject.html#a0375df4e95a5de9772d897da1d97be18',1,'Object::direction_angle'],['../structItemWindowObjects.html#a8618dba6b9c74342fe3b97a32068fa59',1,'ItemWindowObjects::direction_angle']]],
-  ['disabled_2205',['disabled',['../structNotePool.html#ac2528778f49b1dcfba89a73e952a52b8',1,'NotePool::disabled'],['../structUIWidgets_1_1WidgetOptions.html#ad1d148b8544d0cb6b45586ff381a45a2',1,'UIWidgets::WidgetOptions::disabled']]],
+  ['disabled_2205',['disabled',['../structNotePool.html#ac2528778f49b1dcfba89a73e952a52b8',1,'NotePool::disabled'],['../structNetwork.html#a74eb68341ab7a3e0724fbae69709ab9c',1,'Network::disabled'],['../structUIWidgets_1_1WidgetOptions.html#ad1d148b8544d0cb6b45586ff381a45a2',1,'UIWidgets::WidgetOptions::disabled']]],
   ['disabled_5feverything_2206',['disabled_everything',['../namespaceGameUI.html#a798f4742aaeaebfac85698b7872fa99d',1,'GameUI']]],
   ['disabled_5fpixelcount_2207',['disabled_pixelCount',['../namespaceGameUI.html#acd54167732cc642bf12c0c84bb052c97',1,'GameUI']]],
   ['disabledmap_2208',['disabledMap',['../classShip_1_1Menu.html#a7c39da4612e1b8305359949bed202dfb',1,'Ship::Menu']]],
