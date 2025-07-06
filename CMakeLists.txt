@@ -739,5 +739,5 @@ endif()
 
 if(NOT CMAKE_SYSTEM_NAME STREQUAL "Android")
     set(CPACK_PROJECT_CONFIG_FILE ${CMAKE_SOURCE_DIR}/CMake/Packaging-2.cmake)
-    include(CMake/packaging.cmake)
+    include(cmake/packaging.cmake)
 endif()
