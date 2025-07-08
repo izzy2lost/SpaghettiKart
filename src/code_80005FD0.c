@@ -4,6 +4,7 @@
 #include <stubs.h>
 #include "course_metadata.h"
 #include <align_asset_macro.h>
+#include <string.h>
 
 #include "code_80005FD0.h"
 #include "math_util.h"
@@ -3451,7 +3452,7 @@ void func_8000F124(void) {
 
 // Delete track waypoints
 void clear_path_point(TrackPathPoint* arg0, size_t size) {
-    bzero((void*) arg0, size * sizeof(TrackPathPoint));
+    memset(arg0, 0, size * sizeof(TrackPathPoint));
 }
 
 // Appears to allocate memory for each course.
