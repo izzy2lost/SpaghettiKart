@@ -1,15 +1,15 @@
 <map id="setup_game_memory" name="setup_game_memory">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,96,169,121"/>
-<area shape="rect" id="Node000002" href="$main_8c.html#a6fb28ef534379345bfd1413abc2c63c9" title=" " alt="" coords="243,46,366,72"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,93,234,72,235,77,145,98"/>
-<area shape="rect" id="Node000003" href="$main_8c.html#a0251c90fb83072f3510a39e2f1b3e980" title=" " alt="" coords="227,145,382,170"/>
-<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="145,118,235,139,234,144,143,124"/>
-<area shape="rect" id="Node000018" href="$memory_8c.html#a608e942142c4d0fae59c75c891f0bc1c" title="Sets the starting location for allocating memory and calculates pool size." alt="" coords="217,96,392,121"/>
-<area shape="poly" id="edge31_Node000001_Node000018" title=" " alt="" coords="170,106,203,106,203,111,170,111"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,121,169,146"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a6fb28ef534379345bfd1413abc2c63c9" title=" " alt="" coords="243,72,366,97"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,118,234,97,235,103,145,123"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a0251c90fb83072f3510a39e2f1b3e980" title=" " alt="" coords="227,121,382,146"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,131,213,131,213,136,170,136"/>
+<area shape="rect" id="Node000018" href="$memory_8c.html#a608e942142c4d0fae59c75c891f0bc1c" title="Sets the starting location for allocating memory and calculates pool size." alt="" coords="217,170,392,196"/>
+<area shape="poly" id="edge31_Node000001_Node000018" title=" " alt="" coords="145,144,235,165,234,170,143,149"/>
 <area shape="rect" id="Node000004" href="$bstring_8h.html#ab828ad07c8ebf898973f27778c543651" title=" " alt="" coords="455,96,514,121"/>
-<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="351,142,441,117,443,122,352,147"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="382,120,441,112,442,117,383,125"/>
 <area shape="rect" id="Node000005" href="$main_8c.html#ae65702968508faa083fb901ff89020d8" title=" " alt="" coords="440,145,529,170"/>
-<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="382,155,426,155,426,160,382,160"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="383,141,427,147,426,153,382,147"/>
 <area shape="rect" id="Node000006" href="$osPiStartDma_8c.html#ae288a36d96a4db6977d95327e246ec12" title=" " alt="" coords="577,170,688,196"/>
 <area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="530,163,564,168,563,174,529,168"/>
 <area shape="rect" id="Node000017" href="$osRecvMesg_8c.html#aa254dc33e373f235a99e17f7717493dc" title=" " alt="" coords="756,96,860,121"/>
@@ -48,5 +48,4 @@
 <area shape="poly" id="edge28_Node000017_Node000010" title=" " alt="" coords="860,93,945,81,994,80,1042,84,1088,96,1130,111,1128,116,1086,101,1041,90,994,85,946,87,861,99"/>
 <area shape="poly" id="edge29_Node000017_Node000011" title=" " alt="" coords="862,119,882,132,900,157,907,182,913,206,930,230,962,251,1011,273,1118,313,1116,318,1009,278,959,256,926,234,908,208,902,183,895,159,878,136,859,123"/>
 <area shape="poly" id="edge30_Node000017_Node000012" title=" " alt="" coords="852,119,881,131,923,157,959,183,956,188,920,161,879,136,850,123"/>
-<area shape="poly" id="edge32_Node000018_Node000004" title=" " alt="" coords="392,106,442,106,442,111,392,111"/>
 </map>
