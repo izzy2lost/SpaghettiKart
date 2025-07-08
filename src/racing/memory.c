@@ -172,8 +172,8 @@ void initialize_memory_pool() {
     uintptr_t poolStart = sMemoryPool;
     // uintptr_t sPoolEnd = sMemoryPool + sizeof(sMemoryPool);
 
-    bzero(sMemoryPool, sizeof(sMemoryPool));
-
+    memset(sMemoryPool, 0, sizeof(sMemoryPool));
+    
     poolStart = ALIGN16(poolStart);
     // Truncate to a 16-byte boundary.
     sPoolEnd &= ~0xF;
