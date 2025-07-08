@@ -4,6 +4,8 @@ cmake_minimum_required(VERSION 3.16.0 FATAL_ERROR)
 project(Spaghettify VERSION 0.1.0 LANGUAGES C CXX ASM)
 include(FetchContent)
 
+option(USE_NETWORKING "Enable networking features (SDL2_net)" OFF)
+
 set(NATO_PHONETIC_ALPHABET
   "Alfa" "Bravo" "Charlie" "Delta" "Echo" "Foxtrot" "Golf" "Hotel"
   "India" "Juliett" "Kilo" "Lima" "Mike" "November" "Oscar" "Papa"
