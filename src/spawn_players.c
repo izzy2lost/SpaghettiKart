@@ -570,7 +570,6 @@ void spawn_players_gp_one_player(f32* arg0, f32* arg1, f32 arg2) {
         D_80164A28 = 1;
     }
     func_80039AE4();
-}
 
 void spawn_players_versus_one_player(f32* arg0, f32* arg1, f32 arg2) {
     spawn_player(gPlayerFour, 3, arg0[2], arg1[2], arg2, 32768.0f, gCharacterSelections[0],
