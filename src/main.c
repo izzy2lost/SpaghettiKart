@@ -10,6 +10,7 @@
 #include <stubs.h>
 #include "racing/framebuffer_effects.h"
 #include <string.h>
+#include <SDL2/SDL.h>
 
 // #include "networking/networking.h"
 
