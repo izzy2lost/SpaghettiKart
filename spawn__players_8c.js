@@ -3,7 +3,7 @@ var spawn__players_8c =
     [ "calc", "spawn__players_8c.html#a82115163df0b103e6e9ab8266334b9b3", null ],
     [ "calc_a", "spawn__players_8c.html#a2570dc81a51135eddff01c799994f684", null ],
     [ "calc_b", "spawn__players_8c.html#afca0f7e6a7fc5d3e6f51a6426cfb755a", null ],
-    [ "func_80039AE4", "spawn__players_8c.html#aaf045f37f3075bb689c5b6605e96d247", null ],
+    [ "func_80039AE4", "spawn__players_8c.html#a1ef01690d08edebb46104bed8651c847", null ],
     [ "func_80039DA4", "spawn__players_8c.html#aaf1f89a8f58a74d28fb1481e50c2f790", null ],
     [ "func_8003B318", "spawn__players_8c.html#aad65f7f49de2e2ccf1801dd5e4a0a6ea", null ],
     [ "func_8003B870", "spawn__players_8c.html#a3ea50428784e3649615581f5b821cbe0", null ],
