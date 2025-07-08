@@ -844,9 +844,9 @@ void race_logic_loop(void) {
     }
 
     // Wait for all racers to load
-    if (gNetwork.enabled) {
-        network_all_players_loaded();
-    }
+    // if (gNetwork.enabled) {
+        // network_all_players_loaded();
+    // }
 
     if (gIsGamePaused == false) {
         for (size_t i = 0; i < gTickLogic; i++) {
