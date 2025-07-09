@@ -221,65 +221,9 @@ Animation d_course_koopa_troopa_beach_unk_data4 = {
 };
 
 //! 0x60169b
-uintptr_t d_course_koopa_troopa_beach_unk4[] = {
-    ANIMATION_DISABLE_AUTOMATIC_POP,
+#define KOOPA_TROOPA_BEACH_UNK4_LEN 57
+uintptr_t d_course_koopa_troopa_beach_unk4[KOOPA_TROOPA_BEACH_UNK4_LEN] = {0};
 
-    ANIMATION_ADD_POS(0x00000000, 0x00000000, 0x00000000),
-
-    ANIMATION_DISABLE_AUTOMATIC_POP,
-
-    ANIMATION_RENDER_MODEL(d_course_koopa_troopa_beach_dl_16630),
-
-    ANIMATION_DISABLE_AUTOMATIC_POP,
-
-    ANIMATION_ADD_POS(0x00000000, -0x00000005, 0x00000005),
-
-    ANIMATION_DISABLE_AUTOMATIC_POP,
-
-    ANIMATION_RENDER_MODEL(d_course_koopa_troopa_beach_dl_16850),
-
-    ANIMATION_DISABLE_AUTOMATIC_POP,
-
-    ANIMATION_RENDER_MODEL_AT(d_course_koopa_troopa_beach_dl_168F0, 0x00000024, 0x00000000, 0x00000000),
-
-    ANIMATION_DISABLE_AUTOMATIC_POP,
-
-    ANIMATION_RENDER_MODEL_AT(d_course_koopa_troopa_beach_dl_16990, 0x00000019, 0x00000000, 0x00000000),
-
-    ANIMATION_POP_MATRIX,
-
-    ANIMATION_POP_MATRIX,
-
-    ANIMATION_POP_MATRIX,
-
-    ANIMATION_ADD_POS(0x00000000, -0x00000005, -0x00000005),
-
-    ANIMATION_DISABLE_AUTOMATIC_POP,
-
-    ANIMATION_RENDER_MODEL(d_course_koopa_troopa_beach_dl_16850),
-
-    ANIMATION_DISABLE_AUTOMATIC_POP,
-
-    ANIMATION_RENDER_MODEL_AT(d_course_koopa_troopa_beach_dl_168F0, 0x00000024, 0x00000000, 0x00000000),
-
-    ANIMATION_DISABLE_AUTOMATIC_POP,
-
-    ANIMATION_RENDER_MODEL_AT(d_course_koopa_troopa_beach_dl_16990, 0x00000019, 0x00000000, 0x00000000),
-
-    ANIMATION_POP_MATRIX,
-
-    ANIMATION_POP_MATRIX,
-
-    ANIMATION_POP_MATRIX,
-
-    ANIMATION_POP_MATRIX,
-
-    ANIMATION_POP_MATRIX,
-
-    ANIMATION_POP_MATRIX,
-
-    ANIMATION_STOP,
-};
 
 // 0x06016B60
 Animation* d_course_koopa_troopa_beach_unk_data5[] = {
@@ -290,3 +234,34 @@ Animation* d_course_koopa_troopa_beach_unk_data5[] = {
 uintptr_t d_course_koopa_troopa_beach_unk_data6[] = {
     0x00000000, 0x00000000, 0x00000001, 0x00000000, 0x00000001,
 };
+void init_koopa_troopa_beach_unk4(void) {
+    d_course_koopa_troopa_beach_unk4[0]  = ANIMATION_DISABLE_AUTOMATIC_POP;
+    d_course_koopa_troopa_beach_unk4[1]  = ANIMATION_ADD_POS(0x00000000, 0x00000000, 0x00000000);
+    d_course_koopa_troopa_beach_unk4[2]  = ANIMATION_DISABLE_AUTOMATIC_POP;
+    d_course_koopa_troopa_beach_unk4[3]  = ANIMATION_RENDER_MODEL(d_course_koopa_troopa_beach_dl_16630);
+    d_course_koopa_troopa_beach_unk4[4]  = ANIMATION_DISABLE_AUTOMATIC_POP;
+    d_course_koopa_troopa_beach_unk4[5]  = ANIMATION_ADD_POS(0x00000000, -0x00000005, 0x00000005);
+    d_course_koopa_troopa_beach_unk4[6]  = ANIMATION_DISABLE_AUTOMATIC_POP;
+    d_course_koopa_troopa_beach_unk4[7]  = ANIMATION_RENDER_MODEL(d_course_koopa_troopa_beach_dl_16850);
+    d_course_koopa_troopa_beach_unk4[8]  = ANIMATION_DISABLE_AUTOMATIC_POP;
+    d_course_koopa_troopa_beach_unk4[9]  = ANIMATION_RENDER_MODEL_AT(d_course_koopa_troopa_beach_dl_168F0, 0x00000024, 0x00000000, 0x00000000);
+    d_course_koopa_troopa_beach_unk4[10] = ANIMATION_DISABLE_AUTOMATIC_POP;
+    d_course_koopa_troopa_beach_unk4[11] = ANIMATION_RENDER_MODEL_AT(d_course_koopa_troopa_beach_dl_16990, 0x00000019, 0x00000000, 0x00000000);
+    d_course_koopa_troopa_beach_unk4[12] = ANIMATION_POP_MATRIX;
+    d_course_koopa_troopa_beach_unk4[13] = ANIMATION_POP_MATRIX;
+    d_course_koopa_troopa_beach_unk4[14] = ANIMATION_POP_MATRIX;
+    d_course_koopa_troopa_beach_unk4[15] = ANIMATION_ADD_POS(0x00000000, -0x00000005, -0x00000005);
+    d_course_koopa_troopa_beach_unk4[16] = ANIMATION_DISABLE_AUTOMATIC_POP;
+    d_course_koopa_troopa_beach_unk4[17] = ANIMATION_RENDER_MODEL(d_course_koopa_troopa_beach_dl_16850);
+    d_course_koopa_troopa_beach_unk4[18] = ANIMATION_DISABLE_AUTOMATIC_POP;
+    d_course_koopa_troopa_beach_unk4[19] = ANIMATION_RENDER_MODEL_AT(d_course_koopa_troopa_beach_dl_168F0, 0x00000024, 0x00000000, 0x00000000);
+    d_course_koopa_troopa_beach_unk4[20] = ANIMATION_DISABLE_AUTOMATIC_POP;
+    d_course_koopa_troopa_beach_unk4[21] = ANIMATION_RENDER_MODEL_AT(d_course_koopa_troopa_beach_dl_16990, 0x00000019, 0x00000000, 0x00000000);
+    d_course_koopa_troopa_beach_unk4[22] = ANIMATION_POP_MATRIX;
+    d_course_koopa_troopa_beach_unk4[23] = ANIMATION_POP_MATRIX;
+    d_course_koopa_troopa_beach_unk4[24] = ANIMATION_POP_MATRIX;
+    d_course_koopa_troopa_beach_unk4[25] = ANIMATION_POP_MATRIX;
+    d_course_koopa_troopa_beach_unk4[26] = ANIMATION_POP_MATRIX;
+    d_course_koopa_troopa_beach_unk4[27] = ANIMATION_POP_MATRIX;
+    d_course_koopa_troopa_beach_unk4[28] = ANIMATION_STOP;
+}
