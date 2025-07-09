@@ -122,8 +122,14 @@ public class MainActivity extends SDLActivity{
         }
         fileOrDirectory.delete();
     }
-
-
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (hasAllFilesPermission()) {
+            doVersionCheck();
+            checkAndSetupFiles();
+        }
+    }
 
     // Check if storage permission is granted
     private boolean hasStoragePermission() {
@@ -187,6 +193,13 @@ public class MainActivity extends SDLActivity{
         }
     }
 
+    private boolean hasAllFilesPermission() {
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+        return Environment.isExternalStorageManager();
+    } else {
+        return hasStoragePermission();
+    }
+    }
 
     private void setupFilesInBackground(File targetRootFolder) {
 
