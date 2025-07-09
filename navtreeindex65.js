@@ -1,5 +1,8 @@
 var NAVTREEINDEX65 =
 {
+"starship__model_8c.html#a6a7c4f9b514c37a09c602c5ed02d2f06":[12,0,0,8,10,18],
+"starship__model_8c.html#a75b27a3224f98ebc43c9dd3768e6108f":[12,0,0,8,10,7],
+"starship__model_8c.html#a7633d172a74b98bd7f03bbdc19f1bfec":[12,0,0,8,10,15],
 "starship__model_8c.html#a7b14d83f95fd102e32e31b764e4410f2":[12,0,0,8,10,30],
 "starship__model_8c.html#a7b1c7e02b599bb79515e8bb8c76c5162":[12,0,0,8,10,1],
 "starship__model_8c.html#a7f8217879a8a7f4c64a9272ab2db975e":[12,0,0,8,10,34],
@@ -246,8 +249,5 @@ var NAVTREEINDEX65 =
 "structAnimationCycleSpec.html#a908f9e109d7fd0cda2501dee8a40815e":[11,0,57,0],
 "structAnimationCycleSpec.html#aafe200883957788393b92b5e614b341e":[11,0,57,1],
 "structArmature.html":[11,0,58],
-"structArmature.html#a1f7bbd5d2d6eb7d572b3c0f2fe2dc5c1":[11,0,58,0],
-"structArmature.html#a52d17f5254f03133e2da1be5505823f5":[11,0,58,2],
-"structArmature.html#a5b6ea597aa6fdf68191c9d977f88e960":[11,0,58,4],
-"structArmature.html#ab91d968c3d3991ccd6d77488c89dec1f":[11,0,58,1]
+"structArmature.html#a1f7bbd5d2d6eb7d572b3c0f2fe2dc5c1":[11,0,58,0]
 };

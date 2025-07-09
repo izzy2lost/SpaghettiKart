@@ -33,8 +33,9 @@ var searchData=
   ['koopa_5ftroopa_5fbeach_5fdls_30',['koopa_troopa_beach_dls',['../KoopaTroopaBeach_8cpp.html#a9f075766aa777eed598e36c987005631',1,'KoopaTroopaBeach.cpp']]],
   ['koopa_5ftroopa_5fbeach_5fdls2_31',['koopa_troopa_beach_dls2',['../course__offsets_8h.html#a69ce56dedc90a6e392b23a2e0f6c95d8',1,'koopa_troopa_beach_dls2:&#160;course_offsets.c'],['../koopa__troopa__beach_2course__offsets_8c.html#a69ce56dedc90a6e392b23a2e0f6c95d8',1,'koopa_troopa_beach_dls2:&#160;course_offsets.c']]],
   ['koopa_5ftroopa_5fbeach_5ftextures_32',['koopa_troopa_beach_textures',['../KoopaTroopaBeach_8cpp.html#ae74e61e0ad680ea0e147c088b13f81f1',1,'koopa_troopa_beach_textures:&#160;KoopaTroopaBeach.cpp'],['../KoopaTroopaBeach_8h.html#ae74e61e0ad680ea0e147c088b13f81f1',1,'koopa_troopa_beach_textures:&#160;KoopaTroopaBeach.cpp']]],
-  ['koopa_5ftroopa_5fbeach_5fvertices_2eh_33',['koopa_troopa_beach_vertices.h',['../koopa__troopa__beach__vertices_8h.html',1,'']]],
-  ['koopatroopabeach_34',['KoopaTroopaBeach',['../classKoopaTroopaBeach.html',1,'KoopaTroopaBeach'],['../classKoopaTroopaBeach.html#ab1ad6ef63092681a163dca75dcd02f76',1,'KoopaTroopaBeach::KoopaTroopaBeach()']]],
-  ['koopatroopabeach_2ecpp_35',['KoopaTroopaBeach.cpp',['../KoopaTroopaBeach_8cpp.html',1,'']]],
-  ['koopatroopabeach_2eh_36',['KoopaTroopaBeach.h',['../KoopaTroopaBeach_8h.html',1,'']]]
+  ['koopa_5ftroopa_5fbeach_5funk4_5flen_33',['KOOPA_TROOPA_BEACH_UNK4_LEN',['../koopa__troopa__beach_2course__offsets_8c.html#ab3b515b6c179e38dc4bddf052ecce570',1,'course_offsets.c']]],
+  ['koopa_5ftroopa_5fbeach_5fvertices_2eh_34',['koopa_troopa_beach_vertices.h',['../koopa__troopa__beach__vertices_8h.html',1,'']]],
+  ['koopatroopabeach_35',['KoopaTroopaBeach',['../classKoopaTroopaBeach.html',1,'KoopaTroopaBeach'],['../classKoopaTroopaBeach.html#ab1ad6ef63092681a163dca75dcd02f76',1,'KoopaTroopaBeach::KoopaTroopaBeach()']]],
+  ['koopatroopabeach_2ecpp_36',['KoopaTroopaBeach.cpp',['../KoopaTroopaBeach_8cpp.html',1,'']]],
+  ['koopatroopabeach_2eh_37',['KoopaTroopaBeach.h',['../KoopaTroopaBeach_8h.html',1,'']]]
 ];

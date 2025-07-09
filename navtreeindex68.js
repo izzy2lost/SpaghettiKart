@@ -1,5 +1,8 @@
 var NAVTREEINDEX68 =
 {
+"structInstrument.html#abbc84184dcd31c9fc2108450d2cff01a":[11,0,136,2],
+"structInstrument.html#acdf437ceaafd4a528095d820bb9847ff":[11,0,136,7],
+"structInstrument.html#ad92fb995400ec3f3da877196113037eb":[11,0,136,10],
 "structInstrument.html#ad9b0c8f41eb2d53ea4efcdca85dae2d5":[11,0,136,8],
 "structInstrument.html#af90be3388e46df104be4d3a2f193c9b7":[11,0,136,3],
 "structItemBox.html":[11,0,140],
@@ -246,8 +249,5 @@ var NAVTREEINDEX68 =
 "structNotePlaybackState.html#a99113f76344dff4efccf6290485ba914":[11,0,169,7],
 "structNotePlaybackState.html#aa53bad77bd6c23f7e41288f14b9739d0":[11,0,169,8],
 "structNotePlaybackState.html#aed3a0a2b7802c3dbf53f9515104ddfe9":[11,0,169,10],
-"structNotePlaybackState.html#af5453206d2ea339bc8aa5804ed50b7a1":[11,0,169,0],
-"structNotePlaybackState.html#afdd48f62f9137b20e5e86221d4994f85":[11,0,169,2],
-"structNotePool.html":[11,0,170],
-"structNotePool.html#a7057a6481ff7c9f5891bd08136c8da22":[11,0,170,3]
+"structNotePlaybackState.html#af5453206d2ea339bc8aa5804ed50b7a1":[11,0,169,0]
 };

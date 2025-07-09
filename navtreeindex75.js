@@ -1,5 +1,8 @@
 var NAVTREEINDEX75 =
 {
+"struct____OSDir.html#a7e225c884a066c0609243355f42c5f70":[11,0,13,3],
+"struct____OSDir.html#af0417044f6d23d2df1739843a4efe722":[11,0,13,5],
+"struct____OSInode.html":[11,0,15],
 "struct____OSInode.html#ab913e55c3af6099c919ece81349eb21f":[11,0,15,0],
 "struct____OSInodeCache.html":[11,0,16],
 "struct____OSInodeCache.html#a245ec66065f70ab11d6983e113ff345d":[11,0,16,0],
@@ -246,8 +249,5 @@ var NAVTREEINDEX75 =
 "structstruct__80282C40.html#a58e84c4fdb338db1cc9e50117970fd90":[11,0,265,0],
 "structstruct__80282C40.html#a768e31f3532cbb14806b64bc05c74acd":[11,0,265,6],
 "structstruct__80282C40.html#a777636ae37b7b1166b5637367ca43e09":[11,0,265,2],
-"structstruct__80282C40.html#a7a8d9d55482be617a49624f9f96c1f94":[11,0,265,5],
-"structstruct__80282C40.html#a980f5993d906481b10f804228917d313":[11,0,265,3],
-"structstruct__80282C40.html#ac10458c9ad8ef631018c2fac0cf9ce58":[11,0,265,4],
-"structstruct__80283430.html":[11,0,266]
+"structstruct__80282C40.html#a7a8d9d55482be617a49624f9f96c1f94":[11,0,265,5]
 };

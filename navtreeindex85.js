@@ -1,5 +1,8 @@
 var NAVTREEINDEX85 =
 {
+"update__objects_8c.html#a27faa4eb96ab70626a1c06e2189417fb":[12,0,3,68,148],
+"update__objects_8c.html#a281b6219991026ad20df7d33ae149504":[12,0,3,68,156],
+"update__objects_8c.html#a2a11f519aaca0205f9674856a1443f1e":[12,0,3,68,105],
 "update__objects_8c.html#a2bf55cab1ddd28bbf2ff323d496c288e":[12,0,3,68,216],
 "update__objects_8c.html#a2c0e14b26c2ae4a663564f8f64c4d17a":[12,0,3,68,121],
 "update__objects_8c.html#a2c63a7bcd8c743463f6dea6e040d0fd9":[12,0,3,68,100],
@@ -246,8 +249,5 @@ var NAVTREEINDEX85 =
 "vehicles_8h.html#afe7daed3aedb2464b847f38cca6b64a9":[12,0,2,23,13],
 "vehicles_8h_source.html":[12,0,2,23],
 "vtx_8c.html":[12,0,0,17,2],
-"vtx_8c.html#ae5e1f3fb4999f2b3ee7adc8893b3cef1":[12,0,0,17,2,0],
-"wario__kart_8h.html":[12,0,2,0,73],
-"wario__kart_8h.html#a0aba8c75d1ca16c9a80c5380575c3105":[12,0,2,0,73,1],
-"wario__kart_8h.html#a665ba10e591b4978464de4852d164f8f":[12,0,2,0,73,0]
+"vtx_8c.html#ae5e1f3fb4999f2b3ee7adc8893b3cef1":[12,0,0,17,2,0]
 };

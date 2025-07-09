@@ -1,5 +1,8 @@
 var NAVTREEINDEX64 =
 {
+"spawn__players_8c.html#ad7cb329529acad24029cf01ec2213126":[12,0,3,62,7],
+"spawn__players_8c.html#adbc083afc3f5e28b7569fc90c29ff31b":[12,0,3,62,27],
+"spawn__players_8c.html#adcd186495be392ea2167664ce030da14":[12,0,3,62,39],
 "spawn__players_8c.html#adf0e13c58b74725f56ee3c085c63b87b":[12,0,3,62,35],
 "spawn__players_8c.html#ae6351079970983299d34131a8c18408d":[12,0,3,62,49],
 "spawn__players_8c.html#ae8f4893fa24976d0a38f417cdd38074d":[12,0,3,62,47],
@@ -246,8 +249,5 @@ var NAVTREEINDEX64 =
 "starship__model_8c.html#a50ceb2b037725faf46bdb00ab7211b51":[12,0,0,8,10,38],
 "starship__model_8c.html#a584777225d4e215d5609fc60512352fd":[12,0,0,8,10,6],
 "starship__model_8c.html#a67cb391ff911c4d6e78595e1f51d4b0d":[12,0,0,8,10,31],
-"starship__model_8c.html#a6995972a9b8c39ac2cbfee728773eaec":[12,0,0,8,10,25],
-"starship__model_8c.html#a6a7c4f9b514c37a09c602c5ed02d2f06":[12,0,0,8,10,18],
-"starship__model_8c.html#a75b27a3224f98ebc43c9dd3768e6108f":[12,0,0,8,10,7],
-"starship__model_8c.html#a7633d172a74b98bd7f03bbdc19f1bfec":[12,0,0,8,10,15]
+"starship__model_8c.html#a6995972a9b8c39ac2cbfee728773eaec":[12,0,0,8,10,25]
 };

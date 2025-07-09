@@ -1,5 +1,8 @@
 var NAVTREEINDEX86 =
 {
+"wario__kart_8h.html":[12,0,2,0,73],
+"wario__kart_8h.html#a0aba8c75d1ca16c9a80c5380575c3105":[12,0,2,0,73,1],
+"wario__kart_8h.html#a665ba10e591b4978464de4852d164f8f":[12,0,2,0,73,0],
 "wario__kart_8h_source.html":[12,0,2,0,73],
 "wario__sign_2render_8inc_8c.html":[12,0,3,0,19,0],
 "wario__sign_2render_8inc_8c.html#a4a287788fd70e41c5d3856d70c24ec0b":[12,0,3,0,19,0,0],
