@@ -2,7 +2,6 @@
 package com.izzy.kart;
 import org.libsdl.app.SDLActivity;
 
-import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -16,7 +15,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.FileOutputStream;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.Executors;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -35,7 +33,10 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 
-//This class is the main SDLActivity and just sets up a bunch of default files and the input overlay
+import java.util.concurrent.Executors;
+import android.app.AlertDialog;
+
+//This class is the main SDLActivity and just sets up a bunch of default files
 public class MainActivity extends SDLActivity{
 
     SharedPreferences preferences;
@@ -44,7 +45,7 @@ public class MainActivity extends SDLActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        preferences = getSharedPreferences("com.izzy.kart.prefs",Context.MODE_PRIVATE);
+        preferences = getSharedPreferences("com.izzy.prefs",Context.MODE_PRIVATE);
 
         // Check if storage permissions are granted
         if (hasStoragePermission()) {
@@ -79,10 +80,10 @@ public class MainActivity extends SDLActivity{
     }
 
     private void deleteOutdatedAssets() {
-        File targetRootFolder = new File(Environment.getExternalStorageDirectory(), "SpaghettiKart");
+        File targetRootFolder = new File(Environment.getExternalStorageDirectory(), "Spaghetti-Kart");
 
-        File skFile = new File(targetRootFolder, "spaghetti.o2r");
-        File mkFile = new File(targetRootFolder, "SK.o2r");
+        File skFile = new File(targetRootFolder, "spaghetti.otr");
+        File mkFile = new File(targetRootFolder, "mk64.otr");
         File assetsFolder = new File(targetRootFolder, "assets");
 
         deleteIfExists(skFile);
@@ -122,21 +123,21 @@ public class MainActivity extends SDLActivity{
         }
         fileOrDirectory.delete();
     }
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (hasAllFilesPermission()) {
-            doVersionCheck();
-            checkAndSetupFiles();
-        }
-    }
+
+
 
     // Check if storage permission is granted
     private boolean hasStoragePermission() {
-        return ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
-                == PackageManager.PERMISSION_GRANTED &&
-                ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                        == PackageManager.PERMISSION_GRANTED;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            // Android 11 and above
+            return Environment.isExternalStorageManager();
+        } else {
+            // Android 10 and below
+            return ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                    == PackageManager.PERMISSION_GRANTED &&
+                    ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                            == PackageManager.PERMISSION_GRANTED;
+        }
     }
 
     private static final int STORAGE_PERMISSION_REQUEST_CODE = 2296;
@@ -168,17 +169,17 @@ public class MainActivity extends SDLActivity{
     }
 
     public void checkAndSetupFiles() {
-        File targetRootFolder = new File(Environment.getExternalStorageDirectory(), "SpaghettiKart");
+        File targetRootFolder = new File(Environment.getExternalStorageDirectory(), "Spaghetti-Kart");
         File assetsFolder = new File(targetRootFolder, "assets");
-        File skOtrFile = new File(targetRootFolder, "spaghetti.o2r");
+        File skOtrFile = new File(targetRootFolder, "spaghetti.otr");
 
         boolean isMissingAssets = !assetsFolder.exists() || assetsFolder.listFiles() == null || assetsFolder.listFiles().length == 0;
-        boolean isMissingskOtr = !skOtrFile.exists();
+        boolean isMissingSohOtr = !skOtrFile.exists();
 
-        if (!targetRootFolder.exists() || isMissingAssets || isMissingskOtr) {
+        if (!targetRootFolder.exists() || isMissingAssets || isMissingSohOtr) {
             new AlertDialog.Builder(this)
                     .setTitle("Setup Required")
-                    .setMessage("Some required files are missing. The app will create them (~30s). Press OK to begin.")
+                    .setMessage("Some required files are missing. The app will create them (~1 minute). Press OK to begin.")
                     .setCancelable(false)
                     .setPositiveButton("OK", (dialog, which) -> {
                         Executors.newSingleThreadExecutor().execute(() -> {
@@ -193,18 +194,11 @@ public class MainActivity extends SDLActivity{
         }
     }
 
-    private boolean hasAllFilesPermission() {
-    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-        return Environment.isExternalStorageManager();
-    } else {
-        return hasStoragePermission();
-    }
-    }
 
     private void setupFilesInBackground(File targetRootFolder) {
 
         File sourceOldRoot = getExternalFilesDir(null);
-        File sourceSavesDir = new File(sourceOldRoot, "saves"); // how to tell if there's anything to migrate
+        File sourceSavesDir = new File(sourceOldRoot, "Save"); // how to tell if there's anything to migrate
 
         // === Migration from old Android/data/.../files/ directory ===
         if (sourceOldRoot != null && sourceSavesDir.isDirectory()) {
@@ -214,7 +208,7 @@ public class MainActivity extends SDLActivity{
             if (sourceFiles != null) {
                 for (File file : sourceFiles) {
                     String name = file.getName();
-                    if (name.equals("assets") || name.equals("spaghetti.o2r") || name.equals("SK.o2r")) {
+                    if (name.equals("assets") || name.equals("spaghetti.otr") || name.equals("mk64.otr")) {
                         continue; // Skip these
                     }
 
@@ -264,9 +258,9 @@ public class MainActivity extends SDLActivity{
             runOnUiThread(() -> Toast.makeText(this, "Error copying assets", Toast.LENGTH_LONG).show());
         }
 
-        // Copy spaghetti.o2r from internal assets
-        File targetOtrFile = new File(targetRootFolder, "spaghetti.o2r");
-        try (InputStream in = getAssets().open("spaghetti.o2r");
+        // Copy spaghetti.otr from internal assets
+        File targetOtrFile = new File(targetRootFolder, "spaghetti.otr");
+        try (InputStream in = getAssets().open("spaghetti.otr");
              OutputStream out = new FileOutputStream(targetOtrFile)) {
 
             byte[] buffer = new byte[1024];
@@ -275,11 +269,11 @@ public class MainActivity extends SDLActivity{
                 out.write(buffer, 0, read);
             }
 
-            runOnUiThread(() -> Toast.makeText(this, "spaghetti.o2r copied", Toast.LENGTH_SHORT).show());
+            runOnUiThread(() -> Toast.makeText(this, "spaghetti.otr copied", Toast.LENGTH_SHORT).show());
 
         } catch (IOException e) {
             e.printStackTrace();
-            runOnUiThread(() -> Toast.makeText(this, "Error copying spaghetti.o2r", Toast.LENGTH_LONG).show());
+            runOnUiThread(() -> Toast.makeText(this, "Error copying spaghetti.otr", Toast.LENGTH_LONG).show());
         }
 
         setupLatch.countDown();
@@ -297,9 +291,9 @@ public class MainActivity extends SDLActivity{
         if (requestCode == FILE_PICKER_REQUEST_CODE && resultCode == RESULT_OK && data != null) {
             // Handle file selection
             Uri selectedFileUri = data.getData();
-            String fileName = "SK.z64";
+            String fileName = "MK.z64";
 
-            File destinationDirectory = new File(Environment.getExternalStorageDirectory(), "SpaghettiKart");
+            File destinationDirectory = new File(Environment.getExternalStorageDirectory(), "Spaghetti-Kart");
             File destinationFile = new File(destinationDirectory, fileName);
 
             if (destinationDirectory != null && selectedFileUri != null) {
@@ -335,7 +329,6 @@ public class MainActivity extends SDLActivity{
         }
     }
 
-
     public void openFilePicker() {
         // Create an Intent to open the file picker dialog
         Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
@@ -350,7 +343,6 @@ public class MainActivity extends SDLActivity{
         String state = Environment.getExternalStorageState();
         return Environment.MEDIA_MOUNTED.equals(state);
     }
-
 
     public native void attachController();
     public native void detachController();
@@ -444,9 +436,9 @@ public class MainActivity extends SDLActivity{
     private void setupToggleButton(Button button, ViewGroup uiGroup){
         boolean isHidden = preferences.getBoolean("controlsVisible", false); // Default to 'false' (visible)
         uiGroup.setVisibility(isHidden ? View.INVISIBLE : View.VISIBLE); // Set the initial visibility based on the saved state
-        /*if(isHidden){
-            detachController();
-        }*/
+        //if(isHidden){
+        //    detachController();
+        //}
         button.setOnClickListener(new View.OnClickListener() {
             boolean isHidden = false;
             @Override
@@ -628,9 +620,7 @@ public class MainActivity extends SDLActivity{
         });
 
 
-
-}
-
+    }
 
 
 }
