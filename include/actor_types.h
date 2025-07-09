@@ -134,7 +134,10 @@ struct Actor {
     /* 0x24 */ Vec3f velocity;
     /* 0x30 */ Collision unk30;
                const char* model;
-}; // size = 0x70
+#if defined(__ANDROID__)
+    char _padding[4]; // <-- Ensures struct is 116 bytes on Android
+#endif
+}; // size = 0x70 (0x74 on Android)
 
 // Duplicate declare for simplicity when externing actors & packed files.
 extern struct Actor gActorList[100]; // D_8015F9B8
@@ -173,7 +176,10 @@ struct RailroadCrossing {
     /* 0x24 */ Vec3f velocity;
     /* 0x30 */ Collision unk30;
                const char* model;
-}; // size = 0x70
+#if defined(__ANDROID__)
+    char _padding[4]; // <-- Ensures struct is 116 bytes on Android
+#endif
+}; // size = 0x70 (0x74 on Android)
 
 // crossingTrigger might ruin struct size when compiled on 32 bit
 static_assert(sizeof(struct RailroadCrossing) == sizeof(struct Actor), "RailroadCrossing struct size does not match base struct size");
