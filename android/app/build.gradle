@@ -8,6 +8,7 @@ else {
 }
 
 android {
+    namespace("com.izzy.kart")
     buildFeatures {
         buildConfig true
     }
