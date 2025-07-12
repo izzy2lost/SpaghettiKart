@@ -16,7 +16,6 @@ android {
     defaultConfig {
         if (buildAsApplication) {
             applicationId "com.izzy.kart"
-            namespace("com.izzy.kart")
         }
         minSdkVersion 24
         targetSdkVersion 33
