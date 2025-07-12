@@ -11,7 +11,7 @@ static float cameraPitch;
 static bool isShowingVirtualKeyboard = true;
 static bool isUsingTouchscreenControls = true;
 
-void Ship::Mobile::ImGuiProcessEvent(bool wantsTextInput) {
+void Spaghetti::Mobile::ImGuiProcessEvent(bool wantsTextInput) {
     ImGuiInputTextState* state = ImGui::GetInputTextState(ImGui::GetActiveID());
 
     if (wantsTextInput) {
@@ -34,11 +34,11 @@ void Ship::Mobile::ImGuiProcessEvent(bool wantsTextInput) {
 #include <SDL_gamecontroller.h>
 #include <jni.h>
 
-bool Ship::Mobile::IsUsingTouchscreenControls(){
+bool Spaghetti::Mobile::IsUsingTouchscreenControls(){
     return isUsingTouchscreenControls;
 }
 
-void Ship::Mobile::EnableTouchArea(){
+void Spaghetti::Mobile::EnableTouchArea(){
     JNIEnv* env = (JNIEnv*)SDL_AndroidGetJNIEnv();
     jobject javaObject = (jobject)SDL_AndroidGetActivity();
     jclass javaClass = env->GetObjectClass(javaObject);
@@ -46,7 +46,7 @@ void Ship::Mobile::EnableTouchArea(){
     env->CallVoidMethod(javaObject, enabletoucharea);
 }
 
-void Ship::Mobile::DisableTouchArea(){
+void Spaghetti::Mobile::DisableTouchArea(){
     JNIEnv* env = (JNIEnv*)SDL_AndroidGetJNIEnv();
     jobject javaObject = (jobject)SDL_AndroidGetActivity();
     jclass javaClass = env->GetObjectClass(javaObject);
@@ -54,11 +54,11 @@ void Ship::Mobile::DisableTouchArea(){
     env->CallVoidMethod(javaObject, disabletoucharea);
 }
 
-float Ship::Mobile::GetCameraYaw(){
+float Spaghetti::Mobile::GetCameraYaw(){
     return cameraYaw;
 }
 
-float Ship::Mobile::GetCameraPitch(){
+float Spaghetti::Mobile::GetCameraPitch(){
     return cameraPitch;
 }
 
