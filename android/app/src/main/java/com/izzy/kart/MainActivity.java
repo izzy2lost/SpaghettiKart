@@ -113,12 +113,12 @@ public class MainActivity extends SDLActivity{
     public void checkAndSetupFiles() {
         File targetRootFolder = new File(Environment.getExternalStorageDirectory(), "Spaghetti-Kart");
         File assetsFolder = new File(targetRootFolder, "assets");
-        File skOtrFile = new File(targetRootFolder, "spaghetti.o2r");
+        File skO2rFile = new File(targetRootFolder, "spaghetti.o2r");
 
         boolean isMissingAssets = !assetsFolder.exists() || assetsFolder.listFiles() == null || assetsFolder.listFiles().length == 0;
-        boolean isMissingSohOtr = !skOtrFile.exists();
+        boolean isMissingSkO2r = !skO2rFile.exists();
 
-        if (!targetRootFolder.exists() || isMissingAssets || isMissingSohOtr) {
+        if (!targetRootFolder.exists() || isMissingAssets || isMissingSkO2r) {
             new AlertDialog.Builder(this)
                     .setTitle("Setup Required")
                     .setMessage("Some required files are missing. The app will create them (~1 minute). Press OK to begin.")
@@ -200,10 +200,10 @@ public class MainActivity extends SDLActivity{
             runOnUiThread(() -> Toast.makeText(this, "Error copying assets", Toast.LENGTH_LONG).show());
         }
 
-        // Copy spaghetti.otr from internal assets
-        File targetOtrFile = new File(targetRootFolder, "spaghetti.o2r");
+        // Copy spaghetti.o2r from internal assets
+        File targetO2rFile = new File(targetRootFolder, "spaghetti.o2r");
         try (InputStream in = getAssets().open("spaghetti.o2r");
-             OutputStream out = new FileOutputStream(targetOtrFile)) {
+             OutputStream out = new FileOutputStream(targetO2rFile)) {
 
             byte[] buffer = new byte[1024];
             int read;
