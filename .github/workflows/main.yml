@@ -350,11 +350,6 @@ jobs:
         path: android/app/src/main/assets
     - name: Configure Gradle permissions
       run: chmod +x android/gradlew
-    - name: Copy yamls/config to assets
-      run: |
-        mkdir -p android/app/src/main/assets/yamls
-        cp -r yamls/* android/app/src/main/assets/yamls/
-        cp config.yml android/app/src/main/assets/
     - name: Build Spaghetti Kart
       run: |
         cd android/
