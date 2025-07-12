@@ -375,8 +375,9 @@ public class MainActivity extends SDLActivity{
         );
         overlayView.setLayoutParams(layoutParams);
         // Add overlay view to the main layout (you may need to add it to a container like FrameLayout)
-        ViewGroup view = (ViewGroup) getContentView();
-        view.addView(overlayView);
+        ViewGroup rootView = (ViewGroup) this.getWindow().getDecorView().findViewById(android.R.id.content); 
+        rootView.addView(overlayView);
+
 
         final ViewGroup buttonGroup = overlayView.findViewById(R.id.button_group);
 
