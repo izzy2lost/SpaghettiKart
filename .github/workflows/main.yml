@@ -347,7 +347,7 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: spaghetti.o2r
-        path: Android/app/src/main/assets
+        path: android/app/src/main/assets
     - name: Configure Gradle permissions
       run: chmod +x android/gradlew
     - name: Build Spaghetti Kart
