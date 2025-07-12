@@ -79,52 +79,6 @@ public class MainActivity extends SDLActivity{
         }
     }
 
-    private void deleteOutdatedAssets() {
-        File targetRootFolder = new File(Environment.getExternalStorageDirectory(), "Spaghetti-Kart");
-
-        File skFile = new File(targetRootFolder, "spaghetti.o2r");
-        File mkFile = new File(targetRootFolder, "mk64.o2r");
-        File assetsFolder = new File(targetRootFolder, "assets");
-
-        deleteIfExists(skFile);
-        deleteIfExists(mkFile);
-        deleteRecursiveIfExists(assetsFolder);
-    }
-
-    private void deleteIfExists(File file) {
-        if (file.exists()) {
-            if (file.delete()) {
-                Log.i("deleteAssets", "Deleted file: " + file.getAbsolutePath());
-            } else {
-                Log.w("deleteAssets", "Failed to delete file: " + file.getAbsolutePath());
-            }
-        } else {
-            Log.i("deleteAssets", "File not found (skipped): " + file.getAbsolutePath());
-        }
-    }
-
-    private void deleteRecursiveIfExists(File dir) {
-        if (dir.exists()) {
-            deleteRecursive(dir);
-            Log.i("deleteAssets", "Deleted directory: " + dir.getAbsolutePath());
-        } else {
-            Log.i("deleteAssets", "Directory not found (skipped): " + dir.getAbsolutePath());
-        }
-    }
-
-    private void deleteRecursive(File fileOrDirectory) {
-        if (fileOrDirectory.isDirectory()) {
-            File[] children = fileOrDirectory.listFiles();
-            if (children != null) {
-                for (File child : children) {
-                    deleteRecursive(child);
-                }
-            }
-        }
-        fileOrDirectory.delete();
-    }
-
-
 
     // Check if storage permission is granted
     private boolean hasStoragePermission() {
