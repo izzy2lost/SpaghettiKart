@@ -69,17 +69,6 @@ public class MainActivity extends SDLActivity{
         }
     }
 
-    private void doVersionCheck(){
-        int currentVersion = BuildConfig.VERSION_CODE;
-        int storedVersion = preferences.getInt("appVersion", 1);
-
-        if (currentVersion > storedVersion) {
-            deleteOutdatedAssets();
-            preferences.edit().putInt("appVersion", currentVersion).apply();
-        }
-    }
-
-
     // Check if storage permission is granted
     private boolean hasStoragePermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
