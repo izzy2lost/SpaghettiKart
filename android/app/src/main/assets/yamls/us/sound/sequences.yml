@@ -1,0 +1,239 @@
+seq_00:
+  type: NAUDIO:V0:SEQUENCE
+  id: 0
+  size: 0x2830
+  offset: 0xBC6060
+  banks:
+    - sound/banks/bank_0
+
+title_screen:
+  type: NAUDIO:V0:SEQUENCE
+  id: 1
+  size: 0x1B30
+  offset: 0xBC8890
+  banks:
+    - sound/banks/bank_1
+
+main_menu:
+  type: NAUDIO:V0:SEQUENCE
+  id: 2
+  size: 0x0D60
+  offset: 0xBCA3C0
+  banks:
+    - sound/banks/bank_2
+
+raceways_wario_stadium:
+  type: NAUDIO:V0:SEQUENCE
+  id: 3
+  size: 0x1A10
+  offset: 0xBCB120
+  banks:
+    - sound/banks/bank_3
+
+moo_moo_farm_yoshi_valley: 
+  type: NAUDIO:V0:SEQUENCE
+  id: 4
+  size: 0x1CA0
+  offset: 0xBCCB30
+  banks:
+    - sound/banks/bank_4
+
+choco_mountain:
+  type: NAUDIO:V0:SEQUENCE
+  id: 5
+  size: 0x1F70
+  offset: 0xBCE7D0
+  banks:
+    - sound/banks/bank_5
+
+koopa_troopa_beach:
+  type: NAUDIO:V0:SEQUENCE
+  id: 6
+  size: 0x1EE0
+  offset: 0xBD0740
+  banks:
+    - sound/banks/bank_6
+
+banshee_boardwalk:
+  type: NAUDIO:V0:SEQUENCE
+  id: 7
+  size: 0x16D0
+  offset: 0xBD2620
+  banks:
+    - sound/banks/bank_7
+
+frappe_snowland:
+  type: NAUDIO:V0:SEQUENCE
+  id: 8
+  size: 0x23D0
+  offset: 0xBD3CF0
+  banks:
+    - sound/banks/bank_8
+
+bowsers_castle:
+  type: NAUDIO:V0:SEQUENCE
+  id: 9
+  size: 0x1800
+  offset: 0xBD60C0
+  banks:
+    - sound/banks/bank_9
+
+kalimari_desert:
+  type: NAUDIO:V0:SEQUENCE
+  id: 10
+  size: 0x1AE0
+  offset: 0xBD78C0
+  banks:
+    - sound/banks/bank_10
+
+start_grid_gp_vs:
+  type: NAUDIO:V0:SEQUENCE
+  id: 11
+  size: 0x05F0
+  offset: 0xBD93A0
+  banks:
+    - sound/banks/bank_11
+
+final_lap_fanfare:
+  type: NAUDIO:V0:SEQUENCE
+  id: 12
+  size: 0x03D0
+  offset: 0xBD9990
+  banks:
+    - sound/banks/bank_11
+
+finish_1st_place:
+  type: NAUDIO:V0:SEQUENCE
+  id: 13
+  size: 0x0360
+  offset: 0xBD9D60
+  banks:
+    - sound/banks/bank_11
+
+finish_2nd_4th_place:
+  type: NAUDIO:V0:SEQUENCE
+  id: 14
+  size: 0x02E0
+  offset: 0xBDA0C0
+  banks:
+    - sound/banks/bank_11
+
+finish_5th_8th_place:
+  type: NAUDIO:V0:SEQUENCE
+  id: 15
+  size: 0x04C0
+  offset: 0xBDA3A0
+  banks:
+    - sound/banks/bank_11
+
+seq_16:
+  type: NAUDIO:V0:SEQUENCE
+  id: 16
+  size: 0x1410
+  offset: 0xBDA860
+  banks:
+    - sound/banks/bank_12
+
+star_jingle:
+  type: NAUDIO:V0:SEQUENCE
+  id: 17
+  size: 0x06E0
+  offset: 0xBDBC70
+  banks:
+    - sound/banks/bank_14
+
+rainbow_road:
+  type: NAUDIO:V0:SEQUENCE
+  id: 18
+  size: 0x32F0
+  offset: 0xBDC350
+  banks:
+    - sound/banks/bank_15
+
+dk_jungle:
+  type: NAUDIO:V0:SEQUENCE
+  id: 19
+  size: 0x06C0
+  offset: 0xBDF640
+  banks:
+    - sound/banks/bank_16
+
+game_over:
+  type: NAUDIO:V0:SEQUENCE
+  id: 20
+  size: 0x04B0
+  offset: 0xBDFD00
+  banks:
+    - sound/banks/bank_11
+
+toads_turnpike:
+  type: NAUDIO:V0:SEQUENCE
+  id: 21
+  size: 0x1160
+  offset: 0xBE01B0
+  banks:
+    - sound/banks/bank_17
+
+start_gird_time_attack:
+  type: NAUDIO:V0:SEQUENCE
+  id: 22
+  size: 0x0310
+  offset: 0xBE1310
+  banks:
+    - sound/banks/bank_11
+
+vs_battle_results:
+  type: NAUDIO:V0:SEQUENCE
+  id: 23
+  size: 0x12B0
+  offset: 0xBE1620
+  banks:
+    - sound/banks/bank_13
+
+losing_results:
+  type: NAUDIO:V0:SEQUENCE
+  id: 24
+  size: 0x0600
+  offset: 0xBE28D0
+  banks:
+    - sound/banks/bank_12
+
+battle_arenas:
+  type: NAUDIO:V0:SEQUENCE
+  id: 25
+  size: 0x16E0
+  offset: 0xBE2ED0
+  banks:
+    - sound/banks/bank_18
+
+award_ceremony_buildup:
+  type: NAUDIO:V0:SEQUENCE
+  id: 26
+  size: 0x0AD0
+  offset: 0xBE45B0
+  banks:
+    - sound/banks/bank_19
+
+award_ceremony_1st_3rd:
+  type: NAUDIO:V0:SEQUENCE
+  id: 27
+  size: 0x0C80
+  offset: 0xBE5080
+  banks:
+    - sound/banks/bank_19
+
+staff_roll:
+  type: NAUDIO:V0:SEQUENCE
+  id: 28
+  size: 0x2750
+  offset: 0xBE5D00
+  banks:
+    - sound/banks/bank_20
+
+award_ceremony_4th_8th:
+  type: NAUDIO:V0:SEQUENCE
+  id: 29
+  size: 0x0C80
+  offset: 0xBE8450
+  banks:
+    - sound/banks/bank_19
