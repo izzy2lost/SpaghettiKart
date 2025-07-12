@@ -34,11 +34,11 @@ void Spaghetti::Mobile::ImGuiProcessEvent(bool wantsTextInput) {
 #include <SDL_gamecontroller.h>
 #include <jni.h>
 
-bool Spaghetti::Mobile::IsUsingTouchscreenControls(){
+bool Ship::Mobile::IsUsingTouchscreenControls(){
     return isUsingTouchscreenControls;
 }
 
-void Spaghetti::Mobile::EnableTouchArea(){
+void Ship::Mobile::EnableTouchArea(){
     JNIEnv* env = (JNIEnv*)SDL_AndroidGetJNIEnv();
     jobject javaObject = (jobject)SDL_AndroidGetActivity();
     jclass javaClass = env->GetObjectClass(javaObject);
@@ -46,7 +46,7 @@ void Spaghetti::Mobile::EnableTouchArea(){
     env->CallVoidMethod(javaObject, enabletoucharea);
 }
 
-void Spaghetti::Mobile::DisableTouchArea(){
+void Ship::Mobile::DisableTouchArea(){
     JNIEnv* env = (JNIEnv*)SDL_AndroidGetJNIEnv();
     jobject javaObject = (jobject)SDL_AndroidGetActivity();
     jclass javaClass = env->GetObjectClass(javaObject);
@@ -54,11 +54,11 @@ void Spaghetti::Mobile::DisableTouchArea(){
     env->CallVoidMethod(javaObject, disabletoucharea);
 }
 
-float Spaghetti::Mobile::GetCameraYaw(){
+float Ship::Mobile::GetCameraYaw(){
     return cameraYaw;
 }
 
-float Spaghetti::Mobile::GetCameraPitch(){
+float Ship::Mobile::GetCameraPitch(){
     return cameraPitch;
 }
 
