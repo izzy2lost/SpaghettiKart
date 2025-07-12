@@ -63,50 +63,68 @@ GameEngine* GameEngine::Instance;
 
 GameEngine::GameEngine() {
 
-    const std::string main_path = Ship::Context::GetPathRelativeToAppDirectory("mk64.o2r");
-    const std::string assets_path = Ship::Context::LocateFileAcrossAppDirs("spaghetti.o2r");
+const std::string main_path = Ship::Context::GetPathRelativeToAppDirectory("mk64.o2r");
+const std::string assets_path = Ship::Context::LocateFileAcrossAppDirs("spaghetti.o2r");
 
-    std::vector<std::string> archiveFiles;
+std::vector<std::string> archiveFiles;
 
-#ifdef __SWITCH__
-    Ship::Switch::Init(Ship::PreInitPhase);
-    Ship::Switch::Init(Ship::PostInitPhase);
+// --- Add Android-specific external storage paths
+#if defined(__ANDROID__)
+const std::string main_path_android = "/storage/emulated/0/Spaghetti-Kart/mk64.o2r";
+const std::string assets_path_android = "/storage/emulated/0/Spaghetti-Kart/spaghetti.o2r";
 #endif
 
-#ifdef _WIN32
-    AllocConsole();
+// --- mk64.o2r logic
+if (std::filesystem::exists(main_path)) {
+    archiveFiles.push_back(main_path);
+}
+#if defined(__ANDROID__)
+else if (std::filesystem::exists(main_path_android)) {
+    archiveFiles.push_back(main_path_android);
+}
 #endif
-
-    if (std::filesystem::exists(main_path)) {
-        archiveFiles.push_back(main_path);
-    } else {
-        if (ShowYesNoBox("No O2R Files", "No O2R files found. Generate one now?") == IDYES) {
-            if (!GenAssetFile()) {
-                ShowMessage("Error", "An error occured, no O2R file was generated.\n\nExiting...");
-                exit(1);
-            } else {
-                archiveFiles.push_back(main_path);
-            }
-        } else {
+else {
+    if (ShowYesNoBox("No O2R Files", "No O2R files found. Generate one now?") == IDYES) {
+        if (!GenAssetFile()) {
+            ShowMessage("Error", "An error occured, no O2R file was generated.\n\nExiting...");
             exit(1);
         }
+        // Try again for both locations (in case GenAssetFile puts it in either place)
+        if (std::filesystem::exists(main_path)) {
+            archiveFiles.push_back(main_path);
+        }
+    #if defined(__ANDROID__)
+        else if (std::filesystem::exists(main_path_android)) {
+            archiveFiles.push_back(main_path_android);
+        }
+    #endif
+    } else {
+        exit(1);
     }
+}
 
-    if (std::filesystem::exists(assets_path)) {
-        archiveFiles.push_back(assets_path);
-    }
+// --- spaghetti.o2r logic
+if (std::filesystem::exists(assets_path)) {
+    archiveFiles.push_back(assets_path);
+}
+#if defined(__ANDROID__)
+else if (std::filesystem::exists(assets_path_android)) {
+    archiveFiles.push_back(assets_path_android);
+}
+#endif
 
-    if (const std::string patches_path = Ship::Context::GetPathRelativeToAppDirectory("mods");
-        !patches_path.empty() && std::filesystem::exists(patches_path)) {
-        if (std::filesystem::is_directory(patches_path)) {
-            for (const auto& p : std::filesystem::recursive_directory_iterator(patches_path)) {
-                auto ext = p.path().extension().string();
-                if (StringHelper::IEquals(ext, ".zip") || StringHelper::IEquals(ext, ".o2r")) {
-                    archiveFiles.push_back(p.path().generic_string());
-                }
+// --- mods directory logic (add all zips and o2r mods from "mods" folder)
+if (const std::string patches_path = Ship::Context::GetPathRelativeToAppDirectory("mods");
+    !patches_path.empty() && std::filesystem::exists(patches_path)) {
+    if (std::filesystem::is_directory(patches_path)) {
+        for (const auto& p : std::filesystem::recursive_directory_iterator(patches_path)) {
+            auto ext = p.path().extension().string();
+            if (StringHelper::IEquals(ext, ".zip") || StringHelper::IEquals(ext, ".o2r")) {
+                archiveFiles.push_back(p.path().generic_string());
             }
         }
     }
+}
 
     this->context = Ship::Context::CreateUninitializedInstance("Spaghetti Kart", "spaghettify", "spaghettify.cfg.json");
 
