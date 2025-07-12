@@ -5,10 +5,15 @@
 
 #include <imgui.h>
 
-namespace Ship {
+namespace Spaghetti {
 
 class Mobile {
   public:
     static void ImGuiProcessEvent(bool wantsTextInput);
+    static bool IsUsingTouchscreenControls();
+    static void EnableTouchArea();
+    static void DisableTouchArea();
+    static float GetCameraYaw();
+    static float GetCameraPitch();
 };
-}; // namespace Ship
+}; // namespace Spaghetti
