@@ -45,7 +45,7 @@ public class MainActivity extends SDLActivity{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        preferences = getSharedPreferences("com.izzy.prefs",Context.MODE_PRIVATE);
+        preferences = getSharedPreferences("com.izzy.kart.prefs",Context.MODE_PRIVATE);
 
         // Check if storage permissions are granted
         if (hasStoragePermission()) {
