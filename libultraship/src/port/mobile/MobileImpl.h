@@ -5,7 +5,7 @@
 
 #include <imgui.h>
 
-namespace Spaghetti {
+namespace Ship {
 
 class Mobile {
   public:
@@ -16,4 +16,4 @@ class Mobile {
     static float GetCameraYaw();
     static float GetCameraPitch();
 };
-}; // namespace Spaghetti
+}; // namespace Ship
