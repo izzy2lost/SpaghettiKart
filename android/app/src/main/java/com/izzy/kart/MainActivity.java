@@ -49,7 +49,6 @@ public class MainActivity extends SDLActivity{
 
         // Check if storage permissions are granted
         if (hasStoragePermission()) {
-            doVersionCheck();
             checkAndSetupFiles();
         } else {
             requestStoragePermission();
