@@ -211,7 +211,7 @@ public class MainActivity extends SDLActivity{
                 out.write(buffer, 0, read);
             }
 
-            runOnUiThread(() -> Toast.makeText(this, "spaghetti.otr copied", Toast.LENGTH_SHORT).show());
+            runOnUiThread(() -> Toast.makeText(this, "spaghetti.o2r copied", Toast.LENGTH_SHORT).show());
 
         } catch (IOException e) {
             e.printStackTrace();
