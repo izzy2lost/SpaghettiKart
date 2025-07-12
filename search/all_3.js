@@ -359,7 +359,7 @@ var searchData=
   ['apply_5fstar_5fsound_5feffect_356',['apply_star_sound_effect',['../effects_8c.html#a1ae16ef10ed322ad47b3cff5a8efc83e',1,'apply_star_sound_effect(Player *player, s8 arg1):&#160;effects.c'],['../effects_8h.html#aa62f8fab4dac5e60e6b123e82004cdaa',1,'apply_star_sound_effect(Player *, s8):&#160;effects.c']]],
   ['applymatrixtransformations_357',['ApplyMatrixTransformations',['../Matrix_8cpp.html#a63625de4c7f9e2e9cd5b04eed49acfcb',1,'Matrix.cpp']]],
   ['approachradius_358',['ApproachRadius',['../classTrainCrossing.html#aa19fde49a5da81b7ba85e0ab02ac351b',1,'TrainCrossing']]],
-  ['arch_359',['Arch',['../compiling.html#arch',1,'Arch'],['../md_docs_2BUILDING.html#arch-1',1,'Arch']]],
+  ['arch_359',['Arch',['../md_docs_2BUILDING.html#arch',1,'Arch'],['../compiling.html#arch-1',1,'Arch']]],
   ['archive_360',['Archive',['../structEditor_1_1ContentBrowserWindow_1_1Tracks.html#ab7d244556115f94a18e200edc8ad8cd2',1,'Editor::ContentBrowserWindow::Tracks']]],
   ['are_5fbetween_5fdistance_5f2d_361',['are_between_distance_2d',['../code__80086E70_8h.html#ae14ce5751cb4277ef297a55acb0b140e',1,'code_80086E70.h']]],
   ['are_5fin_5fcurve_362',['are_in_curve',['../code__80005FD0_8c.html#ae540a2abcaa98ac783ccd77cf775f0bf',1,'are_in_curve(UNUSED s32 arg0, u16 waypointIndex):&#160;code_80005FD0.c'],['../code__80005FD0_8h.html#a76644af59eab2718d2271d1bfd85ac52',1,'are_in_curve(s32, u16):&#160;code_80005FD0.h']]],

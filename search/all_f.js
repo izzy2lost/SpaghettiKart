@@ -22,7 +22,7 @@ var searchData=
   ['m_5frtod_19',['M_RTOD',['../matrix_8h.html#ad80919b306b99b81b0f0c8184f022e3c',1,'matrix.h']]],
   ['m_5frunning_20',['m_running',['../classpfd_1_1internal_1_1executor.html#a70760965e1179f84aee59abd92c7129e',1,'pfd::internal::executor']]],
   ['m_5fstdout_21',['m_stdout',['../classpfd_1_1internal_1_1executor.html#a062c9dc73980cd66d334c945c9617d9d',1,'pfd::internal::executor']]],
-  ['macos_22',['macOS',['../compiling.html#macos',1,'macOS'],['../md_docs_2BUILDING.html#macos-1',1,'macOS']]],
+  ['macos_22',['macOS',['../md_docs_2BUILDING.html#macos',1,'macOS'],['../compiling.html#macos-1',1,'macOS']]],
   ['macro_5fcolor_5fflag_23',['MACRO_COLOR_FLAG',['../mk64_8h.html#ab34a07fcda62ff7494db5d447db8f436',1,'mk64.h']]],
   ['macros_2eh_24',['macros.h',['../macros_8h.html',1,'']]],
   ['macros_2einc_25',['macros.inc',['../macros_8inc.html',1,'']]],
