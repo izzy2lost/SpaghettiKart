@@ -82,8 +82,8 @@ public class MainActivity extends SDLActivity{
     private void deleteOutdatedAssets() {
         File targetRootFolder = new File(Environment.getExternalStorageDirectory(), "Spaghetti-Kart");
 
-        File skFile = new File(targetRootFolder, "spaghetti.otr");
-        File mkFile = new File(targetRootFolder, "mk64.otr");
+        File skFile = new File(targetRootFolder, "spaghetti.o2r");
+        File mkFile = new File(targetRootFolder, "mk64.o2r");
         File assetsFolder = new File(targetRootFolder, "assets");
 
         deleteIfExists(skFile);
@@ -171,7 +171,7 @@ public class MainActivity extends SDLActivity{
     public void checkAndSetupFiles() {
         File targetRootFolder = new File(Environment.getExternalStorageDirectory(), "Spaghetti-Kart");
         File assetsFolder = new File(targetRootFolder, "assets");
-        File skOtrFile = new File(targetRootFolder, "spaghetti.otr");
+        File skOtrFile = new File(targetRootFolder, "spaghetti.o2r");
 
         boolean isMissingAssets = !assetsFolder.exists() || assetsFolder.listFiles() == null || assetsFolder.listFiles().length == 0;
         boolean isMissingSohOtr = !skOtrFile.exists();
@@ -208,7 +208,7 @@ public class MainActivity extends SDLActivity{
             if (sourceFiles != null) {
                 for (File file : sourceFiles) {
                     String name = file.getName();
-                    if (name.equals("assets") || name.equals("spaghetti.otr") || name.equals("mk64.otr")) {
+                    if (name.equals("assets") || name.equals("spaghetti.o2r") || name.equals("mk64.o2r")) {
                         continue; // Skip these
                     }
 
@@ -259,8 +259,8 @@ public class MainActivity extends SDLActivity{
         }
 
         // Copy spaghetti.otr from internal assets
-        File targetOtrFile = new File(targetRootFolder, "spaghetti.otr");
-        try (InputStream in = getAssets().open("spaghetti.otr");
+        File targetOtrFile = new File(targetRootFolder, "spaghetti.o2r");
+        try (InputStream in = getAssets().open("spaghetti.o2r");
              OutputStream out = new FileOutputStream(targetOtrFile)) {
 
             byte[] buffer = new byte[1024];
@@ -273,7 +273,7 @@ public class MainActivity extends SDLActivity{
 
         } catch (IOException e) {
             e.printStackTrace();
-            runOnUiThread(() -> Toast.makeText(this, "Error copying spaghetti.otr", Toast.LENGTH_LONG).show());
+            runOnUiThread(() -> Toast.makeText(this, "Error copying spaghetti.o2r", Toast.LENGTH_LONG).show());
         }
 
         setupLatch.countDown();
