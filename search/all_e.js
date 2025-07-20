@@ -147,7 +147,7 @@ var searchData=
   ['limbcount_144',['limbCount',['../structSF64_1_1AnimationData.html#a85304cc1ab6709a4715621de42d88b0f',1,'SF64::AnimationData']]],
   ['limbdata_145',['LimbData',['../structSF64_1_1LimbData.html',1,'SF64']]],
   ['limbtable_146',['LimbTable',['../namespaceMK64.html#a7bd07479273b52e702ac4baf9081791da0901af44ea5f01c0746f69bc2d1f33ed',1,'MK64']]],
-  ['linux_147',['Linux',['../compiling.html#linux',1,'Linux'],['../md_docs_2BUILDING.html#linux-1',1,'Linux']]],
+  ['linux_147',['Linux',['../md_docs_2BUILDING.html#linux',1,'Linux'],['../compiling.html#linux-1',1,'Linux']]],
   ['list_148',['List',['../bug.html',1,'Bug List'],['../deprecated.html',1,'Deprecated List'],['../todo.html',1,'Todo List']]],
   ['listheadl_149',['listHeadL',['../structMainPoolState.html#a2132c0f9da6456775ed7b06459901dfb',1,'MainPoolState']]],
   ['listheadr_150',['listHeadR',['../structMainPoolState.html#a901e5cb7afc5abf17bc5f000ae1f1cb1',1,'MainPoolState']]],

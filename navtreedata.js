@@ -28,7 +28,7 @@ var NAVTREE =
     [ "Actors", "actorsmenu.html", "actorsmenu" ],
     [ "Understanding the Basics", "basics.html", "basics" ],
     [ "Building SpagettiKart", "md_docs_2BUILDING.html", [
-      [ "Windows", "md_docs_2BUILDING.html#windows-1", [
+      [ "Windows", "md_docs_2BUILDING.html#windows", [
         [ "Developing SpaghettiKart", "md_docs_2BUILDING.html#developing-spaghettikart", [
           [ "Visual Studio", "md_docs_2BUILDING.html#visual-studio", null ],
           [ "Visual Studio Code or another editor", "md_docs_2BUILDING.html#visual-studio-code-or-another-editor", null ]
@@ -38,18 +38,18 @@ var NAVTREE =
           [ "Clean", "md_docs_2BUILDING.html#clean", null ]
         ] ]
       ] ],
-      [ "Linux", "md_docs_2BUILDING.html#linux-1", [
+      [ "Linux", "md_docs_2BUILDING.html#linux", [
         [ "Clone the repo and enter the directory", "md_docs_2BUILDING.html#clone-the-repo-and-enter-the-directory", null ],
         [ "Manual", "md_docs_2BUILDING.html#manual", [
           [ "Install dependencies", "md_docs_2BUILDING.html#install-dependencies", [
             [ "Debian/Ubuntu", "md_docs_2BUILDING.html#debianubuntu", null ],
-            [ "Arch", "md_docs_2BUILDING.html#arch-1", null ],
-            [ "Fedora", "md_docs_2BUILDING.html#fedora-1", null ],
+            [ "Arch", "md_docs_2BUILDING.html#arch", null ],
+            [ "Fedora", "md_docs_2BUILDING.html#fedora", null ],
             [ "openSUSE", "md_docs_2BUILDING.html#opensuse", null ]
           ] ],
           [ "Build", "md_docs_2BUILDING.html#build", null ]
         ] ],
-        [ "Docker", "md_docs_2BUILDING.html#docker-1", [
+        [ "Docker", "md_docs_2BUILDING.html#docker", [
           [ "Create the docker container", "md_docs_2BUILDING.html#create-the-docker-container", null ],
           [ "Configure the project", "md_docs_2BUILDING.html#configure-the-project", null ],
           [ "Compile the project", "md_docs_2BUILDING.html#compile-the-project", null ]
@@ -59,7 +59,7 @@ var NAVTREE =
           [ "Clean", "md_docs_2BUILDING.html#clean-1", null ]
         ] ]
       ] ],
-      [ "macOS", "md_docs_2BUILDING.html#macos-1", [
+      [ "macOS", "md_docs_2BUILDING.html#macos", [
         [ "Generating a distributable", "md_docs_2BUILDING.html#generating-a-distributable", null ],
         [ "Additional CMake Targets", "md_docs_2BUILDING.html#additional-cmake-targets-2", [
           [ "Clean", "md_docs_2BUILDING.html#clean-2", null ]
@@ -74,11 +74,11 @@ var NAVTREE =
     [ "Custom characters", "md_docs_2custom-characters.html", [
       [ "Examples for all characters:", "md_docs_2custom-characters.html#examples-for-all-characters", null ],
       [ "Additional Files", "md_docs_2custom-characters.html#additional-files", [
-        [ "Tips", "md_docs_2custom-characters.html#tips-1", [
+        [ "Tips", "md_docs_2custom-characters.html#tips", [
           [ "Change Viewport Render Settings", "md_docs_2custom-characters.html#change-viewport-render-settings", null ]
         ] ],
-        [ "Tools To Help", "md_docs_2custom-characters.html#tools-to-help-1", null ],
-        [ "Future plans", "md_docs_2custom-characters.html#future-plans-1", null ]
+        [ "Tools To Help", "md_docs_2custom-characters.html#tools-to-help", null ],
+        [ "Future plans", "md_docs_2custom-characters.html#future-plans", null ]
       ] ]
     ] ],
     [ "Custom Tracks", "md_docs_2custom-track.html", [
@@ -90,7 +90,7 @@ var NAVTREE =
       [ "Import", "md_docs_2custom-track.html#import", null ],
       [ "Track Initialization", "md_docs_2custom-track.html#track-initialization", null ],
       [ "Playing Your Custom Track", "md_docs_2custom-track.html#playing-your-custom-track", null ],
-      [ "Tips", "md_docs_2custom-track.html#tips", [
+      [ "Tips", "md_docs_2custom-track.html#tips-1", [
         [ "Extra information that may be helpful", "md_docs_2custom-track.html#extra-information-that-may-be-helpful", null ]
       ] ]
     ] ],
@@ -98,8 +98,8 @@ var NAVTREE =
     [ "Modding", "md_docs_2modding.html", null ],
     [ "Texture Pack", "md_docs_2textures-pack.html", [
       [ "Example:", "md_docs_2textures-pack.html#example", null ],
-      [ "Tools To Help", "md_docs_2textures-pack.html#tools-to-help", null ],
-      [ "Future plans", "md_docs_2textures-pack.html#future-plans", null ]
+      [ "Tools To Help", "md_docs_2textures-pack.html#tools-to-help-1", null ],
+      [ "Future plans", "md_docs_2textures-pack.html#future-plans-1", null ]
     ] ],
     [ "Tutorials", "tutorials.html", "tutorials" ],
     [ "Bug List", "bug.html", null ],

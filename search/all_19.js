@@ -114,7 +114,7 @@ var searchData=
   ['windowheight_111',['windowHeight',['../classShip_1_1Menu.html#aaa24bab2a495dc0d1573ad9a1b293104',1,'Ship::Menu']]],
   ['windowname_112',['WindowName',['../structWidgetInfo.html#aeea77b4ba4faf5a2440b454857c019e5',1,'WidgetInfo']]],
   ['windowname_113',['windowName',['../structWidgetInfo.html#a3f87fb7af882a2c3c86c135be60c7179',1,'WidgetInfo']]],
-  ['windows_114',['Windows',['../md_docs_2BUILDING.html#runner-on-windows',1,'Runner on Windows'],['../compiling.html#windows',1,'Windows'],['../md_docs_2BUILDING.html#windows-1',1,'Windows']]],
+  ['windows_114',['Windows',['../md_docs_2BUILDING.html#runner-on-windows',1,'Runner on Windows'],['../md_docs_2BUILDING.html#windows',1,'Windows'],['../compiling.html#windows-1',1,'Windows']]],
   ['windowsize_115',['windowSize',['../structReverbSettingsEU.html#a5cb7d8eaeef42b0369bd170bca7ed72f',1,'ReverbSettingsEU::windowSize'],['../structSynthesisReverb.html#ac33541fe1dc1f814a10cbc97b86b8d4d',1,'SynthesisReverb::windowSize']]],
   ['windowtypesizes_116',['windowTypeSizes',['../Menu_8cpp.html#abd5fffe82c350c2ab9145d6862a37ddb',1,'Menu.cpp']]],
   ['windowwidth_117',['windowWidth',['../classShip_1_1Menu.html#a946930a0d1dce97c703d0fb51bf79416',1,'Ship::Menu']]],
