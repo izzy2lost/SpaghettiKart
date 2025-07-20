@@ -2314,7 +2314,7 @@ var searchData=
   ['dmem_5faddr_5fwet_5fleft_5fch_2311',['DMEM_ADDR_WET_LEFT_CH',['../synthesis_8h.html#a7f59b9e4b76238914747f4d44efaf00b',1,'synthesis.h']]],
   ['dmem_5faddr_5fwet_5fright_5fch_2312',['DMEM_ADDR_WET_RIGHT_CH',['../synthesis_8h.html#a7d0209c82345e7a6205f78c353b70547',1,'synthesis.h']]],
   ['dmem_5fbuf_5fsize_2313',['DMEM_BUF_SIZE',['../mixer_8c.html#ad15aafa36ae4106e1bb5a20d9aad1c3b',1,'mixer.c']]],
-  ['docker_2314',['Docker',['../md_docs_2BUILDING.html#docker',1,'Docker'],['../compiling.html#docker-1',1,'Docker']]],
+  ['docker_2314',['Docker',['../compiling.html#docker',1,'Docker'],['../md_docs_2BUILDING.html#docker-1',1,'Docker']]],
   ['docker_20container_2315',['Create the docker container',['../md_docs_2BUILDING.html#create-the-docker-container',1,'']]],
   ['donkeykong_5fkart_2eh_2316',['donkeykong_kart.h',['../donkeykong__kart_8h.html',1,'']]],
   ['donkeykong_5fkart_5fwheels_2317',['donkeykong_kart_wheels',['../donkeykong__kart_8h.html#a0f0b9e82da70be276ff00dc553fcd405',1,'donkeykong_kart.h']]],
