@@ -26,6 +26,8 @@ var dir_2052808828190f934b76e979ee65af8a =
     [ "PlayerBombKart.h", "PlayerBombKart_8h.html", "PlayerBombKart_8h" ],
     [ "Registry.cpp", "Registry_8cpp.html", null ],
     [ "Registry.h", "Registry_8h.html", null ],
+    [ "Rulesets.cpp", "Rulesets_8cpp.html", null ],
+    [ "Rulesets.h", "Rulesets_8h.html", "Rulesets_8h" ],
     [ "Smoke.cpp", "Smoke_8cpp.html", "Smoke_8cpp" ],
     [ "Smoke.h", "Smoke_8h.html", "Smoke_8h" ],
     [ "StaticMeshActor.cpp", "StaticMeshActor_8cpp.html", null ],

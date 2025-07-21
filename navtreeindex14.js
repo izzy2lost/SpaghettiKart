@@ -1,5 +1,11 @@
 var NAVTREEINDEX14 =
 {
+"classOSeagull.html#a8be68367cbb03b447cb8e0f523fc9ee1":[14,0,196,7],
+"classOSeagull.html#a97a4cfe131c3d41a415db809a5bed90b":[14,0,196,9],
+"classOSeagull.html#aa8b22830202db11f9023229cbd9d2f8c":[14,0,196,2],
+"classOSeagull.html#ac6af838a820a0232e940575521844caa":[14,0,196,3],
+"classOSeagull.html#ad672861e9be352e001a012abde21e18d":[14,0,196,11],
+"classOSeagull.html#aecaeaea3ef1cd4205d9049803ea997e5":[14,0,196,4],
 "classOSeagull.html#afb8d3fd824adf5e5edbf698c94f59111":[14,0,196,6],
 "classOSeagull.html#afbe00548c91b2db5834e88901cf7a385":[14,0,196,5],
 "classOSnowman.html":[14,0,198],
@@ -199,6 +205,10 @@ var NAVTREEINDEX14 =
 "classRoyalRaceway.html#ac18c4d1a3c18d52432d234ee7f42be6f":[14,0,235,6],
 "classRoyalRaceway.html#ac43100a475ef32ea65a746d8c851a5b7":[14,0,235,11],
 "classRoyalRaceway.html#ad4097eee2636198cb88777b9dcdc0fbc":[14,0,235,3],
+"classRulesets.html":[14,0,236],
+"classRulesets.html#a3410d3ad07bc759e4f0a5f387925292d":[14,0,236,1],
+"classRulesets.html#a4eafff28913a2e2e990f80f08cd3bacf":[14,0,236,2],
+"classRulesets.html#a93351c305cc2659ba94d7ba1a30dde95":[14,0,236,0],
 "classSF64_1_1Animation.html":[13,0,8,0],
 "classSF64_1_1Animation.html":[14,0,4,0],
 "classSF64_1_1Animation.html#a14bc9cb354ec1277e91d6bcd038ba460":[13,0,8,0,4],
@@ -239,15 +249,5 @@ var NAVTREEINDEX14 =
 "classSF64_1_1GenericArray.html#a262fad72b29e433fdf725e72757293f7":[14,0,4,6,3],
 "classSF64_1_1GenericArray.html#a8d8e57c2cd6c55bb7bd514a0ba9a6b03":[13,0,8,6,2],
 "classSF64_1_1GenericArray.html#a8d8e57c2cd6c55bb7bd514a0ba9a6b03":[14,0,4,6,2],
-"classSF64_1_1GenericArray.html#a91a6d83a43d29019b13e09f2a551af9b":[13,0,8,6,0],
-"classSF64_1_1GenericArray.html#a91a6d83a43d29019b13e09f2a551af9b":[14,0,4,6,0],
-"classSF64_1_1GenericArray.html#a9339d9a123f249beb63f2c63da7ff287":[13,0,8,6,1],
-"classSF64_1_1GenericArray.html#a9339d9a123f249beb63f2c63da7ff287":[14,0,4,6,1],
-"classSF64_1_1GenericArray.html#ac1fc1405c329364b7b7804ba22a690ca":[13,0,8,6,4],
-"classSF64_1_1GenericArray.html#ac1fc1405c329364b7b7804ba22a690ca":[14,0,4,6,4],
-"classSF64_1_1Hitbox.html":[13,0,8,7],
-"classSF64_1_1Hitbox.html":[14,0,4,7],
-"classSF64_1_1Hitbox.html#a38cd19393ce4f5929ad9117aa2a58fb9":[13,0,8,7,1],
-"classSF64_1_1Hitbox.html#a38cd19393ce4f5929ad9117aa2a58fb9":[14,0,4,7,1],
-"classSF64_1_1Hitbox.html#a731d3024667d94602f8fc85a3a88008c":[13,0,8,7,0]
+"classSF64_1_1GenericArray.html#a91a6d83a43d29019b13e09f2a551af9b":[13,0,8,6,0]
 };

@@ -1,5 +1,15 @@
 var NAVTREEINDEX51 =
 {
+"networking_8c.html#ab96aad55b06860157049294bda75b1db":[15,0,3,8,0,9],
+"networking_8c.html#ac589b1f67a7e20769c3a62741439e0c6":[15,0,3,8,0,11],
+"networking_8c.html#ae4e16a7c6d8ea252f0434363561595e1":[15,0,3,8,0,2],
+"networking_8c.html#aec83bff8dc6495b6cd0ba4c83bf834d2":[15,0,3,8,0,7],
+"networking_8c.html#aed9ca538cfe9988acf346351f27a368e":[15,0,3,8,0,4],
+"networking_8c.html#af426cbe6146eb96e332760cdb7b1330f":[15,0,3,8,0,15],
+"networking_8h.html":[15,0,3,8,1],
+"networking_8h.html#a02510b519f93965c57c3c25631998871":[15,0,3,8,1,18],
+"networking_8h.html#a066d4466ee0a05edd9600c478b674a7e":[15,0,3,8,1,12],
+"networking_8h.html#a0e605c4e6dd20cf603190da3764bad3a":[15,0,3,8,1,6],
 "networking_8h.html#a181b63ace27e36416b4b0bdc40fc5efc":[15,0,3,8,1,26],
 "networking_8h.html#a2b0991e893dd2f433a112ea46449bd4e":[15,0,3,8,1,16],
 "networking_8h.html#a2bfff8ec22628d92c889dd558cc9ac3d":[15,0,3,8,1,19],
@@ -40,7 +50,7 @@ var NAVTREEINDEX51 =
 "new__func_8h.html#ac8095e2ec1adbd7e74e655c578968a36":[15,0,3,9,55,0],
 "new__func_8h_source.html":[15,0,3,9,55],
 "objects.html":[0,1],
-"objects.html#objects":[0,1,0],
+"objects.html#objects-1":[0,1,0],
 "objects_8h.html":[15,0,2,16],
 "objects_8h.html#a015cc1fa03690348fb398b9be74ecc15":[15,0,2,16,35],
 "objects_8h.html#a02bd29e49d2089bb6bd1bfe33e360584":[15,0,2,16,87],
@@ -239,15 +249,5 @@ var NAVTREEINDEX51 =
 "osGetTime_8c.html#a4af0cb38d6a9bc36e9ee5dda55d7726e":[15,0,3,9,75,2],
 "osGetTime_8c.html#ac9a040dcda7f29a608413f5a5c8963bf":[15,0,3,9,75,0],
 "osGetTime_8c.html#ae56f9e39bb4b420a9a2d02e6ca1fecfa":[15,0,3,9,75,1],
-"osInitialize_8c.html":[15,0,3,9,76],
-"osInitialize_8c.html#a02cc7445bd5242c1135160547c08d2fa":[15,0,3,9,76,10],
-"osInitialize_8c.html#a0a4ec2aee4185607c2c8b0592483b053":[15,0,3,9,76,13],
-"osInitialize_8c.html#a10fe243cdf8b039a1e9058723a82fc76":[15,0,3,9,76,5],
-"osInitialize_8c.html#a115ccbb72ad3e50a0af6e1889d835e45":[15,0,3,9,76,12],
-"osInitialize_8c.html#a5187f33fb7a3dfda9eb75dd10a308b9c":[15,0,3,9,76,11],
-"osInitialize_8c.html#a710667fb116fff9559086a26b8cfba09":[15,0,3,9,76,3],
-"osInitialize_8c.html#a73decdcff42cf813e4f32cb79f561f4e":[15,0,3,9,76,1],
-"osInitialize_8c.html#a83d490c4d3467e04fb5c91a7311a145b":[15,0,3,9,76,7],
-"osInitialize_8c.html#ab19ef11fe2223eec70fe5555f1743d91":[15,0,3,9,76,4],
-"osInitialize_8c.html#ac070686413d4896482718d2a30bb3ad0":[15,0,3,9,76,8]
+"osInitialize_8c.html":[15,0,3,9,76]
 };

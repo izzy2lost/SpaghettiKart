@@ -1,5 +1,15 @@
 var NAVTREEINDEX66 =
 {
+"start__game_8c.html#a066d4466ee0a05edd9600c478b674a7e":[15,0,3,8,4,3],
+"start__game_8c.html#a2a306c238cbe5ae028cbeee2e724b2e6":[15,0,3,8,4,2],
+"start__game_8c.html#a2bfff8ec22628d92c889dd558cc9ac3d":[15,0,3,8,4,5],
+"start__game_8c.html#a2e086956a1c0bd2f6ac8111273c3cb29":[15,0,3,8,4,1],
+"start__game_8c.html#a398b9ba81e585f81d5b86d2ca26f8708":[15,0,3,8,4,6],
+"start__game_8c.html#a588211157508d34f5093285a13f7d59b":[15,0,3,8,4,7],
+"start__game_8c.html#a5e1aab72e5fa568c63e58e41661fef6a":[15,0,3,8,4,10],
+"start__game_8c.html#a6fcf69737b7291931efe653e58f1ad25":[15,0,3,8,4,9],
+"start__game_8c.html#a99b9c7f03653dc6ebb6e10aa759e8266":[15,0,3,8,4,4],
+"start__game_8c.html#abe9ca904e43a1c0bdd10227709c8ccc0":[15,0,3,8,4,0],
 "start__game_8c.html#ad5005dd4d4815984962d3087fbd0e584":[15,0,3,8,4,8],
 "startup__logo_8h.html":[15,0,2,0,65],
 "startup__logo_8h.html#ad14267be5e72eb89e1de409b78e022b3":[15,0,2,0,65,0],
@@ -239,15 +249,5 @@ var NAVTREEINDEX66 =
 "structAudioListItem.html#ab838a8bb1d7648057b666190a9ee6108":[14,0,70,5],
 "structAudioListItem.html#ad518e6401fbb50f6221cb6d86e7fc2fd":[14,0,70,3],
 "structAudioListItem.html#afb3e57e2306a3f69ead1dff998ab4d9f":[14,0,70,1],
-"structAudioSequenceData.html":[14,0,71],
-"structAudioSequenceData.html#a54cf7b43b663e913eae7387ce72fc9ac":[14,0,71,3],
-"structAudioSequenceData.html#a7b756f0d1d619adeac197f9643ac431f":[14,0,71,2],
-"structAudioSequenceData.html#aa14fd2ae175467f199ad0cd663cbcfae":[14,0,71,1],
-"structAudioSequenceData.html#aeea1ea6d381dd119218bcfa8912ba1e4":[14,0,71,0],
-"structAudioSessionSettings.html":[14,0,72],
-"structAudioSessionSettings.html#a05ebf9209e133d04eb887d6f48c74ef3":[14,0,72,9],
-"structAudioSessionSettings.html#a38f8c2f423cd8e270ea2e2abc023ce11":[14,0,72,8],
-"structAudioSessionSettings.html#a5dc790239abd49d372c105d831cc6173":[14,0,72,6],
-"structAudioSessionSettings.html#a7857d8f97c68b29e1151015c2b89f6d3":[14,0,72,1],
-"structAudioSessionSettings.html#ad0c517937406fc909fc1fa8fc98d8cc7":[14,0,72,2]
+"structAudioSequenceData.html":[14,0,71]
 };

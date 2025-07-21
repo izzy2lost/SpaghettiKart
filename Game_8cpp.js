@@ -141,6 +141,7 @@ var Game_8cpp =
     [ "gModelLoader", "Game_8cpp.html#ad60fa6bf0da316865efe9f5d86f542ee", null ],
     [ "gMushroomCup", "Game_8cpp.html#a8af8e08b5e4bf0373880797502fd7280", null ],
     [ "gPodiumCeremony", "Game_8cpp.html#a3229bdb738b135960d355513a7feca5c", null ],
+    [ "gRulesets", "Game_8cpp.html#a420f8c65862e09ce607e82a72b27bba6", null ],
     [ "gSpecialCup", "Game_8cpp.html#a36b94f5e33fe411a7ded28bd17a9d60f", null ],
     [ "gStarCup", "Game_8cpp.html#a77b58dc71f28e0ef8878390fae8ac62b", null ],
     [ "gTrophyIndex", "Game_8cpp.html#a64d8699124ee0fb6d04c76e786ef28ef", null ],

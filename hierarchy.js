@@ -334,6 +334,7 @@ var hierarchy =
     [ "RGB8", "structRGB8.html", null ],
     [ "RGBA16", "structRGBA16.html", null ],
     [ "RGBA5551", "structRGBA5551.html", null ],
+    [ "Rulesets", "classRulesets.html", null ],
     [ "SaveData", "structSaveData.html", null ],
     [ "SaveInfo", "structSaveInfo.html", null ],
     [ "MK64::ScalarData", "unionMK64_1_1ScalarData.html", null ],

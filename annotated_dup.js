@@ -339,6 +339,7 @@ var annotated_dup =
     [ "RGBA16", "structRGBA16.html", "structRGBA16" ],
     [ "RGBA5551", "structRGBA5551.html", "structRGBA5551" ],
     [ "RoyalRaceway", "classRoyalRaceway.html", "classRoyalRaceway" ],
+    [ "Rulesets", "classRulesets.html", "classRulesets" ],
     [ "SaveData", "structSaveData.html", "structSaveData" ],
     [ "SaveInfo", "structSaveInfo.html", "structSaveInfo" ],
     [ "SeqOrBankEntry", "structSeqOrBankEntry.html", "structSeqOrBankEntry" ],

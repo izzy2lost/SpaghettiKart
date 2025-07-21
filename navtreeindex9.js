@@ -1,5 +1,9 @@
 var NAVTREEINDEX9 =
 {
+"classABowserStatue.html#abec00f96819a2d47146b6c8fb1bef31da18a08e56e0d44bac31f810e4c4bb23ce":[14,0,26,0,1],
+"classABowserStatue.html#ac987df0de9424f8a2ff67031fa7cfda6":[14,0,26,8],
+"classABus.html":[14,0,27],
+"classABus.html#a07af38f3fced338dc420cffcdfddb826":[14,0,27,5],
 "classABus.html#a1362338a1e7272bf92f25ce3bf71577b":[14,0,27,1],
 "classABus.html#a3e1399c7b4fab8165d641d0d305a477a":[14,0,27,21],
 "classABus.html#a5246880511fb76b4cc5d02b9df8effc4":[14,0,27,6],
@@ -245,9 +249,5 @@ var NAVTREEINDEX9 =
 "classBowsersCastle.html#a7df11a91ef164c44a231dfe74fdab745":[14,0,82,15],
 "classBowsersCastle.html#a9f1a3812301d228a8164a9f30a963c0f":[14,0,82,8],
 "classBowsersCastle.html#aa20a3b06a6eebc5746c44f557dadc979":[14,0,82,4],
-"classBowsersCastle.html#aa65885fb4f437efc57179e089cd9686a":[14,0,82,16],
-"classBowsersCastle.html#ac18ec24a3a58b5520bb38c66fa744792":[14,0,82,0],
-"classBowsersCastle.html#ac52e5556618a2593bd18b22ac0dea6e0":[14,0,82,12],
-"classBowsersCastle.html#ac69e2f19bec161754a90b77bb3cb49dd":[14,0,82,2],
-"classBowsersCastle.html#acaa1073a7d200b06ac93244cf795cfe4":[14,0,82,18]
+"classBowsersCastle.html#aa65885fb4f437efc57179e089cd9686a":[14,0,82,16]
 };

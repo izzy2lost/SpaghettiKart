@@ -64,6 +64,5 @@ var memory_8h =
     [ "unpack_texture_on", "memory_8h.html#a4b2f61cfabcf9c0ad08dd909d9164711", null ],
     [ "unpack_tile_load_sync", "memory_8h.html#ad8c631d128b88ab023a707d0dd5fc040", null ],
     [ "unpack_tile_sync", "memory_8h.html#a733a97b6df019cea130dd9f97e16be6c", null ],
-    [ "_other_texturesSegmentRomStart", "memory_8h.html#a550940ee0f9af611182681325dbc380f", null ],
-    [ "vtxStretchY", "memory_8h.html#acd2b5bc5e9cf24c233cbfec96cfbd4b6", null ]
+    [ "_other_texturesSegmentRomStart", "memory_8h.html#a550940ee0f9af611182681325dbc380f", null ]
 ];

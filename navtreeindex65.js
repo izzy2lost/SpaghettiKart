@@ -1,5 +1,15 @@
 var NAVTREEINDEX65 =
 {
+"spawn__players_8c.html#a559515f3880b03471102b759c0ca3b82":[15,0,3,65,28],
+"spawn__players_8c.html#a59863e1d2d045de2240c02ce14234213":[15,0,3,65,42],
+"spawn__players_8c.html#a59cbfff01d2df086f4cc9ddd94a92b86":[15,0,3,65,22],
+"spawn__players_8c.html#a5dd302422fbdc00a17e7a17e524d3ebf":[15,0,3,65,48],
+"spawn__players_8c.html#a6235b90c4fda30dd64cc7268f8a4c53d":[15,0,3,65,51],
+"spawn__players_8c.html#a6adc28726b19a541088209dc75b2f7f7":[15,0,3,65,52],
+"spawn__players_8c.html#a6bbb8f200255159de1b23a505b597e19":[15,0,3,65,40],
+"spawn__players_8c.html#a6d2ed8c4456180517f0477c6aff958e8":[15,0,3,65,25],
+"spawn__players_8c.html#a738df48497186741691fcbf7c3483160":[15,0,3,65,44],
+"spawn__players_8c.html#a787da0fb73d34b942af79d4cea1bfb7f":[15,0,3,65,29],
 "spawn__players_8c.html#a78962671d015e5f922fb11a135bdd331":[15,0,3,65,31],
 "spawn__players_8c.html#a7898749fef0f0990a0380e0ee86c7990":[15,0,3,65,18],
 "spawn__players_8c.html#a7936732ad039ea27759ba4b9784460f6":[15,0,3,65,20],
@@ -239,15 +249,5 @@ var NAVTREEINDEX65 =
 "starship__model_8h.html#afa717eeef3f333c30e8f0bbbeec0594b":[15,0,0,8,11,3],
 "starship__model_8h.html#afe9aa30e0481ea5f23fe8daf4518ba57":[15,0,0,8,11,23],
 "starship__model_8h_source.html":[15,0,0,8,11],
-"start__game_8c.html":[15,0,3,8,4],
-"start__game_8c.html#a066d4466ee0a05edd9600c478b674a7e":[15,0,3,8,4,3],
-"start__game_8c.html#a2a306c238cbe5ae028cbeee2e724b2e6":[15,0,3,8,4,2],
-"start__game_8c.html#a2bfff8ec22628d92c889dd558cc9ac3d":[15,0,3,8,4,5],
-"start__game_8c.html#a2e086956a1c0bd2f6ac8111273c3cb29":[15,0,3,8,4,1],
-"start__game_8c.html#a398b9ba81e585f81d5b86d2ca26f8708":[15,0,3,8,4,6],
-"start__game_8c.html#a588211157508d34f5093285a13f7d59b":[15,0,3,8,4,7],
-"start__game_8c.html#a5e1aab72e5fa568c63e58e41661fef6a":[15,0,3,8,4,10],
-"start__game_8c.html#a6fcf69737b7291931efe653e58f1ad25":[15,0,3,8,4,9],
-"start__game_8c.html#a99b9c7f03653dc6ebb6e10aa759e8266":[15,0,3,8,4,4],
-"start__game_8c.html#abe9ca904e43a1c0bdd10227709c8ccc0":[15,0,3,8,4,0]
+"start__game_8c.html":[15,0,3,8,4]
 };

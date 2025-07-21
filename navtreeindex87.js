@@ -1,5 +1,15 @@
 var NAVTREEINDEX87 =
 {
+"wasm_8h_source.html":[15,0,3,6,35],
+"waypoints_8h.html":[15,0,2,24],
+"waypoints_8h.html#a058230d7d3d42864e9b6d11f6431b5df":[15,0,2,24,24],
+"waypoints_8h.html#a108a139ef32a1913560c001a90dd0aee":[15,0,2,24,19],
+"waypoints_8h.html#a2097a82eba5a8a58ddc60a8dd7401b30":[15,0,2,24,22],
+"waypoints_8h.html#a3191af64e6e0655e7a4b615334997a79":[15,0,2,24,23],
+"waypoints_8h.html#a32a4cc475021eafe1324a16a38dfdfc9":[15,0,2,24,10],
+"waypoints_8h.html#a437f2b811d91f8603c62977d83469c6b":[15,0,2,24,3],
+"waypoints_8h.html#a49b63837fa97ec7bf319ba4e471f6d68":[15,0,2,24,9],
+"waypoints_8h.html#a4b7ff6acf2f858392676bba8358f42fc":[15,0,2,24,14],
 "waypoints_8h.html#a4d35fd48d01e5c19409f58ab90214182":[15,0,2,24,18],
 "waypoints_8h.html#a700cceb8cfdbc970e03ef5d30b305183":[15,0,2,24,15],
 "waypoints_8h.html#a7a4eb6c1b5118ff6d77f1cdf49886336":[15,0,2,24,7],

@@ -1,5 +1,15 @@
 var NAVTREEINDEX70 =
 {
+"structNoteSubEu.html#afea5dec32c9dd20d9b47a8f75f5a0316":[14,0,173,10],
+"structNoteSynthesisBuffers.html":[14,0,174],
+"structNoteSynthesisBuffers.html#a363bff9ec76f24c9464b14fddab2df79":[14,0,174,3],
+"structNoteSynthesisBuffers.html#a9618443ff8b6c8c7f97d604467a66cc2":[14,0,174,1],
+"structNoteSynthesisBuffers.html#a9752e4461c7281b7034e85d6361a96af":[14,0,174,2],
+"structNoteSynthesisBuffers.html#a9d4d07634479fb01af35a8ca7ff09228":[14,0,174,0],
+"structNoteSynthesisState.html":[14,0,175],
+"structNoteSynthesisState.html#a0f770687b9abc6693e6469c9205b7753":[14,0,175,7],
+"structNoteSynthesisState.html#a170d62b265b5dfbbe7100c42d8e1d4ed":[14,0,175,8],
+"structNoteSynthesisState.html#a56e84a5ca7f6846ae8d352cf69d29ecd":[14,0,175,1],
 "structNoteSynthesisState.html#a96e468829068c5e470ad2d4b7fd904bb":[14,0,175,6],
 "structNoteSynthesisState.html#a9eeb2eed9d7fb2c8d1b748c07b3c5398":[14,0,175,0],
 "structNoteSynthesisState.html#aa5010fda2ba8999cda297457ae6e0bdd":[14,0,175,2],
@@ -239,15 +249,5 @@ var NAVTREEINDEX70 =
 "structPlayer.html#a649c835eb5117a45758d3ac1946070b4":[14,0,213,7],
 "structPlayer.html#a681f0fac4abe58cf5919dd4c6ac503d0":[14,0,213,5],
 "structPlayer.html#a69f86baaaebdf03323b95eb771fd99d0":[14,0,213,14],
-"structPlayer.html#a6e98a588ddd477b8fef70524fc720d4d":[14,0,213,68],
-"structPlayer.html#a71c4ebed7633cd2330dec792fcf24f1f":[14,0,213,43],
-"structPlayer.html#a74dad5ddbade8085f31684845224d211":[14,0,213,118],
-"structPlayer.html#a76429104e0e7c4f38172287ed0e7d251":[14,0,213,1],
-"structPlayer.html#a78406f9994fd497061a0c0a95a873a75":[14,0,213,73],
-"structPlayer.html#a7c77f4ab3073982c21c24b64b03b86c9":[14,0,213,19],
-"structPlayer.html#a7e6b4fa270a549a7b6e5922f5210260f":[14,0,213,42],
-"structPlayer.html#a811f012949322493c5adc6e8deb3fcb2":[14,0,213,31],
-"structPlayer.html#a828560382e4f7e91809cd1d388e02a39":[14,0,213,87],
-"structPlayer.html#a83d16809f8c838410650b1b55a4d0929":[14,0,213,70],
-"structPlayer.html#a8cf86e7bd260cbffbe81b4686ce9553e":[14,0,213,106]
+"structPlayer.html#a6e98a588ddd477b8fef70524fc720d4d":[14,0,213,68]
 };

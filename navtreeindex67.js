@@ -1,5 +1,15 @@
 var NAVTREEINDEX67 =
 {
+"structAudioSequenceData.html#a54cf7b43b663e913eae7387ce72fc9ac":[14,0,71,3],
+"structAudioSequenceData.html#a7b756f0d1d619adeac197f9643ac431f":[14,0,71,2],
+"structAudioSequenceData.html#aa14fd2ae175467f199ad0cd663cbcfae":[14,0,71,1],
+"structAudioSequenceData.html#aeea1ea6d381dd119218bcfa8912ba1e4":[14,0,71,0],
+"structAudioSessionSettings.html":[14,0,72],
+"structAudioSessionSettings.html#a05ebf9209e133d04eb887d6f48c74ef3":[14,0,72,9],
+"structAudioSessionSettings.html#a38f8c2f423cd8e270ea2e2abc023ce11":[14,0,72,8],
+"structAudioSessionSettings.html#a5dc790239abd49d372c105d831cc6173":[14,0,72,6],
+"structAudioSessionSettings.html#a7857d8f97c68b29e1151015c2b89f6d3":[14,0,72,1],
+"structAudioSessionSettings.html#ad0c517937406fc909fc1fa8fc98d8cc7":[14,0,72,2],
 "structAudioSessionSettings.html#adefa51428b36a65c49975c0734bd0edd":[14,0,72,7],
 "structAudioSessionSettings.html#adfd24bd912b4000c5a671f1af61cc6f0":[14,0,72,5],
 "structAudioSessionSettings.html#aed304a9789477e4452784d5c59633e8a":[14,0,72,4],
@@ -239,15 +249,5 @@ var NAVTREEINDEX67 =
 "structCrabSpawn.html#a3225bdeff5c5063d3c80bccda31a8cbf":[14,0,101,2],
 "structCrabSpawn.html#a3b4ded936588ed01e9c84056fe7bd793":[14,0,101,1],
 "structCrabSpawn.html#a6286ebe326b8c1731e1137e2e284d3c4":[14,0,101,3],
-"structCrabSpawn.html#ae360b7292c549a8b6857c0663c8d7921":[14,0,101,0],
-"structCreditsRenderInfo.html":[14,0,103],
-"structCreditsRenderInfo.html#a070bc6dabde8bd85a94aa88bd5007036":[14,0,103,4],
-"structCreditsRenderInfo.html#a090acbb788424a45eded5604be6e88d5":[14,0,103,7],
-"structCreditsRenderInfo.html#a24e1e0308e1830bc196e35a9642b7284":[14,0,103,1],
-"structCreditsRenderInfo.html#a577bd5709affe3037940599569965903":[14,0,103,0],
-"structCreditsRenderInfo.html#a6175ee304cdddecb4a39d822fccfebdc":[14,0,103,6],
-"structCreditsRenderInfo.html#a6d0b55f030b6bf9569e189c88cb3bd8a":[14,0,103,2],
-"structCreditsRenderInfo.html#addb610bee99ef6d6c808ce0e07588aaf":[14,0,103,3],
-"structCreditsRenderInfo.html#ae1ca854285c3b1bfb8c6794f5d9d2989":[14,0,103,5],
-"structCtlEntry.html":[14,0,104]
+"structCrabSpawn.html#ae360b7292c549a8b6857c0663c8d7921":[14,0,101,0]
 };

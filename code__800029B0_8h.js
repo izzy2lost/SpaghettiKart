@@ -96,6 +96,7 @@ var code__800029B0_8h =
     [ "gPlayerWinningIndex", "code__800029B0_8h.html#a8a6a0e5ed8709356fba948d0beeb6a95", null ],
     [ "gQuitToMenuTransitionCounter", "code__800029B0_8h.html#a5018fabd53fbeb5f453f5d76a8620c84", null ],
     [ "gTimePlayerLastTouchedFinishLine", "code__800029B0_8h.html#ac94b9ded4f026071618320e4ac6a0c54", null ],
+    [ "gVtxStretch", "code__800029B0_8h.html#a080ec3096c5acec160d85f6b9a118880", null ],
     [ "gWaterLevel", "code__800029B0_8h.html#a10027d54a3bcb66f9b07ae4ea16fcb65", null ],
     [ "gWaterVelocity", "code__800029B0_8h.html#ae83f0b6a32b3f4ff4daba8ed2846890d", null ],
     [ "pAppNmiBuffer", "code__800029B0_8h.html#a1b736c2cce57eb258b8e704e9424a9b4", null ],

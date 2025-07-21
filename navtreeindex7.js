@@ -1,5 +1,9 @@
 var NAVTREEINDEX7 =
 {
+"bowsers__castle_2course__offsets_8c.html#af4a77bd8086ca15489f6f9b02110ca58":[15,0,0,3,0,0],
+"bowsers__castle__data_8h.html":[15,0,2,0,12],
+"bowsers__castle__data_8h.html#a73e851d2edebf2c5c91a808275a8aece":[15,0,2,0,12,1],
+"bowsers__castle__data_8h.html#ae84f7e8f9496e50de0fa84c8c2b84b53":[15,0,2,0,12,0],
 "bowsers__castle__data_8h_source.html":[15,0,2,0,12],
 "bowsers__castle__displaylists_8h.html":[15,0,2,0,13],
 "bowsers__castle__displaylists_8h.html#a897f9a178e9eb5873cfbdfc5d0c5e86c":[15,0,2,0,13,0],
@@ -245,9 +249,5 @@ var NAVTREEINDEX7 =
 "ceremony__and__credits_8c.html#ad207fcbe629b0245fce52069b74ed767":[15,0,3,5,2,87],
 "ceremony__and__credits_8c.html#ad4f7d9f989753161f6adbc6cfaae27ca":[15,0,3,5,2,100],
 "ceremony__and__credits_8c.html#ad567af544aa0151511ff0a246c6aa83b":[15,0,3,5,2,82],
-"ceremony__and__credits_8c.html#ad7eaa744a487416940013f05c90a2cd0":[15,0,3,5,2,77],
-"ceremony__and__credits_8c.html#ad90800df155a3d088a0042815c84a7bd":[15,0,3,5,2,74],
-"ceremony__and__credits_8c.html#ad9ea4794762bae4213400bf0f41360d4":[15,0,3,5,2,86],
-"ceremony__and__credits_8c.html#adb6778bcc3270bc44dfa953acf9c00bd":[15,0,3,5,2,47],
-"ceremony__and__credits_8c.html#adf46bb9c06b61e3ec855348683c51608":[15,0,3,5,2,90]
+"ceremony__and__credits_8c.html#ad7eaa744a487416940013f05c90a2cd0":[15,0,3,5,2,77]
 };
