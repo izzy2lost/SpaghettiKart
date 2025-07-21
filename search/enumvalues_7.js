@@ -9,5 +9,15 @@ var searchData=
   ['held_5fbanana_6',['HELD_BANANA',['../actor__types_8h.html#ac1412f2ed50826478acf5d826cb0e4bca9c93e2cf1f7b12a51a2c6034bea0622d',1,'actor_types.h']]],
   ['held_5fshell_7',['HELD_SHELL',['../actor__types_8h.html#ac01c8e97d91d8f2968ca1f8d4eb0495ba514b7d298fa86789854ef2056f82f7fd',1,'actor_types.h']]],
   ['hitbox_8',['Hitbox',['../namespaceSF64.html#ad35ecb646e9e3bef64034a5ea3c1f070ae9fe6e01bf949ef0a6d1e5f7c2b21d6f',1,'SF64']]],
-  ['human_5ftable_9',['HUMAN_TABLE',['../update__objects_8c.html#a983c7e9680b59aebe0e1403f7beed001a16359130b9420f11b4f31d4fdcd86fd4',1,'update_objects.c']]]
+  ['hmas_5feffect_5fpause_9',['HMAS_EFFECT_PAUSE',['../HMAS_8h.html#a7b855b990c6d07194add8d7d9d70253ba06acd3b205d859522be046e1ef661ff9',1,'HMAS.h']]],
+  ['hmas_5feffect_5fpitch_10',['HMAS_EFFECT_PITCH',['../HMAS_8h.html#a7b855b990c6d07194add8d7d9d70253baecad57f8010bcfb3094f436ef607264a',1,'HMAS.h']]],
+  ['hmas_5feffect_5fstop_11',['HMAS_EFFECT_STOP',['../HMAS_8h.html#a7b855b990c6d07194add8d7d9d70253ba0897155fb0edd097a6cea9a61cbcf2d4',1,'HMAS.h']]],
+  ['hmas_5feffect_5fvolume_12',['HMAS_EFFECT_VOLUME',['../HMAS_8h.html#a7b855b990c6d07194add8d7d9d70253ba8948b9a3c8af2284f207f3adc45162ff',1,'HMAS.h']]],
+  ['hmas_5fenv_13',['HMAS_ENV',['../HMAS_8h.html#a3a8f95723047fdbf0a9156b76d5100aaa259bc085ab8423576f40e1898d9a6f4b',1,'HMAS.h']]],
+  ['hmas_5finstant_14',['HMAS_INSTANT',['../HMAS_8h.html#ae005181df455e0336da21826496896ffae397b093a41b33ec843b13ed3af5f35d',1,'HMAS.h']]],
+  ['hmas_5flinear_15',['HMAS_LINEAR',['../HMAS_8h.html#ae005181df455e0336da21826496896ffa8896b0d70b26907622bf103d9062c5a2',1,'HMAS.h']]],
+  ['hmas_5fmax_5fchannels_16',['HMAS_MAX_CHANNELS',['../HMAS_8h.html#a3a8f95723047fdbf0a9156b76d5100aaa5ba5a62a847d5f9b02b6090c9d0ca4ba',1,'HMAS.h']]],
+  ['hmas_5fmusic_17',['HMAS_MUSIC',['../HMAS_8h.html#a3a8f95723047fdbf0a9156b76d5100aaa9c9541c497083780d46b1fecf6243d46',1,'HMAS.h']]],
+  ['hmas_5fsfx_18',['HMAS_SFX',['../HMAS_8h.html#a3a8f95723047fdbf0a9156b76d5100aaa20313a7c8e9fae6b4ad2ea16fee730d3',1,'HMAS.h']]],
+  ['human_5ftable_19',['HUMAN_TABLE',['../update__objects_8c.html#a983c7e9680b59aebe0e1403f7beed001a16359130b9420f11b4f31d4fdcd86fd4',1,'update_objects.c']]]
 ];

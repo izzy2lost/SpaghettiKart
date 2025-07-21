@@ -47,7 +47,7 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 1898;
+var viewWidth = 1844;
 var viewHeight = 236;
 var sectionId = 'dynsection-0';
 </script>
@@ -59,9 +59,9 @@ var sectionId = 'dynsection-0';
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title=" ">
-<polygon fill="#999999" stroke="#666666" points="1749,-228 1626,-228 1626,-198 1749,-198 1749,-228"/>
-<text text-anchor="start" x="1634" y="-216" font-family="Helvetica,sans-Serif" font-size="10.00">src/port/resource/type</text>
-<text text-anchor="middle" x="1687.5" y="-205" font-family="Helvetica,sans-Serif" font-size="10.00">/AudioSequence.h</text>
+<polygon fill="#999999" stroke="#666666" points="1675,-228 1552,-228 1552,-198 1675,-198 1675,-228"/>
+<text text-anchor="start" x="1560" y="-216" font-family="Helvetica,sans-Serif" font-size="10.00">src/port/resource/type</text>
+<text text-anchor="middle" x="1613.5" y="-205" font-family="Helvetica,sans-Serif" font-size="10.00">/AudioSequence.h</text>
 </a>
 </g>
 </g>
@@ -78,18 +78,18 @@ var sectionId = 'dynsection-0';
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1615.81,-205.68C1471.05,-192.92 1146.63,-164.32 1016.78,-152.87"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1615.65,-209.18 1625.91,-206.57 1616.26,-202.21 1615.65,-209.18"/>
+<path fill="none" stroke="#63b8ff" d="M1541.91,-204.97C1410.7,-192.09 1134.36,-164.97 1016.57,-153.41"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1541.57,-208.46 1551.87,-205.95 1542.26,-201.49 1541.57,-208.46"/>
 </a>
 </g>
 </g>
 <!-- Node25 -->
 <g id="Node000025" class="node">
 <title>Node25</title>
-<g id="a_Node000025"><a xlink:href="AudioSequenceFactory_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1836,-96 1687,-96 1687,-66 1836,-66 1836,-96"/>
-<text text-anchor="start" x="1695" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">src/port/resource/importers</text>
-<text text-anchor="middle" x="1761.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">/AudioSequenceFactory.cpp</text>
+<g id="a_Node000025"><a xlink:href="AudioSequenceFactory_8h.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="1688,-162 1539,-162 1539,-132 1688,-132 1688,-162"/>
+<text text-anchor="start" x="1547" y="-150" font-family="Helvetica,sans-Serif" font-size="10.00">src/port/resource/importers</text>
+<text text-anchor="middle" x="1613.5" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">/AudioSequenceFactory.h</text>
 </a>
 </g>
 </g>
@@ -97,27 +97,8 @@ var sectionId = 'dynsection-0';
 <g id="edge67_Node000001_Node000025" class="edge">
 <title>Node1&#45;&gt;Node25</title>
 <g id="a_edge67_Node000001_Node000025"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1702.68,-189.19C1708.14,-180.75 1714.25,-171.03 1719.5,-162 1732.66,-139.35 1746.52,-112.21 1754.57,-96.07"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1699.62,-187.48 1697.07,-197.76 1705.48,-191.31 1699.62,-187.48"/>
-</a>
-</g>
-</g>
-<!-- Node26 -->
-<g id="Node000026" class="node">
-<title>Node26</title>
-<g id="a_Node000026"><a xlink:href="AudioSequenceFactory_8h.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1711,-162 1562,-162 1562,-132 1711,-132 1711,-162"/>
-<text text-anchor="start" x="1570" y="-150" font-family="Helvetica,sans-Serif" font-size="10.00">src/port/resource/importers</text>
-<text text-anchor="middle" x="1636.5" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">/AudioSequenceFactory.h</text>
-</a>
-</g>
-</g>
-<!-- Node1&#45;&gt;Node26 -->
-<g id="edge68_Node000001_Node000026" class="edge">
-<title>Node1&#45;&gt;Node26</title>
-<g id="a_edge68_Node000001_Node000026"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1669.82,-189.81C1662.51,-180.64 1654.25,-170.28 1647.79,-162.16"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1667.21,-192.16 1676.18,-197.8 1672.69,-187.79 1667.21,-192.16"/>
+<path fill="none" stroke="#63b8ff" d="M1613.5,-187.54C1613.5,-178.96 1613.5,-169.61 1613.5,-162.16"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1610,-187.8 1613.5,-197.8 1617,-187.8 1610,-187.8"/>
 </a>
 </g>
 </g>
@@ -125,18 +106,18 @@ var sectionId = 'dynsection-0';
 <g id="Node000027" class="node">
 <title>Node27</title>
 <g id="a_Node000027"><a xlink:href="AudioSequence_8cpp.html" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1890,-162 1767,-162 1767,-132 1890,-132 1890,-162"/>
-<text text-anchor="start" x="1775" y="-150" font-family="Helvetica,sans-Serif" font-size="10.00">src/port/resource/type</text>
-<text text-anchor="middle" x="1828.5" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">/AudioSequence.cpp</text>
+<polygon fill="white" stroke="#666666" points="1829,-162 1706,-162 1706,-132 1829,-132 1829,-162"/>
+<text text-anchor="start" x="1714" y="-150" font-family="Helvetica,sans-Serif" font-size="10.00">src/port/resource/type</text>
+<text text-anchor="middle" x="1767.5" y="-139" font-family="Helvetica,sans-Serif" font-size="10.00">/AudioSequence.cpp</text>
 </a>
 </g>
 </g>
 <!-- Node1&#45;&gt;Node27 -->
-<g id="edge71_Node000001_Node000027" class="edge">
+<g id="edge70_Node000001_Node000027" class="edge">
 <title>Node1&#45;&gt;Node27</title>
-<g id="a_edge71_Node000001_Node000027"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1727.63,-193.78C1749.86,-183.69 1777.07,-171.34 1797.63,-162.01"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1726.1,-190.63 1718.44,-197.95 1729,-197.01 1726.1,-190.63"/>
+<g id="a_edge70_Node000001_Node000027"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1656.68,-194.05C1681.08,-183.91 1711.13,-171.43 1733.78,-162.01"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1655.19,-190.89 1647.3,-197.95 1657.87,-197.35 1655.19,-190.89"/>
 </a>
 </g>
 </g>
@@ -924,21 +905,31 @@ var sectionId = 'dynsection-0';
 </a>
 </g>
 </g>
-<!-- Node26&#45;&gt;Node24 -->
-<g id="edge69_Node000026_Node000024" class="edge">
-<title>Node26&#45;&gt;Node24</title>
-<g id="a_edge69_Node000026_Node000024"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1627.97,-122.28C1624.03,-111.31 1619.59,-98.94 1616.68,-90.84"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1624.72,-123.57 1631.4,-131.8 1631.31,-121.2 1624.72,-123.57"/>
+<!-- Node25&#45;&gt;Node24 -->
+<g id="edge68_Node000025_Node000024" class="edge">
+<title>Node25&#45;&gt;Node24</title>
+<g id="a_edge68_Node000025_Node000024"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1613.5,-121.6C1613.5,-110.8 1613.5,-98.78 1613.5,-90.84"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1610,-121.8 1613.5,-131.8 1617,-121.8 1610,-121.8"/>
 </a>
 </g>
 </g>
-<!-- Node26&#45;&gt;Node25 -->
-<g id="edge70_Node000026_Node000025" class="edge">
-<title>Node26&#45;&gt;Node25</title>
-<g id="a_edge70_Node000026_Node000025"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1672.87,-127.38C1692.43,-117.36 1716.15,-105.22 1734.13,-96.01"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1671.24,-124.28 1663.93,-131.95 1674.43,-130.51 1671.24,-124.28"/>
+<!-- Node26 -->
+<g id="Node000026" class="node">
+<title>Node26</title>
+<g id="a_Node000026"><a xlink:href="AudioSequenceFactory_8cpp.html" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="1836,-96 1687,-96 1687,-66 1836,-66 1836,-96"/>
+<text text-anchor="start" x="1695" y="-84" font-family="Helvetica,sans-Serif" font-size="10.00">src/port/resource/importers</text>
+<text text-anchor="middle" x="1761.5" y="-73" font-family="Helvetica,sans-Serif" font-size="10.00">/AudioSequenceFactory.cpp</text>
+</a>
+</g>
+</g>
+<!-- Node25&#45;&gt;Node26 -->
+<g id="edge69_Node000025_Node000026" class="edge">
+<title>Node25&#45;&gt;Node26</title>
+<g id="a_edge69_Node000025_Node000026"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M1655.31,-127.92C1678.7,-117.8 1707.42,-105.38 1729.1,-96.01"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1653.77,-124.77 1645.98,-131.95 1656.55,-131.2 1653.77,-124.77"/>
 </a>
 </g>
 </g>

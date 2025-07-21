@@ -8,7 +8,7 @@ var dir_e80338e4df534b4d44a33fe9099e64af =
     [ "AudioBankFactory.h", "AudioBankFactory_8h.html", "AudioBankFactory_8h" ],
     [ "AudioSampleFactory.cpp", "AudioSampleFactory_8cpp.html", null ],
     [ "AudioSampleFactory.h", "AudioSampleFactory_8h.html", "AudioSampleFactory_8h" ],
-    [ "AudioSequenceFactory.cpp", "AudioSequenceFactory_8cpp.html", null ],
+    [ "AudioSequenceFactory.cpp", "AudioSequenceFactory_8cpp.html", "AudioSequenceFactory_8cpp" ],
     [ "AudioSequenceFactory.h", "AudioSequenceFactory_8h.html", "AudioSequenceFactory_8h" ],
     [ "BetterTextureFactory.cpp", "BetterTextureFactory_8cpp.html", "BetterTextureFactory_8cpp" ],
     [ "BetterTextureFactory.h", "BetterTextureFactory_8h.html", "BetterTextureFactory_8h" ],

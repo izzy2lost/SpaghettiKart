@@ -277,10 +277,12 @@ var searchData=
   ['updatefunc_274',['updateFunc',['../namespaceGameUI.html#a0061808a152dc0fbf49a3bff5407d24a',1,'GameUI']]],
   ['updatesperframe_275',['updatesPerFrame',['../structAudioBufferParametersEU.html#a1697638b0af762c9d700b187e120c890',1,'AudioBufferParametersEU']]],
   ['updatesperframeinv_276',['updatesPerFrameInv',['../structAudioBufferParametersEU.html#a70aacf89643dec4da96e97cba1f9082f',1,'AudioBufferParametersEU']]],
-  ['used_277',['used',['../structUnkEntry.html#a5694063a75aaf50db1cb7d687e46bdc6',1,'UnkEntry']]],
-  ['usedspace_278',['usedSpace',['../structAllocOnlyPool.html#a35f92b08706806346c9579f39bd2b820',1,'AllocOnlyPool']]],
-  ['usereverb_279',['useReverb',['../structSynthesisReverb.html#a5b14756d9ad6c5588fdb97041605f43e',1,'SynthesisReverb']]],
-  ['username_280',['username',['../structNetworkClient.html#a7d252043369012a60cac7e533a92601c',1,'NetworkClient']]],
-  ['usesheadsetpaneffects_281',['usesHeadsetPanEffects',['../structReverbBitsData.html#aa908f813a0564ca417bb72f3574c4bfd',1,'ReverbBitsData::usesHeadsetPanEffects'],['../structNoteSubEu.html#a348ed95a1f9f39ce69ce1ae82c696e8f',1,'NoteSubEu::usesHeadsetPanEffects']]],
-  ['uuid_282',['uuid',['../classAActor.html#ad0d300f6ac4f1daa02669c340c7c523f',1,'AActor::uuid'],['../classOObject.html#a7811ae54fed1f16c7bc34088b99b89b7',1,'OObject::uuid']]]
+  ['usage_277',['usage',['../structma__device__config.html#aaf496c6b2dafb5c10047d95437321bef',1,'ma_device_config::usage'],['../structma__device__config.html#aca89ab3c41fc0e28e92045c6b53a4fc1',1,'ma_device_config::usage']]],
+  ['used_278',['used',['../structUnkEntry.html#a5694063a75aaf50db1cb7d687e46bdc6',1,'UnkEntry']]],
+  ['usedspace_279',['usedSpace',['../structAllocOnlyPool.html#a35f92b08706806346c9579f39bd2b820',1,'AllocOnlyPool']]],
+  ['usereverb_280',['useReverb',['../structSynthesisReverb.html#a5b14756d9ad6c5588fdb97041605f43e',1,'SynthesisReverb']]],
+  ['username_281',['username',['../structNetworkClient.html#a7d252043369012a60cac7e533a92601c',1,'NetworkClient']]],
+  ['usesheadsetpaneffects_282',['usesHeadsetPanEffects',['../structReverbBitsData.html#aa908f813a0564ca417bb72f3574c4bfd',1,'ReverbBitsData::usesHeadsetPanEffects'],['../structNoteSubEu.html#a348ed95a1f9f39ce69ce1ae82c696e8f',1,'NoteSubEu::usesHeadsetPanEffects']]],
+  ['useverbosedeviceenumeration_283',['useVerboseDeviceEnumeration',['../structma__context__config.html#aec7b00b8a724660dc13a9d09c39b8ab9',1,'ma_context_config']]],
+  ['uuid_284',['uuid',['../classAActor.html#ad0d300f6ac4f1daa02669c340c7c523f',1,'AActor::uuid'],['../classOObject.html#a7811ae54fed1f16c7bc34088b99b89b7',1,'OObject::uuid']]]
 ];

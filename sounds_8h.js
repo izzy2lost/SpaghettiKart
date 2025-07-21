@@ -77,6 +77,7 @@ var sounds_8h =
       [ "MUSIC_SEQ_AWARD_CEREMONY_BUILDUP", "sounds_8h.html#a462955cf4ece430059af4e4185a8727caf3f1166568f07225f226dff8c65bef51", null ],
       [ "MUSIC_SEQ_AWARD_CEREMONY_1ST_3RD", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca9f69aa411881a9f27387c4fa7dfd0d0b", null ],
       [ "MUSIC_SEQ_STAFF_ROLL", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca93a5f4e5cb859f3a75a497dabf4fb5bc", null ],
-      [ "MUSIC_SEQ_AWARD_CEREMONY_4TH_8TH", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca1644602e27d5fb82d74a2d2a19fade13", null ]
+      [ "MUSIC_SEQ_AWARD_CEREMONY_4TH_8TH", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca1644602e27d5fb82d74a2d2a19fade13", null ],
+      [ "MUSIC_SEQ_MAX", "sounds_8h.html#a462955cf4ece430059af4e4185a8727caad4d47acb48f7968af60f4b91df52b26", null ]
     ] ]
 ];

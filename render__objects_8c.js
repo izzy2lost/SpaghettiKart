@@ -152,7 +152,7 @@ var render__objects_8c =
     [ "func_8004A12C", "render__objects_8c.html#affc41012cebf6e8d0c7b47fcbaad8215", null ],
     [ "func_8004A1BC", "render__objects_8c.html#a6fdcbc766261390f2fb219a8848240f6", null ],
     [ "func_8004A258", "render__objects_8c.html#af33da42c55311ae4002856f0bc625376", null ],
-    [ "func_8004A2F4", "render__objects_8c.html#a4c0d41a9622eaaaceb2fcbc7fc3897a9", null ],
+    [ "func_8004A2F4", "render__objects_8c.html#a282a86b229412cfc1ef5a97283ef131b", null ],
     [ "func_8004A384", "render__objects_8c.html#af565e270db0433dee7cc4826301a4b3e", null ],
     [ "func_8004A414", "render__objects_8c.html#a682c500346f365bdcde73d83223463cd", null ],
     [ "func_8004A488", "render__objects_8c.html#a42e3cb3afac22eef271b1b17664b97f4", null ],
@@ -395,5 +395,6 @@ var render__objects_8c =
     [ "D_800E46F8A", "render__objects_8c.html#a6088a59e24cb2f16a35bae39e6551fd3", null ],
     [ "D_800E471CA", "render__objects_8c.html#ad340f891a8f35e13e2dd60eef604158f", null ],
     [ "mtx", "render__objects_8c.html#aa6d460986556744dc5e412f987bbb803", null ],
-    [ "prevObject", "render__objects_8c.html#a0433e2713faf1ef0bfde2211d9afeb94", null ]
+    [ "prevObject", "render__objects_8c.html#a0433e2713faf1ef0bfde2211d9afeb94", null ],
+    [ "speedometer_vtx", "render__objects_8c.html#adb372a6763ee9c0ce714ef2d1a70d50a", null ]
 ];

@@ -94,6 +94,7 @@ var searchData=
   ['credits_2eh_91',['credits.h',['../credits_8h.html',1,'']]],
   ['cup_2ecpp_92',['Cup.cpp',['../Cup_8cpp.html',1,'']]],
   ['cup_2eh_93',['Cup.h',['../Cup_8h.html',1,'']]],
-  ['custom_2dcharacters_2emd_94',['custom-characters.md',['../custom-characters_8md.html',1,'']]],
-  ['custom_2dtrack_2emd_95',['custom-track.md',['../custom-track_8md.html',1,'']]]
+  ['custom_2daudio_2emd_94',['custom-audio.md',['../custom-audio_8md.html',1,'']]],
+  ['custom_2dcharacters_2emd_95',['custom-characters.md',['../custom-characters_8md.html',1,'']]],
+  ['custom_2dtrack_2emd_96',['custom-track.md',['../custom-track_8md.html',1,'']]]
 ];

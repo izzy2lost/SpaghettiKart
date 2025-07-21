@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['scalartype_0',['ScalarType',['../namespaceMK64.html#a89738eca35805a30b6ee4d003072a78b',1,'MK64']]],
-  ['sectioncolumns_1',['SectionColumns',['../MenuTypes_8h.html#afb8a56beaffa992b282449dd13970bae',1,'MenuTypes.h']]],
-  ['setting_2',['setting',['../namespaceGameUI.html#a5029f49635f14cdb801f6018a936e5b4',1,'GameUI']]],
-  ['shellstate_3',['ShellState',['../actor__types_8h.html#ac01c8e97d91d8f2968ca1f8d4eb0495b',1,'actor_types.h']]],
-  ['skin_4',['Skin',['../classAShip.html#aaf7ade7faf341ba878c83a2be5834b31',1,'AShip']]],
-  ['sptaskstate_5',['SpTaskState',['../common__structs_8h.html#a4bb374aee872d45ca8292940f2a0ed03',1,'common_structs.h']]],
-  ['states_6',['States',['../classOBombKart.html#a8e4601861010249f2213d909b9daa116',1,'OBombKart::States'],['../classOThwomp.html#ab058a1bffedb77d79e477fc5acbc4e6a',1,'OThwomp::States']]],
-  ['submenuselectiontype_7',['SubMenuSelectionType',['../menus_8h.html#abfb65f784832a58c8c9cfe231056cae7',1,'menus.h']]],
-  ['surface_5ftype_8',['SURFACE_TYPE',['../mk64_8h.html#a5344f2bdca4f9506c40f044e08ea8c98',1,'mk64.h']]]
+  ['penguintype_0',['PenguinType',['../classOPenguin.html#a48226183c47973cde1507a8b94544887',1,'OPenguin']]],
+  ['place_1',['PLACE',['../defines_8h.html#a553ccae20425334722a8255176db6b58',1,'defines.h']]],
+  ['playerbombkartstate_2',['PlayerBombKartState',['../classPlayerBombKart.html#abe29bc9eaaac4f37f32fc1c67a19a1dd',1,'PlayerBombKart']]],
+  ['playerid_3',['PlayerId',['../defines_8h.html#a698be281bf8b3216136b9440f534ca11',1,'defines.h']]],
+  ['playerselectmenuselectiontypes_4',['PlayerSelectMenuSelectionTypes',['../menus_8h.html#a289ed41d88f6aaf162bb650589c7021c',1,'menus.h']]],
+  ['pool_5f1_5fparticle_5ftypes_5',['POOL_1_PARTICLE_TYPES',['../common__structs_8h.html#a716891f13e6eacddeab1f963e3cf858a',1,'common_structs.h']]],
+  ['profilergameevent_6',['ProfilerGameEvent',['../profiler_8h.html#a464075ec8b898dea3a20b3166dd123bf',1,'profiler.h']]],
+  ['profilergfxevent_7',['ProfilerGfxEvent',['../profiler_8h.html#af588a3a9b27840d837d5417d4be531e8',1,'profiler.h']]]
 ];
