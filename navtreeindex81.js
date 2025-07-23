@@ -1,5 +1,7 @@
 var NAVTREEINDEX81 =
 {
+"structUnkStruct__800DC5EC.html#a44afd7ec23c595d02e0ad6abfa2c63a5":[15,0,475,8],
+"structUnkStruct__800DC5EC.html#a5c8a580503c8c3dd49306bd0ec5b4fd5":[15,0,475,12],
 "structUnkStruct__800DC5EC.html#a5f04fbc7a1f855f72c7fcdda34cb5880":[15,0,475,6],
 "structUnkStruct__800DC5EC.html#a770e36fc4928b0e0f72f83ce74b95a0e":[15,0,475,15],
 "structUnkStruct__800DC5EC.html#a7d44219e57cd8697debfd5ec19afbdd9":[15,0,475,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX81 =
 "struct____OSDir.html#a3f4d2357f3a56d002669d6b69d62c1e3":[15,0,13,6],
 "struct____OSDir.html#a754648a305e01e7b9fadaa8895507946":[15,0,13,4],
 "struct____OSDir.html#a79149ed1dfcc27fd42d812ebbdc5d5c9":[15,0,13,0],
-"struct____OSDir.html#a7d01de30a218181527f322f694acccfc":[15,0,13,1],
-"struct____OSDir.html#a7e225c884a066c0609243355f42c5f70":[15,0,13,3],
-"struct____OSDir.html#af0417044f6d23d2df1739843a4efe722":[15,0,13,5]
+"struct____OSDir.html#a7d01de30a218181527f322f694acccfc":[15,0,13,1]
 };

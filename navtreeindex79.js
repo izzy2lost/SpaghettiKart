@@ -1,5 +1,7 @@
 var NAVTREEINDEX79 =
 {
+"structSequencePlayer.html#a698b8513083d52d235d212c8ed0bea82":[15,0,394,3],
+"structSequencePlayer.html#a6c1f8b339beb96a7720cb4da4134442c":[15,0,394,25],
 "structSequencePlayer.html#a7365d7f4cd14457acf350a93483454e1":[15,0,394,28],
 "structSequencePlayer.html#a7585d60594a0c42abd0c837cdde323c1":[15,0,394,29],
 "structSequencePlayer.html#a79c9f7e13f8ef2c8cf33379a299f55bf":[15,0,394,8],
@@ -247,7 +249,5 @@ var NAVTREEINDEX79 =
 "structUIWidgets_1_1ButtonOptions.html#a6ba8ceaf2c082e29650fbdcf060deaa0":[15,0,7,0,4],
 "structUIWidgets_1_1ButtonOptions.html#aa3ca2312ba7a4417b3186d8a39463299":[14,0,11,1,3],
 "structUIWidgets_1_1ButtonOptions.html#aa3ca2312ba7a4417b3186d8a39463299":[15,0,7,0,3],
-"structUIWidgets_1_1ButtonOptions.html#ab3d3fc603567389d14d839c61176dd86":[14,0,11,1,0],
-"structUIWidgets_1_1ButtonOptions.html#ab3d3fc603567389d14d839c61176dd86":[15,0,7,0,0],
-"structUIWidgets_1_1CheckboxOptions.html":[14,0,11,2]
+"structUIWidgets_1_1ButtonOptions.html#ab3d3fc603567389d14d839c61176dd86":[14,0,11,1,0]
 };

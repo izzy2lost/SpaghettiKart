@@ -1,5 +1,7 @@
 var NAVTREEINDEX82 =
 {
+"struct____OSDir.html#a7e225c884a066c0609243355f42c5f70":[15,0,13,3],
+"struct____OSDir.html#af0417044f6d23d2df1739843a4efe722":[15,0,13,5],
 "struct____OSInode.html":[15,0,15],
 "struct____OSInode.html#ab913e55c3af6099c919ece81349eb21f":[15,0,15,0],
 "struct____OSInodeCache.html":[15,0,16],
@@ -247,7 +249,5 @@ var NAVTREEINDEX82 =
 "structma__backend__callbacks.html#ade30dc2dc011e30a1dc54ef2bb782e08":[15,0,160,0],
 "structma__biquad.html":[15,0,161],
 "structma__biquad.html#a107986c5a2d636f1c9cc4d55b83c84e7":[15,0,161,4],
-"structma__biquad.html#a2061230aff3c516e2e4d975bc4a9c8bd":[15,0,161,2],
-"structma__biquad.html#a4116811e091752d0702320c67b29d48d":[15,0,161,3],
-"structma__biquad.html#a680c820c01950fbf60e7ae04e5dbc933":[15,0,161,5]
+"structma__biquad.html#a2061230aff3c516e2e4d975bc4a9c8bd":[15,0,161,2]
 };

@@ -1,5 +1,7 @@
 var NAVTREEINDEX83 =
 {
+"structma__biquad.html#a4116811e091752d0702320c67b29d48d":[15,0,161,3],
+"structma__biquad.html#a680c820c01950fbf60e7ae04e5dbc933":[15,0,161,5],
 "structma__biquad.html#a7fa954d1e32f44d594e00e019138f130":[15,0,161,8],
 "structma__biquad.html#a84c3529311a71d2289b207a727d4cf2e":[15,0,161,1],
 "structma__biquad.html#a89382be90d12e372f4d16db019e2807c":[15,0,161,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX83 =
 "structma__delay__config.html#a0054b1638e54cbf4fb158ed5a031bf60":[15,0,190,4],
 "structma__delay__config.html#a17344a91be37256869d579404266aa6a":[15,0,190,5],
 "structma__delay__config.html#a239b9f5a6038996d515f7febf87c5e9d":[15,0,190,0],
-"structma__delay__config.html#a942b44cb8a4d3dcc8eab62feaa5693e1":[15,0,190,2],
-"structma__delay__config.html#aa8fc1b2ba1af1e4382e053a3637f0701":[15,0,190,3],
-"structma__delay__config.html#aca32fa343865619dcf82fcf7a4077599":[15,0,190,6]
+"structma__delay__config.html#a942b44cb8a4d3dcc8eab62feaa5693e1":[15,0,190,2]
 };
