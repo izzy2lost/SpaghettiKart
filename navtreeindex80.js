@@ -1,5 +1,6 @@
 var NAVTREEINDEX80 =
 {
+"structUIWidgets_1_1ButtonOptions.html#ab3d3fc603567389d14d839c61176dd86":[14,0,11,1,0],
 "structUIWidgets_1_1ButtonOptions.html#ab3d3fc603567389d14d839c61176dd86":[15,0,7,0,0],
 "structUIWidgets_1_1CheckboxOptions.html":[14,0,11,2],
 "structUIWidgets_1_1CheckboxOptions.html":[15,0,7,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX80 =
 "structUnkStruct__800DC5EC.html":[15,0,475],
 "structUnkStruct__800DC5EC.html#a061c600f0c8bd66189a88c1ab6e921e1":[15,0,475,4],
 "structUnkStruct__800DC5EC.html#a1f140eee8c793dccffc1c4b6dad37459":[15,0,475,2],
-"structUnkStruct__800DC5EC.html#a30c59db4259b741aa0d509f5b7ea8f36":[15,0,475,0],
-"structUnkStruct__800DC5EC.html#a35b0326cc1d9dfeb28e5b0d64ecaf65f":[15,0,475,3]
+"structUnkStruct__800DC5EC.html#a30c59db4259b741aa0d509f5b7ea8f36":[15,0,475,0]
 };

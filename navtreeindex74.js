@@ -1,5 +1,6 @@
 var NAVTREEINDEX74 =
 {
+"structCourseTimeTrialRecords.html#a91e118cf346d05af5de32d3e3e237710":[15,0,96,0],
 "structCourseTimeTrialRecords.html#ad1c5445784e4ecc217c3f89faaeebc62":[15,0,96,2],
 "structCourseVtx.html":[15,0,97],
 "structCourseVtx.html#a493464e3f8e591181c830eb0f5594593":[15,0,97,2],
@@ -248,6 +249,5 @@ var NAVTREEINDEX74 =
 "structItemBox.html#afbe6f4cee304f147c300049c1e8b95b7":[15,0,140,13],
 "structItemProbabilities.html":[15,0,141],
 "structItemProbabilities.html#a0d9a0fc2bd984a13b62af2e803ab9777":[15,0,141,7],
-"structItemProbabilities.html#a1a221b104acdddfb541471de95d76918":[15,0,141,0],
-"structItemProbabilities.html#a2006036fa9258fc207d5eeff0023c400":[15,0,141,10]
+"structItemProbabilities.html#a1a221b104acdddfb541471de95d76918":[15,0,141,0]
 };

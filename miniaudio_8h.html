@@ -461,6 +461,8 @@ Macros</h2></td></tr>
 <tr class="separator:a070d2ce7b6bb7e5c05602aa8c308d0c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bb23a979c3d7765612e5ce7dc08d319" id="r_a9bb23a979c3d7765612e5ce7dc08d319"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bb23a979c3d7765612e5ce7dc08d319">MA_SIZE_MAX</a>&#160;&#160;&#160;0xFFFFFFFF  /* When SIZE_MAX is not defined by the standard library just default to the maximum 32-bit unsigned integer. */</td></tr>
 <tr class="separator:a9bb23a979c3d7765612e5ce7dc08d319"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2a71d031865f5a942b4342ce1b48676" id="r_ab2a71d031865f5a942b4342ce1b48676"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab2a71d031865f5a942b4342ce1b48676">MA_UINT64_MAX</a>&#160;&#160;&#160;(((<a class="el" href="#a4360475a027c8f01e79ca87226b1d96d">ma_uint64</a>)0xFFFFFFFF &lt;&lt; 32) | (<a class="el" href="#a4360475a027c8f01e79ca87226b1d96d">ma_uint64</a>)0xFFFFFFFF)   /* Weird shifting syntax is for VC6 compatibility. */</td></tr>
+<tr class="separator:ab2a71d031865f5a942b4342ce1b48676"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed48b74881ccf046f57a3031cf701cc2" id="r_aed48b74881ccf046f57a3031cf701cc2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed48b74881ccf046f57a3031cf701cc2">MA_POSIX</a></td></tr>
 <tr class="separator:aed48b74881ccf046f57a3031cf701cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0124be607e1af39440261f60e21de546" id="r_a0124be607e1af39440261f60e21de546"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0124be607e1af39440261f60e21de546">MA_FALLTHROUGH</a>&#160;&#160;&#160;((void)0)</td></tr>
@@ -3858,6 +3860,20 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define MA_TRUE&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab2a71d031865f5a942b4342ce1b48676" name="ab2a71d031865f5a942b4342ce1b48676"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2a71d031865f5a942b4342ce1b48676">&#9670;&#160;</a></span>MA_UINT64_MAX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MA_UINT64_MAX&#160;&#160;&#160;(((<a class="el" href="#a4360475a027c8f01e79ca87226b1d96d">ma_uint64</a>)0xFFFFFFFF &lt;&lt; 32) | (<a class="el" href="#a4360475a027c8f01e79ca87226b1d96d">ma_uint64</a>)0xFFFFFFFF)   /* Weird shifting syntax is for VC6 compatibility. */</td>
         </tr>
       </table>
 </div><div class="memdoc">

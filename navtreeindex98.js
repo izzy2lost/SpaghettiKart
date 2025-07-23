@@ -1,5 +1,6 @@
 var NAVTREEINDEX98 =
 {
+"vehicles_8h.html#a79f6ae5571281e79af1c94439a24fe2f":[16,0,2,24,5],
 "vehicles_8h.html#a79f6ae5571281e79af1c94439a24fe2f":[16,0,2,24,6],
 "vehicles_8h.html#a7bb7f90607adbbc2d74f3b248f820e09":[16,0,2,24,7],
 "vehicles_8h.html#a7dd94b807c565ffabd9a4650a0a75faa":[16,0,2,24,20],

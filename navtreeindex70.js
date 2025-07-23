@@ -1,5 +1,6 @@
 var NAVTREEINDEX70 =
 {
+"skybox__and__splitscreen_8c.html#a48751c54a38756b9474b566084b5e56a":[16,0,3,11,16,43],
 "skybox__and__splitscreen_8c.html#a499e9f29e241ca3ab115fda541a146ac":[16,0,3,11,16,22],
 "skybox__and__splitscreen_8c.html#a52a89ac5b94f92acb106384aa5668246":[16,0,3,11,16,3],
 "skybox__and__splitscreen_8c.html#a530f75435172f605331e514c70b3a1bd":[16,0,3,11,16,25],
@@ -248,6 +249,5 @@ var NAVTREEINDEX70 =
 "sounds_8h.html#ab59fc4e1f11577b8c20ee8c136cf0172":[16,0,2,21,4],
 "sounds_8h.html#ababe19e841b4ff40b2e5d882d7cba29b":[16,0,2,21,26],
 "sounds_8h.html#ac4b9557ff90d356c9baea1e2fca97920":[16,0,2,21,38],
-"sounds_8h.html#ac4e9894101eaffbd37146777874c92cf":[16,0,2,21,5],
-"sounds_8h.html#accdc6dfaa039039a066acbc8cac43bfb":[16,0,2,21,42]
+"sounds_8h.html#ac4e9894101eaffbd37146777874c92cf":[16,0,2,21,5]
 };

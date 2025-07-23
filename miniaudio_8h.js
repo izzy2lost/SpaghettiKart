@@ -200,6 +200,7 @@ var miniaudio_8h =
     [ "MA_SUPPORT_CUSTOM", "miniaudio_8h.html#a3e7196bd332070a823c47657d923cb50", null ],
     [ "MA_SUPPORT_NULL", "miniaudio_8h.html#aac3276540d60b2915c8a99fcbb8c85b9", null ],
     [ "MA_TRUE", "miniaudio_8h.html#a85706a0ea744986f43ac5ac197217ac3", null ],
+    [ "MA_UINT64_MAX", "miniaudio_8h.html#ab2a71d031865f5a942b4342ce1b48676", null ],
     [ "MA_VERSION_MAJOR", "miniaudio_8h.html#ae2c0748f2260efd299449eadc4172be2", null ],
     [ "MA_VERSION_MINOR", "miniaudio_8h.html#a6c12691cd3384e3796d5c1fe2d76d84b", null ],
     [ "MA_VERSION_REVISION", "miniaudio_8h.html#ac077c55e57e73005f5eb59fcf85a46f3", null ],

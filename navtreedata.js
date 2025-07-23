@@ -28,7 +28,7 @@ var NAVTREE =
     [ "Actors", "actorsmenu.html", "actorsmenu" ],
     [ "Understanding the Basics", "basics.html", "basics" ],
     [ "Building SpagettiKart", "md_docs_2BUILDING.html", [
-      [ "Windows", "md_docs_2BUILDING.html#windows", [
+      [ "Windows", "md_docs_2BUILDING.html#windows-1", [
         [ "Developing SpaghettiKart", "md_docs_2BUILDING.html#developing-spaghettikart", [
           [ "Visual Studio", "md_docs_2BUILDING.html#visual-studio", null ],
           [ "Visual Studio Code or another editor", "md_docs_2BUILDING.html#visual-studio-code-or-another-editor", null ]
@@ -38,18 +38,18 @@ var NAVTREE =
           [ "Clean", "md_docs_2BUILDING.html#clean", null ]
         ] ]
       ] ],
-      [ "Linux", "md_docs_2BUILDING.html#linux", [
+      [ "Linux", "md_docs_2BUILDING.html#linux-1", [
         [ "Clone the repo and enter the directory", "md_docs_2BUILDING.html#clone-the-repo-and-enter-the-directory", null ],
         [ "Manual", "md_docs_2BUILDING.html#manual", [
           [ "Install dependencies", "md_docs_2BUILDING.html#install-dependencies", [
             [ "Debian/Ubuntu", "md_docs_2BUILDING.html#debianubuntu", null ],
-            [ "Arch", "md_docs_2BUILDING.html#arch", null ],
-            [ "Fedora", "md_docs_2BUILDING.html#fedora", null ],
+            [ "Arch", "md_docs_2BUILDING.html#arch-1", null ],
+            [ "Fedora", "md_docs_2BUILDING.html#fedora-1", null ],
             [ "openSUSE", "md_docs_2BUILDING.html#opensuse", null ]
           ] ],
           [ "Build", "md_docs_2BUILDING.html#build", null ]
         ] ],
-        [ "Docker", "md_docs_2BUILDING.html#docker", [
+        [ "Docker", "md_docs_2BUILDING.html#docker-1", [
           [ "Create the docker container", "md_docs_2BUILDING.html#create-the-docker-container", null ],
           [ "Configure the project", "md_docs_2BUILDING.html#configure-the-project", null ],
           [ "Compile the project", "md_docs_2BUILDING.html#compile-the-project", null ]
@@ -59,7 +59,7 @@ var NAVTREE =
           [ "Clean", "md_docs_2BUILDING.html#clean-1", null ]
         ] ]
       ] ],
-      [ "macOS", "md_docs_2BUILDING.html#macos", [
+      [ "macOS", "md_docs_2BUILDING.html#macos-1", [
         [ "Generating a distributable", "md_docs_2BUILDING.html#generating-a-distributable", null ],
         [ "Additional CMake Targets", "md_docs_2BUILDING.html#additional-cmake-targets-2", [
           [ "Clean", "md_docs_2BUILDING.html#clean-2", null ]
@@ -203,51 +203,51 @@ var NAVTREEINDEX =
 "miniaudio_8h.html#a3c2fbf7563d9b9c7929003e44f81aa37a6f6a038458a98147aef4f8862eac1da8",
 "miniaudio_8h.html#a64e723da835a05dc9c53601caf3ec9a5a6f2df56bf70e9863aeadc665cfd53170",
 "miniaudio_8h.html#a8e77ba34b5253be29e5deae839ecbf46aa59f24f514faa78ef652bc6b54e0f214",
-"miniaudio_8h.html#ab9b51d84adb0c23c0f3c791d2d24bed0",
-"miniaudio_8h.html#adbacdee407404b57935b9aac3e29edd7",
-"mixer_8c.html#ad1f6f4daa4db1146391a32f7744ecfcd",
-"namespaceGameUI.html#acd54167732cc642bf12c0c84bb052c97",
-"namespacepfd.html#ab888b234398a273a027aebdeb7d5269f",
-"osEepromProbe_8c.html#a0fd5c533855a3970d450221de82beefc",
-"path__spawn__metadata_8h.html",
-"player__controller_8c.html#a6f44b07e387daa69d970f213ba55334a",
-"player__controller_8h.html#aeffdbb54b2a18ca66d5fe8f44b942ff3",
-"profiler_8h.html",
-"render__objects_8c.html#a0f077b9b03b813485f0c45fd516a346c",
-"render__objects_8c.html#aaab3d66e866737e450b04b2efc376b7d",
-"render__objects_8h.html#a48845dc2fff7bf56950fb44118f97848",
-"render__objects_8h.html#aeec3b572babc64a2dbd4d745fe0957d8",
-"replays_8c.html#a0eb82092a448ee36c1e468dfa4765ce6",
-"save_8h.html#ad4724da1441ca44603fb73b6c66f89f1",
-"ship2__model_8h_source.html",
-"skybox__and__splitscreen_8c.html#a499e9f29e241ca3ab115fda541a146ac",
-"sounds_8h.html#ad5c3461c52d2fdc3a45f89ca9d0a82f8",
-"starship__model_8h.html#a6995972a9b8c39ac2cbfee728773eaec",
-"structAudioBankSound.html#a72a6fe189b2af80e66e27e59e1091504",
-"structCourseTimeTrialRecords.html#ad1c5445784e4ecc217c3f89faaeebc62",
-"structItemProbabilities.html#a387ef98d6fabfdea00f95643f8783c1c",
-"structNotePool.html#af26fcc95191d3421f77c078dca55e610",
-"structPlayer.html#a44205fe43375896401b0303b0f1dc58f",
+"miniaudio_8h.html#ab9770910de029dfcec62175ea6ca44c7",
+"miniaudio_8h.html#adb852c0b0c8dafa4876eb3f00d1d9b55",
+"mixer_8c.html#ad15aafa36ae4106e1bb5a20d9aad1c3b",
+"namespaceGameUI.html#ac706231c321fb011884fe479328bb1ed",
+"namespacepfd.html#aae00cd25e23dcc7e3a3c1f7678d1762c",
+"osEepromProbe_8c.html",
+"path__spawn__metadata_8c.html#aff0cf43668bf5133962be53f680bddbe",
+"player__controller_8c.html#a6e5c0e67e55deda79c1b6c3be77cd8c4",
+"player__controller_8h.html#aee5b914a1ddf7362e30f2473024f442c",
+"profiler_8c.html#af496289e1627efbeb535f764087dd40b",
+"render__objects_8c.html#a0eef4ab8ba8d0cfd0950067f759fecb2",
+"render__objects_8c.html#aaa8db08f147bc6819144cf35c0e91935",
+"render__objects_8h.html#a4852677791dfcaa24b1e72d8f4ffe214",
+"render__objects_8h.html#aedc1394b2a213931860ed69df1ea090a",
+"replays_8c.html#a0a5ecd7326c14f60dc23b1d25ff10599",
+"save_8h.html#ad310f5c72ffd1a7e078903c9e10037b1",
+"ship2__model_8h.html#affabcb53f5bbf99ed7fefcb9ee7af7f2",
+"skybox__and__splitscreen_8c.html#a48751c54a38756b9474b566084b5e56a",
+"sounds_8h.html#accdc6dfaa039039a066acbc8cac43bfb",
+"starship__model_8h.html#a67cb391ff911c4d6e78595e1f51d4b0d",
+"structAudioBankSound.html#a5809c38d8d1b258c056580bf3f64f3a2",
+"structCourseTimeTrialRecords.html#a91e118cf346d05af5de32d3e3e237710",
+"structItemProbabilities.html#a2006036fa9258fc207d5eeff0023c400",
+"structNotePool.html#ae6ac803349d6c44d17ec6c68b3ac0c0d",
+"structPlayer.html#a440328bf0f1cf22b9a1f10833d577d69",
 "structSF64_1_1JointKey.html",
-"structSequencePlayer.html#a698b8513083d52d235d212c8ed0bea82",
+"structSequencePlayer.html#a6494f095eaba1578d6086e061a9875f8",
 "structUIWidgets_1_1ButtonOptions.html#ab3d3fc603567389d14d839c61176dd86",
-"structUnkStruct__800DC5EC.html#a44afd7ec23c595d02e0ad6abfa2c63a5",
-"struct____OSDir.html#a7e225c884a066c0609243355f42c5f70",
-"structma__biquad.html#a4116811e091752d0702320c67b29d48d",
-"structma__delay__config.html#aa8fc1b2ba1af1e4382e053a3637f0701",
-"structma__engine__node.html#aa3f53a1145a45ce81ed278b82bdb0ad6",
-"structma__node__base.html#a3197bb769738f33ff78a37ea12d6ce5b",
-"structma__resource__manager__data__source__config.html#a4b9cc02e189fd58d5b60ab268ea26f37",
-"structstruct__80283430.html#a1dfbdb9ac09591f1e56aa9c038b959a4",
-"textures_8c.html#a0542532ac7b8088a4ff3a7867fe439a6",
-"textures_8c.html#a5a77ab5481a58469e87876d764228809",
-"textures_8c.html#abb5071bb0336309b57706ca49238e267",
-"textures_8h.html#a119792cce07600c4d5435a93c474bbd0",
-"textures_8h.html#a6683230e7704d6f83f862684a3e7592c",
-"textures_8h.html#ac7ab404f1a69f7a9d9ba1c417540bd75",
-"track_8c.html#a463de3eb6f31ac3833a2ed790ca6a6c6",
-"track_8h.html#a6211f4ca9b6404c1359ba88eecd3b0b0",
-"update__objects_8c.html#a0aaa4739dd54cd55d7a899ba26205257",
+"structUnkStruct__800DC5EC.html#a35b0326cc1d9dfeb28e5b0d64ecaf65f",
+"struct____OSDir.html#a7d01de30a218181527f322f694acccfc",
+"structma__biquad.html#a2061230aff3c516e2e4d975bc4a9c8bd",
+"structma__delay__config.html#a942b44cb8a4d3dcc8eab62feaa5693e1",
+"structma__engine__node.html#aa0300770d145368e194a65ec4424d436",
+"structma__node__base.html#a2ceaa969d626be977a7d1db5a6b23a18",
+"structma__resource__manager__data__source__config.html#a42a7f0f0fb6b3ecb82090df471fd0a12",
+"structstruct__80283430.html",
+"textures_8c.html#a0474709b7e442e0209557b166523bb46",
+"textures_8c.html#a5a477c3e4c561d801a055c15940368ea",
+"textures_8c.html#abb48ec977ae985f195c1f78afcb813f1",
+"textures_8h.html#a10ca66394abc2418f220ae6ac5bda83f",
+"textures_8h.html#a661575593fe8683cd8873514d7355878",
+"textures_8h.html#ac7760d0bdb25f13d9fc6f344423cac8a",
+"track_8c.html#a46037c7680e74907748a6414a80dcd65",
+"track_8h.html#a609b2012d80198350014e40acd9cf8ff",
+"update__objects_8c.html#a0402bdcdbe1edec96b71374d1dafaa5e",
 "vehicles_8h.html#a79f6ae5571281e79af1c94439a24fe2f"
 ];
 

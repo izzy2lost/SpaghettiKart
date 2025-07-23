@@ -235,7 +235,7 @@ var NAVTREEINDEX41 =
 "md_docs_2BUILDING.html#additional-cmake-targets":[2,0,2],
 "md_docs_2BUILDING.html#additional-cmake-targets-1":[2,1,4],
 "md_docs_2BUILDING.html#additional-cmake-targets-2":[2,2,1],
-"md_docs_2BUILDING.html#arch":[2,1,1,0,1],
+"md_docs_2BUILDING.html#arch-1":[2,1,1,0,1],
 "md_docs_2BUILDING.html#build":[2,1,1,1],
 "md_docs_2BUILDING.html#clean":[2,0,2,0],
 "md_docs_2BUILDING.html#clean-1":[2,1,4,0],
@@ -246,8 +246,8 @@ var NAVTREEINDEX41 =
 "md_docs_2BUILDING.html#create-the-docker-container":[2,1,2,0],
 "md_docs_2BUILDING.html#debianubuntu":[2,1,1,0,0],
 "md_docs_2BUILDING.html#developing-spaghettikart":[2,0,0],
-"md_docs_2BUILDING.html#docker":[2,1,2],
-"md_docs_2BUILDING.html#fedora":[2,1,1,0,2],
+"md_docs_2BUILDING.html#docker-1":[2,1,2],
+"md_docs_2BUILDING.html#fedora-1":[2,1,1,0,2],
 "md_docs_2BUILDING.html#generate-a-distributable":[2,1,3],
 "md_docs_2BUILDING.html#generating-a-distributable":[2,2,0]
 };

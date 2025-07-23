@@ -1,5 +1,6 @@
 var NAVTREEINDEX75 =
 {
+"structItemProbabilities.html#a2006036fa9258fc207d5eeff0023c400":[15,0,141,10],
 "structItemProbabilities.html#a387ef98d6fabfdea00f95643f8783c1c":[15,0,141,8],
 "structItemProbabilities.html#a3f63ddd0da2fb8350253819db034a948":[15,0,141,1],
 "structItemProbabilities.html#a40d9132215d0c6f557f86e1b302c695a":[15,0,141,6],
@@ -248,6 +249,5 @@ var NAVTREEINDEX75 =
 "structNotePlaybackState.html#afdd48f62f9137b20e5e86221d4994f85":[15,0,323,2],
 "structNotePool.html":[15,0,324],
 "structNotePool.html#a7057a6481ff7c9f5891bd08136c8da22":[15,0,324,3],
-"structNotePool.html#ac2528778f49b1dcfba89a73e952a52b8":[15,0,324,2],
-"structNotePool.html#ae6ac803349d6c44d17ec6c68b3ac0c0d":[15,0,324,0]
+"structNotePool.html#ac2528778f49b1dcfba89a73e952a52b8":[15,0,324,2]
 };
