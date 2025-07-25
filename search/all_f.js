@@ -1630,7 +1630,7 @@ var searchData=
   ['ma_5fwaveform_5funinit_1627',['ma_waveform_uninit',['../miniaudio_8h.html#a11f019dbe9fac6beb8968db788385219',1,'miniaudio.h']]],
   ['ma_5fwchar_5fwin32_1628',['ma_wchar_win32',['../miniaudio_8h.html#aeac1e2a705719ce8fac1c60afbbe70af',1,'miniaudio.h']]],
   ['ma_5fxstringify_1629',['MA_XSTRINGIFY',['../miniaudio_8h.html#abb77f4d774ce5496f0b33dbb06b878ec',1,'miniaudio.h']]],
-  ['macos_1630',['macOS',['../compiling.html#macos',1,'macOS'],['../md_docs_2BUILDING.html#macos-1',1,'macOS']]],
+  ['macos_1630',['macOS',['../md_docs_2BUILDING.html#macos',1,'macOS'],['../compiling.html#macos-1',1,'macOS']]],
   ['macro_5fcolor_5fflag_1631',['MACRO_COLOR_FLAG',['../mk64_8h.html#ab34a07fcda62ff7494db5d447db8f436',1,'mk64.h']]],
   ['macros_2eh_1632',['macros.h',['../macros_8h.html',1,'']]],
   ['macros_2einc_1633',['macros.inc',['../macros_8inc.html',1,'']]],
