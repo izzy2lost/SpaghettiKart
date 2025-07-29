@@ -18,7 +18,6 @@ var structSequencePlayer =
     [ "fadeVolume", "structSequencePlayer.html#affb2865bfac26e3e9a1723d575dd3bd1", null ],
     [ "fadeVolumeScale", "structSequencePlayer.html#ae3d0b820eb9ec2dec5a8dc8129b1ee49", null ],
     [ "finished", "structSequencePlayer.html#ae1041d5fcb3af39d07d2d44859c89469", null ],
-    [ "gameVolume", "structSequencePlayer.html#a3792412148f954f55275ea93364a14f6", null ],
     [ "loadingBankId", "structSequencePlayer.html#a7ff39707aa512005fa36b220cc546881", null ],
     [ "muteBehavior", "structSequencePlayer.html#a6494f095eaba1578d6086e061a9875f8", null ],
     [ "muted", "structSequencePlayer.html#ac15836738ba591dfd19a5de6314ac8ed", null ],

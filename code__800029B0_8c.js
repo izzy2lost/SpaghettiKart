@@ -5,6 +5,7 @@ var code__800029B0_8c =
     [ "func_800029B0", "code__800029B0_8c.html#a7f2e9212dffa5894377677511e9aea7a", null ],
     [ "func_80002DAC", "code__800029B0_8c.html#aa64b1458166c92a3575d8edd5948a628", null ],
     [ "setup_race", "code__800029B0_8c.html#aca6165112fc92e65ad6477e785a7098c", null ],
+    [ "update_music_volume", "code__800029B0_8c.html#ad2261513ccdc1dde9259588945f5e55f", null ],
     [ "code_800029B0_bss_pad", "code__800029B0_8c.html#ad8544e8a57deed6006687a91ba568e03", null ],
     [ "code_800029B0_bss_pad2", "code__800029B0_8c.html#a4b1f667b54ee60061ad7bb3ec499b854", null ],
     [ "D_800DC5A8", "code__800029B0_8c.html#a9e4e9cb5139089fd7b12f4e6210e986d", null ],

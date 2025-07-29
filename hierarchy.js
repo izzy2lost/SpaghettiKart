@@ -83,6 +83,7 @@ var hierarchy =
     [ "Color", "structColor.html", null ],
     [ "SF64::ColPolyData", "structSF64_1_1ColPolyData.html", null ],
     [ "Controller", "structController.html", null ],
+    [ "ControllerPak", "structControllerPak.html", null ],
     [ "Course", "classCourse.html", [
       [ "BansheeBoardwalk", "classBansheeBoardwalk.html", null ],
       [ "BigDonut", "classBigDonut.html", null ],

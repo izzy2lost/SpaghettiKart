@@ -137,8 +137,10 @@ Windows</h1>
 <div class="line"># Add `-DCMAKE_BUILD_TYPE:STRING=Release` if you&#39;re packaging</div>
 <div class="line">&amp; &#39;C:\Program Files\CMake\bin\cmake&#39; -S . -B &quot;build/x64&quot; -G &quot;Visual Studio 17 2022&quot; -T v143 -A x64</div>
 <div class="line"> </div>
-<div class="line"># Generate mk64.o2r</div>
+<div class="line"># Generate mk64.o2r and spaghetti.o2r</div>
 <div class="line">&amp; &#39;C:\Program Files\CMake\bin\cmake.exe&#39; --build .\build\x64 --target ExtractAssets</div>
+<div class="line"># or if you want to generate the spaghetti.o2r file only</div>
+<div class="line">&amp; &#39;C:\Program Files\CMake\bin\cmake.exe&#39; --build .\build\x64 --target GenerateO2R</div>
 <div class="line"> </div>
 <div class="line"># Compile project</div>
 <div class="line"># Add `--config Release` if you&#39;re packaging</div>
@@ -218,8 +220,10 @@ Build</h3>
 <div class="line"># Add `-DPython3_EXECUTABLE=$(which python3)` if you are using non-standard Python installations such as PyEnv</div>
 <div class="line">cmake -H. -Bbuild-cmake -GNinja</div>
 <div class="line"> </div>
-<div class="line"># Generate mk64.o2r</div>
+<div class="line"># Generate mk64.o2r and spaghetti.o2r</div>
 <div class="line">cmake --build build-cmake --target ExtractAssets</div>
+<div class="line"># or if you want to generate the spaghetti.o2r file only</div>
+<div class="line">cmake --build build-cmake --target GenerateO2R</div>
 <div class="line"> </div>
 <div class="line"># Compile the project</div>
 <div class="line"># Add `--config Release` if you&#39;re packaging</div>
@@ -269,8 +273,10 @@ macOS</h1>
 <div class="line"># Add `-DCMAKE_BUILD_TYPE:STRING=Release` if you&#39;re packaging</div>
 <div class="line">cmake -H. -Bbuild-cmake -GNinja</div>
 <div class="line"> </div>
-<div class="line"># Generate mk64.o2r</div>
+<div class="line"># Generate mk64.o2r and spaghetti.o2r</div>
 <div class="line">cmake --build build-cmake --target ExtractAssets</div>
+<div class="line"># or if you want to generate the spaghetti.o2r file only</div>
+<div class="line">cmake --build build-cmake --target GenerateO2R</div>
 <div class="line"> </div>
 <div class="line"># Compile the project</div>
 <div class="line"># Add `--config Release` if you&#39;re packaging</div>

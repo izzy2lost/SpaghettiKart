@@ -48,11 +48,11 @@ var sounds_8h =
     [ "SOUND_MENU_VERSUS", "sounds_8h.html#a457ac1730cdbe2b3e2afcd6fa697b6ff", null ],
     [ "MusicSeq", "sounds_8h.html#a462955cf4ece430059af4e4185a8727c", [
       [ "MUSIC_SEQ_UNKNOWN", "sounds_8h.html#a462955cf4ece430059af4e4185a8727cad03b762de8b88259836abc900f862d5b", null ],
-      [ "MUSIC_SEQ_00", "sounds_8h.html#a462955cf4ece430059af4e4185a8727cae8a16c05da6f7842558cf51004cb11bd", null ],
+      [ "MUSIC_SEQ_SOUND_PLAYER", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca88fd966c1c4a7adf0fe8b1a71730adad", null ],
       [ "MUSIC_SEQ_TITLE_SCREEN", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca7e2ba3d26c70e8b9f80b134e310bafd5", null ],
       [ "MUSIC_SEQ_MAIN_MENU", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca2779af32be625ff2fa529976e8d530ac", null ],
-      [ "MUSIC_SEQ_RACEWAYS_WARIO_STADIUM", "sounds_8h.html#a462955cf4ece430059af4e4185a8727cabe758defa4d9e6c8caaf0db00a6193c9", null ],
-      [ "MUSIC_SEQ_MOO_MOO_FARM_YOSHI_VALLEY", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca244edcb03785c78bbf3e025ab19092be", null ],
+      [ "MUSIC_SEQ_WARIO_STADIUM", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca14ea9119e8095a208d64896c1a9db582", null ],
+      [ "MUSIC_SEQ_MOO_MOO_FARM", "sounds_8h.html#a462955cf4ece430059af4e4185a8727cabb3f39f147b5ed2e42d08613a015a6bb", null ],
       [ "MUSIC_SEQ_CHOCO_MOUNTAIN", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca0a2404a1f97ab04a579f8de1670972db", null ],
       [ "MUSIC_SEQ_KOOPA_TROOPA_BEACH", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca7b75a2e0ae5202101958c03aa3a5f91e", null ],
       [ "MUSIC_SEQ_BANSHEE_BOARDWALK", "sounds_8h.html#a462955cf4ece430059af4e4185a8727cabd2d8d10d4f300d532bcce1c2d991bb0", null ],
@@ -64,7 +64,7 @@ var sounds_8h =
       [ "MUSIC_SEQ_FINISH_1ST_PLACE", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca407fd63498bcbec8e1b5af685fb2880e", null ],
       [ "MUSIC_SEQ_FINISH_2ND_4TH_PLACE", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca30fb72439368ee4fd76b19f1fd910e18", null ],
       [ "MUSIC_SEQ_FINISH_5TH_8TH_PLACE", "sounds_8h.html#a462955cf4ece430059af4e4185a8727cac48d675bd3b7f0c0b0abcac5d1b8250b", null ],
-      [ "MUSIC_SEQ_16", "sounds_8h.html#a462955cf4ece430059af4e4185a8727caaaf3f827a971e5c6e0e157736d9f73a3", null ],
+      [ "MUSIC_SEQ_WINNING_RESULTS", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca728abce6fffb6603cfea84ce7844a3a5", null ],
       [ "MUSIC_SEQ_STAR_JINGLE", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca83e197f9d2b6cff44936866b30e6dd8d", null ],
       [ "MUSIC_SEQ_RAINBOW_ROAD", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca4dc13cbf333fc84304cce6e8436f3442", null ],
       [ "MUSIC_SEQ_DK_JUNGLE", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca58b5b5e40ba246fae20211899a05a1e4", null ],
@@ -78,6 +78,12 @@ var sounds_8h =
       [ "MUSIC_SEQ_AWARD_CEREMONY_1ST_3RD", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca9f69aa411881a9f27387c4fa7dfd0d0b", null ],
       [ "MUSIC_SEQ_STAFF_ROLL", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca93a5f4e5cb859f3a75a497dabf4fb5bc", null ],
       [ "MUSIC_SEQ_AWARD_CEREMONY_4TH_8TH", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca1644602e27d5fb82d74a2d2a19fade13", null ],
+      [ "MUSIC_SEQ_LUIGI_RACEWAY", "sounds_8h.html#a462955cf4ece430059af4e4185a8727cac54efdaa3676e5175140a4a470e4cec7", null ],
+      [ "MUSIC_SEQ_MARIO_RACEWAY", "sounds_8h.html#a462955cf4ece430059af4e4185a8727caef2ef6d3fdce7a9f69c975443aa04a6b", null ],
+      [ "MUSIC_SEQ_ROYAL_RACEWAY", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca25fe671db8972d75d597f411007223b4", null ],
+      [ "MUSIC_SEQ_YOSHI_VALLEY", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca26a0bfb005504d1edda2dad73cd02809", null ],
+      [ "MUSIC_SEQ_BLOCK_FORT", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca2af86c37efa63d823b97fce78e2138cf", null ],
+      [ "MUSIC_SEQ_DOUBLE_DECK", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca48d83a2cdcae700c3f1b02fc564679f3", null ],
       [ "MUSIC_SEQ_MAX", "sounds_8h.html#a462955cf4ece430059af4e4185a8727caad4d47acb48f7968af60f4b91df52b26", null ]
     ] ]
 ];

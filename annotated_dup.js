@@ -196,6 +196,7 @@ var annotated_dup =
     [ "CollisionTriangle", "structCollisionTriangle.html", "structCollisionTriangle" ],
     [ "Color", "structColor.html", "structColor" ],
     [ "Controller", "structController.html", "structController" ],
+    [ "ControllerPak", "structControllerPak.html", "structControllerPak" ],
     [ "Course", "classCourse.html", null ],
     [ "course_texture", "structcourse__texture.html", "structcourse__texture" ],
     [ "CourseTable", "structCourseTable.html", "structCourseTable" ],

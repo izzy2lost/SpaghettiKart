@@ -11,6 +11,7 @@ var dir_fd8b95245ffcce776715f180c056b450 =
     [ "GameExtractor.cpp", "GameExtractor_8cpp.html", "GameExtractor_8cpp" ],
     [ "GameExtractor.h", "GameExtractor_8h.html", "GameExtractor_8h" ],
     [ "GBIMiddleware.cpp", "GBIMiddleware_8cpp.html", "GBIMiddleware_8cpp" ],
+    [ "pak.cpp", "pak_8cpp.html", "pak_8cpp" ],
     [ "ShipUtils.cpp", "ShipUtils_8cpp.html", "ShipUtils_8cpp" ],
     [ "ShipUtils.h", "ShipUtils_8h.html", "ShipUtils_8h" ],
     [ "SpaghettiGui.cpp", "SpaghettiGui_8cpp.html", "SpaghettiGui_8cpp" ],
