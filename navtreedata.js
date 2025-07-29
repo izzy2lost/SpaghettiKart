@@ -73,7 +73,7 @@ var NAVTREE =
     [ "Courses", "coursesmenu.html", "coursesmenu" ],
     [ "Custom Audio", "md_docs_2custom-audio.html", [
       [ "Example:", "md_docs_2custom-audio.html#example", null ],
-      [ "Future plans", "md_docs_2custom-audio.html#future-plans-1", null ]
+      [ "Future plans", "md_docs_2custom-audio.html#future-plans", null ]
     ] ],
     [ "Custom characters", "md_docs_2custom-characters.html", [
       [ "Examples for all characters:", "md_docs_2custom-characters.html#examples-for-all-characters", null ],
@@ -82,7 +82,7 @@ var NAVTREE =
           [ "Change Viewport Render Settings", "md_docs_2custom-characters.html#change-viewport-render-settings", null ]
         ] ],
         [ "Tools To Help", "md_docs_2custom-characters.html#tools-to-help", null ],
-        [ "Future plans", "md_docs_2custom-characters.html#future-plans", null ]
+        [ "Future plans", "md_docs_2custom-characters.html#future-plans-1", null ]
       ] ]
     ] ],
     [ "Custom Tracks", "md_docs_2custom-track.html", [
