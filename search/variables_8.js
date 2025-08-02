@@ -16,7 +16,7 @@ var searchData=
   ['hastwoadpcmparts_13',['hasTwoAdpcmParts',['../structNoteSubEu.html#a58f467ef63476a62cbfb6cd03abd6d99',1,'NoteSubEu']]],
   ['hdwrbugflag_14',['hdwrBugFlag',['../osAiSetNextBuffer_8c.html#a4376859bf8f61dc96cfd831aa5bdaf54',1,'osAiSetNextBuffer.c']]],
   ['head_15',['head',['../structma__paged__audio__buffer__data.html#aacfbee5696ac2bec6ef0a655c421b042',1,'ma_paged_audio_buffer_data::head'],['../structma__node__input__bus.html#a07b3cf3ad9c5656e56eb844be4083acd',1,'ma_node_input_bus::head']]],
-  ['header_16',['header',['../structControllerPak.html#a5cb1374ad32a2cf79432172f50eb7ab1',1,'ControllerPak']]],
+  ['header_16',['header',['../structControllerPak.html#a5d6bf94e4a716eb1c7e8a88c5b7f8f4e',1,'ControllerPak']]],
   ['headsetpanleft_17',['headsetPanLeft',['../structNoteSubEu.html#a711a296ed21f16c8c208fd26d61c4c04',1,'NoteSubEu']]],
   ['headsetpanright_18',['headsetPanRight',['../structNoteSubEu.html#a28eeffd5b920d54386ca52d93c2f2a18',1,'NoteSubEu']]],
   ['heapaudiostring00_19',['heapAudioString00',['../heap_8c.html#a1707d4af4957540f8c2ef30bb5fad414',1,'heap.c']]],

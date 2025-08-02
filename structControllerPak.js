@@ -1,5 +1,5 @@
 var structControllerPak =
 [
-    [ "file", "structControllerPak.html#ac6ec3958ca3eaf7efb58d0ee378297a1", null ],
-    [ "header", "structControllerPak.html#a5cb1374ad32a2cf79432172f50eb7ab1", null ]
+    [ "file", "structControllerPak.html#ac00351fe5152076998702b25241faae9", null ],
+    [ "header", "structControllerPak.html#a5d6bf94e4a716eb1c7e8a88c5b7f8f4e", null ]
 ];
