@@ -153,7 +153,7 @@ public void checkAndSetupFiles() {
     // This method is only called when file is missing (from onCreate)
     runOnUiThread(() -> new AlertDialog.Builder(this)
         .setTitle("Missing mk64.o2r")
-        .setMessage("Please select your mk64.o2r file to continue.")
+        .setMessage("Please select your Mario Kart 64 ROM file (.z64) or pre-extracted mk64.o2r file to continue.")
         .setCancelable(false)
         .setPositiveButton("Select File", (dialog, which) -> openFilePicker())
         .show());
@@ -207,58 +207,187 @@ public void checkAndSetupFiles() {
     }
 
     public void openFilePicker() {
-        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
+        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         intent.setType("*/*");
         intent.addCategory(Intent.CATEGORY_OPENABLE);
+        // Accept both ROM files (.z64) and O2R files
+        intent.putExtra(Intent.EXTRA_MIME_TYPES, new String[]{"*/*"});
         startActivityForResult(intent, FILE_PICKER_REQUEST_CODE);
     }
 
     private void handleRomFileSelection(Uri selectedFileUri) {
         if (selectedFileUri == null) {
-            showToast("No mk64.o2r file selected.");
+            showToast("No file selected.");
             return;
         }
 
-        // Show progress to user
-        showToast("Copying mk64.o2r file...");
+        // Get the file name to determine if it's a ROM or O2R file
+        String fileName = getFileName(selectedFileUri);
+        if (fileName == null) {
+            showToast("Could not determine file type.");
+            return;
+        }
 
-        try (InputStream in = getContentResolver().openInputStream(selectedFileUri);
+        Log.i("MainActivity", "Selected file: " + fileName);
+
+        // Check if it's a ROM file (.z64) or O2R file
+        if (fileName.toLowerCase().endsWith(".z64")) {
+            // Handle ROM extraction
+            handleRomExtraction(selectedFileUri, fileName);
+        } else if (fileName.toLowerCase().endsWith(".o2r")) {
+            // Handle O2R file copy
+            handleO2RFileCopy(selectedFileUri);
+        } else {
+            // Show dialog to let user choose how to handle the file
+            runOnUiThread(() -> new AlertDialog.Builder(this)
+                .setTitle("File Type Detection")
+                .setMessage("Could not determine file type from extension. How would you like to process this file?")
+                .setPositiveButton("As ROM (.z64)", (dialog, which) -> handleRomExtraction(selectedFileUri, fileName))
+                .setNegativeButton("As O2R", (dialog, which) -> handleO2RFileCopy(selectedFileUri))
+                .setNeutralButton("Cancel", null)
+                .show());
+        }
+    }
+
+    private String getFileName(Uri uri) {
+        String fileName = null;
+        if (uri.getScheme().equals("content")) {
+            try (android.database.Cursor cursor = getContentResolver().query(uri, null, null, null, null)) {
+                if (cursor != null && cursor.moveToFirst()) {
+                    int nameIndex = cursor.getColumnIndex(android.provider.OpenableColumns.DISPLAY_NAME);
+                    if (nameIndex >= 0) {
+                        fileName = cursor.getString(nameIndex);
+                    }
+                }
+            } catch (Exception e) {
+                Log.w("MainActivity", "Could not get file name from content URI", e);
+            }
+        }
+        if (fileName == null) {
+            fileName = uri.getLastPathSegment();
+        }
+        return fileName;
+    }
+
+    private void handleRomExtraction(Uri romFileUri, String fileName) {
+        showToast("Starting ROM extraction...");
+        Log.i("MainActivity", "Starting ROM extraction for: " + fileName);
+
+        // Create a progress dialog
+        AlertDialog progressDialog = new AlertDialog.Builder(this)
+            .setTitle("Extracting ROM")
+            .setMessage("Extracting Mario Kart 64 ROM to O2R format...\nProgress: 0%")
+            .setCancelable(false)
+            .create();
+        
+        runOnUiThread(() -> progressDialog.show());
+
+        // Perform extraction in background thread
+        Executors.newSingleThreadExecutor().execute(() -> {
+            try {
+                // First, copy ROM file to temporary location
+                File tempRomFile = new File(targetRootFolder, "temp_rom.z64");
+                
+                try (InputStream in = getContentResolver().openInputStream(romFileUri);
+                     FileOutputStream out = new FileOutputStream(tempRomFile)) {
+                    
+                    byte[] buffer = new byte[8192];
+                    int bytesRead;
+                    while ((bytesRead = in.read(buffer)) != -1) {
+                        out.write(buffer, 0, bytesRead);
+                    }
+                    out.flush();
+                    out.getFD().sync();
+                }
+
+                Log.i("MainActivity", "ROM file copied to temp location: " + tempRomFile.getAbsolutePath());
+
+                // Create progress callback
+                RomExtractionProgressCallback progressCallback = new RomExtractionProgressCallback() {
+                    @Override
+                    public void onProgress(float progress) {
+                        int progressPercent = Math.round(progress * 100);
+                        runOnUiThread(() -> {
+                            if (progressDialog.isShowing()) {
+                                progressDialog.setMessage("Extracting Mario Kart 64 ROM to O2R format...\nProgress: " + progressPercent + "%");
+                            }
+                        });
+                    }
+                };
+
+                // Call native extraction method
+                boolean success = nativeExtractRom(
+                    tempRomFile.getAbsolutePath(),
+                    romTargetFile.getAbsolutePath(),
+                    progressCallback
+                );
+
+                // Clean up temp file
+                if (tempRomFile.exists()) {
+                    tempRomFile.delete();
+                }
+
+                runOnUiThread(() -> {
+                    progressDialog.dismiss();
+                    
+                    if (success && romTargetFile.exists() && romTargetFile.length() > 0) {
+                        Log.i("MainActivity", "ROM extraction completed successfully");
+                        showToast("ROM extraction completed!");
+                        
+                        // Continue with normal flow
+                        tryNativeFileCall(romTargetFile.getAbsolutePath(), 0);
+                    } else {
+                        Log.e("MainActivity", "ROM extraction failed");
+                        showToast("ROM extraction failed. Please try a different ROM file.");
+                    }
+                });
+
+            } catch (Exception e) {
+                Log.e("MainActivity", "Error during ROM extraction", e);
+                runOnUiThread(() -> {
+                    progressDialog.dismiss();
+                    showToast("ROM extraction failed: " + e.getMessage());
+                });
+            }
+        });
+    }
+
+    private void handleO2RFileCopy(Uri o2rFileUri) {
+        showToast("Copying O2R file...");
+
+        try (InputStream in = getContentResolver().openInputStream(o2rFileUri);
              FileOutputStream out = new FileOutputStream(romTargetFile)) {
             
-            byte[] buffer = new byte[8192]; // Larger buffer for better performance
+            byte[] buffer = new byte[8192];
             int bytesRead;
             while ((bytesRead = in.read(buffer)) != -1) {
                 out.write(buffer, 0, bytesRead);
             }
             
-            // Ensure all data is written to disk
             out.flush();
-            out.getFD().sync(); // Force sync to disk
+            out.getFD().sync();
             
-            Log.i("MainActivity", "mk64.o2r file copied successfully, size: " + romTargetFile.length() + " bytes");
+            Log.i("MainActivity", "O2R file copied successfully, size: " + romTargetFile.length() + " bytes");
             
-            // Use a more robust delay and thread safety
+            // Use a delay to ensure file operations are complete
             new android.os.Handler(getMainLooper()).postDelayed(() -> {
                 try {
-                    // Double-check file exists and has content
                     if (romTargetFile.exists() && romTargetFile.length() > 0) {
                         Log.i("MainActivity", "Calling nativeHandleSelectedFile with: " + romTargetFile.getAbsolutePath());
-                        
-                        // Try calling native method with retry logic
                         tryNativeFileCall(romTargetFile.getAbsolutePath(), 0);
                     } else {
-                        Log.e("MainActivity", "mk64.o2r file verification failed");
-                        showToast("mk64.o2r file verification failed");
+                        Log.e("MainActivity", "O2R file verification failed");
+                        showToast("O2R file verification failed");
                     }
                 } catch (Exception e) {
                     Log.e("MainActivity", "Error in native file handling", e);
-                    showToast("Error loading mk64.o2r file");
+                    showToast("Error loading O2R file");
                 }
-            }, 2000); // Increased to 2 seconds to ensure SDL is fully ready
+            }, 2000);
             
         } catch (IOException e) {
-            Log.e("MainActivity", "Error copying mk64.o2r file", e);
-            showToast("Failed to copy mk64.o2r: " + e.getMessage());
+            Log.e("MainActivity", "Error copying O2R file", e);
+            showToast("Failed to copy O2R file: " + e.getMessage());
         }
     }
 
@@ -301,6 +430,7 @@ public void checkAndSetupFiles() {
     public native void setCameraState(int axis, float value);
     public native void setAxis(int axis, short value);
     public native void nativeHandleSelectedFile(String filePath);
+    public native boolean nativeExtractRom(String romPath, String outputPath, RomExtractionProgressCallback progressCallback);
 
     // Controller overlay and touch handling
     private Button buttonA, buttonB, buttonX, buttonY;

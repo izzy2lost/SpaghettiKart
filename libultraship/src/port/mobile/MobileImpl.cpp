@@ -5,6 +5,10 @@
 
 #include <imgui_internal.h>
 
+#ifdef __ANDROID__
+#include "RomExtractor.h"
+#endif
+
 static float cameraYaw;
 static float cameraPitch;
 
@@ -114,6 +118,57 @@ extern "C" void JNICALL Java_com_izzy_kart_MainActivity_detachController(JNIEnv 
 
 extern "C" JNIEXPORT void JNICALL
 Java_com_izzy_kart_MainActivity_nativeHandleSelectedFile(JNIEnv* env, jobject thiz, jstring filename) {
+    const char* nativeFilename = env->GetStringUTFChars(filename, 0);
+    std::string filePath(nativeFilename);
+    env->ReleaseStringUTFChars(filename, nativeFilename);
+    
+    // Log the received file path
+    SDL_Log("Native received file: %s", filePath.c_str());
+}
+
+// New native method for ROM extraction
+extern "C" JNIEXPORT jboolean JNICALL
+Java_com_izzy_kart_MainActivity_nativeExtractRom(JNIEnv* env, jobject thiz, jstring romPath, jstring outputPath, jobject progressCallback) {
+    const char* nativeRomPath = env->GetStringUTFChars(romPath, 0);
+    const char* nativeOutputPath = env->GetStringUTFChars(outputPath, 0);
+    
+    std::string romFilePath(nativeRomPath);
+    std::string o2rOutputPath(nativeOutputPath);
+    
+    env->ReleaseStringUTFChars(romPath, nativeRomPath);
+    env->ReleaseStringUTFChars(outputPath, nativeOutputPath);
+    
+    SDL_Log("Starting ROM extraction: %s -> %s", romFilePath.c_str(), o2rOutputPath.c_str());
+    
+    // Create progress callback wrapper
+    std::function<void(float)> progressFunc = nullptr;
+    if (progressCallback != nullptr) {
+        // Get the callback method ID
+        jclass callbackClass = env->GetObjectClass(progressCallback);
+        jmethodID onProgressMethod = env->GetMethodID(callbackClass, "onProgress", "(F)V");
+        
+        if (onProgressMethod != nullptr) {
+            // Create a global reference to the callback object
+            jobject globalCallback = env->NewGlobalRef(progressCallback);
+            
+            progressFunc = [env, globalCallback, onProgressMethod](float progress) {
+                env->CallVoidMethod(globalCallback, onProgressMethod, progress);
+            };
+        }
+    }
+    
+    // Perform the extraction
+    Ship::Mobile::RomExtractionResult result = Ship::Mobile::RomExtractor::ExtractRomToO2R(
+        romFilePath, o2rOutputPath, progressFunc
+    );
+    
+    if (result.success) {
+        SDL_Log("ROM extraction completed successfully. Size: %zu bytes", result.extractedSize);
+        return JNI_TRUE;
+    } else {
+        SDL_Log("ROM extraction failed: %s", result.errorMessage.c_str());
+        return JNI_FALSE;
+    }
 }
 
 #endif
