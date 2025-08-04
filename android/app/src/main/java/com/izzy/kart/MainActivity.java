@@ -207,12 +207,24 @@ public void checkAndSetupFiles() {
     }
 
     public void openFilePicker() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType("*/*");
-        intent.addCategory(Intent.CATEGORY_OPENABLE);
-        // Accept both ROM files (.z64) and O2R files
-        intent.putExtra(Intent.EXTRA_MIME_TYPES, new String[]{"*/*"});
-        startActivityForResult(intent, FILE_PICKER_REQUEST_CODE);
+        try {
+            // Create a chooser that shows all file picker apps
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            intent.setType("*/*");
+            intent.addCategory(Intent.CATEGORY_OPENABLE);
+            
+            // Filter for ROM and O2R files
+            String[] mimeTypes = {"application/octet-stream", "application/x-n64-rom"};
+            intent.putExtra(Intent.EXTRA_MIME_TYPES, mimeTypes);
+            intent.putExtra(Intent.EXTRA_TITLE, "Select Mario Kart 64 ROM (.z64) or O2R file");
+            
+            // Create a chooser with a custom title
+            Intent chooser = Intent.createChooser(intent, "Select Mario Kart 64 ROM or O2R file");
+            startActivityForResult(chooser, FILE_PICKER_REQUEST_CODE);
+        } catch (Exception e) {
+            Log.e("MainActivity", "Error opening file picker", e);
+            showToast("Error opening file picker: " + e.getMessage());
+        }
     }
 
     private void handleRomFileSelection(Uri selectedFileUri) {
@@ -221,27 +233,41 @@ public void checkAndSetupFiles() {
             return;
         }
 
-        // Get the file name to determine if it's a ROM or O2R file
+        // Get the file name and size
         String fileName = getFileName(selectedFileUri);
+        long fileSize = getFileSize(selectedFileUri);
+        
         if (fileName == null) {
-            showToast("Could not determine file type.");
+            showToast("Could not determine file name.");
             return;
         }
 
-        Log.i("MainActivity", "Selected file: " + fileName);
+        Log.i("MainActivity", String.format("Selected file: %s (%.2f MB)", 
+            fileName, fileSize / (1024.0 * 1024.0)));
 
-        // Check if it's a ROM file (.z64) or O2R file
-        if (fileName.toLowerCase().endsWith(".z64")) {
+        // Check file size (typical N64 ROMs are 8-64MB)
+        if (fileSize < 8 * 1024 * 1024 || fileSize > 64 * 1024 * 1024) {
+            showToast("Warning: File size (" + (fileSize / (1024 * 1024)) + 
+                     " MB) is unusual for a Mario Kart 64 ROM. Expected 8-64MB.");
+        }
+
+        // Check file extension
+        String lowerName = fileName.toLowerCase();
+        if (lowerName.endsWith(".z64") || lowerName.endsWith(".n64") || lowerName.endsWith(".v64")) {
             // Handle ROM extraction
             handleRomExtraction(selectedFileUri, fileName);
-        } else if (fileName.toLowerCase().endsWith(".o2r")) {
+        } else if (lowerName.endsWith(".o2r")) {
             // Handle O2R file copy
             handleO2RFileCopy(selectedFileUri);
         } else {
             // Show dialog to let user choose how to handle the file
             runOnUiThread(() -> new AlertDialog.Builder(this)
-                .setTitle("File Type Detection")
-                .setMessage("Could not determine file type from extension. How would you like to process this file?")
+                .setTitle("Unknown File Type")
+                .setMessage(String.format("File '%s' (%.2f MB) doesn't have a recognized extension.\n\n" +
+                    "• ROM files should be in .z64 format (8-64MB)\n" +
+                    "• O2R files are pre-extracted game archives\n\n" +
+                    "How would you like to process this file?", 
+                    fileName, fileSize / (1024.0 * 1024.0)))
                 .setPositiveButton("As ROM (.z64)", (dialog, which) -> handleRomExtraction(selectedFileUri, fileName))
                 .setNegativeButton("As O2R", (dialog, which) -> handleO2RFileCopy(selectedFileUri))
                 .setNeutralButton("Cancel", null)
@@ -252,7 +278,8 @@ public void checkAndSetupFiles() {
     private String getFileName(Uri uri) {
         String fileName = null;
         if (uri.getScheme().equals("content")) {
-            try (android.database.Cursor cursor = getContentResolver().query(uri, null, null, null, null)) {
+            try (android.database.Cursor cursor = getContentResolver()
+                    .query(uri, null, null, null, null, null)) {
                 if (cursor != null && cursor.moveToFirst()) {
                     int nameIndex = cursor.getColumnIndex(android.provider.OpenableColumns.DISPLAY_NAME);
                     if (nameIndex >= 0) {
@@ -264,19 +291,72 @@ public void checkAndSetupFiles() {
             }
         }
         if (fileName == null) {
-            fileName = uri.getLastPathSegment();
+            String path = uri.getPath();
+            if (path != null) {
+                int cut = path.lastIndexOf('/');
+                if (cut != -1) {
+                    fileName = path.substring(cut + 1);
+                } else {
+                    fileName = path;
+                }
+            }
         }
         return fileName;
+    }
+    
+    private long getFileSize(Uri uri) {
+        if (uri == null) return 0;
+        
+        // Try to get file size from content resolver first
+        if (uri.getScheme().equals("content")) {
+            try (android.database.Cursor cursor = getContentResolver()
+                    .query(uri, null, null, null, null, null)) {
+                if (cursor != null && cursor.moveToFirst()) {
+                    int sizeIndex = cursor.getColumnIndex(android.provider.OpenableColumns.SIZE);
+                    if (sizeIndex >= 0) {
+                        return cursor.getLong(sizeIndex);
+                    }
+                }
+            } catch (Exception e) {
+                Log.w("MainActivity", "Could not get file size from content URI", e);
+            }
+        }
+        
+        // Fallback to file-based size check
+        try (android.content.res.AssetFileDescriptor fd = getContentResolver()
+                .openAssetFileDescriptor(uri, "r")) {
+            if (fd != null) {
+                return fd.getLength();
+            }
+        } catch (Exception e) {
+            Log.w("MainActivity", "Could not get file size from file descriptor", e);
+        }
+        
+        return 0;
     }
 
     private void handleRomExtraction(Uri romFileUri, String fileName) {
         showToast("Starting ROM extraction...");
         Log.i("MainActivity", "Starting ROM extraction for: " + fileName);
 
-        // Create a progress dialog
+        // Get file size for progress calculation
+        long fileSize = getFileSize(romFileUri);
+        final String fileSizeStr = formatFileSize(fileSize);
+
+        // Create a custom dialog with progress bar
+        View dialogView = getLayoutInflater().inflate(R.layout.dialog_extraction_progress, null);
+        TextView progressText = dialogView.findViewById(R.id.progress_text);
+        ProgressBar progressBar = dialogView.findViewById(R.id.progress_bar);
+        TextView detailsText = dialogView.findViewById(R.id.details_text);
+        
+        progressBar.setMax(100);
+        progressBar.setProgress(0);
+        progressText.setText("Preparing...");
+        detailsText.setText(String.format("File: %s\nSize: %s", fileName, fileSizeStr));
+        
         AlertDialog progressDialog = new AlertDialog.Builder(this)
             .setTitle("Extracting ROM")
-            .setMessage("Extracting Mario Kart 64 ROM to O2R format...\nProgress: 0%")
+            .setView(dialogView)
             .setCancelable(false)
             .create();
         
@@ -304,12 +384,35 @@ public void checkAndSetupFiles() {
 
                 // Create progress callback
                 RomExtractionProgressCallback progressCallback = new RomExtractionProgressCallback() {
+                    private long lastUpdate = 0;
+                    
                     @Override
                     public void onProgress(float progress) {
-                        int progressPercent = Math.round(progress * 100);
+                        long now = System.currentTimeMillis();
+                        // Throttle UI updates to max 30fps
+                        if (now - lastUpdate < 33) return;
+                        lastUpdate = now;
+                        
+                        int progressPercent = Math.min(99, Math.round(progress * 100));
+                        String status;
+                        if (progress < 0.1) {
+                            status = "Initializing...";
+                        } else if (progress < 0.3) {
+                            status = "Reading ROM data...";
+                        } else if (progress < 0.7) {
+                            status = "Extracting assets...";
+                        } else {
+                            status = "Finalizing...";
+                        }
+                        
                         runOnUiThread(() -> {
                             if (progressDialog.isShowing()) {
-                                progressDialog.setMessage("Extracting Mario Kart 64 ROM to O2R format...\nProgress: " + progressPercent + "%");
+                                progressBar.setProgress(progressPercent);
+                                progressText.setText(String.format("%s (%d%%)", status, progressPercent));
+                                detailsText.setText(String.format(
+                                    "File: %s\nSize: %s\nProgress: %d%%",
+                                    fileName, fileSizeStr, progressPercent
+                                ));
                             }
                         });
                     }
@@ -328,17 +431,45 @@ public void checkAndSetupFiles() {
                 }
 
                 runOnUiThread(() -> {
-                    progressDialog.dismiss();
+                    progressBar.setProgress(100);
+                    progressText.setText("Done!");
                     
                     if (success && romTargetFile.exists() && romTargetFile.length() > 0) {
                         Log.i("MainActivity", "ROM extraction completed successfully");
-                        showToast("ROM extraction completed!");
+                        detailsText.setText(String.format(
+                            "Extraction complete!\nOutput: %s\nSize: %s",
+                            romTargetFile.getName(), 
+                            formatFileSize(romTargetFile.length())
+                        ));
                         
-                        // Continue with normal flow
-                        tryNativeFileCall(romTargetFile.getAbsolutePath(), 0);
+                        // Dismiss after a short delay to show completion
+                        new Handler(Looper.getMainLooper()).postDelayed(() -> {
+                            progressDialog.dismiss();
+                            showToast("ROM extraction completed!");
+                            tryNativeFileCall(romTargetFile.getAbsolutePath(), 0);
+                        }, 1000);
                     } else {
-                        Log.e("MainActivity", "ROM extraction failed");
-                        showToast("ROM extraction failed. Please try a different ROM file.");
+                        String errorMsg = "ROM extraction failed\n\n";
+                        if (!romTargetFile.exists()) {
+                            errorMsg += "• Output file was not created\n";
+                        } else if (romTargetFile.length() == 0) {
+                            errorMsg += "• Output file is empty\n";
+                        } else if (!success) {
+                            errorMsg += "• Native extraction failed\n";
+                        }
+                        
+                        progressText.setText("Extraction Failed");
+                        detailsText.setText(errorMsg + "\nPlease try a different ROM file.");
+                        
+                        // Change to a dismiss button
+                        progressDialog.setButton(
+                            AlertDialog.BUTTON_POSITIVE, 
+                            "Close", 
+                            (dialog, which) -> progressDialog.dismiss()
+                        );
+                        progressDialog.getButton(AlertDialog.BUTTON_POSITIVE).setVisibility(View.VISIBLE);
+                        
+                        Log.e("MainActivity", errorMsg);
                     }
                 });
 

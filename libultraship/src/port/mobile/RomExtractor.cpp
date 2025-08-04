@@ -3,153 +3,79 @@
 #include "RomExtractor.h"
 #include <fstream>
 #include <filesystem>
-#include <map>
-#include <functional>
 #include <cstring>
 #include <spdlog/spdlog.h>
 
-// Include MIO0 decompression utilities
-extern "C" {
-    #include "../../tools/libmio0.h"
-    #include "../../tools/utils.h"
-}
+// Include the existing Companion system
+#include "../../torch/src/Companion.h"
 
 namespace Ship {
-namespace Mobile {
 
-// Expected ROM checksums for different versions
-const std::map<std::string, std::string> RomExtractor::ROM_CHECKSUMS = {
-    {"us", "7f933ce0b4583d9b2d73e5c10c2c8a38"},
-    {"eu-1.0", "c2b9b5d1a5c4b8e6d8f9a3c7e2d4b6a8"},
-    {"eu-final", "a8b6d4e2c7a3f9d8e6b8c4a5d1b5c2b9"}
-};
-
-RomExtractionResult RomExtractor::ExtractRomToO2R(
+AndroidRomExtractionResult AndroidRomExtractor::ExtractRomToO2R(
     const std::string& romFilePath,
     const std::string& outputPath,
     std::function<void(float)> progressCallback) {
     
     SPDLOG_INFO("Starting ROM extraction: {} -> {}", romFilePath, outputPath);
     
-    RomExtractionResult result = {false, "", 0};
+    AndroidRomExtractionResult result = {false, "", 0};
     
     try {
         // Update progress
         if (progressCallback) progressCallback(0.1f);
         
         // Validate ROM file
-        std::string romVersion;
-        if (!ValidateRomFile(romFilePath, romVersion)) {
+        if (!ValidateRomFile(romFilePath)) {
             result.errorMessage = "Invalid or unsupported ROM file";
             return result;
         }
-        
-        SPDLOG_INFO("Detected ROM version: {}", romVersion);
         
         // Update progress
         if (progressCallback) progressCallback(0.2f);
         
         // Read ROM file
-        std::ifstream romFile(romFilePath, std::ios::binary);
+        std::ifstream romFile(romFilePath, std::ios::binary | std::ios::ate);
         if (!romFile) {
             result.errorMessage = "Failed to open ROM file";
             return result;
         }
         
-        // Get file size
-        romFile.seekg(0, std::ios::end);
-        size_t romSize = romFile.tellg();
+        // Get file size and read data
+        std::streamsize romSize = romFile.tellg();
         romFile.seekg(0, std::ios::beg);
         
-        // Read ROM data
         std::vector<uint8_t> romData(romSize);
-        romFile.read(reinterpret_cast<char*>(romData.data()), romSize);
-        romFile.close();
-        
-        // Update progress
-        if (progressCallback) progressCallback(0.3f);
-        
-        // Validate ROM checksum
-        if (!ValidateRomChecksum(romData, romVersion)) {
-            result.errorMessage = "ROM checksum validation failed";
+        if (!romFile.read(reinterpret_cast<char*>(romData.data()), romSize)) {
+            result.errorMessage = "Failed to read ROM file";
             return result;
         }
+        romFile.close();
         
         // Update progress
         if (progressCallback) progressCallback(0.4f);
         
-        // Extract essential assets for O2R creation
-        std::vector<std::vector<uint8_t>> extractedAssets;
-        
-        // Key asset offsets for Mario Kart 64 (these would need to be populated with actual values)
-        struct AssetInfo {
-            uint32_t offset;
-            uint32_t size;
-            bool isMIO0;
-        };
-        
-        // This is a simplified example - you'd need the actual asset map from assets.json
-        std::vector<AssetInfo> assetsToExtract = {
-            // Add key assets needed for O2R file
-            // These offsets would come from your assets.json file
-        };
-        
-        float extractionProgress = 0.4f;
-        float progressPerAsset = 0.5f / assetsToExtract.size();
-        
-        for (const auto& assetInfo : assetsToExtract) {
-            std::vector<uint8_t> assetData;
-            
-            if (assetInfo.isMIO0) {
-                // Extract and decompress MIO0 data
-                if (assetInfo.offset + 16 > romData.size()) {
-                    result.errorMessage = "Asset offset out of bounds";
-                    return result;
-                }
-                
-                const uint8_t* mio0Data = romData.data() + assetInfo.offset;
-                if (IsMIO0Header(mio0Data)) {
-                    assetData = DecompressMIO0(mio0Data, assetInfo.size);
-                } else {
-                    result.errorMessage = "Expected MIO0 header not found";
-                    return result;
-                }
-            } else {
-                // Extract raw data
-                if (assetInfo.offset + assetInfo.size > romData.size()) {
-                    result.errorMessage = "Asset data out of bounds";
-                    return result;
-                }
-                
-                assetData.resize(assetInfo.size);
-                std::memcpy(assetData.data(), romData.data() + assetInfo.offset, assetInfo.size);
+        // Use the existing Companion system to extract the ROM
+        bool success = ExtractUsingCompanion(romData, outputPath, 
+            [&](float progress) {
+                // Scale progress from 0.4 to 1.0 for the extraction phase
+                float scaledProgress = 0.4f + (progress * 0.6f);
+                if (progressCallback) progressCallback(scaledProgress);
             }
-            
-            extractedAssets.push_back(std::move(assetData));
-            
-            extractionProgress += progressPerAsset;
-            if (progressCallback) progressCallback(extractionProgress);
-        }
+        );
         
-        // Update progress
-        if (progressCallback) progressCallback(0.9f);
-        
-        // Create O2R file
-        if (!CreateO2RFile(outputPath, extractedAssets)) {
-            result.errorMessage = "Failed to create O2R file";
+        if (!success) {
+            result.errorMessage = "ROM extraction failed";
             return result;
         }
         
-        // Update progress
-        if (progressCallback) progressCallback(1.0f);
-        
-        // Get final file size
+        // Verify the output file was created
         if (std::filesystem::exists(outputPath)) {
             result.extractedSize = std::filesystem::file_size(outputPath);
+            result.success = true;
+            SPDLOG_INFO("ROM extraction completed successfully. Output size: {} bytes", result.extractedSize);
+        } else {
+            result.errorMessage = "Failed to create output file";
         }
-        
-        result.success = true;
-        SPDLOG_INFO("ROM extraction completed successfully. Output size: {} bytes", result.extractedSize);
         
     } catch (const std::exception& e) {
         result.errorMessage = std::string("Extraction failed: ") + e.what();

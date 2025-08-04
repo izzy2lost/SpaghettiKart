@@ -87,3 +87,29 @@ task wrapper(type: Wrapper) {
 
 task prepareKotlinBuildScriptModel {
 }
+
+// Task to copy YAML and asset files from root to assets
+task copyAssetFiles(type: Copy) {
+    // Copy YAML files
+    from('../../yamls') {
+        into 'yamls'
+        include '**/*.yml'
+        include '**/*.yaml'
+    }
+    
+    // Copy other assets
+    from('../../assets') {
+        into 'assets'
+        include '**/*'  // Include all files in assets
+    }
+    
+    into 'src/main/assets'  // Base destination directory
+    overwrite false // Preserve existing files
+}
+
+// Ensure the copy task runs before mergeAssets
+tasks.whenTaskAdded { task ->
+    if (task.name == 'mergeDebugAssets' || task.name == 'mergeReleaseAssets') {
+        task.dependsOn copyAssetFiles
+    }
+}
