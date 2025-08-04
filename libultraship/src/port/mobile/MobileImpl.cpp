@@ -158,7 +158,7 @@ Java_com_izzy_kart_MainActivity_nativeExtractRom(JNIEnv* env, jobject thiz, jstr
     }
     
     // Perform the extraction
-    Ship::Mobile::RomExtractionResult result = Ship::Mobile::RomExtractor::ExtractRomToO2R(
+    Ship::AndroidRomExtractionResult result = Ship::AndroidRomExtractor::ExtractRomToO2R(
         romFilePath, o2rOutputPath, progressFunc
     );
     
