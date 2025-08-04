@@ -117,6 +117,8 @@ if (CMAKE_SYSTEM_NAME STREQUAL "Android" OR CMAKE_SYSTEM_NAME STREQUAL "iOS")
     set(Source_Files__Port
         ${CMAKE_CURRENT_SOURCE_DIR}/port/mobile/MobileImpl.h
         ${CMAKE_CURRENT_SOURCE_DIR}/port/mobile/MobileImpl.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/port/mobile/RomExtractor.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/port/mobile/RomExtractor.cpp
     )
 endif()
 
