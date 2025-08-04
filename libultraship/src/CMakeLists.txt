@@ -123,23 +123,6 @@ endif()
 source_group("port" FILES ${Source_Files__Port})
 target_sources(libultraship PRIVATE ${Source_Files__Port})
 
-#=================== Mobile Port ===================
-
-if(ANDROID)
-    file(GLOB Source_Files__Mobile RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "port/mobile/*.h" "port/mobile/*.cpp")
-    source_group("port/mobile" FILES ${Source_Files__Mobile})
-    target_sources(libultraship PRIVATE ${Source_Files__Mobile})
-    
-    # Add torch as a dependency for the Companion class
-    target_include_directories(libultraship PRIVATE 
-        ${CMAKE_CURRENT_SOURCE_DIR}/../torch/src
-    )
-    
-    # Add spdlog for logging
-    find_package(spdlog CONFIG REQUIRED)
-    target_link_libraries(libultraship PRIVATE spdlog::spdlog)
-endif()
-
 #=================== Resource ===================
 
 file(GLOB Source_Files__Resource RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} "resource/*.h" "resource/*.cpp")
