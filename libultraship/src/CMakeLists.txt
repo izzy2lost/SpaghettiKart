@@ -127,6 +127,21 @@ if (CMAKE_SYSTEM_NAME STREQUAL "Android" OR CMAKE_SYSTEM_NAME STREQUAL "iOS")
         ${CMAKE_CURRENT_SOURCE_DIR}/../../torch/lib
         ${CMAKE_CURRENT_SOURCE_DIR}/../../torch/assets
     )
+    
+    # Add yaml-cpp dependency for RomExtractor
+    set(YAML_CPP_BUILD_TOOLS OFF)
+    set(YAML_CPP_BUILD_TESTS OFF)
+    set(YAML_CPP_DISABLE_UNINSTALL ON)
+    include(FetchContent)
+    FetchContent_Declare(
+        yaml-cpp
+        GIT_REPOSITORY https://github.com/jbeder/yaml-cpp.git
+        GIT_TAG 2f86d13775d119edbb69af52e5f566fd65c6953b
+    )
+    set(YAML_CPP_BUILD_TESTS OFF)
+    FetchContent_MakeAvailable(yaml-cpp)
+    target_link_libraries(libultraship PRIVATE yaml-cpp)
+    target_compile_definitions(yaml-cpp PRIVATE YAML_CPP_STATIC_DEFINE)
 endif()
 
 source_group("port" FILES ${Source_Files__Port})
