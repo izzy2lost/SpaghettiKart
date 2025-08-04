@@ -128,6 +128,14 @@ if (CMAKE_SYSTEM_NAME STREQUAL "Android" OR CMAKE_SYSTEM_NAME STREQUAL "iOS")
         ${CMAKE_CURRENT_SOURCE_DIR}/../../torch/assets
     )
     
+    # Add all subdirectories of torch/lib to include path
+    file(GLOB TORCH_LIB_SUBDIRS ${CMAKE_CURRENT_SOURCE_DIR}/../../torch/lib/*)
+    foreach(SUBDIR ${TORCH_LIB_SUBDIRS})
+        if(IS_DIRECTORY ${SUBDIR})
+            target_include_directories(libultraship PRIVATE ${SUBDIR})
+        endif()
+    endforeach()
+    
     # Add yaml-cpp dependency for RomExtractor
     set(YAML_CPP_BUILD_TOOLS OFF)
     set(YAML_CPP_BUILD_TESTS OFF)
