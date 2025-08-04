@@ -120,6 +120,13 @@ if (CMAKE_SYSTEM_NAME STREQUAL "Android" OR CMAKE_SYSTEM_NAME STREQUAL "iOS")
         ${CMAKE_CURRENT_SOURCE_DIR}/port/mobile/RomExtractor.h
         ${CMAKE_CURRENT_SOURCE_DIR}/port/mobile/RomExtractor.cpp
     )
+    
+    # Add torch include directories for RomExtractor
+    target_include_directories(libultraship PRIVATE 
+        ${CMAKE_CURRENT_SOURCE_DIR}/../../torch/src
+        ${CMAKE_CURRENT_SOURCE_DIR}/../../torch/lib
+        ${CMAKE_CURRENT_SOURCE_DIR}/../../torch/assets
+    )
 endif()
 
 source_group("port" FILES ${Source_Files__Port})
