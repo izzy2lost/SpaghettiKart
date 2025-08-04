@@ -104,7 +104,6 @@ task copyAssetFiles(type: Copy) {
     }
     
     into 'src/main/assets'  // Base destination directory
-    overwrite false // Preserve existing files
 }
 
 // Ensure the copy task runs before mergeAssets
