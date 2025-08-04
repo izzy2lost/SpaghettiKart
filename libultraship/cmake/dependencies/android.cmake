@@ -102,6 +102,8 @@ if (NOT libzip_FOUND)
     )
     FetchContent_MakeAvailable(libzip)
     list(APPEND ADDITIONAL_LIB_INCLUDES ${libzip_SOURCE_DIR}/lib ${libzip_BINARY_DIR})
+    # Link libzip to the main target
+    target_link_libraries(libultraship PRIVATE zip)
 endif()
 
 target_link_libraries(ImGui PUBLIC SDL2::SDL2)
