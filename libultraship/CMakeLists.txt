@@ -32,6 +32,11 @@ if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
     include(cmake/dependencies/windows-vcpkg.cmake)
 endif()
 
+# Disable GFX_DEBUG_DISASSEMBLER for Android before common.cmake (libgfxd has compilation issues on Android)
+if(ANDROID)
+    set(GFX_DEBUG_DISASSEMBLER OFF CACHE BOOL "Disable libgfxd for Android" FORCE)
+endif()
+
 include(cmake/dependencies/common.cmake)
 
 if (CMAKE_SYSTEM_NAME STREQUAL "Android")
