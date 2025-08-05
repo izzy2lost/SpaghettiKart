@@ -153,7 +153,6 @@ if (CMAKE_SYSTEM_NAME STREQUAL "Android" OR CMAKE_SYSTEM_NAME STREQUAL "iOS")
 
     if(ANDROID)
         # For Android, libzip is fetched by the root project. We just need to link it.
-        target_include_directories(libultraship SYSTEM PUBLIC ${LIBZIP_INCLUDE_DIRS})
         target_link_libraries(libultraship PRIVATE zip)
     endif()
 endif()
