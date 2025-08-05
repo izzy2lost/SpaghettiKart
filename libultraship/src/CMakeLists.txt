@@ -170,7 +170,12 @@ if (CMAKE_SYSTEM_NAME STREQUAL "Android" OR CMAKE_SYSTEM_NAME STREQUAL "iOS")
         )
         FetchContent_MakeAvailable(libzip)
         target_link_libraries(libultraship PRIVATE zip)
-        target_include_directories(libultraship PRIVATE ${libzip_SOURCE_DIR}/lib ${libzip_BINARY_DIR})
+        # Add libzip include directories for built-from-source version
+        target_include_directories(libultraship PRIVATE 
+            ${libzip_SOURCE_DIR}/lib 
+            ${libzip_BINARY_DIR} 
+            ${libzip_BINARY_DIR}/lib
+        )
     else()
         target_link_libraries(libultraship PRIVATE libzip::zip)
     endif()
