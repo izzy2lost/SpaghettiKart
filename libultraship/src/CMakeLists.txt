@@ -8,7 +8,14 @@ set_property(TARGET libultraship PROPERTY C_STANDARD 11)
 
 set(INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../include)
 option(USE_OPENGLES "Enable GLES3" OFF)
-option(GFX_DEBUG_DISASSEMBLER "Enable libgfxd" OFF)
+
+# Disable GFX_DEBUG_DISASSEMBLER for Android (libgfxd has compilation issues on Android)
+if(ANDROID)
+    option(GFX_DEBUG_DISASSEMBLER "Enable libgfxd" OFF)
+    set(GFX_DEBUG_DISASSEMBLER OFF CACHE BOOL "Disable libgfxd for Android" FORCE)
+else()
+    option(GFX_DEBUG_DISASSEMBLER "Enable libgfxd" OFF)
+endif()
 
 if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
 use_props(${PROJECT_NAME} "${CMAKE_CONFIGURATION_TYPES}" "${DEFAULT_CXX_PROPS}")
