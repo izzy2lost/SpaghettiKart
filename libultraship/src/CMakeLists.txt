@@ -141,7 +141,9 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "iOS")
         ${CMAKE_CURRENT_SOURCE_DIR}/port/mobile/RomExtractor.cpp
     )
 endif()
-    
+
+# yaml-cpp/libzip logic for mobile ports
+if (CMAKE_SYSTEM_NAME STREQUAL "Android" OR CMAKE_SYSTEM_NAME STREQUAL "iOS")
     # Add yaml-cpp dependency for RomExtractor
     set(YAML_CPP_BUILD_TOOLS OFF)
     set(YAML_CPP_BUILD_TESTS OFF)
@@ -162,6 +164,7 @@ endif()
         target_link_libraries(libultraship PRIVATE zip)
     endif()
 endif()
+
 
 source_group("port" FILES ${Source_Files__Port})
 target_sources(libultraship PRIVATE ${Source_Files__Port})
