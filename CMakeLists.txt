@@ -559,7 +559,12 @@ option(BUILD_FZERO "Build with F-Zero X support" OFF)
 set(USE_STANDALONE OFF CACHE BOOL "Build torch as library" FORCE)
 set(BUILD_MK64 ON CACHE BOOL "Build with Mario Kart 64 support" FORCE)
 
-target_link_libraries(${PROJECT_NAME} PRIVATE torch "${ADDITIONAL_LIBRARY_DEPENDENCIES}")
+# Link torch only for non-Android builds (torch is an executable, not a library)
+if(NOT ANDROID)
+    target_link_libraries(${PROJECT_NAME} PRIVATE torch "${ADDITIONAL_LIBRARY_DEPENDENCIES}")
+else()
+    target_link_libraries(${PROJECT_NAME} PRIVATE "${ADDITIONAL_LIBRARY_DEPENDENCIES}")
+endif()
 
 if(CMAKE_SYSTEM_NAME MATCHES "NintendoSwitch")
 
