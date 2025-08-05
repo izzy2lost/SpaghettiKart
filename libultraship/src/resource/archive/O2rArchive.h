@@ -1,13 +1,9 @@
 #pragma once
 
-#undef _DLL
-
 #include <string>
-#include <stdint.h>
-#include <string>
-
+#include <vector>
+#include <memory>
 #include "zip.h"
-
 #include "resource/File.h"
 #include "resource/Resource.h"
 #include "resource/archive/Archive.h"
