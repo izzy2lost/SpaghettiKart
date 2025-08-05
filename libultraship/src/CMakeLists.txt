@@ -113,28 +113,34 @@ target_sources(libultraship PRIVATE ${Source_Files__Utils})
 
 #=================== Port ===================
 
-if (CMAKE_SYSTEM_NAME STREQUAL "Android" OR CMAKE_SYSTEM_NAME STREQUAL "iOS")
+if (CMAKE_SYSTEM_NAME STREQUAL "Android")
     set(Source_Files__Port
         ${CMAKE_CURRENT_SOURCE_DIR}/port/mobile/MobileImpl.h
         ${CMAKE_CURRENT_SOURCE_DIR}/port/mobile/MobileImpl.cpp
         ${CMAKE_CURRENT_SOURCE_DIR}/port/mobile/RomExtractor.h
         ${CMAKE_CURRENT_SOURCE_DIR}/port/mobile/RomExtractor.cpp
     )
-    
-    # Add torch include directories for RomExtractor
+    # Add torch include directories for RomExtractor (Android only)
     target_include_directories(libultraship PRIVATE 
         ${CMAKE_CURRENT_SOURCE_DIR}/../../torch/src
         ${CMAKE_CURRENT_SOURCE_DIR}/../../torch/lib
         ${CMAKE_CURRENT_SOURCE_DIR}/../../torch/assets
     )
-    
-    # Add all subdirectories of torch/lib to include path
+    # Add all subdirectories of torch/lib to include path (Android only)
     file(GLOB TORCH_LIB_SUBDIRS ${CMAKE_CURRENT_SOURCE_DIR}/../../torch/lib/*)
     foreach(SUBDIR ${TORCH_LIB_SUBDIRS})
         if(IS_DIRECTORY ${SUBDIR})
             target_include_directories(libultraship PRIVATE ${SUBDIR})
         endif()
     endforeach()
+elseif(CMAKE_SYSTEM_NAME STREQUAL "iOS")
+    set(Source_Files__Port
+        ${CMAKE_CURRENT_SOURCE_DIR}/port/mobile/MobileImpl.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/port/mobile/MobileImpl.cpp
+        ${CMAKE_CURRENT_SOURCE_DIR}/port/mobile/RomExtractor.h
+        ${CMAKE_CURRENT_SOURCE_DIR}/port/mobile/RomExtractor.cpp
+    )
+endif()
     
     # Add yaml-cpp dependency for RomExtractor
     set(YAML_CPP_BUILD_TOOLS OFF)
