@@ -369,6 +369,11 @@ if(ANDROID)
     set(LIBZIP_INCLUDE_DIRS ${libzip_SOURCE_DIR}/lib ${libzip_BINARY_DIR} CACHE INTERNAL "libzip include paths")
     # Add libzip include directories globally for all targets
     include_directories(${LIBZIP_INCLUDE_DIRS})
+    
+    # Add torch include directories for Android builds
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/torch)
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/torch/lib)
+    include_directories(${CMAKE_CURRENT_SOURCE_DIR}/torch/src)
 endif()
 
 #==============================================================================#
@@ -418,8 +423,9 @@ include_directories(
   ${dr_libs_SOURCE_DIR}
 )
 
+add_subdirectory(torch)
 add_subdirectory(libultraship ${CMAKE_CURRENT_SOURCE_DIR}/libultraship)
-add_dependencies(${PROJECT_NAME} libultraship)
+add_dependencies(${PROJECT_NAME} libultraship torch)
 target_link_libraries(${PROJECT_NAME} PRIVATE libultraship)
 
 if (CMAKE_SYSTEM_NAME STREQUAL "Windows")
@@ -488,6 +494,7 @@ elseif(CMAKE_SYSTEM_NAME STREQUAL "Android")
     find_package(Threads REQUIRED)
     set(ADDITIONAL_LIBRARY_DEPENDENCIES
         "libultraship;"
+        "torch;"
         SDL2::SDL2
         Threads::Threads
     )
@@ -538,7 +545,10 @@ option(BUILD_SM64 "Build with Super Mario 64 support" OFF)
 option(BUILD_SF64 "Build with Star Fox 64 support" OFF)
 option(BUILD_FZERO "Build with F-Zero X support" OFF)
 
-add_subdirectory(torch)
+# Set torch build options before adding subdirectory
+set(USE_STANDALONE OFF CACHE BOOL "Build torch as library" FORCE)
+set(BUILD_MK64 ON CACHE BOOL "Build with Mario Kart 64 support" FORCE)
+
 target_link_libraries(${PROJECT_NAME} PRIVATE torch "${ADDITIONAL_LIBRARY_DEPENDENCIES}")
 
 if(CMAKE_SYSTEM_NAME MATCHES "NintendoSwitch")

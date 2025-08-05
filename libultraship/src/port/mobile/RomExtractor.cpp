@@ -7,7 +7,7 @@
 #include <spdlog/spdlog.h>
 
 // Include the existing Companion system
-#include "../../torch/src/Companion.h"
+#include "../../../../torch/src/Companion.h"
 
 namespace Ship {
 
