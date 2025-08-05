@@ -356,6 +356,19 @@ FetchContent_MakeAvailable(dr_libs)
 #=================== STB ===================
 include_directories(${STB_DIR})
 
+if(ANDROID)
+    # For Android, we need to fetch libzip manually as it's not provided by the system.
+    include(FetchContent)
+    FetchContent_Declare(
+        libzip
+        GIT_REPOSITORY https://github.com/nih-at/libzip.git
+        GIT_TAG v1.10.1
+    )
+    FetchContent_MakeAvailable(libzip)
+    # Set a global variable with the include paths that subprojects can use.
+    set(LIBZIP_INCLUDE_DIRS ${libzip_SOURCE_DIR}/lib ${libzip_BINARY_DIR} CACHE INTERNAL "libzip include paths")
+endif()
+
 #==============================================================================#
 # Libultraship Integration                                                     #
 #==============================================================================#
