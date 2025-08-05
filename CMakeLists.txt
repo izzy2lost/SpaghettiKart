@@ -367,6 +367,8 @@ if(ANDROID)
     FetchContent_MakeAvailable(libzip)
     # Set a global variable with the include paths that subprojects can use.
     set(LIBZIP_INCLUDE_DIRS ${libzip_SOURCE_DIR}/lib ${libzip_BINARY_DIR} CACHE INTERNAL "libzip include paths")
+    # Add libzip include directories globally for all targets
+    include_directories(${LIBZIP_INCLUDE_DIRS})
 endif()
 
 #==============================================================================#
