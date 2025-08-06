@@ -66,7 +66,8 @@ target_include_directories(stb PUBLIC ${STB_DIR})
 list(APPEND ADDITIONAL_LIB_INCLUDES ${STB_DIR})
 
 #=================== libgfxd ===================
-if (GFX_DEBUG_DISASSEMBLER)
+# Skip libgfxd for Android due to compilation issues
+if (GFX_DEBUG_DISASSEMBLER AND NOT ANDROID)
     FetchContent_Declare(
         libgfxd
         GIT_REPOSITORY https://github.com/glankk/libgfxd.git

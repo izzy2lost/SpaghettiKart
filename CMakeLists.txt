@@ -177,7 +177,12 @@ set(USE_NETWORKING ON)
 set(SKIP_XCODE_VERSION_CHECK ON)
 
 # TODO: Sorry i broke this
-set(GFX_DEBUG_DISASSEMBLER OFF)
+# Force GFX_DEBUG_DISASSEMBLER OFF for Android (libgfxd has compilation issues)
+if(ANDROID)
+    set(GFX_DEBUG_DISASSEMBLER OFF CACHE BOOL "Disable libgfxd for Android" FORCE)
+else()
+    set(GFX_DEBUG_DISASSEMBLER OFF)
+endif()
 
 # Add compile definitions for the target
 add_compile_definitions(
