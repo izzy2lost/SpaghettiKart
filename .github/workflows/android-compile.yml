@@ -52,7 +52,7 @@ jobs:
         submodules: 'recursive'
     - name: Patch Torch CMakeLists.txt to build as a library (not EXE)
       run: |
-        sed -i 's/option(USE_STANDALONE "Build as a standalone executable" ON)/option(USE_STANDALONE "Build as a standalone executable" OFF)/' Torch/CMakeLists.txt
+        sed -i 's/option(USE_STANDALONE "Build as a standalone executable" ON)/option(USE_STANDALONE "Build as a standalone executable" OFF)/' torch/CMakeLists.txt
     - name: Install dependencies
       run: sudo apt-get install -y ninja-build
     - name: Download spaghetti.o2r
