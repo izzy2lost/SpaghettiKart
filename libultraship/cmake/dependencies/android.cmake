@@ -70,15 +70,18 @@ if (NOT ${tinyxml2_FOUND})
 endif()
 
 #=================== spdlog ===================
-find_package(spdlog QUIET)
-if (NOT ${spdlog_FOUND})
-    FetchContent_Declare(
-        spdlog
-        GIT_REPOSITORY https://github.com/gabime/spdlog.git
-        GIT_TAG v1.14.1
-        OVERRIDE_FIND_PACKAGE
-    )
-    FetchContent_MakeAvailable(spdlog)
+# Check if spdlog is already available (declared by parent project)
+if(NOT TARGET spdlog::spdlog AND NOT TARGET spdlog)
+    find_package(spdlog QUIET)
+    if (NOT ${spdlog_FOUND})
+        FetchContent_Declare(
+            spdlog
+            GIT_REPOSITORY https://github.com/gabime/spdlog.git
+            GIT_TAG v1.14.1
+            OVERRIDE_FIND_PACKAGE
+        )
+        FetchContent_MakeAvailable(spdlog)
+    endif()
 endif()
 
 target_link_libraries(ImGui PUBLIC SDL2::SDL2)
