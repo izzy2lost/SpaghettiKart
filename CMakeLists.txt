@@ -374,16 +374,6 @@ if(ANDROID)
     set(LIBZIP_INCLUDE_DIRS ${libzip_SOURCE_DIR}/lib ${libzip_BINARY_DIR} CACHE INTERNAL "libzip include paths")
     # Add libzip include directories globally for all targets
     include_directories(${LIBZIP_INCLUDE_DIRS})
-    # Fetch spdlog for Android
-    include(FetchContent)
-    FetchContent_Declare(
-        spdlog
-        GIT_REPOSITORY https://github.com/gabime/spdlog.git
-        GIT_TAG v1.13.0
-    )
-    FetchContent_MakeAvailable(spdlog)
-    set(SPDLOG_INCLUDE_DIRS ${spdlog_SOURCE_DIR}/include ${spdlog_BINARY_DIR} CACHE INTERNAL "spdlog include paths")
-    include_directories(${SPDLOG_INCLUDE_DIRS})
     
     # Add torch include directories for Android builds
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/torch)
@@ -430,7 +420,6 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/libultraship/extern/tinyxml2
   ${CMAKE_CURRENT_SOURCE_DIR}/libultraship/libultraship/Lib/
   ${CMAKE_CURRENT_SOURCE_DIR}/libultraship/libultraship/Lib/libjpeg/include/
-  ${CMAKE_CURRENT_SOURCE_DIR}/libultraship/libultraship/Lib/spdlog/include/
   ${CMAKE_CURRENT_SOURCE_DIR}/libultraship/src/graphic/Fast3D/U64/PR
   ${CMAKE_CURRENT_SOURCE_DIR}/libultraship/src/graphic
   ${SDL2_INCLUDE_DIRS}
