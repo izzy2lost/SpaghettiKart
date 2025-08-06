@@ -384,6 +384,31 @@ if(ANDROID)
     )
     FetchContent_MakeAvailable(spdlog)
     
+    # Fetch yaml-cpp for Android - must be done before torch and libultraship
+    set(YAML_CPP_BUILD_TOOLS OFF)
+    set(YAML_CPP_BUILD_TESTS OFF)
+    set(YAML_CPP_DISABLE_UNINSTALL ON)
+    FetchContent_Declare(
+        yaml-cpp
+        GIT_REPOSITORY https://github.com/jbeder/yaml-cpp.git
+        GIT_TAG 2f86d13775d119edbb69af52e5f566fd65c6953b
+    )
+    FetchContent_MakeAvailable(yaml-cpp)
+    # Set compilation definitions for yaml-cpp
+    if(TARGET yaml-cpp)
+        target_compile_definitions(yaml-cpp PRIVATE YAML_CPP_STATIC_DEFINE)
+    endif()
+    
+    # Fetch tinyxml2 for Android - must be done before torch and libultraship
+    set(tinyxml2_BUILD_TESTING OFF)
+    FetchContent_Declare(
+        tinyxml2
+        GIT_REPOSITORY https://github.com/leethomason/tinyxml2.git
+        GIT_TAG 10.0.0
+        OVERRIDE_FIND_PACKAGE
+    )
+    FetchContent_MakeAvailable(tinyxml2)
+    
     # Add torch include directories for Android builds
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/torch)
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/torch/lib)
