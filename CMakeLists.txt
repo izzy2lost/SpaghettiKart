@@ -375,6 +375,15 @@ if(ANDROID)
     # Add libzip include directories globally for all targets
     include_directories(${LIBZIP_INCLUDE_DIRS})
     
+    # Fetch spdlog for Android - must be done before torch and libultraship
+    # Use the same version as libultraship to avoid conflicts
+    FetchContent_Declare(
+        spdlog
+        GIT_REPOSITORY https://github.com/gabime/spdlog.git
+        GIT_TAG v1.14.1
+    )
+    FetchContent_MakeAvailable(spdlog)
+    
     # Add torch include directories for Android builds
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/torch)
     include_directories(${CMAKE_CURRENT_SOURCE_DIR}/torch/lib)
