@@ -438,6 +438,10 @@ include_directories(
   ${dr_libs_SOURCE_DIR}
 )
 
+# Set torch build options before adding subdirectory to prevent libgfxd build issues on Android
+set(USE_STANDALONE OFF CACHE BOOL "Build torch as library" FORCE)
+set(BUILD_MK64 ON CACHE BOOL "Build with Mario Kart 64 support" FORCE)
+
 add_subdirectory(torch)
 add_subdirectory(libultraship ${CMAKE_CURRENT_SOURCE_DIR}/libultraship)
 add_dependencies(${PROJECT_NAME} libultraship torch)
@@ -560,9 +564,7 @@ option(BUILD_SM64 "Build with Super Mario 64 support" OFF)
 option(BUILD_SF64 "Build with Star Fox 64 support" OFF)
 option(BUILD_FZERO "Build with F-Zero X support" OFF)
 
-# Set torch build options before adding subdirectory
-set(USE_STANDALONE OFF CACHE BOOL "Build torch as library" FORCE)
-set(BUILD_MK64 ON CACHE BOOL "Build with Mario Kart 64 support" FORCE)
+# Torch build options are now set before add_subdirectory(torch) above
 
 # Link torch only for non-Android builds (torch is an executable, not a library)
 if(NOT ANDROID)
