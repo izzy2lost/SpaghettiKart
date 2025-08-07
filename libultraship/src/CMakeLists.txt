@@ -252,10 +252,16 @@ target_link_libraries(libultraship PUBLIC nlohmann_json::nlohmann_json)
 find_package(tinyxml2 REQUIRED)
 target_link_libraries(libultraship PUBLIC tinyxml2::tinyxml2)
 
-if(NOT ANDROID)
-    find_package(spdlog REQUIRED)
+# Handle spdlog dependency
+if(TARGET spdlog::spdlog)
+    # spdlog target already available (e.g., from parent project)
     target_link_libraries(libultraship PUBLIC spdlog::spdlog)
+elseif(TARGET spdlog)
+    # spdlog target available with simple name
+    target_link_libraries(libultraship PUBLIC spdlog)
 else()
+    # Try to find spdlog as a package
+    find_package(spdlog REQUIRED)
     target_link_libraries(libultraship PUBLIC spdlog::spdlog)
 endif()
 
