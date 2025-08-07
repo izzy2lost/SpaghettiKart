@@ -256,7 +256,7 @@ if(NOT ANDROID)
     find_package(spdlog REQUIRED)
     target_link_libraries(libultraship PUBLIC spdlog::spdlog)
 else()
-    target_link_libraries(libultraship PUBLIC spdlog)
+    target_link_libraries(libultraship PUBLIC spdlog::spdlog)
 endif()
 
 if (CMAKE_SYSTEM_NAME STREQUAL "Darwin")
