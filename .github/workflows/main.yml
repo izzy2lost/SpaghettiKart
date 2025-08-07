@@ -139,6 +139,11 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get install gcc g++ git cmake ninja-build lsb-release libsdl2-dev libsdl2-net-dev libpng-dev libsdl2-net-dev libzip-dev zipcmp zipmerge ziptool nlohmann-json3-dev libtinyxml2-dev libspdlog-dev libboost-dev libopengl-dev libogg-dev libvorbis-dev
+      - name: Fix spdlog issue in torch
+        run: |
+          # Fix spdlog find_package issue in torch CMakeLists.txt
+          sed -i 's/find_package(spdlog REQUIRED)/find_package(spdlog QUIET)\n\tif(NOT spdlog_FOUND)\n\t\tFetchContent_Declare(\n\t\t\tspdlog\n\t\t\tGIT_REPOSITORY https:\/\/github.com\/gabime\/spdlog.git\n\t\t\tGIT_TAG 7e635fca68d014934b4af8a1cf874f63989352b7\n\t\t)\n\t\tFetchContent_MakeAvailable(spdlog)\n\t\tset(spdlog_FOUND TRUE)\n\tendif()/' torch/CMakeLists.txt
+          sed -i 's/target_link_libraries(${PROJECT_NAME} PUBLIC spdlog::spdlog)/if(spdlog_FOUND)\n\tif(TARGET spdlog::spdlog)\n\t\ttarget_link_libraries(${PROJECT_NAME} PUBLIC spdlog::spdlog)\n\telse()\n\t\ttarget_link_libraries(${PROJECT_NAME} PUBLIC spdlog)\n\tendif()\nendif()/' torch/CMakeLists.txt
       - name: ccache
         uses: hendrikmuhs/ccache-action@v1.2.14
         with:
@@ -225,6 +230,11 @@ jobs:
       - name: Install dependencies
         run: |
           sudo apt-get install gcc g++ git cmake ninja-build lsb-release libsdl2-dev libsdl2-net-dev libpng-dev libsdl2-net-dev libzip-dev zipcmp zipmerge ziptool nlohmann-json3-dev libtinyxml2-dev libboost-dev libopengl-dev libogg-dev libvorbis-dev
+      - name: Fix spdlog issue in torch
+        run: |
+          # Fix spdlog find_package issue in torch CMakeLists.txt
+          sed -i 's/find_package(spdlog REQUIRED)/find_package(spdlog QUIET)\n\tif(NOT spdlog_FOUND)\n\t\tFetchContent_Declare(\n\t\t\tspdlog\n\t\t\tGIT_REPOSITORY https:\/\/github.com\/gabime\/spdlog.git\n\t\t\tGIT_TAG 7e635fca68d014934b4af8a1cf874f63989352b7\n\t\t)\n\t\tFetchContent_MakeAvailable(spdlog)\n\t\tset(spdlog_FOUND TRUE)\n\tendif()/' torch/CMakeLists.txt
+          sed -i 's/target_link_libraries(${PROJECT_NAME} PUBLIC spdlog::spdlog)/if(spdlog_FOUND)\n\tif(TARGET spdlog::spdlog)\n\t\ttarget_link_libraries(${PROJECT_NAME} PUBLIC spdlog::spdlog)\n\telse()\n\t\ttarget_link_libraries(${PROJECT_NAME} PUBLIC spdlog)\n\tendif()\nendif()/' torch/CMakeLists.txt
       - name: ccache
         uses: hendrikmuhs/ccache-action@v1.2.14
         with:
