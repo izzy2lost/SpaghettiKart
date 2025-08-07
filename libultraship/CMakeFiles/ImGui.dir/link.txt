@@ -1,0 +1,2 @@
+/usr/bin/ar qc libImGui.a "CMakeFiles/ImGui.dir/__/build/_deps/imgui-src/imgui_demo.cpp.o" "CMakeFiles/ImGui.dir/__/build/_deps/imgui-src/imgui_draw.cpp.o" "CMakeFiles/ImGui.dir/__/build/_deps/imgui-src/imgui_tables.cpp.o" "CMakeFiles/ImGui.dir/__/build/_deps/imgui-src/imgui_widgets.cpp.o" "CMakeFiles/ImGui.dir/__/build/_deps/imgui-src/imgui.cpp.o" "CMakeFiles/ImGui.dir/__/build/_deps/imgui-src/backends/imgui_impl_opengl3.cpp.o" "CMakeFiles/ImGui.dir/__/build/_deps/imgui-src/backends/imgui_impl_sdl2.cpp.o"
+/usr/bin/ranlib libImGui.a
