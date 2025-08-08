@@ -43,6 +43,10 @@ var UIWidgets_8h =
       [ "UIWidgets::None", "namespaceUIWidgets.html#a23ae264367182e084aed61c4b582521baf6c9204d3b575d2f94614341a8fcb652", null ],
       [ "UIWidgets::Within", "namespaceUIWidgets.html#a23ae264367182e084aed61c4b582521bac9c5f60c8731ee084e46a4516dd0146c", null ]
     ] ],
+    [ "UIWidgets::MenuExtent", "namespaceUIWidgets.html#a2f7c93f2b8d08a16c305b29d415d7cc5", [
+      [ "UIWidgets::Condensed", "namespaceUIWidgets.html#a2f7c93f2b8d08a16c305b29d415d7cc5aa5c7af7144725d0642cdbfd6bab35af7", null ],
+      [ "UIWidgets::Stretched", "namespaceUIWidgets.html#a2f7c93f2b8d08a16c305b29d415d7cc5a964b6779c78f51abc4a05ac417028182", null ]
+    ] ],
     [ "UIWidgets::BeginMenu", "namespaceUIWidgets.html#aed73bb0e7d02ca787973de9803f10562", null ],
     [ "UIWidgets::Button", "namespaceUIWidgets.html#aff1b4b5ec89aa4afa79223288c55a91e", null ],
     [ "UIWidgets::Checkbox", "namespaceUIWidgets.html#a28268b432c9b36af9e83d12b8b28bb35", null ],

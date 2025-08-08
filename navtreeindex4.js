@@ -1,5 +1,8 @@
 var NAVTREEINDEX4 =
 {
+"ParticleEmitter_8cpp.html":[18,0,3,6,5,0],
+"ParticleEmitter_8h.html":[18,0,3,6,5,1],
+"ParticleEmitter_8h_source.html":[18,0,3,6,5,1],
 "Penguin_8cpp.html":[18,0,3,6,4,28],
 "Penguin_8cpp.html#a60c6a69449720d514d1f6569c45f626e":[18,0,3,6,4,28,0],
 "Penguin_8h.html":[18,0,3,6,4,29],
@@ -246,8 +249,5 @@ var NAVTREEINDEX4 =
 "World_8h.html":[18,0,3,6,37],
 "World_8h.html#a2075aa052f40ef84e5435c3dc9c04801":[18,0,3,6,37,2],
 "World_8h_source.html":[18,0,3,6,37],
-"YoshiValley_8cpp.html":[18,0,3,6,1,46],
-"YoshiValley_8cpp.html#a274efac433b244bdfadbd0b2f434d488":[18,0,3,6,1,46,0],
-"YoshiValley_8cpp.html#a8bcea3fe61869cecd63b75355cd5d949":[18,0,3,6,1,46,1],
-"YoshiValley_8h.html":[18,0,3,6,1,47]
+"YoshiValley_8cpp.html":[18,0,3,6,1,46]
 };

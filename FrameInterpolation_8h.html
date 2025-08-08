@@ -136,6 +136,10 @@ Macros</h2></td></tr>
 <tr class="separator:a80d2f0dba8e548c9494637a1db1549cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1082df252b2fcfa1cd89c1bec22204c3" id="r_a1082df252b2fcfa1cd89c1bec22204c3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1082df252b2fcfa1cd89c1bec22204c3">TAG_OBJECT</a>(x)</td></tr>
 <tr class="separator:a1082df252b2fcfa1cd89c1bec22204c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aeaaf9408cf9c743076cf8a94b22b67" id="r_a6aeaaf9408cf9c743076cf8a94b22b67"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6aeaaf9408cf9c743076cf8a94b22b67">TAG_CLOUDS</a>(x)</td></tr>
+<tr class="separator:a6aeaaf9408cf9c743076cf8a94b22b67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49020a15d2dc66098e8ac3900157c377" id="r_a49020a15d2dc66098e8ac3900157c377"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49020a15d2dc66098e8ac3900157c377">TAG_TRACK</a>(x)</td></tr>
+<tr class="separator:a49020a15d2dc66098e8ac3900157c377"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -195,6 +199,24 @@ Functions</h2></td></tr>
 <tr class="separator:aafa8768b46143c8110779aa8afdfe41c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a6aeaaf9408cf9c743076cf8a94b22b67" name="a6aeaaf9408cf9c743076cf8a94b22b67"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aeaaf9408cf9c743076cf8a94b22b67">&#9670;&#160;</a></span>TAG_CLOUDS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TAG_CLOUDS</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((u32)0x50000000 | (u32) (uintptr_t) (x))</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a7954bb5cee32cad6df2d74a6fa90a423" name="a7954bb5cee32cad6df2d74a6fa90a423"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7954bb5cee32cad6df2d74a6fa90a423">&#9670;&#160;</a></span>TAG_ITEM_ADDR</h2>
 
@@ -264,6 +286,24 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">((u32) 0x20000000 | (u32) (x))</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a49020a15d2dc66098e8ac3900157c377" name="a49020a15d2dc66098e8ac3900157c377"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49020a15d2dc66098e8ac3900157c377">&#9670;&#160;</a></span>TAG_TRACK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TAG_TRACK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((u32)0x70000000 | ((u32)(x) &amp; 0x0FFFFFFF))</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -1,5 +1,10 @@
 var NAVTREEINDEX33 =
 {
+"ghostship__model_8h.html#a0d69827221bef6d2c6e4b6fd0ad5f10e":[18,0,0,8,1,45],
+"ghostship__model_8h.html#a0ffe601a1603c42701e339926fafebd2":[18,0,0,8,1,20],
+"ghostship__model_8h.html#a113f0540b9c03f1e8f4958e946c9ce90":[18,0,0,8,1,44],
+"ghostship__model_8h.html#a124b38e9ae544adfbb0f2db4b9546f0f":[18,0,0,8,1,39],
+"ghostship__model_8h.html#a1d72d525c55bb4bdc45676d8f2af74b7":[18,0,0,8,1,22],
 "ghostship__model_8h.html#a2788fa6f2c991527de2b357b3caa2511":[18,0,0,8,1,0],
 "ghostship__model_8h.html#a285bb78d3c99f2a3dfbe4cdb3c3c6b19":[18,0,0,8,1,36],
 "ghostship__model_8h.html#a3153c6031a423ee38e7620d8b44290fe":[18,0,0,8,1,32],
@@ -244,10 +249,5 @@ var NAVTREEINDEX33 =
 "harbour__masters_8h.html#a315f170bf270af3dfbf3b374f01ced2f":[18,0,3,42,15],
 "harbour__masters_8h.html#a3cc7214ddae58806772ceebb69aedf28":[18,0,3,42,11],
 "harbour__masters_8h.html#a47327684c023c5410ebe579087ced77c":[18,0,3,42,20],
-"harbour__masters_8h.html#a4cf450c4401ccae80d6a95f20e4fba44":[18,0,3,42,13],
-"harbour__masters_8h.html#a4d186208fd07ef4ca3fb88c65894b947":[18,0,3,42,19],
-"harbour__masters_8h.html#a5e51f678c3cc36c9b4cb762695b84f8b":[18,0,3,42,21],
-"harbour__masters_8h.html#a635176e6dac4ce20096785cab4933894":[18,0,3,42,6],
-"harbour__masters_8h.html#a68300d94bd009fd4d66a24a24b3bcdf9":[18,0,3,42,17],
-"harbour__masters_8h.html#a6ad81ce435abfaa64d09ae6812cfe5fc":[18,0,3,42,12]
+"harbour__masters_8h.html#a4cf450c4401ccae80d6a95f20e4fba44":[18,0,3,42,13]
 };

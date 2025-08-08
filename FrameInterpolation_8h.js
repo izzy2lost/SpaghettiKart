@@ -1,9 +1,11 @@
 var FrameInterpolation_8h =
 [
+    [ "TAG_CLOUDS", "FrameInterpolation_8h.html#a6aeaaf9408cf9c743076cf8a94b22b67", null ],
     [ "TAG_ITEM_ADDR", "FrameInterpolation_8h.html#a7954bb5cee32cad6df2d74a6fa90a423", null ],
     [ "TAG_LETTER", "FrameInterpolation_8h.html#a80d2f0dba8e548c9494637a1db1549cb", null ],
     [ "TAG_OBJECT", "FrameInterpolation_8h.html#a1082df252b2fcfa1cd89c1bec22204c3", null ],
     [ "TAG_SMOKE_DUST", "FrameInterpolation_8h.html#a16482d0120ab2561205fffd3bbccec69", null ],
+    [ "TAG_TRACK", "FrameInterpolation_8h.html#a49020a15d2dc66098e8ac3900157c377", null ],
     [ "check_if_recording", "FrameInterpolation_8h.html#a02c7ac5342a4d376edee38f312b480bf", null ],
     [ "FrameInterpolation_DontInterpolateCamera", "FrameInterpolation_8h.html#a4c86e5d5fc84cc004fe2059cea4b3068", null ],
     [ "FrameInterpolation_GetCameraEpoch", "FrameInterpolation_8h.html#ab79dec187c1c1b859e47a13251fb1671", null ],

@@ -1,5 +1,8 @@
 var NAVTREEINDEX5 =
 {
+"YoshiValley_8cpp.html#a274efac433b244bdfadbd0b2f434d488":[18,0,3,6,1,46,0],
+"YoshiValley_8cpp.html#a8bcea3fe61869cecd63b75355cd5d949":[18,0,3,6,1,46,1],
+"YoshiValley_8h.html":[18,0,3,6,1,47],
 "YoshiValley_8h.html#a8bcea3fe61869cecd63b75355cd5d949":[18,0,3,6,1,47,1],
 "YoshiValley_8h_source.html":[18,0,3,6,1,47],
 "__Ldtob_8c.html":[18,0,3,9,27],
@@ -246,8 +249,5 @@ var NAVTREEINDEX5 =
 "actors_8c.html#a694ec6ef7548b8618aeb35c038d3a9b9":[18,0,3,11,0,10],
 "actors_8c.html#a6968a4585e6457d53306634fbf66d0d1":[18,0,3,11,0,24],
 "actors_8c.html#a6fd7dc3bc34357287535b6f06ab7d85c":[18,0,3,11,0,21],
-"actors_8c.html#a786b41fb3a8c328ede15995af2b4a0eb":[18,0,3,11,0,25],
-"actors_8c.html#a7a3f12a95f6dd7ed85e6735b26237a15":[18,0,3,11,0,57],
-"actors_8c.html#a7dd08845f085e355fe4eb45bff89542a":[18,0,3,11,0,38],
-"actors_8c.html#a81a8c87cfcd4d2304d2015af467fc3ec":[18,0,3,11,0,49]
+"actors_8c.html#a786b41fb3a8c328ede15995af2b4a0eb":[18,0,3,11,0,25]
 };

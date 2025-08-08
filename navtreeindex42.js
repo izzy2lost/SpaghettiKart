@@ -1,5 +1,10 @@
 var NAVTREEINDEX42 =
 {
+"md_docs_2BUILDING.html#debianubuntu":[2,1,1,0,0],
+"md_docs_2BUILDING.html#developing-spaghettikart":[2,0,0],
+"md_docs_2BUILDING.html#docker-1":[2,1,2],
+"md_docs_2BUILDING.html#fedora-1":[2,1,1,0,2],
+"md_docs_2BUILDING.html#generate-a-distributable":[2,1,3],
 "md_docs_2BUILDING.html#generating-a-distributable":[2,2,0],
 "md_docs_2BUILDING.html#generating-the-distributable":[2,0,1],
 "md_docs_2BUILDING.html#getting-ci-to-work-on-your-fork":[2,3],
@@ -244,10 +249,5 @@ var NAVTREEINDEX42 =
 "menu__items_8c.html#a1829bbbf4a29d146eeee80295262c910":[18,0,3,49,246],
 "menu__items_8c.html#a185b46923cd6cca122e7e7447d229d0d":[18,0,3,49,236],
 "menu__items_8c.html#a1a002f259a6c887d6672085b8cda7d4d":[18,0,3,49,320],
-"menu__items_8c.html#a1a0752204b4a0fba2d3e2726a4f6904a":[18,0,3,49,154],
-"menu__items_8c.html#a1a33a95632b97a1ce9511c4f9f6fd0d7":[18,0,3,49,115],
-"menu__items_8c.html#a1a373d6d66930cb8b480a181ac3fc7cd":[18,0,3,49,226],
-"menu__items_8c.html#a1a935d1655795dcf27dcef1cb73470b2":[18,0,3,49,88],
-"menu__items_8c.html#a1ab59e18c2030549e7c44b4efdc18adb":[18,0,3,49,376],
-"menu__items_8c.html#a1afef788f26591e1ca9153ab8f9559db":[18,0,3,49,27]
+"menu__items_8c.html#a1a0752204b4a0fba2d3e2726a4f6904a":[18,0,3,49,154]
 };

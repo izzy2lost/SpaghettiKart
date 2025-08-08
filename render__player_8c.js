@@ -47,7 +47,7 @@ var render__player_8c =
     [ "render_player", "render__player_8c.html#a9afd62c74edf8ebd0a77158f6626ce10", null ],
     [ "render_player_ice_reflection", "render__player_8c.html#a30ed78cf8502138212a8e5460b4c5933", null ],
     [ "render_player_shadow", "render__player_8c.html#acfd68148e93290f17d95184f224f5935", null ],
-    [ "render_player_shadow_credits", "render__player_8c.html#afae2325d39290e681f161f6b895ea2c7", null ],
+    [ "render_player_shadow_credits", "render__player_8c.html#a9652f690c50c69870238da9df225f8d8", null ],
     [ "render_players_on_screen_four", "render__player_8c.html#a68976a398fda97f1349fda137a3eaa26", null ],
     [ "render_players_on_screen_one", "render__player_8c.html#a6bc32c583b2a3886183f09447e213be8", null ],
     [ "render_players_on_screen_three", "render__player_8c.html#acfa221415dd91abfc493ca92b21998fa", null ],

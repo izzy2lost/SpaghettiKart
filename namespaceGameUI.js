@@ -60,6 +60,7 @@ var namespaceGameUI =
     [ "maxVerticalPixelCount", "namespaceGameUI.html#afa865c03604144e2764bf5cc75e2bd4f", null ],
     [ "mConsoleWindow", "namespaceGameUI.html#ad578e6e03a0f0901d9bd3f505d76a152", null ],
     [ "mContentBrowserWindow", "namespaceGameUI.html#ac706231c321fb011884fe479328bb1ed", null ],
+    [ "menuExtentOptions", "namespaceGameUI.html#ab4d46dc9f627364944694cce110ede7f", null ],
     [ "menuThemeOptions", "namespaceGameUI.html#a3d46807cc832ea9dce8ac8d36836343f", null ],
     [ "messageColor", "namespaceGameUI.html#a8294545d5526359ddf2ceb19c6016f1b", null ],
     [ "mGfxDebuggerWindow", "namespaceGameUI.html#a0a095cd5e52838f92ff9f8d1c0a71064", null ],

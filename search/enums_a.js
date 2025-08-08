@@ -50,9 +50,10 @@ var searchData=
   ['mainmenuselectiontype_47',['MainMenuSelectionType',['../menus_8h.html#ad5aa1f6b0b486ffbb500442c627f8b3c',1,'menus.h']]],
   ['menu_5fitem_5fpriority_48',['MENU_ITEM_PRIORITY',['../menu__items_8h.html#a07983b89b982a5a2eaf98149e3d1a63a',1,'menu_items.h']]],
   ['menu_5fitem_5ftype_49',['MENU_ITEM_TYPE',['../menu__items_8h.html#a1dfc635b44835e2c75290f9a9a2c3643',1,'menu_items.h']]],
-  ['menufadetypes_50',['MenuFadeTypes',['../menus_8h.html#ae27524e11002d246314d28cb2246ac57',1,'menus.h']]],
-  ['menuoptionscursorpositions_51',['MenuOptionsCursorPositions',['../menus_8h.html#a2d81b0ed3d81f6a682f89bbb9f1b6bae',1,'menus.h']]],
-  ['messagetype_52',['messageType',['../namespaceGameUI.html#aa9e407716aed9d3d8c1bbc634b8c9b79',1,'GameUI']]],
-  ['motionbluroption_53',['MotionBlurOption',['../MenuTypes_8h.html#a15cb71ee758e7abb2c7d48e09ac0883e',1,'MenuTypes.h']]],
-  ['musicseq_54',['MusicSeq',['../sounds_8h.html#a462955cf4ece430059af4e4185a8727c',1,'sounds.h']]]
+  ['menuextent_50',['MenuExtent',['../namespaceUIWidgets.html#a2f7c93f2b8d08a16c305b29d415d7cc5',1,'UIWidgets']]],
+  ['menufadetypes_51',['MenuFadeTypes',['../menus_8h.html#ae27524e11002d246314d28cb2246ac57',1,'menus.h']]],
+  ['menuoptionscursorpositions_52',['MenuOptionsCursorPositions',['../menus_8h.html#a2d81b0ed3d81f6a682f89bbb9f1b6bae',1,'menus.h']]],
+  ['messagetype_53',['messageType',['../namespaceGameUI.html#aa9e407716aed9d3d8c1bbc634b8c9b79',1,'GameUI']]],
+  ['motionbluroption_54',['MotionBlurOption',['../MenuTypes_8h.html#a15cb71ee758e7abb2c7d48e09ac0883e',1,'MenuTypes.h']]],
+  ['musicseq_55',['MusicSeq',['../sounds_8h.html#a462955cf4ece430059af4e4185a8727c',1,'sounds.h']]]
 ];

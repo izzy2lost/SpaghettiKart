@@ -1,5 +1,10 @@
 var NAVTREEINDEX26 =
 {
+"code__800AF9B0_8c.html#adfa304c28966a1ad52f7f7ec580d5498":[18,0,3,32,5],
+"code__800AF9B0_8c.html#ae2e9efe7c7a6e87d17392e3229959237":[18,0,3,32,7],
+"code__800AF9B0_8h.html":[18,0,3,33],
+"code__800AF9B0_8h.html#a7963c15bc1960ff122a3f86b9e114872":[18,0,3,33,1],
+"code__800AF9B0_8h.html#aa14849d67fb7d26d11f85ac19898ac7f":[18,0,3,33,0],
 "code__800AF9B0_8h_source.html":[18,0,3,33],
 "code__80280000_8c.html":[18,0,3,5,4],
 "code__80280000_8c.html#a09549ebbda927bf459297bb1eab5330c":[18,0,3,5,4,3],
@@ -239,15 +244,10 @@ var NAVTREEINDEX26 =
 "controlflow.html#engine":[1,2,4,6],
 "controlflow.html#math":[1,2,4,7],
 "controlflow.html#menus":[1,2,4,0],
-"controlflow.html#objects":[1,2,4,3],
+"controlflow.html#objects-1":[1,2,4,3],
 "controlflow.html#overall-control-flow":[1,2,2],
 "controlflow.html#paradigm":[1,2,0],
 "controlflow.html#players":[1,2,4,1],
 "controlflow.html#segments":[1,2,3],
-"controlflow.html#threading":[1,2,1],
-"controlflow.html#ui--other-2d-screen-data":[1,2,4,5],
-"controller_8h.html":[18,0,3,9,35],
-"controller_8h.html#a0a241eefe53675f2e6ffa9907dfdeb78":[18,0,3,9,35,25],
-"controller_8h.html#a0b48b5daa3f9a82a8da6c0254b7358d6":[18,0,3,9,35,32],
-"controller_8h.html#a0f7db56e72f44b8a2e596b0e8a702866":[18,0,3,9,35,55]
+"controlflow.html#threading":[1,2,1]
 };

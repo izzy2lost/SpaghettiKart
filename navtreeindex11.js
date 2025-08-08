@@ -1,5 +1,8 @@
 var NAVTREEINDEX11 =
 {
+"classEditor_1_1Gizmo.html#ab0a7c63e4199d2e6a3e36d5418dc7761":[16,0,1,2,34],
+"classEditor_1_1Gizmo.html#ab0a7c63e4199d2e6a3e36d5418dc7761":[17,0,0,2,34],
+"classEditor_1_1Gizmo.html#ab5f28dd99f1b04c83170073c822dbf3c":[16,0,1,2,13],
 "classEditor_1_1Gizmo.html#ab5f28dd99f1b04c83170073c822dbf3c":[17,0,0,2,13],
 "classEditor_1_1Gizmo.html#abd4af9d65f50af5f4af6a9e437f8fe80":[16,0,1,2,31],
 "classEditor_1_1Gizmo.html#abd4af9d65f50af5f4af6a9e437f8fe80":[17,0,0,2,31],
@@ -246,8 +249,5 @@ var NAVTREEINDEX11 =
 "classKalimariDesert.html#afd10b60d15feb7983f37f6f8aedc273b":[17,0,145,8],
 "classKoopaTroopaBeach.html":[17,0,148],
 "classKoopaTroopaBeach.html#a182cbbac4bb465d78ee9df0825524664":[17,0,148,9],
-"classKoopaTroopaBeach.html#a28c5620db0c5ee804471815af786b739":[17,0,148,7],
-"classKoopaTroopaBeach.html#a7790540cdd46c8cef5c0d9db8d12b5ec":[17,0,148,4],
-"classKoopaTroopaBeach.html#a7ca6e564b45390c31b76e364a0ee6ff4":[17,0,148,12],
-"classKoopaTroopaBeach.html#a7de549f2afcf0587abba439666e1d6df":[17,0,148,14]
+"classKoopaTroopaBeach.html#a28c5620db0c5ee804471815af786b739":[17,0,148,7]
 };

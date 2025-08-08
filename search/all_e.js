@@ -282,7 +282,7 @@ var searchData=
   ['loglevels_279',['logLevels',['../namespaceGameUI.html#a67e005bbaa2729af7d9e65fd1a4fb892',1,'GameUI']]],
   ['logo_5fintro_5fmenu_280',['LOGO_INTRO_MENU',['../defines_8h.html#a26c323982c7634f09f2d93900f27856d',1,'defines.h']]],
   ['logo_5fintro_5fmenu_5fact_281',['logo_intro_menu_act',['../menus_8c.html#a3d16275034df7858d890273a95a5a4af',1,'logo_intro_menu_act(struct Controller *controller, UNUSED u16 controllerIdx):&#160;menus.c'],['../menus_8h.html#a097beed7872ad2f5d34b5b2f4b5e9024',1,'logo_intro_menu_act(struct Controller *, u16):&#160;menus.h']]],
-  ['lookat_282',['LookAt',['../structWorld_1_1Matrix.html#aaa42d181ad649e95b534341ad758b806',1,'World::Matrix']]],
+  ['lookat_282',['LookAt',['../structWorld_1_1Matrix.html#ad50841597d3aa45a01956dffb8042d8b',1,'World::Matrix']]],
   ['lookat_283',['lookAt',['../structCamera.html#ae16ab2b8e885264666d7e7e20bb872a1',1,'Camera::lookAt'],['../structCinematicCamera.html#a11e4d83299cab081332c8625c1d3a8fd',1,'CinematicCamera::lookAt'],['../structfreecamSaveState.html#a7abeebf33c2e984ed35794769b7314ac',1,'freecamSaveState::lookAt']]],
   ['loop_284',['loop',['../structAudioBankSample.html#ad188e9d6ef8fb385d84bc3c635927469',1,'AudioBankSample::loop'],['../structALADPCMWaveInfo.html#ad4b5483c93397b568cd28c6055ef50ef',1,'ALADPCMWaveInfo::loop'],['../structALRAWWaveInfo.html#a2fb2b21087e87d197d3cf6017f80e119',1,'ALRAWWaveInfo::loop'],['../structAudioBankSample.html#abae57a9b292e1b7ffb68063c0d5d3a0e',1,'AudioBankSample::loop'],['../classSM64_1_1AudioSample.html#ac080e79c6cca42852dc3f26c0bbad51f',1,'SM64::AudioSample::loop']]],
   ['loopbackprocessexclude_285',['loopbackProcessExclude',['../structma__device__config.html#af05871de86fae758aa0eb8b2f8e09179',1,'ma_device_config']]],

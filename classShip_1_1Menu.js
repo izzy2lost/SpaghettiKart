@@ -32,6 +32,7 @@ var classShip_1_1Menu =
     [ "poppedSize", "classShip_1_1Menu.html#a0edbc3567ae7dbf1a51fddd74586c94f", null ],
     [ "searchSidebarEntry", "classShip_1_1Menu.html#ab4a6a9763a29fbb19549dd3cd8495b49", null ],
     [ "searchSidebarIndex", "classShip_1_1Menu.html#a428a53abcb78b4c35162dd22a05c6cae", null ],
+    [ "uiScale", "classShip_1_1Menu.html#a21549eb77a07a8ed2bcfee30a22e020c", null ],
     [ "windowHeight", "classShip_1_1Menu.html#aaa24bab2a495dc0d1573ad9a1b293104", null ],
     [ "windowWidth", "classShip_1_1Menu.html#a946930a0d1dce97c703d0fb51bf79416", null ]
 ];
