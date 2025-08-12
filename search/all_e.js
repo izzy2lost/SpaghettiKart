@@ -152,7 +152,7 @@ var searchData=
   ['limbdata_149',['LimbData',['../structSF64_1_1LimbData.html',1,'SF64']]],
   ['limbtable_150',['LimbTable',['../namespaceMK64.html#a7bd07479273b52e702ac4baf9081791da0901af44ea5f01c0746f69bc2d1f33ed',1,'MK64']]],
   ['linear_151',['linear',['../structma__resampler__config.html#a2129fc09f83cc9525cb02a16b171a60a',1,'ma_resampler_config::linear'],['../structma__resampler.html#adb10e8cbb6aa6b7561f33bc84d240bd7',1,'ma_resampler::linear'],['../structma__device.html#a69219a82705374f7eda820418a7a02a2',1,'ma_device::linear']]],
-  ['linux_152',['Linux',['../md_docs_2BUILDING.html#linux',1,'Linux'],['../compiling.html#linux-1',1,'Linux']]],
+  ['linux_152',['Linux',['../compiling.html#linux',1,'Linux'],['../md_docs_2BUILDING.html#linux-1',1,'Linux']]],
   ['list_153',['List',['../bug.html',1,'Bug List'],['../deprecated.html',1,'Deprecated List'],['../todo.html',1,'Todo List']]],
   ['listenercount_154',['listenerCount',['../structma__engine__config.html#a11cd4ecdfa138c23edb675a96388de9a',1,'ma_engine_config::listenerCount'],['../structma__engine.html#a1b459564f7c6839863e7e3e147944da7',1,'ma_engine::listenerCount']]],
   ['listeners_155',['listeners',['../structma__engine.html#a4a0445a5a2fcfbd02b17b8a14d1e1a8e',1,'ma_engine']]],

@@ -241,7 +241,7 @@ var NAVTREEINDEX41 =
 "md_docs_2BUILDING.html#additional-cmake-targets":[2,0,2],
 "md_docs_2BUILDING.html#additional-cmake-targets-1":[2,1,4],
 "md_docs_2BUILDING.html#additional-cmake-targets-2":[2,2,1],
-"md_docs_2BUILDING.html#arch":[2,1,1,0,1],
+"md_docs_2BUILDING.html#arch-1":[2,1,1,0,1],
 "md_docs_2BUILDING.html#build":[2,1,1,1],
 "md_docs_2BUILDING.html#clean":[2,0,2,0],
 "md_docs_2BUILDING.html#clean-1":[2,1,4,0],

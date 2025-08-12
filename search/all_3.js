@@ -385,7 +385,7 @@ var searchData=
   ['apply_5fstar_5fsound_5feffect_382',['apply_star_sound_effect',['../effects_8c.html#a1ae16ef10ed322ad47b3cff5a8efc83e',1,'apply_star_sound_effect(Player *player, s8 arg1):&#160;effects.c'],['../effects_8h.html#aa62f8fab4dac5e60e6b123e82004cdaa',1,'apply_star_sound_effect(Player *, s8):&#160;effects.c']]],
   ['applymatrixtransformations_383',['ApplyMatrixTransformations',['../Matrix_8cpp.html#a63625de4c7f9e2e9cd5b04eed49acfcb',1,'Matrix.cpp']]],
   ['approachradius_384',['ApproachRadius',['../classTrainCrossing.html#aa19fde49a5da81b7ba85e0ab02ac351b',1,'TrainCrossing']]],
-  ['arch_385',['Arch',['../md_docs_2BUILDING.html#arch',1,'Arch'],['../compiling.html#arch-1',1,'Arch']]],
+  ['arch_385',['Arch',['../compiling.html#arch',1,'Arch'],['../md_docs_2BUILDING.html#arch-1',1,'Arch']]],
   ['archive_386',['Archive',['../structEditor_1_1ContentBrowserWindow_1_1Tracks.html#ab7d244556115f94a18e200edc8ad8cd2',1,'Editor::ContentBrowserWindow::Tracks']]],
   ['are_20adapted_20in_20the_20future_20including_20references_20too_387',['Specifically Used to help find music and to see how courses are adapted in the future including references too.',['../md_docs_2track__returns.html#specifically-used-to-help-find-music-and-to-see-how-courses-are-adapted-in-the-future-including-references-too',1,'']]],
   ['are_5fbetween_5fdistance_5f2d_388',['are_between_distance_2d',['../code__80086E70_8h.html#ae14ce5751cb4277ef297a55acb0b140e',1,'code_80086E70.h']]],
