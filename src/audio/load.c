@@ -610,6 +610,9 @@ struct CtlEntry* load_banks_immediate(s32 seqId, u8* outDefaultBank) {
     u32 bankId;
     struct AudioSequenceData* seqData = GameEngine_LoadSequence(seqId);
     struct CtlEntry* output;
+    if (seqData == NULL) {
+        return NULL;
+    }
     for (size_t i = 0; i < seqData->bankCount; i++) {
         output = GameEngine_LoadBank(bankId = seqData->banks[i]);
     }
