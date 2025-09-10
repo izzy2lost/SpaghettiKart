@@ -35,6 +35,8 @@
         android:name="android.hardware.sensor.gyroscope"
         android:required="false"/>
 
+    <uses-feature android:name="android.software.leanback" android:required="true" />
+
     <!-- Audio recording support -->
     <!-- if you want to capture audio, uncomment this. -->
     <!-- <uses-feature
@@ -68,7 +70,9 @@
          An example Java class can be found in README-android.md
     -->
     <application android:label="@string/app_name"
+        android:isGame="true"
         android:icon="@mipmap/ic_launcher"
+        android:banner="@mipmap/ic_launcher"
         android:allowBackup="true"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
         android:hardwareAccelerated="true"
@@ -82,7 +86,18 @@
         <meta-data android:name="SDL_ENV.SDL_ANDROID_TRAP_BACK_BUTTON" android:value="1"/>
         <meta-data android:name="SDL_ENV.SDL_IOS_ORIENTATIONS" android:value="LandscapeLeft LandscapeRight"/>
 
-     
+        <activity android:name=".TVActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance"
+            android:configChanges="layoutDirection|locale|orientation|uiMode|screenLayout|screenSize|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:exported="true"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".MainActivity"
             android:label="@string/app_name"
             android:alwaysRetainTaskState="true"
@@ -109,6 +124,7 @@
             </intent-filter>
             -->
         </activity>
+
     </application>
 
 </manifest>

@@ -174,6 +174,10 @@ public class MainActivity extends SDLActivity {
         }
     }
 
+    protected boolean isTVActivity() {
+        return false;
+    }
+
     // ===== Lifecycle =====
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -181,7 +185,9 @@ public class MainActivity extends SDLActivity {
         userFolderUri = getUserFolderUri();
 
         super.onCreate(savedInstanceState);
-        setupControllerOverlay();
+        if (!isTVActivity()) {
+            setupControllerOverlay();
+        }
         attachController();
 
         // Seed internal directory with assets if they exist (optional)
@@ -230,6 +236,16 @@ public class MainActivity extends SDLActivity {
             Log.i(TAG, "mk64.o2r found in internal storage, game should start normally.");
         }
     }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        // Finish the activity
+        finish();
+        // Kill the app process explicitly to fully terminate the app
+        android.os.Process.killProcess(android.os.Process.myPid());
+    }
+
 
     public static void waitForSetupFromNative() {
         try { setupLatch.await(); } catch (InterruptedException ignored) {}
@@ -280,6 +296,13 @@ public class MainActivity extends SDLActivity {
             } catch (IOException e) {
                 Log.e(TAG, "Error listing assets", e);
             }
+        }
+
+        File mk64 = new File(internal, "mk64.o2r");
+        Log.i(TAG, "Checking mk64.o2r - exists in internal: " + mk64.exists() + ", exists in assets: " + assetExists("mk64.o2r"));
+        if (!mk64.exists() && assetExists("mk64.o2r")) {
+            Log.i(TAG, "Copying mk64.o2r from assets to internal");
+            copyAssetFile("mk64.o2r", mk64);
         }
 
         File modsDir = new File(internal, "mods");
