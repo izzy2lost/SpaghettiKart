@@ -180,12 +180,13 @@ enum animation_type { RENDER_MODEL_OR_ADD_POS, DISABLE_AUTOMATIC_POP_MATRIX, POP
  * @brief The armature is associated with an AnimationLimbVector which is equal to the number of RENDER_MODEL_OR_ADD_POS
  * in the armature
  */
+
 typedef struct {
-    /* 0x00 */ s64 type;
-    /* 0x04 */ s64 size;
-    /* 0x08 */ s64 always_zero_never_used;
+    /* 0x00 */ intptr_t type;
+    /* 0x04 */ intptr_t size;
+    /* 0x08 */ intptr_t always_zero_never_used;
     /* 0x0C */ Gfx* model;
-    /* 0x10 */ s64 pos[3];
+    /* 0x10 */ intptr_t pos[3];
 } Armature;
 
 typedef struct {
