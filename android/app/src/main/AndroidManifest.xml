@@ -35,7 +35,7 @@
         android:name="android.hardware.sensor.gyroscope"
         android:required="false"/>
 
-    <uses-feature android:name="android.software.leanback" android:required="true" />
+    <uses-feature android:name="android.software.leanback" android:required="false" />
 
     <!-- Audio recording support -->
     <!-- if you want to capture audio, uncomment this. -->
