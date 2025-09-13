@@ -237,16 +237,6 @@ public class MainActivity extends SDLActivity {
         }
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        // Finish the activity
-        finish();
-        // Kill the app process explicitly to fully terminate the app
-        android.os.Process.killProcess(android.os.Process.myPid());
-    }
-
-
     public static void waitForSetupFromNative() {
         try { setupLatch.await(); } catch (InterruptedException ignored) {}
     }
