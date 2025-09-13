@@ -418,6 +418,8 @@ void GameEngine::Destroy() {
 #ifdef __SWITCH__
     Ship::Switch::Exit();
 #endif
+    delete Instance->gHMAS;
+    Instance->gHMAS = nullptr;
     GameUI::Destroy();
     delete GameEngine::Instance;
     GameEngine::Instance = nullptr;

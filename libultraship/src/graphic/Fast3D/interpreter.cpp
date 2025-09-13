@@ -146,7 +146,8 @@ Interpreter::~Interpreter() {
     delete mRsp;
     delete mRdp;
     delete[] mBufVbo;
-    free(mTexUploadBuffer);
+    if (mTexUploadBuffer != nullptr) free(mTexUploadBuffer);
+    mTexUploadBuffer = nullptr;
 }
 
 static std::weak_ptr<Interpreter> mInstance;
@@ -537,6 +538,10 @@ void Interpreter::ImportTextureRgba16(int tile, bool importReplacement) {
 
     // A single line of pixels should not equal the entire image (height == 1 non-withstanding)
     if (fullImageLineSizeBytes == sizeBytes) {
+        fullImageLineSizeBytes = width * 2;
+    }
+
+    if (fullImageLineSizeBytes > (width*2)) {
         fullImageLineSizeBytes = width * 2;
     }
 
@@ -4272,7 +4277,8 @@ void Interpreter::Init(class GfxWindowBackend* wapi, class GfxRenderingAPI* rapi
 
 void Interpreter::Destroy() {
     // TODO: should also destroy rapi, and any other resources acquired in fast3d
-    free(mTexUploadBuffer);
+    if (mTexUploadBuffer != nullptr) free(mTexUploadBuffer);
+    mTexUploadBuffer = nullptr;
     mWapi->Destroy();
 
     // Texture cache and loaded textures store references to Resources which need to be unreferenced.

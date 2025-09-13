@@ -20,6 +20,9 @@ namespace Editor {
         size_t i = 0;
         bool run = true;
         while (run) {
+            if (ptr == NULL) {
+                break;
+            }
             i++;
             lo = ptr->words.w0;
             hi = ptr->words.w1;
