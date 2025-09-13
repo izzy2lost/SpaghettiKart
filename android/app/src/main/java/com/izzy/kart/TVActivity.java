@@ -7,9 +7,4 @@ public class TVActivity extends MainActivity{
     protected boolean isTVActivity() {
         return true;
     }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
 }
