@@ -4,6 +4,23 @@ cmake_minimum_required(VERSION 3.16.0 FATAL_ERROR)
 project(Spaghettify VERSION 1.0.0 LANGUAGES C CXX ASM)
 include(FetchContent)
 
+# fmt's consteval format-string checking fails to compile under newer
+# AppleClang (Xcode 16+) with the spdlog/fmt versions in use (both vcpkg's on
+# CI and Torch's bundled copy — see cmake/TorchExternalFixes.cmake for the
+# latter):
+#   error: call to consteval function 'fmt::basic_format_string<...>' is not
+#   a constant expression
+# Defining FMT_CONSTEVAL as empty falls back to fmt's pre-C++20 constexpr
+# checking, which compiles cleanly with identical runtime behavior. Scoped to
+# AppleClang; other platforms and compilers are untouched.
+# TODO: Temporary hack. Remove this (plus cmake/TorchExternalFixes.cmake and
+# the vcpkg.json fmt/spdlog pins) once the Torch pin is bumped past Torch's
+# spdlog/fmt update. Note the bump also needs matching MK64 loader changes,
+# see the discussion on PR #712.
+if(APPLE AND CMAKE_CXX_COMPILER_ID MATCHES "Clang")
+    add_compile_definitions("FMT_CONSTEVAL=")
+endif()
+
 set(NATO_PHONETIC_ALPHABET
   "Alfa" "Bravo" "Charlie" "Delta" "Echo" "Foxtrot" "Golf" "Hotel"
   "India" "Juliett" "Kilo" "Lima" "Mike" "November" "Oscar" "Papa"
@@ -704,10 +721,21 @@ add_custom_command(
 
 if(NOT CMAKE_SYSTEM_NAME STREQUAL "NintendoSwitch")
   include(ExternalProject)
+  # Torch's pinned spdlog bundles an fmt that trips a consteval error under
+  # newer AppleClang (Xcode 16+): "call to consteval function
+  # 'fmt::basic_format_string<...>' is not a constant expression". Neutralize
+  # FMT_CONSTEVAL inside the Torch sub-build via CMAKE_PROJECT_INCLUDE (Torch's
+  # CMakeLists overwrites CMAKE_CXX_FLAGS, so flags can't be injected that
+  # way). Fixes the build-macos-arm64 job; the intel runner's older Xcode
+  # doesn't hit it.
+  # TODO: Temporary hack. Remove the CMAKE_PROJECT_INCLUDE line below (plus
+  # cmake/TorchExternalFixes.cmake itself) once the Torch pin is bumped past
+  # Torch's spdlog/fmt update, see the discussion on PR #712.
   ExternalProject_Add(TorchExternal
     PREFIX TorchExternal
     SOURCE_DIR ${CMAKE_SOURCE_DIR}/torch
     CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_BINARY_DIR}/torch
+               -DCMAKE_PROJECT_INCLUDE=${CMAKE_SOURCE_DIR}/cmake/TorchExternalFixes.cmake
 )
 
   ExternalProject_Get_Property(TorchExternal install_dir)
