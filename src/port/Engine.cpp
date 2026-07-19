@@ -587,11 +587,21 @@ uint8_t GameEngine::GetBankIdByName(const std::string& name) {
 ImFont* GameEngine::CreateFontWithSize(float size, std::string fontPath) {
     auto mImGuiIo = &ImGui::GetIO();
     ImFont* font;
+    // Rasterize the glyph atlas at higher density so menu text stays sharp on HiDPI/Retina
+    // displays. Bake at retinaScale * maxMenuScale so the runtime Menu Scale setting
+    // (FontGlobalScale) only ever downsamples the atlas rather than stretching it blurry.
+    float rasterDensity = 1.0f;
+#if defined(__APPLE__)
+    constexpr float kRetinaScale = 2.0f;  // Retina backing scale
+    constexpr float kMaxMenuScale = 2.0f; // keep in sync with the gSettings.Menu.Scale slider Max
+    rasterDensity = kRetinaScale * kMaxMenuScale;
+#endif
     if (fontPath == "") {
         ImFontConfig fontCfg = ImFontConfig();
         fontCfg.OversampleH = fontCfg.OversampleV = 1;
         fontCfg.PixelSnapH = true;
         fontCfg.SizePixels = size;
+        fontCfg.RasterizerDensity = rasterDensity;
         font = mImGuiIo->Fonts->AddFontDefault(&fontCfg);
     } else {
         auto initData = std::make_shared<Ship::ResourceInitData>();
@@ -603,7 +613,9 @@ ImFont* GameEngine::CreateFontWithSize(float size, std::string fontPath) {
             Ship::Context::GetInstance()->GetResourceManager()->LoadResource(fontPath, false, initData));
         char* fontDataPtr = (char*) malloc(fontData->DataSize);
         memcpy(fontDataPtr, fontData->Data, fontData->DataSize);
-        font = mImGuiIo->Fonts->AddFontFromMemoryTTF(fontDataPtr, fontData->DataSize, size);
+        ImFontConfig fontCfg = ImFontConfig();
+        fontCfg.RasterizerDensity = rasterDensity;
+        font = mImGuiIo->Fonts->AddFontFromMemoryTTF(fontDataPtr, fontData->DataSize, size, &fontCfg);
     }
     // FontAwesome fonts need to have their sizes reduced by 2.0f/3.0f in order to align correctly
     float iconFontSize = size * 2.0f / 3.0f;
@@ -612,6 +624,7 @@ ImFont* GameEngine::CreateFontWithSize(float size, std::string fontPath) {
     iconsConfig.MergeMode = true;
     iconsConfig.PixelSnapH = true;
     iconsConfig.GlyphMinAdvanceX = iconFontSize;
+    iconsConfig.RasterizerDensity = rasterDensity;
     mImGuiIo->Fonts->AddFontFromMemoryCompressedBase85TTF(fontawesome_compressed_data_base85, iconFontSize,
                                                           &iconsConfig, sIconsRanges);
     return font;
