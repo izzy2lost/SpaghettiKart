@@ -17,7 +17,7 @@
 #include "engine/objects/BombKart.h"
 #include "engine/objects/Lakitu.h"
 
-#include "Smoke.h"
+#include "engine/Smoke.h"
 
 #include "engine/HM_Intro.h"
 
@@ -42,7 +42,7 @@ extern "C" {
 #include "main.h"
 #include "audio/load.h"
 #include "audio/external.h"
-#include "render_courses.h"
+#include "racing/render_courses.h"
 #include "menus.h"
 #include "update_objects.h"
 #include "spawn_players.h"
