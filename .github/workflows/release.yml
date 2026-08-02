@@ -6,7 +6,7 @@ on:
       version:
         description: 'Release version (e.g., 1.0.1)'
         required: true
-        default: '1.0.0'
+        default: '2.0.0'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -31,21 +31,22 @@ jobs:
           ${{ runner.os }}-o2r-ccache-${{ github.ref }}
           ${{ runner.os }}-o2r-ccache-
 
-    - name: Cache build folders
-      uses: actions/cache@v4
-      with:
-        key: ${{ runner.os }}-o2r-build-${{ github.ref }}-${{ github.sha }}
-        restore-keys: |
-          ${{ runner.os }}-o2r-build-${{ github.ref }}
-          ${{ runner.os }}-o2r-build-
-        path: |
-          torch/cmake-build-release
-
-    - name: Generate spaghetti.o2r
+    - name: Build Torch
       run: |
         export PATH="/usr/lib/ccache:/usr/local/opt/ccache/libexec:$PATH"
-        make -C torch type=release -j3
-        torch/cmake-build-release/torch pack assets spaghetti.o2r o2r
+        cmake -S torch -B torch/build-host -G Ninja \
+          -DCMAKE_BUILD_TYPE=Release \
+          -DUSE_STANDALONE=ON \
+          -DBUILD_MK64=ON \
+          -DBUILD_NAUDIO=ON \
+          -DBUILD_SM64=OFF \
+          -DBUILD_SF64=OFF \
+          -DBUILD_FZERO=OFF \
+          -DBUILD_MARIO_ARTIST=OFF
+        cmake --build torch/build-host --parallel
+
+    - name: Generate spaghetti.o2r
+      run: torch/build-host/torch pack assets spaghetti.o2r o2r
 
     - uses: actions/upload-artifact@v4
       with:
@@ -77,39 +78,44 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: spaghetti.o2r
-        path: android/app/src/main/assets 
+        path: android/app/src/main/assets
 
     - name: Configure Gradle permissions
       run: chmod +x android/gradlew
 
-    - name: Update version in build.gradle
+    - name: Setup Gradle
+      uses: gradle/actions/setup-gradle@v4
+
+    - name: Update version
       run: |
-        sed -i "s/versionName \".*\"/versionName \"${{ github.event.inputs.version }}\"/" android/app/build.gradle
-        CURRENT_CODE=$(grep "versionCode" android/app/build.gradle | sed 's/.*versionCode \([0-9]*\).*/\1/')
+        BUILD_FILE=android/app/build.gradle.kts
+        CURRENT_CODE=$(grep -oP 'versionCode = \K[0-9]+' "$BUILD_FILE")
         NEW_CODE=$((CURRENT_CODE + 1))
-        sed -i "s/versionCode $CURRENT_CODE/versionCode $NEW_CODE/" android/app/build.gradle
+        sed -i "s/versionCode = $CURRENT_CODE/versionCode = $NEW_CODE/" "$BUILD_FILE"
+        sed -i "s/versionName = \".*\"/versionName = \"${{ github.event.inputs.version }}\"/" "$BUILD_FILE"
         echo "Updated to version ${{ github.event.inputs.version }} with code $NEW_CODE"
 
     - name: Setup signing keystore
       run: |
         echo "$KEYSTORE_BASE64" | base64 -d > android/app/release.keystore
-        test -f android/app/release.keystore || (echo "Failed to create keystore file" && exit 1)
-        echo "Keystore file created successfully:"
-        ls -la android/app/release.keystore
-        file android/app/release.keystore
+        test -s android/app/release.keystore || (echo "Failed to create keystore file" && exit 1)
       env:
         KEYSTORE_BASE64: ${{ secrets.KEYSTORE_BASE64 }}
 
     - name: Build Release APK
       run: |
         cd android/
-        ./gradlew --no-daemon assembleRelease -P elfBuildType=Release
+        ./gradlew --no-daemon assembleRelease
         mv app/build/outputs/apk/release/app-release.apk ../spaghettikart-release.apk
       env:
         KEYSTORE_FILE: release.keystore
         KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
         KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
         KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
+
+    - name: Clean up keystore
+      if: always()
+      run: rm -f android/app/release.keystore
 
     - name: Upload Release APK (artifact for next job)
       uses: actions/upload-artifact@v4
@@ -121,6 +127,8 @@ jobs:
   create-release:
     needs: build-android
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
     - uses: actions/checkout@v4
 
@@ -130,45 +138,32 @@ jobs:
         name: spaghettikart-release-apk
         path: .
 
+    - name: Rename APK
+      run: mv spaghettikart-release.apk SpaghettiKart-v${{ github.event.inputs.version }}-release.apk
+
     - name: Create Release
-      id: create_release
       uses: softprops/action-gh-release@v2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: v${{ github.event.inputs.version }}
         name: 🏎️ Spaghetti Kart v${{ github.event.inputs.version }}
+        files: SpaghettiKart-v${{ github.event.inputs.version }}-release.apk
         body: |
           ## 🏎️ Spaghetti Kart v${{ github.event.inputs.version }}
-          
+
           ### 📱 Android Release
-          
+
           **✨ Highlights:**
-          - ⚡ Optimized release build with R8 code shrinking
-          - 📦 Reduced APK size and improved performance
-          - 🗂️ Enhanced file management with SAF integration
-          
-          ### 🛠️ Changes
-          - 🧭 Improved folder selection with SAF (Storage Access Framework)
-          - 🔁 Automatic mods syncing from user folder
-          - 🧊 Better UI with rounded dialogs
-          - 🔥 Torch app integration for easy mk64.o2r creation
-          
+          - 🔥 No more Torch app — pick your ROM and the game extracts its own assets on the device
+          - 🧩 Full mod support: drop `.o2r`, `.zip` or plain folders into `Android/data/com.izzy.kart/files/mods`
+          - 🔒 No storage permissions needed any more
+
           ### 📥 Installation
           1. ⬇️ Download the APK below
-          2. 📲 Install on your Android device
-          3. 🔓 Enable "Install from unknown sources" in Android settings
-          4. 📁 Select a folder for your game files
-          5. 💾 Add your mk64.o2r file (use Torch app to create from ROM)
-          6. 🎮 Enjoy!
+          2. 📲 Install on your Android device (enable "Install from unknown sources")
+          3. 🎮 Launch the app and select your own Mario Kart 64 (USA) `.z64` ROM
+          4. ⏳ Wait for the one-time extraction to finish — that's it
 
-    - name: Upload Release APK
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./spaghettikart-release.apk
-        asset_name: SpaghettiKart-v${{ github.event.inputs.version }}-release.apk
-        asset_content_type: application/vnd.android.package-archive       
-        
+          ### 🧩 Mods
+          Put mods in `Android/data/com.izzy.kart/files/mods`. They are picked up on the next launch.
