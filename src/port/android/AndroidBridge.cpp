@@ -28,6 +28,9 @@
 #include <vector>
 
 #include "Companion.h"
+#include "ship/Context.h"
+#include "ship/window/Window.h"
+#include "ship/window/gui/Gui.h"
 
 namespace {
 
@@ -97,6 +100,38 @@ JNIEXPORT void JNICALL Java_com_izzy_kart_MainActivity_setButton(JNIEnv*, jobjec
     } else {
         SDL_JoystickSetVirtualButton(gVirtualJoystick, button, value);
     }
+}
+
+/**
+ * Whether libultraship's menu is currently up.
+ *
+ * The overlay needs this because the menu is not only opened by its own Menu
+ * button — a keyboard, a gamepad, or the menu closing itself all change it
+ * behind the overlay's back. Reading the engine's state instead of mirroring it
+ * in Java is what keeps the two from drifting apart.
+ *
+ * Called from the UI thread while the game thread renders. It reads a bool the
+ * game thread may be writing, which is worth accepting here: the value only
+ * drives which overlay buttons are shown, and a torn read self-corrects on the
+ * next poll.
+ */
+JNIEXPORT jboolean JNICALL Java_com_izzy_kart_MainActivity_isMenuOpen(JNIEnv*, jobject) {
+    auto* context = Ship::Context::GetRawInstance();
+    if (context == nullptr) {
+        return JNI_FALSE;
+    }
+
+    auto window = context->GetWindow();
+    if (window == nullptr) {
+        return JNI_FALSE;
+    }
+
+    auto gui = window->GetGui();
+    if (gui == nullptr) {
+        return JNI_FALSE;
+    }
+
+    return gui->GetMenuOrMenubarVisible() ? JNI_TRUE : JNI_FALSE;
 }
 
 JNIEXPORT void JNICALL Java_com_izzy_kart_MainActivity_setAxis(JNIEnv*, jobject, jint axis, jshort value) {

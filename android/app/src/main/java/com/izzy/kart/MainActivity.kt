@@ -4,6 +4,8 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -33,6 +35,14 @@ class MainActivity : SDLActivity() {
     private var menuOpen = false
     private var controlsHidden = false
 
+    private val handler = Handler(Looper.getMainLooper())
+    private val menuWatcher = object : Runnable {
+        override fun run() {
+            syncMenuState()
+            handler.postDelayed(this, MENU_POLL_MS)
+        }
+    }
+
     // org/libsdl/app is kept byte-identical to the SDL release libultraship
     // pins, so the game library is named here rather than patched in there.
     // SDLActivity refuses to start if the Java glue and libSDL2.so disagree on
@@ -43,6 +53,7 @@ class MainActivity : SDLActivity() {
     private external fun detachController()
     private external fun setButton(button: Int, value: Boolean)
     private external fun setAxis(axis: Int, value: Short)
+    private external fun isMenuOpen(): Boolean
 
     override fun onCreate(savedInstanceState: Bundle?) {
         preferences = getSharedPreferences(PREFS, MODE_PRIVATE)
@@ -51,9 +62,71 @@ class MainActivity : SDLActivity() {
         attachController()
     }
 
+    override fun onResume() {
+        super.onResume()
+        // Re-sync immediately as well as on the timer, so coming back from the
+        // mods manager never leaves the overlay showing a stale menu state.
+        syncMenuState()
+        handler.removeCallbacks(menuWatcher)
+        handler.postDelayed(menuWatcher, MENU_POLL_MS)
+    }
+
+    override fun onPause() {
+        handler.removeCallbacks(menuWatcher)
+        super.onPause()
+    }
+
     override fun onDestroy() {
+        handler.removeCallbacks(menuWatcher)
         detachController()
         super.onDestroy()
+    }
+
+    /**
+     * Mirrors the engine's menu state onto the overlay.
+     *
+     * The menu is not only driven by the on-screen Menu button: a physical
+     * keyboard, a gamepad, or the menu dismissing itself all change it without
+     * the overlay hearing about it. Tracking it with a local flag drifted out
+     * of sync and left the controls dead with the Mods button stuck on screen,
+     * so the engine is asked instead.
+     */
+    private fun syncMenuState() {
+        val open = runCatching { isMenuOpen() }.getOrDefault(false)
+        if (open == menuOpen) return
+
+        menuOpen = open
+        controlsEnabled = !open
+        // Managing mods is a settings action, so it stays out of reach until
+        // the menu is up.
+        modsButton.visibility = if (open) View.VISIBLE else View.GONE
+
+        if (open) {
+            releaseAllInputs()
+        }
+    }
+
+    /**
+     * Clears anything the overlay was holding down. Without this, opening the
+     * menu mid-input leaves that button or stick stuck on in the virtual pad,
+     * because the touch listeners stop reporting once controls are disabled.
+     */
+    private fun releaseAllInputs() {
+        for (button in intArrayOf(
+            ControllerButtons.BUTTON_A, ControllerButtons.BUTTON_B,
+            ControllerButtons.BUTTON_X, ControllerButtons.BUTTON_Y,
+            ControllerButtons.BUTTON_LB, ControllerButtons.BUTTON_RB,
+            ControllerButtons.BUTTON_START, ControllerButtons.BUTTON_BACK,
+            ControllerButtons.AXIS_RT
+        )) {
+            setButton(button, false)
+        }
+        for (axis in intArrayOf(
+            ControllerButtons.AXIS_LX, ControllerButtons.AXIS_LY,
+            ControllerButtons.AXIS_RX, ControllerButtons.AXIS_RY
+        )) {
+            setAxis(axis, 0)
+        }
     }
 
     private fun setupControllerOverlay() {
@@ -147,12 +220,8 @@ class MainActivity : SDLActivity() {
                 MotionEvent.ACTION_DOWN -> {
                     onNativeKeyDown(KeyEvent.KEYCODE_ESCAPE)
                     button.isPressed = true
-                    menuOpen = !menuOpen
-                    controlsEnabled = !menuOpen
-                    // The mods manager is only reachable while the menu is up,
-                    // since it is a settings action rather than something you
-                    // want within reach mid-race.
-                    modsButton.visibility = if (menuOpen) View.VISIBLE else View.GONE
+                    // Don't assume this opened or closed the menu — syncMenuState
+                    // picks up whatever the engine actually did.
                     true
                 }
                 MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
@@ -223,5 +292,8 @@ class MainActivity : SDLActivity() {
     private companion object {
         const val PREFS = "com.izzy.kart.prefs"
         const val KEY_CONTROLS_HIDDEN = "controlsHidden"
+
+        /** Fast enough to feel immediate on a menu toggle, cheap enough to ignore. */
+        const val MENU_POLL_MS = 150L
     }
 }
