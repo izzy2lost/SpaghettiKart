@@ -2989,6 +2989,7 @@ void set_bomb_kart_spawn_positions(void) {
     BombKartSpawn* bombKartSpawn;
 
     for (var_s3 = 0; var_s3 < NUM_BOMB_KARTS_VERSUS; var_s3++) {
+        bombKartSpawn = NULL;
         // bombKartSpawn = &gBombKartSpawns[gCurrentCourseId][var_s3];
         if (IsYoshiValley()) {
             startingXPos = bombKartSpawn->startingXPos;
