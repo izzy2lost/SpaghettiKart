@@ -80,6 +80,13 @@
                 <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ModsActivity"
+            android:exported="false"
+            android:label="@string/mods_button"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.Material.NoActionBar" />
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.izzy.kart
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.KeyEvent
@@ -26,6 +27,7 @@ import kotlin.math.sqrt
 class MainActivity : SDLActivity() {
 
     private lateinit var preferences: SharedPreferences
+    private lateinit var modsButton: Button
 
     private var controlsEnabled = true
     private var menuOpen = false
@@ -82,6 +84,9 @@ class MainActivity : SDLActivity() {
         overlay.bindAxisButton(R.id.buttonDpadDown, ControllerButtons.AXIS_RY, positive = true)
         overlay.bindAxisButton(R.id.buttonDpadLeft, ControllerButtons.AXIS_RX, positive = false)
         overlay.bindAxisButton(R.id.buttonDpadRight, ControllerButtons.AXIS_RX, positive = true)
+
+        modsButton = overlay.findViewById(R.id.buttonMods)
+        modsButton.setOnClickListener { startActivity(Intent(this, ModsActivity::class.java)) }
 
         setupMenuButton(overlay.findViewById(R.id.buttonMenu))
         setupJoystick(overlay.findViewById(R.id.left_joystick), overlay.findViewById(R.id.left_joystick_knob))
@@ -144,6 +149,10 @@ class MainActivity : SDLActivity() {
                     button.isPressed = true
                     menuOpen = !menuOpen
                     controlsEnabled = !menuOpen
+                    // The mods manager is only reachable while the menu is up,
+                    // since it is a settings action rather than something you
+                    // want within reach mid-race.
+                    modsButton.visibility = if (menuOpen) View.VISIBLE else View.GONE
                     true
                 }
                 MotionEvent.ACTION_UP, MotionEvent.ACTION_CANCEL -> {
