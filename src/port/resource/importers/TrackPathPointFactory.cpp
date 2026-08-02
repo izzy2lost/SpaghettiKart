@@ -20,9 +20,9 @@ ResourceFactoryBinaryTrackPathPointsV0::ReadResource(std::shared_ptr<Ship::File>
 
     for (uint32_t i = 0; i < count; i++) {
         TrackPathPoint data;
-        data.posX = reader->ReadInt16();
-        data.posY = reader->ReadInt16();
-        data.posZ = reader->ReadInt16();
+        data.x = reader->ReadInt16();
+        data.y = reader->ReadInt16();
+        data.z = reader->ReadInt16();
         data.trackSectionId = reader->ReadUInt16();
 
         section->TrackPathPointList.push_back(data);
@@ -48,13 +48,15 @@ ResourceFactoryXMLTrackPathPointsV0::ReadResource(std::shared_ptr<Ship::File> fi
 
         std::vector<TrackPathPoint> waypointPath; // Temporary container for this path
 
+        int32_t pathIndex = path->IntAttribute("type", 0); // Default to 0 if not set
+
         auto pointElem = path->FirstChildElement("Point");
 
         while (pointElem != nullptr) {
             TrackPathPoint point;
-            point.posX = pointElem->IntAttribute("X");
-            point.posY = pointElem->IntAttribute("Y");
-            point.posZ = pointElem->IntAttribute("Z");
+            point.x = pointElem->IntAttribute("X");
+            point.y = pointElem->IntAttribute("Y");
+            point.z = pointElem->IntAttribute("Z");
             point.trackSectionId = pointElem->IntAttribute("ID");
 
             waypointPath.push_back(point); // Push to temp vector
@@ -62,7 +64,7 @@ ResourceFactoryXMLTrackPathPointsV0::ReadResource(std::shared_ptr<Ship::File> fi
             pointElem = pointElem->NextSiblingElement("Point");
         }
 
-        paths->PathList.push_back(waypointPath); // Push full path to outer list
+        paths->PathObject.push_back({waypointPath, pathIndex});// PathList.push_back(waypointPath); // Push full path to outer list
 
         path = path->NextSiblingElement("TrackPathPoint");
     }

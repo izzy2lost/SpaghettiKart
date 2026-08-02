@@ -2,17 +2,21 @@
 
 #include "port/audio/HMAS.h"
 
+static const char game_asset_file[] = "mk64.o2r";
+static const char engine_asset_file[] = "spaghetti.o2r";
+
 #define LOAD_ASSET(path) \
 (path == NULL ? NULL \
   : (GameEngine_OTRSigCheck((const char*) path) ? ResourceGetDataByName((const char*) path) : path))
-  #define LOAD_ASSET_RAW(path) ResourceGetDataByName((const char*) path)
-  
-  #ifdef __cplusplus
-  #include <vector>
-  #include <SDL2/SDL.h>
-#include <graphic/Fast3D/Fast3dWindow.h>
-#include <graphic/Fast3D/interpreter.h>
-#include "libultraship/src/Context.h"
+#define LOAD_ASSET_RAW(path) ResourceGetDataByName((const char*) path)
+
+#ifdef __cplusplus
+#include <vector>
+#include <SDL2/SDL.h>
+#include <fast/Fast3dWindow.h>
+#include <fast/interpreter.h>
+#include "ship/Context.h"
+#include <unordered_map>
 
 #ifndef IDYES
 #define IDYES 6
@@ -37,7 +41,7 @@ class GameEngine {
   public:
     static GameEngine* Instance;
 
-    std::shared_ptr<Ship::Context> context;
+    Ship::Context* context;
     std::vector<CtlEntry*> banksTable;
     std::vector<std::string> sequenceTable;
     std::vector<AudioSequenceData*> audioSequenceTable;
@@ -68,10 +72,10 @@ class GameEngine {
     static uint32_t GetInterpolationFPS();
     static uint32_t GetInterpolationFrameCount();
     void StartFrame() const;
-    static void RunCommands(Gfx* Commands, const std::vector<std::unordered_map<Mtx*, MtxF>>& mtx_replacements);
+    static void RunCommands(Gfx* pool, const std::vector<std::unordered_map<Mtx*, MtxF>>& mtx_replacements);
     void ProcessFrame(void (*run_one_game_iter)()) const;
     static void Destroy();
-    static void ProcessGfxCommands(Gfx* commands);
+    static void ProcessGfxCommands(Gfx* pool);
     static uint8_t GetBankIdByName(const std::string& name);
     static int ShowYesNoBox(const char* title, const char* box);
     static void ShowMessage(const char* title, const char* message, SDL_MessageBoxFlags type = SDL_MESSAGEBOX_ERROR);

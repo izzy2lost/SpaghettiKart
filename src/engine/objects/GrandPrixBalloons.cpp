@@ -1,8 +1,9 @@
 #include "GrandPrixBalloons.h"
 
 #include "port/Game.h"
-#include "assets/other_textures.h"
-#include "assets/common_data.h"
+#include "assets/textures/other_textures.h"
+#include "assets/textures/some_data.h"
+#include "assets/models/common_data.h"
 #include "port/interpolation/FrameInterpolation.h"
 
 extern "C" {
@@ -10,15 +11,17 @@ extern "C" {
 #include "render_objects.h"
 #include "code_80057C60.h"
 #include "code_80086E70.h"
-#include "math_util.h"
+#include "racing/math_util.h"
 #include "math_util_2.h"
 #include "menus.h"
 }
 
 size_t OGrandPrixBalloons::_count = 0;
 
-OGrandPrixBalloons::OGrandPrixBalloons(const FVector& pos) {
-    Pos = pos;
+OGrandPrixBalloons::OGrandPrixBalloons(const SpawnParams& params) : OObject(params) {
+    Name = "Grand Prix Balloons";
+    ResourceName = "mk:grand_prix_balloons";
+    Pos = params.Location.value_or(FVector(0, 0, 0));
 
     _active = 1;
     if (gPlayerCount == 1) {
@@ -89,19 +92,19 @@ void OGrandPrixBalloons::Draw(s32 cameraId) {
     for (var_s1 = 0; var_s1 < _numBalloons; var_s1++) {
         objectIndex = gObjectParticle3[var_s1];
         if ((objectIndex != NULL_OBJECT_ID) && (gObjectList[objectIndex].state >= 2)) {
-            OGrandPrixBalloons::func_80053D74(objectIndex, cameraId, 0);
+            OGrandPrixBalloons::func_80053D74(objectIndex, cameraId, 0, var_s1);
         }
     }
     rsp_load_texture((uint8_t*) gTextureBalloon2, 64, 32);
     for (var_s1 = 0; var_s1 < _numBalloons; var_s1++) {
         objectIndex = gObjectParticle3[var_s1];
         if ((objectIndex != NULL_OBJECT_ID) && (gObjectList[objectIndex].state >= 2)) {
-            OGrandPrixBalloons::func_80053D74(objectIndex, cameraId, 4);
+            OGrandPrixBalloons::func_80053D74(objectIndex, cameraId, 4, var_s1);
         }
     }
 }
 
-void OGrandPrixBalloons::func_80053D74(s32 objectIndex, UNUSED s32 arg1, s32 vertexIndex) {
+void OGrandPrixBalloons::func_80053D74(s32 objectIndex, s32 cameraId, s32 vertexIndex, s32 index) {
     Object* object;
 
     Vtx* vtx = (Vtx*) LOAD_ASSET_RAW(common_vtx_hedgehog);
@@ -110,9 +113,7 @@ void OGrandPrixBalloons::func_80053D74(s32 objectIndex, UNUSED s32 arg1, s32 ver
     if (gMatrixHudCount <= MTX_HUD_POOL_SIZE_MAX) {
         object = &gObjectList[objectIndex];
 
-        // @port: Tag the transform.
-        FrameInterpolation_RecordOpenChild("Balloon",
-                                           TAG_ITEM_ADDR((objectIndex << 32) + i++)); // Not working properly just yet
+        FrameInterpolation_RecordOpenChild("balloon", TAG_ITEM_ADDR((objectIndex << 11 | (cameraId << 7) | index)));
 
         D_80183E80[2] = (s16) (object->unk_084[6] + 0x8000);
         rsp_set_matrix_transformation(object->pos, (u16*) D_80183E80, object->sizeScaling);

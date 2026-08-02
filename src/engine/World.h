@@ -1,28 +1,26 @@
 #pragma once
 
 #include <libultraship.h>
+
 #include "CoreMath.h"
-#include "engine/courses/Course.h"
+#include "engine/tracks/Track.h"
+#include "engine/cameras/GameCamera.h"
 #include "objects/Object.h"
 #include "Cup.h"
-#include "vehicles/Train.h"
-#include "vehicles/Car.h"
-#include "objects/BombKart.h"
 #include "PlayerBombKart.h"
-#include "vehicles/Train.h"
 #include "TrainCrossing.h"
-#include "objects/Thwomp.h"
-#include "objects/Penguin.h"
-#include "objects/Seagull.h"
-#include "objects/Lakitu.h"
 #include <memory>
 #include <unordered_map>
+#include <utility>
+#include "RaceManager.h"
 #include "Actor.h"
 #include "StaticMeshActor.h"
 #include "particles/ParticleEmitter.h"
+#include "engine/sky/SkyCloud.h"
 
 #include "editor/Editor.h"
 #include "editor/GameObject.h"
+#include "port/Game.h"
 
 extern "C" {
 #include "camera.h"
@@ -31,9 +29,9 @@ extern "C" {
 
 class Cup; // <-- Forward declaration
 class OObject;
-class Course;
+class GameCamera;
+class Track;
 class StaticMeshActor;
-class AVehicle;
 class OBombKart;
 class TrainCrossing;
 class OLakitu;
@@ -43,8 +41,8 @@ class World {
 typedef struct Matrix {
     Mtx Screen2D; // Orthogonal projection for UI, skybox, and such
     Mtx Ortho;
-    std::array<Mtx,4> Persp;
-    std::array<Mtx,4> LookAt;
+    std::array<Mtx,5> Persp;
+    std::array<Mtx,5> LookAt;
     std::array<Mtx, 8 * 4> Karts; // Eight players * four screens
     std::array<Mtx, 8 * 4> Shadows; // Eight players * four screens
     std::deque<Mtx> Hud;
@@ -53,17 +51,24 @@ typedef struct Matrix {
     Matrix()
         : Hud(200), Objects(1000)
     {}
-};
+} Matrix;
+private:
+    std::unique_ptr<Track> mTrack;
+    Cup* CurrentCup;
 
 public:
+    static World* Instance;
     explicit World();
     ~World();
 
-    std::shared_ptr<Course> AddCourse(std::shared_ptr<Course> course);
+    RaceManager& GetRaceManager() { return *RaceManagerInstance; }
+    void SetRaceManager(std::unique_ptr<RaceManager> manager) { RaceManagerInstance = std::move(manager); }
 
-    AActor* AddActor(AActor* actor);
+    void TickCameras();
+
+    AActor* AddActor(std::unique_ptr<AActor> actor);
     struct Actor* AddBaseActor();
-    void AddEditorObject(Actor* actor, const char* name);
+    void ActorBeginPlay(Actor* actor);
     AActor* GetActor(size_t index);
 
     void TickActors();
@@ -71,10 +76,9 @@ public:
     Actor* ConvertAActorToActor(AActor* actor);
 
     void DrawStaticMeshActors();
-    StaticMeshActor* AddStaticMeshActor(std::string name, FVector pos, IRotator rot, FVector scale, std::string model, int32_t* collision);
-    void DeleteStaticMeshActors();
+    StaticMeshActor* AddStaticMeshActor(const std::string& name, FVector pos, IRotator rot, FVector scale, const std::string& model, int32_t* collision);
 
-    OObject* AddObject(OObject* object);
+    OObject* AddObject(std::unique_ptr<OObject> object);
 
     void TickObjects();
     void TickObjects60fps();
@@ -83,64 +87,50 @@ public:
 
     void TickParticles();
     void DrawParticles(s32 cameraId);
-    ParticleEmitter* AddEmitter(ParticleEmitter* emitter);
+    ParticleEmitter* AddEmitter(std::unique_ptr<ParticleEmitter> emitter);
     void Reset(void); // Sets OObjects or AActors static member variables back to default values
 
-    void AddCup(Cup*);
-    void SetCup(Cup* cup);
+    void AddCup(Cup* cup);
+    void SetCurrentCup(Cup* cup);
+    Cup* GetCurrentCup() {
+        return CurrentCup;
+    }
     void SetCupIndex(size_t index);
     const char* GetCupName();
     u32 GetCupIndex();
     u32 NextCup();
     u32 PreviousCup();
-    void SetCourseFromCup();
 
     World* GetWorld(void);
-    void ClearWorld(void);
+    void CleanWorld(void);
+    void CleanActors(void);
 
-
-    // These are only for browsing through the course list
-    void SetCourse(const char*);
-    template<typename T>
-    void SetCourseByType() {
-        for (const auto& course : Courses) {
-            if (dynamic_cast<T*>(course.get())) {
-                CurrentCourse = course;
-                return;
-            }
-        }
-        printf("World::SetCourseByType() No course by the type found");
+    // getter/setter for current track
+    Track* GetTrack() {
+        return mTrack.get();
     }
-    void NextCourse(void);
-    void PreviousCourse(void);
 
-    Matrix Mtx;
+    void SetCurrentTrack(std::unique_ptr<Track> track);
 
-
-    std::shared_ptr<Course> CurrentCourse;
-    Cup* CurrentCup;
+    Matrix world_mtx;
 
     std::vector<Cup*> Cups;
     size_t CupIndex = 1;
 
-    std::vector<StaticMeshActor*> StaticMeshActors;
-    std::vector<AActor*> Actors;
-    std::vector<OObject*> Objects;
-    std::vector<ParticleEmitter*> Emitters;
+    std::vector<std::unique_ptr<GameCamera>> Cameras;
+
+    std::vector<std::unique_ptr<StaticMeshActor>> StaticMeshActors;
+    std::vector<std::unique_ptr<AActor>> Actors;
+    std::deque<std::unique_ptr<OObject>> Objects;
+    std::vector<std::unique_ptr<ParticleEmitter>> Emitters;
 
     std::unordered_map<s32, OLakitu*> Lakitus;
 
     /** Objects **/
-    PlayerBombKart playerBombKart[4]; // Used in battle mode
+    PlayerBombKart mPlayerBombKart[4]; // Used in battle mode
 
     TrainCrossing* AddCrossing(Vec3f position, u32 waypointMin, u32 waypointMax, f32 approachRadius, f32 exitRadius);
     std::vector<std::shared_ptr<TrainCrossing>> Crossings;
-
-    // Holds all available courses
-    std::vector<std::shared_ptr<Course>> Courses;
-    size_t CourseIndex = 0; // For browsing courses.
 private:
-
+    std::unique_ptr<RaceManager> RaceManagerInstance;
 };
-
-extern World gWorldInstance;

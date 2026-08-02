@@ -8,23 +8,23 @@
 extern "C" {
 #include "macros.h"
 #include "main.h"
-#include "actors.h"
-#include "math_util.h"
+#include "racing/actors.h"
+#include "racing/math_util.h"
 #include "sounds.h"
 #include "update_objects.h"
 #include "render_player.h"
-#include "external.h"
+#include "audio/external.h"
 #include "bomb_kart.h"
-#include "collision.h"
+#include "racing/collision.h"
 #include "code_80086E70.h"
 #include "render_objects.h"
 #include "code_80057C60.h"
 #include "defines.h"
 #include "code_80005FD0.h"
 #include "math_util_2.h"
-#include "collision.h"
-#include "assets/bowsers_castle_data.h"
-#include "ceremony_and_credits.h"
+#include "racing/collision.h"
+#include "assets/models/tracks/bowsers_castle/bowsers_castle_data.h"
+#include "ending/ceremony_and_credits.h"
 #include "objects.h"
 #include "update_objects.h"
 #include "render_objects.h"
@@ -33,12 +33,11 @@ extern "C" {
 extern s8 gPlayerCount;
 }
 
-
-OPenguin::OPenguin(FVector pos, u16 direction, PenguinType type, Behaviour behaviour) {
+OPenguin::OPenguin(const SpawnParams& params) : OObject(params) {
     Name = "Penguin";
-    _type = type;
-    _bhv = behaviour;
-
+    ResourceName = "mk:penguin";
+    FVector pos = params.Location.value_or(FVector(0, 0, 0));
+    Speed = params.Speed.value_or(0);
     find_unused_obj_index(&_objectIndex);
 
     init_object(_objectIndex, 0);
@@ -47,9 +46,12 @@ OPenguin::OPenguin(FVector pos, u16 direction, PenguinType type, Behaviour behav
     object->origin_pos[0] = pos.x * xOrientation;
     object->origin_pos[1] = pos.y;
     object->origin_pos[2] = pos.z;
-    object->unk_0C6 = direction;
+    object->unk_0C6 = params.Rotation.value_or(IRotator(0, 0, 0)).yaw;
 
-    switch(type) {
+    Type = static_cast<PenguinType>(params.Type.value_or(0));
+    SpawnBhv = static_cast<OPenguin::Behaviour>(params.Behaviour.value_or(0));
+
+    switch(Type) {
         case PenguinType::CHICK:
             object->surfaceHeight = 5.0f;
             object->sizeScaling = 0.04f;
@@ -76,7 +78,7 @@ void OPenguin::Tick(void) {
     s32 objectIndex = _objectIndex;
 
     if (gObjectList[objectIndex].state != 0) {
-        if (_type == PenguinType::EMPEROR) {
+        if (Type == PenguinType::EMPEROR) {
             OPenguin::EmperorPenguin(objectIndex);
         } else {
             OPenguin::OtherPenguin(objectIndex);
@@ -135,7 +137,7 @@ void OPenguin::Draw(s32 cameraId) {
         //}
         temp_s1 = func_8008A364(objectIndex, cameraId, var_s1, drawDistance);
         if (is_obj_flag_status_active(objectIndex, VISIBLE) != 0) {
-            func_800557B4(objectIndex, (u32) temp_s1, var_s3);
+            func_800557B4(objectIndex, cameraId, (u32) temp_s1, var_s3);
         }
     }
 }
@@ -144,7 +146,7 @@ void OPenguin::Behaviours(s32 objectIndex) { // func_800850B0
     Object* object;
 
     object = &gObjectList[objectIndex];
-    switch (_bhv) {
+    switch (SpawnBhv) {
         case 1: // emperor
             OPenguin::func_80085080(objectIndex);
             break;
@@ -379,9 +381,9 @@ void OPenguin::InitOtherPenguin(s32 objectIndex) {
 
     // This code has been significantly refactored from the original func_800845C8
     // Into a switch statement instead of checking for the index of the penguin
-    switch(_bhv) {
+    switch(SpawnBhv) {
         case Behaviour::CIRCLE:
-            object->unk_01C[1] = Diameter;
+            object->unk_01C[1] = Speed;
 
             if (_toggle) {
                 object->unk_0C4 = 0x8000;
@@ -400,7 +402,7 @@ void OPenguin::InitOtherPenguin(s32 objectIndex) {
         case Behaviour::STRUT:
 
             if (gIsMirrorMode) {
-                object->unk_0C6 = MirrorModeAngleOffset;
+                object->unk_0C6 = SpawnRot.roll; // Roll is used to save mirror mode angle offset;
             }
 
             set_obj_direction_angle(objectIndex, 0U, object->unk_0C6 + 0x8000, 0U);
@@ -416,4 +418,109 @@ void OPenguin::InitOtherPenguin(s32 objectIndex) {
 
 void OPenguin::Reset() {
     _toggle = false;
+}
+
+void OPenguin::DrawEditorProperties() {
+    ImGui::Text("Location");
+    ImGui::SameLine();
+    FVector location = GetLocation();
+    if (ImGui::DragFloat3("##Location", (float*)&location)) {
+        Translate(location);
+        gEditor.eObjectPicker.eGizmo.Pos = location;
+    }
+
+    ImGui::SameLine();
+    if (ImGui::Button(ICON_FA_UNDO "##ResetPos")) {
+        FVector location = FVector(0, 0, 0);
+        Translate(location);
+        gEditor.eObjectPicker.eGizmo.Pos = location;
+    }
+
+    ImGui::Text("Rotation");
+    ImGui::SameLine();
+
+    IRotator objRot = GetRotation();
+
+    // Convert to temporary int values (to prevent writing 32bit values to 16bit variables)
+    int rot[3] = {
+        objRot.pitch,
+        objRot.yaw,
+        objRot.roll
+    };
+
+    if (ImGui::DragInt3("##Rotation", rot, 5.0f)) {
+        for (size_t i = 0; i < 3; i++) {
+            // Wrap around 0–65535
+            rot[i] = (rot[i] % 65536 + 65536) % 65536;
+        }
+        IRotator newRot;
+        newRot.Set(
+            static_cast<uint16_t>(rot[0]),
+            static_cast<uint16_t>(rot[1]),
+            static_cast<uint16_t>(rot[2])
+        );
+        Rotate(newRot);
+    }
+
+    ImGui::SameLine();
+    if (ImGui::Button(ICON_FA_UNDO "##ResetRot")) {
+        IRotator rot = IRotator(0, 0, 0);
+        Rotate(rot);
+    }
+
+    ImGui::Text("Spawn Mode");
+    ImGui::SameLine();
+
+    int32_t type = static_cast<int32_t>(Type);
+    const char* items[] = { "CHICK", "ADULT", "CREDITS", "EMPEROR" };
+
+    if (ImGui::Combo("##Type", &type, items, IM_ARRAYSIZE(items))) {
+        Type = static_cast<PenguinType>(type);
+
+        // Update type values
+        Object* object = &gObjectList[this->_objectIndex];
+        switch(static_cast<PenguinType>(type)) {
+            case PenguinType::CHICK:
+                object->surfaceHeight = 5.0f;
+                object->sizeScaling = 0.04f;
+                object->boundingBoxSize = 4;
+                break;
+            case PenguinType::ADULT:
+                object->surfaceHeight = -80.0f;
+                object->sizeScaling = 0.08f;
+                object->boundingBoxSize = 4;
+                break;
+            case PenguinType::CREDITS:
+                object->surfaceHeight = -80.0f;
+                object->sizeScaling = 0.08f;
+                object->sizeScaling = 0.15f;
+                break;
+            case PenguinType::EMPEROR:
+                object->sizeScaling = 0.2f;
+                object->boundingBoxSize = 0x000C;
+                break;
+        }
+    }
+
+    ImGui::Text("Spawn Mode");
+    ImGui::SameLine();
+
+    int32_t behaviour = static_cast<int32_t>(SpawnBhv);
+    const char* items2[] = { "DISABLED", "STRUT", "CIRCLE", "SLIDE3", "SLIDE4", "UNK", "SLIDE6" };
+
+    if (ImGui::Combo("##Behaviour", &behaviour, items2, IM_ARRAYSIZE(items2))) {
+        SpawnBhv = static_cast<Behaviour>(behaviour);
+    }
+
+    ImGui::Text("Diameter");
+    ImGui::SameLine();
+
+    float speed = Speed;
+    if (ImGui::DragFloat("##Speed", &speed, 0.1f)) {
+        Speed = speed;
+    }
+    ImGui::SameLine();
+    if (ImGui::Button(ICON_FA_UNDO "##ResetSpeed")) {
+        Speed = 0.0f;
+    }
 }

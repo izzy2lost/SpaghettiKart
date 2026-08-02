@@ -1,8 +1,7 @@
 #include <libultra/types.h>
 #include "course_offsets.h"
-#include <assets/sherbet_land_data.h>
+#include <assets/models/tracks/sherbet_land/sherbet_land_data.h>
 #include "animation.h"
-#include <stdint.h>
 
 const Gfx* sherbet_land_dls[] = {
     d_course_sherbet_land_dl_0,    d_course_sherbet_land_dl_158,  d_course_sherbet_land_dl_C0,
@@ -59,68 +58,57 @@ const Gfx* sherbet_land_dls_2[] = {
 };
 
 uintptr_t d_course_sherbet_land_unk_data1[] = {
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_RENDER_MODEL(d_course_sherbet_land_dl_8D00)
-    RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t)d_course_sherbet_land_dl_8D00, 0x00000000, 0x00000000, 0x00000000,
+    ANIMATION_RENDER_MODEL(d_course_sherbet_land_dl_8D00),
 
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_ADD_POS(-0x00000033, 0x00000054, -0x0000000d)
-    RENDER_MODEL_OR_ADD_POS, 0x00000006, 0x00000000, 0x00000000, (uintptr_t)-0x00000033, (uintptr_t)0x00000054, (uintptr_t)-0x0000000d,
+    ANIMATION_ADD_POS(-0x00000033, 0x00000054, -0x0000000d),
 
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_RENDER_MODEL(d_course_sherbet_land_dl_8730)
-    RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t)d_course_sherbet_land_dl_8730, 0x00000000, 0x00000000, 0x00000000,
+    ANIMATION_RENDER_MODEL(d_course_sherbet_land_dl_8730),
 
-    (uintptr_t)ANIMATION_POP_MATRIX,
+    ANIMATION_POP_MATRIX,
 
-    // ANIMATION_ADD_POS(0x00000033, 0x00000054, -0x0000000d)
-    RENDER_MODEL_OR_ADD_POS, 0x00000006, 0x00000000, 0x00000000, (uintptr_t)0x00000033, (uintptr_t)0x00000054, (uintptr_t)-0x0000000d,
+    ANIMATION_ADD_POS(0x00000033, 0x00000054, -0x0000000d),
 
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_RENDER_MODEL(d_course_sherbet_land_dl_8808)
-    RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t)d_course_sherbet_land_dl_8808, 0x00000000, 0x00000000, 0x00000000,
+    ANIMATION_RENDER_MODEL(d_course_sherbet_land_dl_8808),
 
-    (uintptr_t)ANIMATION_POP_MATRIX,
+    ANIMATION_POP_MATRIX,
 
-    // ANIMATION_ADD_POS(-0x00000026, -0x00000036, -0x0000000d)
-    RENDER_MODEL_OR_ADD_POS, 0x00000006, 0x00000000, 0x00000000, (uintptr_t)-0x00000026, (uintptr_t)-0x00000036, (uintptr_t)-0x0000000d,
+    ANIMATION_ADD_POS(-0x00000026, -0x00000036, -0x0000000d),
 
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_RENDER_MODEL(d_course_sherbet_land_dl_8930)
-    RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t)d_course_sherbet_land_dl_8930, 0x00000000, 0x00000000, 0x00000000,
+    ANIMATION_RENDER_MODEL(d_course_sherbet_land_dl_8930),
 
-    (uintptr_t)ANIMATION_POP_MATRIX,
+    ANIMATION_POP_MATRIX,
 
-    // ANIMATION_ADD_POS(0x00000026, -0x00000036, -0x0000000d)
-    RENDER_MODEL_OR_ADD_POS, 0x00000006, 0x00000000, 0x00000000, (uintptr_t)0x00000026, (uintptr_t)-0x00000036, (uintptr_t)-0x0000000d,
+    ANIMATION_ADD_POS(0x00000026, -0x00000036, -0x0000000d),
 
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_RENDER_MODEL(d_course_sherbet_land_dl_8A78)
-    RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t)d_course_sherbet_land_dl_8A78, 0x00000000, 0x00000000, 0x00000000,
+    ANIMATION_RENDER_MODEL(d_course_sherbet_land_dl_8A78),
 
-    (uintptr_t)ANIMATION_POP_MATRIX,
+    ANIMATION_POP_MATRIX,
 
-    // ANIMATION_ADD_POS(0x00000000, 0x0000006F, -0x00000013)
-    RENDER_MODEL_OR_ADD_POS, 0x00000006, 0x00000000, 0x00000000, (uintptr_t)0x00000000, (uintptr_t)0x0000006F, (uintptr_t)-0x00000013,
+    ANIMATION_ADD_POS(0x00000000, 0x0000006F, -0x00000013),
 
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_RENDER_MODEL(d_course_sherbet_land_dl_8E00)
-    RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t)d_course_sherbet_land_dl_8E00, 0x00000000, 0x00000000, 0x00000000,
+    ANIMATION_RENDER_MODEL(d_course_sherbet_land_dl_8E00),
 
-    (uintptr_t)ANIMATION_POP_MATRIX,
+    ANIMATION_POP_MATRIX,
 
-    (uintptr_t)ANIMATION_POP_MATRIX,
+    ANIMATION_POP_MATRIX,
 
-    (uintptr_t)ANIMATION_POP_MATRIX,
+    ANIMATION_POP_MATRIX,
 
-    (uintptr_t)ANIMATION_STOP,
+    ANIMATION_STOP,
 };
 
 // 0x0600905C

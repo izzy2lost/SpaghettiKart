@@ -1,8 +1,6 @@
 #include <libultra/types.h>
 #include "course_offsets.h"
-#include <assets/rainbow_road_data.h>
-#include <stdint.h>
-#include "animation.h"
+#include <assets/models/tracks/rainbow_road/rainbow_road_data.h>
 
 Gfx* rainbow_road_dls[] = {
     d_course_rainbow_road_dl_D8,   d_course_rainbow_road_dl_210,  d_course_rainbow_road_dl_178,
@@ -93,40 +91,33 @@ Animation* d_rainbow_road_unk3[] = {
 
 // 0x06016110
 uintptr_t d_rainbow_road_unk4[] = {
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_ADD_POS(0x00000000, 0x0000023a, 0x00000000)
-    RENDER_MODEL_OR_ADD_POS, 0x00000006, 0x00000000, 0x00000000, (uintptr_t)0x0000023a, (uintptr_t)0x00000000,
+    ANIMATION_ADD_POS(0x00000000, 0x0000023a, 0x00000000),
 
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_RENDER_MODEL(d_course_rainbow_road_dl_15550)
-    RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t)d_course_rainbow_road_dl_15550, 0x00000000, 0x00000000, 0x00000000,
+    ANIMATION_RENDER_MODEL(d_course_rainbow_road_dl_15550),
 
-    // ANIMATION_RENDER_MODEL(d_course_rainbow_road_dl_151A8)
-    RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t)d_course_rainbow_road_dl_151A8, 0x00000000, 0x00000000, 0x00000000,
+    ANIMATION_RENDER_MODEL(d_course_rainbow_road_dl_151A8),
 
-    (uintptr_t)ANIMATION_POP_MATRIX,
+    ANIMATION_POP_MATRIX,
 
-    // ANIMATION_ADD_POS(0x00000000, 0x0000023a, 0x00000000)
-    RENDER_MODEL_OR_ADD_POS, 0x00000006, 0x00000000, 0x00000000, (uintptr_t)0x0000023a, (uintptr_t)0x00000000,
+    ANIMATION_ADD_POS(0x00000000, 0x0000023a, 0x00000000),
 
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_RENDER_MODEL(d_course_rainbow_road_dl_15C68)
-    RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t)d_course_rainbow_road_dl_15C68, 0x00000000, 0x00000000, 0x00000000,
+    ANIMATION_RENDER_MODEL(d_course_rainbow_road_dl_15C68),
 
-    // ANIMATION_RENDER_MODEL(d_course_rainbow_road_dl_158C0)
-    RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t)d_course_rainbow_road_dl_158C0, 0x00000000, 0x00000000, 0x00000000,
+    ANIMATION_RENDER_MODEL(d_course_rainbow_road_dl_158C0),
 
-    // ANIMATION_RENDER_MODEL(d_course_rainbow_road_dl_15F18)
-    RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t)d_course_rainbow_road_dl_15F18, 0x00000000, 0x00000000, 0x00000000,
+    ANIMATION_RENDER_MODEL(d_course_rainbow_road_dl_15F18),
 
-    (uintptr_t)ANIMATION_POP_MATRIX,
+    ANIMATION_POP_MATRIX,
 
-    (uintptr_t)ANIMATION_POP_MATRIX,
+    ANIMATION_POP_MATRIX,
 
-    (uintptr_t)ANIMATION_STOP,
+    ANIMATION_STOP,
 };
 
 // No idea what this stuff is

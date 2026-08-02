@@ -144,7 +144,7 @@ typedef struct {
 } StaffGhost;
 // 80160ADC Banana's remaining
 
-typedef struct {
+struct Collision{
     /* 0x00 */ u16 unk30;
     /* 0x02 */ u16 unk32;
     /* 0x04 */ u16 unk34;
@@ -157,7 +157,7 @@ typedef struct {
     /* 0x24 */ Vec3f unk54;
     /* 0x30 */ Vec3f orientationVector;
     /* 0x3C */ f32 unk6C;
-} Collision;
+};
 
 typedef struct {
     /* 0x00 */ Vec3f pos;
@@ -268,7 +268,7 @@ typedef struct {
     /* 0x0006 */ u16 unk_006;
     /* 0x0008 */ s16 lapCount;
     /* 0x000A */ char unk_00A[0x2];
-    /* 0x000C */ s32 soundEffects;    // Bitflag.
+    /* 0x000C */ s32 triggers;    // Bitflag.
     /* 0x0010 */ s16 currentItemCopy; // Has no effect on what item the players has, It is just a synced copy
     /* 0x0012 */ s16 unk_012;
     /* 0x0014 */ Vec3f pos;
@@ -278,7 +278,7 @@ typedef struct {
     /* 0x0034 */ Vec3f velocity;
     /* 0x0040 */ s16 unk_040;
     /* 0x0042 */ s16 unk_042;
-    /* 0x0044 */ s16 unk_044;
+    /* 0x0044 */ s16 kartProps;
     /* 0x0046 */ u16 unk_046;
     /* 0x0048 */ Vec4s unk_048;
     /* 0x0050 */ Vec4s unk_050;
@@ -308,7 +308,7 @@ typedef struct {
     /* 0x00B0 */ s16 unk_0B0;
     /* 0x00B2 */ s16 unk_0B2;
     /* 0x00B4 */ u16 unk_0B4;
-    /* 0x00B6 */ u16 unk_0B6;
+    /* 0x00B6 */ u16 kartGraphics;
     /* 0x00B8 */ f32 unk_0B8;
     /* 0x00BC */ u32 effects;
     /* 0x00C0 */ s16 unk_0C0;
@@ -316,11 +316,11 @@ typedef struct {
     /* 0x00C4 */ s16 slopeAccel;
     /* 0x00C6 */ s16 alpha;
     /* 0x00C8 */ s16 unk_0C8;
-    /* 0x00CA */ s16 unk_0CA;
+    /* 0x00CA */ s16 lakituProps;
     /* 0x00CC */ Vec4s unk_0CC;
     /* 0x00D4 */ Vec4s unk_0D4;
     /* 0x00DC */ s16 boostTimer;
-    /* 0x00DE */ u16 waterInteractionFlags;
+    /* 0x00DE */ u16 oobProps;
     /* 0x00E0 */ s16 unk_0E0;
     /* 0x00E2 */ s16 unk_0E2;
     /* 0x00E4 */ f32 unk_0E4;
@@ -336,7 +336,7 @@ typedef struct {
     /* 0x0108 */ f32 hopVerticalOffset;
     /* 0x010C */ s16 unk_10C;
     /* 0x010E */ char unk_10E[0x2];
-    /* 0x0110 */ Collision collision;
+    /* 0x0110 */ struct Collision collision;
     /* 0x0150 */ Mat3 unk_150;
     /* 0x0174 */ Mat3 orientationMatrix;
     /* 0x0198 */ KartTyre tyres[4];
@@ -417,7 +417,7 @@ typedef struct {
     // Something related to time trial ghost data?
     /* 0x00 */ s32 unk_00;
     /* 0x04 */ u8 ghostDataSaved;
-    /* 0x05 */ s8 courseIndex;
+    /* 0x05 */ s8 trackIndex;
     /* 0x06 */ u8 characterId;
     /* 0x07 */ u8 unk_07[0x3C];
     /* 0x43 */ u8 pad_43[0x7F - 0x43];

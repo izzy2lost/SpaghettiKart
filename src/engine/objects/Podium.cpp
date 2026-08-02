@@ -1,5 +1,5 @@
 #include "Podium.h"
-#include "assets/ceremony_data.h"
+#include "assets/models/ceremony_data.h"
 
 extern "C" {
 #include "main.h"
@@ -7,11 +7,11 @@ extern "C" {
 #include "update_objects.h"
 #include "render_objects.h"
 #include "code_80057C60.h"
-#include "podium_ceremony_actors.h"
-#include "math_util.h"
+#include "ending/podium_ceremony_actors.h"
+#include "racing/math_util.h"
 #include "math_util_2.h"
-#include "assets/common_data.h"
-#include "some_data.h"
+#include "assets/models/common_data.h"
+#include "textures/some_data.h"
 #include "code_80091440.h"
 #include "code_80086E70.h"
 #include "code_80086E70.h"
@@ -25,9 +25,10 @@ extern Vec3s D_800E634C[];
 //     { 0xf380, 0x0013, 0xfe14 },
 // };
 
-OPodium::OPodium(const FVector& pos) {
+OPodium::OPodium(const SpawnParams& params) : OObject(params) {
     Name = "Podium";
-    _pos = pos;
+    ResourceName = "mk:podium";
+    _pos = params.Location.value_or(FVector(0, 0, 0));
 
     find_unused_obj_index(&_podium1Index);
     find_unused_obj_index(&_podium2Index);

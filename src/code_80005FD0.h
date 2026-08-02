@@ -4,7 +4,7 @@
 #include "vehicles.h"
 #include "camera.h"
 #include "waypoints.h"
-#include <assets/common_data.h>
+#include <assets/textures/common_data.h>
 
 struct unexpiredActors {
     /* 0x00 */ s32 unk0;
@@ -34,7 +34,7 @@ typedef struct {
     /* 0x08 */ s16 numDroppedBananaBunch;
     /* 0x0A */ s16 unk_0A;
     /* 0x0C */ s16 unk_0C;
-    /* 0x0E */ s16 timeBeforeThrow;
+    /* 0x0E */ s16 timeBeforeThrow; // Allows time for spawning the shells before they can be spawned
 } CpuItemStrategyData; // size = 0x10
 
 typedef struct {
@@ -43,11 +43,6 @@ typedef struct {
     s16 unk4;
     u16 unk6;
 } UnkStruct_46D0;
-
-typedef struct {
-    s16 x;
-    s16 z;
-} Path2D;
 
 enum CpuItemStrategyEnum {
     CPU_STRATEGY_WAIT_NEXT_ITEM = 0,
@@ -94,6 +89,14 @@ enum CpuItemStrategyEnum {
     CPU_STRATEGY_ITEM_BLUE_SPINY_SHELL,
     CPU_STRATEGY_THROW_BLUE_SPINY_SHELL,
     CPU_STRATEGY_HOLD_BLUE_SPINY_SHELL,
+
+    CPU_STRATEGY_ITEM_TRIPLE_GREEN_SHELL,
+    CPU_STRATEGY_ORBIT_TRIPLE_GREEN_SHELL,
+    CPU_STRATEGY_THROW_TRIPLE_GREEN_SHELL,
+
+    CPU_STRATEGY_ITEM_TRIPLE_RED_SHELL,
+    CPU_STRATEGY_ORBIT_TRIPLE_RED_SHELL,
+    CPU_STRATEGY_THROW_TRIPLE_RED_SHELL,
 };
 
 /* Function Prototypes */
@@ -152,7 +155,6 @@ void determine_ideal_cpu_position_offset(s32, u16);
 s16 func_8000D6D0(Vec3f, s16*, f32, f32, s16, s16);
 s16 func_8000D940(Vec3f, s16*, f32, f32, s16);
 s16 update_vehicle_following_path(Vec3f, s16*, f32);
-void set_bomb_kart_spawn_positions(void);
 void func_8000DF8C(s32);
 
 s32 add_actor_in_unexpired_actor_list(s32, s16);
@@ -181,7 +183,7 @@ f32 func_80010FA0(f32, f32, f32, s32, s32);
 
 s32 func_80011014(TrackPathPoint*, TrackPathPoint*, s32, s32);
 s32 process_path_data(TrackPathPoint*, TrackPathPoint*);
-s32 generate_2d_path(Path2D*, TrackPathPoint*, s32);
+s32 generate_2d_path(TrackPathPoint*, TrackPathPoint*, s32);
 void copy_courses_cpu_behaviour(void);
 void reset_cpu_behaviour_none(s32);
 void reset_cpu_behaviour(s32);
@@ -194,7 +196,7 @@ void generate_train_path(void);
 void generate_ferry_path(void);
 void spawn_vehicle_on_road(Vec3f position, Vec3s rotation, Vec3f velocity, s32 waypointIndex,
                            s32 someMultiplierTheSequel, f32 speed);
-void set_vehicle_pos_path_point(TrainCarStuff*, Path2D*, u16);
+void set_vehicle_pos_path_point(TrainCarStuff*, TrackPathPoint*, u16);
 void init_vehicles_trains(size_t, size_t, f32);
 void sync_train_components(TrainCarStuff*, s16);
 void update_vehicle_trains(void);
@@ -258,7 +260,7 @@ void func_8001933C(Camera*, UNUSED Player*, s32, s32);
 void func_8001968C(void);
 void func_8001969C(s32, f32, s32, s16);
 void func_80019760(Camera*, UNUSED Player*, s32, s32);
-void func_80019890(s32, s32);
+void camera_start_cinematic_shot(s32, s32);
 void func_80019B50(s32, u16);
 void func_80019C50(s32);
 void func_80019D2C(Camera*, Player*, s32);
@@ -288,12 +290,11 @@ void func_8001BE78(void);
 
 void func_8001C05C(void);
 void func_8001C14C(void);
-void render_bomb_karts_wrap(s32);
 void func_8001C42C(void);
 
 /* This is where I'd put my static data, if I had any */
 
-extern Collision D_80162E70;
+extern struct Collision D_80162E70;
 extern s16 D_80162EB0; // Possibly a float.
 extern s16 D_80162EB2; // possibly [3]
 extern CPUBehaviour* gCoursesCPUBehaviour[];
@@ -375,8 +376,10 @@ extern s16 D_801634EC;
 extern s32 D_801634F0;
 extern s32 D_801634F4;
 extern TrackPositionFactorInstruction gPlayerTrackPositionFactorInstruction[];
-extern Path2D* gVehicle2DPathPoint;
-extern s32 gVehicle2DPathLength;
+extern TrackPathPoint* gVehicle2DPathPoint;
+extern s32 gVehicle2DPathSize;
+extern TrackPathPoint* gVehiclePath;
+extern size_t gVehiclePathSize;
 extern u16 isCrossingTriggeredByIndex[];
 extern u16 sCrossingActiveTimer[];
 extern s32 D_80163DD8[];

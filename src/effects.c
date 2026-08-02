@@ -5,7 +5,7 @@
 #include <defines.h>
 #include <sounds.h>
 #include "code_800029B0.h"
-#include "math_util.h"
+#include "racing/math_util.h"
 #include "kart_attributes.h"
 #include "waypoints.h"
 #include "code_80005FD0.h"
@@ -29,7 +29,7 @@ s32 D_8018D990[8];
 UNUSED void func_unnamed(void) {
 }
 
-s32 func_8008C1D8(UNUSED s32* arg0) {
+void func_8008C1D8(UNUSED s32* arg0) {
 }
 
 void func_8008C1E0(UNUSED s32* arg0, UNUSED s32 arg1) {
@@ -134,9 +134,9 @@ UNUSED void func_unnamed33(void) {
 }
 
 void func_8008C310(Player* player) {
-    if ((player->soundEffects & 2) || (player->soundEffects & 4) || ((player->soundEffects << 9) < 0) ||
-        (player->soundEffects & HIT_BY_ITEM_SOUND_EFFECT)) {
-        player->unk_0B6 = ((u16) player->unk_0B6 | 0x1000);
+    if ((player->triggers & HIGH_TUMBLE_TRIGGER) || (player->triggers & LOW_TUMBLE_TRIGGER) || ((player->triggers << 9) < 0) ||
+        (player->triggers & HIT_BY_STAR_TRIGGER)) {
+        player->kartGraphics = ((u16) player->kartGraphics | EXPLOSION);
     }
 }
 
@@ -155,7 +155,7 @@ void clean_effect(Player* player, s8 arg1) {
     if ((player->effects & 0x800) == 0x800) {
         func_8008D0E4(player, arg1);
     }
-    if ((player->unk_044 & 0x4000) != 0) {
+    if ((player->kartProps & DRIVING_SPINOUT) != 0) {
         func_8008D3B0(player, arg1);
     }
     if ((player->effects & BOOST_EFFECT) == BOOST_EFFECT) {
@@ -188,7 +188,7 @@ void clean_effect(Player* player, s8 arg1) {
     if ((player->effects & 0x10000000) == 0x10000000) {
         func_8008FEDC(player, arg1);
     }
-    player->unk_044 = (s16) (player->unk_044 & 0xFFFE);
+    player->kartProps = (s16) (player->kartProps & ~BACK_UP);
     player->effects = (s32) (player->effects & ~0x20);
 }
 
@@ -216,7 +216,7 @@ void func_8008C528(Player* player, s8 arg1) {
     } else {
         play_cpu_sound_effect(arg1, player);
     }
-    player->soundEffects = (s32) (player->soundEffects & ~4);
+    player->triggers = (s32) (player->triggers & ~LOW_TUMBLE_TRIGGER);
 }
 
 void func_8008C62C(Player* player, s8 arg1) {
@@ -266,7 +266,7 @@ void func_8008C73C(Player* player, s8 playerIndex) {
             player->effects |= 0x80;
         }
 
-        player->unk_0B6 |= 0x80;
+        player->kartGraphics |= WHIRRR;
         // clang-format off
         player->unk_0C0 = 0; player->unk_07C = 0; player->unk_078 = 0; player->unk_0AE = player->rotation[1]; player->unk_0B2 = 2;
         // clang-format on
@@ -310,8 +310,8 @@ void func_8008C8C4(Player* player, s8 playerId) {
         player->currentSpeed = (f32) (player->currentSpeed + 100.0f);
     }
     if ((gModeSelection == VERSUS) && ((player->type & PLAYER_CPU) == PLAYER_CPU) && (!gDemoMode) &&
-        ((player->unk_0CA & 2) == 0) && (gGPCurrentRaceRankByPlayerId[playerId] != 0)) {
-        player->soundEffects = (s32) (player->soundEffects | REVERSE_SOUND_EFFECT);
+        ((player->lakituProps & HELD_BY_LAKITU) == 0) && (gGPCurrentRaceRankByPlayerId[playerId] != 0)) {
+        player->triggers = (s32) (player->triggers | VERTICAL_TUMBLE_TRIGGER);
     }
 }
 
@@ -372,7 +372,7 @@ void func_8008C9EC(Player* player, s8 arg1) {
 void func_8008CDC0(Player* player, s8 arg1) {
     clean_effect(player, arg1);
 
-    player->soundEffects &= ~1;
+    player->triggers &= ~HIT_BANANA_TRIGGER;
     player->unk_0B4 = 0;
     player->unk_0B8 = 3.0f;
     player->unk_0AC = 1;
@@ -411,7 +411,7 @@ void func_8008CEB0(Player* player, s8 arg1) {
                 func_8008C73C(player, arg1);
                 var_v1 = 0;
             } else {
-                player->unk_0B6 |= 0x20;
+                player->kartGraphics |= WHISTLE;
                 player->effects &= ~0x40000;
                 if ((player->type & PLAYER_HUMAN) == PLAYER_HUMAN) {
                     func_800C90F4(arg1, (player->characterId * 0x10) + 0x29008008);
@@ -444,12 +444,12 @@ void func_8008D0E4(Player* player, UNUSED s8 arg1) {
 void func_8008D0FC(Player* player, s8 arg1) {
     clean_effect(player, arg1);
 
-    player->soundEffects &= ~0x80;
+    player->triggers &= ~DRIVING_SPINOUT_TRIGGER;
     player->unk_0B4 = 0;
     player->unk_0B8 = 2.0f;
     player->unk_0AC = 1;
-    player->effects &= ~0x10;
-    player->unk_044 |= 0x4000;
+    player->effects &= ~DRIFTING_EFFECT;
+    player->kartProps |= DRIVING_SPINOUT;
 }
 
 void func_8008D170(Player* player, s8 arg1) {
@@ -467,16 +467,16 @@ void func_8008D170(Player* player, s8 arg1) {
         var_v1 = 0;
         var_a3 = -var_a3;
         var_f0 *= 0.9;
-        if (((player->effects & 1) == 1) || !(player->unk_044 & 0x20)) {
+        if (((player->effects & 1) == 1) || !(player->kartProps & THROTTLE)) {
             player->effects |= 0x40000;
         }
         if (var_f0 <= 1.3) {
-            player->unk_044 &= ~0x4000;
+            player->kartProps &= ~DRIVING_SPINOUT;
             if ((player->effects & 0x40000) != 0x40000) {
                 func_8008C73C(player, arg1);
                 var_v1 = 0;
             } else {
-                player->unk_0B6 |= 0x20;
+                player->kartGraphics |= WHISTLE;
                 player->effects &= ~0x40000;
                 if ((player->type & PLAYER_HUMAN) == PLAYER_HUMAN) {
                     func_800C90F4(arg1, (player->characterId * 0x10) + 0x29008008);
@@ -498,20 +498,20 @@ void func_8008D170(Player* player, s8 arg1) {
     player->unk_0AC = var_a3;
     if (player->effects & 8) {
         func_8008C73C(player, arg1);
-        player->unk_044 &= ~0x4000;
+        player->kartProps &= ~DRIVING_SPINOUT;
     }
 }
 
 void func_8008D3B0(Player* player, UNUSED s8 arg1) {
-    player->unk_044 &= 0xBFFF;
+    player->kartProps &= ~DRIVING_SPINOUT;
 }
 
-void apply_boost_sound_effect(Player* player, s8 arg1) {
+void trigger_shroom(Player* player, s8 arg1) {
 
     clean_effect(player, arg1);
 
     player->effects |= BOOST_EFFECT;
-    player->soundEffects &= ~BOOST_SOUND_EFFECT;
+    player->triggers &= ~SHROOM_TRIGGER;
     player->unk_DB4.unk0 = 0;
     player->unk_DB4.unk8 = 8.0f;
 
@@ -559,7 +559,7 @@ void func_8008D570(Player* player, s8 arg1) {
     player->unk_0AE = player->rotation[1];
     player->effects |= 0x80000;
     player->effects &= ~0x10;
-    player->soundEffects &= ~0x1000;
+    player->triggers &= ~UNUSED_TRIGGER_0x1000;
     player->kartHopJerk = D_800E3730[player->characterId];
     player->kartHopAcceleration = 0.0f;
     player->kartHopVelocity = (f32) D_800E3710[player->characterId];
@@ -609,7 +609,7 @@ void func_8008D760(Player* player) {
     player->rotation[1] = player->unk_0AE;
     player->effects &= 0xFFF7FFFF;
     player->kartGravity = gKartGravityTable[player->characterId];
-    player->type &= 0xFF7F;
+    player->type &= ~PLAYER_UNKNOWN_0x80;
 }
 
 void func_8008D7B0(Player* player, s8 arg1) {
@@ -618,7 +618,7 @@ void func_8008D7B0(Player* player, s8 arg1) {
     player->unk_0AE = player->rotation[1];
     player->effects |= 0x800000;
     player->effects &= ~0x10;
-    player->soundEffects &= ~0x20000;
+    player->triggers &= ~UNUSED_TRIGGER_0x20000;
     player->kartHopJerk = D_800E3770[player->characterId];
     player->kartHopAcceleration = 0.0f;
     player->kartHopVelocity = D_800E3750[player->characterId];
@@ -687,7 +687,7 @@ void func_8008D9C0(Player* player) {
     }
 }
 
-void apply_hit_sound_effect(Player* player, s8 arg1) {
+void trigger_squish(Player* player, s8 arg1) {
     clean_effect(player, arg1);
 
     if ((player->effects & HIT_EFFECT) == 0) {
@@ -704,7 +704,7 @@ void apply_hit_sound_effect(Player* player, s8 arg1) {
         player->unk_D9C = 0.0f;
         player->unk_DA0 = 65.0f;
 
-        if ((player->soundEffects & 0x100) != 0) {
+        if ((player->triggers & THWOMP_SQUISH_TRIGGER) != 0) {
             player->unk_046 |= 0x80;
         }
 
@@ -713,7 +713,7 @@ void apply_hit_sound_effect(Player* player, s8 arg1) {
         }
 
         player->effects |= HIT_EFFECT;
-        if (((player->type) & 0x1000) != 0) {
+        if (((player->type) & PLAYER_CPU) != 0) {
             play_cpu_sound_effect(arg1, player);
         }
     }
@@ -738,7 +738,7 @@ void apply_hit_effect(Player* player, s8 arg1) {
             }
 
             if ((player->unk_046 & 0x80) != 0) {
-                if ((player->soundEffects & 0x100) == 0) {
+                if ((player->triggers & THWOMP_SQUISH_TRIGGER) == 0) {
                     D_8018D990[arg1] = 1;
                     player->unk_238 = 0;
                     if ((player->type & PLAYER_HUMAN) != 0) {
@@ -827,10 +827,10 @@ void apply_hit_effect(Player* player, s8 arg1) {
     }
 }
 
-void apply_hit_rotating_sound_effect(Player* player, s8 arg1) {
+void trigger_lightning_strike(Player* player, s8 arg1) {
     clean_effect(player, arg1);
 
-    player->soundEffects &= ~HIT_ROTATING_SOUND_EFFECT;
+    player->triggers &= ~LIGHTNING_STRIKE_TRIGGER;
     player->effects |= 0x40020000;
     player->effects &= ~0x10;
     player->kartPropulsionStrength *= 0.6;
@@ -874,7 +874,7 @@ void apply_lightning_effect(Player* player, s8 arg1) {
         D_80165190[1][arg1] = 1;
         D_80165190[2][arg1] = 1;
         D_80165190[3][arg1] = 1;
-        apply_hit_sound_effect(player, arg1);
+        trigger_squish(player, arg1);
     } else if ((player->effects & 0x20000) == 0x20000) {
         player->rotation[1] -= 0x5B0;
         D_8018D920[arg1] -= 0x5B0;
@@ -957,7 +957,7 @@ void func_8008E4A4(Player* player, s8 arg1) {
         D_80165190[2][arg1] = 1;
         D_80165190[3][arg1] = 1;
         player->unk_042 = 0;
-        player->type &= ~0x80;
+        player->type &= ~PLAYER_UNKNOWN_0x80;
 
         if ((gIsPlayerTripleAButtonCombo[arg1] == true) && ((player->type & PLAYER_HUMAN) == PLAYER_HUMAN)) {
             player->currentSpeed += 100.0f;
@@ -986,18 +986,18 @@ void func_8008E4A4(Player* player, s8 arg1) {
                     player->currentSpeed += 100.0f;
                 }
 
-                player->type &= ~0x80;
+                player->type &= ~PLAYER_UNKNOWN_0x80;
             }
         }
     }
 }
 
-void apply_reverse_sound_effect(Player* player, s8 arg1) {
+void trigger_vertical_tumble(Player* player, s8 arg1) {
     clean_effect(player, arg1);
     func_8008C310(player);
 
     player->unk_0A8 = 0;
-    player->effects |= 0x01000000;
+    player->effects |= HIT_BY_STAR_TRIGGER;
     player->effects &= ~0x10;
     player->kartHopJerk = 0.0f;
     player->kartHopAcceleration = 0.0f;
@@ -1025,8 +1025,8 @@ void apply_reverse_sound_effect(Player* player, s8 arg1) {
         play_cpu_sound_effect(arg1, player);
     }
 
-    player->soundEffects &= ~(REVERSE_SOUND_EFFECT | 0x80000);
-    player->unk_0B6 |= 0x40;
+    player->triggers &= ~(VERTICAL_TUMBLE_TRIGGER | HIT_PADDLE_BOAT_TRIGGER);
+    player->kartGraphics |= CRASH;
     gTimerBoostTripleACombo[arg1] = 0;
     gIsPlayerTripleAButtonCombo[arg1] = false;
     gCountASwitch[arg1] = 0;
@@ -1101,7 +1101,7 @@ void apply_hit_by_item_effect(Player* player, s8 arg1) {
     }
 }
 
-void apply_hit_by_item_sound_effect(Player* player, s8 arg1) {
+void trigger_high_tumble(Player* player, s8 arg1) {
     clean_effect(player, arg1);
     func_8008C310(player);
 
@@ -1125,8 +1125,8 @@ void apply_hit_by_item_sound_effect(Player* player, s8 arg1) {
     }
 
     player->effects |= HIT_BY_ITEM_EFFECT;
-    player->unk_0B6 |= 0x40;
-    player->soundEffects &= ~0x01000002;
+    player->kartGraphics |= CRASH;
+    player->triggers &= ~(HIT_BY_STAR_TRIGGER | HIGH_TUMBLE_TRIGGER);
 
     gTimerBoostTripleACombo[arg1] = 0;
     gIsPlayerTripleAButtonCombo[arg1] = false;
@@ -1145,11 +1145,11 @@ void remove_hit_by_item_effect(Player* player, s8 arg1) {
     player->unk_042 = 0;
 }
 
-void apply_boost_ramp_asphalt_sound_effect(Player* player, s8 playerId) {
+void trigger_asphalt_ramp_boost(Player* player, s8 playerId) {
     clean_effect(player, playerId);
 
     player->effects |= BOOST_RAMP_ASPHALT_EFFECT;
-    player->soundEffects &= ~BOOST_RAMP_ASPHALT_SOUND_EFFECT;
+    player->triggers &= ~BOOST_RAMP_ASPHALT_TRIGGER;
     player->unk_DB4.unk0 = 0;
     player->unk_DB4.unk8 = 8.0f;
     if (D_8015F890 != 1) {
@@ -1161,7 +1161,7 @@ void apply_boost_ramp_asphalt_sound_effect(Player* player, s8 playerId) {
         func_800C90F4(playerId, (player->characterId * 0x10) + 0x29008001);
         func_800C9060(playerId, 0x1900A40B);
     }
-    player->unk_044 &= ~0x1;
+    player->kartProps &= ~BACK_UP;
     player->effects &= ~0x20;
 }
 
@@ -1193,11 +1193,11 @@ void remove_boost_ramp_asphalt_effect(Player* player) {
     player->boostPower = 0.0f;
 }
 
-void apply_boost_ramp_wood_sound_effect(Player* player, s8 playerId) {
+void trigger_wood_ramp_boost(Player* player, s8 playerId) {
     clean_effect(player, playerId);
 
     player->effects |= BOOST_RAMP_WOOD_EFFECT;
-    player->soundEffects &= ~BOOST_RAMP_WOOD_SOUND_EFFECT;
+    player->triggers &= ~BOOST_RAMP_WOOD_TRIGGER;
 
     if (D_8015F890 != 1) {
         if (((player->type & PLAYER_HUMAN) == PLAYER_HUMAN) && ((player->type & PLAYER_INVISIBLE_OR_BOMB) == 0)) {
@@ -1209,7 +1209,7 @@ void apply_boost_ramp_wood_sound_effect(Player* player, s8 playerId) {
         func_800C9060(playerId, 0x1900A40B);
     }
 
-    player->unk_044 &= ~0x1;
+    player->kartProps &= ~BACK_UP;
     player->effects &= ~0x20;
 }
 
@@ -1257,14 +1257,14 @@ void func_8008F1B8(Player* player, s8 arg1) {
 
     player->kartPropulsionStrength = (player->unk_210 * 0.05);
     if (player->unk_0B2 < 0) {
-        if ((player->unk_044 & 0x80) == 0x80) {
+        if ((player->kartProps & EARLY_SPINOUT_LEFT) == EARLY_SPINOUT_LEFT) {
             player->rotation[1] += 182;
             D_8018D920[arg1] += 182;
 
             temp = ((u16) D_8018D920[arg1] / 182);
             if (temp == 180) {
                 player->effects &= ~0x4000;
-                player->type &= ~0x80;
+                player->type &= ~PLAYER_UNKNOWN_0x80;
                 player->currentSpeed /= 3.0f;
             }
         } else {
@@ -1274,7 +1274,7 @@ void func_8008F1B8(Player* player, s8 arg1) {
             temp = ((u16) D_8018D920[arg1] / 182);
             if (temp == 180) {
                 player->effects &= ~0x4000;
-                player->type &= ~0x80;
+                player->type &= ~PLAYER_UNKNOWN_0x80;
                 player->currentSpeed /= 3.0f;
             }
         }
@@ -1286,8 +1286,8 @@ void func_8008F1B8(Player* player, s8 arg1) {
             if (temp < 71) {
                 --player->unk_0B2;
             }
-            player->unk_044 |= 0x80;
-            player->unk_044 &= ~0x40;
+            player->kartProps |= EARLY_SPINOUT_LEFT;
+            player->kartProps &= ~EARLY_SPINOUT_RIGHT;
             return;
         }
         player->rotation[1] += 364;
@@ -1296,8 +1296,8 @@ void func_8008F1B8(Player* player, s8 arg1) {
         if (temp >= 110) {
             --player->unk_0B2;
         }
-        player->unk_044 |= 0x40;
-        player->unk_044 &= ~0x80;
+        player->kartProps |= EARLY_SPINOUT_RIGHT;
+        player->kartProps &= ~EARLY_SPINOUT_LEFT;
     }
 }
 
@@ -1326,7 +1326,7 @@ void func_8008F494(Player* player, s8 arg1) {
     if ((((player->effects & 0x80) != 0) || ((player->effects & 0x40) != 0) || ((player->effects & 0x01000000)) ||
          ((player->effects & HIT_BY_ITEM_EFFECT)) || ((player->effects & 0x400) != 0)) &&
         (gModeSelection == BATTLE)) {
-        player->unk_044 |= 0x8000;
+        player->kartProps |= UNKNOWN_BATTLE_VAR;
     }
 
     clean_effect(player, arg1);
@@ -1339,16 +1339,16 @@ void func_8008F494(Player* player, s8 arg1) {
     player->unk_042 = 0;
 
     if (((player->type & PLAYER_HUMAN) != 0) && ((player->type & PLAYER_INVISIBLE_OR_BOMB) == 0) &&
-        ((player->unk_0CA & 2) == 0) && ((player->waterInteractionFlags & 1) == 0) && ((player->waterInteractionFlags & 2) == 0)) {
+        ((player->lakituProps & HELD_BY_LAKITU) == 0) && ((player->oobProps & UNDER_OOB_OR_FLUID_LEVEL) == 0) && ((player->oobProps & PASS_OOB_OR_FLUID_LEVEL) == 0)) {
         func_800C90F4(arg1, (player->characterId * 0x10) + 0x29008004);
     }
 }
 
 void func_8008F5A4(Player* player, s8 arg1) {
 
-    if ((player->unk_044 & 0x8000) != 0) {
+    if ((player->kartProps & UNKNOWN_BATTLE_VAR) != 0) {
         pop_player_balloon(player, arg1);
-        player->unk_044 &= ~0x8000;
+        player->kartProps &= ~UNKNOWN_BATTLE_VAR;
     }
 
     player->unk_206 = 0;
@@ -1395,11 +1395,11 @@ void apply_star_effect(Player* player, s8 arg1) {
 }
 
 // Star item
-void apply_star_sound_effect(Player* player, s8 arg1) {
+void trigger_star(Player* player, s8 arg1) {
     clean_effect(player, arg1);
 
     player->effects |= STAR_EFFECT;
-    player->soundEffects &= ~STAR_SOUND_EFFECT;
+    player->triggers &= ~STAR_TRIGGER;
     gPlayerStarEffectStartTime[arg1] = gCourseTimer;
     D_8018D900[arg1] = 1;
 
@@ -1450,7 +1450,7 @@ void apply_boo_effect(Player* player, s8 playerIndex) {
             player->alpha = ALPHA_MAX;
             gPlayerOtherScreensAlpha[playerIndex] = ALPHA_MAX;
             player->effects &= ~0x80000000;
-            if ((player->type & 0x4000) != 0) {
+            if ((player->type & PLAYER_HUMAN) != 0) {
                 func_800CB064(playerIndex);
             }
         }
@@ -1460,18 +1460,18 @@ void apply_boo_effect(Player* player, s8 playerIndex) {
             gPlayerOtherScreensAlpha[playerIndex] = ALPHA_MAX;
             player->alpha = ALPHA_MAX;
             player->effects &= ~0x80000000;
-            if ((player->type & 0x4000) != 0) {
+            if ((player->type & PLAYER_HUMAN) != 0) {
                 func_800CB064(playerIndex);
             }
         }
     }
 }
 
-void apply_boo_sound_effect(Player* player, s8 playerIndex) {
+void trigger_boo(Player* player, s8 playerIndex) {
     s16 temp_v1;
-
+    // become boo
     if ((player->type & PLAYER_HUMAN) != 0) {
-        player->unk_044 |= 0x200;
+        player->kartProps |= BECOME_INVISIBLE;
 
         for (temp_v1 = 0; temp_v1 < 10; ++temp_v1) {
             player->particlePool0[temp_v1].isAlive = 0;
@@ -1483,7 +1483,7 @@ void apply_boo_sound_effect(Player* player, s8 playerIndex) {
     clean_effect(player, playerIndex);
 
     player->effects |= BOO_EFFECT;
-    player->soundEffects &= ~BOO_SOUND_EFFECT;
+    player->triggers &= ~BOO_TRIGGER;
     gPlayerBooEffectStartTime[playerIndex] = gCourseTimer;
     gPlayerOtherScreensAlpha[playerIndex] = ALPHA_MAX;
 
@@ -1499,7 +1499,7 @@ void func_8008FB30(Player* player, s8 playerIndex) {
         gPlayerOtherScreensAlpha[playerIndex] = ALPHA_MAX;
 
         player->effects &= ~0x80000000;
-        if ((player->type & 0x4000) != 0) {
+        if ((player->type & PLAYER_HUMAN) != 0) {
             func_800CB064(playerIndex);
         }
     }
@@ -1509,7 +1509,7 @@ void func_8008FB30(Player* player, s8 playerIndex) {
         gPlayerOtherScreensAlpha[playerIndex] = ALPHA_MAX;
         player->alpha = ALPHA_MAX;
         player->effects &= ~0x80000000;
-        if ((player->type & 0x4000) != 0) {
+        if ((player->type & PLAYER_HUMAN) != 0) {
             func_800CB064(playerIndex);
         }
     }
@@ -1529,8 +1529,8 @@ void func_8008FC64(Player* player, s8 playerIndex) {
     player->alpha -= ALPHA_CHANGE_MEDIUM;
     if (player->alpha <= ALPHA_CHANGE_MEDIUM) {
         player->alpha = ALPHA_MIN;
-        player->soundEffects &= 0xFBFFFFFF;
-        player->soundEffects |= 0x08000000;
+        player->triggers &= ~LOSE_BATTLE_EFFECT;
+        player->triggers |= BECOME_BOMB_EFFECT;
         player->type |= PLAYER_UNKNOWN_0x40;
         func_8008FDA8(player, playerIndex);
         func_800569F4(playerIndex);
@@ -1541,7 +1541,7 @@ void func_8008FCDC(Player* player, s8 arg1) {
     player->alpha += ALPHA_CHANGE_SMALL;
     if (player->alpha > ALPHA_MAX - (ALPHA_CHANGE_LARGE * 2)) {
         player->alpha = ALPHA_MAX;
-        player->soundEffects &= ~0x08000000;
+        player->triggers &= ~BECOME_BOMB_EFFECT;
     }
     func_80056A40(arg1, (u32) player->alpha);
 }
@@ -1549,8 +1549,8 @@ void func_8008FCDC(Player* player, s8 arg1) {
 void func_8008FD4C(Player* player, UNUSED s8 arg1) {
     s16 temp_v0;
 
-    player->soundEffects |= 0x04000000;
-    player->unk_044 |= 0x200;
+    player->triggers |= LOSE_BATTLE_EFFECT;
+    player->kartProps |= BECOME_INVISIBLE;
 
     for (temp_v0 = 0; temp_v0 < 10; ++temp_v0) {
         player->particlePool0[temp_v0].isAlive = 0;
@@ -1561,7 +1561,7 @@ void func_8008FD4C(Player* player, UNUSED s8 arg1) {
 
 void func_8008FDA8(Player* player, UNUSED s8 arg1) {
     s16 temp_v0;
-    player->unk_044 |= 0x200;
+    player->kartProps |= BECOME_INVISIBLE;
     for (temp_v0 = 0; temp_v0 < 10; ++temp_v0) {
         player->particlePool0[temp_v0].isAlive = 0;
         player->particlePool0[temp_v0].unk_01E = 0;
@@ -1576,21 +1576,21 @@ void func_8008FDF4(Player* player, UNUSED s8 arg1) {
     player->kartHopJerk = D_800E37F0[player->characterId];
     player->kartHopAcceleration = 0.0f;
     player->kartHopVelocity = D_800E37D0[player->characterId];
-    player->soundEffects &= ~0x00100000;
-    player->effects |= 0x10000000;
+    player->triggers &= ~UNUSED_TRIGGER_0x10000;
+    player->effects |= UNKNOWN_EFFECT_0x10000000;
 }
 
 void func_8008FE84(Player* player, UNUSED s8 arg1) {
     player->effects &= ~0x10;
     if ((player->effects & 8) != 8) {
-        player->effects &= ~0x10000000;
+        player->effects &= ~UNKNOWN_EFFECT_0x10000000;
         player->currentSpeed /= 2;
         player->kartPropulsionStrength /= 2;
     }
 }
 
 void func_8008FEDC(Player* player, UNUSED s8 arg1) {
-    player->effects &= ~0x10000000;
+    player->effects &= ~UNKNOWN_EFFECT_0x10000000;
     player->kartHopJerk = 0.0f;
     player->kartHopVelocity = 0.0f;
     player->kartHopAcceleration = 0.0f;
@@ -1602,90 +1602,6 @@ void func_8008FF08(Player* player, s8 playerId) {
     s16 waypoint;
 
     CM_Waypoints(player, playerId);
-
-    //     switch (gCurrentCourseId) {
-    //         case COURSE_BOWSER_CASTLE:
-    //             waypoint = gNearestPathPointByPlayerId[playerId];
-    //             if ((waypoint >= 0x235) && (waypoint < 0x247)) {
-    //                 player->nearestPathPointId = 0x214;
-    //             } else if ((waypoint >= 0x267) && (waypoint < 0x277)) {
-    //                 player->nearestPathPointId = 0x25B;
-    //             } else {
-    //                 player->nearestPathPointId = gNearestPathPointByPlayerId[playerId];
-    //                 if (player->nearestPathPointId < 0) {
-    //                     player->nearestPathPointId = gPathCountByPathIndex[0] + player->nearestPathPointId;
-    //                 }
-    //             }
-    //             break;
-    //         case COURSE_BANSHEE_BOARDWALK:
-    //             waypoint = gNearestPathPointByPlayerId[playerId];
-    //             if ((waypoint >= 0x12C) && (waypoint < 0x13C)) {
-    //                 player->nearestPathPointId = 0x12CU;
-    //             } else {
-    //                 player->nearestPathPointId = gNearestPathPointByPlayerId[playerId];
-    //                 if (player->nearestPathPointId < 0) {
-    //                     player->nearestPathPointId = gPathCountByPathIndex[0] + player->nearestPathPointId;
-    //                 }
-    //             }
-    //             break;
-    //         case COURSE_YOSHI_VALLEY:
-    //         case COURSE_RAINBOW_ROAD:
-    //             player->nearestPathPointId = gCopyNearestWaypointByPlayerId[playerId];
-    //             break;
-    //         case COURSE_FRAPPE_SNOWLAND:
-    //             waypoint = gNearestPathPointByPlayerId[playerId];
-    // #ifdef VERSION_EU
-    //             if (((waypoint >= 0xF0) && (waypoint < 0x11E)) || ((gCopyNearestWaypointByPlayerId[playerId] >= 0xF0)
-    //             &&
-    //                                                                (gCopyNearestWaypointByPlayerId[playerId] <
-    //                                                                0x11E)))
-    // #else
-    //             if ((waypoint >= 0xF0) && (waypoint < 0x105))
-    // #endif
-    //             {
-    //                 player->nearestPathPointId = 0xF0U;
-    //             } else {
-    //                 player->nearestPathPointId = gCopyNearestWaypointByPlayerId[playerId];
-    //                 if (player->nearestPathPointId < 0) {
-    //                     player->nearestPathPointId = gPathCountByPathIndex[0] + player->nearestPathPointId;
-    //                 }
-    //             }
-    //             break;
-    //         case COURSE_ROYAL_RACEWAY:
-    //             waypoint = gNearestPathPointByPlayerId[playerId];
-    //             if ((waypoint >= 0x258) && (waypoint < 0x2A4)) {
-    //                 player->nearestPathPointId = 0x258U;
-    //             } else {
-    //                 player->nearestPathPointId = gCopyNearestWaypointByPlayerId[playerId];
-    //                 if (player->nearestPathPointId < 0) {
-    //                     player->nearestPathPointId = gPathCountByPathIndex[0] + player->nearestPathPointId;
-    //                 }
-    //             }
-    //             break;
-    //         case COURSE_DK_JUNGLE:
-    //             waypoint = gNearestPathPointByPlayerId[playerId];
-    //             if ((waypoint >= 0xB9) && (waypoint < 0x119)) {
-    //                 player->nearestPathPointId = 0xB9U;
-    //             } else {
-    //                 player->nearestPathPointId = gNearestPathPointByPlayerId[playerId];
-    //                 if (player->nearestPathPointId < 0) {
-    //                     player->nearestPathPointId = gPathCountByPathIndex[0] + player->nearestPathPointId;
-    //                 }
-    //             }
-    //             break;
-    //         case COURSE_BLOCK_FORT:
-    //         case COURSE_SKYSCRAPER:
-    //         case COURSE_DOUBLE_DECK:
-    //         case COURSE_BIG_DONUT:
-    //             player->nearestPathPointId = 0U;
-    //             break;
-    //         default:
-    //             player->nearestPathPointId = gNearestPathPointByPlayerId[playerId];
-    //             if (player->nearestPathPointId < 0) {
-    //                 player->nearestPathPointId = gPathCountByPathIndex[0] + player->nearestPathPointId;
-    //             }
-    //             break;
-    //     }
 }
 
 void func_80090178(Player* player, s8 playerId, Vec3f arg2, Vec3f arg3) {
@@ -1711,15 +1627,15 @@ void func_80090178(Player* player, s8 playerId, Vec3f arg2, Vec3f arg3) {
     if (IsYoshiValley()) {
         test = player->nearestPathPointId;
         temp_v1 = &gTrackPaths[gCopyPathIndexByPlayerId[playerId]][test];
-        arg2[0] = temp_v1->posX;
-        arg2[1] = temp_v1->posY;
-        arg2[2] = temp_v1->posZ;
+        arg2[0] = temp_v1->x;
+        arg2[1] = temp_v1->y;
+        arg2[2] = temp_v1->z;
         temp_v1 = &gTrackPaths[gCopyPathIndexByPlayerId[playerId]]
                               [(player->nearestPathPointId + 5) %
                                (gPathCountByPathIndex[gCopyPathIndexByPlayerId[playerId]] + 1)];
-        arg3[0] = temp_v1->posX;
-        arg3[1] = temp_v1->posY;
-        arg3[2] = temp_v1->posZ;
+        arg3[0] = temp_v1->x;
+        arg3[1] = temp_v1->y;
+        arg3[2] = temp_v1->z;
     } else if (IsBlockFort()) {
         arg2[0] = spF8[playerId];
         arg2[1] = 0.0f;
@@ -1751,13 +1667,13 @@ void func_80090178(Player* player, s8 playerId, Vec3f arg2, Vec3f arg3) {
     } else {
         test = player->nearestPathPointId;
         temp_v1 = &gTrackPaths[0][test];
-        arg2[0] = temp_v1->posX;
-        arg2[1] = temp_v1->posY;
-        arg2[2] = temp_v1->posZ;
+        arg2[0] = temp_v1->x;
+        arg2[1] = temp_v1->y;
+        arg2[2] = temp_v1->z;
         temp_v1 = &gTrackPaths[0][(player->nearestPathPointId + 5) % (gPathCountByPathIndex[0] + 1)];
-        arg3[0] = temp_v1->posX;
-        arg3[1] = temp_v1->posY;
-        arg3[2] = temp_v1->posZ;
+        arg3[0] = temp_v1->x;
+        arg3[1] = temp_v1->y;
+        arg3[2] = temp_v1->z;
     }
 }
 
@@ -1767,7 +1683,7 @@ void func_80090778(Player* player) {
     player->unk_078 = 0;
     player->unk_07C = 0;
     player->unk_0C0 = 0;
-    player->unk_0CA |= 8;
+    player->lakituProps |= LAKITU_SCENE;
     player->effects &= ~0x10;
     player->unk_222 = 0;
     player->kartPropulsionStrength = 0.0f;
@@ -1800,24 +1716,24 @@ void func_80090868(Player* player) {
     player->kartPropulsionStrength = 0.0f;
     playerIndex = get_player_index_for_player(player);
 
-    if ((player->unk_0CA & 2) != 2) {
+    if ((player->lakituProps & HELD_BY_LAKITU) != HELD_BY_LAKITU) {
         player->unk_D98 = 1;
         player->unk_D9C = 0.0f;
         player->unk_DA0 = 0.5f;
         func_8008FF08(player, playerIndex);
         player->unk_222 = 0;
-        player->unk_0CA |= 2;
+        player->lakituProps |= HELD_BY_LAKITU;
         player->unk_0C8 = 0;
-        if ((player->waterInteractionFlags & WATER_IS_FULLY_SUBMERGED) == WATER_IS_FULLY_SUBMERGED) {
+        if ((player->oobProps & UNDER_OOB_OR_FLUID_LEVEL) == UNDER_OOB_OR_FLUID_LEVEL) {
             if ((IsBowsersCastle()) || (IsBigDonut())) {
-                player->unk_0CA |= 0x1000;
+                player->lakituProps |= LAKITU_LAVA;
             } else {
-                player->unk_0CA |= 0x2000;
+                player->lakituProps |= LAKITU_WATER;
             }
 
             if ((IsSherbetLand()) || (IsSkyscraper()) ||
                 (IsRainbowRoad())) {
-                player->unk_0CA &= ~0x3000;
+                player->lakituProps &= ~(LAKITU_LAVA | LAKITU_WATER);
             }
         }
     }
@@ -1840,8 +1756,8 @@ void func_80090970(Player* player, s8 playerId, s8 arg2) {
     clean_effect(player, playerId);
     switch (player->unk_222) {
         case 0:
-            if ((player->unk_0CA & 1) == 1) {
-                if ((player->unk_0C8 < 0x3C) || ((player->unk_0CA & 2) != 2)) {
+            if ((player->lakituProps & LAKITU_RETRIEVAL) == LAKITU_RETRIEVAL) {
+                if ((player->unk_0C8 < 0x3C) || ((player->lakituProps & HELD_BY_LAKITU) != HELD_BY_LAKITU)) {
                     player->unk_0C8++;
                     if (player->unk_0C8 >= 0x3C) {
                         player->unk_0C8 = 0x003C;
@@ -1851,16 +1767,16 @@ void func_80090970(Player* player, s8 playerId, s8 arg2) {
                     move_s16_towards(&player->unk_0CC[arg2], 0, 0.2f);
                     if ((gPlayerWaterLevel[playerId] + 40.0f) <= player->pos[1]) {
                         player->unk_222 = 1;
-                        player->unk_0CA |= 4;
+                        player->lakituProps |= LAKITU_FIZZLE;
                         player->alpha = ALPHA_MAX;
                     }
                 }
-            } else if ((player->unk_0CA & 2) == 2) {
+            } else if ((player->lakituProps & HELD_BY_LAKITU) == HELD_BY_LAKITU) {
                 move_f32_towards(&player->pos[1], player->unk_074 + 100.0f, 0.025f);
                 move_s16_towards(&player->unk_0CC[arg2], 0, 0.2f);
                 if ((player->unk_074 + 40.0f) <= player->pos[1]) {
                     player->unk_222 = 1;
-                    player->unk_0CA |= 4;
+                    player->lakituProps |= LAKITU_FIZZLE;
                     player->alpha = ALPHA_MAX;
                 }
             }
@@ -1869,16 +1785,16 @@ void func_80090970(Player* player, s8 playerId, s8 arg2) {
             }
             break;
         case 1:
-            if (((player->type & PLAYER_HUMAN) == 0x4000) && ((player->type & PLAYER_CPU) == 0)) {
+            if (((player->type & PLAYER_HUMAN) == PLAYER_HUMAN) && ((player->type & PLAYER_CPU) == 0)) {
                 func_8009E088(playerId, 0xA);
             }
-            if ((player->unk_0CA & 1) == 1) {
+            if ((player->lakituProps & LAKITU_RETRIEVAL) == LAKITU_RETRIEVAL) {
                 move_f32_towards(&player->pos[1], gPlayerWaterLevel[playerId] + 40.0f, 0.02f);
                 player->alpha -= ALPHA_CHANGE_LARGE;
                 if (player->alpha <= ALPHA_CHANGE_LARGE) {
                     player->alpha = ALPHA_MIN;
                     player->unk_222 = 2;
-                    player->unk_0CA &= ~0x0001;
+                    player->lakituProps &= ~LAKITU_RETRIEVAL;
                 }
             } else {
                 move_f32_towards(&player->pos[1], player->oldPos[1] + 40.0f, 0.02f);
@@ -1888,7 +1804,7 @@ void func_80090970(Player* player, s8 playerId, s8 arg2) {
                     player->unk_222 = 2;
                 }
             }
-            player->unk_0CA &= ~0x2000;
+            player->lakituProps &= ~LAKITU_WATER;
             break;
         case 2:
             func_80090178(player, playerId, sp44, sp38);
@@ -1914,7 +1830,7 @@ void func_80090970(Player* player, s8 playerId, s8 arg2) {
             if (player->alpha > ALPHA_MAX - (ALPHA_CHANGE_LARGE * 2)) {
                 player->alpha = ALPHA_MAX;
                 player->unk_222 = 4;
-                player->unk_0CA &= ~0x0004;
+                player->lakituProps &= ~LAKITU_FIZZLE;
                 player->unk_0C8 = 0;
             }
             break;
@@ -1925,14 +1841,14 @@ void func_80090970(Player* player, s8 playerId, s8 arg2) {
             }
             if (player->unk_0C8 == 0x00FC) {
                 waypoint = gTrackPaths[0];
-                player->pos[0] = waypoint->posX;
-                player->pos[1] = waypoint->posY;
-                player->pos[2] = waypoint->posZ;
+                player->pos[0] = waypoint->x;
+                player->pos[1] = waypoint->y;
+                player->pos[2] = waypoint->z;
             }
             move_f32_towards(&player->pos[1], (player->unk_074 + player->boundingBoxSize) - 2.0f, 0.04f);
             player->unk_0C8++;
             if (((player->effects & 8) != 8) || (player->effects & 0x8000)) {
-                player->unk_0CA &= ~0x1000;
+                player->lakituProps &= ~LAKITU_LAVA;
                 if (player->unk_0C8 >= 0x5B) {
                     if (player->type & PLAYER_HUMAN) {
                         func_800C9018(playerId, SOUND_ARG_LOAD(0x01, 0x00, 0xFA, 0x28));
@@ -1940,10 +1856,10 @@ void func_80090970(Player* player, s8 playerId, s8 arg2) {
                     if (gModeSelection == BATTLE) {
                         pop_player_balloon(player, playerId);
                     }
-                    player->unk_0CA &= ~0x0002;
-                    player->waterInteractionFlags &= ~WATER_IN_DEEP_LIQUID_STATE;
-                    if ((player->unk_0CA & 0x80) != 0x80) {
-                        player->unk_0CA &= ~0x0008;
+                    player->lakituProps &= ~HELD_BY_LAKITU;
+                    player->oobProps &= ~UNDER_FLUID_LEVEL;
+                    if ((player->lakituProps & FROZEN_EFFECT) != FROZEN_EFFECT) {
+                        player->lakituProps &= ~LAKITU_SCENE;
                         if ((player->topSpeed * 0.9) <= player->currentSpeed) {
                             func_8008F104(player, playerId);
                         }
@@ -1979,7 +1895,7 @@ void func_80090970(Player* player, s8 playerId, s8 arg2) {
 
 bool prevent_item_use(Player* player) {
     s32 phi_v0 = 0;
-    if ((((((player->unk_0CA & 2) == 2) || ((player->unk_0CA & 8) == 8)) ||
+    if ((((((player->lakituProps & HELD_BY_LAKITU) == HELD_BY_LAKITU) || ((player->lakituProps & LAKITU_SCENE) == LAKITU_SCENE)) ||
           ((player->type & PLAYER_UNKNOWN_0x40) != 0)) ||
          ((player->type & PLAYER_CINEMATIC_MODE) != 0)) ||
         ((player->type & PLAYER_EXISTS) == 0)) {
@@ -2009,13 +1925,14 @@ bool prevent_item_use(Player* player) {
     }
 }
 
+//UNUSED
 void func_800911B4(Player* player, s8 arg1) {
     s32 temp_v0;
 
     player->unk_0AE = player->rotation[1];
-    player->unk_044 |= 0x1800;
-    player->unk_044 &= ~0x0400;
-    player->unk_044 |= 0x2000;
+    player->kartProps |= (UNUSED_0x1000 | UNUSED_0x800);
+    player->kartProps &= ~UNUSED_0x400;
+    player->kartProps |= UNUSED_0x2000;
     player->kartHopJerk = 0.002f;
     player->kartHopAcceleration = 0.0f;
     player->kartHopVelocity = 2.6f;
@@ -2052,12 +1969,13 @@ void func_800911B4(Player* player, s8 arg1) {
     } while (temp_v0 < 10);
 }
 
+// unused
 void func_80091298(Player* player, s8 arg1) {
     s16 var_v1;
     UNUSED s32 stackPadding1;
     Vec3f spC = { 27.167f, 25.167f, 23.167f };
 
-    player->unk_044 |= 0x2000;
+    player->kartProps |= UNUSED_0x2000;
     if (player->unk_0B2 == 0) {
         var_v1 = 0;
     } else {
@@ -2079,7 +1997,7 @@ void func_80091298(Player* player, s8 arg1) {
                 player->unk_07C = 0;
                 player->unk_0C0 = 0;
                 player->unk_DB4.unkC = 3.0f;
-                player->unk_044 &= ~0x800;
+                player->kartProps &= ~UNUSED_0x800;
                 player->kartGravity = gKartGravityTable[player->characterId];
                 player->unk_0D4[0] = 0;
                 player->type |= PLAYER_START_SEQUENCE;
@@ -2095,8 +2013,8 @@ void func_80091298(Player* player, s8 arg1) {
 }
 
 void func_80091440(s8 arg0) {
-    if ((gPlayers[arg0].unk_044 & 0x800) == 0) {
-        gPlayers[arg0].unk_044 |= 0x2400;
-        gPlayers[arg0].type &= ~0x2000;
+    if ((gPlayers[arg0].kartProps & UNUSED_0x800) == 0) {
+        gPlayers[arg0].kartProps |= (UNUSED_0x2000 | UNUSED_0x400);
+        gPlayers[arg0].type &= ~PLAYER_START_SEQUENCE;
     }
 }

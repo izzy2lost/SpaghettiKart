@@ -2,9 +2,10 @@
 #include <libultra/gbi.h>
 #include "Crab.h"
 #include <vector>
-#include "CoreMath.h"
+#include "engine/CoreMath.h"
 
 #include "port/Game.h"
+#include "port/interpolation/FrameInterpolation.h"
 
 extern "C" {
 #include "macros.h"
@@ -13,35 +14,44 @@ extern "C" {
 #include "camera.h"
 #include "update_objects.h"
 #include "render_objects.h"
-#include "actors.h"
+#include "racing/actors.h"
 #include "code_80057C60.h"
 #include "code_80086E70.h"
-#include "math_util.h"
+#include "racing/math_util.h"
 #include "math_util_2.h"
 #include "code_80005FD0.h"
-#include "some_data.h"
-#include "ceremony_and_credits.h"
-#include "assets/koopa_troopa_beach_data.h"
+#include "textures/some_data.h"
+#include "ending/ceremony_and_credits.h"
+#include "assets/models/tracks/koopa_troopa_beach/koopa_troopa_beach_data.h"
+#include "assets/textures/tracks/koopa_troopa_beach/koopa_troopa_beach_data.h"
+#include "assets/models/common_data.h"
 }
 
 size_t OCrab::_count = 0;
 
-OCrab::OCrab(const FVector2D& start, const FVector2D& end) {
+OCrab::OCrab(const SpawnParams& params) : OObject(params) {
     Name = "Crab";
+    ResourceName = "mk:crab";
     _idx = _count;
-    _start = start;
-    _end = end;
+    _start = params.PatrolStart.value_or(FVector2D(0, 0));
+    _end = params.PatrolEnd.value_or(FVector2D(0, 0));
 
     find_unused_obj_index(&_objectIndex);
 
     init_object(_objectIndex, 0);
-    gObjectList[_objectIndex].pos[0] = gObjectList[_objectIndex].origin_pos[0] = start.x * xOrientation;
-    gObjectList[_objectIndex].pos[2] = gObjectList[_objectIndex].origin_pos[2] = start.z;
+    gObjectList[_objectIndex].pos[0] = gObjectList[_objectIndex].origin_pos[0] = _start.x * xOrientation;
+    gObjectList[_objectIndex].pos[2] = gObjectList[_objectIndex].origin_pos[2] = _start.z;
 
-    gObjectList[_objectIndex].unk_01C[0] = end.x * xOrientation;
-    gObjectList[_objectIndex].unk_01C[2] = end.z;
+    gObjectList[_objectIndex].unk_01C[0] = _end.x * xOrientation;
+    gObjectList[_objectIndex].unk_01C[2] = _end.z;
 
     _count++;
+}
+
+void OCrab::SetSpawnParams(SpawnParams& params) {
+    params.Name = std::string(ResourceName);
+    params.PatrolStart = _start;
+    params.PatrolEnd = _end;
 }
 
 void OCrab::Tick(void) {
@@ -64,11 +74,21 @@ Vtx common_vtx_crab[] = {
 void OCrab::Draw(s32 cameraId) {
     Camera* camera;
     s32 objectIndex = _objectIndex;
+
+    // With this the crab disappears too early when the camera is rotating away from the crab
+    // func_8008A364(objectIndex, cameraId, 0x2AABU, 800);
+    // if (is_obj_flag_status_active(objectIndex, VISIBLE) == 0) {
+    //     return;
+    // }
+    
     if (gObjectList[objectIndex].state >= 2) {
         camera = &camera1[cameraId];
+        FrameInterpolation_RecordOpenChild("crab", (_idx << 5) | cameraId);
         func_8004A6EC(objectIndex, 0.5f);
+        FrameInterpolation_RecordCloseChild();
         gObjectList[objectIndex].orientation[1] =
             func_800418AC(gObjectList[objectIndex].pos[0], gObjectList[objectIndex].pos[2], camera->pos);
+        FrameInterpolation_RecordOpenChild("crab2", (_idx << 5) | cameraId);
         rsp_set_matrix_transformation(gObjectList[objectIndex].pos, gObjectList[objectIndex].orientation,
                                       gObjectList[objectIndex].sizeScaling);
         gSPDisplayList(gDisplayListHead++, (Gfx*) D_0D007D78);
@@ -77,31 +97,7 @@ void OCrab::Draw(s32 cameraId) {
         gSPVertex(gDisplayListHead++, (uintptr_t) common_vtx_crab, 4, 0);
         gSPDisplayList(gDisplayListHead++, (Gfx*) common_rectangle_display);
         gSPTexture(gDisplayListHead++, 1, 1, 0, G_TX_RENDERTILE, G_OFF);
-    }
-}
-
-void OCrab::DrawModel(s32 cameraId) {
-    s32 someIndex;
-    s32 objectIndex = _objectIndex;
-    func_8008A364(objectIndex, cameraId, 0x2AABU, 800);
-    if (is_obj_flag_status_active(objectIndex, VISIBLE) != 0) {
-        Camera* camera;
-        s32 objectIndex;
-
-        if (gObjectList[objectIndex].state >= 2) {
-            camera = &camera1[cameraId];
-            func_8004A6EC(objectIndex, 0.5f);
-            gObjectList[objectIndex].orientation[1] =
-                func_800418AC(gObjectList[objectIndex].pos[0], gObjectList[objectIndex].pos[2], camera->pos);
-            rsp_set_matrix_transformation(gObjectList[objectIndex].pos, gObjectList[objectIndex].orientation,
-                                          gObjectList[objectIndex].sizeScaling);
-            gSPDisplayList(gDisplayListHead++, (Gfx*) D_0D007D78);
-            gDPLoadTLUT_pal256(gDisplayListHead++, gObjectList[objectIndex].activeTLUT);
-            rsp_load_texture((u8*) gObjectList[objectIndex].activeTexture, 64, 64);
-            gSPVertex(gDisplayListHead++, (uintptr_t) common_vtx_crab, 4, 0);
-            gSPDisplayList(gDisplayListHead++, (Gfx*) common_rectangle_display);
-            gSPTexture(gDisplayListHead++, 1, 1, 0, G_TX_RENDERTILE, G_OFF);
-        }
+        FrameInterpolation_RecordCloseChild();
     }
 }
 
@@ -187,5 +183,31 @@ void OCrab::func_80082C30(s32 objectIndex) {
 void OCrab::func_80082E18(s32 objectIndex) {
     if (gObjectList[objectIndex].state >= 2) {
         func_80089F24(objectIndex);
+    }
+}
+
+void OCrab::DrawEditorProperties() {
+    ImGui::Text("Start Location");
+    ImGui::SameLine();
+
+    if (ImGui::DragFloat2("##PathSpan", (float*)&_start)) {
+    }
+    ImGui::SameLine();
+    if (ImGui::Button(ICON_FA_UNDO "##ResetPathSpan")) {
+        _start = FVector2D(0.0f, 0.0f);
+        gObjectList[_objectIndex].pos[0] = gObjectList[_objectIndex].origin_pos[0] = _start.x * xOrientation;
+        gObjectList[_objectIndex].pos[2] = gObjectList[_objectIndex].origin_pos[2] = _start.z;
+    }
+
+    ImGui::Text("Patrol Location");
+    ImGui::SameLine();
+
+    if (ImGui::DragFloat2("##PatrolLoc", (float*)&_end)) {
+    }
+    ImGui::SameLine();
+    if (ImGui::Button(ICON_FA_UNDO "##ResetPatrolLoc")) {
+        _end = FVector2D(0.0f, 0.0f);
+        gObjectList[_objectIndex].unk_01C[0] = _end.x * xOrientation;
+        gObjectList[_objectIndex].unk_01C[2] = _end.z;
     }
 }

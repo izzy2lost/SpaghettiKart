@@ -1,14 +1,13 @@
 #include <libultraship.h>
 #include <mk64.h>
 #include <macros.h>
-#include <math_util.h>
+#include <racing/math_util.h>
 #include <main.h>
 #include "buffers.h"
 #include "buffers/trig_tables.h"
 #include "math.h"
 #include "memory.h"
 #include "engine/Matrix.h"
-#include "course.h"
 #include "port/Game.h"
 #include <port/interpolation/FrameInterpolation.h>
 #include <port/interpolation/matrix.h>
@@ -1139,11 +1138,11 @@ f32 is_within_render_distance(Vec3f cameraPos, Vec3f objectPos, u16 orientationY
     }
 
     angleObject = get_angle_between_two_vectors(cameraPos, objectPos);
-    minus_fov_angle = (orientationY - extended_fov);
-    plus_fov_angle = (orientationY + extended_fov);
+    minus_fov_angle = (s32)orientationY - (s32)extended_fov;
+    plus_fov_angle = (s32)orientationY + (s32)extended_fov;
 
     if (minDistance == 0.0f) {
-        if (is_visible_between_angle((orientationY + extended_fov), (orientationY - extended_fov), angleObject) == 1) {
+        if (is_visible_between_angle(plus_fov_angle, minus_fov_angle, angleObject) == 1) {
             if (IsKalimariDesert()) {
                 return distance / 6.5f; // set for better DD settings in Desert
             } else {

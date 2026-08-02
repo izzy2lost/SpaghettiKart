@@ -1,6 +1,6 @@
-#include <actors.h>
+#include <racing/actors.h>
 #include <main.h>
-#include <assets/choco_mountain_data.h>
+#include <assets/models/tracks/choco_mountain/choco_mountain_data.h>
 #include "port/interpolation/FrameInterpolation.h"
 
 /**
@@ -17,11 +17,13 @@ void render_actor_falling_rock(Camera* camera, struct FallingRock* rock) {
     f32 height;
     UNUSED s32 pad[4];
 
+    return; // No longer used. Use the C++ actor!
+
     if (rock->respawnTimer != 0) {
         return;
     }
 
-    height = is_within_render_distance(camera->pos, rock->pos, camera->rot[1], 400.0f, gCameraZoom[camera - camera1],
+    height = is_within_render_distance(camera->pos, rock->pos, camera->rot[1], 400.0f, camera->fieldOfView,
                                        4000000.0f);
 
     if (CVarGetInteger("gNoCulling", 0) == 1) {

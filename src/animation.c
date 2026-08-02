@@ -1,7 +1,7 @@
 #include <libultraship.h>
 #include <macros.h>
 #include <mk64.h>
-#include "math_util.h"
+#include "racing/math_util.h"
 #include "animation.h"
 #include "memory.h"
 #include <main.h>
@@ -96,7 +96,7 @@ void render_limb_or_add_mtx(Armature* arg0, s16* arg1, AnimationLimbVector arg2,
         }
         angle[i] = arg1[arg2[i].indexCycle + some_offset];
     }
-    FrameInterpolation_RecordMatrixPush(modelMatrix);
+    FrameInterpolation_RecordOpenChild("animation", TAG_OBJECT(arg0));
     mtxf_translate_rotate2(modelMatrix, pos, angle);
     //convert_to_fixed_point_matrix_animation(&gGfxPool->mtxHud[gMatrixHudCount], modelMatrix);
     sMatrixStackSize += 1;
@@ -108,7 +108,7 @@ void render_limb_or_add_mtx(Armature* arg0, s16* arg1, AnimationLimbVector arg2,
         model = (virtualModel);
         gSPDisplayList(gDisplayListHead++, model);
     }
-    FrameInterpolation_RecordMatrixPop(modelMatrix);
+    FrameInterpolation_RecordCloseChild();
 }
 
 void render_armature(Armature* animation, Animation* arg1, s16 timeCycle) {

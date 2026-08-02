@@ -42,6 +42,8 @@
 *.swp
 .vscode/*
 
+vcpkg_installed/*
+
 # General project-specific ignores
 __pycache__/*
 doxygen/doxygen/*
@@ -104,6 +106,7 @@ docs/doxygen_syms.md
 mingw64/
 .ash_history
 !tools/ido-recomp/*/*
+/properties.h
 
 # models
 models/**.blend
@@ -126,3 +129,7 @@ cmake-build-*/
 build*/
 .DS_Store
 .cache/
+_packages/
+out/
+
+compile_commands.json

@@ -1,16 +1,17 @@
-#include <actors.h>
+#include <racing/actors.h>
 #include <main.h>
-#include <assets/koopa_troopa_beach_data.h>
+#include <assets/models/tracks/koopa_troopa_beach/koopa_troopa_beach_data.h>
+#include "port/interpolation/FrameInterpolation.h"
 
 /**
  * @brief Renders the palm tree actor.
  * Actor used in Koopa Troopa Beach.
  *
- * @param arg0
+ * @param camera
  * @param arg1
  * @param arg2
  */
-void render_actor_palm_tree(Camera* arg0, UNUSED Mat4 arg1, struct PalmTree* arg2) {
+void render_actor_palm_tree(Camera* camera, UNUSED Mat4 arg1, struct PalmTree* arg2) {
     Vec3s spA8 = { 0, 0, 0 };
     Mat4 sp68;
     f32 temp_f0;
@@ -21,13 +22,14 @@ void render_actor_palm_tree(Camera* arg0, UNUSED Mat4 arg1, struct PalmTree* arg
     }
 
     temp_f0 =
-        is_within_render_distance(arg0->pos, arg2->pos, arg0->rot[1], 0.0f, gCameraZoom[arg0 - camera1], 4000000.0f);
+        is_within_render_distance(camera->pos, arg2->pos, camera->rot[1], 0.0f, camera->fieldOfView, 4000000.0f);
 
     if (CVarGetInteger("gNoCulling", 0) == 1) {
         temp_f0 = MAX(temp_f0, 0.0f);
     }
 
     if (!(temp_f0 < 0.0f)) {
+        FrameInterpolation_RecordOpenChild("palm_tree", TAG_ITEM_ADDR( ( (uintptr_t)arg2 << 5 ) | camera->cameraId ));
         if (((temp_v0 & 0x400) == 0) && (temp_f0 < 250000.0f)) {
             func_8029794C(arg2->pos, arg2->rot, 2.0f);
         }
@@ -60,5 +62,6 @@ void render_actor_palm_tree(Camera* arg0, UNUSED Mat4 arg1, struct PalmTree* arg
                     break;
             }
         }
+        FrameInterpolation_RecordCloseChild();
     }
 }

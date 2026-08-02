@@ -4,6 +4,20 @@
 #include <math.h>
 #include <libultraship.h>
 
+// no return attribute
+#if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 201112L
+    #include <stdnoreturn.h>
+    #define NORETURN noreturn
+#elif defined(__cplusplus) && __cplusplus >= 201103L
+    #define NORETURN [[noreturn]]
+#elif defined(_MSC_VER)
+    #define NORETURN __declspec(noreturn)
+#elif defined(__GNUC__) || defined(__clang__)
+    #define NORETURN __attribute__((noreturn))
+#else
+    #define NORETURN
+#endif
+
 #ifndef __sgi
 #define GLOBAL_ASM(...)
 #endif
@@ -28,13 +42,6 @@
 
 // Avoid undefined behaviour for non-returning functions
 #ifdef __GNUC__
-#define NORETURN __attribute__((noreturn))
-#else
-#define NORETURN
-#endif
-
-// Avoid undefined behaviour for non-returning functions
-#ifdef __GNUC__
 #define NO_REORDER __attribute__((no_reorder))
 #else
 #define NO_REORDER
@@ -49,16 +56,23 @@
 
 // Align to 8-byte boundary for DMA requirements
 #ifdef __GNUC__
-#define ALIGNED8
+#define ALIGNED8 __attribute__((aligned(8)))
 #else
 #define ALIGNED8
 #endif
 
 // Align to 16-byte boundary for audio lib requirements
 #ifdef __GNUC__
-#define ALIGNED16
+#define ALIGNED16 __attribute__((aligned(16)))
 #else
 #define ALIGNED16
+#endif
+
+// Align to 4096-byte boundary for 64-bit page requirements
+#ifdef __GNUC__
+#define ALIGNED4096 __attribute__((aligned(4096)))
+#else
+#define ALIGNED4096
 #endif
 
 // Fixed point macros

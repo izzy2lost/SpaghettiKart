@@ -4,8 +4,9 @@
 #include <vector>
 #include "Object.h"
 
-#include "World.h"
-#include "CoreMath.h"
+#include "engine/registry/RegisterContent.h"
+#include "engine/World.h"
+#include "engine/CoreMath.h"
 
 extern "C" {
 #include "macros.h"
@@ -15,7 +16,7 @@ extern "C" {
 #include "common_structs.h"
 #include "objects.h"
 #include "camera.h"
-#include "some_data.h"
+#include "assets/textures/some_data.h"
 }
 
 /**
@@ -28,7 +29,18 @@ extern "C" {
  */
 class OBat : public OObject {
 public:
-    explicit OBat(const FVector& pos, const IRotator& rot);
+
+    // This is simply a helper function to keep Spawning code clean
+    static inline OBat* Spawn(const FVector& pos, const IRotator& rot) {
+        SpawnParams params = {
+            .Name = "mk:bat",
+            .Location = pos,
+            .Rotation = rot,
+        };
+        return dynamic_cast<OBat*>(AddObjectToWorld<OBat>(params));
+    }
+
+    explicit OBat(const SpawnParams& params);
 
     ~OBat() {
         _count--;

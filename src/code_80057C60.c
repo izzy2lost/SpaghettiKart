@@ -12,11 +12,11 @@
 #include "camera.h"
 #include "code_80057C60.h"
 #include "main.h"
-#include "actors.h"
+#include "racing/actors.h"
 #include "code_800029B0.h"
 #include "racing/memory.h"
 #include <defines.h>
-#include "math_util.h"
+#include "racing/math_util.h"
 #include "math_util_2.h"
 #include "code_80005FD0.h"
 #include "render_player.h"
@@ -25,20 +25,21 @@
 #include "update_objects.h"
 #include "code_80086E70.h"
 #include "effects.h"
-#include <assets/data_800E8700.h>
-#include "skybox_and_splitscreen.h"
-#include <assets/common_data.h>
+#include <assets/models/data_800E8700.h>
+#include "racing/skybox_and_splitscreen.h"
+#include <assets/models/common_data.h>
 #include "audio/external.h"
 #include "objects.h"
 #include "bomb_kart.h"
 #include "menus.h"
-#include <assets/other_textures.h>
+#include <assets/textures/other_textures.h>
 #include "spawn_players.h"
 #include "sounds.h"
 #include "data/some_data.h"
-#include <assets/some_data.h>
+#include <assets/textures/some_data.h>
 #include "port/Game.h"
 #include "engine/Matrix.h"
+#include "engine/editor/Editor.h"
 #include "port/interpolation/FrameInterpolation.h"
 
 //! @warning this macro is undef'd at the end of this file
@@ -251,7 +252,7 @@ Vec3f D_80183E70;
 s32 gNextFreeLeafParticle;
 Vec3su D_80183E80;
 //! Appears to be a list of object list indices for the Item Window part of the HUD
-s32 gItemWindowObjectByPlayerId[4];
+s32 gItemWindowObjectByPlayerId[8];
 Vec3su D_80183E98;
 /**
  * Snowmen bodies in FrappeSnowland
@@ -293,7 +294,7 @@ const char** gLakituTexturePtr;
  */
 s32 indexObjectList4[32];
 //! Array of (4) Collisions?
-Collision D_8018C0B0[4];
+struct Collision D_8018C0B0[4];
 /**
  * List of object list indices used for:
  *   Moles in Moo Moo Farm
@@ -302,7 +303,7 @@ Collision D_8018C0B0[4];
  *   Potentially other things
  */
 s32 gObjectParticle1[gObjectParticle2_SIZE];
-Collision D_8018C3B0;
+struct Collision D_8018C3B0;
 /**
  * List of object list indices used for:
  * - Bats in Banshee's Boardwalk (but only 1 player mode?)
@@ -311,14 +312,14 @@ Collision D_8018C3B0;
  */
 s32 gObjectParticle2[gObjectParticle2_SIZE];
 // Maybe some unused Collision?
-UNUSED Collision D_8018C5F0;
+UNUSED struct Collision D_8018C5F0;
 /**
  * List of object list indices used for:
  * - Train index 1 smoke in Kalimari Desert
  * - Ferry index 1 smoke in DK Jungle
  */
 s32 gObjectParticle3[gObjectParticle3_SIZE];
-Collision D_8018C830;
+struct Collision D_8018C830;
 /**
  * List of object list indices. Used both for the fires in the DK Jungle cave
  * and, seemingly for the trail that shells leave behind them.
@@ -411,31 +412,31 @@ void func_80057C60(void) {
 void func_80057CE4(void) {
     switch (D_8018D21C) {
         case 0:
-            func_802A3730(D_800DC5EC);
+            race_set_viewport(gScreenOneCtx);
             break;
         case 1:
-            func_802A3730(D_800DC5EC);
+            race_set_viewport(gScreenOneCtx);
             break;
         case 2:
-            func_802A3730(D_800DC5F0);
+            race_set_viewport(gScreenTwoCtx);
             break;
         case 3:
-            func_802A3730(D_800DC5EC);
+            race_set_viewport(gScreenOneCtx);
             break;
         case 4:
-            func_802A3730(D_800DC5F0);
+            race_set_viewport(gScreenTwoCtx);
             break;
         case 8:
-            func_802A3730(D_800DC5EC);
+            race_set_viewport(gScreenOneCtx);
             break;
         case 9:
-            func_802A3730(D_800DC5F0);
+            race_set_viewport(gScreenTwoCtx);
             break;
         case 10:
-            func_802A3730(D_800DC5F4);
+            race_set_viewport(gScreenThreeCtx);
             break;
         case 11:
-            func_802A3730(D_800DC5F8);
+            race_set_viewport(gScreenFourCtx);
             break;
     }
 }
@@ -457,7 +458,7 @@ void func_80057DD0(void) {
     }
 }
 
-void func_80057FC4(u32 arg0) {
+void func_80057FC4(ScreenContext* ctx, u32 arg0) {
     UNUSED Gfx* temp_v1;
 
     if ((gHUDDisable != 0)) {
@@ -472,24 +473,32 @@ void func_80057FC4(u32 arg0) {
 
     switch (arg0) {
         case 0:
-            func_80051EBC();
+            func_80051EBC(ctx);
             break;
         case 1:
-            func_80051EF8();
+            func_80051EF8(ctx);
             break;
         case 2:
-            func_80051F9C();
+            func_80051F9C(ctx);
             break;
         case 3:
-            func_80052044();
+            func_80052044(ctx);
             break;
         case 4:
-            func_80052080();
+            func_80052080(ctx);
+            break;
+        case 8:
+        case 9:
+        case 10:
+        case 11:
+            if (CVarGetInteger("gMultiplayerNoFeatureCuts", 0) == true) {
+                func_80052080(ctx);
+            }
             break;
     }
 }
 
-void render_object(u32 arg0) {
+void render_object(ScreenContext* screen) {
     UNUSED Gfx* temp_v1;
 
     if (gHUDDisable != 0) {
@@ -502,100 +511,17 @@ void render_object(u32 arg0) {
         return;
     }
 
-    switch (arg0) {
-        case RENDER_SCREEN_MODE_1P_PLAYER_ONE:
-            render_object_p1();
-            break;
-        case RENDER_SCREEN_MODE_2P_HORIZONTAL_PLAYER_ONE:
-            render_object_p1();
-            break;
-        case RENDER_SCREEN_MODE_2P_HORIZONTAL_PLAYER_TWO:
-            render_object_p2();
-            break;
-        case RENDER_SCREEN_MODE_2P_VERTICAL_PLAYER_ONE:
-            render_object_p1();
-            break;
-        case RENDER_SCREEN_MODE_2P_VERTICAL_PLAYER_TWO:
-            render_object_p2();
-            break;
-        case 5:
-            render_object_p1();
-            break;
-        case 6:
-            render_object_p2();
-            break;
-        case 7:
-            render_object_p3();
-            break;
-        case RENDER_SCREEN_MODE_3P_4P_PLAYER_ONE:
-            render_object_p1();
-            break;
-        case RENDER_SCREEN_MODE_3P_4P_PLAYER_TWO:
-            render_object_p2();
-            break;
-        case RENDER_SCREEN_MODE_3P_4P_PLAYER_THREE:
-            render_object_p3();
-            break;
-        case RENDER_SCREEN_MODE_3P_4P_PLAYER_FOUR:
-            render_object_p4();
-            break;
-    }
-}
-
-void render_object_p1(void) {
     gDPSetTexturePersp(gDisplayListHead++, G_TP_PERSP);
-
-    gSPMatrix(gDisplayListHead++, GetPerspMatrix(PLAYER_ONE),
+    gSPMatrix(gDisplayListHead++, screen->camera->perspectiveMatrix,
               G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
-    gSPMatrix(gDisplayListHead++, GetLookAtMatrix(PLAYER_ONE),
+    gSPMatrix(gDisplayListHead++, screen->camera->lookAtMatrix,
               G_MTX_NOPUSH | G_MTX_MUL | G_MTX_PROJECTION);
 
-    // if (gGamestate == ENDING) {
-    //     //func_80055F48(PLAYER_ONE);
-    //     //func_80056160(PLAYER_ONE);
-    //     //func_8005217C(PLAYER_ONE);
-    //     //func_80054BE8(PLAYER_ONE);
-    //     return;
-    // }
-    render_object_for_player(PLAYER_ONE);
+
+    render_object_for_player(screen->camera->cameraId);
 }
 
-void render_object_p2(void) {
-
-    gDPSetTexturePersp(gDisplayListHead++, G_TP_PERSP);
-    gSPMatrix(gDisplayListHead++, GetPerspMatrix(PLAYER_TWO),
-              G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
-    gSPMatrix(gDisplayListHead++, GetLookAtMatrix(PLAYER_TWO),
-              G_MTX_NOPUSH | G_MTX_MUL | G_MTX_PROJECTION);
-    // render_bomb_karts_wrap(PLAYER_TWO);
-    render_object_for_player(PLAYER_TWO);
-}
-
-void render_object_p3(void) {
-    gDPSetTexturePersp(gDisplayListHead++, G_TP_PERSP);
-    gSPMatrix(gDisplayListHead++, GetPerspMatrix(PLAYER_THREE),
-              G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
-    gSPMatrix(gDisplayListHead++, GetLookAtMatrix(PLAYER_THREE),
-              G_MTX_NOPUSH | G_MTX_MUL | G_MTX_PROJECTION);
-    // render_bomb_karts_wrap(PLAYER_THREE);
-    render_object_for_player(PLAYER_THREE);
-}
-
-void render_object_p4(void) {
-
-    gDPSetTexturePersp(gDisplayListHead++, G_TP_PERSP);
-    gSPMatrix(gDisplayListHead++, GetPerspMatrix(PLAYER_FOUR),
-              G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
-    gSPMatrix(gDisplayListHead++, GetLookAtMatrix(PLAYER_FOUR),
-              G_MTX_NOPUSH | G_MTX_MUL | G_MTX_PROJECTION);
-    // render_bomb_karts_wrap(PLAYER_FOUR);
-    if ((!gDemoMode) && (gPlayerCountSelection1 == 4)) {
-        // render_lakitu(PLAYER_FOUR);
-    }
-    render_object_for_player(PLAYER_FOUR);
-}
-
-void render_player_snow_effect(u32 arg0) {
+void render_player_snow_effect(Camera* camera) {
     UNUSED Gfx* temp_v1;
 
     if (gHUDDisable != 0) {
@@ -607,165 +533,23 @@ void render_player_snow_effect(u32 arg0) {
     if (D_8018D22C != 0) {
         return;
     }
-    switch (arg0) {
-        case RENDER_SCREEN_MODE_1P_PLAYER_ONE:
-            render_player_snow_effect_one();
-            break;
-        case RENDER_SCREEN_MODE_2P_HORIZONTAL_PLAYER_ONE:
-            render_player_snow_effect_one();
-            break;
-        case RENDER_SCREEN_MODE_2P_HORIZONTAL_PLAYER_TWO:
-            render_player_snow_effect_two();
-            break;
-        case RENDER_SCREEN_MODE_2P_VERTICAL_PLAYER_ONE:
-            render_player_snow_effect_one();
-            break;
-        case RENDER_SCREEN_MODE_2P_VERTICAL_PLAYER_TWO:
-            render_player_snow_effect_two();
-            break;
-        case RENDER_SCREEN_MODE_3P_4P_PLAYER_ONE:
-            render_player_snow_effect_one();
-            break;
-        case RENDER_SCREEN_MODE_3P_4P_PLAYER_TWO:
-            render_player_snow_effect_two();
-            break;
-        case RENDER_SCREEN_MODE_3P_4P_PLAYER_THREE:
-            render_player_snow_effect_three();
-            break;
-        case RENDER_SCREEN_MODE_3P_4P_PLAYER_FOUR:
-            render_player_snow_effect_four();
-            break;
-    }
-}
 
-void render_player_snow_effect_one(void) {
     gDPSetTexturePersp(gDisplayListHead++, G_TP_PERSP);
-    gSPMatrix(gDisplayListHead++, GetPerspMatrix(PLAYER_ONE),
+
+    gSPMatrix(gDisplayListHead++, camera->perspectiveMatrix,
               G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
-    gSPMatrix(gDisplayListHead++, GetLookAtMatrix(PLAYER_ONE),
+    gSPMatrix(gDisplayListHead++, camera->lookAtMatrix,
               G_MTX_NOPUSH | G_MTX_MUL | G_MTX_PROJECTION);
     if (gGamestate != ENDING) {
-        render_snowing_effect(PLAYER_ONE);
+        render_snowing_effect(camera->cameraId);
     }
-}
-
-void render_player_snow_effect_two(void) {
-    gDPSetTexturePersp(gDisplayListHead++, G_TP_PERSP);
-    gSPMatrix(gDisplayListHead++, GetPerspMatrix(PLAYER_TWO),
-              G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
-    gSPMatrix(gDisplayListHead++, GetLookAtMatrix(PLAYER_TWO),
-              G_MTX_NOPUSH | G_MTX_MUL | G_MTX_PROJECTION);
-    render_snowing_effect(PLAYER_TWO);
-}
-
-void render_player_snow_effect_three(void) {
-    gDPSetTexturePersp(gDisplayListHead++, G_TP_PERSP);
-    gSPMatrix(gDisplayListHead++, GetPerspMatrix(PLAYER_THREE),
-              G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
-    gSPMatrix(gDisplayListHead++, GetLookAtMatrix(PLAYER_THREE),
-              G_MTX_NOPUSH | G_MTX_MUL | G_MTX_PROJECTION);
-    render_snowing_effect(PLAYER_THREE);
-}
-
-void render_player_snow_effect_four(void) {
-    gDPSetTexturePersp(gDisplayListHead++, G_TP_PERSP);
-    gSPMatrix(gDisplayListHead++, GetPerspMatrix(PLAYER_FOUR),
-              G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
-    gSPMatrix(gDisplayListHead++, GetLookAtMatrix(PLAYER_FOUR),
-              G_MTX_NOPUSH | G_MTX_MUL | G_MTX_PROJECTION);
-    render_snowing_effect(PLAYER_FOUR);
 }
 
 void render_object_for_player(s32 cameraId) {
     CM_DrawObjects(cameraId);
     CM_DrawParticles(cameraId);
-    CM_RenderCourseObjects(cameraId);
+    CM_DrawTrackObjects(cameraId);
     CM_DrawEditor();
-
-    // switch (gCurrentCourseId) {
-    //     case COURSE_MARIO_RACEWAY:
-    //         break;
-    //     case COURSE_CHOCO_MOUNTAIN:
-    //         break;
-    //     case COURSE_BOWSER_CASTLE:
-    //         render_object_thwomps(cameraId);
-    //         render_object_bowser_flame(cameraId);
-    //         break;
-    //     case COURSE_BANSHEE_BOARDWALK:
-    //         if (gGamestate != CREDITS_SEQUENCE) {
-    //             render_object_trash_bin(cameraId);
-    //             render_object_bat(cameraId);
-    //             func_8005217C(cameraId);
-    //             render_object_boos(cameraId);
-    //         }
-    //         break;
-    //     case COURSE_YOSHI_VALLEY:
-    //         func_80055228(cameraId);
-    //         if (gGamestate != CREDITS_SEQUENCE) {
-    //             render_object_hedgehogs(cameraId);
-    //         }
-    //         break;
-    //     case COURSE_FRAPPE_SNOWLAND:
-    //         if (gGamestate != CREDITS_SEQUENCE) {
-    //             render_object_snowmans(cameraId);
-    //         }
-    //         break;
-    //     case COURSE_KOOPA_BEACH:
-    //         if (gGamestate != CREDITS_SEQUENCE) {
-    //             render_object_crabs(cameraId);
-    //         }
-    //         if (gGamestate != CREDITS_SEQUENCE) {
-
-    //             if ((gPlayerCount == 1) || (gPlayerCount == 2)) {
-    //                 render_object_seagulls(cameraId);
-    //             }
-    //         } else {
-    //             render_object_seagulls(cameraId);
-    //         }
-    //         break;
-    //     case COURSE_ROYAL_RACEWAY:
-    //         break;
-    //     case COURSE_LUIGI_RACEWAY:
-    //         if (D_80165898 != 0) {
-    //             render_object_hot_air_balloon(cameraId);
-    //         }
-    //         break;
-    //     case COURSE_MOO_MOO_FARM:
-    //         if (gGamestate != CREDITS_SEQUENCE) {
-    //             render_object_moles(cameraId);
-    //         }
-    //         break;
-    //     case COURSE_TOADS_TURNPIKE:
-    //         break;
-    //     case COURSE_KALIMARI_DESERT:
-    //         render_object_trains_smoke_particles(cameraId);
-    //         break;
-    //     case COURSE_SHERBET_LAND:
-    //         if (gGamestate != CREDITS_SEQUENCE) {
-    //             func_80052E30(cameraId);
-    //         }
-    //         render_object_train_penguins(cameraId);
-    //         break;
-    //     case COURSE_RAINBOW_ROAD:
-    //         if (gGamestate != CREDITS_SEQUENCE) {
-    //             render_object_neon(cameraId);
-    //             render_object_chain_chomps(cameraId);
-    //         }
-    //         break;
-    //     case COURSE_WARIO_STADIUM:
-    //         break;
-    //     case COURSE_BLOCK_FORT:
-    //         break;
-    //     case COURSE_SKYSCRAPER:
-    //         break;
-    //     case COURSE_DOUBLE_DECK:
-    //         break;
-    //     case COURSE_DK_JUNGLE:
-    //         if (gGamestate != CREDITS_SEQUENCE) {
-    //             render_object_paddle_boat_smoke_particles(cameraId);
-    //         }
-    //         break;
-    // }
 
     render_object_smoke_particles(cameraId);
     render_object_leaf_particle(cameraId);
@@ -778,18 +562,18 @@ void render_object_for_player(s32 cameraId) {
     }
 }
 
-void render_snowing_effect(s32 playerId) {
+void render_snowing_effect(s32 cameraId) {
     if (IsFrappeSnowland()) {
         if (gGamestate != 9) {
             if ((D_8015F894 == 0) && (gPlayerCountSelection1 == 1)) {
-                render_object_snowflakes_particles();
+                render_object_snowflakes_particles(cameraId);
             }
         } else {
-            render_object_snowflakes_particles();
+            render_object_snowflakes_particles(cameraId);
         }
     }
     if (CM_GetProps()->LakituTowType == 1) {
-        render_ice_block(playerId);
+        render_ice_block(cameraId);
     }
 }
 
@@ -1147,8 +931,12 @@ void func_800596A8(void) {
 
 void render_hud_1p_multi(void) {
     if (gHUDDisable == 0) {
+        FrameInterpolation_RecordOpenChild("HudMatrix", 0);
+
         set_matrix_hud_screen();
         render_hud_lap_3p_4p(PLAYER_ONE);
+
+        FrameInterpolation_RecordCloseChild();
     }
 }
 
@@ -1157,8 +945,12 @@ void func_80059710(void) {
 
 void render_hud_2p_multi(void) {
     if (gHUDDisable == 0) {
+        FrameInterpolation_RecordOpenChild("HudMatrix", 1);
+
         set_matrix_hud_screen();
         render_hud_lap_3p_4p(PLAYER_TWO);
+
+        FrameInterpolation_RecordCloseChild();
     }
 }
 
@@ -1170,8 +962,12 @@ void func_80059750(void) {
 
 void render_hud_3p_multi(void) {
     if (gHUDDisable == 0) {
+        FrameInterpolation_RecordOpenChild("HudMatrix", 2);
+
         set_matrix_hud_screen();
         render_hud_lap_3p_4p(PLAYER_THREE);
+
+        FrameInterpolation_RecordCloseChild();
     }
 }
 
@@ -1183,8 +979,12 @@ void func_800597B8(void) {
 
 void render_hud_4p_multi(void) {
     if (gHUDDisable == 0) {
+        FrameInterpolation_RecordOpenChild("HudMatrix", 3);
+
         set_matrix_hud_screen();
         render_hud_lap_3p_4p(PLAYER_FOUR);
+
+        FrameInterpolation_RecordCloseChild();
     }
 }
 
@@ -1248,7 +1048,7 @@ void func_80059A88(s32 playerId) {
 void func_80059AC8(void) {
     s32 i;
 
-    if ((gIsGamePaused == false) && (gIsEditorPaused == false)) {
+    if ((gIsGamePaused == false) && (Editor_IsPaused() == false)) {
         func_8008C1D8(&D_80165678);
         gRaceFrameCounter++;
         for (i = 0; i < gPlayerCount; i++) {
@@ -1321,16 +1121,16 @@ void func_80059D00(void) {
                     if (!gDemoMode) {
                         // func_8007AA44(0);
                     }
-                    func_80078C70(0);
+                    func_80078C70();
                     if (playerHUD[PLAYER_ONE].raceCompleteBool == 0) {
                         func_8005C360((gPlayerOne->speed / 18.0f) * 216.0f);
                     }
                     func_8005D0FC(PLAYER_ONE);
                 } else {
                     func_80059820(PLAYER_ONE);
-                    func_80078C70(1);
+                    func_80078C70();
                     func_80059820(PLAYER_TWO);
-                    func_80078C70(2);
+                    //func_80078C70();
                 }
                 break;
             case SCREEN_MODE_2P_SPLITSCREEN_VERTICAL:
@@ -1341,14 +1141,14 @@ void func_80059D00(void) {
                 if (!gDemoMode) {
                     // func_8007AA44(0);
                 }
-                func_80078C70(1);
+                func_80078C70();
                 func_8005D1F4(0);
                 func_80059820(PLAYER_TWO);
                 func_8005D0FC(PLAYER_TWO);
                 if (!gDemoMode) {
                     // func_8007AA44(1);
                 }
-                func_80078C70(2);
+                //func_80078C70();
                 func_8005D1F4(1);
                 break;
             case SCREEN_MODE_2P_SPLITSCREEN_HORIZONTAL:
@@ -1359,14 +1159,13 @@ void func_80059D00(void) {
                 if (!gDemoMode) {
                     // func_8007AA44(0);
                 }
-                func_80078C70(3);
+                func_80078C70();
                 func_8005D1F4(0);
                 func_80059820(PLAYER_TWO);
                 func_8005D0FC(PLAYER_TWO);
                 if (!gDemoMode) {
                     // func_8007AA44(1);
                 }
-                func_80078C70(4);
                 func_8005D1F4(1);
                 break;
             case SCREEN_MODE_3P_4P_SPLITSCREEN:
@@ -1379,6 +1178,7 @@ void func_80059D00(void) {
                 if (!gDemoMode) {
                     // func_8007AA44(0);
                 }
+                func_80078C70();
                 func_8005D1F4(0);
                 func_80059820(PLAYER_TWO);
                 func_8005D0FC(PLAYER_TWO);
@@ -1402,7 +1202,7 @@ void func_80059D00(void) {
                 }
                 break;
         }
-        update_object();
+        tick_objects();
         CM_TickObjects();
         CM_TickParticles();
         func_800744CC();
@@ -1414,7 +1214,7 @@ void func_8005A070(void) {
     gMatrixHudCount = 0;
     D_801655C0 = 0;
     func_80041D34();
-    if (gIsGamePaused == false && (gIsEditorPaused == false)) {
+    if (gIsGamePaused == false && (Editor_IsPaused() == false)) {
         func_8005C728();
         if (gGamestate == ENDING) {
             // func_80086604();
@@ -1425,7 +1225,7 @@ void func_8005A070(void) {
             CM_TickParticles();
         } else if (gGamestate == CREDITS_SEQUENCE) {
             func_80059820(PLAYER_ONE);
-            func_80078C70(0);
+            func_80078C70();
             CM_TickObjects();
             CM_TickParticles();
         } else { // normal gameplay
@@ -1573,81 +1373,10 @@ void func_8005A71C(void) {
     //}
 }
 
-void update_object(void) {
+void tick_objects(void) {
 
-    CM_UpdateCourseObjects();
+    CM_TickTrackObjects();
 
-    // switch (gCurrentCourseId) {
-    //     case COURSE_MARIO_RACEWAY:
-    //     case COURSE_CHOCO_MOUNTAIN:
-    //         break;
-    //     case COURSE_BOWSER_CASTLE:
-    //         func_80081208();
-    //         update_flame_particle();
-    //         break;
-    //     case COURSE_BANSHEE_BOARDWALK:
-    //         if (gGamestate != CREDITS_SEQUENCE) {
-    //             update_trash_bin();
-    //             func_8007E4C4();
-    //             if (gModeSelection != TIME_TRIALS) {
-    //                 update_bat();
-    //             }
-    //             wrapper_update_boos();
-    //             update_cheep_cheep(0);
-    //         }
-    //         break;
-    //     case COURSE_YOSHI_VALLEY:
-    //         func_80083080();
-    //         if (gGamestate != CREDITS_SEQUENCE) {
-    //             update_hedgehogs();
-    //         }
-    //         break;
-    //     case COURSE_FRAPPE_SNOWLAND:
-    //         if (gGamestate != CREDITS_SEQUENCE) {
-    //             update_snowmen();
-    //         }
-    //         update_snowflakes();
-    //         break;
-    //     case COURSE_KOOPA_BEACH:
-    //         if (gGamestate != CREDITS_SEQUENCE) {
-    //             update_crabs();
-    //         }
-    //         if ((gPlayerCount == 1) || (gPlayerCount == 2) || (gGamestate == CREDITS_SEQUENCE)) {
-    //             update_seagulls();
-    //         }
-    //         break;
-    //     case COURSE_LUIGI_RACEWAY:
-    //         if (D_80165898 != 0) {
-    //             update_hot_air_balloon();
-    //         }
-    //         break;
-    //     case COURSE_MOO_MOO_FARM:
-    //         if (gGamestate != CREDITS_SEQUENCE) {
-    //             update_moles();
-    //         }
-    //         break;
-    //     case COURSE_KALIMARI_DESERT:
-    //         update_train_smoke();
-    //         break;
-    //     case COURSE_SHERBET_LAND:
-    //         if (gGamestate != CREDITS_SEQUENCE) {
-    //             func_800842C8();
-    //         }
-    //         update_penguins();
-    //         break;
-    //     case COURSE_RAINBOW_ROAD:
-    //         if (gGamestate != CREDITS_SEQUENCE) {
-    //             update_neon();
-    //             update_chain_chomps();
-    //         }
-    //         break;
-    //     case COURSE_DK_JUNGLE:
-    //         update_ferries_smoke_particle();
-    //         break;
-    // }
-    // if (D_80165730 != 0) {
-    //    func_80074EE8(); // Grand prix balloons
-    //}
     func_80076F2C();
     if (!IsFrappeSnowland()) {
         update_leaf();
@@ -1663,7 +1392,7 @@ void func_8005A99C(void) {
             if (gPlayerCountSelection1 == 3) {
                 D_801657E8 = true;
             }
-            if (CVarGetInteger("gEditorEnabled", 0) == false) {
+            if (Editor_IsEnabled() == false) {
                 gIsHUDVisible = (s32) 1;
             }
             D_8018D170 = (s32) 1;
@@ -2816,21 +2545,21 @@ void set_particle_position_and_rotation(Player* player, UnkPlayerStruct258* arg1
     arg1->unk_010 = arg6;
 }
 
-s32 init_particle_player(UnkPlayerStruct258* arg0, s8 type, f32 arg2) {
+void init_particle_player(UnkPlayerStruct258* arg0, s8 type, f32 arg2) {
     arg0->isAlive = true;
     arg0->type = type;
     arg0->unk_01E = 0;
     arg0->scale = arg2;
 }
 
-s32 set_particle_colour(UnkPlayerStruct258* arg0, s32 arg1, s16 arg2) {
+void set_particle_colour(UnkPlayerStruct258* arg0, s32 arg1, s16 arg2) {
     arg0->red = (u8) (arg1 >> 16);
     arg0->green = (u8) (arg1 >> 8);
     arg0->blue = (u8) arg1;
     arg0->alpha = arg2;
 }
 
-s32 set_particle_colour_randomly_varried(UnkPlayerStruct258* arg0, s32 arg1, s16 arg2) {
+void set_particle_colour_randomly_varried(UnkPlayerStruct258* arg0, s32 arg1, s16 arg2) {
     s32 temp_v0;
     temp_v0 = random_int(0x30);
 
@@ -3544,7 +3273,7 @@ void func_80060504(Player* player, s16 arg1, s32 arg2, UNUSED s8 arg3, UNUSED s8
     s32 temp_v0;
     UNUSED s32 test;
 
-    if ((player->unk_044 & 0x20) == 0x20) {
+    if ((player->kartProps & THROTTLE) == THROTTLE) {
         var_v0 = 5;
     } else {
         var_v0 = 0xE;
@@ -3567,7 +3296,7 @@ void func_80060504(Player* player, s16 arg1, s32 arg2, UNUSED s8 arg3, UNUSED s8
         }
     }
     player->particlePool0[arg1].unk_024 = 0.0f;
-    if ((player->unk_044 & 0x20) == 0x20) {
+    if ((player->kartProps & THROTTLE) == THROTTLE) {
         player->particlePool0[arg1].unk_040 = 0;
         if ((player->effects & BOOST_EFFECT) == BOOST_EFFECT) {
             set_particle_colour(&player->particlePool0[arg1], 0x00FFFF00, 0x0080);
@@ -3612,7 +3341,7 @@ void func_800608E0(Player* player, s16 arg1, UNUSED s32 arg2, s8 arg3, UNUSED s8
         var_f0 = 0.0f;
     }
     sp4C = (gPlayerWaterLevel[arg3] - player->pos[1]) - 3.0f;
-    if ((player->waterInteractionFlags & WATER_IS_FULLY_SUBMERGED) && (!IsKoopaTroopaBeach())) {
+    if ((player->oobProps & UNDER_OOB_OR_FLUID_LEVEL) && (!IsKoopaTroopaBeach())) {
         var_f0 = 2.5f;
         sp4C = (f32) ((f64) (gPlayerWaterLevel[arg3] - player->pos[1]) + 0.1);
     }
@@ -3699,7 +3428,7 @@ void func_80060F50(Player* player, s16 arg1, UNUSED s32 arg2, s8 arg3, UNUSED s8
     player->particlePool0[arg1].pos[0] =
         player->pos[0] + (sins(player->particlePool0[arg1].unk_020) * -5.8);
     player->particlePool0[arg1].pos[1] = gPlayerWaterLevel[arg3];
-    player->waterInteractionFlags &= ~WATER_JUST_ENTERED_DEEP_LIQUID;
+    player->oobProps &= ~UNDER_OOB_LEVEL;
 }
 
 void func_80061094(Player* player, s16 arg1, UNUSED s32 arg2, UNUSED s8 arg3, UNUSED s8 arg4) {
@@ -3734,7 +3463,7 @@ void func_80061224(Player* player, s16 arg1, s32 arg2, s8 arg3, s8 arg4) {
     } else if (player->particlePool0[arg2].unk_01E >= 2) {
         func_80061130(player, arg1, arg2, arg3, arg4);
         if (arg1 == 9) {
-            player->unk_044 &= ~0x0200;
+            player->kartProps &= ~BECOME_INVISIBLE;
         }
     }
 }
@@ -3774,7 +3503,7 @@ void func_80061430(Player* player, UNUSED s32 arg1, UNUSED s32 arg2, UNUSED s8 a
         player->particlePool3[var_s2].pos[2] = player->pos[2];
         player->particlePool3[var_s2].pos[0] = player->pos[0];
     }
-    player->unk_044 &= ~0x1000;
+    player->kartProps &= ~UNUSED_0x1000;
 }
 
 void func_800615AC(Player* player, s16 arg1, UNUSED s32 arg2, UNUSED s8 arg3, UNUSED s8 arg4) {
@@ -4062,42 +3791,42 @@ void func_800624D8(Player* player, UNUSED s32 arg1, UNUSED s32 arg2, UNUSED s8 a
                 }
                 func_80062484(player, &player->particlePool3[var_s1], var_s1);
             }
-            player->unk_044 &= ~0x0100;
+            player->kartProps &= ~POST_TUMBLE_GAS;
             break;
         case GRASS:
             for (var_s1 = 0; var_s1 < 10; var_s1++) {
                 func_8005DAD8(&player->particlePool3[var_s1], 2, 1, 0x00A8);
                 func_80062484(player, &player->particlePool3[var_s1], var_s1);
             }
-            player->unk_044 &= ~0x0100;
+            player->kartProps &= ~POST_TUMBLE_GAS;
             break;
         case SAND_OFFROAD:
             for (var_s1 = 0; var_s1 < 10; var_s1++) {
                 func_8005DAD8(&player->particlePool3[var_s1], 2, 1, 0x00A8);
                 func_80062484(player, &player->particlePool3[var_s1], var_s1);
             }
-            player->unk_044 &= ~0x0100;
+            player->kartProps &= ~POST_TUMBLE_GAS;
             break;
         case SAND:
             for (var_s1 = 0; var_s1 < 10; var_s1++) {
                 func_8005DAD8(&player->particlePool3[var_s1], 3, 1, 0x00A8);
                 func_80062484(player, &player->particlePool3[var_s1], var_s1);
             }
-            player->unk_044 &= ~0x0100;
+            player->kartProps &= ~POST_TUMBLE_GAS;
             break;
         case WET_SAND:
             for (var_s1 = 0; var_s1 < 10; var_s1++) {
                 func_8005DAD8(&player->particlePool3[var_s1], 4, 1, 0x00A8);
                 func_80062484(player, &player->particlePool3[var_s1], var_s1);
             }
-            player->unk_044 &= ~0x0100;
+            player->kartProps &= ~POST_TUMBLE_GAS;
             break;
         case DIRT_OFFROAD:
             for (var_s1 = 0; var_s1 < 10; var_s1++) {
                 func_8005DAD8(&player->particlePool3[var_s1], 5, 1, 0x00A8);
                 func_80062484(player, &player->particlePool3[var_s1], var_s1);
             }
-            player->unk_044 &= ~0x0100;
+            player->kartProps &= ~POST_TUMBLE_GAS;
             break;
         case SNOW:
         case SNOW_OFFROAD:
@@ -4105,7 +3834,7 @@ void func_800624D8(Player* player, UNUSED s32 arg1, UNUSED s32 arg2, UNUSED s8 a
                 func_8005DAD8(&player->particlePool3[var_s1], 6, 1, 0x00A8);
                 func_80062484(player, &player->particlePool3[var_s1], var_s1);
             }
-            player->unk_044 &= ~0x0100;
+            player->kartProps &= ~POST_TUMBLE_GAS;
             break;
         case ASPHALT:
         case STONE:
@@ -4114,14 +3843,14 @@ void func_800624D8(Player* player, UNUSED s32 arg1, UNUSED s32 arg2, UNUSED s8 a
                 func_8005DAD8(&player->particlePool3[var_s1], 0, 0, 0x00A8);
                 func_80062484(player, &player->particlePool3[var_s1], var_s1);
             }
-            player->unk_044 &= ~0x0100;
+            player->kartProps &= ~POST_TUMBLE_GAS;
             break;
         default:
             for (var_s1 = 0; var_s1 < 10; var_s1++) {
                 func_8005DAD8(&player->particlePool3[var_s1], 0, 0, 0x00A8);
                 func_80062484(player, &player->particlePool3[var_s1], var_s1);
             }
-            player->unk_044 &= ~0x0100;
+            player->kartProps &= ~POST_TUMBLE_GAS;
             break;
     }
 }
@@ -4165,7 +3894,7 @@ void func_80062A18(Player* player, s8 arg1, UNUSED s8 arg2, s8 index) {
     player->particlePool2[arg1 /* arg1 instead of arg3 */].scale = 0.2f;
     player->particlePool2[index].unk_01E = 1;
     player->particlePool2[index].unk_020 = 0;
-    player->unk_0B6 &= ~0x0080;
+    player->kartGraphics &= ~WHIRRR;
     player->particlePool2[index].pos[2] = player->pos[2];
     player->particlePool2[index].pos[0] = player->pos[0];
     player->particlePool2[index].pos[1] = (player->pos[1] + 4.0f);
@@ -4276,7 +4005,7 @@ void func_80062F98(Player* player, s16 arg1, s8 arg2, UNUSED s8 arg3) {
     temp_f0 = player->particlePool1[arg1].unk_018 / 10.0f;
     ++player->particlePool1[arg1].unk_01E;
     player->particlePool1[arg1].pos[1] += temp_f0;
-    if ((player->unk_0CA & 1) == 1) {
+    if ((player->lakituProps & LAKITU_RETRIEVAL) == LAKITU_RETRIEVAL) {
         player->particlePool1[arg1].pos[1] += (temp_f0 + 0.3);
         if ((player->particlePool1[arg1].unk_01E == 0x10) ||
             ((gPlayerWaterLevel[arg2] - player->particlePool1[arg1].pos[1]) < 3.0f)) {
@@ -4616,7 +4345,7 @@ void func_80064184(Player* player, s16 arg1, s8 arg2, UNUSED s8 arg3) {
     f32 sp3C;
 
     sp40 = gPlayerWaterLevel[arg2] - player->pos[1] - 3.0f;
-    if (((player->waterInteractionFlags & WATER_IS_FULLY_SUBMERGED) != 0) && (!IsKoopaTroopaBeach())) {
+    if (((player->oobProps & UNDER_OOB_OR_FLUID_LEVEL) != 0) && (!IsKoopaTroopaBeach())) {
         sp40 = gPlayerWaterLevel[arg2] - player->pos[1] + 0.1;
     }
 
@@ -4865,7 +4594,7 @@ void func_80064DEC(Player* player, UNUSED s8 arg1, UNUSED s8 arg2, s8 index) {
     ++player->particlePool2[index].unk_01E;
 
     if (player->particlePool2[index].unk_01E == 9) {
-        player->unk_0B6 &= ~0x0040;
+        player->kartGraphics &= ~CRASH;
         player->particlePool2[index].isAlive = 0;
         player->particlePool2[index].unk_01E = 0;
         player->particlePool2[index].type = 0;
@@ -4887,7 +4616,7 @@ void func_80064EA4(Player* player, UNUSED s8 arg1, UNUSED s8 arg2, s8 index) {
     } else {
         player->particlePool2[index].scale -= 1.8;
         if (player->particlePool2[index].scale <= 0.0f) {
-            player->unk_0B6 &= ~0x1000;
+            player->kartGraphics &= ~EXPLOSION;
             player->particlePool2[index].isAlive = 0;
             player->particlePool2[index].unk_01E = 0;
             player->particlePool2[index].type = 0;
@@ -4903,7 +4632,7 @@ void func_80064F88(Player* player, UNUSED s8 arg1, UNUSED s8 arg2, s8 index) {
         player->particlePool2[index].scale = 1.2f;
     }
     if (player->particlePool2[index].unk_01E >= 12) {
-        player->unk_0B6 &= ~0x0800;
+        player->kartGraphics &= ~BOING;
         player->particlePool2[index].isAlive = 0;
         player->particlePool2[index].unk_01E = 0;
         player->particlePool2[index].type = 0;
@@ -4920,7 +4649,7 @@ void func_80065030(Player* player, UNUSED s8 arg1, UNUSED s8 arg2, s8 index) {
     }
 
     if (player->particlePool2[index].unk_01E >= 12) {
-        player->unk_0B6 &= ~0x0100;
+        player->kartGraphics &= ~POOMP;
         player->particlePool2[index].isAlive = 0;
         player->particlePool2[index].unk_01E = 0;
         player->particlePool2[index].type = 0;
@@ -4959,7 +4688,7 @@ void func_800651F4(Player* player, UNUSED s8 arg1, UNUSED s8 arg2, s8 index) {
     } else {
         player->particlePool2[index].scale -= 0.4;
         if (player->particlePool2[index].scale <= 0.0f) {
-            player->unk_0B6 &= ~0x0020;
+            player->kartGraphics &= ~WHISTLE;
             player->particlePool2[index].isAlive = 0;
             player->particlePool2[index].unk_01E = 0;
             player->particlePool2[index].type = 0;
@@ -5036,7 +4765,7 @@ void func_8006538C(Player* player, s8 arg1, s16 arg2, s8 arg3) {
     }
 }
 
-void func_800658A0(Player* player, UNUSED s8 arg1, s16 arg2, s8 arg3) {
+void func_800658A0(Player* player, s8 playerId, s16 idx, s8 screenId) {
     Vec3f sp54;
     Vec3s sp4C;
     s16 red;
@@ -5044,24 +4773,26 @@ void func_800658A0(Player* player, UNUSED s8 arg1, s16 arg2, s8 arg3) {
     s16 blue;
     s16 alpha;
 
-    if (player->particlePool0[arg2].isAlive == 1) {
-        red = player->particlePool0[arg2].red;
-        green = player->particlePool0[arg2].green;
-        blue = player->particlePool0[arg2].blue;
-        alpha = player->particlePool0[arg2].alpha;
-        sp54[0] = player->particlePool0[arg2].pos[0];
-        sp54[1] = player->particlePool0[arg2].pos[1];
-        sp54[2] = player->particlePool0[arg2].pos[2];
+    if (player->particlePool0[idx].isAlive == 1) {
+        red = player->particlePool0[idx].red;
+        green = player->particlePool0[idx].green;
+        blue = player->particlePool0[idx].blue;
+        alpha = player->particlePool0[idx].alpha;
+        sp54[0] = player->particlePool0[idx].pos[0];
+        sp54[1] = player->particlePool0[idx].pos[1];
+        sp54[2] = player->particlePool0[idx].pos[2];
         sp4C[0] = 0;
-        sp4C[1] = player->unk_048[arg3];
+        sp4C[1] = player->unk_048[screenId];
         sp4C[2] = 0;
-        func_800652D4(sp54, sp4C, player->particlePool0[arg2].scale * player->size);
+        FrameInterpolation_RecordOpenChild("some_ply_part4", (idx << 8) | (playerId << 4) | screenId);
+        func_800652D4(sp54, sp4C, player->particlePool0[idx].scale * player->size);
         gSPDisplayList(gDisplayListHead++, D_0D008DB8);
         gDPLoadTextureBlock(gDisplayListHead++, D_8018D48C, G_IM_FMT_IA, G_IM_SIZ_8b, 32, 32, 0,
                             G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOMASK, G_TX_NOLOD,
                             G_TX_NOLOD);
         func_8004B35C(red, green, blue, alpha);
         gSPDisplayList(gDisplayListHead++, D_0D008E48);
+        FrameInterpolation_RecordCloseChild();
         gMatrixEffectCount += 1;
     }
 }
@@ -5229,7 +4960,7 @@ void func_800664E0(Player* player, UNUSED s8 arg1, s16 arg2, s8 arg3) {
     }
 }
 
-void func_80066714(Player* player, UNUSED s32 arg1, s16 arg2, s8 arg3) {
+UNUSED void func_80066714(Player* player, UNUSED s32 arg1, s16 arg2, s8 arg3) {
     Vec3f sp5C;
     Vec3s sp54;
     s16 red;
@@ -5262,7 +4993,7 @@ void func_80066714(Player* player, UNUSED s32 arg1, s16 arg2, s8 arg3) {
     }
 }
 
-void func_80066998(Player* player, UNUSED s8 arg1, s16 arg2, s8 arg3) {
+void func_80066998(Player* player, s8 playerId, s16 arg2, s8 screenId) {
     Vec3f sp54;
     Vec3s sp4C;
     s16 red;
@@ -5279,8 +5010,9 @@ void func_80066998(Player* player, UNUSED s8 arg1, s16 arg2, s8 arg3) {
         sp54[1] = player->particlePool0[arg2].pos[1];
         sp54[2] = player->particlePool0[arg2].pos[2];
         sp4C[0] = 0x4000;
-        sp4C[1] = player->unk_048[arg3];
+        sp4C[1] = player->unk_048[screenId];
         sp4C[2] = 0;
+        FrameInterpolation_RecordOpenChild("some_ply_particle2", (arg2 << 8) | (playerId << 4) | screenId);
         func_800652D4(sp54, sp4C, player->particlePool0[arg2].scale * player->size);
         gSPDisplayList(gDisplayListHead++, D_0D008DB8);
         gDPLoadTextureBlock(gDisplayListHead++, D_8018D48C, G_IM_FMT_IA, G_IM_SIZ_8b, 32, 32, 0,
@@ -5288,6 +5020,7 @@ void func_80066998(Player* player, UNUSED s8 arg1, s16 arg2, s8 arg3) {
                             G_TX_NOLOD);
         func_8004B35C(red, green, blue, alpha);
         gSPDisplayList(gDisplayListHead++, D_0D008E48);
+        FrameInterpolation_RecordCloseChild();
         gMatrixEffectCount += 1;
     }
 }
@@ -5416,7 +5149,7 @@ void func_80067280(Player* player, UNUSED s8 arg1, s16 arg2, s8 arg3) {
     }
 }
 
-void render_player_boost_spark_particles(Player* player, UNUSED s8 arg1, s16 arg2, s8 arg3) {
+void render_player_boost_spark_particles(Player* player, s8 playerId, s16 arg2, s8 screenId) {
     Vec3f sp8C;
     Vec3s sp84;
     UNUSED s32 stackPadding[4];
@@ -5426,8 +5159,9 @@ void render_player_boost_spark_particles(Player* player, UNUSED s8 arg1, s16 arg
         sp8C[1] = player->particlePool3[arg2].pos[1];
         sp8C[2] = player->particlePool3[arg2].pos[2];
         sp84[0] = 0;
-        sp84[1] = player->unk_048[arg3];
+        sp84[1] = player->unk_048[screenId];
         sp84[2] = 0;
+        FrameInterpolation_RecordOpenChild("boost_spark_particle", TAG_SMOKE_DUST((arg2 << 8) | (playerId << 4) | screenId));
         func_800652D4(sp8C, sp84, player->particlePool3[arg2].scale * player->size);
         if (player->particlePool3[arg2].unk_010 == 1) {
             gSPDisplayList(gDisplayListHead++, D_0D008DB8);
@@ -5444,6 +5178,7 @@ void render_player_boost_spark_particles(Player* player, UNUSED s8 arg1, s16 arg
             func_8004B72C(0x000000FF, 0x000000FF, 0x000000DF, 0x000000FF, 0x0000005F, 0, 0x00000060);
             gSPDisplayList(gDisplayListHead++, D_0D008E48);
         }
+        FrameInterpolation_RecordCloseChild();
         gMatrixEffectCount += 1;
     }
 }
@@ -5479,7 +5214,7 @@ void render_player_onomatopoeia_whrrrr(Player* player, UNUSED s8 arg1, f32 arg2,
     }
 }
 
-void render_player_speech_bubble(Player* player, s8 arg1, u8* texture, s8 arg3, f32 arg4, s32 arg5) {
+void render_player_speech_bubble(Player* player, s8 screenId, u8* texture, s8 arg3, f32 arg4, s32 arg5) {
     Vec3f sp7C;
     Vec3s sp74;
     f32 sp54[8] = { 0.0f, -1.2f, 0.1f, 1.2f, -1.7f, -0.8f, -0.2f, -1.9f };
@@ -5491,23 +5226,25 @@ void render_player_speech_bubble(Player* player, s8 arg1, u8* texture, s8 arg3, 
 
     if (player->particlePool2[arg3].isAlive == 1) {
         sp74[0] = 0;
-        sp74[1] = player->unk_048[arg1];
+        sp74[1] = player->unk_048[screenId];
         sp74[2] = 0;
         sp7C[0] = player->pos[0] + (sins((0x4000 & 0xFFFFFFFF) - (player->rotation[1] + player->unk_0C0)) * arg4);
         sp7C[1] = player->pos[1] + player->boundingBoxSize - sp54[player->characterId] - 2.0f;
         sp7C[2] = player->pos[2] + (coss((0x4000 & 0xFFFFFFFF) - (player->rotation[1] + player->unk_0C0)) * arg4);
         func_800652D4(sp7C, sp74, player->particlePool2[arg3].scale * player->size);
+        FrameInterpolation_RecordOpenChild("speech_bubble", ((player - gPlayerOne) << 4) | screenId);
         gSPDisplayList(gDisplayListHead++, D_0D008DB8);
         gDPLoadTextureBlock(gDisplayListHead++, texture, G_IM_FMT_I, G_IM_SIZ_8b, 32, 32, 0, G_TX_NOMIRROR | G_TX_WRAP,
                             G_TX_NOMIRROR | G_TX_WRAP, G_TX_NOMASK, G_TX_NOMASK, G_TX_NOLOD, G_TX_NOLOD);
 
         func_8004B414(red, green, blue, 0x000000FF);
         gSPDisplayList(gDisplayListHead++, D_0D008E20);
+        FrameInterpolation_RecordCloseChild();
         gMatrixEffectCount += 1;
     }
 }
 
-void render_music_note(Player* player, s8 arg1, u8* texture, s8 arg3, f32 arg4, s32 arg5) {
+void render_music_note(Player* player, s8 screenId, u8* texture, s8 arg3, f32 arg4, s32 arg5) {
     Vec3f sp7C;
     Vec3s sp74;
     f32 sp54[8] = { -0.7f, -1.9f, -0.6f, 0.4f, -2.5f, -1.6f, -0.95f, -2.7f };
@@ -5519,11 +5256,12 @@ void render_music_note(Player* player, s8 arg1, u8* texture, s8 arg3, f32 arg4, 
 
     if (player->particlePool2[arg3].isAlive == 1) {
         sp74[0] = 0;
-        sp74[1] = player->unk_048[arg1];
+        sp74[1] = player->unk_048[screenId];
         sp74[2] = 0;
         sp7C[0] = player->pos[0] + (sins((0x4000 & 0xFFFFFFFF) - (player->rotation[1] + player->unk_0C0)) * arg4);
         sp7C[1] = player->pos[1] + player->boundingBoxSize - sp54[player->characterId] - 2.0f;
         sp7C[2] = player->pos[2] + (coss((0x4000 & 0xFFFFFFFF) - (player->rotation[1] + player->unk_0C0)) * arg4);
+        FrameInterpolation_RecordOpenChild("music_note", ((player - gPlayerOne) << 4) | screenId);
         func_800652D4(sp7C, sp74, player->particlePool2[arg3].scale * player->size * 0.8);
         gSPDisplayList(gDisplayListHead++, D_0D008DB8);
         gDPLoadTextureBlock(gDisplayListHead++, texture, G_IM_FMT_I, G_IM_SIZ_8b, 32, 32, 0, G_TX_NOMIRROR | G_TX_WRAP,
@@ -5531,6 +5269,7 @@ void render_music_note(Player* player, s8 arg1, u8* texture, s8 arg3, f32 arg4, 
 
         func_8004B414(red, green, blue, 0x000000FF);
         gSPDisplayList(gDisplayListHead++, D_0D008E20);
+        FrameInterpolation_RecordCloseChild();
         gMatrixEffectCount += 1;
     }
 }
@@ -5865,7 +5604,7 @@ void func_8006A01C(Player* player, UNUSED s8 arg1, s16 arg2, s8 arg3) {
     }
 }
 
-void func_8006A280(Player* player, UNUSED s8 arg1, s16 arg2, s8 arg3) {
+void func_8006A280(Player* player, s8 playerId, s16 arg2, s8 screenId) {
     Vec3f sp5C;
     Vec3s sp54;
     s16 red;
@@ -5880,8 +5619,9 @@ void func_8006A280(Player* player, UNUSED s8 arg1, s16 arg2, s8 arg3) {
         sp5C[1] = player->particlePool0[arg2].pos[1];
         sp5C[2] = player->particlePool0[arg2].pos[2];
         sp54[0] = 0;
-        sp54[1] = player->unk_048[arg3];
+        sp54[1] = player->unk_048[screenId];
         sp54[2] = 0;
+        FrameInterpolation_RecordOpenChild("some_ply_particle", (arg2 << 8) | (playerId << 4) | screenId);
         func_800652D4(sp5C, sp54, player->particlePool0[arg2].scale * player->size);
         gSPDisplayList(gDisplayListHead++, D_0D008D58);
         gDPSetTextureLUT(gDisplayListHead++, G_TT_NONE);
@@ -5892,6 +5632,7 @@ void func_8006A280(Player* player, UNUSED s8 arg1, s16 arg2, s8 arg3) {
         gDPSetRenderMode(gDisplayListHead++, G_RM_ZB_CLD_SURF, G_RM_ZB_CLD_SURF2);
         gSPVertex(gDisplayListHead++, D_800E8780, 4, 0);
         gSPDisplayList(gDisplayListHead++, D_0D008DA0);
+        FrameInterpolation_RecordCloseChild();
         gMatrixEffectCount += 1;
     }
 }
@@ -6064,8 +5805,7 @@ void render_battle_balloon(Player* player, s8 arg1, s16 arg2, s8 arg3) {
     sp12C[2] = D_8018D7D0[arg1][arg2] - (D_8018D860[arg1][arg2] * coss(temp_t1)) -
                ((D_8018D890[arg1][arg2] * 8) * sins(temp_t1));
 
-    // @port: Tag the transform.
-    FrameInterpolation_RecordOpenChild((uintptr_t) player, arg1 | arg2 << 16);
+    FrameInterpolation_RecordOpenChild("battle_balloon", (arg1 << 8) | (arg3 << 4) | arg2);
 
     mtxf_translate_rotate(mtx, sp134, sp12C);
     mtxf_scale(mtx, var_f20);
@@ -6228,7 +5968,7 @@ void render_balloon(Vec3f arg0, f32 arg1, s16 arg2, s16 arg3) {
     gMatrixEffectCount += 1;
 }
 
-void func_8006C0C8(Vec3f arg0, f32 arg1, s32 rgb, s16 alpha) {
+UNUSED void func_8006C0C8(Vec3f arg0, f32 arg1, s32 rgb, s16 alpha) {
     Vec3f sp4C;
     Vec3s sp44;
     s16 red;
@@ -6343,7 +6083,7 @@ void func_8006C6AC(Player* player, s16 particleIndex, s8 arg2, s8 arg3) {
                 break;
         }
     } else {
-        if (player->waterInteractionFlags & WATER_IS_FULLY_SUBMERGED) {
+        if (player->oobProps & UNDER_OOB_OR_FLUID_LEVEL) {
             func_80060BCC(player, particleIndex, sp28, arg2_copy, arg3);
         } else if (!(player->effects & 8) && !(player->effects & 2)) {
             if (((player->effects & DRIFTING_EFFECT) == DRIFTING_EFFECT) &&
@@ -6355,7 +6095,7 @@ void func_8006C6AC(Player* player, s16 particleIndex, s8 arg2, s8 arg3) {
             } else if (((player->effects & 0x80) == 0x80) || ((player->effects & 0x40) == 0x40)) {
                 func_8005F90C(player, particleIndex, sp28, arg2_copy, arg3);
             } else if (((player->effects & 0x4000) && !(player->type & PLAYER_START_SEQUENCE)) ||
-                       (player->effects & 0x800) || (player->effects & 0x20) || (player->unk_044 & 0x4000)) {
+                       (player->effects & 0x800) || (player->effects & 0x20) || (player->kartProps & DRIVING_SPINOUT)) {
                 func_8005ED48(player, particleIndex, sp28, arg2_copy, arg3);
             } else {
                 setup_tyre_particles(player, particleIndex, sp28, arg2_copy, arg3);
@@ -6413,40 +6153,40 @@ void func_8006C9B8(Player* player, s16 arg1, s8 arg2, s8 arg3) {
                 break;
         }
     } else {
-        if (player->unk_044 & 0x1000) {
+        if (player->kartProps & UNUSED_0x1000) {
             func_80061430(player, arg1, sp28, arg2, arg3);
-            player->unk_044 &= ~0x0100;
+            player->kartProps &= ~POST_TUMBLE_GAS;
             return;
         }
-        if (((((player->unk_0CA & 0x1000) == 0x1000) || ((player->unk_0E0 < 2) && (player->effects & 0x01000000))) ||
+        if (((((player->lakituProps & LAKITU_LAVA) == LAKITU_LAVA) || ((player->unk_0E0 < 2) && (player->effects & 0x01000000))) ||
              ((player->unk_0E0 < 2) && (player->effects & HIT_BY_ITEM_EFFECT))) ||
             (player->effects & 0x400)) {
             func_8006199C(player, arg1, sp28, arg2, arg3);
             player->unk_046 &= ~0x0008;
-            player->unk_044 &= ~0x0100;
+            player->kartProps &= ~POST_TUMBLE_GAS;
             return;
         }
-        if ((player->unk_0CA & 0x2000) == 0x2000) {
+        if ((player->lakituProps & LAKITU_WATER) == LAKITU_WATER) {
             func_80061A34(player, arg1, sp28, arg2, arg3);
             player->unk_046 &= ~0x0008;
-            player->unk_044 &= ~0x0100;
+            player->kartProps &= ~POST_TUMBLE_GAS;
             return;
         }
         if ((player->effects & STAR_EFFECT) && ((((s32) gCourseTimer) - gPlayerStarEffectStartTime[arg2]) < 9)) {
             func_800615AC(player, arg1, sp28, arg2, arg3);
             player->unk_046 &= ~0x0008;
-            player->unk_044 &= ~0x0100;
+            player->kartProps &= ~POST_TUMBLE_GAS;
             return;
         }
         if ((player->unk_046 & 8) == 8) {
             func_800612F8(player, arg1, sp28, arg2, arg3);
-            player->unk_044 &= ~0x0100;
+            player->kartProps &= ~POST_TUMBLE_GAS;
             return;
         }
         if (((player->unk_046 & 0x20) == 0x20) && (((player->speed / 18.0f) * 216.0f) >= 20.0f)) {
             func_80061D4C(player, arg1, sp28, arg2, arg3);
             player->unk_046 &= ~0x0008;
-            player->unk_044 &= ~0x0100;
+            player->kartProps &= ~POST_TUMBLE_GAS;
             return;
         }
         if ((player->effects & BOOST_EFFECT) && (player->type & PLAYER_HUMAN)) {
@@ -6457,10 +6197,10 @@ void func_8006C9B8(Player* player, s16 arg1, s8 arg2, s8 arg3) {
             ((player->type & PLAYER_HUMAN) == PLAYER_HUMAN)) {
             func_80061EF4(player, arg1, sp28, arg2, arg3);
             player->unk_046 &= ~0x0008;
-            player->unk_044 &= ~0x0100;
+            player->kartProps &= ~POST_TUMBLE_GAS;
             return;
         }
-        if ((player->unk_044 & 0x100) == 0x100) {
+        if ((player->kartProps & POST_TUMBLE_GAS) == POST_TUMBLE_GAS) {
             func_800624D8(player, arg1, sp28, arg2, arg3);
             player->unk_046 &= ~0x0008;
         }
@@ -6492,17 +6232,17 @@ void func_8006CEC0(Player* player, s16 arg1, s8 arg2, s8 arg3) {
                 break;
         }
     } else {
-        if ((player->unk_044 & 0x200) && (player->type & 0x4000)) {
+        if ((player->kartProps & BECOME_INVISIBLE) && (player->type & PLAYER_HUMAN)) {
             func_80061224(player, arg1, sp20, arg2, arg3);
             return;
-        } else if (((player->effects & 0x40000000) == 0x40000000) && (player->unk_0B0 < 0x32)) {
+        } else if (((player->effects & LIGHTNING_EFFECT) == LIGHTNING_EFFECT) && (player->unk_0B0 < 0x32)) {
             func_80061094(player, arg1, sp20, arg2, arg3);
             return;
-        } else if ((player->type & 0x4000) == 0x4000) {
-            if ((player->waterInteractionFlags & WATER_JUST_ENTERED_DEEP_LIQUID) == WATER_JUST_ENTERED_DEEP_LIQUID) {
+        } else if ((player->type & PLAYER_HUMAN) == PLAYER_HUMAN) {
+            if ((player->oobProps & UNDER_OOB_LEVEL) == UNDER_OOB_LEVEL) {
                 func_80060F50(player, arg1, sp20, arg2, arg3);
                 return;
-            } else if ((player->waterInteractionFlags & WATER_IS_PARTIALLY_SUBMERGED) || (player->waterInteractionFlags & WATER_IS_FULLY_SUBMERGED)) {
+            } else if ((player->oobProps & PASS_OOB_OR_FLUID_LEVEL) || (player->oobProps & UNDER_OOB_OR_FLUID_LEVEL)) {
                 func_80060B14(player, arg1, sp20, arg2, arg3);
                 return;
             }
@@ -6511,7 +6251,7 @@ void func_8006CEC0(Player* player, s16 arg1, s8 arg2, s8 arg3) {
             case SCREEN_MODE_1P:
                 if (((player->effects & 0x04000000) != 0x04000000) && ((player->effects & 0x400) != 0x400) &&
                     ((player->effects & 0x01000000) != 0x01000000)) {
-                    if (((player->unk_0CA & 2) != 2) && ((player->unk_0CA & 0x10) != 0x10) && !(player->unk_0CA & 0x100)) {
+                    if (((player->lakituProps & HELD_BY_LAKITU) != HELD_BY_LAKITU) && ((player->lakituProps & FRIGID_EFFECT) != FRIGID_EFFECT) && !(player->lakituProps & WENT_OVER_OOB)) {
                         func_80060504(player, arg1, sp20, arg2, arg3);
                     }
                 }
@@ -6521,9 +6261,9 @@ void func_8006CEC0(Player* player, s16 arg1, s8 arg2, s8 arg3) {
             case SCREEN_MODE_2P_SPLITSCREEN_HORIZONTAL:
             case SCREEN_MODE_2P_SPLITSCREEN_VERTICAL:
             case SCREEN_MODE_3P_4P_SPLITSCREEN:
-                if (((player->type & 0x4000) != 0) && ((player->effects & 0x04000000) != 0x04000000) &&
+                if (((player->type & PLAYER_HUMAN) != 0) && ((player->effects & 0x04000000) != 0x04000000) &&
                     ((player->effects & 0x400) != 0x400) && ((player->effects & 0x01000000) != 0x01000000)) {
-                    if (((player->unk_0CA & 2) != 2) && ((player->unk_0CA & 0x10) != 0x10) && !(player->unk_0CA & 0x100)) {
+                    if (((player->lakituProps & HELD_BY_LAKITU) != HELD_BY_LAKITU) && ((player->lakituProps & FRIGID_EFFECT) != FRIGID_EFFECT) && !(player->lakituProps & WENT_OVER_OOB)) {
                         func_80060504(player, arg1, sp20, arg2, arg3);
                     }
                 }
@@ -6533,8 +6273,8 @@ void func_8006CEC0(Player* player, s16 arg1, s8 arg2, s8 arg3) {
 }
 
 void func_8006D194(Player* player, s8 arg1, s8 arg2) {
-    if (player->particlePool0[0x14].isAlive == 1) {
-        switch (player->particlePool0[0x14].type) {
+    if (player->particlePool2[0].isAlive == 1) {
+        switch (player->particlePool2[0].type) {
             case 2:
                 func_80064DEC(player, arg1, arg2, 0);
                 break;
@@ -6552,37 +6292,37 @@ void func_8006D194(Player* player, s8 arg1, s8 arg2) {
                 break;
         }
     } else {
-        if ((player->unk_0B6 & 0x40) == 0x40) {
+        if ((player->kartGraphics & CRASH) == CRASH) {
             func_800628C0(player, arg1, arg2, 0);
         }
-        if ((player->unk_0B6 & 0x800) == 0x800) {
+        if ((player->kartGraphics & BOING) == BOING) {
             func_80062968(player, arg1, arg2, 0);
         }
-        if ((player->unk_0B6 & 0x1000) == 0x1000) {
+        if ((player->kartGraphics & EXPLOSION) == EXPLOSION) {
             func_80062914(player, arg1, arg2, 0);
         }
-        if ((player->unk_0B6 & 0x80) == 0x80) {
+        if ((player->kartGraphics & WHIRRR) == WHIRRR) {
             func_80062A18(player, arg1, arg2, 0);
         }
-        if ((player->unk_0B6 & 0x100) == 0x100) {
+        if ((player->kartGraphics & POOMP) == POOMP) {
             func_800629BC(player, arg1, arg2, 0);
         }
     }
-    if (player->particlePool0[0x15].isAlive == 1) {
-        if (player->particlePool0[0x15].type == 5) {
+    if (player->particlePool2[1].isAlive == 1) {
+        if (player->particlePool2[1].type == 5) {
             func_800651F4(player, arg1, arg2, 1);
         }
-    } else if ((player->unk_0B6 & 0x20) == 0x20) {
+    } else if ((player->kartGraphics & WHISTLE) == WHISTLE) {
         func_80062AA8(player, arg1, arg2, 1);
     }
 }
 
 void func_8006D474(Player* player, s8 playerId, s8 screenId) {
     s16 var_s2;
-    if ((player->unk_002 & (8 << (screenId * 4))) == (8 << (screenId * 4))) {
+    if ((player->unk_002 & (SIDE_OF_KART << (screenId * 4))) == (SIDE_OF_KART << (screenId * 4))) {
         for (var_s2 = 0; var_s2 < 10; var_s2++) {
             // @port: Tag the transform.
-            FrameInterpolation_RecordOpenChild("SmokeDust", TAG_SMOKE_DUST((playerId << 8) + var_s2));
+            FrameInterpolation_RecordOpenChild("smoke_dust", TAG_SMOKE_DUST((playerId << 8) | (screenId << 4) | var_s2));
             switch (player->particlePool0[var_s2].type) {
                 case 1:
                     if (gActiveScreenMode == SCREEN_MODE_3P_4P_SPLITSCREEN) {
@@ -6604,7 +6344,7 @@ void func_8006D474(Player* player, s8 playerId, s8 screenId) {
                     break;
             }
             FrameInterpolation_RecordCloseChild();
-            FrameInterpolation_RecordOpenChild("SmokeDust", TAG_SMOKE_DUST((playerId << 8) + var_s2 + 30));
+            FrameInterpolation_RecordOpenChild("smoke_dust2", TAG_SMOKE_DUST((playerId << 8) | (screenId << 4) | var_s2));
             switch (player->particlePool3[var_s2].type) {
                 case 1:
                 case 9:
@@ -6667,7 +6407,7 @@ void func_8006D474(Player* player, s8 playerId, s8 screenId) {
                     break;
             }
             FrameInterpolation_RecordCloseChild();
-            FrameInterpolation_RecordOpenChild("SmokeDust", TAG_SMOKE_DUST((playerId << 8) + var_s2 + 10));
+            FrameInterpolation_RecordOpenChild("smoke_dust3", TAG_SMOKE_DUST((playerId << 8) | (screenId << 4) | var_s2));
             switch (player->particlePool1[var_s2].type) {
                 case DRIFT_PARTICLE:
                     if (gActiveScreenMode == SCREEN_MODE_3P_4P_SPLITSCREEN) {
@@ -6713,69 +6453,69 @@ void func_8006D474(Player* player, s8 playerId, s8 screenId) {
             FrameInterpolation_RecordCloseChild();
         }
     }
-    if ((gModeSelection == BATTLE) && (player->unk_002 & (2 << (screenId * 4)))) {
+    if ((gModeSelection == BATTLE) && (player->unk_002 & (UNK_002_UNKNOWN_0x2 << (screenId * 4)))) {
         func_8006BA94(player, playerId, screenId);
     }
 }
 
-void func_8006DC54(Player* player, s8 arg1, s8 arg2) {
+void func_8006DC54(Player* player, s8 playerId, s8 screenId) {
     s16 i;
     s32 bitwiseMask;
 
-    bitwiseMask = 8 << (arg2 * 4);
+    bitwiseMask = SIDE_OF_KART << (screenId * 4);
     if (bitwiseMask == (player->unk_002 & bitwiseMask)) {
         for (i = 0; i < 10; i++) {
             if (player->particlePool0[i].type == 7) {
-                func_800658A0(player, arg1, i, arg2);
+                func_800658A0(player, playerId, i, screenId);
             }
         }
     }
 }
 
-void func_8006DD3C(Player* player, s8 playerId, s8 arg2) {
+void func_8006DD3C(Player* player, s8 playerId, s8 screenId) {
     s16 temp_s0;
     s32 temp_v0;
 
-    temp_v0 = 8 << (arg2 * 4);
+    temp_v0 = SIDE_OF_KART << (screenId * 4);
     if (temp_v0 == (player->unk_002 & temp_v0)) {
         for (temp_s0 = 0; temp_s0 < 10; ++temp_s0) {
             temp_v0 = player->particlePool0[temp_s0].type;
             if (temp_v0 != 3) {
                 if (temp_v0 == 5) {
-                    func_8006A280(player, playerId, temp_s0, arg2);
+                    func_8006A280(player, playerId, temp_s0, screenId);
                 }
             } else if (gActiveScreenMode == SCREEN_MODE_3P_4P_SPLITSCREEN) {
-                if (arg2 == playerId) {
-                    func_80066998(player, playerId, temp_s0, arg2);
+                if (screenId == playerId) {
+                    func_80066998(player, playerId, temp_s0, screenId);
                 }
             } else {
-                func_80066998(player, playerId, temp_s0, arg2);
+                func_80066998(player, playerId, temp_s0, screenId);
             }
         }
 
-        if (((player->type & 0x4000) == 0x4000) && (arg2 == playerId)) {
-            FrameInterpolation_RecordOpenChild("onomatopoeia", TAG_SMOKE_DUST((playerId << 8) + 20));
+        if (((player->type & PLAYER_HUMAN) == PLAYER_HUMAN) && (screenId == playerId)) {
+            FrameInterpolation_RecordOpenChild("onomatopoeia", TAG_SMOKE_DUST((playerId << 8) | (screenId << 4)));
             switch (player->particlePool2[0].type) {
                 case 2:
-                    render_player_onomatopoeia_crash(player, playerId, player->particlePool2[0].scale, arg2, 0);
+                    render_player_onomatopoeia_crash(player, playerId, player->particlePool2[0].scale, screenId, 0);
                     break;
                 case 3:
-                    render_player_onomatopoeia_whrrrr(player, playerId, player->particlePool2[0].scale, arg2, 0);
+                    render_player_onomatopoeia_whrrrr(player, playerId, player->particlePool2[0].scale, screenId, 0);
                     break;
                 case 4:
-                    func_80068724(player, playerId, player->particlePool2[0].scale, arg2, 0);
+                    func_80068724(player, playerId, player->particlePool2[0].scale, screenId, 0);
                     break;
                 case 5:
-                    render_player_onomatopoeia_boing(player, playerId, player->particlePool2[0].scale, arg2, 0);
+                    render_player_onomatopoeia_boing(player, playerId, player->particlePool2[0].scale, screenId, 0);
                     break;
                 case 6:
-                    render_player_onomatopoeia_pomp(player, playerId, player->particlePool2[0].scale, arg2, 0);
+                    render_player_onomatopoeia_pomp(player, playerId, player->particlePool2[0].scale, screenId, 0);
                     break;
             }
             FrameInterpolation_RecordCloseChild();
             if (player->particlePool2[1].type == 5) {
-                render_player_speech_bubble(player, arg2, D_8018D480, 1, 1.6f, 0xFFFFFF);
-                render_music_note(player, arg2, D_8018D484, 1, 1.6f, 0xFF);
+                render_player_speech_bubble(player, screenId, D_8018D480, 1, 1.6f, 0xFFFFFF);
+                render_music_note(player, screenId, D_8018D484, 1, 1.6f, 0xFF);
             }
         }
     }
@@ -6799,11 +6539,11 @@ void func_8006E058(void) {
                 case TIME_TRIALS:
                     func_8006E420(gPlayerOne, 0, 0);
 
-                    if ((gPlayerTwo->type & 0x100) == 0x100) {
+                    if ((gPlayerTwo->type & PLAYER_INVISIBLE_OR_BOMB) == PLAYER_INVISIBLE_OR_BOMB) {
                         func_8006E420(gPlayerTwo, 1, 0);
                     }
 
-                    if ((gPlayerThree->type & 0x100) == 0x100) {
+                    if ((gPlayerThree->type & PLAYER_INVISIBLE_OR_BOMB) == PLAYER_INVISIBLE_OR_BOMB) {
                         func_8006E420(gPlayerThree, 2, 0);
                         break;
                     }
@@ -6896,7 +6636,7 @@ void func_8006E420(Player* player, s8 arg1, s8 arg2) {
     }
 }
 
-void render_kart_particle_on_screen_one(Player* player, s8 playerId, s8 screenId) {
+void render_kart_particles(Player* player, s8 playerId, s8 screenId) {
     if ((player->type & PLAYER_EXISTS) == PLAYER_EXISTS) {
         if ((player->effects & BOO_EFFECT) == BOO_EFFECT) {
             if (playerId == screenId) {
@@ -6906,45 +6646,6 @@ void render_kart_particle_on_screen_one(Player* player, s8 playerId, s8 screenId
             func_8006D474(player, playerId, screenId);
         }
         func_8006DC54(player, playerId, screenId);
-    }
-}
-
-void render_kart_particle_on_screen_two(Player* player, s8 arg1, s8 arg2) {
-    if ((player->type & PLAYER_EXISTS) == PLAYER_EXISTS) {
-        if ((player->effects & BOO_EFFECT) == BOO_EFFECT) {
-            if (arg1 == arg2) {
-                func_8006D474(player, arg1, arg2);
-            }
-        } else {
-            func_8006D474(player, arg1, arg2);
-        }
-        func_8006DC54(player, arg1, arg2);
-    }
-}
-
-void render_kart_particle_on_screen_three(Player* player, s8 arg1, s8 arg2) {
-    if ((player->type & PLAYER_EXISTS) == PLAYER_EXISTS) {
-        if ((player->effects & BOO_EFFECT) == BOO_EFFECT) {
-            if (arg1 == arg2) {
-                func_8006D474(player, arg1, arg2);
-            }
-        } else {
-            func_8006D474(player, arg1, arg2);
-        }
-        func_8006DC54(player, arg1, arg2);
-    }
-}
-
-void render_kart_particle_on_screen_four(Player* player, s8 arg1, s8 arg2) {
-    if ((player->type & PLAYER_EXISTS) == PLAYER_EXISTS) {
-        if ((player->effects & BOO_EFFECT) == BOO_EFFECT) {
-            if (arg1 == arg2) {
-                func_8006D474(player, arg1, arg2);
-            }
-        } else {
-            func_8006D474(player, arg1, arg2);
-        }
-        func_8006DC54(player, arg1, arg2);
     }
 }
 

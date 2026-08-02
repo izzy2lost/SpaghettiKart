@@ -2,9 +2,10 @@
 #include <libultra/gbi.h>
 #include "Seagull.h"
 #include <vector>
-#include "World.h"
+#include "engine/World.h"
 
 #include "port/Game.h"
+#include "port/interpolation/FrameInterpolation.h"
 
 extern "C" {
 #include "macros.h"
@@ -13,14 +14,16 @@ extern "C" {
 #include "camera.h"
 #include "update_objects.h"
 #include "render_objects.h"
-#include "actors.h"
+#include "racing/actors.h"
 #include "code_80057C60.h"
 #include "code_80086E70.h"
-#include "math_util.h"
+#include "racing/math_util.h"
 #include "math_util_2.h"
 #include "code_80005FD0.h"
-#include "some_data.h"
-#include "ceremony_and_credits.h"
+#include "textures/some_data.h"
+#include "ending/ceremony_and_credits.h"
+#include "assets/models/common_data.h"
+#include "course_offsets.h"
 extern SplineData D_800E6034;
 extern SplineData D_800E60F0;
 extern SplineData D_800E61B4;
@@ -31,12 +34,11 @@ SplineData* D_800E633C[] = { &D_800E6034, &D_800E60F0, &D_800E61B4, &D_800E6280 
 
 size_t OSeagull::_count = 0;
 
-OSeagull::OSeagull(FVector pos) {
+OSeagull::OSeagull(const SpawnParams& params) : OObject(params) {
     Name = "Seagull";
+    ResourceName = "mk:seagull";
     _idx = _count;
-    _pos.x = pos.x;
-    _pos.y = pos.y;
-    _pos.z = pos.z;
+    FVector pos = params.Location.value_or(FVector(0, 0, 0));
 
     s16 randZ;
     s16 randX;
@@ -49,6 +51,11 @@ OSeagull::OSeagull(FVector pos) {
 
     init_object(_objectIndex, 0);
 
+    Object* object = &gObjectList[_objectIndex];
+
+    object->pos[0] = pos.x;
+    object->pos[1] = pos.y;
+    object->pos[2] = pos.z;
 
     set_obj_origin_pos(_objectIndex, pos.x, pos.y, pos.z);
     if (_idx < (NUM_SEAGULLS / 2)) {
@@ -114,12 +121,13 @@ void OSeagull::Draw(s32 cameraId) { // render_object_seagulls
         _toggle = true;
     }
     if (is_obj_flag_status_active(objectIndex, VISIBLE) != 0) {
-        OSeagull::func_800552BC(objectIndex);
+        OSeagull::func_800552BC(cameraId, objectIndex);
     }
 }
 
-void OSeagull::func_800552BC(s32 objectIndex) {
+void OSeagull::func_800552BC(s32 cameraId, s32 objectIndex) {
     if (gObjectList[objectIndex].state >= 2) {
+        FrameInterpolation_RecordOpenChild("seagull", (objectIndex << 5) | cameraId);
         rsp_set_matrix_transformation(gObjectList[objectIndex].pos, gObjectList[objectIndex].direction_angle,
                                       gObjectList[objectIndex].sizeScaling);
         gSPDisplayList(gDisplayListHead++, (Gfx*)D_0D0077D0);
@@ -131,6 +139,7 @@ void OSeagull::func_800552BC(s32 objectIndex) {
             render_animated_model((Armature*) gObjectList[objectIndex].model,
                                   (Animation**) gObjectList[objectIndex].vertex, 0, gObjectList[objectIndex].unk_0A2);
         }
+        FrameInterpolation_RecordCloseChild();
     }
 }
 
@@ -171,7 +180,8 @@ void OSeagull::func_8008241C(s32 objectIndex, s32 arg1) {
     randY = random_int(0x0014);
     randZ = random_int(0x00C8) + -100.0;
 
-    set_obj_origin_pos(objectIndex, (randX + _pos.x) * xOrientation, randY + _pos.y, randZ + _pos.z);
+    FVector pos = SpawnPos;
+    set_obj_origin_pos(objectIndex, (randX + pos.x) * xOrientation, randY + pos.y, randZ + pos.z);
     set_obj_direction_angle(objectIndex, 0U, 0U, 0U);
     gObjectList[objectIndex].unk_034 = 1.0f;
     func_80086EF0(objectIndex);

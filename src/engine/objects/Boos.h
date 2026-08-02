@@ -4,8 +4,9 @@
 #include <vector>
 #include "Object.h"
 
-#include "World.h"
-#include "CoreMath.h"
+#include "engine/registry/RegisterContent.h"
+#include "engine/World.h"
+#include "engine/CoreMath.h"
 
 extern "C" {
 #include "macros.h"
@@ -15,7 +16,7 @@ extern "C" {
 #include "common_structs.h"
 #include "objects.h"
 #include "camera.h"
-#include "some_data.h"
+#include "assets/textures/some_data.h"
 }
 
 /**
@@ -36,7 +37,19 @@ extern "C" {
  */
 class OBoos : public OObject {
 public:
-    explicit OBoos(size_t numBoos, const IPathSpan& leftBoundary, const IPathSpan& active, const IPathSpan& rightBoundary);
+    // This is simply a helper function to keep Spawning code clean
+    static inline OBoos* Spawn(size_t numBoos, const IPathSpan& leftBoundary, const IPathSpan& triggerBoundary, const IPathSpan& rightBoundary) {
+        SpawnParams params = {
+            .Name = "mk:boos",
+            .Count = numBoos,
+            .LeftExitSpan = leftBoundary,
+            .TriggerSpan = triggerBoundary,
+            .RightExitSpan = rightBoundary,
+        };
+        return static_cast<OBoos*>(AddObjectToWorld<OBoos>(params));
+    }
+
+    explicit OBoos(const SpawnParams& params);
 
     ~OBoos() {
         _count--;
@@ -46,9 +59,11 @@ public:
         return _count;
     }
 
+    virtual void SetSpawnParams(SpawnParams& params) override;
     virtual void Tick() override;
     virtual void Draw(s32 cameraId) override;
-    void func_800523B8(s32 objectIndex, s32 arg1, u32 arg2);
+    virtual void DrawEditorProperties() override;
+    void func_800523B8(s32 objectIndex, s32 cameraId, u32 arg2);
 
     void func_8007CA70(void);
     void func_8007C5B4(s32 objectIndex);
@@ -59,6 +74,9 @@ public:
     void BooExit(s32 someIndex);
     void func_8007C550(s32 objectIndex);
 
+    IPathSpan LeftTrigger;
+    IPathSpan ActiveZone;
+    IPathSpan RightTrigger;
 private:
     FVector _pos;
     static size_t _count;
@@ -68,8 +86,4 @@ private:
 
     bool _isActive = false;
     s32 _playerId = 0;
-
-    IPathSpan _leftBoundary;
-    IPathSpan _active;
-    IPathSpan _rightBoundary;
 };

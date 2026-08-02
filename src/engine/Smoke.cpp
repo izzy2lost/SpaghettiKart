@@ -13,7 +13,8 @@ extern "C" {
 #include "code_80057C60.h"
 #include "update_objects.h"
 #include "math_util_2.h"
-#include "assets/common_data.h"
+#include "assets/models/common_data.h"
+#include "assets/textures/common_data.h"
 }
 
 //! @todo: This should be an Object class one day
@@ -23,8 +24,8 @@ void TrainSmokeTick() {
     s32 temp_a0;
     Object* object;
 
-    for (auto& actor : gWorldInstance.Actors) {
-        if (auto train = dynamic_cast<ATrain*>(actor)) {
+    for (auto& actor : GetWorld()->Actors) {
+        if (auto* train = dynamic_cast<ATrain*>(actor.get())) {
             if (train->SmokeTimer != 0) {
                 train->SmokeTimer -= 1;
             }
@@ -48,7 +49,7 @@ void TrainSmokeTick() {
                     train->SmokeTimer = 100;
                 }
             }
-        } else if (auto boat = dynamic_cast<ABoat*>(actor)) {
+        } else if (auto* boat = dynamic_cast<ABoat*>(actor.get())) {
             if (boat->SmokeTimer != 0) {
                 boat->SmokeTimer -= 1;
             }
@@ -78,8 +79,8 @@ void TrainSmokeTick() {
 void TrainSmokeDraw(s32 cameraId) {
     Camera* camera = &camera1[cameraId];
 
-    for (auto& actor : gWorldInstance.Actors) {
-        if (auto train = dynamic_cast<ATrain*>(actor)) {
+    for (auto& actor : GetWorld()->Actors) {
+        if (auto train = dynamic_cast<ATrain*>(actor.get())) {
             gSPDisplayList(gDisplayListHead++, (Gfx*) D_0D007AE0);
             load_texture_block_i8_nomirror((uint8_t*) D_0D029458, 32, 32);
             func_8004B72C(255, 255, 255, 255, 255, 255, 255);
@@ -88,12 +89,12 @@ void TrainSmokeDraw(s32 cameraId) {
 
             if ((train->SomeFlags != 0) && (is_particle_on_screen(train->Locomotive.position, camera, 0x4000U) != 0)) {
                 for (size_t i = 0; i < 128; i++) {
-                    FrameInterpolation_RecordOpenChild("TrainSmokeParticle", train->SmokeParticles[i]);
+                    FrameInterpolation_RecordOpenChild("train_smoke_particle", (train->SmokeParticles[i] << 4) | camera->cameraId);
                     render_object_train_smoke_particle(train->SmokeParticles[i], cameraId);
                     FrameInterpolation_RecordCloseChild();
                 }
             }
-        } else if (auto boat = dynamic_cast<ABoat*>(actor)) {
+        } else if (auto* boat = dynamic_cast<ABoat*>(actor.get())) {
             gSPDisplayList(gDisplayListHead++, (Gfx*) D_0D007AE0);
 
             load_texture_block_i8_nomirror((uint8_t*) D_0D029458, 32, 32);
@@ -102,7 +103,7 @@ void TrainSmokeDraw(s32 cameraId) {
             D_80183E80[2] = 0x8000;
             if ((boat->SomeFlags != 0) && (is_particle_on_screen(boat->Position, camera, 0x4000U) != 0)) {
                 for (size_t i = 0; i < gObjectParticle2_SIZE; i++) {
-                    FrameInterpolation_RecordOpenChild("BoatSmokeParticle", boat->SmokeParticles[i]);
+                    FrameInterpolation_RecordOpenChild("boat_smoke_particle", (boat->SmokeParticles[i] << 4) | camera->cameraId);
                     render_object_paddle_boat_smoke_particle(boat->SmokeParticles[i], cameraId);
                     FrameInterpolation_RecordCloseChild();
                 }

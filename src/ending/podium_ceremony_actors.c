@@ -7,7 +7,8 @@
 #include "../camera.h"
 #include "main.h"
 #include "memory.h"
-#include <assets/common_data.h>
+#include <assets/models/common_data.h>
+#include "racing/memory.h"
 #include "render_player.h"
 #include "render_objects.h"
 #include "podium_ceremony_actors.h"
@@ -16,7 +17,7 @@
 #include "code_80057C60.h"
 #include "code_80005FD0.h"
 #include "code_80281C40.h"
-#include "math_util.h"
+#include "racing/math_util.h"
 #include <string.h>
 #include "port/interpolation/FrameInterpolation.h"
 
@@ -311,7 +312,7 @@ void unused_80280FA8(UNUSED CeremonyActor* actor) {
 void balloons_and_fireworks_init(void) {
     D_802874D8.actorTimer = 0;
     sPodiumActorList = (CeremonyActor*) get_next_available_memory_addr(sizeof(CeremonyActor) * 200);
-    memset(sPodiumActorList, 0, sizeof(CeremonyActor) * 200);
+    memset(sPodiumActorList, 0, (sizeof(CeremonyActor) * 200));
     new_actor(&initDummy);
 }
 
@@ -464,6 +465,7 @@ void func_80281540(void) {
 void podium_ceremony_loop(void) {
     ClearMatrixPools();
     Editor_ClearMatrix();
+    CM_TickEditor();
     gMatrixObjectCount = 0;
     D_802874FC = 0;
     update_camera_podium_ceremony();

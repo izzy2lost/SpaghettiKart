@@ -9,9 +9,11 @@
     <key>CFBundleExecutable</key>
     <string>SpaghettiKart</string>
     <key>CFBundleGetInfoString</key>
-    <string>0.1.0</string>
+    <string>1.0.0</string>
     <key>CFBundleIconFile</key>
     <string>SpaghettiKart.icns</string>
+    <key>CFBundleIconName</key>
+    <string>SpaghettiKartIcon</string>
     <key>CFBundleIdentifier</key>
     <string>com.SpaghettiKart.SpaghettiKart</string>
     <key>CFBundleDocumentTypes</key>
@@ -22,17 +24,21 @@
     <key>CFBundlePackageType</key>
     <string>APPL</string>
     <key>CFBundleShortVersionString</key>
-    <string>0.1.0</string>
+    <string>1.0.0</string>
     <key>CFBundleSignature</key>
     <string>ZMM</string>
     <key>CFBundleVersion</key>
-    <string>0.1.0</string>
+    <string>1.0.0</string>
     <key>NSHumanReadableCopyright</key>
     <string>Copyright 2024 HarbourMasters.</string>
     <key>LSApplicationCategoryType</key>
     <string>public.app-category.games</string>
     <key>LSMinimumSystemVersion</key>
     <string>10.15</string>
+    <key>NSHighResolutionCapable</key>
+    <true/>
+    <key>NSSupportsAutomaticGraphicsSwitching</key>
+    <true/>
     <key>LSArchitecturePriority</key>
     <array>
         <string>arm64</string>

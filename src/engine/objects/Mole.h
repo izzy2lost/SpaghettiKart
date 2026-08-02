@@ -3,7 +3,7 @@
 #include <libultraship.h>
 #include <vector>
 #include "Object.h"
-#include "CoreMath.h"
+#include "engine/CoreMath.h"
 #include "MoleGroup.h"
 
 extern "C" {
@@ -14,7 +14,7 @@ extern "C" {
 #include "common_structs.h"
 #include "objects.h"
 #include "course_offsets.h"
-#include "some_data.h"
+#include "textures/some_data.h"
 }
 
 class OMoleGroup;
@@ -22,12 +22,15 @@ class OMoleGroup;
 class OMole : public OObject {
 public:
     explicit OMole(FVector pos, OMoleGroup* group);
+    ~OMole() {
+        _count--;
+    }
 
     virtual void Tick() override;
     virtual void Draw(s32 cameraId) override;
 
-    void func_80054E10(s32 objectIndex);
-    void func_80054EB8();
+    void func_80054E10(s32 cameraId, s32 objectIndex);
+    void func_80054EB8(s32 cameraId);
     void func_80054F04(s32 cameraId);
     void render_object_moles(s32 cameraId);
     void func_80054D00(s32 objectIndex, s32 cameraId);

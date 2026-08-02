@@ -4,10 +4,12 @@
 #include <libultraship/libultraship.h>
 #include "UIWidgets.h"
 #include "Menu.h"
-#include "Fast3D/backends/gfx_rendering_api.h"
+#include "fast/backends/gfx_rendering_api.h"
 
 
 namespace GameUI {
+
+constexpr size_t MAX_FPS = 480;
 
 static const std::unordered_map<int32_t, const char*> menuExtentOptions = {
     { UIWidgets::MenuExtent::Condensed, "Condensed" },
@@ -72,6 +74,7 @@ class PortMenu : public Ship::Menu {
     void AddEnhancements();
       void AddRulesets();
     void AddDevTools();
+      void AddSceneVisibility();
 };
 } // namespace BenGui
 

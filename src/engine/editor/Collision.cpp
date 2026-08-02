@@ -2,15 +2,20 @@
 
 #include <libultraship/libultraship.h>
 #include <libultra/gbi.h>
-#include "Matrix.h"
+#include "engine/Matrix.h"
+
+#include "engine/Actor.h"
+#include "engine/objects/Object.h"
+#include "engine/editor/GameObject.h"
+#include "port/Game.h"
 
 extern "C" {
 #include "main.h"
-#include "other_textures.h"
+#include "assets/textures/other_textures.h"
 }
 
-namespace Editor {
-    void GenerateCollisionMesh(GameObject* object, Gfx* model, float scale) {
+namespace TrackEditor {
+    void GenerateCollisionMesh(std::variant<AActor*, OObject*, GameObject*> object, Gfx* model, float scale) {
         int8_t opcode;
         uintptr_t lo;
         uintptr_t hi;
@@ -19,6 +24,7 @@ namespace Editor {
         Vtx* vtx = NULL;
         size_t i = 0;
         bool run = true;
+
         while (run) {
             i++;
             lo = ptr->words.w0;
@@ -31,7 +37,7 @@ namespace Editor {
                     break;
                 case G_DL_OTR_HASH:
                     ptr++;
-                    GenerateCollisionMesh(object, (Gfx*)ResourceGetDataByCrc(((uint64_t)(ptr->words.w0 << 32)) + ptr->words.w1), scale);
+                    GenerateCollisionMesh(object, (Gfx*)ResourceGetDataByCrc(((uint64_t)(ptr->words.w0) << 32) + ptr->words.w1), scale);
                     break;
                 case G_DL_OTR_FILEPATH:
                    // printf("otr filepath: %s\n", (const char*)hi);
@@ -42,7 +48,7 @@ namespace Editor {
                     break;
                 case G_VTX_OTR_HASH: {
                     ptr++;
-                    vtx = (Vtx*)ResourceGetDataByCrc(((uint64_t)(ptr->words.w0 << 32)) + ptr->words.w1);
+                    vtx = (Vtx*)ResourceGetDataByCrc(((uint64_t)(ptr->words.w0) << 32) + ptr->words.w1);
                     break;
                 }
                 case G_VTX_OTR_FILEPATH: {
@@ -64,8 +70,11 @@ namespace Editor {
                     FVector p1 = FVector(vtx[v1].v.ob[0], vtx[v1].v.ob[1], vtx[v1].v.ob[2]);
                     FVector p2 = FVector(vtx[v2].v.ob[0], vtx[v2].v.ob[1], vtx[v2].v.ob[2]);
                     FVector p3 = FVector(vtx[v3].v.ob[0], vtx[v3].v.ob[1], vtx[v3].v.ob[2]);
-
-                    object->Triangles.push_back({p1, p2, p3});
+                    std::visit([p1, p2, p3](auto* obj) {
+                        if (obj) {
+                            obj->Triangles.push_back({p1, p2, p3});
+                        }
+                    }, object);
                     break;
                 }
                 case G_TRI1_OTR: {
@@ -82,9 +91,11 @@ namespace Editor {
                     FVector p1 = FVector(vtx[v1].v.ob[0], vtx[v1].v.ob[1], vtx[v1].v.ob[2]);
                     FVector p2 = FVector(vtx[v2].v.ob[0], vtx[v2].v.ob[1], vtx[v2].v.ob[2]);
                     FVector p3 = FVector(vtx[v3].v.ob[0], vtx[v3].v.ob[1], vtx[v3].v.ob[2]);
-
-                    object->Triangles.push_back({p1, p2, p3});
-
+                    std::visit([p1, p2, p3](auto* obj) {
+                        if (obj) {
+                            obj->Triangles.push_back({p1, p2, p3});
+                        }
+                    }, object);
                     break;
                 }
                 case G_TRI2: {
@@ -109,8 +120,12 @@ namespace Editor {
                     FVector p5 = FVector(vtx[v5].v.ob[0], vtx[v5].v.ob[1], vtx[v5].v.ob[2]);
                     FVector p6 = FVector(vtx[v6].v.ob[0], vtx[v6].v.ob[1], vtx[v6].v.ob[2]);
 
-                    object->Triangles.push_back({p1, p2, p3});
-                    object->Triangles.push_back({p4, p5, p6});
+                    std::visit([p1, p2, p3, p4, p5, p6](auto* obj) {
+                        if (obj) {
+                            obj->Triangles.push_back({p1, p2, p3});
+                            obj->Triangles.push_back({p4, p5, p6});
+                        }
+                    }, object);
                     break;
                 }
                 case G_QUAD: {
@@ -128,12 +143,19 @@ namespace Editor {
                     FVector p3 = FVector(vtx[v3].v.ob[0], vtx[v3].v.ob[1], vtx[v3].v.ob[2]);
                     FVector p4 = FVector(vtx[v4].v.ob[0], vtx[v4].v.ob[1], vtx[v4].v.ob[2]);
 
-                    object->Triangles.push_back({p1, p2, p3});
-                    object->Triangles.push_back({p1, p3, p4});
+                    std::visit([p1, p2, p3, p4](auto* obj) {
+                        if (obj) {
+                            obj->Triangles.push_back({p1, p2, p3});
+                            obj->Triangles.push_back({p1, p3, p4});
+                        }
+                    }, object);
                     break;
                 }
                 case G_ENDDL:
                     run = false;
+                    break;
+                case G_MARKER:
+                    ptr++;
                     break;
             }
 

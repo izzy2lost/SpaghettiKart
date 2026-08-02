@@ -1,6 +1,16 @@
 #ifndef DEFINES_H
 #define DEFINES_H
 
+#ifdef __cplusplus
+#define EXTERN_C extern "C"
+#define EXTERN_C_START extern "C" {
+#define EXTERN_C_END   }
+#else
+#define EXTERN_C extern
+#define EXTERN_C_START
+#define EXTERN_C_END
+#endif
+
 /**
  * @brief Options for Controller Pak state
  */
@@ -76,11 +86,11 @@
 #define DEMO_MODE_INACTIVE 0
 
 #ifdef VERSION_EU
-#define COURSE_TIMER_ITER 0.020041665999999999    // 1 / 50
-#define COURSE_TIMER_ITER_f 0.020041665999999999f // 1 / 50
+#define TRACK_TIMER_ITER 0.020041665999999999    // 1 / 50
+#define TRACK_TIMER_ITER_f 0.020041665999999999f // 1 / 50
 #else
-#define COURSE_TIMER_ITER 0.01666666    // 1 / 60
-#define COURSE_TIMER_ITER_f 0.01666666f // 1 / 60
+#define TRACK_TIMER_ITER 0.01666666    // 1 / 60
+#define TRACK_TIMER_ITER_f 0.01666666f // 1 / 60
 #endif
 
 #define V_BlANK_TIMER_ITER 0.01666666
@@ -92,7 +102,9 @@
  * Used in the Player struct's 'type' member: player->type
  */
 #define PLAYER_INACTIVE 0                 // 0x0000
+#define PLAYER_UNKNOWN_0x10 (1 << 4)      // 0x0010 // unused?
 #define PLAYER_UNKNOWN_0x40 (1 << 6)      // 0x0040
+#define PLAYER_UNKNOWN_0x80 (1 << 7)      // 0x0080 // UNUSED
 #define PLAYER_INVISIBLE_OR_BOMB (1 << 8) // 0x0100
 #define PLAYER_STAGING (1 << 9)           // 0x0200
 #define PLAYER_UNKNOWN (1 << 10)          // 0x0400 // unused ?
@@ -173,7 +185,7 @@ enum { MUSHROOM_CUP, FLOWER_CUP, STAR_CUP, SPECIAL_CUP, BATTLE_CUP, NUM_CUPS };
 /**
  * @brief Options for gCourseIndexInCup
  */
-enum { COURSE_ONE, COURSE_TWO, COURSE_THREE, COURSE_FOUR };
+enum { TRACK_ONE, TRACK_TWO, TRACK_THREE, TRACK_FOUR };
 
 /**
  * @brief Character IDs
@@ -266,12 +278,10 @@ enum COLOR_ID {
 
 /**
  * @brief Sound mode options
- * Option 2 appears to be unused, as such its probably not
- * a valid option
  */
 #define SOUND_STEREO 0
 #define SOUND_HEADPHONES 1
-#define SOUND_UNUSED 2
+#define SOUND_SURROUND 2
 #define SOUND_MONO 3
 #define NUM_SOUND_MODES 4
 
@@ -345,21 +355,99 @@ enum PLACE { FIRST_PLACE, SECOND_PLACE, THIRD_PLACE, FOURTH_PLACE };
  * @brief Max representable time, 100 minutes measured in centiseconds
  */
 #define MAX_TIME 0x927C0
+#define DEGREES_CONVERSION_FACTOR 182
+
+// player->oobProps
+/* Deals with the lower out of bounds (OOB) plane on levels. Represented by fluids (water / lava)
+  or nothing for Rainbow Road and Skyscraper. */
+#define UNDER_OOB_OR_FLUID_LEVEL 0x1 // Set while mostly under the plane. Does not necessarily trigger Lakitu on Koopa Troopa Beach.
+#define PASS_OOB_OR_FLUID_LEVEL 0x2 // Set when passing through the lower plane in either direction
+// The next two are also activated when passing through the lower plane.
+#define UNDER_FLUID_LEVEL 0x4 // Stays active until Lakitu places back on track
+#define UNDER_OOB_LEVEL 0x8 // Active while under a non-fluid OOB plane. Is momentarily active when passing through fluids.
+
+
+/* UNK_002 has something to do with player animations. Each player has a 32-bit
+flag broken into 8 groups of 4 bits. Those 4 bits affect how each of the 8 players
+appear to the specified player */
+#define CHANGING_ANIMATION 0x1 // Seems to be set when the kart animation has to change.
+#define UNK_002_UNKNOWN_0x2 0x2 
+#define UNK_002_UNKNOWN_0x4 0x4 /* Unclear, but has to do with viewing the side of player. At least tends to change if target
+player spins. Something  with avoding rollover of aniamation frame data? */
+#define SIDE_OF_KART 0x8 // Seems to be whether you are in a rectangle shooting out from both sides of target player
+
+#define WHISTLE 0x20     // Whistle spinout save graphic
+#define CRASH 0x40       // Crash! graphic (vertical tumble)
+#define WHIRRR 0x80      // Whirrr! graphic (spinning out)
+#define POOMP 0x100      // Poomp! graphic (landing from a height)
+#define BOING 0x800      // Boing! graphic (hopping)
+#define EXPLOSION 0x1000 // Big shock looking graphic when starting tumble
+
+// player->lakituProps
+#define LAKITU_RETRIEVAL 0x1 // While lakitu is grabbing you, but before the scene transition of being placed on the track
+#define HELD_BY_LAKITU   0x2
+#define LAKITU_FIZZLE    0x4 // Disintegration and reintegration effect when transitioning from retrieval to placement
+#define LAKITU_SCENE     0x8 // the whole segment from when lakitu is called to when you regain control
+#define FRIGID_EFFECT   0x10 // Cold colors on Sherbet Land after in frigid water
+#define THAWING_EFFECT  0x20 // Regaining usual colors post frigid effect
+#define FROZEN_EFFECT   0x80 // In the ice cube
+#define WENT_OVER_OOB  0x100 // Player went over (or is on) an OOB area. Cancelled if touch back in bounds
+#define LAKITU_LAVA   0x1000 // smoky effect when retrieved from lava
+#define LAKITU_WATER  0x2000 // dripping effect when retreived from water
+
+// player->kartProps
+#define BACK_UP               0x1
+#define RIGHT_TURN            0x2 // non-drifting (more than 5 degrees)
+#define LEFT_TURN             0x4 // non-drifting (more than 5 degrees)
+#define MOVE_BACKWARDS        0x8 // includes lakitu
+#define LOSE_GP_RACE         0x10 // pointless, only unsets itself
+#define THROTTLE             0x20 // Closely tied to just pressing A. Possible exception for AB-spins
+#define EARLY_SPINOUT_RIGHT  0x40 // Spinning out while facing right (not actually used for anything)
+#define EARLY_SPINOUT_LEFT   0x80 // Spinning out while facing left
+#define POST_TUMBLE_GAS     0x100 // Causes particles after a vertical tumble, I think
+#define BECOME_INVISIBLE    0x200
+#define UNUSED_0x400        0x400 // locked behind 0x800 (func_80091440)
+#define UNUSED_0x800        0x800 // locked behind 0x400 (func_8002B830 -> func_800911B4)
+#define UNUSED_0x1000      0x1000 // 0x1000 locked behind 0x400 (func_8002B830 -> func_800911B4)
+#define UNUSED_0x2000      0x2000 // 0x2000 locked behind 0x400 and 0x800 (func_8002B830 -> func_800911B4, apply_effect -> func_80091298,
+                                  // func_80091440)
+#define DRIVING_SPINOUT    0x4000
+#define UNKNOWN_BATTLE_VAR 0x8000 // 0x8000 something battle related, unclear if ever set
 
 /**
- * @brief sound effect of player's
- * for soundEffect
+ * @brief triggers indicating that an effect should be applied to a kart
  */
-#define HIT_SOUND_EFFECT 0x100                   // hitting an object
-#define BOOST_SOUND_EFFECT 0x200                 // being boosted by trigger a mushroom
-#define BOO_SOUND_EFFECT 0x800                   // being a boo
-#define STAR_SOUND_EFFECT 0x2000                 // being a star
-#define HIT_ROTATING_SOUND_EFFECT 0x4000         // hitting a rotating object
-#define BOOST_RAMP_WOOD_SOUND_EFFECT 0x8000      // being boosted by a ramp
-#define HOLD_BANANA_SOUND_EFFECT 0x40000         // holding a banana
-#define REVERSE_SOUND_EFFECT 0x400000            // being in the wrong direction
-#define BOOST_RAMP_ASPHALT_SOUND_EFFECT 0x800000 // being boosted by a boost pad
-#define HIT_BY_ITEM_SOUND_EFFECT 0x1000000       // being hit by an item
+#define HIT_BANANA_TRIGGER              0x1 // hits a banana
+#define HIGH_TUMBLE_TRIGGER             0x2 // hit by a red shell, blue shell, or hit a mole
+#define LOW_TUMBLE_TRIGGER              0x4 // hit by a green shell
+#define DRIVING_SPINOUT_TRIGGER        0x80 // spinning out from erratic driving
+#define THWOMP_SQUISH_TRIGGER         0x100 // stomped by thwomp
+#define SHROOM_TRIGGER                0x200 // being boosted by trigger a mushroom
+#define BOO_TRIGGER                   0x800 // being a boo
+#define UNUSED_TRIGGER_0x1000        0x1000 // Unused
+#define STAR_TRIGGER                 0x2000 // Starting a star
+#define LIGHTNING_STRIKE_TRIGGER     0x4000 // Struck by lightning
+#define BOOST_RAMP_WOOD_TRIGGER      0x8000 // being boosted by a ramp
+#define UNUSED_TRIGGER_0x20000      0x20000 // Unused
+#define DRAG_ITEM_EFFECT            0x40000 // holding a non-shell item behind you
+#define HIT_PADDLE_BOAT_TRIGGER     0x80000 // hit paddle boat
+#define UNUSED_TRIGGER_0x10000     0x100000 // Unused
+#define SPINOUT_TRIGGER            0x200000 // hit crab or spiny spinout or losing versus race
+#define VERTICAL_TUMBLE_TRIGGER    0x400000 // hitting a fake item / bomb / snowman / car / train
+#define BOOST_RAMP_ASPHALT_TRIGGER 0x800000 // being boosted by a boost pad
+#define HIT_BY_STAR_TRIGGER       0x1000000 // being hit by a star
+#define START_BOOST_TRIGGER       0x2000000 // Start boost
+#define LOSE_BATTLE_EFFECT        0x4000000 // When losing battle mode
+#define BECOME_BOMB_EFFECT        0x8000000 // When becoming a bomb in battle mode
+#define START_SPINOUT_TRIGGER    0x10000000 // Spinning out by holding gas at start of race
+
+#define ALL_TRIGGERS (0xFFFFFFFF)
+#define RACING_SPINOUT_TRIGGERS (SPINOUT_TRIGGER | DRIVING_SPINOUT_TRIGGER | HIT_BANANA_TRIGGER) // 0x200081
+#define RAMP_BOOST_TRIGGERS (BOOST_RAMP_ASPHALT_TRIGGER | BOOST_RAMP_WOOD_TRIGGER) // 0x00808000
+#define ANY_BOOST_TRIGGERS (RAMP_BOOST_TRIGGERS | SHROOM_TRIGGER) // 0x00808200
+#define STATE_TRANSITION_TRIGGERS (STAR_TRIGGER | BOO_TRIGGER | UNUSED_TRIGGER_0x1000 | UNUSED_TRIGGER_0x20000)// 0x00023800
+#define HIT_TRIGGERS (HIT_BY_STAR_TRIGGER | VERTICAL_TUMBLE_TRIGGER | \
+    LIGHTNING_STRIKE_TRIGGER | LOW_TUMBLE_TRIGGER | HIGH_TUMBLE_TRIGGER | THWOMP_SQUISH_TRIGGER) // 0x01404106
 
 /**
  * @brief effect of player's
@@ -378,7 +466,7 @@ enum PLACE { FIRST_PLACE, SECOND_PLACE, THIRD_PLACE, FOURTH_PLACE };
 #define UNKNOWN_EFFECT_0x10000 0x10000       //
 #define BOOST_RAMP_ASPHALT_EFFECT 0x100000   // being boosted by a boost pad
 #define UNKNOWN_EFFECT_0x200000 0x200000     //
-#define REVERSE_EFFECT 0x400000              // being in reverse of the course
+#define REVERSE_EFFECT 0x400000              // Player is facing the wrong direction
 #define UNKNOWN_EFFECT_0x1000000 0x1000000   //
 #define HIT_BY_ITEM_EFFECT 0x2000000         // being hit by an item
 #define HIT_EFFECT 0x4000000                 // hitting an object
@@ -423,23 +511,13 @@ enum PLACE { FIRST_PLACE, SECOND_PLACE, THIRD_PLACE, FOURTH_PLACE };
 #define SPAWN_FIRST_SHELL 0
 #define SPAWN_SECOND_SHELL 1
 #define SPAWN_THIRD_SHELL 2
+#define SHELL_COLLISION 3 // Activated when triple shells have spawned
+#define ORBIT_PLAYER 4
 
 #define GPACK_RGB888(r, g, b) (((r) << 16) | ((g) << 8) | (b))
 #define COLOR_LIGHT GPACK_RGB888(0x1C, 0x00, 0x00)
 #define COLOR_LAVA GPACK_RGB888(0x34, 0x00, 0x00)
 #define COLOR_BLACK GPACK_RGB888(0, 0, 0)
-
-
-/**
- * @brief player water interaction flags (player->unk_0DE)
- *
- */
-
-#define WATER_NO_INTERACTION 0x0000             // No water interaction
-#define WATER_IS_FULLY_SUBMERGED 0x0001         // Kart is completely underwater
-#define WATER_IS_PARTIALLY_SUBMERGED 0x0002     // Kart is partially in the water
-#define WATER_IN_DEEP_LIQUID_STATE 0x0004       // Persistent flag for being in a deep liquid state?
-#define WATER_JUST_ENTERED_DEEP_LIQUID 0x0008   // Momentary flag for the instant of entering deep liquid
 
 /**
  *

@@ -1,20 +1,13 @@
 #pragma once
 
 #include <libultraship.h>
-#include <vector>
 
+#include "engine/registry/RegisterContent.h"
 #include "engine/World.h"
 #include "engine/objects/Object.h"
 
 extern "C" {
 #include "macros.h"
-#include "main.h"
-#include "vehicles.h"
-#include "waypoints.h"
-#include "common_structs.h"
-#include "objects.h"
-#include "camera.h"
-#include "some_data.h"
 }
 
 
@@ -25,7 +18,16 @@ extern "C" {
 class OGrandPrixBalloons : public OObject {
 public:
 
-    explicit OGrandPrixBalloons(const FVector& pos);
+    explicit OGrandPrixBalloons(const SpawnParams& params);
+
+    // This is simply a helper function to keep Spawning code clean
+    static OGrandPrixBalloons* Spawn(const FVector& pos) {
+        SpawnParams params = {
+            .Name = "mk:grand_prix_balloons",
+            .Location = pos,
+        };
+        return dynamic_cast<OGrandPrixBalloons*>(AddObjectToWorld<OGrandPrixBalloons>(params));
+    }
 
     ~OGrandPrixBalloons() {
         _count--;
@@ -37,7 +39,7 @@ public:
 
     virtual void Tick() override;
     virtual void Draw(s32 cameraId) override;
-    void func_80053D74(s32 objectIndex, UNUSED s32 arg1, s32 vertexIndex);
+    void func_80053D74(s32 objectIndex, s32 cameraId, s32 vertexIndex, s32 index);
 
     void func_80074924(s32 objectIndex);
     void func_80074D94(s32 objectIndex);

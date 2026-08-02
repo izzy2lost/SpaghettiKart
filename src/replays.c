@@ -72,11 +72,11 @@ void load_course_ghost(void) {
     u8* ghost = (u8*) D_80162DC4;
 
     size_t size = 0;
-    if (ghost == d_luigi_raceway_staff_ghost) {
+    if (ghost == (u8*) d_luigi_raceway_staff_ghost) {
         size = 1046 * sizeof(StaffGhost);
-    } else if (ghost == d_mario_raceway_staff_ghost) {
+    } else if (ghost == (u8*) d_mario_raceway_staff_ghost) {
         size = 935 * sizeof(StaffGhost);
-    } else if (ghost == d_royal_raceway_staff_ghost) {
+    } else if (ghost == (u8*) d_royal_raceway_staff_ghost) {
         size = 1907 * sizeof(StaffGhost);
     }
 
@@ -135,6 +135,9 @@ s32 func_800051C4(void) {
             mio0encode((s32) sReplayGhostEncoded, (sReplayGhostBufferSize * 4) + 0x20, (s32) gReplayGhostCompressed);
         return phi_v0 + 0x1e;
     }
+    // Empty buffer used to fall off the end; report zero encoded size (the
+    // caller only checks this against an upper bound).
+    return 0;
 }
 
 void func_8000522C(void) {
@@ -167,11 +170,11 @@ void func_80005310(void) {
 
         set_staff_ghost();
 
-        if (staff_ghost_track_ptr != (uintptr_t) GetCourse()) {
+        if (staff_ghost_track_ptr != (uintptr_t) GetTrack()) {
             bPlayerGhostDisabled = 1;
         }
 
-        staff_ghost_track_ptr = (uintptr_t) GetCourse();
+        staff_ghost_track_ptr = (uintptr_t) GetTrack();
         gPauseTriggered = 0;
         sUnusedReplayCounter = 0;
         gPostTimeTrialReplayCannotSave = 0;
@@ -211,7 +214,7 @@ void func_80005310(void) {
  * coordinates were added */
 #define REPLAY_MASK (ALL_BUTTONS ^ (A_BUTTON | B_BUTTON | Z_TRIG | R_TRIG | L_TRIG))
 
-/* Inputs for replays (including player and course ghosts) are saved in a s32[] where
+/* Inputs for replays (including player and track ghosts) are saved in a s32[] where
    each entry is a combination of the inputs and  how long those inputs were held for.
    In essence it's "These buttons were pressed and the joystick was in this position.
    This was the case for X frames".
@@ -417,7 +420,7 @@ void save_player_replay(void) {
     /* Input file is too long or picked up by lakitu or Out of bounds
     Not sure if there is any way to be considered out of bounds without lakitu getting called */
 
-    if (((sPlayerInputIdx >= 0x1000) || ((gPlayerOne->unk_0CA & 2) != 0)) || ((gPlayerOne->unk_0CA & 8) != 0)) {
+    if (((sPlayerInputIdx >= 0x1000) || ((gPlayerOne->lakituProps & HELD_BY_LAKITU) != 0)) || ((gPlayerOne->lakituProps & LAKITU_SCENE) != 0)) {
         gPostTimeTrialReplayCannotSave = 1;
         return;
     }
@@ -519,7 +522,7 @@ void func_80005B18(void) {
                 sReplayGhostBufferSize = D_80162D86;
                 D_80162DDC = 1;
             }
-            if ((gPlayerOne->type & 0x800) == 0x800) {
+            if ((gPlayerOne->type & PLAYER_CINEMATIC_MODE) == PLAYER_CINEMATIC_MODE) {
                 func_80005AE8(gPlayerTwo);
                 func_80005AE8(gPlayerThree);
             } else {

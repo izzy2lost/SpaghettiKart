@@ -9,8 +9,9 @@
 #include "main.h"
 #include "memory.h"
 #include "camera.h"
-#include "math_util.h"
+#include "racing/math_util.h"
 #include "math_util_2.h"
+#include "racing/memory.h"
 #include "render_objects.h"
 #include "objects.h"
 #include "waypoints.h"
@@ -19,27 +20,33 @@
 #include "code_80057C60.h"
 #include "code_8006E9C0.h"
 #include "code_80086E70.h"
-#include <assets/common_data.h>
+#include <assets/models/common_data.h>
 #include "audio/external.h"
 #include "sounds.h"
-#include <actors.h>
-#include "race_logic.h"
-#include "collision.h"
+#include <racing/actors.h>
+#include "racing/race_logic.h"
+#include "racing/collision.h"
 #include "effects.h"
 #include "code_80091440.h"
 #include "menu_items.h"
-#include "podium_ceremony_actors.h"
+#include "ending/podium_ceremony_actors.h"
 #include "courses/all_course_data.h"
-#include <assets/ceremony_data.h>
+#include <assets/models/ceremony_data.h>
 #include "src/ending/ceremony_and_credits.h"
 #include "menus.h"
-#include <assets/other_textures.h>
+#include <assets/textures/other_textures.h>
 #include "data/some_data.h"
 #include "memory.h"
 #include "courses/all_course_offsets.h"
 #include "courses/all_course_data.h"
-#include <assets/boo_frames.h>
+#include <assets/textures/boo_frames.h>
 #include "port/Game.h"
+#include <assets/textures/tracks/banshee_boardwalk/banshee_boardwalk_data.h>
+#include <assets/textures/tracks/sherbet_land/sherbet_land_data.h>
+#include <assets/textures/tracks/rainbow_road/rainbow_road_data.h>
+
+#include "engine/RaceManager.h"
+#include "engine/sky/Sky.h"
 
 float OTRGetAspectRatio(void);
 
@@ -936,6 +943,7 @@ s32 func_80073B34(s32 arg0, s16* arg1, s32 arg2, s32 arg3, s32 arg4, s32 arg5, s
     if (arg3 < *arg1) {
         return func_80073A10(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
     }
+    return 0;
 }
 
 bool func_80073B78(s32 arg0, s32 objectIndex, s16* arg2, s32 arg3, s32 arg4, s32 arg5, s32 arg6, s32 arg7) {
@@ -1105,6 +1113,7 @@ s32 func_8007415C(s32 objectIndex, f32* arg1, f32 arg2, f32 arg3, f32 arg4, s32 
     if (*arg1 < arg3) {
         return func_8007401C(objectIndex, arg1, arg2, arg3, arg4, arg5, arg6);
     }
+    return 0;
 }
 
 s32 func_800741B4(s32 objectIndex, f32* arg1, f32 arg2, f32 arg3, f32 arg4, s32 arg5, s32 arg6) {
@@ -1216,7 +1225,7 @@ void func_800745C8(s32 objectIndex, const char** lakituTexturePtr) {
 
     if ((gObjectList[objectIndex].status & 1) != 0) {
         phi_a1 = 0;
-        if (gObjectList[objectIndex].tlutList != gObjectList[objectIndex].activeTLUT) {
+        if (gObjectList[objectIndex].tlutList != (const u8*) gObjectList[objectIndex].activeTLUT) {
             gObjectList[objectIndex].activeTLUT = gObjectList[objectIndex].tlutList;
         }
 
@@ -1720,11 +1729,9 @@ void func_800762DC(Vec3f arg0, f32 arg1) {
 void func_8007634C(s32 objectIndex) {
     Object* object;
 
-    u8* asset = LOAD_ASSET(common_texture_particle_smoke);
-
     object = &gObjectList[objectIndex];
-    object->activeTexture = asset[0];
-    object->textureList = asset[0];
+    object->activeTexture = common_texture_particle_smoke;
+    object->textureList = common_texture_particle_smoke;
     object->primAlpha = 0x00FF;
     set_obj_orientation(objectIndex, 0U, 0U, 0U);
     set_obj_origin_offset(objectIndex, 0.0f, 0.0f, 0.0f);
@@ -1888,11 +1895,10 @@ void func_80076884(s32 arg0) {
 
 void func_80076958(s32 objectIndex) {
     Object* object;
-    u8* tex = (u8*) LOAD_ASSET(common_texture_particle_smoke);
 
     object = &gObjectList[objectIndex];
-    object->activeTexture = tex[0];
-    object->textureList = tex[0];
+    object->activeTexture = common_texture_particle_smoke;
+    object->textureList = common_texture_particle_smoke;
     object->primAlpha = 0x00FF;
     set_obj_orientation(objectIndex, 0U, 0U, 0U);
     set_obj_origin_offset(objectIndex, 0.0f, 0.0f, 0.0f);
@@ -2208,124 +2214,6 @@ void update_leaf(void) {
     }
 }
 
-void func_80077D5C(s32 arg0) {
-    s32 objectIndex;
-    s32 var_a1;
-
-    if (D_8016559C == 0) {
-        for (var_a1 = 0; var_a1 < D_8018D1F0; var_a1++) {
-            D_8018D17C += 1;
-            if (D_8018D17C >= D_8018D1F0) {
-                D_8018D17C = 0;
-            }
-            objectIndex = D_8018CC80[arg0 + D_8018D17C];
-            if (gObjectList[objectIndex].state == 0) {
-                init_object(objectIndex, 1);
-                break;
-            }
-        }
-    }
-}
-
-void func_80077E20(s32 objectIndex) {
-    u8* tex = (u8*) LOAD_ASSET(D_0D0293D8);
-    Vtx* vtx = (Vtx*) LOAD_ASSET(common_vtx_rectangle);
-    Object* object;
-
-    object = &gObjectList[objectIndex];
-    object->activeTexture = tex;
-    object->textureList = tex;
-    //! @bug frappe snowland There's something up with the handling of common_vtx_rectangle and the loading of 0x10
-    //! right here
-    // root function: func_80078C70
-    object->vertex = vtx;
-    object->textureHeight = 0x10;
-    object->textureWidth = object->textureHeight;
-    object->sizeScaling = 0.15f;
-    set_object_flag(objectIndex, 0x00000010);
-    func_80086EF0(objectIndex);
-    object->primAlpha = 0x00FF;
-    object->unk_0D5 = 0;
-    object->type = 0;
-    object_next_state(objectIndex);
-}
-
-void func_80077EB8(s32 objectIndex, u16 arg1, Camera* camera) {
-    s16 temp_v0;
-
-    temp_v0 = camera->rot[1] - arg1;
-    if ((temp_v0 >= D_8018D210) || (D_8018D208 >= temp_v0)) {
-        gObjectList[objectIndex].offset[0] = D_8018D218 + (D_8018D1E8 * (f32) temp_v0);
-        set_object_flag(objectIndex, 0x00000010);
-        return;
-    }
-    clear_object_flag(objectIndex, 0x00000010);
-}
-
-void func_80077F64(s32 objectIndex, Camera* camera) {
-
-    f64 rand;
-
-    switch (gObjectList[objectIndex].unk_0AE) { /* irregular */
-        case 1:
-            gObjectList[objectIndex].direction_angle[1] = (camera->rot[1] + random_int(0x4000U)) - 0x2000;
-            object_origin_pos_randomize_around_y(objectIndex, 0x00B4, 0x0014U);
-            rand = random_int(0x0064U);
-
-            gObjectList[objectIndex].velocity[1] = (f32) (-0.75 - (f64) (f32) (rand * 0.01));
-            gObjectList[objectIndex].offset[0] = 0.0f;
-            gObjectList[objectIndex].offset[1] = 0.0f;
-            func_80086FD4(objectIndex);
-            return;
-        case 2:
-            func_80077EB8(objectIndex, gObjectList[objectIndex].direction_angle[1], camera);
-            object_add_velocity_offset_y(objectIndex);
-            object_calculate_new_pos_offset(objectIndex);
-            func_8008BFC0(objectIndex);
-            if (gObjectList[objectIndex].pos[1] <= 0.0f) {
-                func_80086FD4(objectIndex);
-                return;
-            }
-        case 0:
-            return;
-        case 3:
-            func_80086F60(objectIndex);
-            break;
-    }
-}
-
-void func_800780CC(s32 objectIndex, Camera* camera) {
-    switch (gObjectList[objectIndex].state) { /* irregular */
-        case 1:
-            func_80077E20(objectIndex);
-            return;
-        case 2:
-            func_80077F64(objectIndex, camera);
-            if (gObjectList[objectIndex].unk_0AE == 0) {
-                object_next_state(objectIndex);
-                return;
-            }
-        case 0:
-            return;
-        case 3:
-            func_80072428(objectIndex);
-            break;
-    }
-}
-
-void func_80078170(s32 arg0, Camera* arg1) {
-    s32 objectIndex;
-    s32 i;
-
-    func_80077D5C(arg0);
-    for (i = 0; i < D_8018D1F0; i++) {
-        objectIndex = D_8018CC80[arg0 + i];
-        if (gObjectList[objectIndex].state != 0) {
-            func_800780CC(objectIndex, arg1);
-        }
-    }
-}
-
 void func_80078220(s32 objectIndex) {
     u8* tex = (u8*) LOAD_ASSET(D_0D0293D8);
     Vtx* vtx = (Vtx*) LOAD_ASSET(common_vtx_rectangle);
@@ -2450,171 +2338,21 @@ void update_snowflakes(void) {
     }
 }
 
-// This function adjusted to place clouds in the sky correctly
-void func_800788F8(s32 objectIndex, u16 rot, Camera* camera) {
-    s16 cameraRot;
-    // Adjustable culling factor
-    const float cullingFactor = OTRGetAspectRatio();
-
-    // Calculate the cloud's rotation relative to the camera
-    cameraRot = camera->rot[1] + rot;
-
-    // Adjust bounds based on the culling factor
-    s16 adjustedLowerBound = (s16) (D_8018D210 * cullingFactor);
-    s16 adjustedUpperBound = (s16) (D_8018D208 * cullingFactor);
-
-    // Check if the object is within the adjusted bounds
-    if ((cameraRot >= adjustedLowerBound) && (adjustedUpperBound >= cameraRot)) {
-        // Calculate and update the object's position
-        gObjectList[objectIndex].unk_09C = (D_8018D218 + (D_8018D1E8 * cameraRot));
-
-        // Mark the object as visible
-        set_object_flag(objectIndex, 0x10);
-    } else {
-        // If outside the bounds, mark the object as not visible
-        set_object_flag(objectIndex, 0x10);
-    }
-}
-
-void update_clouds(s32 arg0, Camera* arg1, CloudData* cloudList) {
-    s32 cloudIndex;
-    s32 objectIndex;
-    CloudData* cloud;
-
-    for (cloudIndex = 0; cloudIndex < D_8018D1F0; cloudIndex++) {
-        cloud = &cloudList[cloudIndex];
-        objectIndex = D_8018CC80[arg0 + cloudIndex];
-        func_800788F8(objectIndex, cloud->rotY, arg1);
-    }
-}
-
-void update_stars(s32 arg0, Camera* camera, StarData* starList) {
-    s32 starIndex;
-    s32 objectIndex;
-    StarData* star;
-
-    for (starIndex = 0; starIndex < D_8018D1F0; starIndex++) {
-        star = &starList[starIndex];
-        objectIndex = D_8018CC80[arg0 + starIndex];
-        func_800788F8(objectIndex, star->rotY, camera);
-        switch (starIndex % 5U) {
-            case 0:
-                func_80073CB0(objectIndex, &gObjectList[objectIndex].primAlpha, 0x00000028, 0x000000B4, 0x000000FF, 0,
-                              -1);
-                break;
-            case 1:
-                func_80073CB0(objectIndex, &gObjectList[objectIndex].primAlpha, 0x00000080, 0x000000FF, 0x000000FF, 0,
-                              -1);
-                break;
-            case 2:
-                func_80073CB0(objectIndex, &gObjectList[objectIndex].primAlpha, 0x00000050, 0x000000C8, 0x000000FF, 0,
-                              -1);
-                break;
-            case 3:
-                func_80073CB0(objectIndex, &gObjectList[objectIndex].primAlpha, 0, 0x0000009B, 0x000000FF, 0, -1);
-                break;
-            case 4:
-                func_80073CB0(objectIndex, &gObjectList[objectIndex].primAlpha, 0x0000005A, 0x00000080, 0x000000FF, 0,
-                              -1);
-                break;
-        }
-    }
-}
-
-UNUSED void func_80078C68() {
-}
-
-void func_80078C70(s32 arg0) {
-    s32 sp1C;
-    Camera* camera;
-
+void func_80078C70() {
     if (D_801657C8 == 0) {
-        switch (arg0) { /* switch 1 */
-            case 0:     /* switch 1 */
-                sp1C = 0;
-                camera = camera1;
-                D_8018D200 = gCameraZoom[0] + 40.0f;
-                break;
-            case 1: /* switch 1 */
-                sp1C = 0;
-                camera = camera1;
-                D_8018D200 = gCameraZoom[0] + 40.0f;
-                break;
-            case 2: /* switch 1 */
-                camera = camera2;
-                sp1C = D_8018D1F0;
-                D_8018D200 = gCameraZoom[1] + 40.0f;
-                break;
-            case 3: /* switch 1 */
-                sp1C = 0;
-                camera = camera1;
-                D_8018D200 = gCameraZoom[0] + 40.0f;
-                break;
-            case 4: /* switch 1 */
-                camera = camera2;
-                sp1C = D_8018D1F0;
-                D_8018D200 = gCameraZoom[1] + 40.0f;
-                break;
-        }
-
-        D_8018D208 = ((D_8018D200 / 2) * 0xB6) + 0x71C;
-        D_8018D210 = (-(D_8018D200 / 2) * 0xB6) - 0x71C;
-        D_8018D1E8 = 1.7578125 / D_8018D200;
-        D_8018D218 = 0xA0;
-
-        CM_UpdateClouds(sp1C, camera);
-
-        // switch (gCurrentCourseId) {    /* switch 2 */
-        //     case COURSE_MARIO_RACEWAY: /* switch 2 */
-        //         // Uses Luigi Raceway's clouds for display purposes?
-        //         //update_clouds(sp1C, camera, gLuigiRacewayClouds);
-        //         break;
-        // case COURSE_YOSHI_VALLEY: /* switch 2 */
-        //     update_clouds(sp1C, camera, gYoshiValleyMooMooFarmClouds);
-        //     break;
-        // case COURSE_FRAPPE_SNOWLAND: /* switch 2 */
-        //     func_80078170(sp1C, camera);
-        //     break;
-        // case COURSE_KOOPA_BEACH: /* switch 2 */
-        //     update_clouds(sp1C, camera, gKoopaTroopaBeachClouds);
-        //     break;
-        // case COURSE_ROYAL_RACEWAY: /* switch 2 */
-        //     update_clouds(sp1C, camera, gRoyalRacewayClouds);
-        //     break;
-        // case COURSE_LUIGI_RACEWAY: /* switch 2 */
-        //     update_clouds(sp1C, camera, gLuigiRacewayClouds);
-        //     break;
-        // case COURSE_MOO_MOO_FARM: /* switch 2 */
-        //     update_clouds(sp1C, camera, gYoshiValleyMooMooFarmClouds);
-        //     break;
-        // case COURSE_TOADS_TURNPIKE: /* switch 2 */
-        //     update_stars(sp1C, camera, gToadsTurnpikeRainbowRoadStars);
-        //     break;
-        // case COURSE_KALIMARI_DESERT: /* switch 2 */
-        //     update_clouds(sp1C, camera, gKalimariDesertClouds);
-        //     break;
-        // case COURSE_SHERBET_LAND: /* switch 2 */
-        //     update_clouds(sp1C, camera, gSherbetLandClouds);
-        //     break;
-        // case COURSE_RAINBOW_ROAD: /* switch 2 */
-        //     update_stars(sp1C, camera, gToadsTurnpikeRainbowRoadStars);
-        //     break;
-        // case COURSE_WARIO_STADIUM: /* switch 2 */
-        //     update_stars(sp1C, camera, gWarioStadiumStars);
-        //     break;
-        //}
+        TickSkyActors();
     }
 }
 
-void func_8007ABFC(s32 playerId, s32 arg1) {
+void func_8007ABFC(s32 playerId, s32 itemId) {
     s32 itemWindow;
 
     if (playerHUD[playerId].raceCompleteBool == false) {
         itemWindow = gItemWindowObjectByPlayerId[playerId];
         if (func_80072354(itemWindow, 4) != 0) {
             init_object(itemWindow, 0);
-            if (arg1 != ITEM_NONE) {
-                playerHUD[playerId].itemOverride = arg1;
+            if (itemId != ITEM_NONE) {
+                playerHUD[playerId].itemOverride = itemId;
             }
         }
         func_800C9060(playerId, 0x19008406U);
@@ -2650,719 +2388,11 @@ void consume_item(s32 playerId) {
     }
 }
 
-typedef struct {
-    u8 none;             // ITEM_NONE
-    u8 banana;           // ITEM_BANANA
-    u8 bananaBunch;      // ITEM_BANANA_BUNCH
-    u8 greenShell;       // ITEM_GREEN_SHELL
-    u8 tripleGreenShell; // ITEM_TRIPLE_GREEN_SHELL
-    u8 redShell;         // ITEM_RED_SHELL
-    u8 tripleRedShell;   // ITEM_TRIPLE_RED_SHELL
-    u8 blueSpinyShell;   // ITEM_BLUE_SPINY_SHELL
-    u8 thunderbolt;      // ITEM_THUNDERBOLT
-    u8 fakeItemBox;      // ITEM_FAKE_ITEM_BOX
-    u8 star;             // ITEM_STAR
-    u8 boo;              // ITEM_BOO
-    u8 mushroom;         // ITEM_MUSHROOM
-    u8 doubleMushroom;   // ITEM_DOUBLE_MUSHROOM
-    u8 tripleMushroom;   // ITEM_TRIPLE_MUSHROOM
-    u8 superMushroom;    // ITEM_SUPER_MUSHROOM
-} ItemProbabilities;
-
-// Each row corresponds to a rank, each column to an item
-ItemProbabilities grandPrixHumanProbabilityTable[] = {
-    { .none = 0,
-      .banana = 30,
-      .bananaBunch = 5,
-      .greenShell = 30,
-      .tripleGreenShell = 5,
-      .redShell = 5,
-      .tripleRedShell = 0,
-      .blueSpinyShell = 0,
-      .thunderbolt = 0,
-      .fakeItemBox = 10,
-      .star = 0,
-      .boo = 5,
-      .mushroom = 10,
-      .doubleMushroom = 0,
-      .tripleMushroom = 0,
-      .superMushroom = 0 },
-    { .none = 0,
-      .banana = 0,
-      .bananaBunch = 5,
-      .greenShell = 5,
-      .tripleGreenShell = 10,
-      .redShell = 15,
-      .tripleRedShell = 20,
-      .blueSpinyShell = 0,
-      .thunderbolt = 5,
-      .fakeItemBox = 5,
-      .star = 5,
-      .boo = 5,
-      .mushroom = 5,
-      .doubleMushroom = 0,
-      .tripleMushroom = 15,
-      .superMushroom = 5 },
-    { .none = 0,
-      .banana = 0,
-      .bananaBunch = 0,
-      .greenShell = 0,
-      .tripleGreenShell = 10,
-      .redShell = 20,
-      .tripleRedShell = 20,
-      .blueSpinyShell = 0,
-      .thunderbolt = 5,
-      .fakeItemBox = 0,
-      .star = 10,
-      .boo = 0,
-      .mushroom = 5,
-      .doubleMushroom = 0,
-      .tripleMushroom = 20,
-      .superMushroom = 10 },
-    { .none = 0,
-      .banana = 0,
-      .bananaBunch = 0,
-      .greenShell = 0,
-      .tripleGreenShell = 0,
-      .redShell = 15,
-      .tripleRedShell = 20,
-      .blueSpinyShell = 5,
-      .thunderbolt = 10,
-      .fakeItemBox = 0,
-      .star = 15,
-      .boo = 0,
-      .mushroom = 5,
-      .doubleMushroom = 0,
-      .tripleMushroom = 20,
-      .superMushroom = 10 },
-    { .none = 0,
-      .banana = 0,
-      .bananaBunch = 0,
-      .greenShell = 0,
-      .tripleGreenShell = 0,
-      .redShell = 10,
-      .tripleRedShell = 20,
-      .blueSpinyShell = 5,
-      .thunderbolt = 10,
-      .fakeItemBox = 0,
-      .star = 15,
-      .boo = 0,
-      .mushroom = 5,
-      .doubleMushroom = 0,
-      .tripleMushroom = 25,
-      .superMushroom = 10 },
-    { .none = 0,
-      .banana = 0,
-      .bananaBunch = 0,
-      .greenShell = 0,
-      .tripleGreenShell = 0,
-      .redShell = 0,
-      .tripleRedShell = 20,
-      .blueSpinyShell = 10,
-      .thunderbolt = 15,
-      .fakeItemBox = 0,
-      .star = 20,
-      .boo = 0,
-      .mushroom = 0,
-      .doubleMushroom = 0,
-      .tripleMushroom = 25,
-      .superMushroom = 10 },
-    { .none = 0,
-      .banana = 0,
-      .bananaBunch = 0,
-      .greenShell = 0,
-      .tripleGreenShell = 0,
-      .redShell = 0,
-      .tripleRedShell = 20,
-      .blueSpinyShell = 10,
-      .thunderbolt = 20,
-      .fakeItemBox = 0,
-      .star = 30,
-      .boo = 0,
-      .mushroom = 0,
-      .doubleMushroom = 0,
-      .tripleMushroom = 10,
-      .superMushroom = 10 },
-    { .none = 0,
-      .banana = 0,
-      .bananaBunch = 0,
-      .greenShell = 0,
-      .tripleGreenShell = 0,
-      .redShell = 0,
-      .tripleRedShell = 20,
-      .blueSpinyShell = 15,
-      .thunderbolt = 20,
-      .fakeItemBox = 0,
-      .star = 30,
-      .boo = 0,
-      .mushroom = 0,
-      .doubleMushroom = 0,
-      .tripleMushroom = 5,
-      .superMushroom = 10 },
-};
-
-ItemProbabilities grandPrixCPUProbabilityTable[] = {
-    { .none = 0,
-      .banana = 60,
-      .bananaBunch = 0,
-      .greenShell = 25,
-      .tripleGreenShell = 0,
-      .redShell = 0,
-      .tripleRedShell = 0,
-      .blueSpinyShell = 0,
-      .thunderbolt = 0,
-      .fakeItemBox = 10,
-      .star = 0,
-      .boo = 5,
-      .mushroom = 0,
-      .doubleMushroom = 0,
-      .tripleMushroom = 0,
-      .superMushroom = 0 },
-    { .none = 0,
-      .banana = 50,
-      .bananaBunch = 0,
-      .greenShell = 25,
-      .tripleGreenShell = 5,
-      .redShell = 0,
-      .tripleRedShell = 0,
-      .blueSpinyShell = 0,
-      .thunderbolt = 0,
-      .fakeItemBox = 10,
-      .star = 0,
-      .boo = 5,
-      .mushroom = 5,
-      .doubleMushroom = 0,
-      .tripleMushroom = 0,
-      .superMushroom = 0 },
-    { .none = 0,
-      .banana = 40,
-      .bananaBunch = 0,
-      .greenShell = 25,
-      .tripleGreenShell = 10,
-      .redShell = 0,
-      .tripleRedShell = 0,
-      .blueSpinyShell = 0,
-      .thunderbolt = 0,
-      .fakeItemBox = 10,
-      .star = 0,
-      .boo = 5,
-      .mushroom = 10,
-      .doubleMushroom = 0,
-      .tripleMushroom = 0,
-      .superMushroom = 0 },
-    { .none = 0,
-      .banana = 35,
-      .bananaBunch = 0,
-      .greenShell = 25,
-      .tripleGreenShell = 15,
-      .redShell = 0,
-      .tripleRedShell = 0,
-      .blueSpinyShell = 0,
-      .thunderbolt = 0,
-      .fakeItemBox = 10,
-      .star = 0,
-      .boo = 5,
-      .mushroom = 10,
-      .doubleMushroom = 0,
-      .tripleMushroom = 0,
-      .superMushroom = 0 },
-    { .none = 0,
-      .banana = 30,
-      .bananaBunch = 0,
-      .greenShell = 20,
-      .tripleGreenShell = 20,
-      .redShell = 0,
-      .tripleRedShell = 0,
-      .blueSpinyShell = 0,
-      .thunderbolt = 0,
-      .fakeItemBox = 5,
-      .star = 5,
-      .boo = 0,
-      .mushroom = 20,
-      .doubleMushroom = 0,
-      .tripleMushroom = 0,
-      .superMushroom = 0 },
-    { .none = 0,
-      .banana = 30,
-      .bananaBunch = 0,
-      .greenShell = 20,
-      .tripleGreenShell = 20,
-      .redShell = 0,
-      .tripleRedShell = 0,
-      .blueSpinyShell = 0,
-      .thunderbolt = 0,
-      .fakeItemBox = 5,
-      .star = 5,
-      .boo = 0,
-      .mushroom = 20,
-      .doubleMushroom = 0,
-      .tripleMushroom = 0,
-      .superMushroom = 0 },
-    { .none = 0,
-      .banana = 30,
-      .bananaBunch = 0,
-      .greenShell = 20,
-      .tripleGreenShell = 20,
-      .redShell = 0,
-      .tripleRedShell = 0,
-      .blueSpinyShell = 0,
-      .thunderbolt = 0,
-      .fakeItemBox = 0,
-      .star = 10,
-      .boo = 0,
-      .mushroom = 20,
-      .doubleMushroom = 0,
-      .tripleMushroom = 0,
-      .superMushroom = 0 },
-    { .none = 0,
-      .banana = 25,
-      .bananaBunch = 0,
-      .greenShell = 20,
-      .tripleGreenShell = 20,
-      .redShell = 0,
-      .tripleRedShell = 0,
-      .blueSpinyShell = 0,
-      .thunderbolt = 1,
-      .fakeItemBox = 0,
-      .star = 10,
-      .boo = 0,
-      .mushroom = 24,
-      .doubleMushroom = 0,
-      .tripleMushroom = 0,
-      .superMushroom = 0 },
-};
-
-ItemProbabilities grandPrixHardCPUProbabilityTable[] = {
-    { .none = 5,
-      .banana = 25,
-      .bananaBunch = 5,
-      .greenShell = 30,
-      .tripleGreenShell = 5,
-      .redShell = 5,
-      .tripleRedShell = 0,
-      .blueSpinyShell = 0,
-      .thunderbolt = 0,
-      .fakeItemBox = 10,
-      .star = 0,
-      .boo = 5,
-      .mushroom = 10,
-      .doubleMushroom = 0,
-      .tripleMushroom = 0,
-      .superMushroom = 0 },
-    { .none = 0,
-      .banana = 5,
-      .bananaBunch = 5,
-      .greenShell = 5,
-      .tripleGreenShell = 10,
-      .redShell = 15,
-      .tripleRedShell = 20,
-      .blueSpinyShell = 0,
-      .thunderbolt = 0,
-      .fakeItemBox = 5,
-      .star = 5,
-      .boo = 5,
-      .mushroom = 5,
-      .doubleMushroom = 0,
-      .tripleMushroom = 15,
-      .superMushroom = 5 },
-    { .none = 0,
-      .banana = 5,
-      .bananaBunch = 3,
-      .greenShell = 0,
-      .tripleGreenShell = 10,
-      .redShell = 20,
-      .tripleRedShell = 19,
-      .blueSpinyShell = 0,
-      .thunderbolt = 0,
-      .fakeItemBox = 0,
-      .star = 10,
-      .boo = 0,
-      .mushroom = 5,
-      .doubleMushroom = 0,
-      .tripleMushroom = 19,
-      .superMushroom = 9 },
-    { .none = 0,
-      .banana = 5,
-      .bananaBunch = 0,
-      .greenShell = 5,
-      .tripleGreenShell = 5,
-      .redShell = 15,
-      .tripleRedShell = 10,
-      .blueSpinyShell = 0,
-      .thunderbolt = 0,
-      .fakeItemBox = 5,
-      .star = 15,
-      .boo = 5,
-      .mushroom = 5,
-      .doubleMushroom = 0,
-      .tripleMushroom = 20,
-      .superMushroom = 10 },
-    { .none = 0,
-      .banana = 0,
-      .bananaBunch = 0,
-      .greenShell = 0,
-      .tripleGreenShell = 0,
-      .redShell = 10,
-      .tripleRedShell = 20,
-      .blueSpinyShell = 5,
-      .thunderbolt = 0,
-      .fakeItemBox = 5,
-      .star = 15,
-      .boo = 0,
-      .mushroom = 10,
-      .doubleMushroom = 0,
-      .tripleMushroom = 25,
-      .superMushroom = 10 },
-    { .none = 0,
-      .banana = 0,
-      .bananaBunch = 0,
-      .greenShell = 0,
-      .tripleGreenShell = 0,
-      .redShell = 5,
-      .tripleRedShell = 25,
-      .blueSpinyShell = 10,
-      .thunderbolt = 0,
-      .fakeItemBox = 0,
-      .star = 20,
-      .boo = 0,
-      .mushroom = 5,
-      .doubleMushroom = 0,
-      .tripleMushroom = 25,
-      .superMushroom = 10 },
-    { .none = 0,
-      .banana = 0,
-      .bananaBunch = 0,
-      .greenShell = 5,
-      .tripleGreenShell = 0,
-      .redShell = 5,
-      .tripleRedShell = 25,
-      .blueSpinyShell = 10,
-      .thunderbolt = 0,
-      .fakeItemBox = 0,
-      .star = 30,
-      .boo = 0,
-      .mushroom = 5,
-      .doubleMushroom = 0,
-      .tripleMushroom = 10,
-      .superMushroom = 10 },
-    { .none = 0,
-      .banana = 0,
-      .bananaBunch = 0,
-      .greenShell = 0,
-      .tripleGreenShell = 5,
-      .redShell = 5,
-      .tripleRedShell = 20,
-      .blueSpinyShell = 15,
-      .thunderbolt = 10,
-      .fakeItemBox = 0,
-      .star = 30,
-      .boo = 0,
-      .mushroom = 0,
-      .doubleMushroom = 0,
-      .tripleMushroom = 5,
-      .superMushroom = 10 },
-};
-
-ItemProbabilities versus2PlayerProbabilityTable[] = {
-    { .none = 0,
-      .banana = 25,
-      .bananaBunch = 10,
-      .greenShell = 30,
-      .tripleGreenShell = 5,
-      .redShell = 5,
-      .tripleRedShell = 0,
-      .blueSpinyShell = 0,
-      .thunderbolt = 0,
-      .fakeItemBox = 10,
-      .star = 0,
-      .boo = 5,
-      .mushroom = 10,
-      .doubleMushroom = 0,
-      .tripleMushroom = 0,
-      .superMushroom = 0 },
-    { .none = 0,
-      .banana = 0,
-      .bananaBunch = 5,
-      .greenShell = 0,
-      .tripleGreenShell = 5,
-      .redShell = 5,
-      .tripleRedShell = 15,
-      .blueSpinyShell = 5,
-      .thunderbolt = 15,
-      .fakeItemBox = 0,
-      .star = 15,
-      .boo = 0,
-      .mushroom = 0,
-      .doubleMushroom = 0,
-      .tripleMushroom = 15,
-      .superMushroom = 20 },
-};
-
-ItemProbabilities versus3PlayerProbabilityTable[] = {
-    { .none = 0,
-      .banana = 35,
-      .bananaBunch = 5,
-      .greenShell = 30,
-      .tripleGreenShell = 0,
-      .redShell = 5,
-      .tripleRedShell = 0,
-      .blueSpinyShell = 0,
-      .thunderbolt = 0,
-      .fakeItemBox = 10,
-      .star = 0,
-      .boo = 5,
-      .mushroom = 10,
-      .doubleMushroom = 0,
-      .tripleMushroom = 0,
-      .superMushroom = 0 },
-    { .none = 0,
-      .banana = 5,
-      .bananaBunch = 5,
-      .greenShell = 0,
-      .tripleGreenShell = 10,
-      .redShell = 15,
-      .tripleRedShell = 15,
-      .blueSpinyShell = 0,
-      .thunderbolt = 5,
-      .fakeItemBox = 5,
-      .star = 5,
-      .boo = 5,
-      .mushroom = 5,
-      .doubleMushroom = 0,
-      .tripleMushroom = 20,
-      .superMushroom = 5 },
-    { .none = 0,
-      .banana = 0,
-      .bananaBunch = 0,
-      .greenShell = 0,
-      .tripleGreenShell = 0,
-      .redShell = 10,
-      .tripleRedShell = 20,
-      .blueSpinyShell = 10,
-      .thunderbolt = 15,
-      .fakeItemBox = 0,
-      .star = 15,
-      .boo = 0,
-      .mushroom = 0,
-      .doubleMushroom = 0,
-      .tripleMushroom = 20,
-      .superMushroom = 10 },
-};
-
-ItemProbabilities versus4PlayerProbabilityTable[] = {
-    { .none = 0,
-      .banana = 35,
-      .bananaBunch = 5,
-      .greenShell = 30,
-      .tripleGreenShell = 0,
-      .redShell = 5,
-      .tripleRedShell = 0,
-      .blueSpinyShell = 0,
-      .thunderbolt = 0,
-      .fakeItemBox = 10,
-      .star = 0,
-      .boo = 5,
-      .mushroom = 10,
-      .doubleMushroom = 0,
-      .tripleMushroom = 0,
-      .superMushroom = 0 },
-    { .none = 0,
-      .banana = 5,
-      .bananaBunch = 5,
-      .greenShell = 5,
-      .tripleGreenShell = 10,
-      .redShell = 15,
-      .tripleRedShell = 15,
-      .blueSpinyShell = 0,
-      .thunderbolt = 0,
-      .fakeItemBox = 5,
-      .star = 5,
-      .boo = 5,
-      .mushroom = 5,
-      .doubleMushroom = 0,
-      .tripleMushroom = 25,
-      .superMushroom = 0 },
-    { .none = 0,
-      .banana = 0,
-      .bananaBunch = 5,
-      .greenShell = 0,
-      .tripleGreenShell = 5,
-      .redShell = 10,
-      .tripleRedShell = 15,
-      .blueSpinyShell = 5,
-      .thunderbolt = 10,
-      .fakeItemBox = 5,
-      .star = 10,
-      .boo = 0,
-      .mushroom = 5,
-      .doubleMushroom = 0,
-      .tripleMushroom = 25,
-      .superMushroom = 5 },
-    { .none = 0,
-      .banana = 0,
-      .bananaBunch = 0,
-      .greenShell = 0,
-      .tripleGreenShell = 0,
-      .redShell = 0,
-      .tripleRedShell = 20,
-      .blueSpinyShell = 10,
-      .thunderbolt = 15,
-      .fakeItemBox = 0,
-      .star = 20,
-      .boo = 0,
-      .mushroom = 0,
-      .doubleMushroom = 0,
-      .tripleMushroom = 25,
-      .superMushroom = 10 },
-};
-
-ItemProbabilities battleProbabilityCurve[] = { { .none = 0,
-                                                 .banana = 10,
-                                                 .bananaBunch = 5,
-                                                 .greenShell = 5,
-                                                 .tripleGreenShell = 20,
-                                                 .redShell = 20,
-                                                 .tripleRedShell = 0,
-                                                 .blueSpinyShell = 0,
-                                                 .thunderbolt = 0,
-                                                 .fakeItemBox = 15,
-                                                 .star = 20,
-                                                 .boo = 5,
-                                                 .mushroom = 0,
-                                                 .doubleMushroom = 0,
-                                                 .tripleMushroom = 0,
-                                                 .superMushroom = 0 } };
-
-void getProbabilityArray(const ItemProbabilities* probStruct, u8* probArray) {
-    probArray[ITEM_NONE] = probStruct->none;
-    probArray[ITEM_BANANA] = probStruct->banana;
-    probArray[ITEM_BANANA_BUNCH] = probStruct->bananaBunch;
-    probArray[ITEM_GREEN_SHELL] = probStruct->greenShell;
-    probArray[ITEM_TRIPLE_GREEN_SHELL] = probStruct->tripleGreenShell;
-    probArray[ITEM_RED_SHELL] = probStruct->redShell;
-    probArray[ITEM_TRIPLE_RED_SHELL] = probStruct->tripleRedShell;
-    probArray[ITEM_BLUE_SPINY_SHELL] = probStruct->blueSpinyShell;
-    probArray[ITEM_THUNDERBOLT] = probStruct->thunderbolt;
-    probArray[ITEM_FAKE_ITEM_BOX] = probStruct->fakeItemBox;
-    probArray[ITEM_STAR] = probStruct->star;
-    probArray[ITEM_BOO] = probStruct->boo;
-    probArray[ITEM_MUSHROOM] = probStruct->mushroom;
-    probArray[ITEM_DOUBLE_MUSHROOM] = probStruct->doubleMushroom;
-    probArray[ITEM_TRIPLE_MUSHROOM] = probStruct->tripleMushroom;
-    probArray[ITEM_SUPER_MUSHROOM] = probStruct->superMushroom;
-}
-
-// Output a warning if a probability table does not add up to 100
-void verify_probability_table(char* str, const ItemProbabilities* probs, int16_t rank) {
-#ifndef _DEBUG
-    return;
-#endif
-    u8 itemProbabilities[ITEM_MAX];
-
-    getProbabilityArray(probs, itemProbabilities);
-    size_t count = 0;
-    for (size_t i = 0; i < ITEM_MAX; i++) {
-        // printf("prob %d ", itemProbabilities[i]);
-        count += itemProbabilities[i];
-    }
-    // printf("\n");
-
-    if (count != 100) {
-        printf("update_objects.c::verify_probability_table\n  %s table for rank %d is imba %d/100\n", str, rank, count);
-    }
-}
-
-enum RandomItemOption {
-    HUMAN_TABLE,
-    CPU_TABLE,
-    HARD_CPU_TABLE,
-};
-
-/**
- * New random item system uses chance based on percent
- * Likely functionally equivallent to the old system but easier to modify
- */
-u8 gen_random_item(s16 rank, s16 option) {
-#define PERCENTAGE_BASE 100
-    u16 rand = random_int(PERCENTAGE_BASE);
-#undef PERCENTAGE_BASE
-    ItemProbabilities* distributionTable;
-    u8 randomItem = 0;
-    u8 cumulativeProbability = 0;
-
-    switch (gModeSelection) {
-        case GRAND_PRIX:
-            switch (option) {
-                case HUMAN_TABLE:
-                    distributionTable = &grandPrixHumanProbabilityTable[rank];
-                    verify_probability_table("Human", distributionTable, rank);
-                    break;
-                case CPU_TABLE:
-                    distributionTable = &grandPrixCPUProbabilityTable[rank];
-                    verify_probability_table("CPU", distributionTable, rank);
-                    break;
-                case HARD_CPU_TABLE:
-                    distributionTable = &grandPrixHardCPUProbabilityTable[rank];
-                    verify_probability_table("Hard CPU", distributionTable, rank);
-                    break;
-            }
-            break;
-        case VERSUS:
-            switch (gPlayerCountSelection1) {
-                case TWO_PLAYERS_SELECTED:
-                    distributionTable = &versus2PlayerProbabilityTable[rank];
-                    verify_probability_table("Versus 2P", distributionTable, rank);
-                    break;
-                case THREE_PLAYERS_SELECTED:
-                    distributionTable = &versus3PlayerProbabilityTable[rank];
-                    verify_probability_table("Versus 3P", distributionTable, rank);
-                    break;
-                case FOUR_PLAYERS_SELECTED:
-                    distributionTable = &versus4PlayerProbabilityTable[rank];
-                    verify_probability_table("Versus 4P", distributionTable, rank);
-                    break;
-            }
-            break;
-        case BATTLE:
-            distributionTable = &battleProbabilityCurve[0];
-            verify_probability_table("Battle", distributionTable, rank);
-            break;
-    }
-
-    u8 itemProbabilities[ITEM_MAX];
-    getProbabilityArray(distributionTable, itemProbabilities);
-
-    for (size_t i = 0; i < ITEM_MAX; i++) {
-        cumulativeProbability += itemProbabilities[i];
-        if (rand < cumulativeProbability) {
-            randomItem = i;
-            break;
-        }
-    }
-    return randomItem;
-}
-
-u8 gen_random_item_human(UNUSED s16 arg0, s16 rank) {
-    if (CVarGetInteger("gHarderCPU", 0) == true) {
-        return gen_random_item(rank, HARD_CPU_TABLE);
-    } else {
-        return gen_random_item(rank, HUMAN_TABLE);
-    }
-}
-
-u8 cpu_gen_random_item(UNUSED s32 arg0, s16 rank) {
-    return gen_random_item(rank, CPU_TABLE);
-}
-
-u8 hard_cpu_gen_random_item(UNUSED s32 arg0, s16 rank) {
-    return gen_random_item(rank, HARD_CPU_TABLE);
-}
-
 s16 func_8007AFB0(s32 objectIndex, s32 playerId) {
     UNUSED s32 pad[3];
     s16 randomItem;
 
-    randomItem = gen_random_item_human(gLapCountByPlayerId[playerId], gGPCurrentRaceRankByPlayerId[playerId]);
+    randomItem = RaceManager_GetRandomHumanItem(gGPCurrentRaceRankByPlayerId[playerId]);
 
     if (randomItem == ITEM_NONE) {
         play_sound2(SOUND_MENU_FILE_NOT_FOUND);
@@ -3396,11 +2426,11 @@ s32 func_8007B040(s32 objectIndex, s32 playerId) {
     if (gModeSelection == GRAND_PRIX) {
         // Boo item
         if (random_int(0x0064U) < 0x51) {
-            item = gen_random_item_human(gLapCountByPlayerId[playerId], gGPCurrentRaceRankByPlayerId[playerId]);
+            item = RaceManager_GetRandomHumanItem(gGPCurrentRaceRankByPlayerId[playerId]);
             // ITEM_NONE is not a valid item for ghost, randomize again
             size_t attempts = 0;
             while (item == ITEM_NONE && attempts < 200) {
-                item = gen_random_item_human(gLapCountByPlayerId[playerId], gGPCurrentRaceRankByPlayerId[playerId]);
+                item = RaceManager_GetRandomHumanItem(gGPCurrentRaceRankByPlayerId[playerId]);
                 attempts++;
             }
             if (attempts >= 200) {
@@ -3882,7 +2912,8 @@ void func_8007D714(s32 arg0) {
 }
 
 void func_8007DDC0(s32 objectIndex) {
-    f32 sp2C;
+    // Initialized for the non-race CC modes the switch below doesn't cover.
+    f32 sp2C = 1150.0f;
     Object* object;
 
     object = &gObjectList[objectIndex];
@@ -3923,7 +2954,8 @@ void func_8007DDC0(s32 objectIndex) {
 }
 
 void func_8007E1F4(s32 objectIndex) {
-    f32 sp2C;
+    // Initialized for the non-race CC modes the check below doesn't cover.
+    f32 sp2C = 700.0f;
     Object* object;
 
     object = &gObjectList[objectIndex];

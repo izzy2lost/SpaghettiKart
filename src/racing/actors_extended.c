@@ -17,7 +17,7 @@
 #include "sounds.h"
 #include "port/Game.h"
 
-void copy_collision(Collision* src, Collision* dest) {
+void copy_collision(struct Collision* src, struct Collision* dest) {
     dest->unk30 = src->unk30;
     dest->unk32 = src->unk32;
     dest->unk34 = src->unk34;
@@ -101,7 +101,7 @@ void destroy_banana_in_banana_bunch(struct BananaActor* banana) {
 
     func_802B0464(banana->youngerIndex);
     func_802B04E8(banana, banana->elderIndex);
-    if ((gPlayers[banana->playerId].type & 0x4000) != 0) {
+    if ((gPlayers[banana->playerId].type & PLAYER_HUMAN) != 0) {
         func_800C9060(banana->playerId, SOUND_ARG_LOAD(0x19, 0x01, 0x90, 0x53));
     }
     banana->flags = -0x8000;
@@ -294,8 +294,8 @@ void update_actor_banana_bunch(struct BananaBunchParent* banana_bunch) {
             }
             if (someCount == 0) {
                 destroy_actor((struct Actor*) banana_bunch);
-                owner->soundEffects &= ~HOLD_BANANA_SOUND_EFFECT;
-            } else if ((owner->type & 0x4000) != 0) {
+                owner->triggers &= ~DRAG_ITEM_EFFECT;
+            } else if ((owner->type & PLAYER_HUMAN) != 0) {
                 controller = &gControllers[banana_bunch->playerId];
                 if ((controller->buttonPressed & Z_TRIG) != 0) {
                     controller->buttonPressed &= ~Z_TRIG;
@@ -391,16 +391,22 @@ void update_actor_triple_shell(TripleShellParent* parent, s16 shellType) {
                 parent->state = 3;
             }
             break;
-        case 3:
-            parent->state = 4;
-            shell = (struct ShellActor*) GET_ACTOR((s16) parent->shellIndices[0]);
-            shell->flags |= 0x4000;
-            shell = (struct ShellActor*) GET_ACTOR((s16) parent->shellIndices[1]);
-            shell->flags |= 0x4000;
-            shell = (struct ShellActor*) GET_ACTOR((s16) parent->shellIndices[2]);
-            shell->flags |= 0x4000;
+        case SHELL_COLLISION:
+            parent->state = ORBIT_PLAYER;
+            if (parent->shellIndices[0] != -1) {
+                shell = (struct ShellActor*) GET_ACTOR((s16) parent->shellIndices[0]);
+                shell->flags |= 0x4000;
+            }
+            if (parent->shellIndices[1] != -1) {
+                shell = (struct ShellActor*) GET_ACTOR((s16) parent->shellIndices[1]);
+                shell->flags |= 0x4000;
+            }
+            if (parent->shellIndices[2] != -1) {
+                shell = (struct ShellActor*) GET_ACTOR((s16) parent->shellIndices[2]);
+                shell->flags |= 0x4000;
+            }
             break;
-        case 4:
+        case ORBIT_PLAYER:
             shellCount = 0;
             if (is_shell_exist(parent->shellIndices[0]) == 1) {
                 shellCount = 1;
@@ -422,87 +428,114 @@ void update_actor_triple_shell(TripleShellParent* parent, s16 shellType) {
                 break;
             }
             if ((gControllers[parent->playerId].buttonPressed & Z_TRIG) != 0) {
-                parent->unk_08 += 1.0f;
+                /**
+                 * Fires shell. Uses += 1.0f because this code is ran multiple times per frame.
+                 * A bool would be turned on and off again resulting in no change
+                 */
+                parent->firePressed += 1.0f;
                 gControllers[parent->playerId].buttonPressed &= ~Z_TRIG;
             }
-            if (parent->unk_08 > 0.0f) {
+            if (parent->firePressed > 0.0f) { // Fires a shell and resets firePressed to zero
                 if (parent->shellIndices[0] > 0.0f) {
                     shell = (struct ShellActor*) GET_ACTOR((s16) parent->shellIndices[0]);
-                    if ((shell->rotAngle < 0x38E) || (shell->rotAngle >= -0x38D)) {
-                        someVelocity[0] = 0;
-                        someVelocity[1] = 0;
-                        someVelocity[2] = 8;
-                        func_802B64C4(someVelocity, player->rotation[1] + player->unk_0C0);
-                        shell->velocity[0] = someVelocity[0];
-                        shell->velocity[1] = someVelocity[1];
-                        shell->velocity[2] = someVelocity[2];
-                        shell->state = MOVING_SHELL;
-                        shell->someTimer = 0x001E;
-                        func_800C9060(parent->playerId, SOUND_ARG_LOAD(0x19, 0x00, 0x80, 0x04));
-                        func_800C90F4(parent->playerId,
-                                      (player->characterId * 0x10) + SOUND_ARG_LOAD(0x29, 0x00, 0x80, 0x00));
-                        if (parent->type == ACTOR_TRIPLE_RED_SHELL) {
-                            add_red_shell_in_unexpired_actor_list(parent->shellIndices[0]);
-                        } else {
-                            add_green_shell_in_unexpired_actor_list(parent->shellIndices[0]);
+                    /**
+                     * Below is a feature that continues holding triple shells until they are aiming forward.
+                     * In decomp the three gShellsShootStraight conditions always evaluated to true,
+                     * thus negating the feature from ever working.
+                     * It has been re-added in for experimental purposes with slight adjustments
+                     * to behave correctly and for clean code.
+                     */
+                    if (CVarGetInteger("gShellsShootStraight", 0)) {
+                        // Forces shell 1 to fire inside a cone of -5 to +5 degrees
+                        if ((shell->rotAngle < -0x38E) || (shell->rotAngle > 0x38E)) {
+                            break;
                         }
-                        parent->shellIndices[0] = -1.0f;
-                        parent->shellsAvailable -= 1;
-                        parent->unk_08 -= 1.0f;
-                        break;
                     }
+                    someVelocity[0] = 0;
+                    someVelocity[1] = 0;
+                    someVelocity[2] = 8;
+                    func_802B64C4(someVelocity, player->rotation[1] + player->unk_0C0);
+                    shell->velocity[0] = someVelocity[0];
+                    shell->velocity[1] = someVelocity[1];
+                    shell->velocity[2] = someVelocity[2];
+                    shell->state = MOVING_SHELL;
+                    shell->someTimer = 0x001E;
+                    func_800C9060(parent->playerId, SOUND_ARG_LOAD(0x19, 0x00, 0x80, 0x04));
+                    func_800C90F4(parent->playerId,
+                                  (player->characterId * 0x10) + SOUND_ARG_LOAD(0x29, 0x00, 0x80, 0x00));
+                    if (parent->type == ACTOR_TRIPLE_RED_SHELL) {
+                        add_red_shell_in_unexpired_actor_list(parent->shellIndices[0]);
+                    } else {
+                        add_green_shell_in_unexpired_actor_list(parent->shellIndices[0]);
+                    }
+                    parent->shellIndices[0] = -1.0f;
+                    parent->shellsAvailable -= 1;
+                    parent->firePressed -= 1.0f;
+                    break;
                 }
                 if (parent->shellIndices[1] > 0.0f) {
                     shell = (struct ShellActor*) GET_ACTOR((s16) parent->shellIndices[1]);
-                    if ((shell->rotAngle < 0xAA1) || (shell->rotAngle >= 0x38F)) {
-                        someVelocity[0] = 0;
-                        someVelocity[1] = 0;
-                        someVelocity[2] = 8;
-                        func_802B64C4(someVelocity, player->rotation[1] + player->unk_0C0);
-                        shell->velocity[0] = someVelocity[0];
-                        shell->velocity[1] = someVelocity[1];
-                        shell->velocity[2] = someVelocity[2];
-                        shell->state = MOVING_SHELL;
-                        shell->someTimer = 0x001E;
-                        func_800C90F4(parent->playerId,
-                                      (player->characterId * 0x10) + SOUND_ARG_LOAD(0x29, 0x00, 0x80, 0x00));
-                        func_800C9060(parent->playerId, SOUND_ARG_LOAD(0x19, 0x00, 0x80, 0x04));
-                        if (parent->type == ACTOR_TRIPLE_RED_SHELL) {
-                            add_red_shell_in_unexpired_actor_list(parent->shellIndices[1]);
-                        } else {
-                            add_green_shell_in_unexpired_actor_list(parent->shellIndices[1]);
+                    if (CVarGetInteger("gShellsShootStraight", 0)) {
+                        // Forces shell 2 to fire inside a cone of 5 to 14.95 degrees
+                        if ((shell->rotAngle < 0x38E) || (shell->rotAngle > 0xAA1)) {
+                            break;
                         }
-                        parent->shellIndices[1] = -1.0f;
-                        parent->shellsAvailable -= 1;
-                        parent->unk_08 -= 1.0f;
-                        break;
                     }
+                    someVelocity[0] = 0;
+                    someVelocity[1] = 0;
+                    someVelocity[2] = 8;
+                    func_802B64C4(someVelocity, player->rotation[1] + player->unk_0C0);
+                    shell->velocity[0] = someVelocity[0];
+                    shell->velocity[1] = someVelocity[1];
+                    shell->velocity[2] = someVelocity[2];
+                    shell->state = MOVING_SHELL;
+                    shell->someTimer = 0x001E;
+                    func_800C90F4(parent->playerId,
+                                  (player->characterId * 0x10) + SOUND_ARG_LOAD(0x29, 0x00, 0x80, 0x00));
+                    func_800C9060(parent->playerId, SOUND_ARG_LOAD(0x19, 0x00, 0x80, 0x04));
+                    if (parent->type == ACTOR_TRIPLE_RED_SHELL) {
+                        add_red_shell_in_unexpired_actor_list(parent->shellIndices[1]);
+                    } else {
+                        add_green_shell_in_unexpired_actor_list(parent->shellIndices[1]);
+                    }
+                    parent->shellIndices[1] = -1.0f;
+                    parent->shellsAvailable -= 1;
+                    parent->firePressed -= 1.0f;
+                    break;
                 }
                 if (parent->shellIndices[2] > 0.0f) {
                     shell = (struct ShellActor*) GET_ACTOR((s16) parent->shellIndices[2]);
-                    if ((shell->rotAngle < -0x38E) || (shell->rotAngle >= -0x71B)) {
-                        someVelocity[0] = 0;
-                        someVelocity[1] = 0;
-                        someVelocity[2] = 8;
-                        func_802B64C4(someVelocity, player->rotation[1] + player->unk_0C0);
-                        shell->velocity[0] = someVelocity[0];
-                        shell->velocity[1] = someVelocity[1];
-                        shell->velocity[2] = someVelocity[2];
-                        shell->state = MOVING_SHELL;
-                        shell->someTimer = 0x001E;
-                        func_800C9060(parent->playerId, SOUND_ARG_LOAD(0x19, 0x00, 0x80, 0x04));
-                        func_800C90F4(parent->playerId,
-                                      (player->characterId * 0x10) + SOUND_ARG_LOAD(0x29, 0x00, 0x80, 0x00));
-                        if (parent->type == ACTOR_TRIPLE_RED_SHELL) {
-                            add_red_shell_in_unexpired_actor_list(parent->shellIndices[2]);
-                        } else {
-                            add_green_shell_in_unexpired_actor_list(parent->shellIndices[2]);
+                    if (CVarGetInteger("gShellsShootStraight", 0)) {
+                        /**
+                         * Forces shell 3 to fire inside a cone of -5 to -14.95 degrees
+                         * -0xAA1 was originally -10 degrees (0x71C). However,
+                         * shell 3 would continue looping for a bit so it's been adjusted to mirror shell 2
+                         */
+                        if ((shell->rotAngle < -0xAA1) || (shell->rotAngle > -0x38E)) {
+                            break;
                         }
-                        parent->shellIndices[2] = -1.0f;
-                        parent->shellsAvailable -= 1;
-                        parent->unk_08 -= 1.0f;
-                        break;
                     }
+                    someVelocity[0] = 0;
+                    someVelocity[1] = 0;
+                    someVelocity[2] = 8;
+                    func_802B64C4(someVelocity, player->rotation[1] + player->unk_0C0);
+                    shell->velocity[0] = someVelocity[0];
+                    shell->velocity[1] = someVelocity[1];
+                    shell->velocity[2] = someVelocity[2];
+                    shell->state = MOVING_SHELL;
+                    shell->someTimer = 0x001E;
+                    func_800C9060(parent->playerId, SOUND_ARG_LOAD(0x19, 0x00, 0x80, 0x04));
+                    func_800C90F4(parent->playerId,
+                                  (player->characterId * 0x10) + SOUND_ARG_LOAD(0x29, 0x00, 0x80, 0x00));
+                    if (parent->type == ACTOR_TRIPLE_RED_SHELL) {
+                        add_red_shell_in_unexpired_actor_list(parent->shellIndices[2]);
+                    } else {
+                        add_green_shell_in_unexpired_actor_list(parent->shellIndices[2]);
+                    }
+                    parent->shellIndices[2] = -1.0f;
+                    parent->shellsAvailable -= 1;
+                    parent->firePressed -= 1.0f;
+                    break;
                 }
             }
             break;
@@ -526,7 +559,7 @@ s32 use_banana_bunch_item(Player* player) {
     bananaBunch = (struct BananaBunchParent*) GET_ACTOR(actorIndex);
     bananaBunch->state = 0;
     bananaBunch->playerId = player - gPlayerOne;
-    player->soundEffects |= HOLD_BANANA_SOUND_EFFECT;
+    player->triggers |= DRAG_ITEM_EFFECT;
     return actorIndex;
 }
 
@@ -548,7 +581,7 @@ s32 use_triple_shell_item(Player* player, s16 tripleShellType) {
     parent->rotAngle = -0x8000;
     parent->playerId = player - gPlayerOne;
     parent->shellsAvailable = 0;
-    parent->unk_08 = 0.0f;
+    parent->firePressed = 0.0f;
     return actorIndex;
 }
 
@@ -681,7 +714,14 @@ s32 use_red_shell_item(Player* player) {
 // Interestingly blue shells start their life as a red shell,
 // and then just change the type from red to blue shell
 s32 use_blue_shell_item(Player* player) {
-    GET_ACTOR(use_red_shell_item(player))->type = ACTOR_BLUE_SPINY_SHELL;
+    // GET_ACTOR(use_red_shell_item(player))->type = ACTOR_BLUE_SPINY_SHELL;    // Original code was just this line, without return statement! So I commented out.
+
+    // Fix the CPU strategy not properly releasing the blue shell. This function originally doesnt have a return value, so it returns UB.
+    // The actor index range check on the cpu strategy fails because the actual actor index of blue shell was never returned by this function!
+    s16 actorIndex = use_red_shell_item(player);
+    GET_ACTOR(actorIndex)->type = ACTOR_BLUE_SPINY_SHELL;
+
+    return actorIndex;
 }
 
 #include "actors/banana/update.inc.c"
@@ -804,7 +844,7 @@ s32 use_fake_itembox_item(Player* player) {
     itemBox = (struct FakeItemBox*) GET_ACTOR(actorIndex);
     itemBox->playerId = (player - gPlayerOne);
     itemBox->state = HELD_FAKE_ITEM_BOX;
-    player->soundEffects |= HOLD_BANANA_SOUND_EFFECT;
+    player->triggers |= DRAG_ITEM_EFFECT;
     return actorIndex;
 }
 
@@ -851,7 +891,7 @@ s32 use_banana_item(Player* player) {
     banana->playerId = playerId;
     banana->state = HELD_BANANA;
     banana->unk_04 = 0x0014;
-    player->soundEffects |= HOLD_BANANA_SOUND_EFFECT;
+    player->triggers |= DRAG_ITEM_EFFECT;
     return actorIndex;
 }
 
@@ -873,7 +913,7 @@ void use_thunder_item(Player* player) {
     for (index = 0; index < NUM_PLAYERS; index++) {
         otherPlayer = &gPlayers[index];
         if (player != otherPlayer) {
-            otherPlayer->soundEffects |= HIT_ROTATING_SOUND_EFFECT;
+            otherPlayer->triggers |= LIGHTNING_STRIKE_TRIGGER;
         }
     }
 }
@@ -899,22 +939,22 @@ void player_use_item(Player* player) {
             use_banana_bunch_item(player);
             break;
         case ITEM_MUSHROOM:
-            player->soundEffects |= BOOST_SOUND_EFFECT;
+            player->triggers |= SHROOM_TRIGGER;
             break;
         case ITEM_DOUBLE_MUSHROOM:
-            player->soundEffects |= BOOST_SOUND_EFFECT;
+            player->triggers |= SHROOM_TRIGGER;
             break;
         case ITEM_TRIPLE_MUSHROOM:
-            player->soundEffects |= BOOST_SOUND_EFFECT;
+            player->triggers |= SHROOM_TRIGGER;
             break;
         case ITEM_SUPER_MUSHROOM:
-            player->soundEffects |= BOOST_SOUND_EFFECT;
+            player->triggers |= SHROOM_TRIGGER;
             break;
         case ITEM_BOO:
-            player->soundEffects |= BOO_SOUND_EFFECT;
+            player->triggers |= BOO_TRIGGER;
             break;
         case ITEM_STAR:
-            player->soundEffects |= STAR_SOUND_EFFECT;
+            player->triggers |= STAR_TRIGGER;
             break;
         case ITEM_THUNDERBOLT:
             use_thunder_item(player);

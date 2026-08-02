@@ -168,11 +168,11 @@ Mat4 that the `thing` values are placed into.
 #define ANIMATION_POP_MATRIX SIMPLE_ANIMATION_INSTRUCTION(POP_MATRIX)
 #define ANIMATION_STOP SIMPLE_ANIMATION_INSTRUCTION(STOP_ANIMATION)
 //! the pos is relative to the previous RENDER_MODEL_OR_ADD_POS if ANIMATION_DISABLE_AUTOMATIC_POP is used
-#define ANIMATION_RENDER_MODEL_AT(model, x, y, z) RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (s64) model, x, y, z
+#define ANIMATION_RENDER_MODEL_AT(model, x, y, z) RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t) model, x, y, z
 //! use RENDER_MODEL_OR_ADD_POS
 #define ANIMATION_RENDER_MODEL(model) ANIMATION_RENDER_MODEL_AT(model, 0x00000000, 0x00000000, 0x00000000)
 //! use RENDER_MODEL_OR_ADD_POS
-#define ANIMATION_ADD_POS(x, y, z) ANIMATION_RENDER_MODEL_AT((s64) NULL, x, y, z)
+#define ANIMATION_ADD_POS(x, y, z) ANIMATION_RENDER_MODEL_AT((uintptr_t) NULL, x, y, z)
 
 enum animation_type { RENDER_MODEL_OR_ADD_POS, DISABLE_AUTOMATIC_POP_MATRIX, POP_MATRIX, STOP_ANIMATION };
 
@@ -181,11 +181,11 @@ enum animation_type { RENDER_MODEL_OR_ADD_POS, DISABLE_AUTOMATIC_POP_MATRIX, POP
  * in the armature
  */
 typedef struct {
-    /* 0x00 */ s64 type;
-    /* 0x04 */ s64 size;
-    /* 0x08 */ s64 always_zero_never_used;
+    /* 0x00 */ intptr_t type;
+    /* 0x04 */ intptr_t size;
+    /* 0x08 */ intptr_t always_zero_never_used;
     /* 0x0C */ Gfx* model;
-    /* 0x10 */ s64 pos[3];
+    /* 0x10 */ intptr_t pos[3];
 } Armature;
 
 typedef struct {

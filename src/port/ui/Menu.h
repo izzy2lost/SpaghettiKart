@@ -4,13 +4,16 @@
 #include <libultraship/libultraship.h>
 #include "UIWidgets.h"
 #include "MenuTypes.h"
-#include "../port/Game.h"
+#include "src/port/Game.h"
+#include "src/port/audio/HMAS.h"
+#include "engine/TrackBrowser.h"
 
 extern "C" {
 #include "defines.h"
 #include "main.h"
 #include "menus.h"
 #include "code_800029B0.h"
+#include "audio/external.h"
 }
 
 namespace Ship {
@@ -45,9 +48,9 @@ class Menu : public GuiWindow {
     ImGuiTextFilter menuSearch;
     uint8_t searchSidebarIndex;
     UIWidgets::Colors defaultThemeIndex;
-    std::shared_ptr<std::vector<Ship::WindowBackend>> availableWindowBackends;
-    std::unordered_map<Ship::WindowBackend, const char*> availableWindowBackendsMap;
-    Ship::WindowBackend configWindowBackend;
+    std::shared_ptr<std::vector<int32_t>> availableWindowBackends;
+    std::unordered_map<int32_t, const char*> availableWindowBackendsMap;
+    int32_t configWindowBackend;
 
     std::unordered_map<uint32_t, disabledInfo> disabledMap;
     std::vector<disabledInfo> disabledVector;
@@ -59,33 +62,10 @@ class Menu : public GuiWindow {
                                    "Searches all menus for the given text, including tooltips.")) } } }
     };
     virtual void ProcessReset() {
-      gGamestateNext = MAIN_MENU_FROM_QUIT;
-      gIsGamePaused = 0;
-      SetMarioRaceway();
-      memset(&gGameModeMenuColumn, 0, sizeof(s8) * NUM_ROWS_GAME_MODE_MENU);
-      memset(&gGameModeSubMenuColumn, 0, sizeof(s8) * NUM_COLUMN_GAME_MODE_SUB_MENU * NUM_ROWS_GAME_MODE_SUB_MENU);
-
-      switch(CVarGetInteger("gSkipIntro", 0)) {
-          case 0:
-              gMenuSelection = HARBOUR_MASTERS_MENU;
-              break;
-          case 1:
-              gMenuSelection = LOGO_INTRO_MENU;
-              break;
-          case 2:
-              gMenuSelection = START_MENU;
-              break;
-          case 3:
-              gMenuSelection = MAIN_MENU;
-              break;
-      }
-
-      // Debug mode override gSkipIntro
-      if (CVarGetInteger("gEnableDebugMode", 0) == true) {
-          gMenuSelection = START_MENU;
-      } else {
-          gMenuSelection = LOGO_INTRO_MENU;
-      }
+      // Only request the reset: it is applied at the top of the next game
+      // frame (ApplyPendingReset in Game.cpp), where it cannot race the menu
+      // state machine mid-fade or be swallowed as a repeated gamestate write.
+      CM_RequestReset();
     }
 
   private:

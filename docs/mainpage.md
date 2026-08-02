@@ -1,14 +1,14 @@
-Complete resources for learning about mk64 decomp
+Complete resources for learning about SpaghettiKart
 @htmlonly
 <br>
 <div class="pagebutton">
-<a class="pagea" href="basics.html">
+<a class="pagea" href="modding.html">
 <div class="pagelink">
   <div class="pageimg"><img width=320 src="buttonimage.png" /></div>
   <div class="content">
-    <div class="pageheading">Understanding the Basics</div>
+    <div class="pageheading">Modding Main Page</div>
     <div class="pagedescription">
-      <p>Essential skills and concepts to help you get started with mk64 decomp</p>
+      <p>It's time to race!</p>
     </div>
   </div>
 </div>
@@ -16,13 +16,13 @@ Complete resources for learning about mk64 decomp
 </div>
 
 <div class="pagebutton">
-<a class="pagea" href="actorsmenu.html">
+<a class="pagea" href="trackmenu.html">
 <div class="pagelink">
   <div class="pageimg"><img width=320 src="buttonimage.png" /></div>
   <div class="content">
-    <div class="pageheading">Actors</div>
+    <div class="pageheading">Track Making</div>
     <div class="pagedescription">
-      <p>Learn the inns and outs of mk64's actors, items, vehicles, and behaviour code</p>
+      <p>It's time to race!</p>
     </div>
   </div>
 </div>
@@ -30,27 +30,13 @@ Complete resources for learning about mk64 decomp
 </div>
 
 <div class="pagebutton">
-<a class="pagea" href="coursesmenu.html">
+<a class="pagea" href="charactermenu.html">
 <div class="pagelink">
   <div class="pageimg"><img width=320 src="buttonimage.png" /></div>
   <div class="content">
-    <div class="pageheading">Courses</div>
+    <div class="pageheading">Custom Characters</div>
     <div class="pagedescription">
-      <p>Learn how mk64's courses are constructed</p>
-    </div>
-  </div>
-</div>
-</a>
-</div>
-
-<div class="pagebutton">
-<a class="pagea" href="tutorials.html">
-<div class="pagelink">
-  <div class="pageimg"><img width=320 src="buttonimage.png" /></div>
-  <div class="content">
-    <div class="pageheading">Tutorials</div>
-    <div class="pagedescription">
-      <p>Topics tailored to specific issues such as boostramps.</p>
+      <p>Make your first character!</p>
     </div>
   </div>
 </div>
@@ -58,3 +44,4 @@ Complete resources for learning about mk64 decomp
 </div>
 
 @endhtmlonly
+

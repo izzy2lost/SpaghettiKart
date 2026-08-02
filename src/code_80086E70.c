@@ -6,11 +6,11 @@
 #include "code_80086E70.h"
 #include "camera.h"
 #include "objects.h"
-#include "math_util.h"
+#include "racing/math_util.h"
 #include "math_util_2.h"
 #include "racing/memory.h"
 #include "update_objects.h"
-#include "collision.h"
+#include "racing/collision.h"
 #include "audio/external.h"
 #include "main.h"
 #include "code_80057C60.h"
@@ -1167,7 +1167,7 @@ s32 func_80089B50(s32 objectIndex) {
                 (player->type & PLAYER_EXISTS) && !(player->type & PLAYER_INVISIBLE_OR_BOMB) &&
                 (has_collided_horizontally_with_player(objectIndex, player) != 0)) {
                 if (!(player->effects & STAR_EFFECT)) {
-                    player->soundEffects |= REVERSE_SOUND_EFFECT;
+                    player->triggers |= VERTICAL_TUMBLE_TRIGGER;
                     if (is_obj_flag_status_active(objectIndex, 0x04000000) != 0) {
                         func_80072180();
                     }
@@ -1194,7 +1194,7 @@ s32 func_80089CBC(s32 objectIndex, f32 arg1) {
                 if ((player->type & PLAYER_EXISTS) && !(player->type & PLAYER_INVISIBLE_OR_BOMB) &&
                     (has_collided_with_player_and_within_height(objectIndex, player, arg1) != 0)) {
                     if (!(player->effects & STAR_EFFECT)) {
-                        player->soundEffects |= REVERSE_SOUND_EFFECT;
+                        player->triggers |= VERTICAL_TUMBLE_TRIGGER;
                         if (is_obj_flag_status_active(objectIndex, 0x04000000) != 0) {
                             func_80072180();
                         }
@@ -1221,7 +1221,7 @@ s32 func_80089E18(s32 objectIndex) {
                 if (player->effects & STAR_EFFECT) {
                     var_s6 = 1;
                 } else {
-                    player->soundEffects |= 1;
+                    player->triggers |= HIT_BANANA_TRIGGER;
                 }
             }
         }
@@ -1245,7 +1245,7 @@ s32 func_80089F24(s32 objectIndex) {
                     if (is_obj_flag_status_active(objectIndex, 0x04000000) != 0) {
                         func_80072180();
                     }
-                    player->soundEffects |= 0x200000;
+                    player->triggers |= SPINOUT_TRIGGER;
                 }
             }
         }
@@ -1331,7 +1331,7 @@ void func_8008A1D0(s32 objectIndex, s32 cameraId, s32 arg2, s32 arg3) {
 // This function is really cool, it tests the value of an unitialized local variable
 UNUSED void func_8008A2CC(s32 objectIndex, s32 cameraId, u16 arg2) {
     Camera* camera;
-    u32 no_init;
+    u32 no_init = 0;
     u16 var_a2;
 
     camera = &camera1[cameraId];
@@ -1944,11 +1944,6 @@ void func_8008BF64(s32 objectIndex) {
     D_80183E80[0] = object->direction_angle[0];
     D_80183E80[1] = object->direction_angle[1];
     D_80183E80[2] = object->direction_angle[2];
-}
-
-void func_8008BFC0(s32 objectIndex) {
-    gObjectList[objectIndex].unk_09C = gObjectList[objectIndex].pos[0];
-    gObjectList[objectIndex].unk_09E = gObjectList[objectIndex].pos[1];
 }
 
 void func_8008BFFC(s32 objectIndex) {

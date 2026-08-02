@@ -1,11 +1,14 @@
 #include "Engine.h"
 
-#include "StringHelper.h"
+#include <cstdlib>
+#include "ship/utils/StringHelper.h"
 #include "GameExtractor.h"
+#include "engine/mods/ModManager.h"
 #include "ui/ImguiUI.h"
-#include "libultraship/src/Context.h"
-#include "libultraship/src/controller/controldevice/controller/mapping/ControllerDefaultMappings.h"
+#include "ship/Context.h"
+#include "ship/controller/controldevice/controller/mapping/ControllerDefaultMappings.h"
 #include "resource/type/ResourceType.h"
+#include "fast/resource/ResourceType.h"
 #include "resource/importers/GenericArrayFactory.h"
 #include "resource/importers/AudioBankFactory.h"
 #include "resource/importers/AudioSampleFactory.h"
@@ -21,71 +24,43 @@
 #include "resource/importers/ArrayFactory.h"
 #include "resource/importers/MinimapFactory.h"
 #include "resource/importers/BetterTextureFactory.h"
-#include <Fonts.h>
-#include "window/gui/resource/Font.h"
-#include "window/gui/resource/FontFactory.h"
+#include <ship/window/gui/Fonts.h>
+#include "ship/window/gui/resource/Font.h"
+#include "ship/window/gui/resource/FontFactory.h"
+#include "libultraship/window/gui/InputEditorWindow.h"
+#include "libultraship/window/gui/GfxDebuggerWindow.h"
+#include "libultraship/controller/controldeck/ControlDeck.h"
 #include "SpaghettiGui.h"
 
 #include "port/interpolation/FrameInterpolation.h"
-#include <graphic/Fast3D/Fast3dWindow.h>
-#include <graphic/Fast3D/interpreter.h>
+#include <fast/Fast3dWindow.h>
+#include <fast/interpreter.h>
 // #include <Fast3D/gfx_rendering_api.h>
 #include <SDL2/SDL.h>
 
 #include <utility>
 
 #ifdef __SWITCH__
-#include <port/switch/SwitchImpl.h>
+#include <ship/port/switch/SwitchImpl.h>
 #endif
 
 extern "C" {
 bool prevAltAssets = false;
 float gInterpolationStep = 0.0f;
 #include <macros.h>
-#include <DisplayListFactory.h>
-#include <TextureFactory.h>
-#include <MatrixFactory.h>
-#include <BlobFactory.h>
-#include <VertexFactory.h>
-#include <LightFactory.h>
+#include <fast/resource/factory/DisplayListFactory.h>
+#include <fast/resource/factory/TextureFactory.h>
+#include <fast/resource/factory/MatrixFactory.h>
+#include <ship/resource/factory/BlobFactory.h>
+#include <fast/resource/factory/VertexFactory.h>
+#include <fast/resource/factory/LightFactory.h>
 // #include <PngFactory.h>
 #include "audio/internal.h"
 #include "audio/GameAudio.h"
 }
 
-#ifdef __ANDROID__
-#include <thread>
-#include <chrono>
-
-extern "C" {
-    void waitForSetupFromNative() {
-        // Simple polling approach - wait for the file to exist
-        const std::string main_path = Ship::Context::GetPathRelativeToAppDirectory("mk64.o2r");
-        
-        SPDLOG_INFO("Waiting for mk64.o2r file selection...");
-        
-        // Poll for the file existence with a timeout
-        int timeout_seconds = 300; // 5 minutes timeout
-        int poll_count = 0;
-        
-        while (!std::filesystem::exists(main_path) && poll_count < timeout_seconds * 10) {
-            std::this_thread::sleep_for(std::chrono::milliseconds(100));
-            poll_count++;
-        }
-        
-        if (std::filesystem::exists(main_path)) {
-            SPDLOG_INFO("mk64.o2r file found, continuing...");
-            // Add a small delay to ensure file operations are complete
-            std::this_thread::sleep_for(std::chrono::milliseconds(500));
-        } else {
-            SPDLOG_ERROR("Timeout waiting for mk64.o2r file selection");
-        }
-    }
-}
-#endif
-
 Fast::Interpreter* GetInterpreter() {
-    return static_pointer_cast<Fast::Fast3dWindow>(Ship::Context::GetInstance()->GetWindow())
+    return static_pointer_cast<Fast::Fast3dWindow>(Ship::Context::GetRawInstance()->GetWindow())
         ->GetInterpreterWeak()
         .lock()
         .get();
@@ -107,72 +82,22 @@ bool CreateDirectoryRecursive(std::string const& dirName, std::error_code& err) 
 }
 
 GameEngine::GameEngine() {
-
-    const std::string main_path = Ship::Context::GetPathRelativeToAppDirectory("mk64.o2r");
-    const std::string assets_path = Ship::Context::LocateFileAcrossAppDirs("spaghetti.o2r");
-
-    std::vector<std::string> archiveFiles;
+    // Initialize context properties early to recognize paths properly for non-portable builds
+    this->context = Ship::Context::CreateUninitializedInstance("Spaghetti Kart", "spaghettify", "spaghettify.cfg.json");
 
 #ifdef __SWITCH__
     Ship::Switch::Init(Ship::PreInitPhase);
-    Ship::Switch::Init(Ship::PostInitPhase);
 #endif
 
 #ifdef _WIN32
     AllocConsole();
 #endif
 
-#ifdef __ANDROID__
-    // On Android, always wait for the user to select the file through the UI first
-    extern void waitForSetupFromNative();
-    waitForSetupFromNative();
-    
-    // After waiting, check if the file exists
-    if (std::filesystem::exists(main_path)) {
-        archiveFiles.push_back(main_path);
-    } else {
-        SPDLOG_ERROR("mk64.o2r file still not found after user selection");
-        exit(1);
-    }
-#else
-    if (std::filesystem::exists(main_path)) {
-        archiveFiles.push_back(main_path);
-    } else {
-        if (ShowYesNoBox("No O2R Files", "No O2R files found. Generate one now?") == IDYES) {
-            if (!GenAssetFile()) {
-                ShowMessage("Error", "An error occured, no O2R file was generated.\n\nExiting...");
-                exit(1);
-            } else {
-                archiveFiles.push_back(main_path);
-            }
-        } else {
-            exit(1);
-        }
-    }
-#endif
-
-    if (std::filesystem::exists(assets_path)) {
-        archiveFiles.push_back(assets_path);
-    }
-    if (const std::string patches_path = Ship::Context::GetPathRelativeToAppDirectory("mods");
-        !patches_path.empty() && std::filesystem::exists(patches_path)) {
-        if (std::filesystem::is_directory(patches_path)) {
-            for (const auto& p : std::filesystem::recursive_directory_iterator(patches_path)) {
-                auto ext = p.path().extension().string();
-                if (StringHelper::IEquals(ext, ".zip") || StringHelper::IEquals(ext, ".o2r")) {
-                    archiveFiles.push_back(p.path().generic_string());
-                }
-            }
-        }
-    }
-
-    this->context = Ship::Context::CreateUninitializedInstance("Spaghetti Kart", "spaghettify", "spaghettify.cfg.json");
-
     this->context->InitConfiguration();    // without this line InitConsoleVariables fails at Config::Reload()
     this->context->InitConsoleVariables(); // without this line the controldeck constructor failes in
                                            // ShipDeviceIndexMappingManager::UpdateControllerNamesFromConfig()
 
-        auto defaultMappings = std::make_shared<Ship::ControllerDefaultMappings>(
+    auto defaultMappings = std::make_shared<Ship::ControllerDefaultMappings>(
         // KeyboardKeyToButtonMappings
         std::unordered_map<CONTROLLERBUTTONS_T, std::unordered_set<Ship::KbScancode>>{
             { BTN_A, { Ship::KbScancode::LUS_KB_SHIFT} },
@@ -225,30 +150,50 @@ GameEngine::GameEngine() {
         // SDLAxisDirectionToAxisDirectionMappings - use built-in LUS defaults
         std::unordered_map<Ship::StickIndex, std::vector<std::pair<Ship::Direction, std::pair<SDL_GameControllerAxis, int32_t>>>>()
     );
-    auto controlDeck = std::make_shared<LUS::ControlDeck>(std::vector<CONTROLLERBUTTONS_T>(), defaultMappings);
 
-    this->context->InitResourceManager(archiveFiles, {}, 3); // without this line InitWindow fails in Gui::Init()
+    auto buttonNames = std::unordered_map<CONTROLLERBUTTONS_T, std::string>({
+                      { BTN_A, "A" },
+                      { BTN_B, "B" },
+                      { BTN_L, "L" },
+                      { BTN_R, "R" },
+                      { BTN_Z, "Z" },
+                      { BTN_START, "Start" },
+                      { BTN_CLEFT, "CLeft" },
+                      { BTN_CRIGHT, "CRight" },
+                      { BTN_CUP, "CUp" },
+                      { BTN_CDOWN, "CDown" },
+                      { BTN_DLEFT, "DLeft" },
+                      { BTN_DRIGHT, "DRight" },
+                      { BTN_DUP, "DUp" },
+                      { BTN_DDOWN, "DDown" },
+                  });
+    auto controlDeck = std::make_shared<LUS::ControlDeck>(std::vector<CONTROLLERBUTTONS_T>(), defaultMappings, buttonNames);
+    const std::string assets_path = Ship::Context::LocateFileAcrossAppDirs(engine_asset_file);
+    this->context->InitResourceManager({assets_path}, {}, 3); // without this line InitWindow fails in Gui::Init()
     this->context->InitConsole(); // without this line the GuiWindow constructor fails in ConsoleWindow::InitElement()
 
     auto gui = std::make_shared<Ship::SpaghettiGui>(std::vector<std::shared_ptr<Ship::GuiWindow>>({}));
     auto wnd = std::make_shared<Fast::Fast3dWindow>(gui);
 
     // auto wnd = std::make_shared<Fast::Fast3dWindow>(std::vector<std::shared_ptr<Ship::GuiWindow>>({}));
-    // auto wnd = std::dynamic_pointer_cast<Fast::Fast3dWindow>(Ship::Context::GetInstance()->GetWindow());
+    // auto wnd = std::dynamic_pointer_cast<Fast::Fast3dWindow>(Ship::Context::GetRawInstance()->GetWindow());
 
-    this->context->Init(archiveFiles, {}, 3, { 26800, 512, 1100 }, wnd, controlDeck);
+    gui->AddGuiWindow(std::make_shared<LUS::InputEditorWindow>(CVAR_CONTROLLER_CONFIGURATION_WINDOW_OPEN, "Input Editor"));
+    gui->AddGuiWindow(std::make_shared<LUS::GfxDebuggerWindow>(CVAR_GFX_DEBUGGER_WINDOW_OPEN, "GfxDebuggerWindow", ImVec2(520, 600)));
+
+    this->context->Init({assets_path}, {}, 3, { 26800, 512, 1100 }, wnd, controlDeck);
 
 #ifndef __SWITCH__
-    Ship::Context::GetInstance()->GetLogger()->set_level(
+    Ship::Context::GetRawInstance()->GetLogger()->set_level(
         (spdlog::level::level_enum) CVarGetInteger("gDeveloperTools.LogLevel", 1));
-    Ship::Context::GetInstance()->GetLogger()->set_pattern("[%H:%M:%S.%e] [%s:%#] [%l] %v");
+    Ship::Context::GetRawInstance()->GetLogger()->set_pattern("[%H:%M:%S.%e] [%s:%#] [%l] %v");
 #endif
 
     SPDLOG_INFO("Spaghetti Kart " SPAGHETTI_VERSION);
     SPDLOG_INFO(CVarGetInteger("gEnableDebugMode", 0) == 0 ? "Debug Mode deactivated" : "Debug Mode activated");
 
     wnd->SetRendererUCode(ucode_f3dex);
-    this->context->InitGfxDebugger();
+    //this->context->InitGfxDebugger();
 
     auto loader = context->GetResourceManager()->GetResourceLoader();
     loader->RegisterResourceFactory(std::make_shared<SM64::AudioBankFactoryV0>(), RESOURCE_FORMAT_BINARY, "AudioBank",
@@ -330,14 +275,16 @@ bool GameEngine::GenAssetFile() {
 
     if (!extractor->SelectGameFromUI()) {
         ShowMessage("Error", "No ROM selected.\n\nExiting...");
-        exit(1);
+        // _Exit, not exit: this runs before the game world is initialized, so running the
+        // global World destructor (CleanWorld) would dereference still-null singletons and crash.
+        _Exit(1);
     }
 
     auto game = extractor->ValidateChecksum();
     if (!game.has_value()) {
         ShowMessage("Unsupported ROM",
                     "The provided ROM is not supported.\n\nCheck the readme for a list of supported versions.");
-        exit(1);
+        _Exit(1);
     }
 
     ShowMessage(("Found " + game.value()).c_str(),
@@ -348,11 +295,11 @@ bool GameEngine::GenAssetFile() {
 
 uint32_t GameEngine::GetInterpolationFPS() {
     if (CVarGetInteger("gMatchRefreshRate", 0)) {
-        return Ship::Context::GetInstance()->GetWindow()->GetCurrentRefreshRate();
+        return Ship::Context::GetRawInstance()->GetWindow()->GetCurrentRefreshRate();
 
     } else if (CVarGetInteger("gVsyncEnabled", 1) ||
-               !Ship::Context::GetInstance()->GetWindow()->CanDisableVerticalSync()) {
-        return std::min<uint32_t>(Ship::Context::GetInstance()->GetWindow()->GetCurrentRefreshRate(),
+               !Ship::Context::GetRawInstance()->GetWindow()->CanDisableVerticalSync()) {
+        return std::min<uint32_t>(Ship::Context::GetRawInstance()->GetWindow()->GetCurrentRefreshRate(),
                                   CVarGetInteger("gInterpolationFPS", 30));
     }
 
@@ -405,6 +352,7 @@ int GameEngine::ShowYesNoBox(const char* title, const char* box) {
 
 void GameEngine::Create() {
     const auto instance = Instance = new GameEngine();
+    InitModsSystem();
     instance->gHMAS = new HMAS();
     instance->AudioInit();
     GameUI::SetupGuiElements();
@@ -418,6 +366,7 @@ void GameEngine::Destroy() {
 #ifdef __SWITCH__
     Ship::Switch::Exit();
 #endif
+    UnloadMods();
     GameUI::Destroy();
     delete GameEngine::Instance;
     GameEngine::Instance = nullptr;
@@ -450,8 +399,8 @@ void GameEngine::StartFrame() const {
 //     Instance->context->GetWindow()->MainLoop(run_one_game_iter);
 // }
 
-void GameEngine::RunCommands(Gfx* Commands, const std::vector<std::unordered_map<Mtx*, MtxF>>& mtx_replacements) {
-    auto wnd = std::dynamic_pointer_cast<Fast::Fast3dWindow>(Ship::Context::GetInstance()->GetWindow());
+void GameEngine::RunCommands(Gfx* pool, const std::vector<std::unordered_map<Mtx*, MtxF>>& mtx_replacements) {
+    auto wnd = std::dynamic_pointer_cast<Fast::Fast3dWindow>(Ship::Context::GetRawInstance()->GetWindow());
 
     if (wnd == nullptr) {
         return;
@@ -464,20 +413,25 @@ void GameEngine::RunCommands(Gfx* Commands, const std::vector<std::unordered_map
 
     interpreter->mInterpolationIndex = 0;
 
-    for (const auto& m : mtx_replacements) {
-        wnd->DrawAndRunGraphicsCommands(Commands, m);
+    for (const auto& mtxStack : mtx_replacements) {
+        wnd->DrawAndRunGraphicsCommands(pool, mtxStack);
         interpreter->mInterpolationIndex++;
     }
 
     bool curAltAssets = CVarGetInteger("gEnhancements.Mods.AlternateAssets", 0);
     if (prevAltAssets != curAltAssets) {
         prevAltAssets = curAltAssets;
-        Ship::Context::GetInstance()->GetResourceManager()->SetAltAssetsEnabled(curAltAssets);
+        Ship::Context::GetRawInstance()->GetResourceManager()->SetAltAssetsEnabled(curAltAssets);
         gfx_texture_cache_clear();
     }
 }
 
-void GameEngine::ProcessGfxCommands(Gfx* commands) {
+/**
+ * During the draw phase, the gfx pool is filled with graphics commands.
+ * At the end of the game loop, these commands are sent into lus and interpreted
+ * or translated into modern graphics commands
+ */
+void GameEngine::ProcessGfxCommands(Gfx* pool) {
     std::vector<std::unordered_map<Mtx*, MtxF>> mtx_replacements;
     int target_fps = GameEngine::Instance->GetInterpolationFPS();
     if (CVarGetInteger("gModifyInterpolationTargetFPS", 0)) {
@@ -500,24 +454,25 @@ void GameEngine::ProcessGfxCommands(Gfx* commands) {
     // time_base = fps * original_fps (one second)
     int next_original_frame = fps;
 
+    // Get matrix replacements for intermediate frames
     while (time + original_fps <= next_original_frame) {
         time += original_fps;
         if (time != next_original_frame) {
             mtx_replacements.push_back(FrameInterpolation_Interpolate((float) time / next_original_frame));
         } else {
-            mtx_replacements.emplace_back();
+            mtx_replacements.emplace_back(); // No interpolation for key frames
         }
     }
     // printf("mtxf size: %d\n", mtx_replacements.size());
 
     time -= fps;
 
-    auto wnd = std::dynamic_pointer_cast<Fast::Fast3dWindow>(Ship::Context::GetInstance()->GetWindow());
+    auto wnd = std::dynamic_pointer_cast<Fast::Fast3dWindow>(Ship::Context::GetRawInstance()->GetWindow());
     if (wnd != nullptr) {
         wnd->SetTargetFps(GetInterpolationFPS());
         wnd->SetMaximumFrameLatency(1);
     }
-    RunCommands(commands, mtx_replacements);
+    RunCommands(pool, mtx_replacements);
 
     last_fps = fps;
     last_update_rate = 2;
@@ -583,7 +538,7 @@ void GameEngine::EndAudioFrame() {
 }
 
 void GameEngine::AudioInit() {
-    const auto resourceMgr = Ship::Context::GetInstance()->GetResourceManager();
+    const auto resourceMgr = Ship::Context::GetRawInstance()->GetResourceManager();
     resourceMgr->LoadResources("sound");
     const auto banksFiles = resourceMgr->GetArchiveManager()->ListFiles("sound/banks/*");
     const auto sequences_files = resourceMgr->GetArchiveManager()->ListFiles("sound/sequences/*");
@@ -637,11 +592,21 @@ uint8_t GameEngine::GetBankIdByName(const std::string& name) {
 ImFont* GameEngine::CreateFontWithSize(float size, std::string fontPath) {
     auto mImGuiIo = &ImGui::GetIO();
     ImFont* font;
+    // Rasterize the glyph atlas at higher density so menu text stays sharp on HiDPI/Retina
+    // displays. Bake at retinaScale * maxMenuScale so the runtime Menu Scale setting
+    // (FontGlobalScale) only ever downsamples the atlas rather than stretching it blurry.
+    float rasterDensity = 1.0f;
+#if defined(__APPLE__)
+    constexpr float kRetinaScale = 2.0f;  // Retina backing scale
+    constexpr float kMaxMenuScale = 2.0f; // keep in sync with the gSettings.Menu.Scale slider Max
+    rasterDensity = kRetinaScale * kMaxMenuScale;
+#endif
     if (fontPath == "") {
         ImFontConfig fontCfg = ImFontConfig();
         fontCfg.OversampleH = fontCfg.OversampleV = 1;
         fontCfg.PixelSnapH = true;
         fontCfg.SizePixels = size;
+        fontCfg.RasterizerDensity = rasterDensity;
         font = mImGuiIo->Fonts->AddFontDefault(&fontCfg);
     } else {
         auto initData = std::make_shared<Ship::ResourceInitData>();
@@ -650,10 +615,12 @@ ImFont* GameEngine::CreateFontWithSize(float size, std::string fontPath) {
         initData->ResourceVersion = 0;
         initData->Path = fontPath;
         std::shared_ptr<Ship::Font> fontData = std::static_pointer_cast<Ship::Font>(
-            Ship::Context::GetInstance()->GetResourceManager()->LoadResource(fontPath, false, initData));
+            Ship::Context::GetRawInstance()->GetResourceManager()->LoadResource(fontPath, false, initData));
         char* fontDataPtr = (char*) malloc(fontData->DataSize);
         memcpy(fontDataPtr, fontData->Data, fontData->DataSize);
-        font = mImGuiIo->Fonts->AddFontFromMemoryTTF(fontDataPtr, fontData->DataSize, size);
+        ImFontConfig fontCfg = ImFontConfig();
+        fontCfg.RasterizerDensity = rasterDensity;
+        font = mImGuiIo->Fonts->AddFontFromMemoryTTF(fontDataPtr, fontData->DataSize, size, &fontCfg);
     }
     // FontAwesome fonts need to have their sizes reduced by 2.0f/3.0f in order to align correctly
     float iconFontSize = size * 2.0f / 3.0f;
@@ -662,6 +629,7 @@ ImFont* GameEngine::CreateFontWithSize(float size, std::string fontPath) {
     iconsConfig.MergeMode = true;
     iconsConfig.PixelSnapH = true;
     iconsConfig.GlyphMinAdvanceX = iconFontSize;
+    iconsConfig.RasterizerDensity = rasterDensity;
     mImGuiIo->Fonts->AddFontFromMemoryCompressedBase85TTF(fontawesome_compressed_data_base85, iconFontSize,
                                                           &iconsConfig, sIconsRanges);
     return font;
@@ -670,7 +638,7 @@ ImFont* GameEngine::CreateFontWithSize(float size, std::string fontPath) {
 // End
 
 extern "C" uint32_t GameEngine_GetSampleRate() {
-    auto player = Ship::Context::GetInstance()->GetAudio()->GetAudioPlayer();
+    auto player = Ship::Context::GetRawInstance()->GetAudio()->GetAudioPlayer();
     if (player == nullptr) {
         return 0;
     }
@@ -757,7 +725,7 @@ extern "C" uint32_t GameEngine_GetGameVersion() {
     return 0x00000001;
 }
 
-static const char* sOtrSignature = "__OTR__";
+static const char* const sOtrSignature = "__OTR__";
 
 extern "C" bool GameEngine_OTRSigCheck(const char* data) {
     return strncmp(data, sOtrSignature, strlen(sOtrSignature)) == 0;
@@ -770,7 +738,7 @@ extern "C" int32_t GameEngine_ResourceGetTexTypeByName(const char* name) {
         return (int16_t) res->Type;
     }
 
-    SPDLOG_ERROR("Given texture path is a non-existent resource");
+    SPDLOG_ERROR("Given texture path {} is a non-existent resource", name);
     return -1;
 }
 
@@ -810,28 +778,6 @@ extern "C" void Timer_Increment(int32_t* address, int32_t value) {
 extern "C" void Timer_SetValue(int32_t* address, int32_t value) {
     *address = value;
 }
-
-// void Timer_CompleteTask(TimedEntry& task) {
-//     if (task.action != nullptr) {
-//         task.action(task.address, task.value);
-//     }
-//     task.active = false;
-// }
-
-// extern "C" void Timer_Update() {
-
-//     if(gTimerTasks.empty()) {
-//         return;
-//     }
-
-//     const auto millis = Timer_GetCurrentMillis();
-
-//     for (auto& task : gTimerTasks) {
-//         if (task.active && millis >= task.duration) {
-//             Timer_CompleteTask(task);
-//         }
-//     }
-// }
 
 extern "C" float OTRGetAspectRatio() {
     return GetInterpreter()->mCurDimensions.aspect_ratio;

@@ -1,10 +1,13 @@
 #include "CheepCheep.h"
+#include "port/Game.h"
+#include "port/interpolation/FrameInterpolation.h"
 
-#include "assets/banshee_boardwalk_data.h"
-#include "assets/common_data.h"
+#include "assets/models/tracks/banshee_boardwalk/banshee_boardwalk_data.h"
+#include "assets/models/common_data.h"
+
 
 extern "C" {
-#include "math_util.h"
+#include "racing/math_util.h"
 #include "math_util_2.h"
 #include "render_objects.h"
 #include "update_objects.h"
@@ -12,22 +15,27 @@ extern "C" {
 #include "code_80086E70.h"
 #include "waypoints.h"
 #include "code_80057C60.h"
-#include "some_data.h"
+#include "textures/some_data.h"
 extern Vec3s D_800E634C[];
 extern Lights1 D_800E45C0[];
 }
 
-OCheepCheep::OCheepCheep(const FVector& pos, CheepType type, IPathSpan span) {
+OCheepCheep::OCheepCheep(const SpawnParams& params) : OObject(params) {
     Name = "Cheep Cheep";
-    _type = type;
-    _spawnPos = pos;
-    _span = span;
+    ResourceName = "mk:cheep_cheep";
+    _behaviour = static_cast<Behaviour>(params.Behaviour.value_or(0));
+}
+
+void OCheepCheep::SetSpawnParams(SpawnParams& params) {
+    OObject::SetSpawnParams(params);
+    params.Behaviour = static_cast<int16_t>(_behaviour);
+    params.PathSpan = ActivationPoints;
 }
 
 void OCheepCheep::Tick() { // update_cheep_cheep
     s32 objectIndex;
-    switch (_type) {
-        case CheepType::RACE:
+    switch (_behaviour) {
+        case Behaviour::RACE:
             UNUSED s32 pad;
 
             OCheepCheep::func_8007BD04(0);
@@ -35,7 +43,7 @@ void OCheepCheep::Tick() { // update_cheep_cheep
             OCheepCheep::func_8007BBBC(objectIndex);
             object_calculate_new_pos_offset(objectIndex);
             break;
-        case CheepType::PODIUM_CEREMONY:
+        case Behaviour::PODIUM_CEREMONY:
             objectIndex = indexObjectList2[0];
             if (D_801658BC == 1) {
                 D_801658BC = 0;
@@ -57,6 +65,7 @@ void OCheepCheep::Draw(s32 cameraId) { // func_8005217C
     object = &gObjectList[temp_a3];
     if (object->state >= 2) {
         if (is_obj_flag_status_active(temp_a3, 0x10) != 0) {
+            FrameInterpolation_RecordOpenChild("cheep_cheep", (temp_a3 << 4) | cameraId);
             rsp_set_matrix_transformation(object->pos, object->direction_angle, object->sizeScaling);
             func_800520C0(temp_a3);
 
@@ -73,6 +82,7 @@ void OCheepCheep::Draw(s32 cameraId) { // func_8005217C
             gSPLight(gDisplayListHead++, &D_800E45C0l[3].l[0], LIGHT_1);
             gSPLight(gDisplayListHead++, &D_800E45C0l[3].a, LIGHT_2);
             gSPDisplayList(gDisplayListHead++, (Gfx*) d_course_banshee_boardwalk_dl_7650);
+            FrameInterpolation_RecordCloseChild();
         }
     }
 }
@@ -115,9 +125,11 @@ void OCheepCheep::func_8007BD04(s32 playerId) {
 
     objectIndex = indexObjectList2[0];
     if (gObjectList[objectIndex].state == 0) {
-        if (((s32) gNearestPathPointByPlayerId[playerId] >= _span.Start) &&
-            ((s32) gNearestPathPointByPlayerId[playerId] <= _span.End)) {
-            set_obj_origin_pos(objectIndex, xOrientation * _spawnPos.x, _spawnPos.y, _spawnPos.z);
+        IPathSpan span = ActivationPoints;
+        if (((s32) gNearestPathPointByPlayerId[playerId] >= span.Start) &&
+            ((s32) gNearestPathPointByPlayerId[playerId] <= span.End)) {
+            FVector pos = SpawnPos;
+            set_obj_origin_pos(objectIndex, xOrientation * pos.x, pos.y, pos.z);
             init_object(objectIndex, 1);
         }
     }
@@ -241,4 +253,36 @@ void OCheepCheep::func_8007BFB0(s32 objectIndex) {
     }
     object_add_velocity_offset_y(objectIndex);
     object_calculate_new_pos_offset(objectIndex);
+}
+
+void OCheepCheep::DrawEditorProperties() {
+    Object* obj = &gObjectList[_objectIndex];
+
+    ImGui::Text("Location");
+    ImGui::SameLine();
+    FVector location = FVector(obj->pos[0], obj->pos[1], obj->pos[2]);
+    if (ImGui::DragFloat3("##Location", (float*)&location)) {
+        Translate(location);
+        gEditor.eObjectPicker.eGizmo.Pos = location;
+    }
+
+    ImGui::SameLine();
+    if (ImGui::Button(ICON_FA_UNDO "##ResetPos")) {
+        FVector location = FVector(0, 0, 0);
+        Translate(location);
+        gEditor.eObjectPicker.eGizmo.Pos = location;
+    }
+
+    IPathSpan span = ActivationPoints;
+
+    ImGui::Text("Path Span");
+    ImGui::SameLine();
+
+    if (ImGui::DragInt2("##PathSpan", (int*)&span)) {
+        ActivationPoints = span;
+    }
+    ImGui::SameLine();
+    if (ImGui::Button(ICON_FA_UNDO "##ResetPathSpan")) {
+        ActivationPoints = IPathSpan(0.0f, 0.0f);
+    }
 }

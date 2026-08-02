@@ -1,9 +1,7 @@
 #include <libultra/types.h>
 #include "course_offsets.h"
-#include <assets/other_textures.h>
-#include <assets/yoshi_valley_data.h>
-#include "animation.h"
-#include <stdint.h>
+#include <assets/textures/other_textures.h>
+#include <assets/models/tracks/yoshi_valley/yoshi_valley_data.h>
 
 #ifdef TARGET_N64
 extern u8 gTexture66EBF0[];
@@ -143,56 +141,55 @@ Animation* d_course_yoshi_valley_unk4[] = {
 
 //! 0x06014798
 uintptr_t d_course_yoshi_valley_unk5[] = {
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_ADD_POS(0x00000000, 0x00000000, 0x00000000)
-    RENDER_MODEL_OR_ADD_POS, 0x00000006, 0x00000000, 0x00000000, (uintptr_t)0x00000000, (uintptr_t)0x00000000, (uintptr_t)0x00000000,
+    ANIMATION_ADD_POS(0x00000000, 0x00000000, 0x00000000),
 
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_RENDER_MODEL(d_course_yoshi_valley_dl_142C0)
-    RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t)d_course_yoshi_valley_dl_142C0, 0x00000000, 0x00000000, 0x00000000,
+    ANIMATION_RENDER_MODEL(d_course_yoshi_valley_dl_142C0),
 
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_ADD_POS(0x000007f8, 0x00000000, 0x00000000)
-    RENDER_MODEL_OR_ADD_POS, 0x00000006, 0x00000000, 0x00000000, (uintptr_t)0x000007f8, (uintptr_t)0x00000000, (uintptr_t)0x00000000,
+    ANIMATION_ADD_POS(0x000007f8, 0x00000000, 0x00000000),
 
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_RENDER_MODEL(d_course_yoshi_valley_dl_143C8)
-    RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t)d_course_yoshi_valley_dl_143C8, 0x00000000, 0x00000000, 0x00000000,
+    ANIMATION_RENDER_MODEL(d_course_yoshi_valley_dl_143C8),
 
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_RENDER_MODEL_AT(d_course_yoshi_valley_dl_144A8, 0x000001cc, 0x00000000, 0x00000000)
-    RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t)d_course_yoshi_valley_dl_144A8, 0x000001cc, 0x00000000, 0x00000000,
+    ANIMATION_RENDER_MODEL_AT(d_course_yoshi_valley_dl_144A8, 0x000001cc, 0x00000000, 0x00000000),
 
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_RENDER_MODEL_AT(d_course_yoshi_valley_dl_14500, 0x000001cc, 0x00000000, 0x00000000)
-    RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t)d_course_yoshi_valley_dl_14500, 0x000001cc, 0x00000000, 0x00000000,
+    ANIMATION_RENDER_MODEL_AT(d_course_yoshi_valley_dl_14500, 0x000001cc, 0x00000000, 0x00000000),
 
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_RENDER_MODEL_AT(d_course_yoshi_valley_dl_14558, 0x00000158, 0x00000000, 0x00000000)
-    RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t)d_course_yoshi_valley_dl_14558, 0x00000158, 0x00000000, 0x00000000,
+    ANIMATION_RENDER_MODEL_AT(d_course_yoshi_valley_dl_14558, 0x00000158, 0x00000000, 0x00000000),
 
-    (uintptr_t)ANIMATION_DISABLE_AUTOMATIC_POP,
+    ANIMATION_DISABLE_AUTOMATIC_POP,
 
-    // ANIMATION_RENDER_MODEL_AT(d_course_yoshi_valley_dl_145D0, 0x00000120, 0x00000000, 0x00000000)
-    RENDER_MODEL_OR_ADD_POS, 0x00000007, 0x00000000, (uintptr_t)d_course_yoshi_valley_dl_145D0, 0x00000120, 0x00000000, 0x00000000,
+    ANIMATION_RENDER_MODEL_AT(d_course_yoshi_valley_dl_145D0, 0x00000120, 0x00000000, 0x00000000),
 
-    (uintptr_t)ANIMATION_POP_MATRIX,
-    (uintptr_t)ANIMATION_POP_MATRIX,
-    (uintptr_t)ANIMATION_POP_MATRIX,
-    (uintptr_t)ANIMATION_POP_MATRIX,
-    (uintptr_t)ANIMATION_POP_MATRIX,
-    (uintptr_t)ANIMATION_POP_MATRIX,
-    (uintptr_t)ANIMATION_POP_MATRIX,
-    (uintptr_t)ANIMATION_POP_MATRIX,
+    ANIMATION_POP_MATRIX,
 
-    (uintptr_t)ANIMATION_STOP,
+    ANIMATION_POP_MATRIX,
+
+    ANIMATION_POP_MATRIX,
+
+    ANIMATION_POP_MATRIX,
+
+    ANIMATION_POP_MATRIX,
+
+    ANIMATION_POP_MATRIX,
+
+    ANIMATION_POP_MATRIX,
+
+    ANIMATION_POP_MATRIX,
+
+    ANIMATION_STOP,
 };
 
 // No idea what this stuff is

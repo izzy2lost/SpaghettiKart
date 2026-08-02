@@ -151,11 +151,7 @@ void HMAS::SetPause(HMAS_ChannelId channelId, bool pause) {
     }
 
     if(pause) {
-    #ifdef __ANDROID__
-        ma_sound_get_cursor_in_pcm_frames(channel->sound, (ma_uint64*)&channel->cursor);
-    #else
         ma_sound_get_cursor_in_pcm_frames(channel->sound, &channel->cursor);
-    #endif
         ma_sound_stop(channel->sound);
     } else {
         ma_result result = ma_sound_start(channel->sound);

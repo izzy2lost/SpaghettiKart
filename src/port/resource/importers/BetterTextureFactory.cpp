@@ -1,10 +1,10 @@
 #include "BetterTextureFactory.h"
-#include "resource/type/Texture.h"
+#include "fast/resource/type/Texture.h"
 #include "spdlog/spdlog.h"
 #include <stb_image.h>
-#include <Context.h>
-#include "resource/archive/ArchiveManager.h"
-#include "resource/ResourceManager.h"
+#include <ship/Context.h>
+#include "ship/resource/archive/ArchiveManager.h"
+#include "ship/resource/ResourceManager.h"
 
 namespace MK64 {
 
@@ -32,7 +32,7 @@ ResourceFactoryBinaryTextureV0::ReadResource(std::shared_ptr<Ship::File> file,
     }
 
     for (const auto& ext : extension) {
-        auto filePng = Ship::Context::GetInstance()->GetResourceManager()->LoadFileProcess(
+        auto filePng = Ship::Context::GetRawInstance()->GetResourceManager()->LoadFileProcess(
         initData->Path + ext);
 
         if (filePng != nullptr) {
@@ -62,7 +62,7 @@ ResourceFactoryBinaryTextureV1::ReadResource(std::shared_ptr<Ship::File> file,
     }
 
     for (const auto& ext : extension) {
-        auto filePng = Ship::Context::GetInstance()->GetResourceManager()->LoadFileProcess(
+        auto filePng = Ship::Context::GetRawInstance()->GetResourceManager()->LoadFileProcess(
         initData->Path + ext);
 
         if (filePng != nullptr) {

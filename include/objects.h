@@ -205,7 +205,7 @@ extern s32 D_8018D1D8;
 //! Limit on some object type (ice chips?) in Sherbet Land
 extern s32 D_8018D3C0;
 
-extern Collision D_8018C0B0[];
+extern struct Collision D_8018C0B0[];
 
 /**
  * indexObjectList1, indexObjectList2, indexObjectList3, and indexObjectList4 are all lists of indices in gObjectList.
@@ -213,7 +213,7 @@ extern Collision D_8018C0B0[];
  * First indexObjectList1 gets an unused index, then indexObjectList2, then indexObjectList3, then indexObjectList4, and
  *then it loops.
  *
- * The objects found at the indices in each list appears to be course dependent
+ * The objects found at the indices in each list appears to be track dependent
  **/
 
 #define NUM_YV_FLAG_POLES 4
@@ -421,7 +421,7 @@ extern s32 gNextFreeLeafParticle;
 // See `func_800704A0` and `func_800703E0` for star initialization
 typedef struct {
     // rotY and posY seem relative to the camera.
-    // See `func_800788F8` to see how rotY is used to decide whether and where to display clouds/stars
+    // See `func_800788F8` (SkyCloud Tick2 now) to see how rotY is used to decide whether and where to display clouds/stars
     // See `func_80078A44` and `func_800789AC` to see how stars and clouds (respectively) are looped over
     /* 0x00 */ u16 rotY;
     /* 0x02 */ u16 posY;

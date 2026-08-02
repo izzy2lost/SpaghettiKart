@@ -4,11 +4,13 @@
 
 extern "C" {
 #include "main.h"
-#include "math_util.h"
+#include "racing/math_util.h"
 #include "math_util_2.h"
 }
 
-StaticMeshActor::StaticMeshActor(std::string name, FVector pos, IRotator rot, FVector scale, std::string model, int32_t* collision) : Name(name), Pos(pos), Rot(rot), Scale(scale), Model(""), Collision(collision) {
+StaticMeshActor::StaticMeshActor(std::string name, FVector pos, IRotator rot, FVector scale, std::string model, int32_t* collision) : Name(name), Pos(pos), Rot(rot), Scale(scale), Model(""), CollisionMesh(collision) {
+    Name = "StaticMesh";
+    ResourceName = "hm:static_mesh";
 
 }
 

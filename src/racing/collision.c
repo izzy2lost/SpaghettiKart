@@ -1,3 +1,4 @@
+#include <stdint.h>
 #include <libultraship.h>
 #include <macros.h>
 #include <libultra/gbi.h>
@@ -10,8 +11,11 @@
 #include "math_util.h"
 #include "code_800029B0.h"
 #include <defines.h>
+#include "port/Engine.h"
 #include "port/Game.h"
+#include "libultraship/bridge/resourcebridge.h"
 #include <stdio.h>
+#include "engine/RaceManager.h"
 
 #pragma intrinsic(sqrtf)
 
@@ -20,11 +24,11 @@ void nullify_displaylist(uintptr_t addr) {
     Gfx* macro;
 
     macro = (Gfx*) addr;
-    macro->words.w0 = (G_ENDDL << 24);
+    macro->words.w0 = ((u32) (G_ENDDL & 0xFF) << 24);
     macro->words.w1 = 0;
 }
 
-void func_802AAAAC(Collision* collision) {
+void func_802AAAAC(struct Collision* collision) {
     collision->meshIndexYX = 5000;
     collision->meshIndexZY = 5000;
     collision->meshIndexZX = 5000;
@@ -43,7 +47,7 @@ f32 get_water_level(Player* player) {
     return CM_GetWaterLevel(player->pos, &player->collision);
 }
 
-s32 check_collision_zx(Collision* collision, f32 boundingBoxSize, f32 posX, f32 posY, f32 posZ, u16 index) {
+s32 check_collision_zx(struct Collision* collision, f32 boundingBoxSize, f32 posX, f32 posY, f32 posZ, u16 index) {
     CollisionTriangle* triangle = &gCollisionMesh[index];
     UNUSED f32 pad;
     f32 x3;
@@ -152,7 +156,7 @@ s32 check_collision_zx(Collision* collision, f32 boundingBoxSize, f32 posX, f32 
     return 0;
 }
 
-s32 check_collision_yx(Collision* collision, f32 boundingBoxSize, f32 posX, f32 posY, f32 posZ, u16 index) {
+s32 check_collision_yx(struct Collision* collision, f32 boundingBoxSize, f32 posX, f32 posY, f32 posZ, u16 index) {
     CollisionTriangle* triangle = &gCollisionMesh[index];
     UNUSED f32 pad[6];
     f32 x3;
@@ -260,7 +264,7 @@ s32 check_collision_yx(Collision* collision, f32 boundingBoxSize, f32 posX, f32 
     return 0;
 }
 
-s32 check_collision_zy(Collision* collision, f32 boundingBoxSize, f32 posX, f32 posY, f32 posZ, u16 index) {
+s32 check_collision_zy(struct Collision* collision, f32 boundingBoxSize, f32 posX, f32 posY, f32 posZ, u16 index) {
     CollisionTriangle* triangle = &gCollisionMesh[index];
     s32 b = true;
     UNUSED f32 pad[7];
@@ -467,7 +471,7 @@ f32 calculate_surface_height(f32 x, f32 y, f32 z, u16 index) {
     return ((triangle->normalX * x) + (triangle->normalZ * z) + triangle->distance) / -triangle->normalY;
 }
 
-f32 func_802ABEAC(Collision* collision, Vec3f pos) {
+f32 func_802ABEAC(struct Collision* collision, Vec3f pos) {
     if (collision->unk34 == 1) {
         return calculate_surface_height(pos[0], pos[1], pos[2], collision->meshIndexZX);
     }
@@ -526,7 +530,7 @@ void process_shell_collision(Vec3f pos, UNUSED f32 boundingBoxSize, Vec3f veloci
     velocity[2] = z * scaleFactor;
 }
 
-void shell_collision(Collision* collision, Vec3f velocity) {
+void shell_collision(struct Collision* collision, Vec3f velocity) {
     if (collision->surfaceDistance[0] < 0.0f) {
         process_shell_collision(collision->unk48, collision->surfaceDistance[0], velocity, 2.0f);
     }
@@ -576,10 +580,10 @@ void adjust_pos_orthogonally(Vec3f pos1, f32 boundingBoxSize, Vec3f pos2, UNUSED
 }
 
 UNUSED s32 detect_tyre_collision(KartTyre* tyre) {
-    Collision collision;
+    struct Collision collision;
     UNUSED s32 pad[12];
-    s32 courseLengthX;
-    s32 courseLengthZ;
+    s32 trackLengthX;
+    s32 trackLengthZ;
     f32 tyreX;
     f32 tyreY;
     f32 tyreZ;
@@ -622,10 +626,10 @@ UNUSED s32 detect_tyre_collision(KartTyre* tyre) {
         default:
             break;
     }
-    courseLengthX = gCourseMaxX - gCourseMinX;
-    courseLengthZ = gCourseMaxZ - gCourseMinZ;
-    sectionIndexX = (tyreX - gCourseMinX) / (courseLengthX / GRID_SIZE);
-    sectionIndexZ = (tyreZ - gCourseMinZ) / (courseLengthZ / GRID_SIZE);
+    trackLengthX = gTrackMaxX - gTrackMinX;
+    trackLengthZ = gTrackMaxZ - gTrackMinZ;
+    sectionIndexX = (tyreX - gTrackMinX) / (trackLengthX / GRID_SIZE);
+    sectionIndexZ = (tyreZ - gTrackMinZ) / (trackLengthZ / GRID_SIZE);
     if (sectionIndexX < 0) {
         return 0;
     }
@@ -685,13 +689,13 @@ UNUSED s32 detect_tyre_collision(KartTyre* tyre) {
     }
     tyre->baseHeight = tyreY;
     tyre->surfaceType = 0;
-    //! @bug
-    // Another function that has a return value but doesn't have an explicit return statement in one of its codepaths.
-    // The return value at this point will be whatever was last returned by func_802AAE4C/func_802AB6C4/func_802AB288
-    // depending on which (if any) if statements were entered on the loop's last cycle
+    // Used to fall off the end here (see git history for the original @bug
+    // note): the return value was whatever the last helper call left behind.
+    // No surface was found, so report no collision.
+    return 0;
 }
 
-s32 is_colliding_with_drivable_surface(Collision* collision, f32 boundingBoxSize, f32 newX, f32 newY, f32 newZ,
+s32 is_colliding_with_drivable_surface(struct Collision* collision, f32 boundingBoxSize, f32 newX, f32 newY, f32 newZ,
                                        u16 index, f32 oldX, f32 oldY, f32 oldZ) {
     CollisionTriangle* triangle = &gCollisionMesh[index];
     UNUSED s32 pad;
@@ -806,7 +810,7 @@ s32 is_colliding_with_drivable_surface(Collision* collision, f32 boundingBoxSize
 /**
  * Wall collision
  */
-s32 is_colliding_with_wall2(Collision* arg, f32 boundingBoxSize, f32 x1, f32 y1, f32 z1, u16 surfaceIndex, f32 posX,
+s32 is_colliding_with_wall2(struct Collision* arg, f32 boundingBoxSize, f32 x1, f32 y1, f32 z1, u16 surfaceIndex, f32 posX,
                             f32 posY, f32 posZ) {
     if (CVarGetInteger("gNoWallColision", 0)) {
         return NO_COLLISION;
@@ -991,7 +995,7 @@ s32 is_colliding_with_wall2(Collision* arg, f32 boundingBoxSize, f32 x1, f32 y1,
 /**
  * This is actually more like colliding with face X/Y/Z
  */
-s32 is_colliding_with_wall1(Collision* arg, f32 boundingBoxSize, f32 x1, f32 y1, f32 z1, u16 surfaceIndex, f32 posX,
+s32 is_colliding_with_wall1(struct Collision* arg, f32 boundingBoxSize, f32 x1, f32 y1, f32 z1, u16 surfaceIndex, f32 posX,
                             f32 posY, f32 posZ) {
     if (CVarGetInteger("gNoWallColision", 0)) {
         return NO_COLLISION;
@@ -1174,10 +1178,10 @@ s32 is_colliding_with_wall1(Collision* arg, f32 boundingBoxSize, f32 x1, f32 y1,
     return COLLISION;
 }
 
-u16 actor_terrain_collision(Collision* collision, f32 boundingBoxSize, f32 newX, f32 newY, f32 newZ, f32 oldX, f32 oldY,
+u16 actor_terrain_collision(struct Collision* collision, f32 boundingBoxSize, f32 newX, f32 newY, f32 newZ, f32 oldX, f32 oldY,
                             f32 oldZ) {
-    s32 courseLengthX;
-    s32 courseLengthZ;
+    s32 trackLengthX;
+    s32 trackLengthZ;
     s16 sectionIndexX;
     s16 sectionIndexZ;
     u16 numTriangles;
@@ -1224,14 +1228,14 @@ u16 actor_terrain_collision(Collision* collision, f32 boundingBoxSize, f32 newX,
         return flags;
     }
 
-    courseLengthX = (s32) gCourseMaxX - gCourseMinX;
-    courseLengthZ = (s32) gCourseMaxZ - gCourseMinZ;
+    trackLengthX = (s32) gTrackMaxX - gTrackMinX;
+    trackLengthZ = (s32) gTrackMaxZ - gTrackMinZ;
 
-    sectionX = courseLengthX / GRID_SIZE;
-    sectionZ = courseLengthZ / GRID_SIZE;
+    sectionX = trackLengthX / GRID_SIZE;
+    sectionZ = trackLengthZ / GRID_SIZE;
 
-    sectionIndexX = (newX - gCourseMinX) / sectionX;
-    sectionIndexZ = (newZ - gCourseMinZ) / sectionZ;
+    sectionIndexX = (newX - gTrackMinX) / sectionX;
+    sectionIndexZ = (newZ - gTrackMinZ) / sectionZ;
     if (sectionIndexX < 0) {
         return 0;
     }
@@ -1292,10 +1296,10 @@ u16 actor_terrain_collision(Collision* collision, f32 boundingBoxSize, f32 newX,
     return flags;
 }
 
-u16 check_bounding_collision(Collision* collision, f32 boundingBoxSize, f32 posX, f32 posY, f32 posZ) {
+u16 check_bounding_collision(struct Collision* collision, f32 boundingBoxSize, f32 posX, f32 posY, f32 posZ) {
     u16 numTriangles;
-    s32 courseLengthX;
-    s32 courseLengthZ;
+    s32 trackLengthX;
+    s32 trackLengthZ;
     u16 meshIndex;
     s32 sectionX;
     s32 sectionZ;
@@ -1333,14 +1337,14 @@ u16 check_bounding_collision(Collision* collision, f32 boundingBoxSize, f32 posX
         return flags;
     }
 
-    courseLengthX = (s32) gCourseMaxX - gCourseMinX;
-    courseLengthZ = (s32) gCourseMaxZ - gCourseMinZ;
+    trackLengthX = (s32) gTrackMaxX - gTrackMinX;
+    trackLengthZ = (s32) gTrackMaxZ - gTrackMinZ;
 
-    sectionX = courseLengthX / GRID_SIZE;
-    sectionZ = courseLengthZ / GRID_SIZE;
+    sectionX = trackLengthX / GRID_SIZE;
+    sectionZ = trackLengthZ / GRID_SIZE;
 
-    sectionIndexX = (posX - gCourseMinX) / sectionX;
-    sectionIndexZ = (posZ - gCourseMinZ) / sectionZ;
+    sectionIndexX = (posX - gTrackMinX) / sectionX;
+    sectionIndexZ = (posZ - gTrackMinZ) / sectionZ;
 
     if (sectionIndexX < 0) {
         return 0;
@@ -1415,39 +1419,46 @@ f32 spawn_actor_on_surface(f32 posX, f32 posY, f32 posZ) {
     f32 phi_f20 = -3000.0f;
     u16 i;
 
-    s32 courseLengthX;
-    s32 courseLengthZ;
+    s32 trackLengthX;
+    s32 trackLengthZ;
     s32 sectionX;
     s32 sectionZ;
 
-    courseLengthX = (gCourseMaxX - gCourseMinX);
-    courseLengthZ = (gCourseMaxZ - gCourseMinZ);
-    sectionX = courseLengthX / GRID_SIZE;
-    sectionZ = courseLengthZ / GRID_SIZE;
+    trackLengthX = (gTrackMaxX - gTrackMinX);
+    trackLengthZ = (gTrackMaxZ - gTrackMinZ);
+    sectionX = trackLengthX / GRID_SIZE;
+    sectionZ = trackLengthZ / GRID_SIZE;
 
-    sectionIndexX = (s16) ((posX - gCourseMinX) / sectionX);
-    sectionIndexZ = (s16) ((posZ - gCourseMinZ) / sectionZ);
+    sectionIndexX = (s16) ((posX - gTrackMinX) / sectionX);
+    sectionIndexZ = (s16) ((posZ - gTrackMinZ) / sectionZ);
+
+    // Added to prevent out of bounds access
+    if (sectionIndexX < 0) sectionIndexX = 0;
+    if (sectionIndexZ < 0) sectionIndexZ = 0;
+    if (sectionIndexX >= GRID_SIZE) sectionIndexX = GRID_SIZE - 1;
+    if (sectionIndexZ >= GRID_SIZE) sectionIndexZ = GRID_SIZE - 1;
+
     gridSection = sectionIndexX + (sectionIndexZ * GRID_SIZE);
     numTriangles = gCollisionGrid[gridSection].numTriangles;
 
     if (sectionIndexX < 0) {
-        printf("collision.c: actor outside of -sectionX %d\n", sectionIndexX);
+        printf("[spawn_actor_on_surface] actor outside of -sectionX %d\n", sectionIndexX);
         return 3000.0f;
     }
     if (sectionIndexZ < 0) {
-        printf("collision.c: actor outside of -sectionZ %d\n", sectionIndexZ);
+        printf("[spawn_actor_on_surface] actor outside of -sectionZ %d\n", sectionIndexZ);
         return 3000.0f;
     }
     if (sectionIndexX >= GRID_SIZE) {
-        printf("collision.c: actor outside of sectionX %d\n", sectionIndexX);
+        printf("[spawn_actor_on_surface] actor outside of sectionX %d\n", sectionIndexX);
         return 3000.0f;
     }
     if (sectionIndexZ >= GRID_SIZE) {
-        printf("collision.c: actor outside of sectionZ %d\n", sectionIndexZ);
+        printf("[spawn_actor_on_surface] actor outside of sectionZ %d\n", sectionIndexZ);
         return 3000.0f;
     }
     if (numTriangles == 0) {
-        printf("collision.c: No collision triangles in track!\n  Something is wrong with the tracks geometry\n");
+        printf("[spawn_actor_on_surface] No collision triangles in track!\n  Something is wrong with the tracks geometry\n");
         return 3000.0f;
     }
 
@@ -1509,10 +1520,6 @@ void add_collision_triangle(Vtx* vtx1, Vtx* vtx2, Vtx* vtx3, s8 surfaceType, u16
     s16 y3;
     s16 z3;
 
-    // printf("triangle index: %d ", gCollisionMeshCount);
-    // printf("sectionId: 0x%X ", sectionId);
-    // printf("surfaceType: 0x%X ", surfaceType);
-
     /* Unused variables placed around doubles for dramatic effect */
     UNUSED s32 pad2[7];
 
@@ -1534,6 +1541,8 @@ void add_collision_triangle(Vtx* vtx1, Vtx* vtx2, Vtx* vtx3, s8 surfaceType, u16
     s16 minX;
     s16 maxY;
     s16 minZ;
+
+    add_triangle_to_collision_mesh(vtx1, vtx2, vtx3, &vtx1, &vtx2, &vtx3);
 
     triangle->vtx1 = vtx1;
     triangle->vtx2 = vtx2;
@@ -1622,24 +1631,24 @@ void add_collision_triangle(Vtx* vtx1, Vtx* vtx2, Vtx* vtx3, s8 surfaceType, u16
     triangle->minY = minY;
     triangle->maxY = maxY;
 
-    // Define the minimum and maximum dimensions of the course.
-    if (minX < gCourseMinX) {
-        gCourseMinX = minX;
+    // Define the minimum and maximum dimensions of the track.
+    if (minX < gTrackMinX) {
+        gTrackMinX = minX;
     }
-    if (minY < gCourseMinY) {
-        gCourseMinY = minY;
+    if (minY < gTrackMinY) {
+        gTrackMinY = minY;
     }
-    if (minZ < gCourseMinZ) {
-        gCourseMinZ = minZ;
+    if (minZ < gTrackMinZ) {
+        gTrackMinZ = minZ;
     }
-    if (maxX > gCourseMaxX) {
-        gCourseMaxX = maxX;
+    if (maxX > gTrackMaxX) {
+        gTrackMaxX = maxX;
     }
-    if (maxY > gCourseMaxY) {
-        gCourseMaxY = maxY;
+    if (maxY > gTrackMaxY) {
+        gTrackMaxY = maxY;
     }
-    if (maxZ > gCourseMaxZ) {
-        gCourseMaxZ = maxZ;
+    if (maxZ > gTrackMaxZ) {
+        gTrackMaxZ = maxZ;
     }
 
     triangle->normalX = normalX;
@@ -1753,8 +1762,22 @@ void set_vtx_from_quadrangle(u32 line, s8 surfaceType, u16 sectionId) {
     add_collision_triangle(vtx1, vtx3, vtx4, surfaceType, sectionId);
 }
 
+void add_vtx_from_quadrangle(Vtx* vert, size_t count) {
+    Vtx* ptr = vert;
+    for (size_t i = 0; i < count / 4; i++) {
+        //set_vtx_buffer((uintptr_t)ptr, 4, 0);
+    
+        D_8015F5A4 = 1;
+        add_collision_triangle(&ptr[0], &ptr[1], &ptr[2], SURFACE_DEFAULT, 0xFF);
+        add_collision_triangle(&ptr[1], &ptr[2], &ptr[3], SURFACE_DEFAULT, 0xFF);
+        D_8015F5A4 = 0;
+
+        ptr++;
+    }
+}
+
 /**
- * Generates a list of pointers to course vtx.
+ * Generates a list of pointers to track vtx.
  */
 void set_vtx_buffer(uintptr_t addr, u32 numVertices, u32 bufferIndex) {
     u32 i;
@@ -1765,6 +1788,17 @@ void set_vtx_buffer(uintptr_t addr, u32 numVertices, u32 bufferIndex) {
         bufferIndex++;
     }
 }
+/**
+ * Source: https://web.archive.org/web/20220920081010/https://www.gamedev.net/forums/topic.asp?topic_id=295943
+ */
+s32 is_point_inside_triangle(s16 px, s16 pz, s16 x1, s16 z1, s16 x2, s16 z2, s16 x3, s16 z3) {
+    bool b0 = (((px - x1) * (z1 - z2) + (pz - z1) * (x2 - x1)) > 0);
+    bool b1 = (((px - x2) * (z2 - z3) + (pz - z2) * (x3 - x2)) > 0);
+    bool b2 = (((px - x3) * (z3 - z1) + (pz - z3) * (x1 - x3)) > 0);
+
+    return (b0 == b1 && b1 == b2) ? 1 : 0;
+}
+
 /**
  * @return 1 intersecting triangle, 0 not intersecting.
  */
@@ -1843,6 +1877,8 @@ s32 is_triangle_intersecting_bounding_box(s16 minX, s16 maxX, s16 minZ, s16 maxZ
     z2 = triangle->vtx2->v.ob[2];
     x3 = triangle->vtx3->v.ob[0];
     z3 = triangle->vtx3->v.ob[2];
+    
+    // Check if vertices are inside the bounding box
     if ((x1 >= minX) && (maxX >= x1) && (z1 >= minZ) && (maxZ >= z1)) {
         return 1;
     }
@@ -1852,6 +1888,8 @@ s32 is_triangle_intersecting_bounding_box(s16 minX, s16 maxX, s16 minZ, s16 maxZ
     if ((x3 >= minX) && (maxX >= x3) && (z3 >= minZ) && (maxZ >= z3)) {
         return 1;
     }
+    
+    // Check if a line of the triangle intersects with the bounding box
     if (is_line_intersecting_rectangle(minX, maxX, minZ, maxZ, x1, z1, x2, z2) == 1) {
         return 1;
     }
@@ -1861,11 +1899,31 @@ s32 is_triangle_intersecting_bounding_box(s16 minX, s16 maxX, s16 minZ, s16 maxZ
     if (is_line_intersecting_rectangle(minX, maxX, minZ, maxZ, x3, z3, x1, z1) == 1) {
         return 1;
     }
+    
+    /**
+     * Check if any point of the bounding box is inside the triangle
+     * Bug fix that was not in the original game.
+     * Without this, triangles that are bigger than a collision grid cell, will not be included in that cell
+     * Thus, players would spawn in the air at 3000.0f as a fallback, or could fall through that portion of the track.
+     */
+    if (is_point_inside_triangle(minX, minZ, x1, z1, x2, z2, x3, z3) == 1) {
+        return 1;
+    }
+    if (is_point_inside_triangle(maxX, minZ, x1, z1, x2, z2, x3, z3) == 1) {
+        return 1;
+    }
+    if (is_point_inside_triangle(minX, maxZ, x1, z1, x2, z2, x3, z3) == 1) {
+        return 1;
+    }
+    if (is_point_inside_triangle(maxX, maxZ, x1, z1, x2, z2, x3, z3) == 1) {
+        return 1;
+    }
+    
     return 0;
 }
 
 /**
- * Splits the collision mesh into 32x32 sections. This allows the game to check only
+ * Splits the collision mesh into a 32x32 grid of cells. This allows the game to check only
  * nearby geography for a collision rather than checking against the whole collision mesh.
  * (checking against the whole mesh for every actor would be expensive)
  */
@@ -1879,16 +1937,16 @@ void generate_collision_grid(void) {
     s16 minZ;
     s32 sectionZ;
     s32 sectionX;
-    s32 courseLengthX;
-    s32 courseLengthZ;
+    s32 trackLengthX;
+    s32 trackLengthZ;
     s32 index;
 
-    courseLengthX = (s32) gCourseMaxX - gCourseMinX;
-    courseLengthZ = (s32) gCourseMaxZ - gCourseMinZ;
+    trackLengthX = (s32) gTrackMaxX - gTrackMinX;
+    trackLengthZ = (s32) gTrackMaxZ - gTrackMinZ;
 
-    // Separate the course into 32 sections
-    sectionX = courseLengthX / GRID_SIZE;
-    sectionZ = courseLengthZ / GRID_SIZE;
+    // Separate the track into 32 sections
+    sectionX = trackLengthX / GRID_SIZE;
+    sectionZ = trackLengthZ / GRID_SIZE;
 
     // Reset the collision grid
     for (i = 0; i < 1024; i++) {
@@ -1902,9 +1960,9 @@ void generate_collision_grid(void) {
         for (k = 0; k < GRID_SIZE; k++) {
             index = k + j * GRID_SIZE;
 
-            // Select a section of the course using min/max akin to drawing a bounding-box
-            minX = (gCourseMinX + (sectionX * k)) - 20;
-            minZ = (gCourseMinZ + (sectionZ * j)) - 20;
+            // Select a section of the track using min/max akin to drawing a bounding-box
+            minX = (gTrackMinX + (sectionX * k)) - 20;
+            minZ = (gTrackMinZ + (sectionZ * j)) - 20;
 
             maxX = minX + sectionX + 40;
             maxZ = minZ + sectionZ + 40;
@@ -1961,53 +2019,46 @@ u32 numTimes = 0;
  */
 bool is_cull_box(const char* filePath);
 void generate_collision_mesh(Gfx* addr, s8 surfaceType, u16 sectionId) {
+    if (GameEngine_OTRSigCheck((char*)addr)) {
+        addr = LOAD_ASSET(addr);
+    }
+    bool run = true;
     int8_t opcode;
     uintptr_t lo;
     uintptr_t hi;
-    s32 i;
     numTimes++;
-    // printf("Initial\n");
-    // printf("ptr 0x%llX\n", &addr);
-    // printf("w0 0x%llX\n", addr->words.w0);
-    // printf("w1 0x%llX\n", addr->words.w1);
-    // printf("----loop----\n");
+
     Gfx* gfx = (Gfx*) addr;
     D_8015F6FA = 0;
     D_8015F6FC = 0;
 
-    // u8 *orig = segmented_gfx_to_virtual(0x07000000);
-
-    // printf("\n\nORIG:\n");
-    // for (size_t i = 0; i < 100; i++) {
-    //     printf(" 0x%X ", orig[i]);
-    // }
-
-    for (i = 0; i < 0x1FFF; i++) {
+    while (run) {
         lo = gfx->words.w0;
         hi = gfx->words.w1;
         opcode = GFX_GET_OPCODE(lo) >> 24;
-
-        //  printf("ptr 0x%llX\n", &addr);
-        //  printf("op 0x%llX\n", opcode);
-        //   printf("w0 0x%llX\n", lo);
-        //   printf("w1 0x%llX\n", hi);
 
         switch(opcode) {
             case G_DL:
                 // G_DL's hi contains an addr to another DL.
                 generate_collision_mesh((Gfx*) hi, surfaceType, sectionId);
                 break;
+            case G_DL_OTR_HASH:
+                gfx++;
+                uint64_t hash = ((uint64_t)gfx->words.w0) << 32 | gfx->words.w1;
+                generate_collision_mesh(ResourceGetDataByCrc(hash), surfaceType, sectionId);
+                break;
             case G_DL_OTR_FILEPATH:
                 generate_collision_mesh(ResourceGetDataByName((const char*)hi), surfaceType, sectionId);
                 break;
-            case G_VTX:
-                set_vtx_buffer((hi), (lo >> 10) & 0x3F, ((lo >> 16) & 0xFF) >> 1);
+            case G_VTX:{
+                uintptr_t ptr = hi;
+                set_vtx_buffer((uintptr_t) ptr, (lo >> 10) & 0x3F, ((lo >> 16) & 0xFF) >> 1);
                 break;
+            }
             case G_VTX_OTR_FILEPATH: {
                 const char* filePath = (const char*)hi;
                 // Fast64 outputs garbage data. Lets skip that...
                 if (is_cull_box(filePath)) {
-                    printf("Skipped cull box\n");
                     gfx++;
                     continue;
                 }
@@ -2020,6 +2071,14 @@ void generate_collision_mesh(Gfx* addr, s8 surfaceType, u16 sectionId) {
                 set_vtx_buffer(vtx, count, index);
                 break;
             }
+            case G_VTX_OTR_HASH:
+                gfx++;
+                hash = ((uint64_t)gfx->words.w0) << 32 | gfx->words.w1;
+                int numVerts = (lo >> 12) & ((1<<8)-1);
+                int bufferIndex = ((lo >> 1) & ((1<<7)-1));
+                bufferIndex = numVerts - bufferIndex; 
+                set_vtx_buffer((uintptr_t) ResourceGetDataByCrc(hash), numVerts, bufferIndex);
+                break;
             case G_TRI1:
                 D_8015F58C += 1;
                 set_vtx_from_triangle(hi, surfaceType, sectionId);
@@ -2045,34 +2104,14 @@ void generate_collision_mesh(Gfx* addr, s8 surfaceType, u16 sectionId) {
                 set_vtx_from_quadrangle(hi, surfaceType, sectionId);
                 break;
             case G_ENDDL:
-                return; // end of loop
+                run = false;
+                break; // end of loop
+            case G_MARKER:
+            case G_MTX_OTR:
+            case G_SETTIMG_OTR_HASH:
+                gfx++;
+                break;
         }
-
-
-        // if (opcode == (G_DL << 24)) {
-        //     // G_DL's hi contains an addr to another DL.
-        //     generate_collision_mesh((Gfx*) hi, surfaceType, sectionId);
-
-        // } else if (opcode == (G_VTX << 24)) {
-        //     set_vtx_buffer((hi), (lo >> 10) & 0x3F, ((lo >> 16) & 0xFF) >> 1);
-
-        // } else if (opcode == (G_TRI1 << 24)) {
-        //     D_8015F58C += 1;
-        //     set_vtx_from_triangle(hi, surfaceType, sectionId);
-
-        // } else if (opcode == (G_TRI2 << 24)) {
-        //     D_8015F58C += 2;
-
-        //     set_vtx_from_tri2(lo, hi, surfaceType, sectionId);
-
-        // } else if (opcode == (G_QUAD << 24)) {
-        //     D_8015F58C += 2;
-        //     set_vtx_from_quadrangle(hi, surfaceType, sectionId);
-
-        // } else if (opcode == (int32_t) (G_ENDDL << 24)) {
-        //     break;
-        // }
-
         gfx++;
     }
 }
@@ -2094,6 +2133,9 @@ bool is_cull_box(const char* filePath) {
  */
 void find_and_set_tile_size(uintptr_t addr, s32 uls, s32 ult) {
     Gfx* gfx = (Gfx*) addr;
+    if (GameEngine_OTRSigCheck(gfx)) {
+        gfx = (Gfx*) ResourceGetDataByName(gfx);
+    }
     u32 opcode;
 
     uls = (uls << 12) & 0xFFF000;
@@ -2133,7 +2175,10 @@ void set_vertex_colours(uintptr_t addr, u32 vertexCount, UNUSED s32 vert3, s8 al
  * Recursive search for vertices and set their colour values.
  */
 void find_vtx_and_set_colours(Gfx* displayList, s8 alpha, u8 red, u8 green, u8 blue) {
-    Gfx* gfx = (Gfx*) displayList;
+    if (GameEngine_OTRSigCheck(displayList)) {
+        displayList = (Gfx*) ResourceGetDataByName(displayList);
+    }
+    Gfx* gfx = displayList;
     uintptr_t lo;
     uintptr_t hi;
     s32 opcode;
@@ -2142,13 +2187,43 @@ void find_vtx_and_set_colours(Gfx* displayList, s8 alpha, u8 red, u8 green, u8 b
         lo = gfx->words.w0;
         hi = gfx->words.w1;
         opcode = GFX_GET_OPCODE(lo);
-        if (opcode == (G_ENDDL << 24)) {
+        if (opcode == ((u32) (G_ENDDL & 0xFF) << 24)) {
             break;
         } else if (opcode == (G_DL << 24)) {
             find_vtx_and_set_colours((Gfx*) hi, alpha, red, green, blue);
+        } else if (opcode == (G_DL_OTR_HASH << 24)) {
+            gfx++;
+            uint64_t hash = ((uint64_t)gfx->words.w0) << 32 | gfx->words.w1;
+            find_vtx_and_set_colours(ResourceGetDataByCrc(hash), alpha, red, green, blue);
+        } else if (opcode == (G_DL_OTR_FILEPATH << 24)) {
+            find_vtx_and_set_colours(ResourceGetDataByName((const char*)hi), alpha, red, green, blue);
         } else if (opcode == (G_VTX << 24)) {
             // G_VTX contains an addr hi
             set_vertex_colours(hi, (lo >> 10) & 0x3F, ((lo >> 16) & 0xFF) >> 1, alpha, red, green, blue);
+        } else if (opcode == (G_VTX_OTR_FILEPATH << 24)) {
+            const char* filePath = (const char*)hi;
+            // Fast64 outputs garbage data. Lets skip that...
+            if (is_cull_box(filePath)) {
+                gfx++;
+                continue;
+            }
+            gfx++;
+            size_t count = gfx->words.w0;
+            size_t index = (gfx->words.w1 >> 16);
+            size_t vtxDataOff = gfx->words.w1 & 0xFFFF;
+            Vtx* vtx = ( (Vtx*)ResourceGetDataByName(filePath) ) + vtxDataOff;
+
+            set_vertex_colours((uintptr_t)vtx, count, index, alpha, red, green, blue);
+        } else if (opcode == (G_VTX_OTR_HASH << 24)) {
+            gfx++;
+            uint64_t hash = ((uint64_t)gfx->words.w0) << 32 | gfx->words.w1;
+            int numVerts = (lo >> 12) & ((1<<8)-1);
+            int bufferIndex = ((lo >> 1) & ((1<<7)-1));
+            bufferIndex = numVerts - bufferIndex; 
+            set_vertex_colours((uintptr_t) ResourceGetDataByCrc(hash), numVerts, bufferIndex, alpha, red, green, blue);
+        }
+        if (opcode == G_MARKER || opcode == G_MTX_OTR || opcode == G_SETTIMG_OTR_HASH) {
+            gfx++;
         }
         gfx++;
     }
@@ -2161,8 +2236,8 @@ void subtract_scaled_vector(Vec3f pos1, f32 boundingBoxSize, Vec3f pos2) {
 }
 
 u16 player_terrain_collision(Player* player, KartTyre* tyre, f32 tyre2X, f32 tyre2Y, f32 tyre2Z) {
-    Collision wtf;
-    Collision* collision = &wtf;
+    struct Collision wtf;
+    struct Collision* collision = &wtf;
     UNUSED s32 pad;
     u16 i;
     u16 meshIndex;
@@ -2174,8 +2249,8 @@ u16 player_terrain_collision(Player* player, KartTyre* tyre, f32 tyre2X, f32 tyr
     f32 boundingBoxSize;
     f32 height;
 
-    s32 courseLengthX;
-    s32 courseLengthZ;
+    s32 trackLengthX;
+    s32 trackLengthZ;
 
     s16 sectionIndexX;
     s16 sectionIndexZ;
@@ -2238,14 +2313,14 @@ u16 player_terrain_collision(Player* player, KartTyre* tyre, f32 tyre2X, f32 tyr
 
     // If the surface flags are not set then try setting them.
 
-    courseLengthX = (s32) gCourseMaxX - gCourseMinX;
-    courseLengthZ = (s32) gCourseMaxZ - gCourseMinZ;
+    trackLengthX = (s32) gTrackMaxX - gTrackMinX;
+    trackLengthZ = (s32) gTrackMaxZ - gTrackMinZ;
 
-    sectionX = courseLengthX / GRID_SIZE;
-    sectionZ = courseLengthZ / GRID_SIZE;
+    sectionX = trackLengthX / GRID_SIZE;
+    sectionZ = trackLengthZ / GRID_SIZE;
 
-    sectionIndexX = (tyreX - gCourseMinX) / sectionX;
-    sectionIndexZ = (tyreZ - gCourseMinZ) / sectionZ;
+    sectionIndexX = (tyreX - gTrackMinX) / sectionX;
+    sectionIndexZ = (tyreZ - gTrackMinZ) / sectionZ;
 
     if (sectionIndexX < 0) {
         return 0;

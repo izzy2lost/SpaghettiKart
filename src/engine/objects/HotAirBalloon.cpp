@@ -1,22 +1,25 @@
 #include "HotAirBalloon.h"
-#include "World.h"
+#include "engine/World.h"
 #include "port/Game.h"
+#include "port/interpolation/FrameInterpolation.h"
 
 extern "C" {
 #include "render_objects.h"
 #include "update_objects.h"
-#include "assets/luigi_raceway_data.h"
-#include "assets/common_data.h"
-#include "math_util.h"
+#include "assets/models/tracks/luigi_raceway/luigi_raceway_data.h"
+#include "assets/models/common_data.h"
+#include "racing/math_util.h"
 #include "math_util_2.h"
 #include "code_80086E70.h"
 #include "code_80057C60.h"
-#include "actors.h"
+#include "racing/actors.h"
 }
 
-OHotAirBalloon::OHotAirBalloon(const FVector& pos) {
+OHotAirBalloon::OHotAirBalloon(const SpawnParams& params) : OObject(params) {
     Name = "Hot Air Balloon";
-    _pos = pos;
+    ResourceName = "mk:hot_air_balloon";
+
+    SpawnPos = params.Location.value_or(FVector{0.0f, 0.0f, 0.0f});
 
     D_80165898 = 0;
 
@@ -30,7 +33,12 @@ OHotAirBalloon::OHotAirBalloon(const FVector& pos) {
 
     find_unused_obj_index(&_objectIndex);
 
+
     init_object(_objectIndex, 0);
+}
+
+void OHotAirBalloon::SetSpawnParams(SpawnParams& params) {
+    OObject::SetSpawnParams(params);
 }
 
 void OHotAirBalloon::Tick() {
@@ -75,20 +83,26 @@ void OHotAirBalloon::func_80055CCC(s32 objectIndex, s32 cameraId) {
     if (gObjectList[objectIndex].state >= 2) {
         func_8008A454(objectIndex, cameraId, 0x0000012C);
         test = gObjectList[objectIndex].pos[1] - gObjectList[objectIndex].surfaceHeight;
+        FrameInterpolation_RecordOpenChild("hot_air_balloon", (_objectIndex << 5) | cameraId);
         func_8004A6EC(objectIndex, (20.0 / test) + 0.5);
+        FrameInterpolation_RecordCloseChild();
         if (is_obj_index_flag_status_inactive(objectIndex, 0x00100000) != 0) {
+            FrameInterpolation_RecordOpenChild("hot_air_balloon2", (_objectIndex << 5) | cameraId);
             func_80043328(gObjectList[objectIndex].pos, (u16*) gObjectList[objectIndex].direction_angle,
                           gObjectList[objectIndex].sizeScaling, (Gfx*)d_course_luigi_raceway_dl_F960);
             gSPDisplayList(gDisplayListHead++, (Gfx*)d_course_luigi_raceway_dl_F650);
+            FrameInterpolation_RecordCloseChild();
         } else {
             D_80183E80[0] = (s16) gObjectList[objectIndex].direction_angle[0];
             D_80183E80[1] =
                 (s16) (func_800418AC(gObjectList[objectIndex].pos[0], gObjectList[objectIndex].pos[2], camera->pos) +
                        0x8000);
             D_80183E80[2] = (u16) gObjectList[objectIndex].direction_angle[2];
+            FrameInterpolation_RecordOpenChild("hot_air_balloon3", (_objectIndex << 5) | cameraId);
             func_80043328(gObjectList[objectIndex].pos, D_80183E80, gObjectList[objectIndex].sizeScaling,
                           (Gfx*)d_course_luigi_raceway_dl_FBE0);
             gSPDisplayList(gDisplayListHead++, (Gfx*)d_course_luigi_raceway_dl_FA20);
+            FrameInterpolation_RecordCloseChild();
             if (gPlayerCountSelection1 == 1) {
                 gObjectList[objectIndex].direction_angle[1] = 0;
             }
@@ -100,10 +114,10 @@ void OHotAirBalloon::init_hot_air_balloon(s32 objectIndex) {
     gObjectList[objectIndex].sizeScaling = 1.0f;
     gObjectList[objectIndex].model = (Gfx*)d_course_luigi_raceway_dl_F960;
     if (gGamestate != CREDITS_SEQUENCE) {
-        set_obj_origin_pos(objectIndex, xOrientation * _pos.x, _pos.y, _pos.z);
+        set_obj_origin_pos(objectIndex, xOrientation * SpawnPos.x, SpawnPos.y, SpawnPos.z);
         set_obj_origin_offset(objectIndex, 0.0f, 300.0f, 0.0f);
     } else {
-        set_obj_origin_pos(objectIndex, xOrientation * _pos.x, _pos.y, _pos.z);
+        set_obj_origin_pos(objectIndex, xOrientation * SpawnPos.x, SpawnPos.y, SpawnPos.z);
         set_obj_origin_offset(objectIndex, 0.0f, 300.0f, 0.0f);
     }
     func_8008B844(objectIndex);

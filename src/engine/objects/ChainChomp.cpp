@@ -1,26 +1,41 @@
 #include "ChainChomp.h"
-#include "World.h"
+#include "engine/World.h"
+#include "port/interpolation/FrameInterpolation.h"
 
 extern "C" {
 #include "render_objects.h"
 #include "update_objects.h"
-#include "assets/rainbow_road_data.h"
-#include "assets/common_data.h"
-#include "math_util.h"
+#include "assets/models/tracks/rainbow_road/rainbow_road_data.h"
+#include "assets/textures/tracks/rainbow_road/rainbow_road_data.h"
+#include "assets/other/tracks/rainbow_road/rainbow_road_data.h"
+#include "assets/models/common_data.h"
+#include "racing/math_util.h"
 #include "math_util_2.h"
 #include "code_80086E70.h"
 #include "code_80057C60.h"
 #include "code_80005FD0.h"
-#include "external.h"
+#include "audio/external.h"
+#include "course_offsets.h"
 }
 
 size_t OChainChomp::_count = 0;
 
 OChainChomp::OChainChomp() {
     Name = "Chain Chomp";
+    ResourceName = "mk:chain_chomp";
     _idx = _count;
-    init_object(indexObjectList2[_count], 0);
-    _objectIndex = indexObjectList2[_count];
+    init_object(indexObjectList2[_idx], 0);
+    _objectIndex = indexObjectList2[_idx];
+
+    _count++;
+}
+
+OChainChomp::OChainChomp(const SpawnParams& params) {
+    Name = "Chain Chomp";
+    ResourceName = "mk:chain_chomp";
+    _idx = _count;
+    init_object(indexObjectList2[_idx], 0);
+    _objectIndex = indexObjectList2[_idx];
 
     _count++;
 }
@@ -65,15 +80,19 @@ void OChainChomp::func_80055AB8(s32 objectIndex, s32 cameraId) {
             D_80183E80[1] =
                 func_800418AC(gObjectList[objectIndex].pos[0], gObjectList[objectIndex].pos[2], camera->pos);
             D_80183E80[2] = 0x8000;
+            FrameInterpolation_RecordOpenChild("chain_chomp", TAG_OBJECT((_idx << 5) | cameraId));
             func_800468E0(D_80183E40, D_80183E80, 0.54f, (u8*) d_course_rainbow_road_sphere, (Vtx*) D_0D0062B0,
                           0x00000020, 0x00000040, 0x00000020, 0x00000040, 5);
+            FrameInterpolation_RecordCloseChild();
         } else {
+            FrameInterpolation_RecordOpenChild("chain_chomp2", TAG_OBJECT((_idx << 5) | cameraId));
             rsp_set_matrix_transformation(gObjectList[objectIndex].pos, gObjectList[objectIndex].direction_angle,
                                           gObjectList[objectIndex].sizeScaling);
             gSPDisplayList(gDisplayListHead++, (Gfx*) D_0D0077D0);
             render_animated_model((Armature*) gObjectList[objectIndex].model,
                                   (Animation**) gObjectList[objectIndex].vertex, 0,
                                   (s16) gObjectList[objectIndex].textureListIndex);
+            FrameInterpolation_RecordCloseChild();
         }
     }
 }
@@ -92,7 +111,7 @@ void OChainChomp::func_80085878(s32 objectIndex, s32 arg1) {
     object->unk_084[8] = (arg1 * 0x12C) + 0x1F4;
     set_obj_origin_pos(objectIndex, 0.0f, -15.0f, 0.0f);
     temp_v0 = &gCurrentTrackPath[(u16) object->unk_084[8]];
-    set_obj_origin_offset(objectIndex, temp_v0->posX, temp_v0->posY, temp_v0->posZ);
+    set_obj_origin_offset(objectIndex, temp_v0->x, temp_v0->y, temp_v0->z);
     set_obj_direction_angle(objectIndex, 0U, 0U, 0U);
     object->unk_034 = 4.0f;
     object->type = get_animation_length(d_rainbow_road_unk3, 0);

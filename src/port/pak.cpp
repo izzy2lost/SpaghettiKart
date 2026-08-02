@@ -1,5 +1,12 @@
 #include <filesystem>
 #include <fstream>
+#if __has_include(<fmt/format.h>)
+#include <fmt/format.h>
+#define fmt(...) fmt::format(__VA_ARGS__)
+#else
+#include <format>
+#define fmt(...) std::format(__VA_ARGS__)
+#endif
 
 #include <libultraship.h>
 #include <libultraship/libultra.h>
@@ -15,10 +22,19 @@ typedef struct ControllerPak {
     FILE* file;
 } ControllerPak;
 
+std::string Pfs_PakFile_GetPath(u8 file_no) {
+    return Ship::Context::GetPathRelativeToAppDirectory(fmt("controllerPak_file_{}.sav", file_no));
+}
+
+std::string Pfs_PakHeader_GetPath() {
+    return Ship::Context::GetPathRelativeToAppDirectory("controllerPak_header.sav");
+}
+
 bool Pfs_PakHeader_Write(u32* file_size, u32* game_code, u16* company_code, u8* ext_name, u8* game_name, u8 fileIndex) {
     ControllerPak pak;
 
-    pak.header = fopen("controllerPak_header.sav", "w+b");
+    std::string filename = Pfs_PakHeader_GetPath();
+    pak.header = fopen(filename.c_str(), "w+b");
 
     if (!pak.header) {
         return false;
@@ -51,7 +67,8 @@ bool Pfs_PakHeader_Read(u32* file_size, u32* game_code, u16* company_code, char*
                         u8 fileIndex) {
     ControllerPak pak;
 
-    pak.header = fopen("controllerPak_header.sav", "rb");
+    std::string filename = Pfs_PakHeader_GetPath();
+    pak.header = fopen(filename.c_str(), "rb");
 
     if(!pak.header) {
         return false;
@@ -91,12 +108,13 @@ extern "C" s32 osPfsInit(OSMesgQueue* queue, OSPfs* pfs, int channel) {
     pfs->status = PFS_INITIALIZED;
 
     ControllerPak pak;
+    std::string header_file = Pfs_PakHeader_GetPath();
 
-    pak.header = fopen("controllerPak_header.sav", "rb");
+    pak.header = fopen(header_file.c_str(), "rb");
 
     // If a header file doesn't exist, create it.
     if(!pak.header) {
-        pak.header = fopen("controllerPak_header.sav", "w+b");
+        pak.header = fopen(header_file.c_str(), "w+b");
         if (!pak.header) {
             return PFS_ERR_INVALID;
         }
@@ -108,8 +126,9 @@ extern "C" s32 osPfsInit(OSMesgQueue* queue, OSPfs* pfs, int channel) {
 
 extern "C" s32 osPfsFreeBlocks(OSPfs* pfs, s32* bytes_not_used) {
     ControllerPak pak;
+    std::string header_file = Pfs_PakHeader_GetPath();
 
-    pak.header = fopen("controllerPak_header.sav", "rb");
+    pak.header = fopen(header_file.c_str(), "rb");
 
     if (!pak.header) {
         return PFS_ERR_INVALID;
@@ -178,9 +197,8 @@ extern "C" s32 osPfsAllocateFile(OSPfs* pfs, u16 company_code, u32 game_code, u8
     }
 
     /* Create empty file */
-    char filename[100];
-    sprintf(filename, "controllerPak_file_%d.sav", freeFileIndex);
-    pak.file = fopen(filename, "w+b");
+    std::string filename = Pfs_PakFile_GetPath(freeFileIndex);
+    pak.file = fopen(filename.c_str(), "w+b");
 
     if (!pak.file) {
         return PFS_ERR_INVALID;
@@ -214,9 +232,8 @@ extern "C" s32 osPfsFileState(OSPfs* pfs, s32 file_no, OSPfsState* state) {
     // games call this function 16 times, once per file
     // fills the incoming state with the information inside the header of the pak.
 
-    char filename[100];
-    sprintf(filename, "controllerPak_file_%d.sav", file_no);
-    FILE* file = fopen(filename, "rb");
+    std::string filename = Pfs_PakFile_GetPath(file_no);
+    FILE* file = fopen(filename.c_str(), "rb");
     if (file) {
         fclose(file);
     } else {
@@ -275,10 +292,9 @@ extern "C" s32 osPfsFindFile(OSPfs* pfs, u16 company_code, u32 game_code, u8* ga
 
 extern "C" s32 osPfsReadWriteFile(OSPfs* pfs, s32 file_no, u8 flag, int offset, int size_in_bytes, u8* data_buffer) {
     ControllerPak pak;
+    std::string filename = Pfs_PakFile_GetPath(file_no);
 
-    char filename[100];
-    sprintf(filename, "controllerPak_file_%d.sav", file_no);
-    pak.file = fopen(filename, flag == 0 ? "r+b" : "w+b");
+    pak.file = fopen(filename.c_str(), flag == 0 ? "r+b" : "w+b");
 
     if (!pak.file) {
         return PFS_ERR_INVALID;
@@ -332,8 +348,8 @@ extern "C" s32 osPfsDeleteFile(OSPfs* pfs, u16 company_code, u32 game_code, u8* 
         u32 file_size_ = 0;
         u32 game_code_ = 0;
         u16 company_code_ = 0;
-        char ext_name_[4] = { 0 };
-        char game_name_[16] = { 0 };
+        char ext_name_[EXT_NAME_SIZE] = { 0 };
+        char game_name_[GAME_NAME_SIZE] = { 0 };
 
         if (!Pfs_PakHeader_Read(&file_size_, &game_code_, &company_code_, ext_name_, game_name_, i)) {
             return PFS_ERR_INVALID;
@@ -345,7 +361,8 @@ extern "C" s32 osPfsDeleteFile(OSPfs* pfs, u16 company_code, u32 game_code, u8* 
             if ((game_code == game_code_) && (strcmp((const char*) game_name, (const char*) game_name_) == 0) &&
                 strcmp((const char*) ext_name, (const char*) ext_name_) == 0) {
                 // File found
-                pak.header = fopen("controllerPak_header.sav", "w+b");
+                std::string header_file = Pfs_PakHeader_GetPath();
+                pak.header = fopen(header_file.c_str(), "w+b");
 
                 if(!pak.header) {
                     return PFS_ERR_INVALID;
@@ -365,10 +382,9 @@ extern "C" s32 osPfsDeleteFile(OSPfs* pfs, u16 company_code, u32 game_code, u8* 
                 free(zero_block);
 
                 fclose(pak.header);
-                char filename[100];
-                sprintf(filename, "controllerPak_file_%d.sav", i);
 
-                remove(filename);
+                std::string filename = Pfs_PakFile_GetPath(i);
+                remove(filename.c_str());
 
                 return PFS_NO_ERROR;
             }

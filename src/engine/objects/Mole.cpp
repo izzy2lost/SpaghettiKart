@@ -1,6 +1,7 @@
 #include <libultraship.h>
 #include <libultra/gbi.h>
 #include "Mole.h"
+#include "port/interpolation/FrameInterpolation.h"
 
 extern "C" {
 #include "macros.h"
@@ -9,19 +10,20 @@ extern "C" {
 #include "camera.h"
 #include "update_objects.h"
 #include "render_objects.h"
-#include "actors.h"
+#include "racing/actors.h"
 #include "code_80057C60.h"
 #include "code_80086E70.h"
-#include "math_util.h"
+#include "racing/math_util.h"
 #include "math_util_2.h"
 #include "code_80005FD0.h"
-#include "some_data.h"
-#include "ceremony_and_credits.h"
-#include "assets/moo_moo_farm_data.h"
+#include "textures/some_data.h"
+#include "ending/ceremony_and_credits.h"
+#include "assets/models/tracks/moo_moo_farm/moo_moo_farm_data.h"
+#include "assets/textures/tracks/moo_moo_farm/moo_moo_farm_data.h"
 #include "sounds.h"
-#include "external.h"
+#include "audio/external.h"
+#include <assets/models/common_data.h>
 }
-#include "port/interpolation/FrameInterpolation.h"
 
 size_t OMole::_count = 0;
 
@@ -51,15 +53,12 @@ OMole::OMole(FVector pos, OMoleGroup* group) {
     _count++;
 }
 
+/**
+ * Moles are ticked from OMoleGroup
+ * OMoleTick is func_800821AC
+ * Dirt particle tick is func_80081790
+ */
 void OMole::Tick() {
-    if (_idx == 0) {
-        for (size_t i = 0; i < gObjectParticle2_SIZE; i++) {
-            s32 objectIndex = gObjectParticle2[i];
-            if (gObjectList[objectIndex].state != 0) {
-                OMole::func_80081790(objectIndex);
-            }
-        }
-    }
 }
 
 void OMole::Draw(s32 cameraId) {
@@ -67,7 +66,7 @@ void OMole::Draw(s32 cameraId) {
 
     OMole::func_80054D00(_objectIndex, cameraId);
 
-    OMole::func_80054EB8();
+    OMole::func_80054EB8(cameraId);
     if (_idx == 0) {
         OMole::func_80054F04(cameraId);
     }
@@ -184,9 +183,9 @@ void OMole::func_8008153C(s32 objectIndex) {
             gObjectList[loopObjectIndex].activeTLUT = d_course_moo_moo_farm_mole_dirt;
             gObjectList[loopObjectIndex].tlutList = mole;
             gObjectList[loopObjectIndex].sizeScaling = 0.15f;
-            gObjectList[loopObjectIndex].velocity[1] = random_int(0x000AU);
+            gObjectList[loopObjectIndex].velocity[1] = random_int(10);
             gObjectList[loopObjectIndex].velocity[1] = (gObjectList[loopObjectIndex].velocity[1] * 0.1) + 4.8;
-            gObjectList[loopObjectIndex].unk_034 = random_int(5U);
+            gObjectList[loopObjectIndex].unk_034 = random_int(5);
             gObjectList[loopObjectIndex].unk_034 = (gObjectList[loopObjectIndex].unk_034 * 0.01) + 0.8;
             gObjectList[loopObjectIndex].orientation[1] = (0x10000 / sp70) * var_s1;
             gObjectList[loopObjectIndex].origin_pos[0] = gObjectList[objectIndex].origin_pos[0];
@@ -209,16 +208,16 @@ void OMole::func_80081D34(s32 objectIndex) {
     for (size_t i = 0; i < D_8018D158; i++, player++, camera++) {
         if ((is_obj_flag_status_active(objectIndex, 0x00000200) != 0) && !(player->effects & 0x80000000) &&
             (has_collided_with_player(objectIndex, player) != 0)) {
-            if ((player->type & 0x8000) && !(player->type & 0x100)) {
+            if ((player->type & PLAYER_EXISTS) && !(player->type & PLAYER_INVISIBLE_OR_BOMB)) {
                 var_s5 = 1;
                 object = &gObjectList[objectIndex];
                 if (is_obj_flag_status_active(objectIndex, 0x04000000) != 0) {
                     func_80072180();
                 }
-                if (player->effects & 0x200) {
+                if (player->effects & STAR_EFFECT) {
                     func_800C9060(i, 0x1900A046U);
                 } else {
-                    player->soundEffects |= 2;
+                    player->triggers |= HIGH_TUMBLE_TRIGGER;
                 }
                 object->direction_angle[1] = camera->rot[1];
                 object->velocity[1] = (player->speed / 2) + 3.0;
@@ -324,12 +323,11 @@ void OMole::func_800821AC(s32 objectIndex, s32 arg1) {
 }
 
 // Holes
-void OMole::func_80054E10(s32 objectIndex) {
+void OMole::func_80054E10(s32 cameraId, s32 objectIndex) {
     if (gObjectList[objectIndex].state > 0) {
         if (is_obj_flag_status_active(objectIndex, 0x00800000) != 0) {
 
-            // @port: Tag the transform.
-            FrameInterpolation_RecordOpenChild("func_80054E10", TAG_OBJECT(&gObjectList[objectIndex]));
+            FrameInterpolation_RecordOpenChild("func_80054E10", TAG_OBJECT((_idx << 5) | cameraId));
 
             D_80183E50[0] = gObjectList[objectIndex].pos[0];
             D_80183E50[1] = gObjectList[objectIndex].surfaceHeight + 0.8;
@@ -339,18 +337,17 @@ void OMole::func_80054E10(s32 objectIndex) {
             D_80183E70[2] = gObjectList[objectIndex].velocity[2];
             func_8004A9B8(gObjectList[objectIndex].sizeScaling);
 
-            // @port Pop the transform id.
             FrameInterpolation_RecordCloseChild();
         }
     }
 }
 
 // Almost certainly responsible for spawning/handling the moles on Moo Moo farm
-void OMole::func_80054EB8() {
+void OMole::func_80054EB8(s32 cameraId) {
     s32 someIndex;
 
     // for (someIndex = 0; someIndex < NUM_TOTAL_MOLES; someIndex++) {
-    func_80054E10(_moleIndex);
+    func_80054E10(cameraId, _moleIndex);
     //}
 }
 
@@ -363,7 +360,7 @@ void OMole::func_80054D00(s32 objectIndex, s32 cameraId) {
         if (is_obj_flag_status_active(objectIndex, VISIBLE) != 0) {
 
             // @port: Tag the transform.
-            FrameInterpolation_RecordOpenChild("func_80054D00", (uintptr_t)&gObjectList[objectIndex]);
+            FrameInterpolation_RecordOpenChild("func_80054D00", TAG_OBJECT((_idx << 5) | cameraId));
 
             D_80183E80[0] = (s16) gObjectList[objectIndex].orientation[0];
             D_80183E80[1] =
@@ -395,14 +392,12 @@ void OMole::func_80054F04(s32 cameraId) {
                 if ((is_obj_flag_status_active(objectIndex, VISIBLE) != 0) &&
                     (gMatrixHudCount <= MTX_HUD_POOL_SIZE_MAX)) {
 
-                    // @port: Tag the transform.
-                    FrameInterpolation_RecordOpenChild("func_80054F04", TAG_OBJECT(object) | (i << 32));
+                    FrameInterpolation_RecordOpenChild("func_80054F04", TAG_OBJECT(_idx << 13) | (cameraId << 8) | i);
 
                     object->orientation[1] = func_800418AC(object->pos[0], object->pos[2], camera->pos);
                     rsp_set_matrix_gObjectList(objectIndex);
                     gSPDisplayList(gDisplayListHead++, (Gfx*) D_0D006980);
 
-                    // @port Pop the transform id.
                     FrameInterpolation_RecordCloseChild();
                 }
             }

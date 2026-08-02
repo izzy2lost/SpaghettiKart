@@ -1,5 +1,5 @@
 #include <camera.h>
-#include <actors.h>
+#include <racing/actors.h>
 #include <defines.h>
 #include <main.h>
 #include "port/interpolation/FrameInterpolation.h"
@@ -8,19 +8,25 @@
  * @brief Renders the Yoshi egg actor.
  * Actor used in Yoshi Valley.
  *
- * @param arg0
+ * @param camera
  * @param arg1
  * @param egg
  * @param arg3
  */
-void render_actor_yoshi_egg(Camera* arg0, Mat4 arg1, struct YoshiValleyEgg* egg, u16 arg3) {
+void render_actor_yoshi_egg(Camera* camera, Mat4 arg1, struct YoshiValleyEgg* egg, u16 arg3) {
     Mat4 sp60;
     Vec3s sp5C;
     Vec3f sp54;
     f32 temp_f0;
 
+    size_t actorIdx = CM_FindActorIndex((struct Actor*) egg);
+    if (-1 == actorIdx) {
+        printf("[render_actor_yoshi_egg] Could not find actor for FI, skipping\n");
+        return;
+    }
+
     if (gGamestate != CREDITS_SEQUENCE) {
-        temp_f0 = is_within_render_distance(arg0->pos, egg->pos, arg0->rot[1], 200.0f, gCameraZoom[arg0 - camera1],
+        temp_f0 = is_within_render_distance(camera->pos, egg->pos, camera->rot[1], 200.0f, camera->fieldOfView,
                                             16000000.0f);
 
         if (CVarGetInteger("gNoCulling", 0) == 1) {
@@ -53,7 +59,7 @@ void render_actor_yoshi_egg(Camera* arg0, Mat4 arg1, struct YoshiValleyEgg* egg,
         sp5C[1] = egg->eggRot;
         sp5C[2] = 0;
 
-        FrameInterpolation_RecordMatrixPush(sp60);
+        FrameInterpolation_RecordOpenChild("yoshi_egg", TAG_OBJECT((actorIdx << 4) | camera->cameraId));
 
         mtxf_pos_rotation_xyz(sp60, egg->pos, sp5C);
         if (render_set_position(sp60, 0) == 0) {
@@ -62,18 +68,18 @@ void render_actor_yoshi_egg(Camera* arg0, Mat4 arg1, struct YoshiValleyEgg* egg,
 
         gSPSetGeometryMode(gDisplayListHead++, G_LIGHTING);
         gSPDisplayList(gDisplayListHead++, d_course_yoshi_valley_dl_16D70);
-        FrameInterpolation_RecordMatrixPop(sp60);
+        FrameInterpolation_RecordCloseChild();
     } else {
         arg1[3][0] = egg->pos[0];
         arg1[3][1] = egg->pos[1];
         arg1[3][2] = egg->pos[2];
 
-        FrameInterpolation_RecordMatrixPush(arg1);
+        FrameInterpolation_RecordOpenChild("yoshi_egg2", TAG_OBJECT((actorIdx << 4) | camera->cameraId));
 
         if (render_set_position(arg1, 0) != 0) {
             gSPClearGeometryMode(gDisplayListHead++, G_LIGHTING);
             gSPDisplayList(gDisplayListHead++, d_course_yoshi_valley_dl_egg_lod0);
         }
-        FrameInterpolation_RecordMatrixPop(arg1);
+        FrameInterpolation_RecordCloseChild();
     }
 }

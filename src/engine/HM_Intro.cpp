@@ -9,14 +9,14 @@
 extern "C" {
 #include "main.h"
 #include "memory.h"
-#include "math_util.h"
+#include "racing/math_util.h"
 #include "courses/harbour/track.h"
 #include "courses/harbour/powered.h"
 #include "courses/harbour/ship2_model.h"
 #include "courses/harbour/ship3_model.h"
-#include "collision.h"
+#include "racing/collision.h"
 #include "menu_items.h"
-#include "external.h"
+#include "audio/external.h"
 #include "menus.h"
 extern Gfx ship1_spag1_mesh[];
 }
@@ -65,8 +65,6 @@ void HarbourMastersIntro::HM_InitIntro() {
 	0x7F, 0x30, 0x80,
 	0x60, 20, 10, 0x49, 0x49, 0x49
     );
-
-    //gEditor.AddObject("lus", &lusPos, &lusRot, &lusScale, nullptr, 1, Editor::GameObject::CollisionType::BOUNDING_BOX, 10, &DespawnValue, -1);
 }
 
 void HarbourMastersIntro::HM_TickIntro() {
@@ -93,7 +91,7 @@ void HarbourMastersIntro::HM_TickIntro() {
     }
 
     find_and_set_tile_size((uintptr_t) ((void*)mat_water_water1), 0, _water);
-    find_and_set_tile_size((uintptr_t) ((void*)mat_water_water2), _water, 0);;
+    find_and_set_tile_size((uintptr_t) ((void*)mat_water_water2), _water, 0);
 }
 
 void HarbourMastersIntro::Bob(FVector& pos, IRotator& rot, f32 bobAmp, f32 bobSpeed, f32 tiltAmp, f32 tiltSpeed, f32 rollAmp, f32 rollSpeed) {
@@ -169,18 +167,17 @@ void HarbourMastersIntro::HM_DrawIntro() {
 
 void HarbourMastersIntro::Setup() {
     u16 perspNorm;
-    
-    move_segment_table_to_dmem();
+
     gDPSetTexturePersp(gDisplayListHead++, G_TP_PERSP);
-    
+
     // Setup camera perspective
-    guPerspective(GetPerspMatrix(0), &perspNorm, 45.0f, 1.3333334f, 100.0f, 12800.0f, 1.0f);
+    guPerspective(&PerspectiveMatrix, &perspNorm, 45.0f, 1.3333334f, 100.0f, 12800.0f, 1.0f);
     gSPPerspNormalize(gDisplayListHead++, perspNorm);
-    gSPMatrix(gDisplayListHead++, GetPerspMatrix(0), G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
+    gSPMatrix(gDisplayListHead++, &PerspectiveMatrix, G_MTX_NOPUSH | G_MTX_LOAD | G_MTX_PROJECTION);
 
     // Setup camera lookAt
-    guLookAt(GetLookAtMatrix(0), _camera.Pos.x, _camera.Pos.y, _camera.Pos.z, _camera.LookAt.x, _camera.LookAt.y, _camera.LookAt.z, 0.0f, 1.0f, 0.0f);
-    gSPMatrix(gDisplayListHead++, GetLookAtMatrix(0), G_MTX_NOPUSH | G_MTX_MUL | G_MTX_PROJECTION);
+    guLookAt(&LookAtMatrix, _camera.Pos.x, _camera.Pos.y, _camera.Pos.z, _camera.LookAt.x, _camera.LookAt.y, _camera.LookAt.z, 0.0f, 1.0f, 0.0f);
+    gSPMatrix(gDisplayListHead++, &LookAtMatrix, G_MTX_NOPUSH | G_MTX_MUL | G_MTX_PROJECTION);
 
     gDPSetCycleType(gDisplayListHead++, G_CYC_FILL);
     gDPSetRenderMode(gDisplayListHead++, G_RM_OPA_SURF, G_RM_OPA_SURF2);

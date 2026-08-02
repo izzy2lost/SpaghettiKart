@@ -2,9 +2,10 @@
 
 #include <libultraship.h>
 #include <vector>
+#include "engine/registry/RegisterContent.h"
 #include "engine/objects/Object.h"
-#include "CoreMath.h"
-#include "World.h"
+#include "engine/CoreMath.h"
+#include "engine/World.h"
 
 extern "C" {
 #include "macros.h"
@@ -14,7 +15,7 @@ extern "C" {
 #include "common_structs.h"
 #include "objects.h"
 #include "course_offsets.h"
-#include "some_data.h"
+#include "assets/textures/some_data.h"
 }
 
 /**
@@ -22,7 +23,7 @@ extern "C" {
  * @arg end x and z patrol location
  * 
  * Crab patrols between start and end.
- * The game automatically places the actor on the course surface.
+ * The game automatically places the actor on the surface of the tracks geometry.
  * Therefore, providing a Y height is unnecessary.
  * 
  * Crab appears to have a maximum patrolling distance and will patrol between
@@ -30,11 +31,26 @@ extern "C" {
  */
 class OCrab : public OObject {
 public:
-    explicit OCrab(const FVector2D& start, const FVector2D& end);
+    // This is simply a helper function to keep Spawning code clean
+    static inline OCrab* Spawn(const FVector2D& start, const FVector2D& end) {
+        SpawnParams params = {
+            .Name = "mk:crab",
+            .PatrolStart = start,
+            .PatrolEnd = end,
+        };
+        return static_cast<OCrab*>(AddObjectToWorld<OCrab>(params));
+    }
+
+    explicit OCrab(const SpawnParams& params);
+
+    ~OCrab() {
+        _count--;
+    }
 
     virtual void Tick() override;
     virtual void Draw(s32 cameraId) override;
-    void DrawModel(s32 cameraId);
+    virtual void SetSpawnParams(SpawnParams& params) override;
+    virtual void DrawEditorProperties() override;
 
     void init_ktb_crab(s32 objectIndex);
     void func_80082B34(s32 objectIndex);

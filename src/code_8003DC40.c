@@ -1,7 +1,7 @@
 #include <libultraship.h>
 #include <macros.h>
 #include <mk64.h>
-#include "math_util.h"
+#include "racing/math_util.h"
 #include <common_structs.h>
 #include "player_controller.h"
 #include "effects.h"
@@ -197,7 +197,7 @@ void func_8003F138(Player* player, Vec3f arg1, Vec3f arg2, Vec3f arg3, f32* arg4
     *arg7 += arg1[2] * player->collision.surfaceDistance[2] * 1;
     func_8002A5F4(arg1, *arg4, arg2, 0.5f, 2);
     if (player->surfaceType == GRASS) {
-        player->unk_044 &= ~1;
+        player->kartProps &= ~BACK_UP;
     }
     if (player->collision.orientationVector[1] <= 0.8357f) {
         arg3[0] = ((player->unk_206 / 182) * 0xC8);
@@ -222,7 +222,7 @@ void func_8003F46C(Player* player, Vec3f arg1, Vec3f arg2, Vec3f arg3, f32* arg4
     arg1[0] = -player->collision.orientationVector[0];
     arg1[1] = -player->collision.orientationVector[1];
     arg1[2] = -player->collision.orientationVector[2];
-    if ((player->collision.orientationVector[1] < 0.0f) && ((player->unk_0CA & 2) == 0)) {
+    if ((player->collision.orientationVector[1] < 0.0f) && ((player->lakituProps & HELD_BY_LAKITU) == 0)) {
         *arg5 += arg1[0] * player->collision.surfaceDistance[2] * 1;
         *arg6 += arg1[1] * player->collision.surfaceDistance[2] * 1;
         *arg7 += arg1[2] * player->collision.surfaceDistance[2] * 1;
@@ -233,30 +233,6 @@ void func_8003F46C(Player* player, Vec3f arg1, Vec3f arg2, Vec3f arg3, f32* arg4
         return;
     } else {
         CM_SomeCollisionThing(player, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-        // switch (gCurrentCourseId) {
-        //     case COURSE_MARIO_RACEWAY:
-        //         //func_8003E048(player, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-        //         break;
-        //     case COURSE_CHOCO_MOUNTAIN:
-        //     case COURSE_KOOPA_BEACH:
-        //         func_8003E37C(player, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-        //         break;
-        //     case COURSE_BOWSER_CASTLE:
-        //         func_8003E6EC(player, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-        //         break;
-        //     case COURSE_LUIGI_RACEWAY:
-        //         func_8003E9EC(player, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-        //         break;
-        //     case COURSE_WARIO_STADIUM:
-        //         func_8003EE2C(player, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-        //         break;
-        //     case COURSE_DK_JUNGLE:
-        //         func_8003F138(player, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-        //         break;
-        //     default:
-        //         func_8003E048(player, arg1, arg2, arg3, arg4, arg5, arg6, arg7);
-        //         break;
-        // }
         if (player->effects & 0x10000) {
             player->unk_DAC = 0.5f;
         }

@@ -3,6 +3,7 @@
 
 #include <libultraship.h>
 #include <common_structs.h>
+#include "defines.h"
 #include "camera.h"
 
 #define ADSR_STATE_DISABLED 0
@@ -30,8 +31,9 @@
 #define SEQUENCE_ARGS(priority, seqId) ((priority << 8) | seqId)
 
 #define SOUND_MODE_STEREO 0
-#define SOUND_MODE_MONO 3
 #define SOUND_MODE_HEADSET 1
+#define SOUND_MODE_SURROUND 2
+#define SOUND_MODE_MONO 3
 
 #define SEQ_PLAYER_LEVEL 0 // Level background music
 #define SEQ_PLAYER_ENV 1   // Misc music like the puzzle jingle
@@ -203,6 +205,7 @@ void audio_reset_session_eu(OSMesg);
 f32 func_800C1480(u8, u8);
 s8 func_800C15D0(u8, u8, u8);
 s8 func_800C16E8(f32, f32, u8);
+u8 get_sound_surround_effect_index(f32 z);
 f32 func_800C1934(u8, u8);
 void func_800C19D0(u8, u8, u8);
 struct Unk_8018EFD8* func_800C1C88(u8, Vec3f, Vec3f, f32*, u8, u32);
@@ -272,7 +275,7 @@ void func_800C8C7C(u8);
 void func_800C8CCC(void);
 void play_sound2(s32);
 void play_sequence(u16);
-void func_800C8EF8(u16);
+void play_sequence2(u16);
 void func_800C8F44(u8);
 void func_800C8F80(u8, u32);
 
@@ -305,7 +308,7 @@ void func_800CA2E4(u8, s8);
 void func_800CA30C(u8);
 void func_800CA330(u8);
 void func_800CA388(u8);
-void func_800CA414(u16, u16);
+void play_sequences(u16, u16);
 void func_800CA49C(u8);
 void func_800CA59C(u8);
 void func_800CA984(u8);
@@ -361,51 +364,51 @@ extern struct Sound sSoundRequests[0x100];
 // Data entries
 extern u8 D_800E9DA0;
 extern s32 D_800E9DB4[];
-extern f32 D_800E9DC4[4]; // = { 1.0f, 1.0f, 1.0f, 1.0f };
-extern f32 D_800E9DD4[4]; // = { 0.0f, 0.0f, 0.0f, 0.0f };
-extern f32 D_800E9DE4[4]; // = { 0.0f, 0.0f, 0.0f, 0.0f };
-extern f32 D_800E9DF4[8]; // = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
-extern s32 D_800E9E14[4]; // = { 0, 0, 0, 0 };
-extern s32 D_800E9E24[4]; // = { 0, 0, 0, 0 };
-extern s32 D_800E9E34[8];
-extern f32 D_800E9E54[4]; // = { 0.0f, 0.0f, 0.0f, 0.0f }; /* const */
-extern f32 D_800E9E64[4]; // = { 0.0f, 0.0f, 0.0f, 0.0f };
-extern s32 D_800E9E74[4]; // = { 0, 0, 0, 0 };          /* const */
-extern s32 D_800E9E84[4];
-extern u32 D_800E9E94[4];
-extern s32 D_800E9EA4[4]; // = { 0, 0, 0, 0 };
-extern f32 D_800E9EB4[4]; // = { 0.0f, 0.0f, 0.0f, 0.0f };
-extern f32 D_800E9EC4[4]; // = { 0.0f, 0.0f, 0.0f, 0.0f };
-extern f32 D_800E9ED4[4]; // = { 0.0f, 0.0f, 0.0f, 0.0f };
-extern f32 D_800E9EE4[4]; // = { 0.0f, 0.0f, 0.0f, 0.0f };
-extern f32 D_800E9EF4[4];
-extern f32 D_800E9F04[4]; // = { 1.0f, 1.0f, 1.0f, 1.0f };
-extern f32 D_800E9F14[4]; // = { 1.0f, 1.0f, 1.0f, 1.0f }; /* const */
-extern u8 D_800E9F24[8];  // = { 0, 0, 0, 0, 0, 0, 0, 0 };
-extern u8 D_800E9F2C[8];  // = { 0, 0, 0, 0, 0, 0, 0, 0 };
-extern f32 D_800E9F34[8]; // = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f }; /* const */
-extern f32 D_800E9F54[8]; // = { 1.0f, 1.0f, 1.0f, 1.0f }; /* const */
-extern u8 D_800E9F74[4];
-extern u8 D_800E9F78[4];
-extern struct Unk_800E9F7C D_800E9F7C[4];
+extern f32 D_800E9DC4[NUM_PLAYERS]; // = { 1.0f, 1.0f, 1.0f, 1.0f };
+extern f32 D_800E9DD4[NUM_PLAYERS]; // = { 0.0f, 0.0f, 0.0f, 0.0f };
+extern f32 D_800E9DE4[NUM_PLAYERS]; // = { 0.0f, 0.0f, 0.0f, 0.0f };
+extern f32 D_800E9DF4[NUM_PLAYERS]; // = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f };
+extern s32 D_800E9E14[NUM_PLAYERS]; // = { 0, 0, 0, 0 };
+extern s32 D_800E9E24[NUM_PLAYERS]; // = { 0, 0, 0, 0 };
+extern s32 D_800E9E34[NUM_PLAYERS];
+extern f32 D_800E9E54[NUM_PLAYERS]; // = { 0.0f, 0.0f, 0.0f, 0.0f }; /* const */
+extern f32 D_800E9E64[NUM_PLAYERS]; // = { 0.0f, 0.0f, 0.0f, 0.0f };
+extern s32 D_800E9E74[NUM_PLAYERS]; // = { 0, 0, 0, 0 };          /* const */
+extern s32 D_800E9E84[NUM_PLAYERS];
+extern u32 D_800E9E94[NUM_PLAYERS];
+extern s32 D_800E9EA4[NUM_PLAYERS]; // = { 0, 0, 0, 0 };
+extern f32 D_800E9EB4[NUM_PLAYERS]; // = { 0.0f, 0.0f, 0.0f, 0.0f };
+extern f32 D_800E9EC4[NUM_PLAYERS]; // = { 0.0f, 0.0f, 0.0f, 0.0f };
+extern f32 D_800E9ED4[NUM_PLAYERS]; // = { 0.0f, 0.0f, 0.0f, 0.0f };
+extern f32 D_800E9EE4[NUM_PLAYERS]; // = { 0.0f, 0.0f, 0.0f, 0.0f };
+extern f32 D_800E9EF4[NUM_PLAYERS];
+extern f32 D_800E9F04[NUM_PLAYERS]; // = { 1.0f, 1.0f, 1.0f, 1.0f };
+extern f32 D_800E9F14[NUM_PLAYERS]; // = { 1.0f, 1.0f, 1.0f, 1.0f }; /* const */
+extern u8 D_800E9F24[NUM_PLAYERS];  // = { 0, 0, 0, 0, 0, 0, 0, 0 };
+extern u8 D_800E9F2C[NUM_PLAYERS];  // = { 0, 0, 0, 0, 0, 0, 0, 0 };
+extern f32 D_800E9F34[NUM_PLAYERS]; // = { 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f }; /* const */
+extern f32 D_800E9F54[NUM_PLAYERS]; // = { 1.0f, 1.0f, 1.0f, 1.0f }; /* const */
+extern u8 D_800E9F74[NUM_PLAYERS];
+extern u8 D_800E9F78[NUM_PLAYERS];
+extern struct Unk_800E9F7C D_800E9F7C[NUM_PLAYERS];
 extern u8 D_800E9F90[];
-extern struct Unk_800EA06C D_800EA06C[8];
+extern struct Unk_800EA06C D_800EA06C[NUM_PLAYERS];
 extern u8 D_800EA0EC[];
 extern u8 D_800EA0F0; // = 0;
 extern u8 D_800EA0F4;
 extern u8 D_800EA104;
 extern u8 D_800EA108; // = 0;
-extern u8 D_800EA10C[];
-extern f32 D_800EA110[4]; // = { 0.0f, 0.0f, 0.0f, 0.0f };
-extern f32 D_800EA120[4];
-extern f32 D_800EA130[8];
+extern u8 D_800EA10C[NUM_PLAYERS];
+extern f32 D_800EA110[NUM_PLAYERS]; // = { 0.0f, 0.0f, 0.0f, 0.0f };
+extern f32 D_800EA120[NUM_PLAYERS];
+extern f32 D_800EA130[NUM_PLAYERS];
 extern f32 D_800EA150; // = 1.4f;
 extern u8 D_800EA154[];
 extern u16 gCurrentMusicSeq;
 extern u16 D_800EA160;
 extern u8 D_800EA164;
 extern s8 D_800EA168;
-extern u8 D_800EA170[];
+extern u8 D_800EA170[NUM_PLAYERS];
 extern u16 D_800EA174; // = 0;
 extern f32 D_800EA178;
 extern f32 D_800EA17C;

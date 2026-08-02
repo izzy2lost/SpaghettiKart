@@ -1,6 +1,6 @@
 #pragma once
 
-#include "resource/Resource.h"
+#include "ship/resource/Resource.h"
 #include <vector>
 #include <libultra/gbi.h>
 #include <waypoints.h>
@@ -26,10 +26,16 @@ class Paths : public Ship::Resource<TrackPathPoint> {
 
     Paths();
 
+    // This struct is really ugly... Sorry
+    struct PathObject {
+        std::vector<TrackPathPoint> PathList;
+        int32_t PathIndex;
+    };
+
     TrackPathPoint* GetPointer() override;
     size_t GetPointerSize() override;
 
-    std::vector<std::vector<TrackPathPoint>> PathList;
+    std::vector<PathObject> PathObject;
 };
 
 } // namespace MK64

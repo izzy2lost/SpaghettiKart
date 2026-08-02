@@ -1,7 +1,7 @@
 #include <libultraship.h>
 #include <libultra/gbi.h>
 #include "TrashBin.h"
-#include "World.h"
+#include "engine/World.h"
 #include "port/Game.h"
 #include "port/interpolation/FrameInterpolation.h"
 
@@ -10,23 +10,23 @@ extern "C" {
 #include "code_800029B0.h"
 #include "render_objects.h"
 #include "update_objects.h"
-#include "assets/banshee_boardwalk_data.h"
-#include "assets/common_data.h"
-#include "math_util.h"
+#include "assets/models/tracks/banshee_boardwalk/banshee_boardwalk_data.h"
+#include "assets/models/common_data.h"
+#include "racing/math_util.h"
 #include "math_util_2.h"
 #include "code_80086E70.h"
 #include "code_80057C60.h"
 #include "audio/external.h"
 }
 
-#define DEGREES_FLOAT_TO_SHORT(Degrees) ((s16)((Degrees) * (0x8000 / 180.0f)))
-
-OTrashBin::OTrashBin(const FVector& pos, const IRotator& rotation, f32 scale, OTrashBin::Behaviour bhv) {
-    Name = "Trashbin";
-    _pos = pos;
-    _rot = rotation;
-    _scale = scale;
-    _bhv = bhv;
+OTrashBin::OTrashBin(const SpawnParams& params) : OObject(params) {
+    Name = "Trash Bin";
+    ResourceName = "mk:trash_bin";
+    _pos = params.Location.value_or(FVector(0, 0, 0));
+    _pos.x *= xOrientation;
+    _rot = params.Rotation.value_or(IRotator(0, 0, 0));
+    _scale = params.Scale.value_or(FVector(0, 0, 0)).y;
+    _bhv = static_cast<Behaviour>(params.Behaviour.value_or(0));
 
     find_unused_obj_index(&_objectIndex);
 
@@ -64,8 +64,7 @@ void OTrashBin::Draw(s32 cameraId) {
             Vec3f Pos = { _pos.x + 63, _pos.y + 12, _pos.z + 25 };
             Vec3s Rot = { 0, 0x4000, 0 };
 
-            // @port: Tag the transform.
-            FrameInterpolation_RecordOpenChild("OTrashBin", (uintptr_t) object);
+            FrameInterpolation_RecordOpenChild("OTrashBin", (_objectIndex << 4) | cameraId);
 
             mtxf_pos_rotation_xyz(mtx, Pos, Rot);
             //mtxf_scale(mtx, 1.0f);
@@ -73,7 +72,6 @@ void OTrashBin::Draw(s32 cameraId) {
                 gSPDisplayList(gDisplayListHead++, BinMod);
             }
 
-            // @port Pop the transform id.
             FrameInterpolation_RecordCloseChild();
         }
     }
@@ -85,9 +83,9 @@ void OTrashBin::init_bb_trash_bin(s32 objectIndex) {
     gObjectList[objectIndex].unk_04C = 0;
     gObjectList[objectIndex].unk_084[7] = 0;
     set_obj_orientation(objectIndex, 0U, 0U, 0U);
-    gObjectList[objectIndex].orientation[0] = DEGREES_FLOAT_TO_SHORT(_rot.pitch);
-    gObjectList[objectIndex].orientation[1] = DEGREES_FLOAT_TO_SHORT(_rot.yaw);
-    gObjectList[objectIndex].orientation[2] = DEGREES_FLOAT_TO_SHORT(_rot.roll);
+    gObjectList[objectIndex].orientation[0] = _rot.pitch;
+    gObjectList[objectIndex].orientation[1] = _rot.yaw;
+    gObjectList[objectIndex].orientation[2] = _rot.roll;
     gObjectList[objectIndex].pos[0] = _pos.x;
     if (_drawBin) {
         // Position the lid on-top of the box.
@@ -103,8 +101,6 @@ void OTrashBin::init_bb_trash_bin(s32 objectIndex) {
     gObjectList[objectIndex].type = 0;
     object_next_state(objectIndex);
 }
-
-#undef DEGREES_FLOAT_TO_SHORT
 
 void OTrashBin::func_8007E00C(s32 objectIndex) {
     switch (gObjectList[objectIndex].state) {
