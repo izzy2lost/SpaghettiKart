@@ -33,19 +33,6 @@
             android:background="@drawable/ic_button" />
     </FrameLayout>
 
-    <FrameLayout
-        android:id="@+id/right_screen_area"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/left_joystick"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </FrameLayout>
-
-
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="0dp"
