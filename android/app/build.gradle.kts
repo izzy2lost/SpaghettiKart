@@ -1,5 +1,5 @@
-import com.android.build.gradle.tasks.MergeSourceSetFolders
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+import java.util.Properties
 
 plugins {
     id("com.android.application")
@@ -11,6 +11,14 @@ plugins {
 // launcher unpacks them into the app's external files directory on first run.
 val repositoryRoot: File = rootProject.projectDir.parentFile
 
+// Release signing: android/key.properties locally, the environment on CI.
+// The file holds passwords, so it is gitignored and never read into the build
+// output.
+val keystoreProperties = Properties().apply {
+    val file = rootProject.file("key.properties")
+    if (file.isFile) file.inputStream().use { load(it) }
+}
+
 val stageTorchAssets = tasks.register<Sync>("stageTorchAssets") {
     description = "Stages Torch's extraction inputs into the APK assets."
     into(layout.buildDirectory.dir("generated/torchAssets"))
@@ -18,6 +26,12 @@ val stageTorchAssets = tasks.register<Sync>("stageTorchAssets") {
     from(File(repositoryRoot, "yamls")) { into("yamls") }
     from(File(repositoryRoot, "meta")) { into("meta") }
 }
+
+// Derived from the task rather than named as a plain path, so every consumer
+// picks up the dependency. Naming the directory directly only looks fine until
+// something other than the asset merge reads it — release builds run lint-vital
+// over the source sets, and that failed on the missing dependency.
+val stagedTorchAssets: Provider<File> = stageTorchAssets.map { it.destinationDir }
 
 android {
     namespace = "com.izzy.kart"
@@ -51,10 +65,20 @@ android {
 
     signingConfigs {
         create("release") {
-            storeFile = file(System.getenv("KEYSTORE_FILE") ?: "release.keystore")
-            storePassword = System.getenv("KEYSTORE_PASSWORD")
-            keyAlias = System.getenv("KEY_ALIAS")
-            keyPassword = System.getenv("KEY_PASSWORD")
+            val configuredStore = keystoreProperties.getProperty("storeFile")
+            if (configuredStore != null) {
+                // A relative path in key.properties reads against the file's own
+                // directory, which is what someone editing it would expect.
+                storeFile = rootProject.file(configuredStore)
+                storePassword = keystoreProperties.getProperty("storePassword")
+                keyAlias = keystoreProperties.getProperty("keyAlias")
+                keyPassword = keystoreProperties.getProperty("keyPassword")
+            } else {
+                storeFile = file(System.getenv("KEYSTORE_FILE") ?: "release.keystore")
+                storePassword = System.getenv("KEYSTORE_PASSWORD")
+                keyAlias = System.getenv("KEY_ALIAS")
+                keyPassword = System.getenv("KEY_PASSWORD")
+            }
         }
     }
 
@@ -83,7 +107,7 @@ android {
     }
 
     sourceSets.named("main") {
-        assets.srcDir(layout.buildDirectory.dir("generated/torchAssets"))
+        assets.srcDir(stagedTorchAssets)
     }
 
     compileOptions {
@@ -100,10 +124,6 @@ kotlin {
     compilerOptions {
         jvmTarget.set(JvmTarget.JVM_17)
     }
-}
-
-tasks.withType<MergeSourceSetFolders>().configureEach {
-    dependsOn(stageTorchAssets)
 }
 
 dependencies {
