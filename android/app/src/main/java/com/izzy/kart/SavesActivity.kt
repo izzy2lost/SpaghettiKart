@@ -19,45 +19,38 @@ import androidx.activity.result.contract.ActivityResultContracts
 import kotlin.concurrent.thread
 
 /**
- * Mod manager: import, export, enable, delete and reorder what is in the mods
- * folder.
+ * Save manager: back saves up, restore them, or clear one out.
  *
- * Mods are read once when the game starts, so anything changed here takes
- * effect on the next launch — hence the restart button rather than pretending
- * it applied live.
+ * The running game rewrites its EEPROM whenever it saves, so anything restored
+ * here is only safe once the process has been through a restart — hence the
+ * warning and the restart button rather than a silent hand-off.
  */
-class ModsActivity : ComponentActivity() {
+class SavesActivity : ComponentActivity() {
 
     private lateinit var listContainer: LinearLayout
     private lateinit var emptyLabel: TextView
-    private var mods: MutableList<ModStore.Mod> = mutableListOf()
     private var dirty = false
 
-    private val importArchives =
+    private val importSaves =
         registerForActivityResult(ActivityResultContracts.OpenMultipleDocuments()) { uris ->
             if (uris.isNullOrEmpty()) return@registerForActivityResult
-            runInBackground("Importing…") {
-                uris.mapNotNull { ModStore.importArchive(this, it) }
-            }
+            runInBackground("Importing…") { uris.mapNotNull { SaveStore.import(this, it) } }
         }
 
-    private val importFolder =
-        registerForActivityResult(ActivityResultContracts.OpenDocumentTree()) { uri ->
-            if (uri == null) return@registerForActivityResult
-            runInBackground("Importing folder…") {
-                listOfNotNull(ModStore.importFolder(this, uri))
-            }
-        }
+    /** Set just before the picker opens, since the contract carries only a filename. */
+    private var pendingExport: SaveStore.Save? = null
 
-    /** Set just before the export picker opens, since the contract carries only a filename. */
-    private var pendingExport: ModStore.Mod? = null
-
-    private val exportMod =
+    private val exportSave =
         registerForActivityResult(ActivityResultContracts.CreateDocument("application/octet-stream")) { uri ->
-            val mod = pendingExport ?: return@registerForActivityResult
+            val save = pendingExport
             pendingExport = null
             if (uri == null) return@registerForActivityResult
-            runInBackground("Exporting…") { listOfNotNull(ModStore.export(this, mod, uri)) }
+
+            runInBackground("Exporting…") {
+                listOfNotNull(
+                    if (save != null) SaveStore.export(this, save, uri) else SaveStore.exportAll(this, uri)
+                )
+            }
         }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -75,22 +68,22 @@ class ModsActivity : ComponentActivity() {
         }
 
         root.addView(TextView(this).apply {
-            text = "Mods"
+            text = "Saves"
             setTextColor(Color.WHITE)
             textSize = 22f
             setTypeface(typeface, Typeface.BOLD)
         })
 
         root.addView(TextView(this).apply {
-            text = "Loaded top to bottom. A mod lower in the list overrides the ones above it."
+            text = "Records, ghosts and Controller Pak data. The game rewrites these as you play, " +
+                "so restart after importing or it will save over what you restored."
             setTextColor(SUBTLE)
             textSize = 12f
             setPadding(0, dp(4), 0, dp(8))
         })
 
         emptyLabel = TextView(this).apply {
-            text = "No mods yet.\n\nImport an .o2r or .zip, or a mod folder — or copy files straight into\n" +
-                "${GameAssets.modsDir(this@ModsActivity)}"
+            text = "Nothing saved yet.\n\nPlay a race, or import a backup."
             setTextColor(SUBTLE)
             gravity = Gravity.CENTER
             setPadding(0, dp(24), 0, dp(24))
@@ -107,9 +100,11 @@ class ModsActivity : ComponentActivity() {
             orientation = LinearLayout.HORIZONTAL
             setPadding(0, dp(8), 0, 0)
         }
-        actions.addView(button("Import mod") { importArchives.launch(arrayOf("*/*")) })
-        actions.addView(button("Import folder") { importFolder.launch(null) })
-        actions.addView(button("Saves") { startActivity(Intent(this, SavesActivity::class.java)) })
+        actions.addView(button("Import") { importSaves.launch(arrayOf("*/*")) })
+        actions.addView(button("Back up all") {
+            pendingExport = null
+            exportSave.launch(SaveStore.BUNDLE_NAME)
+        })
         actions.addView(View(this), LinearLayout.LayoutParams(0, 1, 1f))
         actions.addView(button("Restart game") { restartGame() })
         actions.addView(button("Done") { finish() })
@@ -119,85 +114,67 @@ class ModsActivity : ComponentActivity() {
     }
 
     private fun refresh() {
-        mods = ModStore.list(this).toMutableList()
+        val saves = SaveStore.list(this)
         listContainer.removeAllViews()
-        emptyLabel.visibility = if (mods.isEmpty()) View.VISIBLE else View.GONE
+        emptyLabel.visibility = if (saves.isEmpty()) View.VISIBLE else View.GONE
 
-        mods.forEachIndexed { index, mod -> listContainer.addView(row(mod, index)) }
+        saves.forEachIndexed { index, save -> listContainer.addView(row(save, index)) }
     }
 
-    private fun row(mod: ModStore.Mod, index: Int): View {
+    private fun row(save: SaveStore.Save, index: Int): View {
         val row = LinearLayout(this).apply {
             orientation = LinearLayout.HORIZONTAL
             gravity = Gravity.CENTER_VERTICAL
             setPadding(dp(8), dp(6), dp(8), dp(6))
-            setBackgroundColor(if (index % 2 == 0) ROW_EVEN else ROW_ODD)
+            setBackgroundColor(if (index % 2 == 0) ROW_EVEN else Color.TRANSPARENT)
         }
-
-        row.addView(button("▲") { move(index, index - 1) }.apply { isEnabled = index > 0 })
-        row.addView(button("▼") { move(index, index + 1) }.apply { isEnabled = index < mods.size - 1 })
 
         val label = LinearLayout(this).apply { orientation = LinearLayout.VERTICAL }
         label.addView(TextView(this).apply {
-            text = mod.name
-            setTextColor(if (mod.enabled) Color.WHITE else SUBTLE)
+            text = save.label
+            setTextColor(Color.WHITE)
             textSize = 15f
         })
         label.addView(TextView(this).apply {
-            text = if (mod.enabled) mod.kind else "${mod.kind} · disabled"
+            text = "${save.file.name} · ${save.file.length()} bytes"
             setTextColor(SUBTLE)
             textSize = 11f
         })
         row.addView(label, LinearLayout.LayoutParams(0, ViewGroup.LayoutParams.WRAP_CONTENT, 1f))
 
-        row.addView(button(if (mod.enabled) "Disable" else "Enable") {
-            apply(ModStore.setEnabled(mod, !mod.enabled))
-        })
         row.addView(button("Export") {
-            pendingExport = mod
-            exportMod.launch(ModStore.exportName(mod))
+            pendingExport = save
+            exportSave.launch(save.file.name)
         })
-        row.addView(button("Delete") { confirmDelete(mod) })
+        row.addView(button("Delete") { confirmDelete(save) })
 
         return row
     }
 
-    private fun move(from: Int, to: Int) {
-        if (to !in mods.indices) return
-        mods.add(to, mods.removeAt(from))
-        apply(ModStore.applyOrder(mods))
-    }
-
-    private fun confirmDelete(mod: ModStore.Mod) {
+    private fun confirmDelete(save: SaveStore.Save) {
         AlertDialog.Builder(this)
-            .setTitle("Delete ${mod.name}?")
-            .setMessage("This removes it from the device. Exporting first keeps a copy.")
-            .setPositiveButton("Delete") { _, _ -> apply(ModStore.delete(mod)) }
+            .setTitle("Delete ${save.label}?")
+            .setMessage("Records and ghosts in this file are gone for good. Exporting first keeps a copy.")
+            .setPositiveButton("Delete") { _, _ ->
+                val error = SaveStore.delete(save)
+                if (error != null) {
+                    Toast.makeText(this, error, Toast.LENGTH_LONG).show()
+                } else {
+                    dirty = true
+                }
+                refresh()
+            }
             .setNegativeButton("Cancel", null)
             .show()
     }
 
-    /** Applies the result of a store operation: report the error, or refresh. */
-    private fun apply(error: String?) {
-        if (error != null) {
-            Toast.makeText(this, error, Toast.LENGTH_LONG).show()
-        } else {
-            dirty = true
-        }
-        refresh()
-    }
-
-    /**
-     * Imports and exports move real data around, so they run off the main
-     * thread behind a blocking progress dialog.
-     */
     private fun runInBackground(message: String, work: () -> List<String>) {
         val progress = AlertDialog.Builder(this)
             .setMessage(message)
             .setCancelable(false)
             .show()
 
-        thread(name = "mods-io") {
+        thread(name = "saves-io") {
             val errors = runCatching(work).getOrElse { listOf(it.message ?: it.toString()) }
 
             runOnUiThread {
@@ -214,15 +191,11 @@ class ModsActivity : ComponentActivity() {
 
     override fun finish() {
         if (dirty) {
-            Toast.makeText(this, "Mod changes apply the next time the game starts.", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Restart the game so it picks up the saves you changed.", Toast.LENGTH_LONG).show()
         }
         super.finish()
     }
 
-    /**
-     * Mods are read once during engine start-up, so the process has to go.
-     * Relaunching through the launcher picks the new set up on the way back in.
-     */
     private fun restartGame() {
         val intent = Intent(this, LauncherActivity::class.java)
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK)
@@ -247,6 +220,5 @@ class ModsActivity : ComponentActivity() {
         val BACKGROUND = Color.rgb(8, 16, 28)
         val SUBTLE = Color.rgb(150, 160, 175)
         val ROW_EVEN = Color.argb(24, 255, 255, 255)
-        val ROW_ODD = Color.TRANSPARENT
     }
 }
