@@ -5,7 +5,7 @@ var searchData=
   ['palmtree_2',['PalmTree',['../structPalmTree.html',1,'']]],
   ['particleemitter_3',['ParticleEmitter',['../classParticleEmitter.html',1,'']]],
   ['path_4',['path',['../classpfd_1_1path.html',1,'pfd']]],
-  ['path2d_5',['Path2D',['../structPath2D.html',1,'']]],
+  ['pathobject_5',['PathObject',['../structMK64_1_1Paths_1_1PathObject.html',1,'MK64::Paths']]],
   ['paths_6',['Paths',['../classMK64_1_1Paths.html',1,'MK64']]],
   ['persistentpool_7',['PersistentPool',['../structPersistentPool.html',1,'']]],
   ['piranhaplant_8',['PiranhaPlant',['../structPiranhaPlant.html',1,'']]],
@@ -20,5 +20,5 @@ var searchData=
   ['printf_5fstruct_17',['printf_struct',['../structprintf__struct.html',1,'']]],
   ['profilerframedata_18',['ProfilerFrameData',['../structProfilerFrameData.html',1,'']]],
   ['properties_19',['Properties',['../structProperties.html',1,'']]],
-  ['propertieswindow_20',['PropertiesWindow',['../classEditor_1_1PropertiesWindow.html',1,'Editor']]]
+  ['propertieswindow_20',['PropertiesWindow',['../classTrackEditor_1_1PropertiesWindow.html',1,'TrackEditor']]]
 ];

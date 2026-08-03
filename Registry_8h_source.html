@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/Registry.h Source File</title>
+<title>SpaghettiKart: src/engine/registry/Registry.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -108,45 +108,174 @@ $(function(){initNavTree('Registry_8h_source.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Registry.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="Registry_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">// #pragma once</span></div>
+<a href="Registry_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// #include &quot;Course.h&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment">// #include &quot;Cup.h&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// #include &lt;unordered_map&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// #include &quot;AllActors.h&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment">// #include &quot;Actor.h&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment">// #include &quot;objects/Object.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment">// class AActor; // &lt;-- Forward delare</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment">// template &lt;class T&gt; class Registry {</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">//   public:</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment">//   Registry();</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment">//   void Add(std::string name, std::function&lt;T*()&gt;);</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>  </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">//   template &lt;typename... Args&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">//   void AddArgs(std::string id);</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment">//   T* Get(std::string id);</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">// private:</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment">//   std::unordered_map&lt;std::string, std::function&lt;T*()&gt;&gt; ContentVault;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment">//   std::map&lt;std::string, std::function&lt;T*(Args&amp;&amp;...)&gt;&gt; ArgsVault;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">// };</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment">// void AddCourse(std::string id, Course* course);</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">// void AddCup(std::string id, Cup* cup);</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment">// void AddActor(std::string id, AActor* actor);</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment">// void AddStockContent();</span></div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment">// extern Registry&lt;Course&gt; Courses;</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment">// extern Registry&lt;Cup&gt; Cups;</span></div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">// extern Registry&lt;AActor&gt; Actors;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;libultraship.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;set&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="structTrackInfo.html">    9</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structTrackInfo.html">TrackInfo</a> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structTrackInfo.html#af881e1cf433f12bd8fde50483a36d844">   10</a></span>    uint32_t <a class="code hl_variable" href="structTrackInfo.html#af881e1cf433f12bd8fde50483a36d844">Id</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structTrackInfo.html#a9bbee7dc9a39dd5a97e19e24cf798af7">   11</a></span>    std::string <a class="code hl_variable" href="structTrackInfo.html#a9bbee7dc9a39dd5a97e19e24cf798af7">Path</a>; <span class="comment">// Path to the custom track</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="structTrackInfo.html#a8c5fe1201dfcd45c2da7fcf400928f2d">   12</a></span>    std::string <a class="code hl_variable" href="structTrackInfo.html#a8c5fe1201dfcd45c2da7fcf400928f2d">ResourceName</a>;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structTrackInfo.html#a1c96cfd2ed2a29d3f227125300084f83">   13</a></span>    std::string <a class="code hl_variable" href="structTrackInfo.html#a1c96cfd2ed2a29d3f227125300084f83">Name</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structTrackInfo.html#a758262df3e55e8aa86fa3624b77bd399">   14</a></span>    std::string <a class="code hl_variable" href="structTrackInfo.html#a758262df3e55e8aa86fa3624b77bd399">DebugName</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structTrackInfo.html#aa62d9827ea29aecd422a97d637604d88">   15</a></span>    std::string <a class="code hl_variable" href="structTrackInfo.html#aa62d9827ea29aecd422a97d637604d88">Length</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structTrackInfo.html#a2108b14e8c722013ea88d558e230b44e">   16</a></span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_variable" href="structTrackInfo.html#a2108b14e8c722013ea88d558e230b44e">MinimapTexture</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="comment">// std::string PreviewTexture;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>};</div>
+</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structActorInfo.html">   20</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structActorInfo.html">ActorInfo</a> {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structActorInfo.html#a669a89bb0a01fbaea02deadb8ffe7a1d">   21</a></span>    uint32_t <a class="code hl_variable" href="structActorInfo.html#a669a89bb0a01fbaea02deadb8ffe7a1d">Id</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structActorInfo.html#aa178bab198752f162855e7c738bcfacf">   22</a></span>    std::string <a class="code hl_variable" href="structActorInfo.html#aa178bab198752f162855e7c738bcfacf">ResourceName</a>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="structActorInfo.html#a2b9fa97da051f0577f1eb27489444823">   23</a></span>    std::string <a class="code hl_variable" href="structActorInfo.html#a2b9fa97da051f0577f1eb27489444823">Name</a>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structActorInfo.html#a6201bd3e47dd79c5fbef43e366676d68">   24</a></span>    std::set&lt;std::string&gt; <a class="code hl_variable" href="structActorInfo.html#a6201bd3e47dd79c5fbef43e366676d68">Tags</a>; <span class="comment">// Category for filtering</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>};</div>
+</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="foldopen" id="foldopen00027" data-start="{" data-end="};">
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structItemInfo.html">   27</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structItemInfo.html">ItemInfo</a> {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structItemInfo.html#ae5b4c106a06650259d727eeb2c7b348a">   28</a></span>    uint32_t <a class="code hl_variable" href="structItemInfo.html#ae5b4c106a06650259d727eeb2c7b348a">Id</a>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structItemInfo.html#ae5ad317a9007fdfbcbd20e10dfa8d2fe">   29</a></span>    std::string <a class="code hl_variable" href="structItemInfo.html#ae5ad317a9007fdfbcbd20e10dfa8d2fe">ResourceName</a>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structItemInfo.html#a4741ef0e9155a48bb4126a2be44a74c7">   30</a></span>    std::string <a class="code hl_variable" href="structItemInfo.html#a4741ef0e9155a48bb4126a2be44a74c7">Name</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
+</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">template</span>&lt;<span class="keyword">typename</span> TInfo, <span class="keyword">typename</span>... TArgs&gt;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="comment">// ^ Scary template key word</span></div>
+<div class="foldopen" id="foldopen00060" data-start="{" data-end="};">
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="classRegistry.html">   60</a></span><span class="keyword">class </span><a class="code hl_class" href="classRegistry.html">Registry</a> {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classRegistry.html#ac2604acb90197f165aa4c8d6b0f64757">   69</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="classRegistry.html#ac2604acb90197f165aa4c8d6b0f64757">Callback</a> = std::function&lt;void(TArgs...)&gt;;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classRegistry.html#a8f0c6ec996ab1fc135d19b3b86640896">   71</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classRegistry.html#a8f0c6ec996ab1fc135d19b3b86640896">Add</a>(TInfo&amp; info, <a class="code hl_typedef" href="classRegistry.html#ac2604acb90197f165aa4c8d6b0f64757">Callback</a> func) {</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        info.Id = <a class="code hl_variable" href="classRegistry.html#a6af47fa9125439aea215eec7b2720c91">mCounter</a>++;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="comment">// Needs to allow overwriting to support mod hot-reloading</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        <a class="code hl_variable" href="classRegistry.html#a91b7f91266a19b2e74fa1d050e7fcfa8">mMap</a>[info.ResourceName] = <a class="code hl_struct" href="structRegistry_1_1Entry.html">Entry</a>{info, std::move(func)};</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
+</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classRegistry.html#a7efa315767a2399fc1b8b07d25cc4e3e">   77</a></span>    <span class="keyword">const</span> TInfo* <a class="code hl_function" href="classRegistry.html#a7efa315767a2399fc1b8b07d25cc4e3e">GetInfo</a>(<span class="keyword">const</span> std::string&amp; resourceName)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keyword">auto</span> it = <a class="code hl_variable" href="classRegistry.html#a91b7f91266a19b2e74fa1d050e7fcfa8">mMap</a>.find(resourceName);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        <span class="keywordflow">return</span> (it != <a class="code hl_variable" href="classRegistry.html#a91b7f91266a19b2e74fa1d050e7fcfa8">mMap</a>.end()) ? &amp;it-&gt;second.Info : <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    }</div>
+</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="classRegistry.html#abfca38cf6ea36fe504eaf295d5f7c2d8">   82</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classRegistry.html#abfca38cf6ea36fe504eaf295d5f7c2d8">Invoke</a>(<span class="keyword">const</span> std::string&amp; resourceName, TArgs... args) {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        <span class="keyword">auto</span> it = <a class="code hl_variable" href="classRegistry.html#a91b7f91266a19b2e74fa1d050e7fcfa8">mMap</a>.find(resourceName);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        <span class="keywordflow">if</span> (it != <a class="code hl_variable" href="classRegistry.html#a91b7f91266a19b2e74fa1d050e7fcfa8">mMap</a>.end() &amp;&amp; it-&gt;second.Func) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>            <span class="comment">// Using C++ variadic template expansion to call the function</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            printf(<span class="stringliteral">&quot;[Registry] Invoking %s\n&quot;</span>, resourceName.c_str());</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            it-&gt;second.Func(std::forward&lt;TArgs&gt;(args)...);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>            printf(<span class="stringliteral">&quot;[Registry] Error: %s not found or function is null.\n&quot;</span>, resourceName.c_str());</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="classRegistry.html#aa9e1fbfba0e20719d69b9f557c2f8b14">   93</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRegistry.html#aa9e1fbfba0e20719d69b9f557c2f8b14">Find</a>(<span class="keyword">const</span> std::string&amp; resourceName)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classRegistry.html#a91b7f91266a19b2e74fa1d050e7fcfa8">mMap</a>.find(resourceName) != <a class="code hl_variable" href="classRegistry.html#a91b7f91266a19b2e74fa1d050e7fcfa8">mMap</a>.end();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    }</div>
+</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="foldopen" id="foldopen00097" data-start="{" data-end="}">
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classRegistry.html#a08c2609a94bc0ecff13421f0cde09117">   97</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classRegistry.html#a08c2609a94bc0ecff13421f0cde09117">Size</a>() {</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classRegistry.html#a91b7f91266a19b2e74fa1d050e7fcfa8">mMap</a>.size();</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="foldopen" id="foldopen00101" data-start="{" data-end="}">
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="classRegistry.html#a519ac257e883fc97f40bc9ff3af427bb">  101</a></span>    std::vector&lt;const TInfo*&gt; <a class="code hl_function" href="classRegistry.html#a519ac257e883fc97f40bc9ff3af427bb">GetAllInfo</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        std::vector&lt;const TInfo*&gt; list;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        list.reserve(<a class="code hl_variable" href="classRegistry.html#a91b7f91266a19b2e74fa1d050e7fcfa8">mMap</a>.size());</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; pair : <a class="code hl_variable" href="classRegistry.html#a91b7f91266a19b2e74fa1d050e7fcfa8">mMap</a>) {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>            list.push_back(&amp;pair.second.Info);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>        }</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keywordflow">return</span> list;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="comment">// Returns true if item succesfully removed</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="comment">// Note that mCounter is not decremented on remove</span></div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="classRegistry.html#a692c8c680da2ae06488ecf57f7ba987f">  112</a></span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classRegistry.html#a692c8c680da2ae06488ecf57f7ba987f">Remove</a>(<span class="keyword">const</span> std::string&amp; resourceName) {</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        <span class="keyword">auto</span> it = <a class="code hl_variable" href="classRegistry.html#a91b7f91266a19b2e74fa1d050e7fcfa8">mMap</a>.find(resourceName);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        <span class="keywordflow">if</span> (it != <a class="code hl_variable" href="classRegistry.html#a91b7f91266a19b2e74fa1d050e7fcfa8">mMap</a>.end()) {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            <a class="code hl_variable" href="classRegistry.html#a91b7f91266a19b2e74fa1d050e7fcfa8">mMap</a>.erase(it);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>            <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        }</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    }</div>
+</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="foldopen" id="foldopen00121" data-start="{" data-end="}">
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="classRegistry.html#abbaf269d4dd97da6b59bb4209656344d">  121</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classRegistry.html#abbaf269d4dd97da6b59bb4209656344d">Clear</a>() {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <a class="code hl_variable" href="classRegistry.html#a91b7f91266a19b2e74fa1d050e7fcfa8">mMap</a>.clear();</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>        <a class="code hl_variable" href="classRegistry.html#a6af47fa9125439aea215eec7b2720c91">mCounter</a> = 0;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    }</div>
+</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classRegistry.html#a6af47fa9125439aea215eec7b2720c91">  127</a></span>    int32_t <a class="code hl_variable" href="classRegistry.html#a6af47fa9125439aea215eec7b2720c91">mCounter</a>;</div>
+<div class="foldopen" id="foldopen00128" data-start="{" data-end="};">
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="structRegistry_1_1Entry.html">  128</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structRegistry_1_1Entry.html">Entry</a> {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="structRegistry_1_1Entry.html#ad7c60e37cb8fab04094eafa991d913d8">  129</a></span>        TInfo <a class="code hl_variable" href="structRegistry_1_1Entry.html#ad7c60e37cb8fab04094eafa991d913d8">Info</a>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="structRegistry_1_1Entry.html#ac0da6e03bb3c2ae991aa56eab56c6ae1">  130</a></span>        <a class="code hl_typedef" href="classRegistry.html#ac2604acb90197f165aa4c8d6b0f64757">Callback</a> <a class="code hl_variable" href="structRegistry_1_1Entry.html#ac0da6e03bb3c2ae991aa56eab56c6ae1">Func</a>;</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    };</div>
+</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="comment">// key: str, value: lambda function</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="classRegistry.html#a91b7f91266a19b2e74fa1d050e7fcfa8">  134</a></span>    std::unordered_map&lt;std::string, Registry::Entry&gt; <a class="code hl_variable" href="classRegistry.html#a91b7f91266a19b2e74fa1d050e7fcfa8">mMap</a>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>};</div>
+</div>
+<div class="ttc" id="aclassRegistry_html"><div class="ttname"><a href="classRegistry.html">Registry</a></div><div class="ttdef"><b>Definition</b> Registry.h:60</div></div>
+<div class="ttc" id="aclassRegistry_html_a08c2609a94bc0ecff13421f0cde09117"><div class="ttname"><a href="classRegistry.html#a08c2609a94bc0ecff13421f0cde09117">Registry::Size</a></div><div class="ttdeci">size_t Size()</div><div class="ttdef"><b>Definition</b> Registry.h:97</div></div>
+<div class="ttc" id="aclassRegistry_html_a519ac257e883fc97f40bc9ff3af427bb"><div class="ttname"><a href="classRegistry.html#a519ac257e883fc97f40bc9ff3af427bb">Registry::GetAllInfo</a></div><div class="ttdeci">std::vector&lt; const TInfo * &gt; GetAllInfo() const</div><div class="ttdef"><b>Definition</b> Registry.h:101</div></div>
+<div class="ttc" id="aclassRegistry_html_a692c8c680da2ae06488ecf57f7ba987f"><div class="ttname"><a href="classRegistry.html#a692c8c680da2ae06488ecf57f7ba987f">Registry::Remove</a></div><div class="ttdeci">bool Remove(const std::string &amp;resourceName)</div><div class="ttdef"><b>Definition</b> Registry.h:112</div></div>
+<div class="ttc" id="aclassRegistry_html_a6af47fa9125439aea215eec7b2720c91"><div class="ttname"><a href="classRegistry.html#a6af47fa9125439aea215eec7b2720c91">Registry::mCounter</a></div><div class="ttdeci">int32_t mCounter</div><div class="ttdef"><b>Definition</b> Registry.h:127</div></div>
+<div class="ttc" id="aclassRegistry_html_a7efa315767a2399fc1b8b07d25cc4e3e"><div class="ttname"><a href="classRegistry.html#a7efa315767a2399fc1b8b07d25cc4e3e">Registry::GetInfo</a></div><div class="ttdeci">const TInfo * GetInfo(const std::string &amp;resourceName) const</div><div class="ttdef"><b>Definition</b> Registry.h:77</div></div>
+<div class="ttc" id="aclassRegistry_html_a8f0c6ec996ab1fc135d19b3b86640896"><div class="ttname"><a href="classRegistry.html#a8f0c6ec996ab1fc135d19b3b86640896">Registry::Add</a></div><div class="ttdeci">void Add(TInfo &amp;info, Callback func)</div><div class="ttdef"><b>Definition</b> Registry.h:71</div></div>
+<div class="ttc" id="aclassRegistry_html_a91b7f91266a19b2e74fa1d050e7fcfa8"><div class="ttname"><a href="classRegistry.html#a91b7f91266a19b2e74fa1d050e7fcfa8">Registry::mMap</a></div><div class="ttdeci">std::unordered_map&lt; std::string, Registry::Entry &gt; mMap</div><div class="ttdef"><b>Definition</b> Registry.h:134</div></div>
+<div class="ttc" id="aclassRegistry_html_aa9e1fbfba0e20719d69b9f557c2f8b14"><div class="ttname"><a href="classRegistry.html#aa9e1fbfba0e20719d69b9f557c2f8b14">Registry::Find</a></div><div class="ttdeci">bool Find(const std::string &amp;resourceName) const</div><div class="ttdef"><b>Definition</b> Registry.h:93</div></div>
+<div class="ttc" id="aclassRegistry_html_abbaf269d4dd97da6b59bb4209656344d"><div class="ttname"><a href="classRegistry.html#abbaf269d4dd97da6b59bb4209656344d">Registry::Clear</a></div><div class="ttdeci">void Clear()</div><div class="ttdef"><b>Definition</b> Registry.h:121</div></div>
+<div class="ttc" id="aclassRegistry_html_abfca38cf6ea36fe504eaf295d5f7c2d8"><div class="ttname"><a href="classRegistry.html#abfca38cf6ea36fe504eaf295d5f7c2d8">Registry::Invoke</a></div><div class="ttdeci">void Invoke(const std::string &amp;resourceName, TArgs... args)</div><div class="ttdef"><b>Definition</b> Registry.h:82</div></div>
+<div class="ttc" id="aclassRegistry_html_ac2604acb90197f165aa4c8d6b0f64757"><div class="ttname"><a href="classRegistry.html#ac2604acb90197f165aa4c8d6b0f64757">Registry::Callback</a></div><div class="ttdeci">std::function&lt; void(TArgs...)&gt; Callback</div><div class="ttdef"><b>Definition</b> Registry.h:69</div></div>
+<div class="ttc" id="astructActorInfo_html"><div class="ttname"><a href="structActorInfo.html">ActorInfo</a></div><div class="ttdef"><b>Definition</b> Registry.h:20</div></div>
+<div class="ttc" id="astructActorInfo_html_a2b9fa97da051f0577f1eb27489444823"><div class="ttname"><a href="structActorInfo.html#a2b9fa97da051f0577f1eb27489444823">ActorInfo::Name</a></div><div class="ttdeci">std::string Name</div><div class="ttdef"><b>Definition</b> Registry.h:23</div></div>
+<div class="ttc" id="astructActorInfo_html_a6201bd3e47dd79c5fbef43e366676d68"><div class="ttname"><a href="structActorInfo.html#a6201bd3e47dd79c5fbef43e366676d68">ActorInfo::Tags</a></div><div class="ttdeci">std::set&lt; std::string &gt; Tags</div><div class="ttdef"><b>Definition</b> Registry.h:24</div></div>
+<div class="ttc" id="astructActorInfo_html_a669a89bb0a01fbaea02deadb8ffe7a1d"><div class="ttname"><a href="structActorInfo.html#a669a89bb0a01fbaea02deadb8ffe7a1d">ActorInfo::Id</a></div><div class="ttdeci">uint32_t Id</div><div class="ttdef"><b>Definition</b> Registry.h:21</div></div>
+<div class="ttc" id="astructActorInfo_html_aa178bab198752f162855e7c738bcfacf"><div class="ttname"><a href="structActorInfo.html#aa178bab198752f162855e7c738bcfacf">ActorInfo::ResourceName</a></div><div class="ttdeci">std::string ResourceName</div><div class="ttdef"><b>Definition</b> Registry.h:22</div></div>
+<div class="ttc" id="astructItemInfo_html"><div class="ttname"><a href="structItemInfo.html">ItemInfo</a></div><div class="ttdef"><b>Definition</b> Registry.h:27</div></div>
+<div class="ttc" id="astructItemInfo_html_a4741ef0e9155a48bb4126a2be44a74c7"><div class="ttname"><a href="structItemInfo.html#a4741ef0e9155a48bb4126a2be44a74c7">ItemInfo::Name</a></div><div class="ttdeci">std::string Name</div><div class="ttdef"><b>Definition</b> Registry.h:30</div></div>
+<div class="ttc" id="astructItemInfo_html_ae5ad317a9007fdfbcbd20e10dfa8d2fe"><div class="ttname"><a href="structItemInfo.html#ae5ad317a9007fdfbcbd20e10dfa8d2fe">ItemInfo::ResourceName</a></div><div class="ttdeci">std::string ResourceName</div><div class="ttdef"><b>Definition</b> Registry.h:29</div></div>
+<div class="ttc" id="astructItemInfo_html_ae5b4c106a06650259d727eeb2c7b348a"><div class="ttname"><a href="structItemInfo.html#ae5b4c106a06650259d727eeb2c7b348a">ItemInfo::Id</a></div><div class="ttdeci">uint32_t Id</div><div class="ttdef"><b>Definition</b> Registry.h:28</div></div>
+<div class="ttc" id="astructRegistry_1_1Entry_html"><div class="ttname"><a href="structRegistry_1_1Entry.html">Registry::Entry</a></div><div class="ttdef"><b>Definition</b> Registry.h:128</div></div>
+<div class="ttc" id="astructRegistry_1_1Entry_html_ac0da6e03bb3c2ae991aa56eab56c6ae1"><div class="ttname"><a href="structRegistry_1_1Entry.html#ac0da6e03bb3c2ae991aa56eab56c6ae1">Registry::Entry::Func</a></div><div class="ttdeci">Callback Func</div><div class="ttdef"><b>Definition</b> Registry.h:130</div></div>
+<div class="ttc" id="astructRegistry_1_1Entry_html_ad7c60e37cb8fab04094eafa991d913d8"><div class="ttname"><a href="structRegistry_1_1Entry.html#ad7c60e37cb8fab04094eafa991d913d8">Registry::Entry::Info</a></div><div class="ttdeci">TInfo Info</div><div class="ttdef"><b>Definition</b> Registry.h:129</div></div>
+<div class="ttc" id="astructTrackInfo_html"><div class="ttname"><a href="structTrackInfo.html">TrackInfo</a></div><div class="ttdef"><b>Definition</b> Registry.h:9</div></div>
+<div class="ttc" id="astructTrackInfo_html_a1c96cfd2ed2a29d3f227125300084f83"><div class="ttname"><a href="structTrackInfo.html#a1c96cfd2ed2a29d3f227125300084f83">TrackInfo::Name</a></div><div class="ttdeci">std::string Name</div><div class="ttdef"><b>Definition</b> Registry.h:13</div></div>
+<div class="ttc" id="astructTrackInfo_html_a2108b14e8c722013ea88d558e230b44e"><div class="ttname"><a href="structTrackInfo.html#a2108b14e8c722013ea88d558e230b44e">TrackInfo::MinimapTexture</a></div><div class="ttdeci">const char * MinimapTexture</div><div class="ttdef"><b>Definition</b> Registry.h:16</div></div>
+<div class="ttc" id="astructTrackInfo_html_a758262df3e55e8aa86fa3624b77bd399"><div class="ttname"><a href="structTrackInfo.html#a758262df3e55e8aa86fa3624b77bd399">TrackInfo::DebugName</a></div><div class="ttdeci">std::string DebugName</div><div class="ttdef"><b>Definition</b> Registry.h:14</div></div>
+<div class="ttc" id="astructTrackInfo_html_a8c5fe1201dfcd45c2da7fcf400928f2d"><div class="ttname"><a href="structTrackInfo.html#a8c5fe1201dfcd45c2da7fcf400928f2d">TrackInfo::ResourceName</a></div><div class="ttdeci">std::string ResourceName</div><div class="ttdef"><b>Definition</b> Registry.h:12</div></div>
+<div class="ttc" id="astructTrackInfo_html_a9bbee7dc9a39dd5a97e19e24cf798af7"><div class="ttname"><a href="structTrackInfo.html#a9bbee7dc9a39dd5a97e19e24cf798af7">TrackInfo::Path</a></div><div class="ttdeci">std::string Path</div><div class="ttdef"><b>Definition</b> Registry.h:11</div></div>
+<div class="ttc" id="astructTrackInfo_html_aa62d9827ea29aecd422a97d637604d88"><div class="ttname"><a href="structTrackInfo.html#aa62d9827ea29aecd422a97d637604d88">TrackInfo::Length</a></div><div class="ttdeci">std::string Length</div><div class="ttdef"><b>Definition</b> Registry.h:15</div></div>
+<div class="ttc" id="astructTrackInfo_html_af881e1cf433f12bd8fde50483a36d844"><div class="ttname"><a href="structTrackInfo.html#af881e1cf433f12bd8fde50483a36d844">TrackInfo::Id</a></div><div class="ttdeci">uint32_t Id</div><div class="ttdef"><b>Definition</b> Registry.h:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="Registry_8h.html">Registry.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="dir_be8163adef6b1f137039619feb356377.html">registry</a></li><li class="navelem"><a class="el" href="Registry_8h.html">Registry.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

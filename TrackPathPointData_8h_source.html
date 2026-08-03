@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/port/resource/type/TrackPathPointData.h Source File</title>
+<title>SpaghettiKart: src/port/resource/type/TrackPathPointData.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -110,7 +110,7 @@ $(function(){initNavTree('TrackPathPointData_8h_source.html',''); initResizable(
 <div class="contents">
 <a href="TrackPathPointData_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;resource/Resource.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;ship/resource/Resource.h&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;libultra/gbi.h&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;<a class="code" href="waypoints_8h.html">waypoints.h</a>&gt;</span></div>
@@ -139,23 +139,33 @@ $(function(){initNavTree('TrackPathPointData_8h_source.html',''); initResizable(
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="classMK64_1_1Paths.html#a230423fa5a27d7bcf8d833f47631dcbb">Paths</a>();</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_struct" href="structTrackPathPoint.html">TrackPathPoint</a>* <a class="code hl_function" href="classMK64_1_1Paths.html#a209b956e7ee03eb80a65f0c5a55b3f8b">GetPointer</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classMK64_1_1Paths.html#a9cf05747d4ad3fa7e0861949dee526a1">GetPointerSize</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classMK64_1_1Paths.html#aa675610cbd58eb3fd8828042f10d88d7">   32</a></span>    std::vector&lt;std::vector&lt;TrackPathPoint&gt;&gt; <a class="code hl_variable" href="classMK64_1_1Paths.html#aa675610cbd58eb3fd8828042f10d88d7">PathList</a>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">// This struct is really ugly... Sorry</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structMK64_1_1Paths_1_1PathObject.html">   30</a></span>    <span class="keyword">struct </span><a class="code hl_struct" href="structMK64_1_1Paths_1_1PathObject.html">PathObject</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structMK64_1_1Paths_1_1PathObject.html#a390006c3137485ffac5b9fcbdfcd54ac">   31</a></span>        std::vector&lt;TrackPathPoint&gt; <a class="code hl_variable" href="structMK64_1_1Paths_1_1PathObject.html#a390006c3137485ffac5b9fcbdfcd54ac">PathList</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structMK64_1_1Paths_1_1PathObject.html#a4b6e218aeb1533fd0f9798b1452e2af6">   32</a></span>        int32_t <a class="code hl_variable" href="structMK64_1_1Paths_1_1PathObject.html#a4b6e218aeb1533fd0f9798b1452e2af6">PathIndex</a>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    };</div>
 </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>} <span class="comment">// namespace MK64</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_struct" href="structTrackPathPoint.html">TrackPathPoint</a>* <a class="code hl_function" href="classMK64_1_1Paths.html#a209b956e7ee03eb80a65f0c5a55b3f8b">GetPointer</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classMK64_1_1Paths.html#a9cf05747d4ad3fa7e0861949dee526a1">GetPointerSize</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classMK64_1_1Paths.html#a4a196dee24f13275a42b485b2025bd99">   38</a></span>    std::vector&lt;PathObject&gt; <a class="code hl_struct" href="structMK64_1_1Paths_1_1PathObject.html">PathObject</a>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>};</div>
+</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>} <span class="comment">// namespace MK64</span></div>
 <div class="ttc" id="aclassMK64_1_1Paths_html_a209b956e7ee03eb80a65f0c5a55b3f8b"><div class="ttname"><a href="classMK64_1_1Paths.html#a209b956e7ee03eb80a65f0c5a55b3f8b">MK64::Paths::GetPointer</a></div><div class="ttdeci">TrackPathPoint * GetPointer() override</div><div class="ttdef"><b>Definition</b> TrackPathPointData.cpp:21</div></div>
 <div class="ttc" id="aclassMK64_1_1Paths_html_a230423fa5a27d7bcf8d833f47631dcbb"><div class="ttname"><a href="classMK64_1_1Paths.html#a230423fa5a27d7bcf8d833f47631dcbb">MK64::Paths::Paths</a></div><div class="ttdeci">Paths()</div><div class="ttdef"><b>Definition</b> TrackPathPointData.cpp:17</div></div>
 <div class="ttc" id="aclassMK64_1_1Paths_html_a9cf05747d4ad3fa7e0861949dee526a1"><div class="ttname"><a href="classMK64_1_1Paths.html#a9cf05747d4ad3fa7e0861949dee526a1">MK64::Paths::GetPointerSize</a></div><div class="ttdeci">size_t GetPointerSize() override</div><div class="ttdef"><b>Definition</b> TrackPathPointData.cpp:26</div></div>
-<div class="ttc" id="aclassMK64_1_1Paths_html_aa675610cbd58eb3fd8828042f10d88d7"><div class="ttname"><a href="classMK64_1_1Paths.html#aa675610cbd58eb3fd8828042f10d88d7">MK64::Paths::PathList</a></div><div class="ttdeci">std::vector&lt; std::vector&lt; TrackPathPoint &gt; &gt; PathList</div><div class="ttdef"><b>Definition</b> TrackPathPointData.h:32</div></div>
 <div class="ttc" id="aclassMK64_1_1TrackPathPointData_html_a6a6c3a5e57f06fe575bba8834ad7d58c"><div class="ttname"><a href="classMK64_1_1TrackPathPointData.html#a6a6c3a5e57f06fe575bba8834ad7d58c">MK64::TrackPathPointData::GetPointer</a></div><div class="ttdeci">TrackPathPoint * GetPointer() override</div><div class="ttdef"><b>Definition</b> TrackPathPointData.cpp:8</div></div>
 <div class="ttc" id="aclassMK64_1_1TrackPathPointData_html_aa638244f0810ba71c5db8bbc2cc7c61b"><div class="ttname"><a href="classMK64_1_1TrackPathPointData.html#aa638244f0810ba71c5db8bbc2cc7c61b">MK64::TrackPathPointData::TrackPathPointData</a></div><div class="ttdeci">TrackPathPointData()</div><div class="ttdef"><b>Definition</b> TrackPathPointData.cpp:5</div></div>
 <div class="ttc" id="aclassMK64_1_1TrackPathPointData_html_aad578c82e30381e5dbb83445fd9a73ed"><div class="ttname"><a href="classMK64_1_1TrackPathPointData.html#aad578c82e30381e5dbb83445fd9a73ed">MK64::TrackPathPointData::TrackPathPointList</a></div><div class="ttdeci">std::vector&lt; TrackPathPoint &gt; TrackPathPointList</div><div class="ttdef"><b>Definition</b> TrackPathPointData.h:19</div></div>
 <div class="ttc" id="aclassMK64_1_1TrackPathPointData_html_affb95dfdf62cff110f1e415ba8955b85"><div class="ttname"><a href="classMK64_1_1TrackPathPointData.html#affb95dfdf62cff110f1e415ba8955b85">MK64::TrackPathPointData::GetPointerSize</a></div><div class="ttdeci">size_t GetPointerSize() override</div><div class="ttdef"><b>Definition</b> TrackPathPointData.cpp:12</div></div>
 <div class="ttc" id="anamespaceMK64_html"><div class="ttname"><a href="namespaceMK64.html">MK64</a></div><div class="ttdef"><b>Definition</b> ActorSpawnDataFactory.cpp:7</div></div>
+<div class="ttc" id="astructMK64_1_1Paths_1_1PathObject_html"><div class="ttname"><a href="structMK64_1_1Paths_1_1PathObject.html">MK64::Paths::PathObject</a></div><div class="ttdef"><b>Definition</b> TrackPathPointData.h:30</div></div>
+<div class="ttc" id="astructMK64_1_1Paths_1_1PathObject_html_a390006c3137485ffac5b9fcbdfcd54ac"><div class="ttname"><a href="structMK64_1_1Paths_1_1PathObject.html#a390006c3137485ffac5b9fcbdfcd54ac">MK64::Paths::PathObject::PathList</a></div><div class="ttdeci">std::vector&lt; TrackPathPoint &gt; PathList</div><div class="ttdef"><b>Definition</b> TrackPathPointData.h:31</div></div>
+<div class="ttc" id="astructMK64_1_1Paths_1_1PathObject_html_a4b6e218aeb1533fd0f9798b1452e2af6"><div class="ttname"><a href="structMK64_1_1Paths_1_1PathObject.html#a4b6e218aeb1533fd0f9798b1452e2af6">MK64::Paths::PathObject::PathIndex</a></div><div class="ttdeci">int32_t PathIndex</div><div class="ttdef"><b>Definition</b> TrackPathPointData.h:32</div></div>
 <div class="ttc" id="astructTrackPathPoint_html"><div class="ttname"><a href="structTrackPathPoint.html">TrackPathPoint</a></div><div class="ttdef"><b>Definition</b> waypoints.h:14</div></div>
 <div class="ttc" id="awaypoints_8h_html"><div class="ttname"><a href="waypoints_8h.html">waypoints.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

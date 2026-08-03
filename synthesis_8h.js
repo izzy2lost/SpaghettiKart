@@ -23,6 +23,7 @@ var synthesis_8h =
     [ "func_800B86A0", "synthesis_8h.html#ad17eae18081d8d3600d6e23d044e5290", null ],
     [ "load_wave_samples", "synthesis_8h.html#aed4d56af55356360afaebcb4f194407c", null ],
     [ "note_apply_headset_pan_effects", "synthesis_8h.html#ab6acf42e1089301d7b1959b332d22233", null ],
+    [ "note_apply_surround_effect", "synthesis_8h.html#aadef44fbc716080f7150c47bd4640469", null ],
     [ "prepare_reverb_ring_buffer", "synthesis_8h.html#a9964410947181858fecd99e63c47d6a8", null ],
     [ "synthesis_do_one_audio_update", "synthesis_8h.html#ac62830b08cf19a15a6543ae6c94b219d", null ],
     [ "synthesis_execute", "synthesis_8h.html#a1ced286cad738cbc3b205b3d763002d6", null ],

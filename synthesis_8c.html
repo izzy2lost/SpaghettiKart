@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/audio/synthesis.c File Reference</title>
+<title>SpaghettiKart: src/audio/synthesis.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -122,6 +122,7 @@ $(function(){initNavTree('synthesis_8c.html',''); initResizable(true); });
 <code>#include &quot;<a class="el" href="load_8h_source.html">audio/load.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="seqplayer_8h_source.html">audio/seqplayer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="internal_8h_source.html">audio/internal.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="external_8h_source.html">audio/external.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Engine_8h_source.html">port/Engine.h</a>&quot;</code><br />
 <code>#include &lt;libultra/abi.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -170,6 +171,8 @@ Functions</h2></td></tr>
 <tr class="separator:afdb8a3b2a3566c114fc20078eb07ba4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6acf42e1089301d7b1959b332d22233" id="r_ab6acf42e1089301d7b1959b332d22233"><td class="memItemLeft" align="right" valign="top">Acmd *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6acf42e1089301d7b1959b332d22233">note_apply_headset_pan_effects</a> (Acmd *acmd, struct <a class="el" href="structNoteSubEu.html">NoteSubEu</a> *noteSubEu, struct <a class="el" href="structNoteSynthesisState.html">NoteSynthesisState</a> *note, s32 bufLen, s32 flags, s32 leftRight)</td></tr>
 <tr class="separator:ab6acf42e1089301d7b1959b332d22233"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadef44fbc716080f7150c47bd4640469" id="r_aadef44fbc716080f7150c47bd4640469"><td class="memItemLeft" align="right" valign="top">Acmd *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadef44fbc716080f7150c47bd4640469">note_apply_surround_effect</a> (Acmd *cmd, struct <a class="el" href="structNote.html">Note</a> *note, s32 bufLen)</td></tr>
+<tr class="separator:aadef44fbc716080f7150c47bd4640469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -216,7 +219,7 @@ Variables</h2></td></tr>
 <div class="line">    aLoadBuffer(pkt, <a class="code hl_define" href="macros_8h.html#ac33bc9457f1c1be3f60fcf54fab88ee7">VIRTUAL_TO_PHYSICAL2</a>(gSynthesisReverb.ringBuffer.left + (off))); \</div>
 <div class="line">    aSetBuffer(pkt, 0, c + <a class="code hl_define" href="synthesis_8h.html#a7d0209c82345e7a6205f78c353b70547">DMEM_ADDR_WET_RIGHT_CH</a>, 0, <a class="code hl_define" href="synthesis_8h.html#a595997d04904dfb0bf3bcef45336e373">DEFAULT_LEN_1CH</a> - c);           \</div>
 <div class="line">    aLoadBuffer(pkt, <a class="code hl_define" href="macros_8h.html#ac33bc9457f1c1be3f60fcf54fab88ee7">VIRTUAL_TO_PHYSICAL2</a>(gSynthesisReverb.ringBuffer.right + (off)))</div>
-<div class="ttc" id="amacros_8h_html_ac33bc9457f1c1be3f60fcf54fab88ee7"><div class="ttname"><a href="macros_8h.html#ac33bc9457f1c1be3f60fcf54fab88ee7">VIRTUAL_TO_PHYSICAL2</a></div><div class="ttdeci">#define VIRTUAL_TO_PHYSICAL2(addr)</div><div class="ttdef"><b>Definition</b> macros.h:97</div></div>
+<div class="ttc" id="amacros_8h_html_ac33bc9457f1c1be3f60fcf54fab88ee7"><div class="ttname"><a href="macros_8h.html#ac33bc9457f1c1be3f60fcf54fab88ee7">VIRTUAL_TO_PHYSICAL2</a></div><div class="ttdeci">#define VIRTUAL_TO_PHYSICAL2(addr)</div><div class="ttdef"><b>Definition</b> macros.h:111</div></div>
 <div class="ttc" id="amixer_8h_html_ad2cfe19dfb10c421c5f5dc2147fc3213"><div class="ttname"><a href="mixer_8h.html#ad2cfe19dfb10c421c5f5dc2147fc3213">aSetBuffer</a></div><div class="ttdeci">#define aSetBuffer(pkt, f, i, o, c)</div><div class="ttdef"><b>Definition</b> mixer.h:72</div></div>
 <div class="ttc" id="asynthesis_8h_html_a595997d04904dfb0bf3bcef45336e373"><div class="ttname"><a href="synthesis_8h.html#a595997d04904dfb0bf3bcef45336e373">DEFAULT_LEN_1CH</a></div><div class="ttdeci">#define DEFAULT_LEN_1CH</div><div class="ttdef"><b>Definition</b> synthesis.h:7</div></div>
 <div class="ttc" id="asynthesis_8h_html_a7d0209c82345e7a6205f78c353b70547"><div class="ttname"><a href="synthesis_8h.html#a7d0209c82345e7a6205f78c353b70547">DMEM_ADDR_WET_RIGHT_CH</a></div><div class="ttdeci">#define DMEM_ADDR_WET_RIGHT_CH</div><div class="ttdef"><b>Definition</b> synthesis.h:21</div></div>
@@ -391,6 +394,34 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="aadef44fbc716080f7150c47bd4640469" name="aadef44fbc716080f7150c47bd4640469"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadef44fbc716080f7150c47bd4640469">&#9670;&#160;</a></span>note_apply_surround_effect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Acmd * note_apply_surround_effect </td>
+          <td>(</td>
+          <td class="paramtype">Acmd *</td>          <td class="paramname"><span class="paramname"><em>cmd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structNote.html">Note</a> *</td>          <td class="paramname"><span class="paramname"><em>note</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>bufLen</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Apply surround sound effect using matrix encoding based on depth position. Uses surroundEffectIndex (0x00-0x7F) calculated from Z position: 0x00-0x3F: <a class="el" href="structSound.html">Sound</a> in front (0 = far front, 0x3F = at camera) - less rear effect 0x40-0x7F: <a class="el" href="structSound.html">Sound</a> behind (0x40 = at camera, 0x7F = far behind) - more rear effect</p>
+<p>This creates a rear channel effect by phase-inverting and mixing based on pan and depth. </p>
 
 </div>
 </div>

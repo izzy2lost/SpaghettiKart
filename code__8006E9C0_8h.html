@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/code_8006E9C0.h File Reference</title>
+<title>SpaghettiKart: src/code_8006E9C0.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -166,8 +166,8 @@ Functions</h2></td></tr>
 <tr class="separator:a428812626bfbb8fdfac9ad03f4c8a168"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4169ccf57e19193e35c29a2225ae09c3" id="r_a4169ccf57e19193e35c29a2225ae09c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4169ccf57e19193e35c29a2225ae09c3">init_stars</a> (<a class="el" href="structStarData.html">StarData</a> *)</td></tr>
 <tr class="separator:a4169ccf57e19193e35c29a2225ae09c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afef0314f6f435d008ed32c2aa1e2fed0" id="r_afef0314f6f435d008ed32c2aa1e2fed0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afef0314f6f435d008ed32c2aa1e2fed0">func_8007055C</a> (void)</td></tr>
-<tr class="separator:afef0314f6f435d008ed32c2aa1e2fed0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adabe944683b893973bd60b26b4a9d6f6" id="r_adabe944683b893973bd60b26b4a9d6f6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adabe944683b893973bd60b26b4a9d6f6">func_8007055C</a> (<a class="el" href="structScreenContext.html">ScreenContext</a> *screen)</td></tr>
+<tr class="separator:adabe944683b893973bd60b26b4a9d6f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34850e00e534f9bea4ee89568c0484e8" id="r_a34850e00e534f9bea4ee89568c0484e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34850e00e534f9bea4ee89568c0484e8">func_80070714</a> (void)</td></tr>
 <tr class="separator:a34850e00e534f9bea4ee89568c0484e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a95bd792f4507dd26cf251c980bd9214b" id="r_a95bd792f4507dd26cf251c980bd9214b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a95bd792f4507dd26cf251c980bd9214b">init_course_object</a> (void)</td></tr>
@@ -183,6 +183,10 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
+<tr class="memitem:a86860c73ccac021967c9de5a22986c69" id="r_a86860c73ccac021967c9de5a22986c69"><td class="memItemLeft" align="right" valign="top">Vtx&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86860c73ccac021967c9de5a22986c69">cloudvtx</a> [4][4]</td></tr>
+<tr class="separator:a86860c73ccac021967c9de5a22986c69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2e03bab413badd9cbd27948e7216504" id="r_ac2e03bab413badd9cbd27948e7216504"><td class="memItemLeft" align="right" valign="top">Vtx&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2e03bab413badd9cbd27948e7216504">cloudvtx2</a> [3][4]</td></tr>
+<tr class="separator:ac2e03bab413badd9cbd27948e7216504"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee58b6012d26ac5f24bc57244678bcee" id="r_aee58b6012d26ac5f24bc57244678bcee"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee58b6012d26ac5f24bc57244678bcee">D_800E5520</a> []</td></tr>
 <tr class="separator:aee58b6012d26ac5f24bc57244678bcee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a625d0ad27f8c5a2b2d0efd1899f76dae" id="r_a625d0ad27f8c5a2b2d0efd1899f76dae"><td class="memItemLeft" align="right" valign="top">u8 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a625d0ad27f8c5a2b2d0efd1899f76dae">gCourseOutlineTextures</a> [0x14]</td></tr>
@@ -239,7 +243,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Dma's mario kart 64 logo and course outline textures. </p>
+<p>Dma's mario kart 64 logo and track outline textures. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -304,7 +308,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_addcb705e0abe102e25517666b6a1eb84_cgraph.svg" width="519" height="160"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_addcb705e0abe102e25517666b6a1eb84_cgraph.svg" width="100%" height="460"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -326,7 +330,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a8461a418dd36b6e443d6962bccfb593a_cgraph.svg" width="428" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a8461a418dd36b6e443d6962bccfb593a_cgraph.svg" width="620" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -353,7 +357,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a22fb6641b6733568bce5847c9e1c8ae3_cgraph.svg" width="599" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a22fb6641b6733568bce5847c9e1c8ae3_cgraph.svg" width="100%" height="452"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -407,8 +411,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="afef0314f6f435d008ed32c2aa1e2fed0" name="afef0314f6f435d008ed32c2aa1e2fed0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afef0314f6f435d008ed32c2aa1e2fed0">&#9670;&#160;</a></span>func_8007055C()</h2>
+<a id="adabe944683b893973bd60b26b4a9d6f6" name="adabe944683b893973bd60b26b4a9d6f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adabe944683b893973bd60b26b4a9d6f6">&#9670;&#160;</a></span>func_8007055C()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -416,7 +420,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void func_8007055C </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structScreenContext.html">ScreenContext</a> *</td>          <td class="paramname"><span class="paramname"><em>screen</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -424,12 +428,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_afef0314f6f435d008ed32c2aa1e2fed0_cgraph.svg" width="304" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_adabe944683b893973bd60b26b4a9d6f6_cgraph.svg" width="304" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_afef0314f6f435d008ed32c2aa1e2fed0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_adabe944683b893973bd60b26b4a9d6f6_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -451,7 +455,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a34850e00e534f9bea4ee89568c0484e8_icgraph.svg" width="391" height="307"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a34850e00e534f9bea4ee89568c0484e8_icgraph.svg" width="410" height="266"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -473,7 +477,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a0e71cf9dfcfef5c80bbb7072f220f55f_cgraph.svg" width="350" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a0e71cf9dfcfef5c80bbb7072f220f55f_cgraph.svg" width="648" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -509,7 +513,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a1a87887090ad29534c2cf177e7a01f82_cgraph.svg" width="627" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a1a87887090ad29534c2cf177e7a01f82_cgraph.svg" width="100%" height="468"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -536,7 +540,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a8b710b5185f5a0b310a2bcf9fe470bb1_cgraph.svg" width="100%" height="450"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a8b710b5185f5a0b310a2bcf9fe470bb1_cgraph.svg" width="100%" height="468"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -558,7 +562,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a95bd792f4507dd26cf251c980bd9214b_cgraph.svg" width="364" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a95bd792f4507dd26cf251c980bd9214b_cgraph.svg" width="652" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -612,7 +616,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a9b35328c0ffddc0723de4730c5e41431_cgraph.svg" width="591" height="335"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a9b35328c0ffddc0723de4730c5e41431_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -639,7 +643,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a36e7c29e21274b76d24f7c8864af5c3b_cgraph.svg" width="586" height="187"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a36e7c29e21274b76d24f7c8864af5c3b_cgraph.svg" width="100%" height="514"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -666,7 +670,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_ab7947f630a75f4852fe4e3ea4fc607aa_cgraph.svg" width="591" height="260"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_ab7947f630a75f4852fe4e3ea4fc607aa_cgraph.svg" width="100%" height="514"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -693,7 +697,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_aa98fba14045af26e5c13a6a72442b8be_cgraph.svg" width="591" height="260"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_aa98fba14045af26e5c13a6a72442b8be_cgraph.svg" width="100%" height="514"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -786,7 +790,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a428812626bfbb8fdfac9ad03f4c8a168_icgraph.svg" width="499" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a428812626bfbb8fdfac9ad03f4c8a168_icgraph.svg" width="264" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -809,11 +813,6 @@ Here is the caller graph for this function:</div>
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a4169ccf57e19193e35c29a2225ae09c3_cgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__8006E9C0_8h_a4169ccf57e19193e35c29a2225ae09c3_icgraph.svg" width="328" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -863,6 +862,50 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="a86860c73ccac021967c9de5a22986c69" name="a86860c73ccac021967c9de5a22986c69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86860c73ccac021967c9de5a22986c69">&#9670;&#160;</a></span>cloudvtx</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vtx cloudvtx[4][4]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2e03bab413badd9cbd27948e7216504" name="ac2e03bab413badd9cbd27948e7216504"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2e03bab413badd9cbd27948e7216504">&#9670;&#160;</a></span>cloudvtx2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vtx cloudvtx2[3][4]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="aee58b6012d26ac5f24bc57244678bcee" name="aee58b6012d26ac5f24bc57244678bcee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aee58b6012d26ac5f24bc57244678bcee">&#9670;&#160;</a></span>D_800E5520</h2>
 

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/editor/Editor.h Source File</title>
+<title>SpaghettiKart: src/engine/editor/Editor.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -108,65 +108,87 @@ $(function(){initNavTree('Editor_8h_source.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Editor.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="Editor_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef __EDITOR_H__</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define __EDITOR_H__</span></div>
+<a href="Editor_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef EDITOR_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define EDITOR_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;libultraship/libultraship.h&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;libultra/gbi.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="GameObject_8h.html">GameObject.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="ObjectPicker_8h.html">ObjectPicker.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceEditor.html">Editor</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">class </span><a class="code hl_class" href="classEditor_1_1ObjectPicker.html">ObjectPicker</a>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">class </span>Editor {</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    Editor();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    ~Editor();</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="defines_8h.html">defines.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="GameObject_8h.html">GameObject.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="camera_8h.html">camera.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="ObjectPicker_8h.html">ObjectPicker.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceTrackEditor.html">TrackEditor</a> {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">class </span><a class="code hl_class" href="classTrackEditor_1_1ObjectPicker.html">ObjectPicker</a>;</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <a class="code hl_class" href="classEditor_1_1ObjectPicker.html">ObjectPicker</a> eObjectPicker;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    std::vector&lt;GameObject*&gt; eGameObjects;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> Tick();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> Draw();</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> Load();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_class" href="classEditor_1_1GameObject.html">GameObject</a>* AddObject(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, FVector* pos, IRotator* rot, FVector* scale, Gfx* model, <span class="keywordtype">float</span> collScale, <a class="code hl_enumeration" href="classEditor_1_1GameObject.html#ac70f7d17c6c49208d513814ad5e30a3c">GameObject::CollisionType</a> collision, <span class="keywordtype">float</span> boundingBoxSize, int32_t* despawnFlag, int32_t despawnValue);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> AddLight(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, FVector* pos, s8* rot);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> ClearObjects();</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> RemoveObject();</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> SelectObjectFromSceneExplorer(<a class="code hl_class" href="classEditor_1_1GameObject.html">GameObject</a>* <span class="keywordtype">object</span>);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="Editor_8h.html#a56ce339e6ae26c9416a2f3abf8a9393c">SetLevelDimensions</a>(s16 minX, s16 maxX, s16 minZ, s16 maxZ, s16 minY, s16 maxY);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> ClearMatrixPool();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> DeleteObject();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">bool</span> bEditorEnabled = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">bool</span> _draw = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_typedef" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a> _ray;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_enumvalue" href="namespaceSF64.html#a1130ee4440f43e7a45454de29f6bc813aa860868d23f3a68323a2e3f6563d7f31">s32</a> Inverse(MtxF* src, MtxF* dest);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="EditorMath_8h.html#ab214e16f2975deed27a80057b08125aa">Copy</a>(MtxF* src, MtxF* dest);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="EditorMath_8h.html#a184566c244b6f86ed1728ff62afee2bc">Clear</a>(MtxF* mf);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="Editor_8h.html#a56ce339e6ae26c9416a2f3abf8a9393c">   46</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="Editor_8h.html#a56ce339e6ae26c9416a2f3abf8a9393c">SetLevelDimensions</a>(s16 minX, s16 maxX, s16 minZ, s16 maxZ, s16 minY, s16 maxY);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="preprocessor">#endif </span><span class="comment">// __EDITOR_H__</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">class </span>Editor {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">static</span> Editor* Instance;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    Editor();</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    ~Editor();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    ObjectPicker eObjectPicker;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    std::vector&lt;std::unique_ptr&lt;GameObject&gt;&gt; eGameObjects;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> Load();</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> Enable();</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> Disable();</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">bool</span> IsEnabled();</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> Play();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> Pause();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">bool</span> IsPaused();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">void</span> TogglePlayState();</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> Tick();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> Draw();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> GenerateCollision();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    GameObject* AddObject(FVector pos, IRotator rot, FVector scale, <span class="keyword">const</span> <span class="keywordtype">char</span>* model, <span class="keywordtype">float</span> collScale, GameObject::CollisionType collision, <span class="keywordtype">float</span> boundingBoxSize);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> AddLight(<span class="keyword">const</span> <span class="keywordtype">char</span>* name, FVector* pos, s8* rot);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> ClearObjects();</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> ResetGizmo();</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> RemoveObject();</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> SelectObjectFromSceneExplorer(std::variant&lt;AActor*, OObject*, GameObject*&gt; <span class="keywordtype">object</span>);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> SetLevelDimensions(s16 minX, s16 maxX, s16 minZ, s16 maxZ, s16 minY, s16 maxY);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordtype">void</span> ClearMatrixPool();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> DeleteObject();</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">bool</span> bIsEditorPaused = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">bool</span> bEditorEnabled = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">bool</span> _draw = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_typedef" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a> _ray;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <a class="code hl_enumvalue" href="namespaceSF64.html#a1130ee4440f43e7a45454de29f6bc813aa860868d23f3a68323a2e3f6563d7f31">s32</a> Inverse(MtxF* src, MtxF* dest);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="EditorMath_8h.html#ab214e16f2975deed27a80057b08125aa">Copy</a>(MtxF* src, MtxF* dest);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="EditorMath_8h.html#a184566c244b6f86ed1728ff62afee2bc">Clear</a>(MtxF* mf);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>};</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>} <span class="comment">// namespace TrackEditor</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif </span><span class="comment">// __cplusplus</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><a class="code hl_define" href="defines_8h.html#abbaccfbed35b945162c27ef6d3748e77">EXTERN_C</a> <span class="keywordtype">void</span> <a class="code hl_function" href="Editor_8h.html#ad9e6ebd00224233c0486631bcdb51c31">Editor_Launch</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* resourceName);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><a class="code hl_define" href="defines_8h.html#abbaccfbed35b945162c27ef6d3748e77">EXTERN_C</a> <span class="keywordtype">void</span> <a class="code hl_function" href="Editor_8h.html#a48e06a8e70922f249e55c68a159fd37d">Editor_SetLevelDimensions</a>(s16 minX, s16 maxX, s16 minZ, s16 maxZ, s16 minY, s16 maxY);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><a class="code hl_define" href="defines_8h.html#abbaccfbed35b945162c27ef6d3748e77">EXTERN_C</a> <span class="keywordtype">bool</span> <a class="code hl_function" href="Editor_8h.html#a0e604a667da52797e52a188eef706a48">Editor_IsEnabled</a>();</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span><a class="code hl_define" href="defines_8h.html#abbaccfbed35b945162c27ef6d3748e77">EXTERN_C</a> <span class="keywordtype">bool</span> <a class="code hl_function" href="Editor_8h.html#a1131d9e78b967e764162f8a416234891">Editor_IsPaused</a>();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="preprocessor">#endif </span><span class="comment">// EDITOR_H</span></div>
 <div class="ttc" id="aEditorMath_8h_html_a184566c244b6f86ed1728ff62afee2bc"><div class="ttname"><a href="EditorMath_8h.html#a184566c244b6f86ed1728ff62afee2bc">Clear</a></div><div class="ttdeci">void Clear(MtxF *mf)</div></div>
 <div class="ttc" id="aEditorMath_8h_html_ab214e16f2975deed27a80057b08125aa"><div class="ttname"><a href="EditorMath_8h.html#ab214e16f2975deed27a80057b08125aa">Copy</a></div><div class="ttdeci">void Copy(MtxF *src, MtxF *dest)</div></div>
-<div class="ttc" id="aEditor_8h_html_a56ce339e6ae26c9416a2f3abf8a9393c"><div class="ttname"><a href="Editor_8h.html#a56ce339e6ae26c9416a2f3abf8a9393c">SetLevelDimensions</a></div><div class="ttdeci">void SetLevelDimensions(s16 minX, s16 maxX, s16 minZ, s16 maxZ, s16 minY, s16 maxY)</div></div>
+<div class="ttc" id="aEditor_8h_html_a0e604a667da52797e52a188eef706a48"><div class="ttname"><a href="Editor_8h.html#a0e604a667da52797e52a188eef706a48">Editor_IsEnabled</a></div><div class="ttdeci">EXTERN_C bool Editor_IsEnabled()</div><div class="ttdef"><b>Definition</b> Editor.cpp:255</div></div>
+<div class="ttc" id="aEditor_8h_html_a1131d9e78b967e764162f8a416234891"><div class="ttname"><a href="Editor_8h.html#a1131d9e78b967e764162f8a416234891">Editor_IsPaused</a></div><div class="ttdeci">EXTERN_C bool Editor_IsPaused()</div><div class="ttdef"><b>Definition</b> Editor.cpp:259</div></div>
+<div class="ttc" id="aEditor_8h_html_a48e06a8e70922f249e55c68a159fd37d"><div class="ttname"><a href="Editor_8h.html#a48e06a8e70922f249e55c68a159fd37d">Editor_SetLevelDimensions</a></div><div class="ttdeci">EXTERN_C void Editor_SetLevelDimensions(s16 minX, s16 maxX, s16 minZ, s16 maxZ, s16 minY, s16 maxY)</div><div class="ttdef"><b>Definition</b> Editor.cpp:251</div></div>
+<div class="ttc" id="aEditor_8h_html_ad9e6ebd00224233c0486631bcdb51c31"><div class="ttname"><a href="Editor_8h.html#ad9e6ebd00224233c0486631bcdb51c31">Editor_Launch</a></div><div class="ttdeci">EXTERN_C void Editor_Launch(const char *resourceName)</div><div class="ttdef"><b>Definition</b> Editor.cpp:244</div></div>
 <div class="ttc" id="aGameObject_8h_html"><div class="ttname"><a href="GameObject_8h.html">GameObject.h</a></div></div>
 <div class="ttc" id="aObjectPicker_8h_html"><div class="ttname"><a href="ObjectPicker_8h.html">ObjectPicker.h</a></div></div>
-<div class="ttc" id="aclassEditor_1_1GameObject_html"><div class="ttname"><a href="classEditor_1_1GameObject.html">Editor::GameObject</a></div><div class="ttdef"><b>Definition</b> GameObject.h:17</div></div>
-<div class="ttc" id="aclassEditor_1_1GameObject_html_ac70f7d17c6c49208d513814ad5e30a3c"><div class="ttname"><a href="classEditor_1_1GameObject.html#ac70f7d17c6c49208d513814ad5e30a3c">Editor::GameObject::CollisionType</a></div><div class="ttdeci">CollisionType</div><div class="ttdef"><b>Definition</b> GameObject.h:19</div></div>
-<div class="ttc" id="aclassEditor_1_1ObjectPicker_html"><div class="ttname"><a href="classEditor_1_1ObjectPicker.html">Editor::ObjectPicker</a></div><div class="ttdef"><b>Definition</b> ObjectPicker.h:10</div></div>
+<div class="ttc" id="acamera_8h_html"><div class="ttname"><a href="camera_8h.html">camera.h</a></div></div>
+<div class="ttc" id="aclassTrackEditor_1_1ObjectPicker_html"><div class="ttname"><a href="classTrackEditor_1_1ObjectPicker.html">TrackEditor::ObjectPicker</a></div><div class="ttdef"><b>Definition</b> ObjectPicker.h:11</div></div>
 <div class="ttc" id="acommon__structs_8h_html_a5290523279339ea495248ab3a36cb46e"><div class="ttname"><a href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a></div><div class="ttdeci">f32 Vec3f[3]</div><div class="ttdef"><b>Definition</b> common_structs.h:10</div></div>
-<div class="ttc" id="anamespaceEditor_html"><div class="ttname"><a href="namespaceEditor.html">Editor</a></div><div class="ttdef"><b>Definition</b> Collision.cpp:12</div></div>
+<div class="ttc" id="adefines_8h_html"><div class="ttname"><a href="defines_8h.html">defines.h</a></div></div>
+<div class="ttc" id="adefines_8h_html_abbaccfbed35b945162c27ef6d3748e77"><div class="ttname"><a href="defines_8h.html#abbaccfbed35b945162c27ef6d3748e77">EXTERN_C</a></div><div class="ttdeci">#define EXTERN_C</div><div class="ttdef"><b>Definition</b> defines.h:9</div></div>
 <div class="ttc" id="anamespaceSF64_html_a1130ee4440f43e7a45454de29f6bc813aa860868d23f3a68323a2e3f6563d7f31"><div class="ttname"><a href="namespaceSF64.html#a1130ee4440f43e7a45454de29f6bc813aa860868d23f3a68323a2e3f6563d7f31">SF64::ArrayType::s32</a></div><div class="ttdeci">@ s32</div><div class="ttdef"><b>Definition</b> GenericArray.h:57</div></div>
+<div class="ttc" id="anamespaceTrackEditor_html"><div class="ttname"><a href="namespaceTrackEditor.html">TrackEditor</a></div><div class="ttdef"><b>Definition</b> Collision.cpp:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

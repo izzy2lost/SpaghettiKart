@@ -1,4 +1,4 @@
 var GameObject_8h =
 [
-    [ "Editor::GameObject", "classEditor_1_1GameObject.html", "classEditor_1_1GameObject" ]
+    [ "TrackEditor::GameObject", "classTrackEditor_1_1GameObject.html", "classTrackEditor_1_1GameObject" ]
 ];

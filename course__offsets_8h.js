@@ -1,7 +1,6 @@
 var course__offsets_8h =
 [
     [ "course_texture", "structcourse__texture.html", "structcourse__texture" ],
-    [ "d_course_koopa_troopa_beach_dl_list1", "course__offsets_8h.html#a8e0321808d46864840ea6b2a37f14ed9", null ],
     [ "d_course_koopa_troopa_beach_unk4", "course__offsets_8h.html#a4a4c7c3e89ad0306dd496d688616b0a4", null ],
     [ "d_course_koopa_troopa_beach_unk_data1", "course__offsets_8h.html#a5502b8675e74f632b0910b9d85eaac3b", null ],
     [ "d_course_koopa_troopa_beach_unk_data2", "course__offsets_8h.html#ad3afcd646013b41839b024849013b0ad", null ],
@@ -32,6 +31,5 @@ var course__offsets_8h =
     [ "d_rainbow_road_unk2", "course__offsets_8h.html#a53767faecf03d0490683062c56d149af", null ],
     [ "d_rainbow_road_unk3", "course__offsets_8h.html#af5931e32e0671978cc86e7f55d175869", null ],
     [ "d_rainbow_road_unk4", "course__offsets_8h.html#ac876c026dc353cb5a6f0cee876380965", null ],
-    [ "d_rainbow_road_unk5", "course__offsets_8h.html#a4229d71008c0d76ea0985d4ffdf8dff5", null ],
-    [ "koopa_troopa_beach_dls2", "course__offsets_8h.html#a69ce56dedc90a6e392b23a2e0f6c95d8", null ]
+    [ "d_rainbow_road_unk5", "course__offsets_8h.html#a4229d71008c0d76ea0985d4ffdf8dff5", null ]
 ];

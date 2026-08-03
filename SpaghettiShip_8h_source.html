@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/actors/SpaghettiShip.h Source File</title>
+<title>SpaghettiKart: src/engine/actors/SpaghettiShip.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -112,43 +112,61 @@ $(function(){initNavTree('SpaghettiShip_8h_source.html',''); initResizable(true)
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;libultraship.h&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;libultra/gbi.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="Actor_8h.html">engine/Actor.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="CoreMath_8h.html">CoreMath.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="common__structs_8h.html">common_structs.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="other__textures_8h.html">assets/other_textures.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classASpaghettiShip.html">   13</a></span><span class="keyword">class </span><a class="code hl_function" href="classASpaghettiShip.html#a3629cb80beeeba3f55e12ea34502befc">ASpaghettiShip</a> : <span class="keyword">public</span> <a class="code hl_function" href="classAActor.html#a679c43bacf3600fa2d7a6ab30e34a8a6">AActor</a> {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classASpaghettiShip.html#a3629cb80beeeba3f55e12ea34502befc">ASpaghettiShip</a>(<a class="code hl_struct" href="structFVector.html">FVector</a> pos);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classASpaghettiShip.html#aeff430eeb899c9947907a2dc37db78bf">   16</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classASpaghettiShip.html#aeff430eeb899c9947907a2dc37db78bf">~ASpaghettiShip</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classASpaghettiShip.html#aabfb3bdc331da98c0e6caacf02797c31">Tick</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classASpaghettiShip.html#a858f477eef6a77fed29a3816132f6c8e">Draw</a>(<a class="code hl_struct" href="structCamera.html">Camera</a>*) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classASpaghettiShip.html#add9f1d22edf9d14a6f6216c8f29b8162">IsMod</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classASpaghettiShip.html#ae0caaf23c6e8ac02d10f9a280a405e5b">   22</a></span>    <a class="code hl_struct" href="structFVector.html">FVector</a> <a class="code hl_variable" href="classASpaghettiShip.html#ae0caaf23c6e8ac02d10f9a280a405e5b">Spawn</a>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classASpaghettiShip.html#a6e18988fe2b57a8b4b7828b846cb5c33">   23</a></span>    <a class="code hl_struct" href="structIRotator.html">IRotator</a> <a class="code hl_variable" href="classASpaghettiShip.html#a6e18988fe2b57a8b4b7828b846cb5c33">WheelRot</a> = {0, 0, 0};</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>};</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="CoreMath_8h.html">engine/CoreMath.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="RegisterContent_8h.html">engine/registry/RegisterContent.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="Actor_8h.html">engine/Actor.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="World_8h.html">engine/World.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="common__structs_8h.html">common_structs.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="other__textures_8h.html">assets/textures/other_textures.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classASpaghettiShip.html">   15</a></span><span class="keyword">class </span><a class="code hl_function" href="classASpaghettiShip.html#a9703a45b24d276dac60056d11a1be96d">ASpaghettiShip</a> : <span class="keyword">public</span> <a class="code hl_function" href="classAActor.html#a679c43bacf3600fa2d7a6ab30e34a8a6">AActor</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classASpaghettiShip.html#a9703a45b24d276dac60056d11a1be96d">ASpaghettiShip</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a>&amp; params);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classASpaghettiShip.html#aeff430eeb899c9947907a2dc37db78bf">   18</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classASpaghettiShip.html#aeff430eeb899c9947907a2dc37db78bf">~ASpaghettiShip</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">// This is simply a helper function to keep Spawning code clean</span></div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classASpaghettiShip.html#a5c3f797a35270f2c359f4961136d173c">   21</a></span>    <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_function" href="classASpaghettiShip.html#a9703a45b24d276dac60056d11a1be96d">ASpaghettiShip</a>* <a class="code hl_function" href="classASpaghettiShip.html#a5c3f797a35270f2c359f4961136d173c">Spawn</a>(<a class="code hl_struct" href="structFVector.html">FVector</a> pos, <a class="code hl_struct" href="structIRotator.html">IRotator</a> rot, <a class="code hl_struct" href="structFVector.html">FVector</a> scale) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a> params = {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            .Name = <span class="stringliteral">&quot;hm:spaghetti_ship&quot;</span>,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            .Location = pos,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            .Rotation = rot,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            .Scale = scale,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        };</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_function" href="classASpaghettiShip.html#a9703a45b24d276dac60056d11a1be96d">ASpaghettiShip</a>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="RegisterContent_8h.html#aa90aab222b9cb6a7a75c2ed09379eb4e">AddActorToWorld&lt;ASpaghettiShip&gt;</a>(params));</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    }</div>
+</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classASpaghettiShip.html#aabfb3bdc331da98c0e6caacf02797c31">Tick</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classASpaghettiShip.html#a858f477eef6a77fed29a3816132f6c8e">Draw</a>(<a class="code hl_struct" href="structCamera.html">Camera</a>*) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classASpaghettiShip.html#add9f1d22edf9d14a6f6216c8f29b8162">IsMod</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classASpaghettiShip.html#a6e18988fe2b57a8b4b7828b846cb5c33">   35</a></span>    <a class="code hl_struct" href="structIRotator.html">IRotator</a> <a class="code hl_variable" href="classASpaghettiShip.html#a6e18988fe2b57a8b4b7828b846cb5c33">WheelRot</a> = {0, 0, 0};</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>};</div>
 </div>
 <div class="ttc" id="aActor_8h_html"><div class="ttname"><a href="Actor_8h.html">Actor.h</a></div></div>
 <div class="ttc" id="aCoreMath_8h_html"><div class="ttname"><a href="CoreMath_8h.html">CoreMath.h</a></div></div>
-<div class="ttc" id="aclassAActor_html_a679c43bacf3600fa2d7a6ab30e34a8a6"><div class="ttname"><a href="classAActor.html#a679c43bacf3600fa2d7a6ab30e34a8a6">AActor::AActor</a></div><div class="ttdeci">AActor()</div><div class="ttdef"><b>Definition</b> Actor.cpp:10</div></div>
-<div class="ttc" id="aclassASpaghettiShip_html_a3629cb80beeeba3f55e12ea34502befc"><div class="ttname"><a href="classASpaghettiShip.html#a3629cb80beeeba3f55e12ea34502befc">ASpaghettiShip::ASpaghettiShip</a></div><div class="ttdeci">ASpaghettiShip(FVector pos)</div><div class="ttdef"><b>Definition</b> SpaghettiShip.cpp:13</div></div>
-<div class="ttc" id="aclassASpaghettiShip_html_a6e18988fe2b57a8b4b7828b846cb5c33"><div class="ttname"><a href="classASpaghettiShip.html#a6e18988fe2b57a8b4b7828b846cb5c33">ASpaghettiShip::WheelRot</a></div><div class="ttdeci">IRotator WheelRot</div><div class="ttdef"><b>Definition</b> SpaghettiShip.h:23</div></div>
-<div class="ttc" id="aclassASpaghettiShip_html_a858f477eef6a77fed29a3816132f6c8e"><div class="ttname"><a href="classASpaghettiShip.html#a858f477eef6a77fed29a3816132f6c8e">ASpaghettiShip::Draw</a></div><div class="ttdeci">virtual void Draw(Camera *) override</div><div class="ttdef"><b>Definition</b> SpaghettiShip.cpp:40</div></div>
-<div class="ttc" id="aclassASpaghettiShip_html_aabfb3bdc331da98c0e6caacf02797c31"><div class="ttname"><a href="classASpaghettiShip.html#aabfb3bdc331da98c0e6caacf02797c31">ASpaghettiShip::Tick</a></div><div class="ttdeci">virtual void Tick() override</div><div class="ttdef"><b>Definition</b> SpaghettiShip.cpp:23</div></div>
-<div class="ttc" id="aclassASpaghettiShip_html_add9f1d22edf9d14a6f6216c8f29b8162"><div class="ttname"><a href="classASpaghettiShip.html#add9f1d22edf9d14a6f6216c8f29b8162">ASpaghettiShip::IsMod</a></div><div class="ttdeci">virtual bool IsMod() override</div><div class="ttdef"><b>Definition</b> SpaghettiShip.cpp:81</div></div>
-<div class="ttc" id="aclassASpaghettiShip_html_ae0caaf23c6e8ac02d10f9a280a405e5b"><div class="ttname"><a href="classASpaghettiShip.html#ae0caaf23c6e8ac02d10f9a280a405e5b">ASpaghettiShip::Spawn</a></div><div class="ttdeci">FVector Spawn</div><div class="ttdef"><b>Definition</b> SpaghettiShip.h:22</div></div>
+<div class="ttc" id="aRegisterContent_8h_html"><div class="ttname"><a href="RegisterContent_8h.html">RegisterContent.h</a></div></div>
+<div class="ttc" id="aRegisterContent_8h_html_aa90aab222b9cb6a7a75c2ed09379eb4e"><div class="ttname"><a href="RegisterContent_8h.html#aa90aab222b9cb6a7a75c2ed09379eb4e">AddActorToWorld</a></div><div class="ttdeci">static AActor * AddActorToWorld(const SpawnParams &amp;params)</div><div class="ttdef"><b>Definition</b> RegisterContent.h:14</div></div>
+<div class="ttc" id="aWorld_8h_html"><div class="ttname"><a href="World_8h.html">World.h</a></div></div>
+<div class="ttc" id="aclassAActor_html_a679c43bacf3600fa2d7a6ab30e34a8a6"><div class="ttname"><a href="classAActor.html#a679c43bacf3600fa2d7a6ab30e34a8a6">AActor::AActor</a></div><div class="ttdeci">AActor()</div><div class="ttdef"><b>Definition</b> Actor.cpp:13</div></div>
+<div class="ttc" id="aclassASpaghettiShip_html_a5c3f797a35270f2c359f4961136d173c"><div class="ttname"><a href="classASpaghettiShip.html#a5c3f797a35270f2c359f4961136d173c">ASpaghettiShip::Spawn</a></div><div class="ttdeci">static ASpaghettiShip * Spawn(FVector pos, IRotator rot, FVector scale)</div><div class="ttdef"><b>Definition</b> SpaghettiShip.h:21</div></div>
+<div class="ttc" id="aclassASpaghettiShip_html_a6e18988fe2b57a8b4b7828b846cb5c33"><div class="ttname"><a href="classASpaghettiShip.html#a6e18988fe2b57a8b4b7828b846cb5c33">ASpaghettiShip::WheelRot</a></div><div class="ttdeci">IRotator WheelRot</div><div class="ttdef"><b>Definition</b> SpaghettiShip.h:35</div></div>
+<div class="ttc" id="aclassASpaghettiShip_html_a858f477eef6a77fed29a3816132f6c8e"><div class="ttname"><a href="classASpaghettiShip.html#a858f477eef6a77fed29a3816132f6c8e">ASpaghettiShip::Draw</a></div><div class="ttdeci">virtual void Draw(Camera *) override</div><div class="ttdef"><b>Definition</b> SpaghettiShip.cpp:49</div></div>
+<div class="ttc" id="aclassASpaghettiShip_html_a9703a45b24d276dac60056d11a1be96d"><div class="ttname"><a href="classASpaghettiShip.html#a9703a45b24d276dac60056d11a1be96d">ASpaghettiShip::ASpaghettiShip</a></div><div class="ttdeci">ASpaghettiShip(const SpawnParams &amp;params)</div><div class="ttdef"><b>Definition</b> SpaghettiShip.cpp:13</div></div>
+<div class="ttc" id="aclassASpaghettiShip_html_aabfb3bdc331da98c0e6caacf02797c31"><div class="ttname"><a href="classASpaghettiShip.html#aabfb3bdc331da98c0e6caacf02797c31">ASpaghettiShip::Tick</a></div><div class="ttdeci">virtual void Tick() override</div><div class="ttdef"><b>Definition</b> SpaghettiShip.cpp:31</div></div>
+<div class="ttc" id="aclassASpaghettiShip_html_add9f1d22edf9d14a6f6216c8f29b8162"><div class="ttname"><a href="classASpaghettiShip.html#add9f1d22edf9d14a6f6216c8f29b8162">ASpaghettiShip::IsMod</a></div><div class="ttdeci">virtual bool IsMod() override</div><div class="ttdef"><b>Definition</b> SpaghettiShip.cpp:90</div></div>
 <div class="ttc" id="aclassASpaghettiShip_html_aeff430eeb899c9947907a2dc37db78bf"><div class="ttname"><a href="classASpaghettiShip.html#aeff430eeb899c9947907a2dc37db78bf">ASpaghettiShip::~ASpaghettiShip</a></div><div class="ttdeci">virtual ~ASpaghettiShip()=default</div></div>
 <div class="ttc" id="acommon__structs_8h_html"><div class="ttname"><a href="common__structs_8h.html">common_structs.h</a></div></div>
 <div class="ttc" id="aother__textures_8h_html"><div class="ttname"><a href="other__textures_8h.html">other_textures.h</a></div></div>
-<div class="ttc" id="astructCamera_html"><div class="ttname"><a href="structCamera.html">Camera</a></div><div class="ttdef"><b>Definition</b> camera.h:27</div></div>
-<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:18</div></div>
-<div class="ttc" id="astructIRotator_html"><div class="ttname"><a href="structIRotator.html">IRotator</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:123</div></div>
+<div class="ttc" id="astructCamera_html"><div class="ttname"><a href="structCamera.html">Camera</a></div><div class="ttdef"><b>Definition</b> camera.h:35</div></div>
+<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:30</div></div>
+<div class="ttc" id="astructIRotator_html"><div class="ttname"><a href="structIRotator.html">IRotator</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:141</div></div>
+<div class="ttc" id="astructSpawnParams_html"><div class="ttname"><a href="structSpawnParams.html">SpawnParams</a></div><div class="ttdef"><b>Definition</b> SpawnParams.h:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/code_80005FD0.c File Reference</title>
+<title>SpaghettiKart: src/code_80005FD0.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -118,26 +118,25 @@ $(function(){initNavTree('code__80005FD0_8c.html',''); initResizable(true); });
 <code>#include &lt;<a class="el" href="stubs_8h_source.html">stubs.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="course__metadata_8h_source.html">course_metadata.h</a>&quot;</code><br />
 <code>#include &lt;<a class="el" href="align__asset__macro_8h_source.html">align_asset_macro.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="string_8h_source.html">string.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="code__80005FD0_8h_source.html">code_80005FD0.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="math__util_8h_source.html">math_util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="math__util_8h_source.html">racing/math_util.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__800029B0_8h_source.html">code_800029B0.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="memory_8h_source.html">racing/memory.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="waypoints_8h_source.html">waypoints.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="camera_8h_source.html">camera.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="actors_8h_source.html">actors.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="actors__extended_8h_source.html">actors_extended.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="actors_8h_source.html">racing/actors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="actors__extended_8h_source.html">racing/actors_extended.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="render__player_8h_source.html">render_player.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="player__controller_8h_source.html">player_controller.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="update__objects_8h_source.html">update_objects.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="collision_8h_source.html">collision.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="collision_8h_source.html">racing/collision.h</a>&quot;</code><br />
 <code>#include &lt;<a class="el" href="actor__types_8h_source.html">actor_types.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="vehicles_8h_source.html">vehicles.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="render__objects_8h_source.html">render_objects.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80057C60_8h_source.html">code_80057C60.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="bomb__kart_8h_source.html">bomb_kart.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="all__course__data_8h_source.html">courses/all_course_data.h</a>&quot;</code><br />
-<code>#include &lt;<a class="el" href="common__data_8h_source.html">assets/common_data.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="models_2common__data_8h_source.html">assets/models/common_data.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="common__structs_8h_source.html">common_structs.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="menus_8h_source.html">menus.h</a>&quot;</code><br />
@@ -147,12 +146,16 @@ $(function(){initNavTree('code__80005FD0_8c.html',''); initResizable(true); });
 <code>#include &quot;<a class="el" href="spawn__players_8h_source.html">spawn_players.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="sounds_8h_source.html">sounds.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="path__spawn__metadata_8h_source.html">data/path_spawn_metadata.h</a>&quot;</code><br />
-<code>#include &lt;<a class="el" href="kalimari__desert__data_8h_source.html">assets/kalimari_desert_data.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="frappe__snowland__data_8h_source.html">assets/frappe_snowland_data.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="dks__jungle__parkway__data_8h_source.html">assets/dks_jungle_parkway_data.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="models_2tracks_2kalimari__desert_2kalimari__desert__data_8h_source.html">assets/models/tracks/kalimari_desert/kalimari_desert_data.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="other_2tracks_2kalimari__desert_2kalimari__desert__data_8h_source.html">assets/other/tracks/kalimari_desert/kalimari_desert_data.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="models_2tracks_2frappe__snowland_2frappe__snowland__data_8h_source.html">assets/models/tracks/frappe_snowland/frappe_snowland_data.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="models_2tracks_2dks__jungle__parkway_2dks__jungle__parkway__data_8h_source.html">assets/models/tracks/dks_jungle_parkway/dks_jungle_parkway_data.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="other_2tracks_2dks__jungle__parkway_2dks__jungle__parkway__data_8h_source.html">assets/other/tracks/dks_jungle_parkway/dks_jungle_parkway_data.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="stdio_8h_source.html">stdio.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="Game_8h_source.html">port/Game.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Course_8h_source.html">engine/courses/Course.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="FrameInterpolation_8h_source.html">port/interpolation/FrameInterpolation.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Track_8h_source.html">engine/tracks/Track.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="RaceManager_8h_source.html">engine/RaceManager.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for code_80005FD0.c:</div>
 <div class="dyncontent">
@@ -276,8 +279,6 @@ Functions</h2></td></tr>
 <tr class="separator:a124bae511133f507498b19842362feeb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a777de4239351e9266f8b367ce46cb936" id="r_a777de4239351e9266f8b367ce46cb936"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a777de4239351e9266f8b367ce46cb936">update_vehicle_following_path</a> (<a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a> pos, s16 *waypointIndex, f32 speed)</td></tr>
 <tr class="separator:a777de4239351e9266f8b367ce46cb936"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada59072ef0e7fec8eb6eeaabdc4ebe03" id="r_ada59072ef0e7fec8eb6eeaabdc4ebe03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada59072ef0e7fec8eb6eeaabdc4ebe03">set_bomb_kart_spawn_positions</a> (void)</td></tr>
-<tr class="separator:ada59072ef0e7fec8eb6eeaabdc4ebe03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7cfd2edb9055380080a6c1c577d042f" id="r_ad7cfd2edb9055380080a6c1c577d042f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7cfd2edb9055380080a6c1c577d042f">func_8000DF8C</a> (s32 bombKartId)</td></tr>
 <tr class="separator:ad7cfd2edb9055380080a6c1c577d042f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8b362cc15beb71aeda9bef462c4826a" id="r_aa8b362cc15beb71aeda9bef462c4826a"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8b362cc15beb71aeda9bef462c4826a">add_actor_in_unexpired_actor_list</a> (s32 actorIndex, s16 arg1)</td></tr>
@@ -326,8 +327,8 @@ Functions</h2></td></tr>
 <tr class="separator:ac09cdba0d303bd516359b9ae117e59e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a63ad6d0756cdc4682b0032051cc628ce" id="r_a63ad6d0756cdc4682b0032051cc628ce"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63ad6d0756cdc4682b0032051cc628ce">process_path_data</a> (<a class="el" href="structTrackPathPoint.html">TrackPathPoint</a> *dest, <a class="el" href="structTrackPathPoint.html">TrackPathPoint</a> *src)</td></tr>
 <tr class="separator:a63ad6d0756cdc4682b0032051cc628ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a403601bbb10b12b65da581a7174b604a" id="r_a403601bbb10b12b65da581a7174b604a"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a403601bbb10b12b65da581a7174b604a">generate_2d_path</a> (<a class="el" href="structPath2D.html">Path2D</a> *pathDest, <a class="el" href="structTrackPathPoint.html">TrackPathPoint</a> *pathSrc, s32 numWaypoints)</td></tr>
-<tr class="separator:a403601bbb10b12b65da581a7174b604a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70c4bea6ff8c2dc33df2f2513cdb267e" id="r_a70c4bea6ff8c2dc33df2f2513cdb267e"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70c4bea6ff8c2dc33df2f2513cdb267e">generate_2d_path</a> (<a class="el" href="structTrackPathPoint.html">TrackPathPoint</a> *pathDest, <a class="el" href="structTrackPathPoint.html">TrackPathPoint</a> *pathSrc, s32 numWaypoints)</td></tr>
+<tr class="separator:a70c4bea6ff8c2dc33df2f2513cdb267e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac842533b23b073d73ad370538493ac1c" id="r_ac842533b23b073d73ad370538493ac1c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac842533b23b073d73ad370538493ac1c">copy_courses_cpu_behaviour</a> (void)</td></tr>
 <tr class="separator:ac842533b23b073d73ad370538493ac1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a135ec35ea5dd53f5ceaeda9e3ca8eb41" id="r_a135ec35ea5dd53f5ceaeda9e3ca8eb41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a135ec35ea5dd53f5ceaeda9e3ca8eb41">reset_cpu_behaviour_none</a> (s32 playerIndex)</td></tr>
@@ -348,8 +349,8 @@ Functions</h2></td></tr>
 <tr class="separator:ac09d6179e07d0c2a8e389047c32596ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac8070bcd41974c70ea8b6d4218b1ebef" id="r_ac8070bcd41974c70ea8b6d4218b1ebef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac8070bcd41974c70ea8b6d4218b1ebef">spawn_vehicle_on_road</a> (<a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a> position, <a class="el" href="common__structs_8h.html#a95eb48a2f3630571bea260858dd23e92">Vec3s</a> rotation, <a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a> velocity, s32 waypointIndex, s32 someMultiplierTheSequel, f32 speed)</td></tr>
 <tr class="separator:ac8070bcd41974c70ea8b6d4218b1ebef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d03acc760d1ae182fcb81f952f0ce67" id="r_a6d03acc760d1ae182fcb81f952f0ce67"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d03acc760d1ae182fcb81f952f0ce67">set_vehicle_pos_path_point</a> (<a class="el" href="structTrainCarStuff.html">TrainCarStuff</a> *trainCar, <a class="el" href="structPath2D.html">Path2D</a> *posXZ, u16 waypoint)</td></tr>
-<tr class="separator:a6d03acc760d1ae182fcb81f952f0ce67"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a905c0b4107a7a9717f49b4efcaacad4e" id="r_a905c0b4107a7a9717f49b4efcaacad4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a905c0b4107a7a9717f49b4efcaacad4e">set_vehicle_pos_path_point</a> (<a class="el" href="structTrainCarStuff.html">TrainCarStuff</a> *trainCar, <a class="el" href="structTrackPathPoint.html">TrackPathPoint</a> *pos, u16 waypoint)</td></tr>
+<tr class="separator:a905c0b4107a7a9717f49b4efcaacad4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:add32d29ccee5e9c29d843bf59cab2414" id="r_add32d29ccee5e9c29d843bf59cab2414"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#add32d29ccee5e9c29d843bf59cab2414">init_vehicles_trains</a> (size_t i, size_t numCarriages, f32 speed)</td></tr>
 <tr class="separator:add32d29ccee5e9c29d843bf59cab2414"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a635f355cc0b12fbd4f6eca901ec1dca8" id="r_a635f355cc0b12fbd4f6eca901ec1dca8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a635f355cc0b12fbd4f6eca901ec1dca8">sync_train_components</a> (<a class="el" href="structTrainCarStuff.html">TrainCarStuff</a> *trainCar, s16 orientationY)</td></tr>
@@ -465,12 +466,14 @@ Functions</h2></td></tr>
 <tr class="separator:a61da9c57e00b21e4a075bf9d41b932a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6065fa509a905eea7a2993cc3cfbb21e" id="r_a6065fa509a905eea7a2993cc3cfbb21e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6065fa509a905eea7a2993cc3cfbb21e">func_80019760</a> (<a class="el" href="structCamera.html">Camera</a> *camera, <a class="el" href="macros_8h.html#addf5ec070e9499d36b7f2009ce736076">UNUSED</a> <a class="el" href="structPlayer.html">Player</a> *player, <a class="el" href="macros_8h.html#addf5ec070e9499d36b7f2009ce736076">UNUSED</a> s32 arg2, s32 cameraId)</td></tr>
 <tr class="separator:a6065fa509a905eea7a2993cc3cfbb21e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8d21c866c74e866e873dfd2f67c3c8da" id="r_a8d21c866c74e866e873dfd2f67c3c8da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d21c866c74e866e873dfd2f67c3c8da">func_80019890</a> (s32 playerId, s32 cameraId)</td></tr>
-<tr class="separator:a8d21c866c74e866e873dfd2f67c3c8da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04597eec92885142343602eb9cd67c8a" id="r_a04597eec92885142343602eb9cd67c8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04597eec92885142343602eb9cd67c8a">camera_start_cinematic_shot</a> (s32 playerId, s32 cameraId)</td></tr>
+<tr class="separator:a04597eec92885142343602eb9cd67c8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab87e9390ad2244500d6a53bc8e2a691d" id="r_ab87e9390ad2244500d6a53bc8e2a691d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab87e9390ad2244500d6a53bc8e2a691d">func_80019B50</a> (s32 cameraIndex, u16 arg1)</td></tr>
 <tr class="separator:ab87e9390ad2244500d6a53bc8e2a691d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac306b17b11732c3c7c9af2345a8ae11" id="r_aac306b17b11732c3c7c9af2345a8ae11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac306b17b11732c3c7c9af2345a8ae11">func_80019C50</a> (s32 arg0)</td></tr>
 <tr class="separator:aac306b17b11732c3c7c9af2345a8ae11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00cbdda8363b5f196d731fb39704e892" id="r_a00cbdda8363b5f196d731fb39704e892"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a00cbdda8363b5f196d731fb39704e892">look_behind_toggle</a> (s32 cameraIdx)</td></tr>
+<tr class="separator:a00cbdda8363b5f196d731fb39704e892"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4572ec39727066197b32405580133928" id="r_a4572ec39727066197b32405580133928"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4572ec39727066197b32405580133928">func_80019D2C</a> (<a class="el" href="structCamera.html">Camera</a> *camera, <a class="el" href="structPlayer.html">Player</a> *player, s32 arg2)</td></tr>
 <tr class="separator:a4572ec39727066197b32405580133928"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a98681749e0e5afdeefcf4d2f57cc0a78" id="r_a98681749e0e5afdeefcf4d2f57cc0a78"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a98681749e0e5afdeefcf4d2f57cc0a78">func_80019DE4</a> (void)</td></tr>
@@ -521,8 +524,6 @@ Functions</h2></td></tr>
 <tr class="separator:a325ddded54aab32025174f6aedd5e391"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0056485e80d615faffaf2715a906c294" id="r_a0056485e80d615faffaf2715a906c294"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0056485e80d615faffaf2715a906c294">func_8001C14C</a> (void)</td></tr>
 <tr class="separator:a0056485e80d615faffaf2715a906c294"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a20d054883ba7ddebb1b79918d9ac5c86" id="r_a20d054883ba7ddebb1b79918d9ac5c86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20d054883ba7ddebb1b79918d9ac5c86">render_bomb_karts_wrap</a> (s32 cameraId)</td></tr>
-<tr class="separator:a20d054883ba7ddebb1b79918d9ac5c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afbc58d59e671bfa6c0b95008ab3caa02" id="r_afbc58d59e671bfa6c0b95008ab3caa02"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#addf5ec070e9499d36b7f2009ce736076">UNUSED</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afbc58d59e671bfa6c0b95008ab3caa02">func_8001C42C</a> (void)</td></tr>
 <tr class="separator:afbc58d59e671bfa6c0b95008ab3caa02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -530,14 +531,14 @@ Functions</h2></td></tr>
 Variables</h2></td></tr>
 <tr class="memitem:a7473afe7e772bc76f862d6f6c4a13e6c" id="r_a7473afe7e772bc76f862d6f6c4a13e6c"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7473afe7e772bc76f862d6f6c4a13e6c">unk_code_80005FD0_pad</a> [24]</td></tr>
 <tr class="separator:a7473afe7e772bc76f862d6f6c4a13e6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f1bec6a948cfc6fb38f786373418818" id="r_a0f1bec6a948cfc6fb38f786373418818"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCollision.html">Collision</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0f1bec6a948cfc6fb38f786373418818">D_80162E70</a></td></tr>
-<tr class="separator:a0f1bec6a948cfc6fb38f786373418818"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8804235d6340bbd1db534a4d85492d86" id="r_a8804235d6340bbd1db534a4d85492d86"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structCollision.html">Collision</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8804235d6340bbd1db534a4d85492d86">D_80162E70</a></td></tr>
+<tr class="separator:a8804235d6340bbd1db534a4d85492d86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea1b0842597217be22e4a206f8e04f14" id="r_aea1b0842597217be22e4a206f8e04f14"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea1b0842597217be22e4a206f8e04f14">D_80162EB0</a></td></tr>
 <tr class="separator:aea1b0842597217be22e4a206f8e04f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67b8b27a93b08bee86ed5f88a479e2e3" id="r_a67b8b27a93b08bee86ed5f88a479e2e3"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67b8b27a93b08bee86ed5f88a479e2e3">D_80162EB2</a></td></tr>
 <tr class="separator:a67b8b27a93b08bee86ed5f88a479e2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33edc5bb155ee66b2314104325acc24b" id="r_a33edc5bb155ee66b2314104325acc24b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCPUBehaviour.html">CPUBehaviour</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33edc5bb155ee66b2314104325acc24b">gCoursesCPUBehaviour</a> [<a class="el" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88ab491e3c35f36dc6baccdb5ca3a2eff60">NUM_COURSES</a> - 1]</td></tr>
-<tr class="separator:a33edc5bb155ee66b2314104325acc24b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3c41ca100f462bfe3f813128801e0f7" id="r_aa3c41ca100f462bfe3f813128801e0f7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCPUBehaviour.html">CPUBehaviour</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3c41ca100f462bfe3f813128801e0f7">gCoursesCPUBehaviour</a> [<a class="el" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a31e024d0557a3690869f04c7291de001">NUM_TRACKS</a> - 1]</td></tr>
+<tr class="separator:aa3c41ca100f462bfe3f813128801e0f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a529394d61a9bdf4bf7b893215aaa4c7a" id="r_a529394d61a9bdf4bf7b893215aaa4c7a"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a529394d61a9bdf4bf7b893215aaa4c7a">D_80162F08</a> [2]</td></tr>
 <tr class="separator:a529394d61a9bdf4bf7b893215aaa4c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a013e5be3540bb9a84d0fe3e792065d85" id="r_a013e5be3540bb9a84d0fe3e792065d85"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a013e5be3540bb9a84d0fe3e792065d85">D_80162F10</a> [30]</td></tr>
@@ -708,10 +709,14 @@ Variables</h2></td></tr>
 <tr class="separator:a98166919cb707ffaeda05b54254fc509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aac8b4e0ad644b9e076f3064194db473a" id="r_aac8b4e0ad644b9e076f3064194db473a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTrackPositionFactorInstruction.html">TrackPositionFactorInstruction</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac8b4e0ad644b9e076f3064194db473a">gPlayerTrackPositionFactorInstruction</a> [10]</td></tr>
 <tr class="separator:aac8b4e0ad644b9e076f3064194db473a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa549e5839f23bbfb95b439a40b30b2dc" id="r_aa549e5839f23bbfb95b439a40b30b2dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structPath2D.html">Path2D</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa549e5839f23bbfb95b439a40b30b2dc">gVehicle2DPathPoint</a></td></tr>
-<tr class="separator:aa549e5839f23bbfb95b439a40b30b2dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ebb767844ccddcfc01c4532bc58952b" id="r_a3ebb767844ccddcfc01c4532bc58952b"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ebb767844ccddcfc01c4532bc58952b">gVehicle2DPathLength</a></td></tr>
-<tr class="separator:a3ebb767844ccddcfc01c4532bc58952b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a64440d5cf994f5a979c3f2aef15ccac6" id="r_a64440d5cf994f5a979c3f2aef15ccac6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTrackPathPoint.html">TrackPathPoint</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a64440d5cf994f5a979c3f2aef15ccac6">gVehicle2DPathPoint</a></td></tr>
+<tr class="separator:a64440d5cf994f5a979c3f2aef15ccac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae55d3615c240c30971944716e89f3833" id="r_ae55d3615c240c30971944716e89f3833"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae55d3615c240c30971944716e89f3833">gVehicle2DPathSize</a></td></tr>
+<tr class="separator:ae55d3615c240c30971944716e89f3833"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75eb67e1060e6592114c8e4406a3445b" id="r_a75eb67e1060e6592114c8e4406a3445b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTrackPathPoint.html">TrackPathPoint</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75eb67e1060e6592114c8e4406a3445b">gVehiclePath</a></td></tr>
+<tr class="separator:a75eb67e1060e6592114c8e4406a3445b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9c8ec9d1faaf389b0d8ee81514c11ea" id="r_ab9c8ec9d1faaf389b0d8ee81514c11ea"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab9c8ec9d1faaf389b0d8ee81514c11ea">gVehiclePathSize</a></td></tr>
+<tr class="separator:ab9c8ec9d1faaf389b0d8ee81514c11ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2dc210a40d4102b45970958fee517232" id="r_a2dc210a40d4102b45970958fee517232"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structTrainStuff.html">TrainStuff</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2dc210a40d4102b45970958fee517232">gTrainList</a> [<a class="el" href="vehicles_8h.html#a3c220f6ce25154be954117d26d0e8937">NUM_TRAINS</a>]</td></tr>
 <tr class="separator:a2dc210a40d4102b45970958fee517232"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c2be7bf1dfb97edb5d2e5b1cea6cd5f" id="r_a7c2be7bf1dfb97edb5d2e5b1cea6cd5f"><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c2be7bf1dfb97edb5d2e5b1cea6cd5f">isCrossingTriggeredByIndex</a> [<a class="el" href="vehicles_8h.html#a1ba73f3115262148a920a3bb2620cdce">NUM_CROSSINGS</a>]</td></tr>
@@ -732,8 +737,8 @@ Variables</h2></td></tr>
 <tr class="separator:a09e11c2d2b010ef391c82fa12e4bd5fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac3cbac5b1e139c4891df180254ec34b3" id="r_ac3cbac5b1e139c4891df180254ec34b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structBombKart.html">BombKart</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3cbac5b1e139c4891df180254ec34b3">gBombKarts</a> [<a class="el" href="bomb__kart_8h.html#a4e55b67d5f1a388b6fb2cec53ec24846">NUM_BOMB_KARTS_MAX</a>]</td></tr>
 <tr class="separator:ac3cbac5b1e139c4891df180254ec34b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6453b1c7409232f848e8fbda7987b763" id="r_a6453b1c7409232f848e8fbda7987b763"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCollision.html">Collision</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6453b1c7409232f848e8fbda7987b763">gBombKartCollision</a> [<a class="el" href="bomb__kart_8h.html#a4e55b67d5f1a388b6fb2cec53ec24846">NUM_BOMB_KARTS_MAX</a>]</td></tr>
-<tr class="separator:a6453b1c7409232f848e8fbda7987b763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9633fe2991cdb194ba4214a324a96549" id="r_a9633fe2991cdb194ba4214a324a96549"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structCollision.html">Collision</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9633fe2991cdb194ba4214a324a96549">gBombKartCollision</a> [<a class="el" href="bomb__kart_8h.html#a4e55b67d5f1a388b6fb2cec53ec24846">NUM_BOMB_KARTS_MAX</a>]</td></tr>
+<tr class="separator:a9633fe2991cdb194ba4214a324a96549"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84f9a428f9485f5a469a669ee4f0777b" id="r_a84f9a428f9485f5a469a669ee4f0777b"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structunexpiredActors.html">unexpiredActors</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84f9a428f9485f5a469a669ee4f0777b">gUnexpiredActorsList</a> [8]</td></tr>
 <tr class="separator:a84f9a428f9485f5a469a669ee4f0777b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9bd3f08a3c4ccb917b736090c68e272" id="r_ac9bd3f08a3c4ccb917b736090c68e272"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCpuItemStrategyData.html">CpuItemStrategyData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9bd3f08a3c4ccb917b736090c68e272">cpu_ItemStrategy</a> [8]</td></tr>
@@ -796,36 +801,36 @@ Variables</h2></td></tr>
 <tr class="separator:a0b26bdf729078d93a000712adc0d1b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3021ab0fec30518c1a9bb511e9f91567" id="r_a3021ab0fec30518c1a9bb511e9f91567"><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3021ab0fec30518c1a9bb511e9f91567">gPathCountByPathIndex</a> [4]</td></tr>
 <tr class="separator:a3021ab0fec30518c1a9bb511e9f91567"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6d104d12525edb42dbf7b8e0b85e2756" id="r_a6d104d12525edb42dbf7b8e0b85e2756"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d104d12525edb42dbf7b8e0b85e2756">D_801645D0</a> [4]</td></tr>
-<tr class="separator:a6d104d12525edb42dbf7b8e0b85e2756"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e6c3b3440bb28a6299dce6b382e206d" id="r_a2e6c3b3440bb28a6299dce6b382e206d"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e6c3b3440bb28a6299dce6b382e206d">D_801645D0</a> [<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td></tr>
+<tr class="separator:a2e6c3b3440bb28a6299dce6b382e206d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7bd58a8d541eeae499e71f2cdb0acc3f" id="r_a7bd58a8d541eeae499e71f2cdb0acc3f"><td class="memItemLeft" align="right" valign="top">s16 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bd58a8d541eeae499e71f2cdb0acc3f">gCurrentTrackConsecutiveCurveCountsPath</a></td></tr>
 <tr class="separator:a7bd58a8d541eeae499e71f2cdb0acc3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d637e70193a3f436cf9807bfd616d47" id="r_a3d637e70193a3f436cf9807bfd616d47"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d637e70193a3f436cf9807bfd616d47">D_801645E8</a> [4]</td></tr>
-<tr class="separator:a3d637e70193a3f436cf9807bfd616d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2aed09502c4ebe7d1233701a651945c2" id="r_a2aed09502c4ebe7d1233701a651945c2"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2aed09502c4ebe7d1233701a651945c2">D_801645F8</a> [4]</td></tr>
-<tr class="separator:a2aed09502c4ebe7d1233701a651945c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dc98fb7ac6f1395ff2e423987976509" id="r_a2dc98fb7ac6f1395ff2e423987976509"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2dc98fb7ac6f1395ff2e423987976509">D_80164608</a> [4]</td></tr>
-<tr class="separator:a2dc98fb7ac6f1395ff2e423987976509"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abc8666c16b29aeb966cf8f6c93107f03" id="r_abc8666c16b29aeb966cf8f6c93107f03"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc8666c16b29aeb966cf8f6c93107f03">D_80164618</a> [4]</td></tr>
-<tr class="separator:abc8666c16b29aeb966cf8f6c93107f03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f4bc93f3beed19a3a2b9d373a515510" id="r_a6f4bc93f3beed19a3a2b9d373a515510"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f4bc93f3beed19a3a2b9d373a515510">D_80164628</a> [4]</td></tr>
-<tr class="separator:a6f4bc93f3beed19a3a2b9d373a515510"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82212a425d4de8928ec98f57b86a439e" id="r_a82212a425d4de8928ec98f57b86a439e"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a82212a425d4de8928ec98f57b86a439e">D_80164638</a> [4]</td></tr>
-<tr class="separator:a82212a425d4de8928ec98f57b86a439e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec97482a550ff29e5b1dbd6122ab1944" id="r_aec97482a550ff29e5b1dbd6122ab1944"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec97482a550ff29e5b1dbd6122ab1944">D_80164648</a> [4]</td></tr>
-<tr class="separator:aec97482a550ff29e5b1dbd6122ab1944"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21fd577212d6f36c8d5b43ecef9dc982" id="r_a21fd577212d6f36c8d5b43ecef9dc982"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21fd577212d6f36c8d5b43ecef9dc982">D_80164658</a> [4]</td></tr>
-<tr class="separator:a21fd577212d6f36c8d5b43ecef9dc982"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ec570a1c48ecc572b4b8a101c80a637" id="r_a6ec570a1c48ecc572b4b8a101c80a637"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ec570a1c48ecc572b4b8a101c80a637">gNearestPathPointByCameraId</a> [4]</td></tr>
-<tr class="separator:a6ec570a1c48ecc572b4b8a101c80a637"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a851ea2a3276d4cf3d4d6e6b8e29853cd" id="r_a851ea2a3276d4cf3d4d6e6b8e29853cd"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a851ea2a3276d4cf3d4d6e6b8e29853cd">D_80164670</a> [4]</td></tr>
-<tr class="separator:a851ea2a3276d4cf3d4d6e6b8e29853cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c18cfb88c289ebb22084832eb559b39" id="r_a1c18cfb88c289ebb22084832eb559b39"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c18cfb88c289ebb22084832eb559b39">D_80164678</a> [4]</td></tr>
-<tr class="separator:a1c18cfb88c289ebb22084832eb559b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a477d28be00e27098a43143e12f6fab43" id="r_a477d28be00e27098a43143e12f6fab43"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a477d28be00e27098a43143e12f6fab43">D_80164680</a> [4]</td></tr>
-<tr class="separator:a477d28be00e27098a43143e12f6fab43"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cb4dc799a4a23e76858f38d02f8018b" id="r_a6cb4dc799a4a23e76858f38d02f8018b"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cb4dc799a4a23e76858f38d02f8018b">D_80164688</a> [4]</td></tr>
-<tr class="separator:a6cb4dc799a4a23e76858f38d02f8018b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a772d3ac29d37e2485838741f13648fda" id="r_a772d3ac29d37e2485838741f13648fda"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a772d3ac29d37e2485838741f13648fda">D_801645E8</a> [<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td></tr>
+<tr class="separator:a772d3ac29d37e2485838741f13648fda"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7aac48c70ad5cb9d0e49245f6b3cc02f" id="r_a7aac48c70ad5cb9d0e49245f6b3cc02f"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7aac48c70ad5cb9d0e49245f6b3cc02f">D_801645F8</a> [<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td></tr>
+<tr class="separator:a7aac48c70ad5cb9d0e49245f6b3cc02f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ef5084628b984d3cfbc15d328d03128" id="r_a0ef5084628b984d3cfbc15d328d03128"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ef5084628b984d3cfbc15d328d03128">D_80164608</a> [<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td></tr>
+<tr class="separator:a0ef5084628b984d3cfbc15d328d03128"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abce96924c15298219bdf3867f004e2da" id="r_abce96924c15298219bdf3867f004e2da"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abce96924c15298219bdf3867f004e2da">D_80164618</a> [<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td></tr>
+<tr class="separator:abce96924c15298219bdf3867f004e2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea8bb64f63b1fedf7db4ac6fe66a6aec" id="r_aea8bb64f63b1fedf7db4ac6fe66a6aec"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea8bb64f63b1fedf7db4ac6fe66a6aec">D_80164628</a> [<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td></tr>
+<tr class="separator:aea8bb64f63b1fedf7db4ac6fe66a6aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ab551de77bf0b3dc4530d816f450f4c" id="r_a3ab551de77bf0b3dc4530d816f450f4c"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ab551de77bf0b3dc4530d816f450f4c">D_80164638</a> [<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td></tr>
+<tr class="separator:a3ab551de77bf0b3dc4530d816f450f4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac57eac1f9ee5e5dbb1c3ca156fd188d2" id="r_ac57eac1f9ee5e5dbb1c3ca156fd188d2"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac57eac1f9ee5e5dbb1c3ca156fd188d2">D_80164648</a> [<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td></tr>
+<tr class="separator:ac57eac1f9ee5e5dbb1c3ca156fd188d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad94075eb00953c02525ef93690486714" id="r_ad94075eb00953c02525ef93690486714"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad94075eb00953c02525ef93690486714">D_80164658</a> [<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td></tr>
+<tr class="separator:ad94075eb00953c02525ef93690486714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaebafb5cf2bb815f2de8aa6762f756e3" id="r_aaebafb5cf2bb815f2de8aa6762f756e3"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaebafb5cf2bb815f2de8aa6762f756e3">gNearestPathPointByCameraId</a> [<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td></tr>
+<tr class="separator:aaebafb5cf2bb815f2de8aa6762f756e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80e2360cb1aeb6df5fe526b0257ac601" id="r_a80e2360cb1aeb6df5fe526b0257ac601"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80e2360cb1aeb6df5fe526b0257ac601">D_80164670</a> [<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td></tr>
+<tr class="separator:a80e2360cb1aeb6df5fe526b0257ac601"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56885f6b287e6e2cf37e8eb73afb8d57" id="r_a56885f6b287e6e2cf37e8eb73afb8d57"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56885f6b287e6e2cf37e8eb73afb8d57">D_80164678</a> [<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td></tr>
+<tr class="separator:a56885f6b287e6e2cf37e8eb73afb8d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acade2eb67a168981e2bef176888998c4" id="r_acade2eb67a168981e2bef176888998c4"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acade2eb67a168981e2bef176888998c4">D_80164680</a> [<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td></tr>
+<tr class="separator:acade2eb67a168981e2bef176888998c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8bd224ce44066621dd2736e2ea7977b" id="r_ab8bd224ce44066621dd2736e2ea7977b"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8bd224ce44066621dd2736e2ea7977b">D_80164688</a> [<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td></tr>
+<tr class="separator:ab8bd224ce44066621dd2736e2ea7977b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8be12cbe716980866d25c9d3be24150" id="r_ad8be12cbe716980866d25c9d3be24150"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8be12cbe716980866d25c9d3be24150">D_80164698</a></td></tr>
 <tr class="separator:ad8be12cbe716980866d25c9d3be24150"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89a1e90f80b7ab69748eefcc5d69eb18" id="r_a89a1e90f80b7ab69748eefcc5d69eb18"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89a1e90f80b7ab69748eefcc5d69eb18">D_8016469C</a></td></tr>
@@ -846,14 +851,14 @@ Variables</h2></td></tr>
 <tr class="separator:a92ee643495a2726536722478f2de0e35"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96949a87720cefc60250aaf2c276b051" id="r_a96949a87720cefc60250aaf2c276b051"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96949a87720cefc60250aaf2c276b051">D_801646BC</a></td></tr>
 <tr class="separator:a96949a87720cefc60250aaf2c276b051"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdf849098b47f0475dec97fc73dbb06c" id="r_acdf849098b47f0475dec97fc73dbb06c"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdf849098b47f0475dec97fc73dbb06c">D_801646C0</a> [4]</td></tr>
-<tr class="separator:acdf849098b47f0475dec97fc73dbb06c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a524d7af345673975c109e3e56a406857" id="r_a524d7af345673975c109e3e56a406857"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a524d7af345673975c109e3e56a406857">D_801646C0</a> [<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td></tr>
+<tr class="separator:a524d7af345673975c109e3e56a406857"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6ba4dc87cb97bd603016c4a11610133" id="r_ac6ba4dc87cb97bd603016c4a11610133"><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6ba4dc87cb97bd603016c4a11610133">D_801646C8</a></td></tr>
 <tr class="separator:ac6ba4dc87cb97bd603016c4a11610133"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5d1884761a525dc79fcdf9c204819b3" id="r_ae5d1884761a525dc79fcdf9c204819b3"><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5d1884761a525dc79fcdf9c204819b3">D_801646CC</a></td></tr>
 <tr class="separator:ae5d1884761a525dc79fcdf9c204819b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae313553cfd7e4e52560aab2ae585bcd0" id="r_ae313553cfd7e4e52560aab2ae585bcd0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structUnkStruct__46D0.html">UnkStruct_46D0</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae313553cfd7e4e52560aab2ae585bcd0">D_801646D0</a> [4]</td></tr>
-<tr class="separator:ae313553cfd7e4e52560aab2ae585bcd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a719c0fc82f219deaf8515ba4abda9751" id="r_a719c0fc82f219deaf8515ba4abda9751"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structUnkStruct__46D0.html">UnkStruct_46D0</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a719c0fc82f219deaf8515ba4abda9751">D_801646D0</a> [<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td></tr>
+<tr class="separator:a719c0fc82f219deaf8515ba4abda9751"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a4dbdf8d32ac8e5e59228c010046fd3" id="r_a6a4dbdf8d32ac8e5e59228c010046fd3"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a4dbdf8d32ac8e5e59228c010046fd3">D_800EB710</a> = &quot;ゴール直後の強制ソート\n&quot;</td></tr>
 <tr class="separator:a6a4dbdf8d32ac8e5e59228c010046fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49c96c1d0e67cdd49129fb24f7f2bca2" id="r_a49c96c1d0e67cdd49129fb24f7f2bca2"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a49c96c1d0e67cdd49129fb24f7f2bca2">D_800EB728</a> = &quot;2PGPで片方がゴール直後の強制ソート\n&quot;</td></tr>
@@ -1294,10 +1299,10 @@ Variables</h2></td></tr>
 <div class="line">    b = <a class="code hl_define" href="#afca0f7e6a7fc5d3e6f51a6426cfb755a">calc_b</a>(50, table[<a class="code hl_define" href="defines_8h.html#a3aa8951f5d490e4f7c381143fd66e8ee">CC_50</a>], a);                  \</div>
 <div class="line">    <a class="code hl_variable" href="#a5d79d803e6d03e10108fbd6ff715ca4c">cpu_TargetSpeed</a>[playerId] = a * CVarGetFloat(<span class="stringliteral">&quot;gCustomCC&quot;</span>, 150.0f) + b;</div>
 <div class="ttc" id="acode__80005FD0_8c_html_a2570dc81a51135eddff01c799994f684"><div class="ttname"><a href="#a2570dc81a51135eddff01c799994f684">calc_a</a></div><div class="ttdeci">#define calc_a(x, y, x2, y2)</div></div>
-<div class="ttc" id="acode__80005FD0_8c_html_a5d79d803e6d03e10108fbd6ff715ca4c"><div class="ttname"><a href="#a5d79d803e6d03e10108fbd6ff715ca4c">cpu_TargetSpeed</a></div><div class="ttdeci">f32 cpu_TargetSpeed[10]</div><div class="ttdef"><b>Definition</b> code_80005FD0.c:76</div></div>
+<div class="ttc" id="acode__80005FD0_8c_html_a5d79d803e6d03e10108fbd6ff715ca4c"><div class="ttname"><a href="#a5d79d803e6d03e10108fbd6ff715ca4c">cpu_TargetSpeed</a></div><div class="ttdeci">f32 cpu_TargetSpeed[10]</div><div class="ttdef"><b>Definition</b> code_80005FD0.c:79</div></div>
 <div class="ttc" id="acode__80005FD0_8c_html_afca0f7e6a7fc5d3e6f51a6426cfb755a"><div class="ttname"><a href="#afca0f7e6a7fc5d3e6f51a6426cfb755a">calc_b</a></div><div class="ttdeci">#define calc_b(x, y, b)</div></div>
-<div class="ttc" id="adefines_8h_html_a3aa8951f5d490e4f7c381143fd66e8ee"><div class="ttname"><a href="defines_8h.html#a3aa8951f5d490e4f7c381143fd66e8ee">CC_50</a></div><div class="ttdeci">#define CC_50</div><div class="ttdoc">Options for gCCSelection CC stands for cubic-centimetres. It measures engine displacement composed fr...</div><div class="ttdef"><b>Definition</b> defines.h:157</div></div>
-<div class="ttc" id="adefines_8h_html_a7f414af5293a3216eae978df3b0594db"><div class="ttname"><a href="defines_8h.html#a7f414af5293a3216eae978df3b0594db">CC_150</a></div><div class="ttdeci">#define CC_150</div><div class="ttdef"><b>Definition</b> defines.h:159</div></div>
+<div class="ttc" id="adefines_8h_html_a3aa8951f5d490e4f7c381143fd66e8ee"><div class="ttname"><a href="defines_8h.html#a3aa8951f5d490e4f7c381143fd66e8ee">CC_50</a></div><div class="ttdeci">#define CC_50</div><div class="ttdoc">Options for gCCSelection CC stands for cubic-centimetres. It measures engine displacement composed fr...</div><div class="ttdef"><b>Definition</b> defines.h:169</div></div>
+<div class="ttc" id="adefines_8h_html_a7f414af5293a3216eae978df3b0594db"><div class="ttname"><a href="defines_8h.html#a7f414af5293a3216eae978df3b0594db">CC_150</a></div><div class="ttdeci">#define CC_150</div><div class="ttdef"><b>Definition</b> defines.h:171</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1394,7 +1399,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">for</span> (i = 0;; i++) {                         \</div>
-<div class="line">        if ((u16) waypoint[i].posX == 0x8000) { \</div>
+<div class="line">        if ((u16) waypoint[i].x == 0x8000) { \</div>
 <div class="line">            <span class="keywordflow">break</span>;                              \</div>
 <div class="line">        }                                       \</div>
 <div class="line">    }</div>
@@ -1464,7 +1469,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a8d5e85372f25e4b12d62edcc131bf7ae_cgraph.svg" width="447" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a8d5e85372f25e4b12d62edcc131bf7ae_cgraph.svg" width="578" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1491,7 +1496,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a3da5a7898fa91355d9cb394860db7904_cgraph.svg" width="398" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a3da5a7898fa91355d9cb394860db7904_cgraph.svg" width="528" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1518,7 +1523,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a049aa28f9db56c36a8ea389644629029_cgraph.svg" width="439" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a049aa28f9db56c36a8ea389644629029_cgraph.svg" width="570" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1622,7 +1627,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_afea6c2109ebb5063725c4ad25fb59280_cgraph.svg" width="100%" height="370"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_afea6c2109ebb5063725c4ad25fb59280_cgraph.svg" width="100%" height="433"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1649,7 +1654,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a951fa5641a19ff332341ce056f7ea0a7_cgraph.svg" width="368" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a951fa5641a19ff332341ce056f7ea0a7_cgraph.svg" width="540" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1676,7 +1681,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_af2f5c3f028965e86705c66f6cd51c680_cgraph.svg" width="574" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_af2f5c3f028965e86705c66f6cd51c680_cgraph.svg" width="100%" height="382"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1791,7 +1796,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a6fd29dd95ab41d9aa3f4a08ac98c9df4_cgraph.svg" width="368" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a6fd29dd95ab41d9aa3f4a08ac98c9df4_cgraph.svg" width="667" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1822,7 +1827,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_adf13615f04cfae72d01ad23f33a4e4aa_cgraph.svg" width="359" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_adf13615f04cfae72d01ad23f33a4e4aa_cgraph.svg" width="658" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1909,6 +1914,37 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a04597eec92885142343602eb9cd67c8a" name="a04597eec92885142343602eb9cd67c8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04597eec92885142343602eb9cd67c8a">&#9670;&#160;</a></span>camera_start_cinematic_shot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void camera_start_cinematic_shot </td>
+          <td>(</td>
+          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>playerId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>cameraId</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a04597eec92885142343602eb9cd67c8a_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a04597eec92885142343602eb9cd67c8a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
 <a id="af5bf18570443fd4bb2f6ec223f78007e" name="af5bf18570443fd4bb2f6ec223f78007e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af5bf18570443fd4bb2f6ec223f78007e">&#9670;&#160;</a></span>check_ai_crossing_distance()</h2>
 
@@ -1926,7 +1962,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_af5bf18570443fd4bb2f6ec223f78007e_cgraph.svg" width="407" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_af5bf18570443fd4bb2f6ec223f78007e_cgraph.svg" width="579" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1996,7 +2032,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_ac842533b23b073d73ad370538493ac1c_cgraph.svg" width="380" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_ac842533b23b073d73ad370538493ac1c_cgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -2023,7 +2059,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a4cea2df9312572136addade60019bd64_cgraph.svg" width="100%" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a4cea2df9312572136addade60019bd64_cgraph.svg" width="100%" height="460"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -2054,7 +2090,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a070706cc9cd2596af688aee1bc6008e3_cgraph.svg" width="316" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a070706cc9cd2596af688aee1bc6008e3_cgraph.svg" width="615" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -2085,7 +2121,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a7d4379ffdd4db1e7806e0bc1afefb732_cgraph.svg" width="100%" height="440"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a7d4379ffdd4db1e7806e0bc1afefb732_cgraph.svg" width="100%" height="460"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -2162,6 +2198,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section warning"><dt>Warning</dt><dd>Likely needs an update to support more than two human players</dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -2244,7 +2281,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a9abccb5b7f1742a03cf47170990ef4d5_cgraph.svg" width="403" height="299"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a9abccb5b7f1742a03cf47170990ef4d5_cgraph.svg" width="575" height="299"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -2290,7 +2327,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a64865cf2565ef9f4215c5fa73b04233f_cgraph.svg" width="383" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a64865cf2565ef9f4215c5fa73b04233f_cgraph.svg" width="555" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -2331,7 +2368,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_ade9dca16c41c3d924b84f32a203ba823_icgraph.svg" width="663" height="299"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_ade9dca16c41c3d924b84f32a203ba823_icgraph.svg" width="100%" height="524"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -2429,7 +2466,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a0cfc9c8c29906a6f0984b40d752129ac_cgraph.svg" width="291" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a0cfc9c8c29906a6f0984b40d752129ac_cgraph.svg" width="590" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -2565,7 +2602,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_aae3d2d6e27d79a30dfe68c64e771b5b1_cgraph.svg" width="568" height="231"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_aae3d2d6e27d79a30dfe68c64e771b5b1_cgraph.svg" width="100%" height="473"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -3124,7 +3161,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a33f4e263ad7573063f17905299a90caf_cgraph.svg" width="346" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a33f4e263ad7573063f17905299a90caf_cgraph.svg" width="556" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -3521,7 +3558,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a1d584244982fdde545473a274f700c19_cgraph.svg" width="518" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a1d584244982fdde545473a274f700c19_cgraph.svg" width="539" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -3562,7 +3599,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a24f79b7815d902f0c40373c892d9241b_cgraph.svg" width="100%" height="569"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a24f79b7815d902f0c40373c892d9241b_cgraph.svg" width="100%" height="574"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -4000,37 +4037,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a8d21c866c74e866e873dfd2f67c3c8da" name="a8d21c866c74e866e873dfd2f67c3c8da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8d21c866c74e866e873dfd2f67c3c8da">&#9670;&#160;</a></span>func_80019890()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void func_80019890 </td>
-          <td>(</td>
-          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>playerId</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>cameraId</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a8d21c866c74e866e873dfd2f67c3c8da_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a8d21c866c74e866e873dfd2f67c3c8da_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
 <a id="ab87e9390ad2244500d6a53bc8e2a691d" name="ab87e9390ad2244500d6a53bc8e2a691d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab87e9390ad2244500d6a53bc8e2a691d">&#9670;&#160;</a></span>func_80019B50()</h2>
 
@@ -4110,7 +4116,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a4572ec39727066197b32405580133928_cgraph.svg" width="443" height="192"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a4572ec39727066197b32405580133928_cgraph.svg" width="515" height="238"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -4276,7 +4282,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a8c82c41e97c070bce2807758473cc361_cgraph.svg" width="619" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a8c82c41e97c070bce2807758473cc361_cgraph.svg" width="646" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -4322,7 +4328,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_ae3a97717dacd39073f64d574a709501d_cgraph.svg" width="100%" height="518"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_ae3a97717dacd39073f64d574a709501d_cgraph.svg" width="100%" height="580"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -4415,7 +4421,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_aeaabf249e9bc8adbf28afc97ff0b514d_cgraph.svg" width="311" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_aeaabf249e9bc8adbf28afc97ff0b514d_cgraph.svg" width="483" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -4797,8 +4803,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="a403601bbb10b12b65da581a7174b604a" name="a403601bbb10b12b65da581a7174b604a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a403601bbb10b12b65da581a7174b604a">&#9670;&#160;</a></span>generate_2d_path()</h2>
+<a id="a70c4bea6ff8c2dc33df2f2513cdb267e" name="a70c4bea6ff8c2dc33df2f2513cdb267e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70c4bea6ff8c2dc33df2f2513cdb267e">&#9670;&#160;</a></span>generate_2d_path()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -4806,7 +4812,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">s32 generate_2d_path </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structPath2D.html">Path2D</a> *</td>          <td class="paramname"><span class="paramname"><em>pathDest</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structTrackPathPoint.html">TrackPathPoint</a> *</td>          <td class="paramname"><span class="paramname"><em>pathDest</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -4823,12 +4829,12 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a403601bbb10b12b65da581a7174b604a_cgraph.svg" width="250" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a70c4bea6ff8c2dc33df2f2513cdb267e_cgraph.svg" width="250" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a403601bbb10b12b65da581a7174b604a_icgraph.svg" width="594" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a70c4bea6ff8c2dc33df2f2513cdb267e_icgraph.svg" width="594" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -5199,7 +5205,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a6da53187f6650dd4c4ed9852c841e6c4_cgraph.svg" width="598" height="283"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a6da53187f6650dd4c4ed9852c841e6c4_cgraph.svg" width="100%" height="515"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -5226,7 +5232,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a3dbfe2d211c050114533e7681ca66ee1_cgraph.svg" width="100%" height="542"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a3dbfe2d211c050114533e7681ca66ee1_cgraph.svg" width="100%" height="554"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -5248,7 +5254,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a18b1873671315cc770b401dbf911e944_cgraph.svg" width="100%" height="542"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a18b1873671315cc770b401dbf911e944_cgraph.svg" width="100%" height="554"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -5287,7 +5293,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a349a6a78e11cf0fbeb1871785fc1bffe_cgraph.svg" width="100%" height="542"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a349a6a78e11cf0fbeb1871785fc1bffe_cgraph.svg" width="100%" height="554"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -5321,7 +5327,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_add32d29ccee5e9c29d843bf59cab2414_cgraph.svg" width="370" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_add32d29ccee5e9c29d843bf59cab2414_cgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -5343,7 +5349,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_af60d8a9bd8b6d0685b0ecc0cd804ca6c_cgraph.svg" width="100%" height="542"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_af60d8a9bd8b6d0685b0ecc0cd804ca6c_cgraph.svg" width="100%" height="554"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -5389,7 +5395,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_af8068c46ce72dbd5b61790d355728cff_cgraph.svg" width="100%" height="542"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_af8068c46ce72dbd5b61790d355728cff_cgraph.svg" width="100%" height="554"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -5563,6 +5569,28 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a00cbdda8363b5f196d731fb39704e892" name="a00cbdda8363b5f196d731fb39704e892"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00cbdda8363b5f196d731fb39704e892">&#9670;&#160;</a></span>look_behind_toggle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void look_behind_toggle </td>
+          <td>(</td>
+          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>cameraIdx</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a00cbdda8363b5f196d731fb39704e892_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
 <a id="adb9b8cd30f2be4e125706fa55ea2272d" name="adb9b8cd30f2be4e125706fa55ea2272d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adb9b8cd30f2be4e125706fa55ea2272d">&#9670;&#160;</a></span>play_cpu_sound_effect()</h2>
 
@@ -5687,28 +5715,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a20d054883ba7ddebb1b79918d9ac5c86" name="a20d054883ba7ddebb1b79918d9ac5c86"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a20d054883ba7ddebb1b79918d9ac5c86">&#9670;&#160;</a></span>render_bomb_karts_wrap()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void render_bomb_karts_wrap </td>
-          <td>(</td>
-          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>cameraId</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a20d054883ba7ddebb1b79918d9ac5c86_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
 <a id="a8c0f6d25932c46807c96532f6c573973" name="a8c0f6d25932c46807c96532f6c573973"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8c0f6d25932c46807c96532f6c573973">&#9670;&#160;</a></span>reset_cpu_behaviour()</h2>
 
@@ -5749,28 +5755,6 @@ Here is the caller graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a135ec35ea5dd53f5ceaeda9e3ca8eb41_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="ada59072ef0e7fec8eb6eeaabdc4ebe03" name="ada59072ef0e7fec8eb6eeaabdc4ebe03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada59072ef0e7fec8eb6eeaabdc4ebe03">&#9670;&#160;</a></span>set_bomb_kart_spawn_positions()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void set_bomb_kart_spawn_positions </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_ada59072ef0e7fec8eb6eeaabdc4ebe03_cgraph.svg" width="646" height="274"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -5872,8 +5856,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a6d03acc760d1ae182fcb81f952f0ce67" name="a6d03acc760d1ae182fcb81f952f0ce67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d03acc760d1ae182fcb81f952f0ce67">&#9670;&#160;</a></span>set_vehicle_pos_path_point()</h2>
+<a id="a905c0b4107a7a9717f49b4efcaacad4e" name="a905c0b4107a7a9717f49b4efcaacad4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a905c0b4107a7a9717f49b4efcaacad4e">&#9670;&#160;</a></span>set_vehicle_pos_path_point()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -5886,7 +5870,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structPath2D.html">Path2D</a> *</td>          <td class="paramname"><span class="paramname"><em>posXZ</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structTrackPathPoint.html">TrackPathPoint</a> *</td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -5896,9 +5880,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a905c0b4107a7a9717f49b4efcaacad4e_cgraph.svg" width="524" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a6d03acc760d1ae182fcb81f952f0ce67_icgraph.svg" width="370" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a905c0b4107a7a9717f49b4efcaacad4e_icgraph.svg" width="100%" height="370"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -5980,7 +5969,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_ac8070bcd41974c70ea8b6d4218b1ebef_icgraph.svg" width="435" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_ac8070bcd41974c70ea8b6d4218b1ebef_icgraph.svg" width="640" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -6056,7 +6045,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a46de92823c26626b843e862bd60f6a3c_cgraph.svg" width="367" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a46de92823c26626b843e862bd60f6a3c_cgraph.svg" width="539" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -6181,7 +6170,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_aa68f443dc84b98b90105c83a74d957de_cgraph.svg" width="618" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_aa68f443dc84b98b90105c83a74d957de_cgraph.svg" width="100%" height="389"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -6395,7 +6384,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a0ca8c804cfdeb1e02617c70d1a8c73e1_cgraph.svg" width="582" height="151"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a0ca8c804cfdeb1e02617c70d1a8c73e1_cgraph.svg" width="100%" height="426"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -6431,7 +6420,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a952af0338363e9cb8eec1a992c59854e_cgraph.svg" width="414" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a952af0338363e9cb8eec1a992c59854e_cgraph.svg" width="100%" height="395"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -6715,12 +6704,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a777de4239351e9266f8b367ce46cb936_cgraph.svg" width="100%" height="413"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a777de4239351e9266f8b367ce46cb936_cgraph.svg" width="100%" height="487"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a777de4239351e9266f8b367ce46cb936_icgraph.svg" width="455" height="299"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="code__80005FD0_8c_a777de4239351e9266f8b367ce46cb936_icgraph.svg" width="100%" height="524"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -9639,14 +9628,14 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a0f1bec6a948cfc6fb38f786373418818" name="a0f1bec6a948cfc6fb38f786373418818"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f1bec6a948cfc6fb38f786373418818">&#9670;&#160;</a></span>D_80162E70</h2>
+<a id="a8804235d6340bbd1db534a4d85492d86" name="a8804235d6340bbd1db534a4d85492d86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8804235d6340bbd1db534a4d85492d86">&#9670;&#160;</a></span>D_80162E70</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structCollision.html">Collision</a> D_80162E70</td>
+          <td class="memname">struct <a class="el" href="structCollision.html">Collision</a> D_80162E70</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -10409,182 +10398,182 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a6d104d12525edb42dbf7b8e0b85e2756" name="a6d104d12525edb42dbf7b8e0b85e2756"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6d104d12525edb42dbf7b8e0b85e2756">&#9670;&#160;</a></span>D_801645D0</h2>
+<a id="a2e6c3b3440bb28a6299dce6b382e206d" name="a2e6c3b3440bb28a6299dce6b382e206d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e6c3b3440bb28a6299dce6b382e206d">&#9670;&#160;</a></span>D_801645D0</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">s32 D_801645D0[4]</td>
+          <td class="memname">s32 D_801645D0[<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a3d637e70193a3f436cf9807bfd616d47" name="a3d637e70193a3f436cf9807bfd616d47"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d637e70193a3f436cf9807bfd616d47">&#9670;&#160;</a></span>D_801645E8</h2>
+<a id="a772d3ac29d37e2485838741f13648fda" name="a772d3ac29d37e2485838741f13648fda"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a772d3ac29d37e2485838741f13648fda">&#9670;&#160;</a></span>D_801645E8</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">s32 D_801645E8[4]</td>
+          <td class="memname">s32 D_801645E8[<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a2aed09502c4ebe7d1233701a651945c2" name="a2aed09502c4ebe7d1233701a651945c2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2aed09502c4ebe7d1233701a651945c2">&#9670;&#160;</a></span>D_801645F8</h2>
+<a id="a7aac48c70ad5cb9d0e49245f6b3cc02f" name="a7aac48c70ad5cb9d0e49245f6b3cc02f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7aac48c70ad5cb9d0e49245f6b3cc02f">&#9670;&#160;</a></span>D_801645F8</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">f32 D_801645F8[4]</td>
+          <td class="memname">f32 D_801645F8[<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a2dc98fb7ac6f1395ff2e423987976509" name="a2dc98fb7ac6f1395ff2e423987976509"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2dc98fb7ac6f1395ff2e423987976509">&#9670;&#160;</a></span>D_80164608</h2>
+<a id="a0ef5084628b984d3cfbc15d328d03128" name="a0ef5084628b984d3cfbc15d328d03128"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ef5084628b984d3cfbc15d328d03128">&#9670;&#160;</a></span>D_80164608</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">s32 D_80164608[4]</td>
+          <td class="memname">s32 D_80164608[<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="abc8666c16b29aeb966cf8f6c93107f03" name="abc8666c16b29aeb966cf8f6c93107f03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abc8666c16b29aeb966cf8f6c93107f03">&#9670;&#160;</a></span>D_80164618</h2>
+<a id="abce96924c15298219bdf3867f004e2da" name="abce96924c15298219bdf3867f004e2da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abce96924c15298219bdf3867f004e2da">&#9670;&#160;</a></span>D_80164618</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">f32 D_80164618[4]</td>
+          <td class="memname">f32 D_80164618[<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a6f4bc93f3beed19a3a2b9d373a515510" name="a6f4bc93f3beed19a3a2b9d373a515510"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f4bc93f3beed19a3a2b9d373a515510">&#9670;&#160;</a></span>D_80164628</h2>
+<a id="aea8bb64f63b1fedf7db4ac6fe66a6aec" name="aea8bb64f63b1fedf7db4ac6fe66a6aec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea8bb64f63b1fedf7db4ac6fe66a6aec">&#9670;&#160;</a></span>D_80164628</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">s32 D_80164628[4]</td>
+          <td class="memname">s32 D_80164628[<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a82212a425d4de8928ec98f57b86a439e" name="a82212a425d4de8928ec98f57b86a439e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a82212a425d4de8928ec98f57b86a439e">&#9670;&#160;</a></span>D_80164638</h2>
+<a id="a3ab551de77bf0b3dc4530d816f450f4c" name="a3ab551de77bf0b3dc4530d816f450f4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ab551de77bf0b3dc4530d816f450f4c">&#9670;&#160;</a></span>D_80164638</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">f32 D_80164638[4]</td>
+          <td class="memname">f32 D_80164638[<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aec97482a550ff29e5b1dbd6122ab1944" name="aec97482a550ff29e5b1dbd6122ab1944"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aec97482a550ff29e5b1dbd6122ab1944">&#9670;&#160;</a></span>D_80164648</h2>
+<a id="ac57eac1f9ee5e5dbb1c3ca156fd188d2" name="ac57eac1f9ee5e5dbb1c3ca156fd188d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac57eac1f9ee5e5dbb1c3ca156fd188d2">&#9670;&#160;</a></span>D_80164648</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">f32 D_80164648[4]</td>
+          <td class="memname">f32 D_80164648[<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a21fd577212d6f36c8d5b43ecef9dc982" name="a21fd577212d6f36c8d5b43ecef9dc982"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21fd577212d6f36c8d5b43ecef9dc982">&#9670;&#160;</a></span>D_80164658</h2>
+<a id="ad94075eb00953c02525ef93690486714" name="ad94075eb00953c02525ef93690486714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad94075eb00953c02525ef93690486714">&#9670;&#160;</a></span>D_80164658</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">f32 D_80164658[4]</td>
+          <td class="memname">f32 D_80164658[<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a851ea2a3276d4cf3d4d6e6b8e29853cd" name="a851ea2a3276d4cf3d4d6e6b8e29853cd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a851ea2a3276d4cf3d4d6e6b8e29853cd">&#9670;&#160;</a></span>D_80164670</h2>
+<a id="a80e2360cb1aeb6df5fe526b0257ac601" name="a80e2360cb1aeb6df5fe526b0257ac601"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80e2360cb1aeb6df5fe526b0257ac601">&#9670;&#160;</a></span>D_80164670</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">s16 D_80164670[4]</td>
+          <td class="memname">s16 D_80164670[<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a1c18cfb88c289ebb22084832eb559b39" name="a1c18cfb88c289ebb22084832eb559b39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c18cfb88c289ebb22084832eb559b39">&#9670;&#160;</a></span>D_80164678</h2>
+<a id="a56885f6b287e6e2cf37e8eb73afb8d57" name="a56885f6b287e6e2cf37e8eb73afb8d57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56885f6b287e6e2cf37e8eb73afb8d57">&#9670;&#160;</a></span>D_80164678</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">s16 D_80164678[4]</td>
+          <td class="memname">s16 D_80164678[<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a477d28be00e27098a43143e12f6fab43" name="a477d28be00e27098a43143e12f6fab43"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a477d28be00e27098a43143e12f6fab43">&#9670;&#160;</a></span>D_80164680</h2>
+<a id="acade2eb67a168981e2bef176888998c4" name="acade2eb67a168981e2bef176888998c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acade2eb67a168981e2bef176888998c4">&#9670;&#160;</a></span>D_80164680</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">s16 D_80164680[4]</td>
+          <td class="memname">s16 D_80164680[<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a6cb4dc799a4a23e76858f38d02f8018b" name="a6cb4dc799a4a23e76858f38d02f8018b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cb4dc799a4a23e76858f38d02f8018b">&#9670;&#160;</a></span>D_80164688</h2>
+<a id="ab8bd224ce44066621dd2736e2ea7977b" name="ab8bd224ce44066621dd2736e2ea7977b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8bd224ce44066621dd2736e2ea7977b">&#9670;&#160;</a></span>D_80164688</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">f32 D_80164688[4]</td>
+          <td class="memname">f32 D_80164688[<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -10731,14 +10720,14 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="acdf849098b47f0475dec97fc73dbb06c" name="acdf849098b47f0475dec97fc73dbb06c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdf849098b47f0475dec97fc73dbb06c">&#9670;&#160;</a></span>D_801646C0</h2>
+<a id="a524d7af345673975c109e3e56a406857" name="a524d7af345673975c109e3e56a406857"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a524d7af345673975c109e3e56a406857">&#9670;&#160;</a></span>D_801646C0</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">s16 D_801646C0[4]</td>
+          <td class="memname">s16 D_801646C0[<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -10773,14 +10762,14 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ae313553cfd7e4e52560aab2ae585bcd0" name="ae313553cfd7e4e52560aab2ae585bcd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae313553cfd7e4e52560aab2ae585bcd0">&#9670;&#160;</a></span>D_801646D0</h2>
+<a id="a719c0fc82f219deaf8515ba4abda9751" name="a719c0fc82f219deaf8515ba4abda9751"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a719c0fc82f219deaf8515ba4abda9751">&#9670;&#160;</a></span>D_801646D0</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structUnkStruct__46D0.html">UnkStruct_46D0</a> D_801646D0[4]</td>
+          <td class="memname"><a class="el" href="structUnkStruct__46D0.html">UnkStruct_46D0</a> D_801646D0[<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -10801,14 +10790,14 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a6453b1c7409232f848e8fbda7987b763" name="a6453b1c7409232f848e8fbda7987b763"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6453b1c7409232f848e8fbda7987b763">&#9670;&#160;</a></span>gBombKartCollision</h2>
+<a id="a9633fe2991cdb194ba4214a324a96549" name="a9633fe2991cdb194ba4214a324a96549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9633fe2991cdb194ba4214a324a96549">&#9670;&#160;</a></span>gBombKartCollision</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structCollision.html">Collision</a> gBombKartCollision[<a class="el" href="bomb__kart_8h.html#a4e55b67d5f1a388b6fb2cec53ec24846">NUM_BOMB_KARTS_MAX</a>]</td>
+          <td class="memname">struct <a class="el" href="structCollision.html">Collision</a> gBombKartCollision[<a class="el" href="bomb__kart_8h.html#a4e55b67d5f1a388b6fb2cec53ec24846">NUM_BOMB_KARTS_MAX</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -10885,14 +10874,14 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a33edc5bb155ee66b2314104325acc24b" name="a33edc5bb155ee66b2314104325acc24b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33edc5bb155ee66b2314104325acc24b">&#9670;&#160;</a></span>gCoursesCPUBehaviour</h2>
+<a id="aa3c41ca100f462bfe3f813128801e0f7" name="aa3c41ca100f462bfe3f813128801e0f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3c41ca100f462bfe3f813128801e0f7">&#9670;&#160;</a></span>gCoursesCPUBehaviour</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structCPUBehaviour.html">CPUBehaviour</a>* gCoursesCPUBehaviour[<a class="el" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88ab491e3c35f36dc6baccdb5ca3a2eff60">NUM_COURSES</a> - 1]</td>
+          <td class="memname"><a class="el" href="structCPUBehaviour.html">CPUBehaviour</a>* gCoursesCPUBehaviour[<a class="el" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a31e024d0557a3690869f04c7291de001">NUM_TRACKS</a> - 1]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -11207,14 +11196,14 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a6ec570a1c48ecc572b4b8a101c80a637" name="a6ec570a1c48ecc572b4b8a101c80a637"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ec570a1c48ecc572b4b8a101c80a637">&#9670;&#160;</a></span>gNearestPathPointByCameraId</h2>
+<a id="aaebafb5cf2bb815f2de8aa6762f756e3" name="aaebafb5cf2bb815f2de8aa6762f756e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaebafb5cf2bb815f2de8aa6762f756e3">&#9670;&#160;</a></span>gNearestPathPointByCameraId</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">s16 gNearestPathPointByCameraId[4]</td>
+          <td class="memname">s16 gNearestPathPointByCameraId[<a class="el" href="camera_8h.html#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -11686,28 +11675,56 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a3ebb767844ccddcfc01c4532bc58952b" name="a3ebb767844ccddcfc01c4532bc58952b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ebb767844ccddcfc01c4532bc58952b">&#9670;&#160;</a></span>gVehicle2DPathLength</h2>
+<a id="a64440d5cf994f5a979c3f2aef15ccac6" name="a64440d5cf994f5a979c3f2aef15ccac6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a64440d5cf994f5a979c3f2aef15ccac6">&#9670;&#160;</a></span>gVehicle2DPathPoint</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">s32 gVehicle2DPathLength</td>
+          <td class="memname"><a class="el" href="structTrackPathPoint.html">TrackPathPoint</a>* gVehicle2DPathPoint</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aa549e5839f23bbfb95b439a40b30b2dc" name="aa549e5839f23bbfb95b439a40b30b2dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa549e5839f23bbfb95b439a40b30b2dc">&#9670;&#160;</a></span>gVehicle2DPathPoint</h2>
+<a id="ae55d3615c240c30971944716e89f3833" name="ae55d3615c240c30971944716e89f3833"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae55d3615c240c30971944716e89f3833">&#9670;&#160;</a></span>gVehicle2DPathSize</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structPath2D.html">Path2D</a>* gVehicle2DPathPoint</td>
+          <td class="memname">s32 gVehicle2DPathSize</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a75eb67e1060e6592114c8e4406a3445b" name="a75eb67e1060e6592114c8e4406a3445b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75eb67e1060e6592114c8e4406a3445b">&#9670;&#160;</a></span>gVehiclePath</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structTrackPathPoint.html">TrackPathPoint</a>* gVehiclePath</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab9c8ec9d1faaf389b0d8ee81514c11ea" name="ab9c8ec9d1faaf389b0d8ee81514c11ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9c8ec9d1faaf389b0d8ee81514c11ea">&#9670;&#160;</a></span>gVehiclePathSize</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t gVehiclePathSize</td>
         </tr>
       </table>
 </div><div class="memdoc">

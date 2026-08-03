@@ -1,13 +1,14 @@
 var classOTrashBin =
 [
-    [ "Behaviour", "classOTrashBin.html#ab0744c1ea3bf0d5f8502db6e98d47d74", [
-      [ "STATIC", "classOTrashBin.html#ab0744c1ea3bf0d5f8502db6e98d47d74ada6b4933f20c2b2c13cbdff8435f1ed9", null ],
-      [ "MUNCHING", "classOTrashBin.html#ab0744c1ea3bf0d5f8502db6e98d47d74ae6bc51c831e6f3219f544752ca27ea3f", null ]
+    [ "Behaviour", "classOTrashBin.html#a192a7e675d053cd4519bb0213e2fd596", [
+      [ "STATIC", "classOTrashBin.html#a192a7e675d053cd4519bb0213e2fd596ada6b4933f20c2b2c13cbdff8435f1ed9", null ],
+      [ "MUNCHING", "classOTrashBin.html#a192a7e675d053cd4519bb0213e2fd596ae6bc51c831e6f3219f544752ca27ea3f", null ]
     ] ],
-    [ "OTrashBin", "classOTrashBin.html#a090a0f67a3d43f9e5001d79b74056d85", null ],
+    [ "OTrashBin", "classOTrashBin.html#a256f9cbed9757b7e12331eab6b70d6cf", null ],
     [ "Draw", "classOTrashBin.html#ab7caec5a5bbd835ac9250a6294166b2c", null ],
     [ "func_8007E00C", "classOTrashBin.html#a3bfba89c86991d823fdbeb0cb0e65097", null ],
     [ "init_bb_trash_bin", "classOTrashBin.html#a2e760dcaea338107046c4338bf2a9925", null ],
+    [ "Spawn", "classOTrashBin.html#a85ca206ed283939eb450f434fac7f818", null ],
     [ "Tick", "classOTrashBin.html#af6d73933526741c82beebbed24515259", null ],
     [ "_bhv", "classOTrashBin.html#ad6ad69aa19f80e408785441d9772a4dd", null ],
     [ "_drawBin", "classOTrashBin.html#a51426139f780b1fee70151cf502db7d5", null ],

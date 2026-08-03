@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/port/GameExtractor.h Source File</title>
+<title>SpaghettiKart: src/port/GameExtractor.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -121,19 +121,21 @@ $(function(){initNavTree('GameExtractor_8h_source.html',''); initResizable(true)
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="classGameExtractor.html#a068ee2ee209e80be83ce70c134eec895">   10</a></span>    <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classGameExtractor.html#a068ee2ee209e80be83ce70c134eec895">GenAssetFile</a>();</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    std::optional&lt;std::string&gt; <a class="code hl_function" href="classGameExtractor.html#a62a6158e90fd2366e4780164d3571f8c">ValidateChecksum</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classGameExtractor.html#a10cbcd1aac0aa869fdde0d3f1d502b45">SelectGameFromUI</a>();</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classGameExtractor.html#a3eee313b86c230c3fee5f7a5ce120df3">GenerateOTR</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classGameExtractor.html#a7e90279a7db81dee58a4dfd4a0cb2745">   15</a></span>    fs::path <a class="code hl_variable" href="classGameExtractor.html#a7e90279a7db81dee58a4dfd4a0cb2745">mGamePath</a>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classGameExtractor.html#ada063d80b026e2d48266dddb3aaaf027">   16</a></span>    std::vector&lt;uint8_t&gt; <a class="code hl_variable" href="classGameExtractor.html#ada063d80b026e2d48266dddb3aaaf027">mGameData</a>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>};</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classGameExtractor.html#a787a62ed41a6f9e69d355810b3c8fe78">GetRoms</a>(std::vector&lt;std::string&gt;&amp; roms);</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="classGameExtractor.html#a3eee313b86c230c3fee5f7a5ce120df3">GenerateOTR</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classGameExtractor.html#a7e90279a7db81dee58a4dfd4a0cb2745">   16</a></span>    fs::path <a class="code hl_variable" href="classGameExtractor.html#a7e90279a7db81dee58a4dfd4a0cb2745">mGamePath</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classGameExtractor.html#ada063d80b026e2d48266dddb3aaaf027">   17</a></span>    std::vector&lt;uint8_t&gt; <a class="code hl_variable" href="classGameExtractor.html#ada063d80b026e2d48266dddb3aaaf027">mGameData</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>};</div>
 </div>
 <div class="ttc" id="aclassGameExtractor_html"><div class="ttname"><a href="classGameExtractor.html">GameExtractor</a></div><div class="ttdef"><b>Definition</b> GameExtractor.h:8</div></div>
 <div class="ttc" id="aclassGameExtractor_html_a068ee2ee209e80be83ce70c134eec895"><div class="ttname"><a href="classGameExtractor.html#a068ee2ee209e80be83ce70c134eec895">GameExtractor::GenAssetFile</a></div><div class="ttdeci">static bool GenAssetFile()</div></div>
-<div class="ttc" id="aclassGameExtractor_html_a10cbcd1aac0aa869fdde0d3f1d502b45"><div class="ttname"><a href="classGameExtractor.html#a10cbcd1aac0aa869fdde0d3f1d502b45">GameExtractor::SelectGameFromUI</a></div><div class="ttdeci">bool SelectGameFromUI()</div><div class="ttdef"><b>Definition</b> GameExtractor.cpp:18</div></div>
-<div class="ttc" id="aclassGameExtractor_html_a3eee313b86c230c3fee5f7a5ce120df3"><div class="ttname"><a href="classGameExtractor.html#a3eee313b86c230c3fee5f7a5ce120df3">GameExtractor::GenerateOTR</a></div><div class="ttdeci">bool GenerateOTR() const</div><div class="ttdef"><b>Definition</b> GameExtractor.cpp:58</div></div>
-<div class="ttc" id="aclassGameExtractor_html_a62a6158e90fd2366e4780164d3571f8c"><div class="ttname"><a href="classGameExtractor.html#a62a6158e90fd2366e4780164d3571f8c">GameExtractor::ValidateChecksum</a></div><div class="ttdeci">std::optional&lt; std::string &gt; ValidateChecksum() const</div><div class="ttdef"><b>Definition</b> GameExtractor.cpp:46</div></div>
-<div class="ttc" id="aclassGameExtractor_html_a7e90279a7db81dee58a4dfd4a0cb2745"><div class="ttname"><a href="classGameExtractor.html#a7e90279a7db81dee58a4dfd4a0cb2745">GameExtractor::mGamePath</a></div><div class="ttdeci">fs::path mGamePath</div><div class="ttdef"><b>Definition</b> GameExtractor.h:15</div></div>
-<div class="ttc" id="aclassGameExtractor_html_ada063d80b026e2d48266dddb3aaaf027"><div class="ttname"><a href="classGameExtractor.html#ada063d80b026e2d48266dddb3aaaf027">GameExtractor::mGameData</a></div><div class="ttdeci">std::vector&lt; uint8_t &gt; mGameData</div><div class="ttdef"><b>Definition</b> GameExtractor.h:16</div></div>
+<div class="ttc" id="aclassGameExtractor_html_a10cbcd1aac0aa869fdde0d3f1d502b45"><div class="ttname"><a href="classGameExtractor.html#a10cbcd1aac0aa869fdde0d3f1d502b45">GameExtractor::SelectGameFromUI</a></div><div class="ttdeci">bool SelectGameFromUI()</div><div class="ttdef"><b>Definition</b> GameExtractor.cpp:33</div></div>
+<div class="ttc" id="aclassGameExtractor_html_a3eee313b86c230c3fee5f7a5ce120df3"><div class="ttname"><a href="classGameExtractor.html#a3eee313b86c230c3fee5f7a5ce120df3">GameExtractor::GenerateOTR</a></div><div class="ttdeci">bool GenerateOTR() const</div><div class="ttdef"><b>Definition</b> GameExtractor.cpp:188</div></div>
+<div class="ttc" id="aclassGameExtractor_html_a62a6158e90fd2366e4780164d3571f8c"><div class="ttname"><a href="classGameExtractor.html#a62a6158e90fd2366e4780164d3571f8c">GameExtractor::ValidateChecksum</a></div><div class="ttdeci">std::optional&lt; std::string &gt; ValidateChecksum() const</div><div class="ttdef"><b>Definition</b> GameExtractor.cpp:176</div></div>
+<div class="ttc" id="aclassGameExtractor_html_a787a62ed41a6f9e69d355810b3c8fe78"><div class="ttname"><a href="classGameExtractor.html#a787a62ed41a6f9e69d355810b3c8fe78">GameExtractor::GetRoms</a></div><div class="ttdeci">void GetRoms(std::vector&lt; std::string &gt; &amp;roms)</div><div class="ttdef"><b>Definition</b> GameExtractor.cpp:121</div></div>
+<div class="ttc" id="aclassGameExtractor_html_a7e90279a7db81dee58a4dfd4a0cb2745"><div class="ttname"><a href="classGameExtractor.html#a7e90279a7db81dee58a4dfd4a0cb2745">GameExtractor::mGamePath</a></div><div class="ttdeci">fs::path mGamePath</div><div class="ttdef"><b>Definition</b> GameExtractor.h:16</div></div>
+<div class="ttc" id="aclassGameExtractor_html_ada063d80b026e2d48266dddb3aaaf027"><div class="ttname"><a href="classGameExtractor.html#ada063d80b026e2d48266dddb3aaaf027">GameExtractor::mGameData</a></div><div class="ttdeci">std::vector&lt; uint8_t &gt; mGameData</div><div class="ttdef"><b>Definition</b> GameExtractor.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

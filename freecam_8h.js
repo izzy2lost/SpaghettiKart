@@ -2,9 +2,8 @@ var freecam_8h =
 [
     [ "freecam", "freecam_8h.html#aa5d2c222cdf8608a6099c31fb352d5e7", null ],
     [ "freecam_keyboard_manager", "freecam_8h.html#a24fe70d9abfdbfce68d126f947aee64d", null ],
-    [ "freecam_loop", "freecam_8h.html#a4a45a266fe1109288d9ebc823a00232c", null ],
+    [ "freecam_loop", "freecam_8h.html#a4541b75408eb100ea45d6aa2d83c4ee2", null ],
     [ "freecam_mouse_manager", "freecam_8h.html#a24b2cd5df26cae966ef3a74d545954aa", null ],
-    [ "freecam_render_setup", "freecam_8h.html#a7521efa93b2660b03b60d1e5c02a74b8", null ],
     [ "freecam_update_controller", "freecam_8h.html#a702fcae146b8f6f59cfb4c88c1856484", null ],
     [ "off_freecam", "freecam_8h.html#aebafc6430a3f2591e8051a3afae4a22d", null ],
     [ "on_freecam", "freecam_8h.html#a5d52f09c520017aa5f45f75c1922d71b", null ],

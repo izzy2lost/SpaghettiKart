@@ -14,6 +14,7 @@ var classOLakitu =
       [ "TOW_ICE_CUBE", "classOLakitu.html#ab2298e9648e9926d5cc3fce76bb53e4da4d5c96d46f9c82c90600b3f424f6e617", null ]
     ] ],
     [ "OLakitu", "classOLakitu.html#ac05c211fd1ce167fd5ee98bcbf561a13", null ],
+    [ "~OLakitu", "classOLakitu.html#aff481e726aadd52a6685a88b50a766e2", null ],
     [ "Activate", "classOLakitu.html#a720b46e01a2525f7d7f72128fa99bd5b", null ],
     [ "Draw", "classOLakitu.html#acf4c307ecb7d50a557cff7e4e9fc22d2", null ],
     [ "func_800729EC", "classOLakitu.html#acc3aecddc1afcd4c1e1f2f0bd3a7cb72", null ],
@@ -48,6 +49,10 @@ var classOLakitu =
     [ "update_object_lakitu_reverse", "classOLakitu.html#a01c6e5ebe6c63ad17b9210af932880de", null ],
     [ "update_object_lakitu_second_lap", "classOLakitu.html#abfdaa3abf8ef74e63651c56934d0a346", null ],
     [ "update_object_lakitu_starter", "classOLakitu.html#aef9bf9e2cb4783624b766105deb9aa87", null ],
-    [ "_playerId", "classOLakitu.html#a43a7734bb42ceefab84d89b08b73c0d5", null ],
-    [ "_type", "classOLakitu.html#aba2bb0fe70450e656e0073abc5e41dd9", null ]
+    [ "_count", "classOLakitu.html#a454a2003647b41afcdef132909fd3f30", null ],
+    [ "_idx", "classOLakitu.html#a5eda4f68418ed9c97b7c4c532a099a25", null ],
+    [ "_type", "classOLakitu.html#aba2bb0fe70450e656e0073abc5e41dd9", null ],
+    [ "mCameraId", "classOLakitu.html#ada92132e451d313bdc7ad975abcd7ee1", null ],
+    [ "mLakituId", "classOLakitu.html#a041b535851def8d57fd1ddf290261f6a", null ],
+    [ "mPlayerId", "classOLakitu.html#a943bc4f6cf72f1db8c1e5afec1150d32", null ]
 ];

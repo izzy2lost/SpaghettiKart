@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/courses/BansheeBoardwalk.cpp File Reference</title>
+<title>SpaghettiKart: src/engine/tracks/BansheeBoardwalk.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -110,40 +110,44 @@ $(function(){initNavTree('BansheeBoardwalk_8cpp.html',''); initResizable(true); 
   <div class="headertitle"><div class="title">BansheeBoardwalk.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;libultraship.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;cstdint&gt;</code><br />
+<code>#include &lt;libultraship.h&gt;</code><br />
 <code>#include &lt;libultra/gbi.h&gt;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &quot;<a class="el" href="BansheeBoardwalk_8h_source.html">BansheeBoardwalk.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="World_8h_source.html">World.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="World_8h_source.html">engine/World.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="align__asset__macro_8h_source.html">align_asset_macro.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Finishline_8h_source.html">engine/actors/Finishline.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="BombKart_8h_source.html">engine/objects/BombKart.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="CheepCheep_8h_source.html">engine/objects/CheepCheep.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TrashBin_8h_source.html">engine/objects/TrashBin.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Bat_8h_source.html">engine/objects/Bat.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Boos_8h_source.html">engine/objects/Boos.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="banshee__boardwalk__data_8h_source.html">assets/banshee_boardwalk_data.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="boo__frames_8h_source.html">assets/boo_frames.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="models_2tracks_2banshee__boardwalk_2banshee__boardwalk__data_8h_source.html">assets/models/tracks/banshee_boardwalk/banshee_boardwalk_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="other_2tracks_2banshee__boardwalk_2banshee__boardwalk__data_8h_source.html">assets/other/tracks/banshee_boardwalk/banshee_boardwalk_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Game_8h_source.html">port/Game.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="boo__frames_8h_source.html">assets/textures/boo_frames.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="camera_8h_source.html">camera.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="course__offsets_8h_source.html">course_offsets.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__800029B0_8h_source.html">code_800029B0.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="render__courses_8h_source.html">render_courses.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="render__courses_8h_source.html">racing/render_courses.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__8006E9C0_8h_source.html">code_8006E9C0.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80057C60_8h_source.html">code_80057C60.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="defines_8h_source.html">defines.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="math__util_8h_source.html">math_util.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="external_8h_source.html">external.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="math__util_8h_source.html">racing/math_util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="external_8h_source.html">audio/external.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80005FD0_8h_source.html">code_80005FD0.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="spawn__players_8h_source.html">spawn_players.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="render__objects_8h_source.html">render_objects.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="common__data_8h_source.html">assets/common_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="models_2common__data_8h_source.html">assets/models/common_data.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="save_8h_source.html">save.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="replays_8h_source.html">replays.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="actors_8h_source.html">actors.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="collision_8h_source.html">collision.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="actors_8h_source.html">racing/actors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="collision_8h_source.html">racing/collision.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="memory_8h_source.html">memory.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="course_8h_source.html">course.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for BansheeBoardwalk.cpp:</div>
 <div class="dyncontent">
@@ -152,14 +156,12 @@ Include dependency graph for BansheeBoardwalk.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a148f6ab81ba12bea276eb1a9b909b7a3" id="r_a148f6ab81ba12bea276eb1a9b909b7a3"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a148f6ab81ba12bea276eb1a9b909b7a3">banshee_boardwalk_dls</a> []</td></tr>
-<tr class="separator:a148f6ab81ba12bea276eb1a9b909b7a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36fcf7815972787a3c73939f3ff484fd" id="r_a36fcf7815972787a3c73939f3ff484fd"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structcourse__texture.html">course_texture</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36fcf7815972787a3c73939f3ff484fd">banshee_boardwalk_textures</a> []</td></tr>
-<tr class="separator:a36fcf7815972787a3c73939f3ff484fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cbe0f78f515ac3db09284a5e1b39311" id="r_a8cbe0f78f515ac3db09284a5e1b39311"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8cbe0f78f515ac3db09284a5e1b39311">banshee_boardwalk_dls</a> [100]</td></tr>
+<tr class="separator:a8cbe0f78f515ac3db09284a5e1b39311"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a148f6ab81ba12bea276eb1a9b909b7a3" name="a148f6ab81ba12bea276eb1a9b909b7a3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a148f6ab81ba12bea276eb1a9b909b7a3">&#9670;&#160;</a></span>banshee_boardwalk_dls</h2>
+<a id="a8cbe0f78f515ac3db09284a5e1b39311" name="a8cbe0f78f515ac3db09284a5e1b39311"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cbe0f78f515ac3db09284a5e1b39311">&#9670;&#160;</a></span>banshee_boardwalk_dls</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -168,7 +170,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* banshee_boardwalk_dls[]</td>
+          <td class="memname">const char* banshee_boardwalk_dls[100]</td>
         </tr>
       </table>
   </td>
@@ -180,51 +182,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a36fcf7815972787a3c73939f3ff484fd" name="a36fcf7815972787a3c73939f3ff484fd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36fcf7815972787a3c73939f3ff484fd">&#9670;&#160;</a></span>banshee_boardwalk_textures</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structcourse__texture.html">course_texture</a> banshee_boardwalk_textures[]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    { gTexture6447C4, 0x0106, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture676FB0, 0x0525, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture643B3C, 0x0798, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture64BB60, 0x0169, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture64BCCC, 0x0450, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture64FBF4, 0x0274, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture651B20, 0x041D, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture66262C, 0x02F7, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture668728, 0x01F5, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture66A3DC, 0x07C5, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture66CA98, 0x02C9, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture66CD64, 0x02C0, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture66D698, 0x0370, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture66E608, 0x05E8, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture67B388, 0x03D2, 0x0800, 0x0 },</div>
-<div class="line">    { gTextureSignWelcome0, 0x0A2E, 0x1000, 0x0 },</div>
-<div class="line">    { gTextureSignWelcome1, 0x0A0A, 0x1000, 0x0 },</div>
-<div class="line">    { gTextureSignWoodenBack0, 0x06EF, 0x1000, 0x0 },</div>
-<div class="line">    { gTextureSignWoodenBack1, 0x06D1, 0x1000, 0x0 },</div>
-<div class="line">    { gTextureSignWoodRedArrow, 0x04E1, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture68D940, 0x057D, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture685AC0, 0x07CC, 0x1000, 0x0 },</div>
-<div class="line">    { 0x00000000, 0x0000, 0x0000, 0x0 },</div>
-<div class="line">}</div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="dir_361caa2d8f272974fdb8d014c7b22bcf.html">courses</a></li><li class="navelem"><a class="el" href="BansheeBoardwalk_8cpp.html">BansheeBoardwalk.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="dir_8955581d22ca769fa1400ba486b7589a.html">tracks</a></li><li class="navelem"><a class="el" href="BansheeBoardwalk_8cpp.html">BansheeBoardwalk.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

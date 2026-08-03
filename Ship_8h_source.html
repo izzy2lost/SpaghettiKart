@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/actors/Ship.h Source File</title>
+<title>SpaghettiKart: src/engine/actors/Ship.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -112,55 +112,72 @@ $(function(){initNavTree('Ship_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;libultraship.h&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;libultra/gbi.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="Actor_8h.html">engine/Actor.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="CoreMath_8h.html">CoreMath.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="common__structs_8h.html">common_structs.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="other__textures_8h.html">assets/other_textures.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classAShip.html">   13</a></span><span class="keyword">class </span><a class="code hl_function" href="classAShip.html#a3c862a347518524f94027de4099159ca">AShip</a> : <span class="keyword">public</span> <a class="code hl_function" href="classAActor.html#a679c43bacf3600fa2d7a6ab30e34a8a6">AActor</a> {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="};">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classAShip.html#aaf7ade7faf341ba878c83a2be5834b31">   16</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="classAShip.html#aaf7ade7faf341ba878c83a2be5834b31">Skin</a> {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classAShip.html#aaf7ade7faf341ba878c83a2be5834b31a3986f74ebf740972bf046044b87fd2df">   17</a></span>        <a class="code hl_enumvalue" href="classAShip.html#aaf7ade7faf341ba878c83a2be5834b31a3986f74ebf740972bf046044b87fd2df">GHOSTSHIP</a>,</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classAShip.html#aaf7ade7faf341ba878c83a2be5834b31a473dadfc228ef4176da443258d410b4e">   18</a></span>        <a class="code hl_enumvalue" href="classAShip.html#aaf7ade7faf341ba878c83a2be5834b31a473dadfc228ef4176da443258d410b4e">SHIP2</a>,</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classAShip.html#aaf7ade7faf341ba878c83a2be5834b31a6e134608fd3f7ff7523a77786edf2fda">   19</a></span>        <a class="code hl_enumvalue" href="classAShip.html#aaf7ade7faf341ba878c83a2be5834b31a6e134608fd3f7ff7523a77786edf2fda">SHIP3</a>,</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    };</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="CoreMath_8h.html">engine/CoreMath.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="RegisterContent_8h.html">engine/registry/RegisterContent.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="Actor_8h.html">engine/Actor.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classAShip.html">    9</a></span><span class="keyword">class </span><a class="code hl_function" href="classAShip.html#aa54a4eed162e1079237ca6bef019bacf">AShip</a> : <span class="keyword">public</span> <a class="code hl_function" href="classAActor.html#a679c43bacf3600fa2d7a6ab30e34a8a6">AActor</a> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classAShip.html#a38425bb0c0aa8fba8d15ac8bef5c667a">   12</a></span>    <span class="keyword">enum</span> <a class="code hl_enumeration" href="classAShip.html#a38425bb0c0aa8fba8d15ac8bef5c667a">Skin</a> : int16_t {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classAShip.html#a38425bb0c0aa8fba8d15ac8bef5c667aa3986f74ebf740972bf046044b87fd2df">   13</a></span>        <a class="code hl_enumvalue" href="classAShip.html#a38425bb0c0aa8fba8d15ac8bef5c667aa3986f74ebf740972bf046044b87fd2df">GHOSTSHIP</a>,</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classAShip.html#a38425bb0c0aa8fba8d15ac8bef5c667aa473dadfc228ef4176da443258d410b4e">   14</a></span>        <a class="code hl_enumvalue" href="classAShip.html#a38425bb0c0aa8fba8d15ac8bef5c667aa473dadfc228ef4176da443258d410b4e">SHIP2</a>,</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classAShip.html#a38425bb0c0aa8fba8d15ac8bef5c667aa6e134608fd3f7ff7523a77786edf2fda">   15</a></span>        <a class="code hl_enumvalue" href="classAShip.html#a38425bb0c0aa8fba8d15ac8bef5c667aa6e134608fd3f7ff7523a77786edf2fda">SHIP3</a>,</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    };</div>
 </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classAShip.html#a3c862a347518524f94027de4099159ca">AShip</a>(<a class="code hl_struct" href="structFVector.html">FVector</a> pos, <a class="code hl_enumeration" href="classAShip.html#aaf7ade7faf341ba878c83a2be5834b31">AShip::Skin</a>);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classAShip.html#ab7ae8c55208336759dad9b34046ce6c6">   23</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classAShip.html#ab7ae8c55208336759dad9b34046ce6c6">~AShip</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classAShip.html#a3e4457ab685466c67aa1cbb8cf398196">Tick</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classAShip.html#affc88be9487f45acfd878c4f97e436ce">IsMod</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classAShip.html#a8af00b231d6067d4da929477fc3122f6">   28</a></span>    <a class="code hl_struct" href="structFVector.html">FVector</a> <a class="code hl_variable" href="classAShip.html#a8af00b231d6067d4da929477fc3122f6">Spawn</a>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="comment">//FVector Pos;</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="comment">//FVector Scale = {0.4, 0.4, 0.4};</span></div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classAShip.html#a75ca3749396a1aa0487f37ed7230d5ee">   33</a></span>    Gfx* <a class="code hl_variable" href="classAShip.html#a75ca3749396a1aa0487f37ed7230d5ee">_skin</a>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classAShip.html#aa54a4eed162e1079237ca6bef019bacf">AShip</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a>&amp; params);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classAShip.html#ab7ae8c55208336759dad9b34046ce6c6">   19</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classAShip.html#ab7ae8c55208336759dad9b34046ce6c6">~AShip</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="comment">// This is simply a helper function to keep Spawning code clean</span></div>
+<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classAShip.html#aed4bf6c477dba49276188aca031649ee">   22</a></span>    <span class="keyword">static</span> <a class="code hl_function" href="classAShip.html#aa54a4eed162e1079237ca6bef019bacf">AShip</a>* <a class="code hl_function" href="classAShip.html#aed4bf6c477dba49276188aca031649ee">Spawn</a>(<a class="code hl_struct" href="structFVector.html">FVector</a> pos, <a class="code hl_struct" href="structIRotator.html">IRotator</a> rot, <a class="code hl_struct" href="structFVector.html">FVector</a> scale, int16_t skin) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a> params = {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            .Name = <span class="stringliteral">&quot;hm:ship&quot;</span>,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            .Type = skin, <span class="comment">// which ship model to use</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            .Location = pos,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            .Rotation = rot,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            .Scale = scale,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        };</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><a class="code hl_function" href="classAShip.html#aa54a4eed162e1079237ca6bef019bacf">AShip</a>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="RegisterContent_8h.html#aa90aab222b9cb6a7a75c2ed09379eb4e">AddActorToWorld&lt;AShip&gt;</a>(params));</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
+</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classAShip.html#ab5b867584320e09fb52558433916386c">   33</a></span>    <a class="code hl_enumeration" href="classAShip.html#a38425bb0c0aa8fba8d15ac8bef5c667a">AShip::Skin</a> <a class="code hl_variable" href="classAShip.html#ab5b867584320e09fb52558433916386c">SpawnSkin</a> = <a class="code hl_enumvalue" href="classAShip.html#a38425bb0c0aa8fba8d15ac8bef5c667aa3986f74ebf740972bf046044b87fd2df">Skin::GHOSTSHIP</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classAShip.html#a478c4bd084064e9a4f838989cf3dfa82">SetSpawnParams</a>(<a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a>&amp; params) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classAShip.html#a3e4457ab685466c67aa1cbb8cf398196">Tick</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classAShip.html#aa3c949bc1cab477bfc208c09360d57b3">BeginPlay</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classAShip.html#affc88be9487f45acfd878c4f97e436ce">IsMod</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classAShip.html#aa881346ca7bd4780c64f18187e770bff">DrawEditorProperties</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="classAShip.html#a75ca3749396a1aa0487f37ed7230d5ee">   41</a></span>    Gfx* <a class="code hl_variable" href="classAShip.html#a75ca3749396a1aa0487f37ed7230d5ee">_skin</a>;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>};</div>
 </div>
 <div class="ttc" id="aActor_8h_html"><div class="ttname"><a href="Actor_8h.html">Actor.h</a></div></div>
 <div class="ttc" id="aCoreMath_8h_html"><div class="ttname"><a href="CoreMath_8h.html">CoreMath.h</a></div></div>
-<div class="ttc" id="aclassAActor_html_a679c43bacf3600fa2d7a6ab30e34a8a6"><div class="ttname"><a href="classAActor.html#a679c43bacf3600fa2d7a6ab30e34a8a6">AActor::AActor</a></div><div class="ttdeci">AActor()</div><div class="ttdef"><b>Definition</b> Actor.cpp:10</div></div>
-<div class="ttc" id="aclassAShip_html_a3c862a347518524f94027de4099159ca"><div class="ttname"><a href="classAShip.html#a3c862a347518524f94027de4099159ca">AShip::AShip</a></div><div class="ttdeci">AShip(FVector pos, AShip::Skin)</div><div class="ttdef"><b>Definition</b> Ship.cpp:16</div></div>
-<div class="ttc" id="aclassAShip_html_a3e4457ab685466c67aa1cbb8cf398196"><div class="ttname"><a href="classAShip.html#a3e4457ab685466c67aa1cbb8cf398196">AShip::Tick</a></div><div class="ttdeci">virtual void Tick() override</div><div class="ttdef"><b>Definition</b> Ship.cpp:41</div></div>
-<div class="ttc" id="aclassAShip_html_a75ca3749396a1aa0487f37ed7230d5ee"><div class="ttname"><a href="classAShip.html#a75ca3749396a1aa0487f37ed7230d5ee">AShip::_skin</a></div><div class="ttdeci">Gfx * _skin</div><div class="ttdoc">IRotator Rot = {0, 0, 0};.</div><div class="ttdef"><b>Definition</b> Ship.h:33</div></div>
-<div class="ttc" id="aclassAShip_html_a8af00b231d6067d4da929477fc3122f6"><div class="ttname"><a href="classAShip.html#a8af00b231d6067d4da929477fc3122f6">AShip::Spawn</a></div><div class="ttdeci">FVector Spawn</div><div class="ttdef"><b>Definition</b> Ship.h:28</div></div>
-<div class="ttc" id="aclassAShip_html_aaf7ade7faf341ba878c83a2be5834b31"><div class="ttname"><a href="classAShip.html#aaf7ade7faf341ba878c83a2be5834b31">AShip::Skin</a></div><div class="ttdeci">Skin</div><div class="ttdef"><b>Definition</b> Ship.h:16</div></div>
-<div class="ttc" id="aclassAShip_html_aaf7ade7faf341ba878c83a2be5834b31a3986f74ebf740972bf046044b87fd2df"><div class="ttname"><a href="classAShip.html#aaf7ade7faf341ba878c83a2be5834b31a3986f74ebf740972bf046044b87fd2df">AShip::GHOSTSHIP</a></div><div class="ttdeci">@ GHOSTSHIP</div><div class="ttdef"><b>Definition</b> Ship.h:17</div></div>
-<div class="ttc" id="aclassAShip_html_aaf7ade7faf341ba878c83a2be5834b31a473dadfc228ef4176da443258d410b4e"><div class="ttname"><a href="classAShip.html#aaf7ade7faf341ba878c83a2be5834b31a473dadfc228ef4176da443258d410b4e">AShip::SHIP2</a></div><div class="ttdeci">@ SHIP2</div><div class="ttdef"><b>Definition</b> Ship.h:18</div></div>
-<div class="ttc" id="aclassAShip_html_aaf7ade7faf341ba878c83a2be5834b31a6e134608fd3f7ff7523a77786edf2fda"><div class="ttname"><a href="classAShip.html#aaf7ade7faf341ba878c83a2be5834b31a6e134608fd3f7ff7523a77786edf2fda">AShip::SHIP3</a></div><div class="ttdeci">@ SHIP3</div><div class="ttdef"><b>Definition</b> Ship.h:19</div></div>
+<div class="ttc" id="aRegisterContent_8h_html"><div class="ttname"><a href="RegisterContent_8h.html">RegisterContent.h</a></div></div>
+<div class="ttc" id="aRegisterContent_8h_html_aa90aab222b9cb6a7a75c2ed09379eb4e"><div class="ttname"><a href="RegisterContent_8h.html#aa90aab222b9cb6a7a75c2ed09379eb4e">AddActorToWorld</a></div><div class="ttdeci">static AActor * AddActorToWorld(const SpawnParams &amp;params)</div><div class="ttdef"><b>Definition</b> RegisterContent.h:14</div></div>
+<div class="ttc" id="aclassAActor_html_a679c43bacf3600fa2d7a6ab30e34a8a6"><div class="ttname"><a href="classAActor.html#a679c43bacf3600fa2d7a6ab30e34a8a6">AActor::AActor</a></div><div class="ttdeci">AActor()</div><div class="ttdef"><b>Definition</b> Actor.cpp:13</div></div>
+<div class="ttc" id="aclassAShip_html_a38425bb0c0aa8fba8d15ac8bef5c667a"><div class="ttname"><a href="classAShip.html#a38425bb0c0aa8fba8d15ac8bef5c667a">AShip::Skin</a></div><div class="ttdeci">Skin</div><div class="ttdef"><b>Definition</b> Ship.h:12</div></div>
+<div class="ttc" id="aclassAShip_html_a38425bb0c0aa8fba8d15ac8bef5c667aa3986f74ebf740972bf046044b87fd2df"><div class="ttname"><a href="classAShip.html#a38425bb0c0aa8fba8d15ac8bef5c667aa3986f74ebf740972bf046044b87fd2df">AShip::GHOSTSHIP</a></div><div class="ttdeci">@ GHOSTSHIP</div><div class="ttdef"><b>Definition</b> Ship.h:13</div></div>
+<div class="ttc" id="aclassAShip_html_a38425bb0c0aa8fba8d15ac8bef5c667aa473dadfc228ef4176da443258d410b4e"><div class="ttname"><a href="classAShip.html#a38425bb0c0aa8fba8d15ac8bef5c667aa473dadfc228ef4176da443258d410b4e">AShip::SHIP2</a></div><div class="ttdeci">@ SHIP2</div><div class="ttdef"><b>Definition</b> Ship.h:14</div></div>
+<div class="ttc" id="aclassAShip_html_a38425bb0c0aa8fba8d15ac8bef5c667aa6e134608fd3f7ff7523a77786edf2fda"><div class="ttname"><a href="classAShip.html#a38425bb0c0aa8fba8d15ac8bef5c667aa6e134608fd3f7ff7523a77786edf2fda">AShip::SHIP3</a></div><div class="ttdeci">@ SHIP3</div><div class="ttdef"><b>Definition</b> Ship.h:15</div></div>
+<div class="ttc" id="aclassAShip_html_a3e4457ab685466c67aa1cbb8cf398196"><div class="ttname"><a href="classAShip.html#a3e4457ab685466c67aa1cbb8cf398196">AShip::Tick</a></div><div class="ttdeci">virtual void Tick() override</div><div class="ttdef"><b>Definition</b> Ship.cpp:63</div></div>
+<div class="ttc" id="aclassAShip_html_a478c4bd084064e9a4f838989cf3dfa82"><div class="ttname"><a href="classAShip.html#a478c4bd084064e9a4f838989cf3dfa82">AShip::SetSpawnParams</a></div><div class="ttdeci">virtual void SetSpawnParams(SpawnParams &amp;params) override</div><div class="ttdef"><b>Definition</b> Ship.cpp:44</div></div>
+<div class="ttc" id="aclassAShip_html_a75ca3749396a1aa0487f37ed7230d5ee"><div class="ttname"><a href="classAShip.html#a75ca3749396a1aa0487f37ed7230d5ee">AShip::_skin</a></div><div class="ttdeci">Gfx * _skin</div><div class="ttdef"><b>Definition</b> Ship.h:41</div></div>
+<div class="ttc" id="aclassAShip_html_aa3c949bc1cab477bfc208c09360d57b3"><div class="ttname"><a href="classAShip.html#aa3c949bc1cab477bfc208c09360d57b3">AShip::BeginPlay</a></div><div class="ttdeci">virtual void BeginPlay() override</div><div class="ttdef"><b>Definition</b> Ship.cpp:54</div></div>
+<div class="ttc" id="aclassAShip_html_aa54a4eed162e1079237ca6bef019bacf"><div class="ttname"><a href="classAShip.html#aa54a4eed162e1079237ca6bef019bacf">AShip::AShip</a></div><div class="ttdeci">AShip(const SpawnParams &amp;params)</div><div class="ttdef"><b>Definition</b> Ship.cpp:17</div></div>
+<div class="ttc" id="aclassAShip_html_aa881346ca7bd4780c64f18187e770bff"><div class="ttname"><a href="classAShip.html#aa881346ca7bd4780c64f18187e770bff">AShip::DrawEditorProperties</a></div><div class="ttdeci">virtual void DrawEditorProperties() override</div><div class="ttdef"><b>Definition</b> Ship.cpp:80</div></div>
+<div class="ttc" id="aclassAShip_html_ab5b867584320e09fb52558433916386c"><div class="ttname"><a href="classAShip.html#ab5b867584320e09fb52558433916386c">AShip::SpawnSkin</a></div><div class="ttdeci">AShip::Skin SpawnSkin</div><div class="ttdef"><b>Definition</b> Ship.h:33</div></div>
 <div class="ttc" id="aclassAShip_html_ab7ae8c55208336759dad9b34046ce6c6"><div class="ttname"><a href="classAShip.html#ab7ae8c55208336759dad9b34046ce6c6">AShip::~AShip</a></div><div class="ttdeci">virtual ~AShip()=default</div></div>
-<div class="ttc" id="aclassAShip_html_affc88be9487f45acfd878c4f97e436ce"><div class="ttname"><a href="classAShip.html#affc88be9487f45acfd878c4f97e436ce">AShip::IsMod</a></div><div class="ttdeci">virtual bool IsMod() override</div><div class="ttdef"><b>Definition</b> Ship.cpp:56</div></div>
-<div class="ttc" id="acommon__structs_8h_html"><div class="ttname"><a href="common__structs_8h.html">common_structs.h</a></div></div>
-<div class="ttc" id="aother__textures_8h_html"><div class="ttname"><a href="other__textures_8h.html">other_textures.h</a></div></div>
-<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:18</div></div>
+<div class="ttc" id="aclassAShip_html_aed4bf6c477dba49276188aca031649ee"><div class="ttname"><a href="classAShip.html#aed4bf6c477dba49276188aca031649ee">AShip::Spawn</a></div><div class="ttdeci">static AShip * Spawn(FVector pos, IRotator rot, FVector scale, int16_t skin)</div><div class="ttdef"><b>Definition</b> Ship.h:22</div></div>
+<div class="ttc" id="aclassAShip_html_affc88be9487f45acfd878c4f97e436ce"><div class="ttname"><a href="classAShip.html#affc88be9487f45acfd878c4f97e436ce">AShip::IsMod</a></div><div class="ttdeci">virtual bool IsMod() override</div><div class="ttdef"><b>Definition</b> Ship.cpp:78</div></div>
+<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:30</div></div>
+<div class="ttc" id="astructIRotator_html"><div class="ttname"><a href="structIRotator.html">IRotator</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:141</div></div>
+<div class="ttc" id="astructSpawnParams_html"><div class="ttname"><a href="structSpawnParams.html">SpawnParams</a></div><div class="ttdef"><b>Definition</b> SpawnParams.h:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -7,10 +7,11 @@ var searchData=
   ['floatslideroptions_4',['FloatSliderOptions',['../structUIWidgets_1_1FloatSliderOptions.html',1,'UIWidgets']]],
   ['frappesnowland_5',['FrappeSnowland',['../classFrappeSnowland.html',1,'']]],
   ['freecam_6',['FreeCam',['../structFreeCam.html',1,'']]],
-  ['freecamsavestate_7',['freecamSaveState',['../structfreecamSaveState.html',1,'']]],
-  ['frotator_8',['FRotator',['../structFRotator.html',1,'']]],
-  ['fu_9',['fu',['../unionfu.html',1,'']]],
-  ['fvector_10',['FVector',['../structFVector.html',1,'']]],
-  ['fvector2d_11',['FVector2D',['../structFVector2D.html',1,'']]],
-  ['fvector4_12',['FVector4',['../structFVector4.html',1,'']]]
+  ['freecamera_7',['FreeCamera',['../classFreeCamera.html',1,'']]],
+  ['freecamsavestate_8',['freecamSaveState',['../structfreecamSaveState.html',1,'']]],
+  ['frotator_9',['FRotator',['../structFRotator.html',1,'']]],
+  ['fu_10',['fu',['../unionfu.html',1,'']]],
+  ['fvector_11',['FVector',['../structFVector.html',1,'']]],
+  ['fvector2d_12',['FVector2D',['../structFVector2D.html',1,'']]],
+  ['fvector4_13',['FVector4',['../structFVector4.html',1,'']]]
 ];

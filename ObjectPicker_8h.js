@@ -1,4 +1,4 @@
 var ObjectPicker_8h =
 [
-    [ "Editor::ObjectPicker", "classEditor_1_1ObjectPicker.html", "classEditor_1_1ObjectPicker" ]
+    [ "TrackEditor::ObjectPicker", "classTrackEditor_1_1ObjectPicker.html", "classTrackEditor_1_1ObjectPicker" ]
 ];

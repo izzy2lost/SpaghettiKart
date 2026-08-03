@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/courses/MarioRaceway.cpp File Reference</title>
+<title>SpaghettiKart: src/engine/tracks/MarioRaceway.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -106,6 +106,7 @@ $(function(){initNavTree('MarioRaceway_8cpp.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">MarioRaceway.cpp File Reference</div></div>
 </div><!--header-->
@@ -115,8 +116,9 @@ $(function(){initNavTree('MarioRaceway_8cpp.html',''); initResizable(true); });
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &quot;<a class="el" href="MarioRaceway_8h_source.html">MarioRaceway.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="World_8h_source.html">World.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="World_8h_source.html">engine/World.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Finishline_8h_source.html">engine/actors/Finishline.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="MarioSign_8h_source.html">engine/actors/MarioSign.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Object_8h_source.html">engine/objects/Object.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="BombKart_8h_source.html">engine/objects/BombKart.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GrandPrixBalloons_8h_source.html">engine/objects/GrandPrixBalloons.h</a>&quot;</code><br />
@@ -124,40 +126,71 @@ $(function(){initNavTree('MarioRaceway_8cpp.html',''); initResizable(true); });
 <code>#include &quot;<a class="el" href="camera_8h_source.html">camera.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="course__offsets_8h_source.html">course_offsets.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__800029B0_8h_source.html">code_800029B0.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="render__courses_8h_source.html">render_courses.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="render__courses_8h_source.html">racing/render_courses.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__8006E9C0_8h_source.html">code_8006E9C0.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80057C60_8h_source.html">code_80057C60.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="defines_8h_source.html">defines.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="math__util_8h_source.html">math_util.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="external_8h_source.html">external.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="math__util_8h_source.html">racing/math_util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="external_8h_source.html">audio/external.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80005FD0_8h_source.html">code_80005FD0.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="spawn__players_8h_source.html">spawn_players.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="render__objects_8h_source.html">render_objects.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="common__data_8h_source.html">assets/common_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="models_2common__data_8h_source.html">assets/models/common_data.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="save_8h_source.html">save.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="replays_8h_source.html">replays.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="actors_8h_source.html">actors.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="mario__raceway__data_8h_source.html">mario_raceway_data.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="collision_8h_source.html">collision.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="actors_8h_source.html">racing/actors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="models_2tracks_2mario__raceway_2mario__raceway__data_8h_source.html">assets/models/tracks/mario_raceway/mario_raceway_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="other_2tracks_2mario__raceway_2mario__raceway__data_8h_source.html">assets/other/tracks/mario_raceway/mario_raceway_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="collision_8h_source.html">racing/collision.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="memory_8h_source.html">memory.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="staff__ghost__data_8h_source.html">courses/staff_ghost_data.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="course_8h_source.html">course.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for MarioRaceway.cpp:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="MarioRaceway_8cpp__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ac4278fb9b842fc05e04349f8d5935edc" id="r_ac4278fb9b842fc05e04349f8d5935edc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4278fb9b842fc05e04349f8d5935edc">render_mario_raceway_pipe</a> (void)</td></tr>
+<tr class="separator:ac4278fb9b842fc05e04349f8d5935edc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a396da66d89d1401d5ea89898d2e29c74" id="r_a396da66d89d1401d5ea89898d2e29c74"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a396da66d89d1401d5ea89898d2e29c74">mario_raceway_dls</a> []</td></tr>
-<tr class="separator:a396da66d89d1401d5ea89898d2e29c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a572db56bfd4d9db6643aefae1aeec3a7" id="r_a572db56bfd4d9db6643aefae1aeec3a7"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structcourse__texture.html">course_texture</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a572db56bfd4d9db6643aefae1aeec3a7">mario_raceway_textures</a> []</td></tr>
-<tr class="separator:a572db56bfd4d9db6643aefae1aeec3a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae117f44e65a6193aad9bbbdb229c82c2" id="r_ae117f44e65a6193aad9bbbdb229c82c2"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae117f44e65a6193aad9bbbdb229c82c2">mario_raceway_dls</a> [68]</td></tr>
+<tr class="separator:ae117f44e65a6193aad9bbbdb229c82c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ac4278fb9b842fc05e04349f8d5935edc" name="ac4278fb9b842fc05e04349f8d5935edc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4278fb9b842fc05e04349f8d5935edc">&#9670;&#160;</a></span>render_mario_raceway_pipe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void render_mario_raceway_pipe </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="MarioRaceway_8cpp_ac4278fb9b842fc05e04349f8d5935edc_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="MarioRaceway_8cpp_ac4278fb9b842fc05e04349f8d5935edc_icgraph.svg" width="424" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="a396da66d89d1401d5ea89898d2e29c74" name="a396da66d89d1401d5ea89898d2e29c74"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a396da66d89d1401d5ea89898d2e29c74">&#9670;&#160;</a></span>mario_raceway_dls</h2>
+<a id="ae117f44e65a6193aad9bbbdb229c82c2" name="ae117f44e65a6193aad9bbbdb229c82c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae117f44e65a6193aad9bbbdb229c82c2">&#9670;&#160;</a></span>mario_raceway_dls</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -166,7 +199,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* mario_raceway_dls[]</td>
+          <td class="memname">const char* mario_raceway_dls[68]</td>
         </tr>
       </table>
   </td>
@@ -178,26 +211,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a572db56bfd4d9db6643aefae1aeec3a7" name="a572db56bfd4d9db6643aefae1aeec3a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a572db56bfd4d9db6643aefae1aeec3a7">&#9670;&#160;</a></span>mario_raceway_textures</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structcourse__texture.html">course_texture</a> mario_raceway_textures[]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="dir_361caa2d8f272974fdb8d014c7b22bcf.html">courses</a></li><li class="navelem"><a class="el" href="MarioRaceway_8cpp.html">MarioRaceway.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="dir_8955581d22ca769fa1400ba486b7589a.html">tracks</a></li><li class="navelem"><a class="el" href="MarioRaceway_8cpp.html">MarioRaceway.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

@@ -1,6 +1,6 @@
 var path__spawn__metadata_8h =
 [
-    [ "_struct_gCoursePathSizes_0x10", "struct__struct__gCoursePathSizes__0x10.html", "struct__struct__gCoursePathSizes__0x10" ],
+    [ "TrackPathSizes", "structTrackPathSizes.html", "structTrackPathSizes" ],
     [ "D_800DDB20", "path__spawn__metadata_8h.html#a736a3c54ce6ccc5d27bdb9096a706f14", null ],
     [ "D_800DDB24", "path__spawn__metadata_8h.html#aa1225cbe034f8220381bf006bcb48ba1", null ],
     [ "gAIDistances", "path__spawn__metadata_8h.html#a5da7c759d9be67a80475d4d887814c2f", null ],

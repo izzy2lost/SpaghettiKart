@@ -32,5 +32,5 @@ var Engine_8cpp =
     [ "gInterpolationStep", "Engine_8cpp.html#a02d928d2932fc6b19878df8c00f385c8", null ],
     [ "prevAltAssets", "Engine_8cpp.html#a1a2265ed282bcbad346680ededf07b31", null ],
     [ "ShouldClearTextureCacheAtEndOfFrame", "Engine_8cpp.html#afb564a49567bc4a5f4da5e40839eb26e", null ],
-    [ "sOtrSignature", "Engine_8cpp.html#a16063a9508c9b27102e4a98729d8db04", null ]
+    [ "sOtrSignature", "Engine_8cpp.html#a91f46dc1e6f545d3ed1fcf8b69b8cbbb", null ]
 ];

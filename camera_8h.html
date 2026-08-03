@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/camera.h File Reference</title>
+<title>SpaghettiKart: src/camera.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -108,6 +108,8 @@ $(function(){initNavTree('camera_8h.html',''); initResizable(true); });
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">camera.h File Reference</div></div>
@@ -134,13 +136,28 @@ Data Structures</h2></td></tr>
 Macros</h2></td></tr>
 <tr class="memitem:a5d473430986a7e9d5ceca3b538321cc8" id="r_a5d473430986a7e9d5ceca3b538321cc8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d473430986a7e9d5ceca3b538321cc8">BAD_RETURN</a>(cmd)</td></tr>
 <tr class="separator:a5d473430986a7e9d5ceca3b538321cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a676fd455b512d2b69f626ea4bd738bce" id="r_a676fd455b512d2b69f626ea4bd738bce"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a676fd455b512d2b69f626ea4bd738bce">NUM_CAMERAS</a>&#160;&#160;&#160;16</td></tr>
+<tr class="separator:a676fd455b512d2b69f626ea4bd738bce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a3da462c99634e27b12ec1a24790f756d" id="r_a3da462c99634e27b12ec1a24790f756d"><td class="memItemLeft" align="right" valign="top">typedef enum <a class="el" href="#ac9e546db27bb4f76f47d7e25f24abb88">RenderMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3da462c99634e27b12ec1a24790f756d">RenderMode</a></td></tr>
+<tr class="separator:a3da462c99634e27b12ec1a24790f756d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ac9e546db27bb4f76f47d7e25f24abb88" id="r_ac9e546db27bb4f76f47d7e25f24abb88"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac9e546db27bb4f76f47d7e25f24abb88">RenderMode</a> { <a class="el" href="#ac9e546db27bb4f76f47d7e25f24abb88a8b3974ce281d2b6c98d3a7989387eddd">RENDER_TRACK_SECTIONS</a>
+, <a class="el" href="#ac9e546db27bb4f76f47d7e25f24abb88af02c1454ac695a5ad0ac268a7557515f">RENDER_FULL_SCENE</a>
+, <a class="el" href="#ac9e546db27bb4f76f47d7e25f24abb88a0ed325076d77c5b7064e66a2b2f021f4">RENDER_COLLISION_MESH</a>
+ }</td></tr>
+<tr class="separator:ac9e546db27bb4f76f47d7e25f24abb88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afff3d5f1241a08287d814fd95e3d16e9" id="r_afff3d5f1241a08287d814fd95e3d16e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afff3d5f1241a08287d814fd95e3d16e9">camera_init</a> (f32, f32, f32, s16, u32, s32)</td></tr>
-<tr class="separator:afff3d5f1241a08287d814fd95e3d16e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6851df86636cecf7832ecb1e649c9a5a" id="r_a6851df86636cecf7832ecb1e649c9a5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6851df86636cecf7832ecb1e649c9a5a">freecam_init</a> (f32 posX, f32 posY, f32 posZ, s16 rot, u32 arg4, s32 cameraId)</td></tr>
-<tr class="separator:a6851df86636cecf7832ecb1e649c9a5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4fc308e07ea8875169fab72c37bf417" id="r_aa4fc308e07ea8875169fab72c37bf417"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4fc308e07ea8875169fab72c37bf417">camera_init</a> (<a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a> pos, s16 rot, u32, s32)</td></tr>
+<tr class="separator:aa4fc308e07ea8875169fab72c37bf417"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cdadb7f2a933305b209a30cdbe8c361" id="r_a1cdadb7f2a933305b209a30cdbe8c361"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1cdadb7f2a933305b209a30cdbe8c361">freecam_init</a> (<a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a> pos, s16 rot, u32 mode, s32 cameraId)</td></tr>
+<tr class="separator:a1cdadb7f2a933305b209a30cdbe8c361"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5c90fc9c417ded1c7e1ecb3352ecffe" id="r_ac5c90fc9c417ded1c7e1ecb3352ecffe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac5c90fc9c417ded1c7e1ecb3352ecffe">func_8001CA10</a> (<a class="el" href="structCamera.html">Camera</a> *)</td></tr>
 <tr class="separator:ac5c90fc9c417ded1c7e1ecb3352ecffe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73ae3e5df022c3a49a734a6c1031e63d" id="r_a73ae3e5df022c3a49a734a6c1031e63d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73ae3e5df022c3a49a734a6c1031e63d">func_8001CA24</a> (<a class="el" href="structPlayer.html">Player</a> *, f32)</td></tr>
@@ -165,8 +182,8 @@ Functions</h2></td></tr>
 <tr class="separator:a25709b6bb578fdc921569c30a6b42960"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a099e98892c0941fbb0ed8b70680295e3" id="r_a099e98892c0941fbb0ed8b70680295e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a099e98892c0941fbb0ed8b70680295e3">func_8001EE98</a> (<a class="el" href="structPlayer.html">Player</a> *, <a class="el" href="structCamera.html">Camera</a> *, s8)</td></tr>
 <tr class="separator:a099e98892c0941fbb0ed8b70680295e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d6b8ba8d6e51a45be542e7dba217d89" id="r_a5d6b8ba8d6e51a45be542e7dba217d89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d6b8ba8d6e51a45be542e7dba217d89">func_8001F394</a> (<a class="el" href="structPlayer.html">Player</a> *, f32 *)</td></tr>
-<tr class="separator:a5d6b8ba8d6e51a45be542e7dba217d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac2167e4dbac5cfbfa219e742436780f" id="r_aac2167e4dbac5cfbfa219e742436780f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac2167e4dbac5cfbfa219e742436780f">func_8001F394</a> (<a class="el" href="structPlayer.html">Player</a> *)</td></tr>
+<tr class="separator:aac2167e4dbac5cfbfa219e742436780f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3383687fcc3c36c4a53856e9d929e033" id="r_a3383687fcc3c36c4a53856e9d929e033"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3383687fcc3c36c4a53856e9d929e033">func_8001F87C</a> (s32)</td></tr>
 <tr class="separator:a3383687fcc3c36c4a53856e9d929e033"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -221,9 +238,58 @@ Variables</h2></td></tr>
 
 </div>
 </div>
+<a id="a676fd455b512d2b69f626ea4bd738bce" name="a676fd455b512d2b69f626ea4bd738bce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a676fd455b512d2b69f626ea4bd738bce">&#9670;&#160;</a></span>NUM_CAMERAS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NUM_CAMERAS&#160;&#160;&#160;16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a3da462c99634e27b12ec1a24790f756d" name="a3da462c99634e27b12ec1a24790f756d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3da462c99634e27b12ec1a24790f756d">&#9670;&#160;</a></span>RenderMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef enum <a class="el" href="#ac9e546db27bb4f76f47d7e25f24abb88">RenderMode</a> <a class="el" href="#ac9e546db27bb4f76f47d7e25f24abb88">RenderMode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="ac9e546db27bb4f76f47d7e25f24abb88" name="ac9e546db27bb4f76f47d7e25f24abb88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9e546db27bb4f76f47d7e25f24abb88">&#9670;&#160;</a></span>RenderMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#ac9e546db27bb4f76f47d7e25f24abb88">RenderMode</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac9e546db27bb4f76f47d7e25f24abb88a8b3974ce281d2b6c98d3a7989387eddd" name="ac9e546db27bb4f76f47d7e25f24abb88a8b3974ce281d2b6c98d3a7989387eddd"></a>RENDER_TRACK_SECTIONS&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac9e546db27bb4f76f47d7e25f24abb88af02c1454ac695a5ad0ac268a7557515f" name="ac9e546db27bb4f76f47d7e25f24abb88af02c1454ac695a5ad0ac268a7557515f"></a>RENDER_FULL_SCENE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="ac9e546db27bb4f76f47d7e25f24abb88a0ed325076d77c5b7064e66a2b2f021f4" name="ac9e546db27bb4f76f47d7e25f24abb88a0ed325076d77c5b7064e66a2b2f021f4"></a>RENDER_COLLISION_MESH&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="afff3d5f1241a08287d814fd95e3d16e9" name="afff3d5f1241a08287d814fd95e3d16e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afff3d5f1241a08287d814fd95e3d16e9">&#9670;&#160;</a></span>camera_init()</h2>
+<a id="aa4fc308e07ea8875169fab72c37bf417" name="aa4fc308e07ea8875169fab72c37bf417"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4fc308e07ea8875169fab72c37bf417">&#9670;&#160;</a></span>camera_init()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -231,58 +297,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">void camera_init </td>
           <td>(</td>
-          <td class="paramtype">f32</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">f32</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">f32</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">s16</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u32</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a6851df86636cecf7832ecb1e649c9a5a" name="a6851df86636cecf7832ecb1e649c9a5a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6851df86636cecf7832ecb1e649c9a5a">&#9670;&#160;</a></span>freecam_init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void freecam_init </td>
-          <td>(</td>
-          <td class="paramtype">f32</td>          <td class="paramname"><span class="paramname"><em>posX</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">f32</td>          <td class="paramname"><span class="paramname"><em>posY</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">f32</td>          <td class="paramname"><span class="paramname"><em>posZ</em></span>, </td>
+          <td class="paramtype"><a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -292,7 +307,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">u32</td>          <td class="paramname"><span class="paramname"><em>arg4</em></span>, </td>
+          <td class="paramtype">u32</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -301,6 +316,57 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8h_aa4fc308e07ea8875169fab72c37bf417_cgraph.svg" width="100%" height="401"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8h_aa4fc308e07ea8875169fab72c37bf417_icgraph.svg" width="391" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="a1cdadb7f2a933305b209a30cdbe8c361" name="a1cdadb7f2a933305b209a30cdbe8c361"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cdadb7f2a933305b209a30cdbe8c361">&#9670;&#160;</a></span>freecam_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void freecam_init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16</td>          <td class="paramname"><span class="paramname"><em>rot</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">u32</td>          <td class="paramname"><span class="paramname"><em>mode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>cameraId</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8h_a1cdadb7f2a933305b209a30cdbe8c361_cgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8h_a1cdadb7f2a933305b209a30cdbe8c361_icgraph.svg" width="351" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -344,6 +410,11 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8h_a73ae3e5df022c3a49a734a6c1031e63d_cgraph.svg" width="478" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -812,8 +883,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a5d6b8ba8d6e51a45be542e7dba217d89" name="a5d6b8ba8d6e51a45be542e7dba217d89"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d6b8ba8d6e51a45be542e7dba217d89">&#9670;&#160;</a></span>func_8001F394()</h2>
+<a id="aac2167e4dbac5cfbfa219e742436780f" name="aac2167e4dbac5cfbfa219e742436780f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac2167e4dbac5cfbfa219e742436780f">&#9670;&#160;</a></span>func_8001F394()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -821,24 +892,20 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void func_8001F394 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structPlayer.html">Player</a> *</td>          <td class="paramname"><span class="paramname"><em>player</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype"><a class="el" href="structPlayer.html">Player</a> *</td>          <td class="paramname"><span class="paramname"><em>player</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype">f32 *</td>          <td class="paramname"><span class="paramname"><em>arg1</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8h_a5d6b8ba8d6e51a45be542e7dba217d89_cgraph.svg" width="327" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="camera_8h_aac2167e4dbac5cfbfa219e742436780f_cgraph.svg" width="476" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8h_a5d6b8ba8d6e51a45be542e7dba217d89_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="camera_8h_aac2167e4dbac5cfbfa219e742436780f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>

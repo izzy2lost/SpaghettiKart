@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/objects/Crab.h Source File</title>
+<title>SpaghettiKart: src/engine/objects/Crab.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -112,64 +112,91 @@ $(function(){initNavTree('Crab_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;libultraship.h&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="Object_8h.html">engine/objects/Object.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="CoreMath_8h.html">CoreMath.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="World_8h.html">World.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="macros_8h.html">macros.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="main_8h.html">main.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="vehicles_8h.html">vehicles.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="waypoints_8h.html">waypoints.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="common__structs_8h.html">common_structs.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="objects_8h.html">objects.h</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="course__offsets_8h.html">course_offsets.h</a>&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;some_data.h&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
-<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classOCrab.html">   31</a></span><span class="keyword">class </span><a class="code hl_function" href="classOCrab.html#add22998a91c07d9af8b1a188412fbfce">OCrab</a> : <span class="keyword">public</span> <a class="code hl_function" href="classOObject.html#a629d0dcbb210e289cdf541a91321c86b">OObject</a> {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classOCrab.html#add22998a91c07d9af8b1a188412fbfce">OCrab</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structFVector2D.html">FVector2D</a>&amp; start, <span class="keyword">const</span> <a class="code hl_struct" href="structFVector2D.html">FVector2D</a>&amp; end);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOCrab.html#a9f2f4a38699923caf4f924768a3c944b">Tick</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOCrab.html#a71a7d61fe580c22650d08446177f0d69">Draw</a>(s32 cameraId) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOCrab.html#a1342716f34378e4700baae3df702d294">DrawModel</a>(s32 cameraId);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOCrab.html#a9caa3a15472f8e5040c113fd35745ea9">init_ktb_crab</a>(s32 objectIndex);</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOCrab.html#a1532950f8506924eb4d0ce391e328fbc">func_80082B34</a>(s32 objectIndex);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOCrab.html#aec8b891fdee0f175925e748bb043ab21">func_80082C30</a>(s32 objectIndex);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOCrab.html#ad86dd8cdf24030cde7c4322b4adb547e">func_80082E18</a>(s32 objectIndex);</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="RegisterContent_8h.html">engine/registry/RegisterContent.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="Object_8h.html">engine/objects/Object.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="CoreMath_8h.html">engine/CoreMath.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="World_8h.html">engine/World.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="macros_8h.html">macros.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="main_8h.html">main.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="vehicles_8h.html">vehicles.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="waypoints_8h.html">waypoints.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="common__structs_8h.html">common_structs.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="objects_8h.html">objects.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="course__offsets_8h.html">course_offsets.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="include_2assets_2textures_2some__data_8h.html">assets/textures/some_data.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="foldopen" id="foldopen00032" data-start="{" data-end="};">
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classOCrab.html">   32</a></span><span class="keyword">class </span><a class="code hl_function" href="classOCrab.html#a90f306e93984090bead14740aad50830">OCrab</a> : <span class="keyword">public</span> <a class="code hl_function" href="classOObject.html#a629d0dcbb210e289cdf541a91321c86b">OObject</a> {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// This is simply a helper function to keep Spawning code clean</span></div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classOCrab.html#abbd78931c857be62565a3a86baa857e5">   35</a></span>    <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_function" href="classOCrab.html#a90f306e93984090bead14740aad50830">OCrab</a>* <a class="code hl_function" href="classOCrab.html#abbd78931c857be62565a3a86baa857e5">Spawn</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structFVector2D.html">FVector2D</a>&amp; start, <span class="keyword">const</span> <a class="code hl_struct" href="structFVector2D.html">FVector2D</a>&amp; end) {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a> params = {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            .Name = <span class="stringliteral">&quot;mk:crab&quot;</span>,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            .PatrolStart = start,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>            .PatrolEnd = end,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        };</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code hl_function" href="classOCrab.html#a90f306e93984090bead14740aad50830">OCrab</a>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="RegisterContent_8h.html#aa0abd506fe572b3e6491f613a4017641">AddObjectToWorld&lt;OCrab&gt;</a>(params));</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    }</div>
+</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classOCrab.html#aff2204005f6891ef038fb7cd2b5044b8">   45</a></span>    <a class="code hl_struct" href="structFVector2D.html">FVector2D</a> <a class="code hl_variable" href="classOCrab.html#aff2204005f6891ef038fb7cd2b5044b8">_start</a>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classOCrab.html#aaab1dca9c8841d4c024f27708eb8923e">   46</a></span>    <a class="code hl_struct" href="structFVector2D.html">FVector2D</a> <a class="code hl_variable" href="classOCrab.html#aaab1dca9c8841d4c024f27708eb8923e">_end</a>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classOCrab.html#a4ffc9a8fdbae5e0d02464686c4ccd530">   47</a></span>    <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="classOCrab.html#a4ffc9a8fdbae5e0d02464686c4ccd530">_count</a>;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classOCrab.html#ac106dc1efd6632f1f469d38047356aa3">   48</a></span>    s32 <a class="code hl_variable" href="classOCrab.html#ac106dc1efd6632f1f469d38047356aa3">_idx</a>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>};</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classOCrab.html#a90f306e93984090bead14740aad50830">OCrab</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a>&amp; params);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="foldopen" id="foldopen00046" data-start="{" data-end="}">
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classOCrab.html#a24304a6f964aa284a428a1f4c15f6480">   46</a></span>    <a class="code hl_function" href="classOCrab.html#a24304a6f964aa284a428a1f4c15f6480">~OCrab</a>() {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        <a class="code hl_variable" href="classOCrab.html#a4ffc9a8fdbae5e0d02464686c4ccd530">_count</a>--;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    }</div>
+</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOCrab.html#a9f2f4a38699923caf4f924768a3c944b">Tick</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOCrab.html#a71a7d61fe580c22650d08446177f0d69">Draw</a>(s32 cameraId) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOCrab.html#aca53d9c228c3c8b3f19a268d83bc5c9a">SetSpawnParams</a>(<a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a>&amp; params) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOCrab.html#af5ec11cb214c994e5e5c46714c6b1a58">DrawEditorProperties</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOCrab.html#a9caa3a15472f8e5040c113fd35745ea9">init_ktb_crab</a>(s32 objectIndex);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOCrab.html#a1532950f8506924eb4d0ce391e328fbc">func_80082B34</a>(s32 objectIndex);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOCrab.html#aec8b891fdee0f175925e748bb043ab21">func_80082C30</a>(s32 objectIndex);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOCrab.html#ad86dd8cdf24030cde7c4322b4adb547e">func_80082E18</a>(s32 objectIndex);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="classOCrab.html#aff2204005f6891ef038fb7cd2b5044b8">   61</a></span>    <a class="code hl_struct" href="structFVector2D.html">FVector2D</a> <a class="code hl_variable" href="classOCrab.html#aff2204005f6891ef038fb7cd2b5044b8">_start</a>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="classOCrab.html#aaab1dca9c8841d4c024f27708eb8923e">   62</a></span>    <a class="code hl_struct" href="structFVector2D.html">FVector2D</a> <a class="code hl_variable" href="classOCrab.html#aaab1dca9c8841d4c024f27708eb8923e">_end</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classOCrab.html#a4ffc9a8fdbae5e0d02464686c4ccd530">   63</a></span>    <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="classOCrab.html#a4ffc9a8fdbae5e0d02464686c4ccd530">_count</a>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="classOCrab.html#ac106dc1efd6632f1f469d38047356aa3">   64</a></span>    s32 <a class="code hl_variable" href="classOCrab.html#ac106dc1efd6632f1f469d38047356aa3">_idx</a>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>};</div>
 </div>
 <div class="ttc" id="aCoreMath_8h_html"><div class="ttname"><a href="CoreMath_8h.html">CoreMath.h</a></div></div>
 <div class="ttc" id="aObject_8h_html"><div class="ttname"><a href="Object_8h.html">Object.h</a></div></div>
+<div class="ttc" id="aRegisterContent_8h_html"><div class="ttname"><a href="RegisterContent_8h.html">RegisterContent.h</a></div></div>
+<div class="ttc" id="aRegisterContent_8h_html_aa0abd506fe572b3e6491f613a4017641"><div class="ttname"><a href="RegisterContent_8h.html#aa0abd506fe572b3e6491f613a4017641">AddObjectToWorld</a></div><div class="ttdeci">static OObject * AddObjectToWorld(const SpawnParams &amp;params)</div><div class="ttdef"><b>Definition</b> RegisterContent.h:10</div></div>
 <div class="ttc" id="aWorld_8h_html"><div class="ttname"><a href="World_8h.html">World.h</a></div></div>
-<div class="ttc" id="aclassOCrab_html_a1342716f34378e4700baae3df702d294"><div class="ttname"><a href="classOCrab.html#a1342716f34378e4700baae3df702d294">OCrab::DrawModel</a></div><div class="ttdeci">void DrawModel(s32 cameraId)</div><div class="ttdef"><b>Definition</b> Crab.cpp:83</div></div>
-<div class="ttc" id="aclassOCrab_html_a1532950f8506924eb4d0ce391e328fbc"><div class="ttname"><a href="classOCrab.html#a1532950f8506924eb4d0ce391e328fbc">OCrab::func_80082B34</a></div><div class="ttdeci">void func_80082B34(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> Crab.cpp:126</div></div>
-<div class="ttc" id="aclassOCrab_html_a4ffc9a8fdbae5e0d02464686c4ccd530"><div class="ttname"><a href="classOCrab.html#a4ffc9a8fdbae5e0d02464686c4ccd530">OCrab::_count</a></div><div class="ttdeci">static size_t _count</div><div class="ttdef"><b>Definition</b> Crab.h:47</div></div>
-<div class="ttc" id="aclassOCrab_html_a71a7d61fe580c22650d08446177f0d69"><div class="ttname"><a href="classOCrab.html#a71a7d61fe580c22650d08446177f0d69">OCrab::Draw</a></div><div class="ttdeci">virtual void Draw(s32 cameraId) override</div><div class="ttdef"><b>Definition</b> Crab.cpp:64</div></div>
-<div class="ttc" id="aclassOCrab_html_a9caa3a15472f8e5040c113fd35745ea9"><div class="ttname"><a href="classOCrab.html#a9caa3a15472f8e5040c113fd35745ea9">OCrab::init_ktb_crab</a></div><div class="ttdeci">void init_ktb_crab(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> Crab.cpp:108</div></div>
-<div class="ttc" id="aclassOCrab_html_a9f2f4a38699923caf4f924768a3c944b"><div class="ttname"><a href="classOCrab.html#a9f2f4a38699923caf4f924768a3c944b">OCrab::Tick</a></div><div class="ttdeci">virtual void Tick() override</div><div class="ttdef"><b>Definition</b> Crab.cpp:47</div></div>
-<div class="ttc" id="aclassOCrab_html_aaab1dca9c8841d4c024f27708eb8923e"><div class="ttname"><a href="classOCrab.html#aaab1dca9c8841d4c024f27708eb8923e">OCrab::_end</a></div><div class="ttdeci">FVector2D _end</div><div class="ttdef"><b>Definition</b> Crab.h:46</div></div>
-<div class="ttc" id="aclassOCrab_html_ac106dc1efd6632f1f469d38047356aa3"><div class="ttname"><a href="classOCrab.html#ac106dc1efd6632f1f469d38047356aa3">OCrab::_idx</a></div><div class="ttdeci">s32 _idx</div><div class="ttdef"><b>Definition</b> Crab.h:48</div></div>
-<div class="ttc" id="aclassOCrab_html_ad86dd8cdf24030cde7c4322b4adb547e"><div class="ttname"><a href="classOCrab.html#ad86dd8cdf24030cde7c4322b4adb547e">OCrab::func_80082E18</a></div><div class="ttdeci">void func_80082E18(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> Crab.cpp:187</div></div>
-<div class="ttc" id="aclassOCrab_html_add22998a91c07d9af8b1a188412fbfce"><div class="ttname"><a href="classOCrab.html#add22998a91c07d9af8b1a188412fbfce">OCrab::OCrab</a></div><div class="ttdeci">OCrab(const FVector2D &amp;start, const FVector2D &amp;end)</div><div class="ttdef"><b>Definition</b> Crab.cpp:29</div></div>
-<div class="ttc" id="aclassOCrab_html_aec8b891fdee0f175925e748bb043ab21"><div class="ttname"><a href="classOCrab.html#aec8b891fdee0f175925e748bb043ab21">OCrab::func_80082C30</a></div><div class="ttdeci">void func_80082C30(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> Crab.cpp:145</div></div>
-<div class="ttc" id="aclassOCrab_html_aff2204005f6891ef038fb7cd2b5044b8"><div class="ttname"><a href="classOCrab.html#aff2204005f6891ef038fb7cd2b5044b8">OCrab::_start</a></div><div class="ttdeci">FVector2D _start</div><div class="ttdef"><b>Definition</b> Crab.h:45</div></div>
+<div class="ttc" id="aclassOCrab_html_a1532950f8506924eb4d0ce391e328fbc"><div class="ttname"><a href="classOCrab.html#a1532950f8506924eb4d0ce391e328fbc">OCrab::func_80082B34</a></div><div class="ttdeci">void func_80082B34(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> Crab.cpp:122</div></div>
+<div class="ttc" id="aclassOCrab_html_a24304a6f964aa284a428a1f4c15f6480"><div class="ttname"><a href="classOCrab.html#a24304a6f964aa284a428a1f4c15f6480">OCrab::~OCrab</a></div><div class="ttdeci">~OCrab()</div><div class="ttdef"><b>Definition</b> Crab.h:46</div></div>
+<div class="ttc" id="aclassOCrab_html_a4ffc9a8fdbae5e0d02464686c4ccd530"><div class="ttname"><a href="classOCrab.html#a4ffc9a8fdbae5e0d02464686c4ccd530">OCrab::_count</a></div><div class="ttdeci">static size_t _count</div><div class="ttdef"><b>Definition</b> Crab.h:63</div></div>
+<div class="ttc" id="aclassOCrab_html_a71a7d61fe580c22650d08446177f0d69"><div class="ttname"><a href="classOCrab.html#a71a7d61fe580c22650d08446177f0d69">OCrab::Draw</a></div><div class="ttdeci">virtual void Draw(s32 cameraId) override</div><div class="ttdef"><b>Definition</b> Crab.cpp:74</div></div>
+<div class="ttc" id="aclassOCrab_html_a90f306e93984090bead14740aad50830"><div class="ttname"><a href="classOCrab.html#a90f306e93984090bead14740aad50830">OCrab::OCrab</a></div><div class="ttdeci">OCrab(const SpawnParams &amp;params)</div><div class="ttdef"><b>Definition</b> Crab.cpp:32</div></div>
+<div class="ttc" id="aclassOCrab_html_a9caa3a15472f8e5040c113fd35745ea9"><div class="ttname"><a href="classOCrab.html#a9caa3a15472f8e5040c113fd35745ea9">OCrab::init_ktb_crab</a></div><div class="ttdeci">void init_ktb_crab(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> Crab.cpp:104</div></div>
+<div class="ttc" id="aclassOCrab_html_a9f2f4a38699923caf4f924768a3c944b"><div class="ttname"><a href="classOCrab.html#a9f2f4a38699923caf4f924768a3c944b">OCrab::Tick</a></div><div class="ttdeci">virtual void Tick() override</div><div class="ttdef"><b>Definition</b> Crab.cpp:57</div></div>
+<div class="ttc" id="aclassOCrab_html_aaab1dca9c8841d4c024f27708eb8923e"><div class="ttname"><a href="classOCrab.html#aaab1dca9c8841d4c024f27708eb8923e">OCrab::_end</a></div><div class="ttdeci">FVector2D _end</div><div class="ttdef"><b>Definition</b> Crab.h:62</div></div>
+<div class="ttc" id="aclassOCrab_html_abbd78931c857be62565a3a86baa857e5"><div class="ttname"><a href="classOCrab.html#abbd78931c857be62565a3a86baa857e5">OCrab::Spawn</a></div><div class="ttdeci">static OCrab * Spawn(const FVector2D &amp;start, const FVector2D &amp;end)</div><div class="ttdef"><b>Definition</b> Crab.h:35</div></div>
+<div class="ttc" id="aclassOCrab_html_ac106dc1efd6632f1f469d38047356aa3"><div class="ttname"><a href="classOCrab.html#ac106dc1efd6632f1f469d38047356aa3">OCrab::_idx</a></div><div class="ttdeci">s32 _idx</div><div class="ttdef"><b>Definition</b> Crab.h:64</div></div>
+<div class="ttc" id="aclassOCrab_html_aca53d9c228c3c8b3f19a268d83bc5c9a"><div class="ttname"><a href="classOCrab.html#aca53d9c228c3c8b3f19a268d83bc5c9a">OCrab::SetSpawnParams</a></div><div class="ttdeci">virtual void SetSpawnParams(SpawnParams &amp;params) override</div><div class="ttdef"><b>Definition</b> Crab.cpp:51</div></div>
+<div class="ttc" id="aclassOCrab_html_ad86dd8cdf24030cde7c4322b4adb547e"><div class="ttname"><a href="classOCrab.html#ad86dd8cdf24030cde7c4322b4adb547e">OCrab::func_80082E18</a></div><div class="ttdeci">void func_80082E18(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> Crab.cpp:183</div></div>
+<div class="ttc" id="aclassOCrab_html_aec8b891fdee0f175925e748bb043ab21"><div class="ttname"><a href="classOCrab.html#aec8b891fdee0f175925e748bb043ab21">OCrab::func_80082C30</a></div><div class="ttdeci">void func_80082C30(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> Crab.cpp:141</div></div>
+<div class="ttc" id="aclassOCrab_html_af5ec11cb214c994e5e5c46714c6b1a58"><div class="ttname"><a href="classOCrab.html#af5ec11cb214c994e5e5c46714c6b1a58">OCrab::DrawEditorProperties</a></div><div class="ttdeci">virtual void DrawEditorProperties() override</div><div class="ttdef"><b>Definition</b> Crab.cpp:189</div></div>
+<div class="ttc" id="aclassOCrab_html_aff2204005f6891ef038fb7cd2b5044b8"><div class="ttname"><a href="classOCrab.html#aff2204005f6891ef038fb7cd2b5044b8">OCrab::_start</a></div><div class="ttdeci">FVector2D _start</div><div class="ttdef"><b>Definition</b> Crab.h:61</div></div>
 <div class="ttc" id="aclassOObject_html_a629d0dcbb210e289cdf541a91321c86b"><div class="ttname"><a href="classOObject.html#a629d0dcbb210e289cdf541a91321c86b">OObject::OObject</a></div><div class="ttdeci">OObject()</div><div class="ttdef"><b>Definition</b> Object.cpp:13</div></div>
 <div class="ttc" id="acommon__structs_8h_html"><div class="ttname"><a href="common__structs_8h.html">common_structs.h</a></div></div>
 <div class="ttc" id="acourse__offsets_8h_html"><div class="ttname"><a href="course__offsets_8h.html">course_offsets.h</a></div></div>
+<div class="ttc" id="ainclude_2assets_2textures_2some__data_8h_html"><div class="ttname"><a href="include_2assets_2textures_2some__data_8h.html">some_data.h</a></div></div>
 <div class="ttc" id="amacros_8h_html"><div class="ttname"><a href="macros_8h.html">macros.h</a></div></div>
 <div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div></div>
 <div class="ttc" id="aobjects_8h_html"><div class="ttname"><a href="objects_8h.html">objects.h</a></div></div>
-<div class="ttc" id="astructFVector2D_html"><div class="ttname"><a href="structFVector2D.html">FVector2D</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:85</div></div>
+<div class="ttc" id="astructFVector2D_html"><div class="ttname"><a href="structFVector2D.html">FVector2D</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:102</div></div>
+<div class="ttc" id="astructSpawnParams_html"><div class="ttname"><a href="structSpawnParams.html">SpawnParams</a></div><div class="ttdef"><b>Definition</b> SpawnParams.h:30</div></div>
 <div class="ttc" id="avehicles_8h_html"><div class="ttname"><a href="vehicles_8h.html">vehicles.h</a></div></div>
 <div class="ttc" id="awaypoints_8h_html"><div class="ttname"><a href="waypoints_8h.html">waypoints.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

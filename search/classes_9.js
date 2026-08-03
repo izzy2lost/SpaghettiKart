@@ -6,7 +6,8 @@ var searchData=
   ['irotator_3',['IRotator',['../structIRotator.html',1,'']]],
   ['isvdbg_4',['ISVDbg',['../structISVDbg.html',1,'']]],
   ['itembox_5',['ItemBox',['../structItemBox.html',1,'']]],
-  ['itemprobabilities_6',['ItemProbabilities',['../structItemProbabilities.html',1,'']]],
-  ['itemwindowobjects_7',['ItemWindowObjects',['../structItemWindowObjects.html',1,'']]],
-  ['ivector2d_8',['IVector2D',['../structIVector2D.html',1,'']]]
+  ['itementry_6',['ItemEntry',['../structRandomItemTable_1_1ItemEntry.html',1,'RandomItemTable']]],
+  ['iteminfo_7',['ItemInfo',['../structItemInfo.html',1,'']]],
+  ['itemwindowobjects_8',['ItemWindowObjects',['../structItemWindowObjects.html',1,'']]],
+  ['ivector2d_9',['IVector2D',['../structIVector2D.html',1,'']]]
 ];

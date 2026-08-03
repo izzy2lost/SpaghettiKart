@@ -36,6 +36,7 @@ var structSequenceChannel =
     [ "stereoHeadsetEffects", "structSequenceChannel.html#a63bac82788fa39e010766107de5d77ba", null ],
     [ "stopScript", "structSequenceChannel.html#acc7120ab20780ca48980e6f91b60fc6c", null ],
     [ "stopSomething2", "structSequenceChannel.html#a4c45e1162b32d38af38c89061b946a9d", null ],
+    [ "surroundEffectIndex", "structSequenceChannel.html#a4752ae9336f270e9eaa1b7b85f56d752", null ],
     [ "transposition", "structSequenceChannel.html#aeaf17e9bee5f498251380b082d180171", null ],
     [ "unused", "structSequenceChannel.html#aea8830dd5e4f87052498a063c0e14900", null ],
     [ "vibratoDelay", "structSequenceChannel.html#a4bf9ff57bde53af7c58b361e3eeb80da", null ],

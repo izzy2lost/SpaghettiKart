@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/actors/paddle_boat/render.inc.c File Reference</title>
+<title>SpaghettiKart: src/actors/paddle_boat/render.inc.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -115,9 +115,9 @@ $(function(){initNavTree('paddle__boat_2render_8inc_8c.html',''); initResizable(
 <code>#include &lt;<a class="el" href="actor__types_8h_source.html">actor_types.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="camera_8h_source.html">camera.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="actors_8h_source.html">actors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="actors_8h_source.html">racing/actors.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="all__course__data_8h_source.html">courses/all_course_data.h</a>&quot;</code><br />
-<code>#include &lt;<a class="el" href="dks__jungle__parkway__data_8h_source.html">assets/dks_jungle_parkway_data.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="models_2tracks_2dks__jungle__parkway_2dks__jungle__parkway__data_8h_source.html">assets/models/tracks/dks_jungle_parkway/dks_jungle_parkway_data.h</a>&gt;</code><br />
 <code>#include &lt;libultra/gbi.h&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for render.inc.c:</div>
@@ -134,13 +134,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aae368eda51ea5ff8f7f1c30980c968d0" id="r_aae368eda51ea5ff8f7f1c30980c968d0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae368eda51ea5ff8f7f1c30980c968d0">render_actor_paddle_boat</a> (<a class="el" href="structCamera.html">Camera</a> *arg0, struct <a class="el" href="structPaddleWheelBoat.html">PaddleWheelBoat</a> *boat, <a class="el" href="macros_8h.html#addf5ec070e9499d36b7f2009ce736076">UNUSED</a> <a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> arg2, u16 pathCounter)</td></tr>
-<tr class="memdesc:aae368eda51ea5ff8f7f1c30980c968d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the paddle boat actor. <a class="el" href="structActor.html">Actor</a> used in DK's Jungle Parkway.  <br /></td></tr>
-<tr class="separator:aae368eda51ea5ff8f7f1c30980c968d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0f2b9edc7dee5f4e83bb4ef60438936" id="r_ac0f2b9edc7dee5f4e83bb4ef60438936"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac0f2b9edc7dee5f4e83bb4ef60438936">render_actor_paddle_boat</a> (<a class="el" href="structCamera.html">Camera</a> *camera, struct <a class="el" href="structPaddleWheelBoat.html">PaddleWheelBoat</a> *boat, <a class="el" href="macros_8h.html#addf5ec070e9499d36b7f2009ce736076">UNUSED</a> <a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> arg2, u16 pathCounter)</td></tr>
+<tr class="memdesc:ac0f2b9edc7dee5f4e83bb4ef60438936"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the paddle boat actor. <a class="el" href="structActor.html">Actor</a> used in DK's Jungle Parkway.  <br /></td></tr>
+<tr class="separator:ac0f2b9edc7dee5f4e83bb4ef60438936"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="aae368eda51ea5ff8f7f1c30980c968d0" name="aae368eda51ea5ff8f7f1c30980c968d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae368eda51ea5ff8f7f1c30980c968d0">&#9670;&#160;</a></span>render_actor_paddle_boat()</h2>
+<a id="ac0f2b9edc7dee5f4e83bb4ef60438936" name="ac0f2b9edc7dee5f4e83bb4ef60438936"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0f2b9edc7dee5f4e83bb4ef60438936">&#9670;&#160;</a></span>render_actor_paddle_boat()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,7 +148,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void render_actor_paddle_boat </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCamera.html">Camera</a> *</td>          <td class="paramname"><span class="paramname"><em>arg0</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structCamera.html">Camera</a> *</td>          <td class="paramname"><span class="paramname"><em>camera</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -171,7 +171,7 @@ Functions</h2></td></tr>
 <p>Renders the paddle boat actor. <a class="el" href="structActor.html">Actor</a> used in DK's Jungle Parkway. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arg0</td><td></td></tr>
+    <tr><td class="paramname">camera</td><td></td></tr>
     <tr><td class="paramname">boat</td><td></td></tr>
     <tr><td class="paramname">arg2</td><td></td></tr>
     <tr><td class="paramname">pathCounter</td><td></td></tr>
@@ -181,12 +181,12 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="paddle__boat_2render_8inc_8c_aae368eda51ea5ff8f7f1c30980c968d0_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="paddle__boat_2render_8inc_8c_ac0f2b9edc7dee5f4e83bb4ef60438936_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="paddle__boat_2render_8inc_8c_aae368eda51ea5ff8f7f1c30980c968d0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="paddle__boat_2render_8inc_8c_ac0f2b9edc7dee5f4e83bb4ef60438936_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>

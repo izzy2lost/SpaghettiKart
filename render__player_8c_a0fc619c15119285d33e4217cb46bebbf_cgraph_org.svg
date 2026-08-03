@@ -74,21 +74,21 @@
 </a>
 </g>
 </g>
-<!-- Node6 -->
-<g id="Node000006" class="node">
-<title>Node6</title>
-<g id="a_Node000006"><a xlink:href="Game_8cpp.html#a8ebd6a4d970e4333ab5a9dd66c3d9c48" target="_top" xlink:title=" ">
+<!-- Node8 -->
+<g id="Node000008" class="node">
+<title>Node8</title>
+<g id="a_Node000008"><a xlink:href="Game_8cpp.html#a8ebd6a4d970e4333ab5a9dd66c3d9c48" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="287,-19 190,-19 190,0 287,0 287,-19"/>
 <text text-anchor="middle" x="238.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">IsBowsersCastle</text>
 </a>
 </g>
 </g>
-<!-- Node1&#45;&gt;Node6 -->
-<g id="edge5_Node000001_Node000006" class="edge">
-<title>Node1&#45;&gt;Node6</title>
-<g id="a_edge5_Node000001_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M112.58,-52.43C132.49,-45.04 156.95,-36.12 179,-28.5 185.03,-26.42 191.43,-24.27 197.7,-22.21"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="198.95,-25.48 207.37,-19.05 196.78,-18.83 198.95,-25.48"/>
+<!-- Node1&#45;&gt;Node8 -->
+<g id="edge7_Node000001_Node000008" class="edge">
+<title>Node1&#45;&gt;Node8</title>
+<g id="a_edge7_Node000001_Node000008"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M110.75,-52.49C130.94,-44.73 156.2,-35.28 179,-27.5 184.28,-25.7 189.85,-23.88 195.38,-22.12"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="196.7,-25.38 205.2,-19.05 194.61,-18.7 196.7,-25.38"/>
 </a>
 </g>
 </g>
@@ -107,6 +107,60 @@
 <g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
 <path fill="none" stroke="#63b8ff" d="M297.3,-137.5C305.92,-137.5 314.86,-137.5 323.63,-137.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="323.81,-141 333.81,-137.5 323.81,-134 323.81,-141"/>
+</a>
+</g>
+</g>
+<!-- Node6 -->
+<g id="Node000006" class="node">
+<title>Node6</title>
+<g id="a_Node000006"><a xlink:href="classWorld.html#a1a4dacc6aea0b846df998be0afc239f7" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="436.5,-19 343.5,-19 343.5,0 436.5,0 436.5,-19"/>
+<text text-anchor="middle" x="390" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">World::GetTrack</text>
+</a>
+</g>
+</g>
+<!-- Node5&#45;&gt;Node6 -->
+<g id="edge5_Node000005_Node000006" class="edge">
+<title>Node5&#45;&gt;Node6</title>
+<g id="a_edge5_Node000005_Node000006"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M278,-36.97C297.02,-32.26 320.17,-26.53 340.4,-21.53"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="341.5,-24.86 350.37,-19.06 339.82,-18.07 341.5,-24.86"/>
+</a>
+</g>
+</g>
+<!-- Node7 -->
+<g id="Node000007" class="node">
+<title>Node7</title>
+<g id="a_Node000007"><a xlink:href="Game_8cpp.html#ae2fa844b3cb1021ecbc357f8ed2ad8cc" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="421,-56 359,-56 359,-37 421,-37 421,-56"/>
+<text text-anchor="middle" x="390" y="-44" font-family="Helvetica,sans-Serif" font-size="10.00">GetWorld</text>
+</a>
+</g>
+</g>
+<!-- Node5&#45;&gt;Node7 -->
+<g id="edge6_Node000005_Node000007" class="edge">
+<title>Node5&#45;&gt;Node7</title>
+<g id="a_edge6_Node000005_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M298.16,-46.5C315.04,-46.5 333.07,-46.5 348.58,-46.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="348.87,-50 358.87,-46.5 348.87,-43 348.87,-50"/>
+</a>
+</g>
+</g>
+<!-- Node8&#45;&gt;Node6 -->
+<g id="edge8_Node000008_Node000006" class="edge">
+<title>Node8&#45;&gt;Node6</title>
+<g id="a_edge8_Node000008_Node000006"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M287.21,-9.5C301.79,-9.5 317.96,-9.5 333.04,-9.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="333.27,-13 343.27,-9.5 333.27,-6 333.27,-13"/>
+</a>
+</g>
+</g>
+<!-- Node8&#45;&gt;Node7 -->
+<g id="edge9_Node000008_Node000007" class="edge">
+<title>Node8&#45;&gt;Node7</title>
+<g id="a_edge9_Node000008_Node000007"><a xlink:title=" ">
+<path fill="none" stroke="#63b8ff" d="M278,-19.03C299.76,-24.41 326.92,-31.14 348.93,-36.58"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="348.09,-39.98 358.64,-38.99 349.78,-33.19 348.09,-39.98"/>
 </a>
 </g>
 </g>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/objects/ChainChomp.h Source File</title>
+<title>SpaghettiKart: src/engine/objects/ChainChomp.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -114,7 +114,7 @@ $(function(){initNavTree('ChainChomp_8h_source.html',''); initResizable(true); }
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="Object_8h.html">Object.h</a>&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="World_8h.html">World.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="World_8h.html">engine/World.h</a>&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="macros_8h.html">macros.h</a>&quot;</span></div>
@@ -124,60 +124,63 @@ $(function(){initNavTree('ChainChomp_8h_source.html',''); initResizable(true); }
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="common__structs_8h.html">common_structs.h</a>&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="objects_8h.html">objects.h</a>&quot;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="camera_8h.html">camera.h</a>&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;some_data.h&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="include_2assets_2textures_2some__data_8h.html">assets/textures/some_data.h</a>&quot;</span></div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span></div>
 <div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classOChainChomp.html">   23</a></span><span class="keyword">class </span><a class="code hl_function" href="classOChainChomp.html#a4c282fe2a6eb60b0b62eeb8144e56c32">OChainChomp</a> : <span class="keyword">public</span> <a class="code hl_function" href="classOObject.html#a629d0dcbb210e289cdf541a91321c86b">OObject</a> {</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classOChainChomp.html#a4c282fe2a6eb60b0b62eeb8144e56c32">OChainChomp</a>();</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classOChainChomp.html#a4c282fe2a6eb60b0b62eeb8144e56c32">OChainChomp</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a>&amp; params);</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classOChainChomp.html#a144249628da675f8ec526552b3a8bfb7">   28</a></span>    <a class="code hl_function" href="classOChainChomp.html#a144249628da675f8ec526552b3a8bfb7">~OChainChomp</a>() {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <a class="code hl_variable" href="classOChainChomp.html#a570c6e0df6e3dd578255201eef5c6004">_count</a>--;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    }</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="foldopen" id="foldopen00029" data-start="{" data-end="}">
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classOChainChomp.html#a144249628da675f8ec526552b3a8bfb7">   29</a></span>    <a class="code hl_function" href="classOChainChomp.html#a144249628da675f8ec526552b3a8bfb7">~OChainChomp</a>() {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <a class="code hl_variable" href="classOChainChomp.html#a570c6e0df6e3dd578255201eef5c6004">_count</a>--;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
 </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classOChainChomp.html#adfe246e199add73818fc8c7f88ec7072">   32</a></span>    <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="classOChainChomp.html#adfe246e199add73818fc8c7f88ec7072">GetCount</a>() {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classOChainChomp.html#a570c6e0df6e3dd578255201eef5c6004">_count</a>;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classOChainChomp.html#adfe246e199add73818fc8c7f88ec7072">   33</a></span>    <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="classOChainChomp.html#adfe246e199add73818fc8c7f88ec7072">GetCount</a>() {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classOChainChomp.html#a570c6e0df6e3dd578255201eef5c6004">_count</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
 </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOChainChomp.html#afdcecc46c8c4ff9245a00ace65733d3e">Tick</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOChainChomp.html#a2e0ea3675cbfc3f96ef1580984c6149c">Draw</a>(s32 cameraId) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOChainChomp.html#ab768e973e179cd46fe28eccef540a015">func_80055AB8</a>(s32 objectIndex, s32 cameraId);</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOChainChomp.html#ac535182ef308394affe02648ef375052">func_80085878</a>(s32 objectIndex, s32 arg1);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOChainChomp.html#a1f0eaa818fb52af253efe5a5e13a1f61">func_800859C8</a>(s32 objectIndex, s32 arg1);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classOChainChomp.html#a8b8cd94737db4f6208b1103412a75631">   44</a></span>    <a class="code hl_struct" href="structFVector.html">FVector</a> <a class="code hl_variable" href="classOChainChomp.html#a8b8cd94737db4f6208b1103412a75631">_pos</a>;</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classOChainChomp.html#a570c6e0df6e3dd578255201eef5c6004">   45</a></span>    <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="classOChainChomp.html#a570c6e0df6e3dd578255201eef5c6004">_count</a>;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classOChainChomp.html#a04e66edd93056c48032fce441fea0e82">   46</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="classOChainChomp.html#a04e66edd93056c48032fce441fea0e82">_idx</a>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOChainChomp.html#afdcecc46c8c4ff9245a00ace65733d3e">Tick</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOChainChomp.html#a2e0ea3675cbfc3f96ef1580984c6149c">Draw</a>(s32 cameraId) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOChainChomp.html#ab768e973e179cd46fe28eccef540a015">func_80055AB8</a>(s32 objectIndex, s32 cameraId);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOChainChomp.html#ac535182ef308394affe02648ef375052">func_80085878</a>(s32 objectIndex, s32 arg1);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOChainChomp.html#a1f0eaa818fb52af253efe5a5e13a1f61">func_800859C8</a>(s32 objectIndex, s32 arg1);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classOChainChomp.html#a8b8cd94737db4f6208b1103412a75631">   45</a></span>    <a class="code hl_struct" href="structFVector.html">FVector</a> <a class="code hl_variable" href="classOChainChomp.html#a8b8cd94737db4f6208b1103412a75631">_pos</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classOChainChomp.html#a570c6e0df6e3dd578255201eef5c6004">   46</a></span>    <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="classOChainChomp.html#a570c6e0df6e3dd578255201eef5c6004">_count</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classOChainChomp.html#a04e66edd93056c48032fce441fea0e82">   47</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="classOChainChomp.html#a04e66edd93056c48032fce441fea0e82">_idx</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>};</div>
 </div>
 <div class="ttc" id="aObject_8h_html"><div class="ttname"><a href="Object_8h.html">Object.h</a></div></div>
 <div class="ttc" id="aWorld_8h_html"><div class="ttname"><a href="World_8h.html">World.h</a></div></div>
 <div class="ttc" id="acamera_8h_html"><div class="ttname"><a href="camera_8h.html">camera.h</a></div></div>
-<div class="ttc" id="aclassOChainChomp_html_a04e66edd93056c48032fce441fea0e82"><div class="ttname"><a href="classOChainChomp.html#a04e66edd93056c48032fce441fea0e82">OChainChomp::_idx</a></div><div class="ttdeci">size_t _idx</div><div class="ttdef"><b>Definition</b> ChainChomp.h:46</div></div>
-<div class="ttc" id="aclassOChainChomp_html_a144249628da675f8ec526552b3a8bfb7"><div class="ttname"><a href="classOChainChomp.html#a144249628da675f8ec526552b3a8bfb7">OChainChomp::~OChainChomp</a></div><div class="ttdeci">~OChainChomp()</div><div class="ttdef"><b>Definition</b> ChainChomp.h:28</div></div>
-<div class="ttc" id="aclassOChainChomp_html_a1f0eaa818fb52af253efe5a5e13a1f61"><div class="ttname"><a href="classOChainChomp.html#a1f0eaa818fb52af253efe5a5e13a1f61">OChainChomp::func_800859C8</a></div><div class="ttdeci">void func_800859C8(s32 objectIndex, s32 arg1)</div><div class="ttdef"><b>Definition</b> ChainChomp.cpp:102</div></div>
-<div class="ttc" id="aclassOChainChomp_html_a2e0ea3675cbfc3f96ef1580984c6149c"><div class="ttname"><a href="classOChainChomp.html#a2e0ea3675cbfc3f96ef1580984c6149c">OChainChomp::Draw</a></div><div class="ttdeci">virtual void Draw(s32 cameraId) override</div><div class="ttdef"><b>Definition</b> ChainChomp.cpp:45</div></div>
-<div class="ttc" id="aclassOChainChomp_html_a4c282fe2a6eb60b0b62eeb8144e56c32"><div class="ttname"><a href="classOChainChomp.html#a4c282fe2a6eb60b0b62eeb8144e56c32">OChainChomp::OChainChomp</a></div><div class="ttdeci">OChainChomp()</div><div class="ttdef"><b>Definition</b> ChainChomp.cpp:19</div></div>
-<div class="ttc" id="aclassOChainChomp_html_a570c6e0df6e3dd578255201eef5c6004"><div class="ttname"><a href="classOChainChomp.html#a570c6e0df6e3dd578255201eef5c6004">OChainChomp::_count</a></div><div class="ttdeci">static size_t _count</div><div class="ttdef"><b>Definition</b> ChainChomp.h:45</div></div>
-<div class="ttc" id="aclassOChainChomp_html_a8b8cd94737db4f6208b1103412a75631"><div class="ttname"><a href="classOChainChomp.html#a8b8cd94737db4f6208b1103412a75631">OChainChomp::_pos</a></div><div class="ttdeci">FVector _pos</div><div class="ttdef"><b>Definition</b> ChainChomp.h:44</div></div>
-<div class="ttc" id="aclassOChainChomp_html_ab768e973e179cd46fe28eccef540a015"><div class="ttname"><a href="classOChainChomp.html#ab768e973e179cd46fe28eccef540a015">OChainChomp::func_80055AB8</a></div><div class="ttdeci">void func_80055AB8(s32 objectIndex, s32 cameraId)</div><div class="ttdef"><b>Definition</b> ChainChomp.cpp:55</div></div>
-<div class="ttc" id="aclassOChainChomp_html_ac535182ef308394affe02648ef375052"><div class="ttname"><a href="classOChainChomp.html#ac535182ef308394affe02648ef375052">OChainChomp::func_80085878</a></div><div class="ttdeci">void func_80085878(s32 objectIndex, s32 arg1)</div><div class="ttdef"><b>Definition</b> ChainChomp.cpp:81</div></div>
-<div class="ttc" id="aclassOChainChomp_html_adfe246e199add73818fc8c7f88ec7072"><div class="ttname"><a href="classOChainChomp.html#adfe246e199add73818fc8c7f88ec7072">OChainChomp::GetCount</a></div><div class="ttdeci">static size_t GetCount()</div><div class="ttdef"><b>Definition</b> ChainChomp.h:32</div></div>
-<div class="ttc" id="aclassOChainChomp_html_afdcecc46c8c4ff9245a00ace65733d3e"><div class="ttname"><a href="classOChainChomp.html#afdcecc46c8c4ff9245a00ace65733d3e">OChainChomp::Tick</a></div><div class="ttdeci">virtual void Tick() override</div><div class="ttdef"><b>Definition</b> ChainChomp.cpp:28</div></div>
+<div class="ttc" id="aclassOChainChomp_html_a04e66edd93056c48032fce441fea0e82"><div class="ttname"><a href="classOChainChomp.html#a04e66edd93056c48032fce441fea0e82">OChainChomp::_idx</a></div><div class="ttdeci">size_t _idx</div><div class="ttdef"><b>Definition</b> ChainChomp.h:47</div></div>
+<div class="ttc" id="aclassOChainChomp_html_a144249628da675f8ec526552b3a8bfb7"><div class="ttname"><a href="classOChainChomp.html#a144249628da675f8ec526552b3a8bfb7">OChainChomp::~OChainChomp</a></div><div class="ttdeci">~OChainChomp()</div><div class="ttdef"><b>Definition</b> ChainChomp.h:29</div></div>
+<div class="ttc" id="aclassOChainChomp_html_a1f0eaa818fb52af253efe5a5e13a1f61"><div class="ttname"><a href="classOChainChomp.html#a1f0eaa818fb52af253efe5a5e13a1f61">OChainChomp::func_800859C8</a></div><div class="ttdeci">void func_800859C8(s32 objectIndex, s32 arg1)</div><div class="ttdef"><b>Definition</b> ChainChomp.cpp:121</div></div>
+<div class="ttc" id="aclassOChainChomp_html_a2e0ea3675cbfc3f96ef1580984c6149c"><div class="ttname"><a href="classOChainChomp.html#a2e0ea3675cbfc3f96ef1580984c6149c">OChainChomp::Draw</a></div><div class="ttdeci">virtual void Draw(s32 cameraId) override</div><div class="ttdef"><b>Definition</b> ChainChomp.cpp:60</div></div>
+<div class="ttc" id="aclassOChainChomp_html_a4c282fe2a6eb60b0b62eeb8144e56c32"><div class="ttname"><a href="classOChainChomp.html#a4c282fe2a6eb60b0b62eeb8144e56c32">OChainChomp::OChainChomp</a></div><div class="ttdeci">OChainChomp()</div><div class="ttdef"><b>Definition</b> ChainChomp.cpp:23</div></div>
+<div class="ttc" id="aclassOChainChomp_html_a570c6e0df6e3dd578255201eef5c6004"><div class="ttname"><a href="classOChainChomp.html#a570c6e0df6e3dd578255201eef5c6004">OChainChomp::_count</a></div><div class="ttdeci">static size_t _count</div><div class="ttdef"><b>Definition</b> ChainChomp.h:46</div></div>
+<div class="ttc" id="aclassOChainChomp_html_a8b8cd94737db4f6208b1103412a75631"><div class="ttname"><a href="classOChainChomp.html#a8b8cd94737db4f6208b1103412a75631">OChainChomp::_pos</a></div><div class="ttdeci">FVector _pos</div><div class="ttdef"><b>Definition</b> ChainChomp.h:45</div></div>
+<div class="ttc" id="aclassOChainChomp_html_ab768e973e179cd46fe28eccef540a015"><div class="ttname"><a href="classOChainChomp.html#ab768e973e179cd46fe28eccef540a015">OChainChomp::func_80055AB8</a></div><div class="ttdeci">void func_80055AB8(s32 objectIndex, s32 cameraId)</div><div class="ttdef"><b>Definition</b> ChainChomp.cpp:70</div></div>
+<div class="ttc" id="aclassOChainChomp_html_ac535182ef308394affe02648ef375052"><div class="ttname"><a href="classOChainChomp.html#ac535182ef308394affe02648ef375052">OChainChomp::func_80085878</a></div><div class="ttdeci">void func_80085878(s32 objectIndex, s32 arg1)</div><div class="ttdef"><b>Definition</b> ChainChomp.cpp:100</div></div>
+<div class="ttc" id="aclassOChainChomp_html_adfe246e199add73818fc8c7f88ec7072"><div class="ttname"><a href="classOChainChomp.html#adfe246e199add73818fc8c7f88ec7072">OChainChomp::GetCount</a></div><div class="ttdeci">static size_t GetCount()</div><div class="ttdef"><b>Definition</b> ChainChomp.h:33</div></div>
+<div class="ttc" id="aclassOChainChomp_html_afdcecc46c8c4ff9245a00ace65733d3e"><div class="ttname"><a href="classOChainChomp.html#afdcecc46c8c4ff9245a00ace65733d3e">OChainChomp::Tick</a></div><div class="ttdeci">virtual void Tick() override</div><div class="ttdef"><b>Definition</b> ChainChomp.cpp:43</div></div>
 <div class="ttc" id="aclassOObject_html_a629d0dcbb210e289cdf541a91321c86b"><div class="ttname"><a href="classOObject.html#a629d0dcbb210e289cdf541a91321c86b">OObject::OObject</a></div><div class="ttdeci">OObject()</div><div class="ttdef"><b>Definition</b> Object.cpp:13</div></div>
 <div class="ttc" id="acommon__structs_8h_html"><div class="ttname"><a href="common__structs_8h.html">common_structs.h</a></div></div>
+<div class="ttc" id="ainclude_2assets_2textures_2some__data_8h_html"><div class="ttname"><a href="include_2assets_2textures_2some__data_8h.html">some_data.h</a></div></div>
 <div class="ttc" id="amacros_8h_html"><div class="ttname"><a href="macros_8h.html">macros.h</a></div></div>
 <div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div></div>
 <div class="ttc" id="aobjects_8h_html"><div class="ttname"><a href="objects_8h.html">objects.h</a></div></div>
-<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:18</div></div>
+<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:30</div></div>
+<div class="ttc" id="astructSpawnParams_html"><div class="ttname"><a href="structSpawnParams.html">SpawnParams</a></div><div class="ttdef"><b>Definition</b> SpawnParams.h:30</div></div>
 <div class="ttc" id="avehicles_8h_html"><div class="ttname"><a href="vehicles_8h.html">vehicles.h</a></div></div>
 <div class="ttc" id="awaypoints_8h_html"><div class="ttname"><a href="waypoints_8h.html">waypoints.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

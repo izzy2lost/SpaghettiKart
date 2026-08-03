@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/editor/Gizmo.cpp File Reference</title>
+<title>SpaghettiKart: src/engine/editor/Gizmo.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -106,7 +106,8 @@ $(function(){initNavTree('Gizmo_8cpp.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a>  </div>
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">Gizmo.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -119,17 +120,21 @@ $(function(){initNavTree('Gizmo_8cpp.html',''); initResizable(true); });
 <code>#include &quot;<a class="el" href="Gizmo_8h_source.html">Gizmo.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Collision_8h_source.html">Collision.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Engine_8h_source.html">port/Engine.h</a>&quot;</code><br />
-<code>#include &lt;controller/controldevice/controller/mapping/keyboard/KeyboardScancodes.h&gt;</code><br />
-<code>#include &lt;window/Window.h&gt;</code><br />
+<code>#include &lt;ship/controller/controldevice/controller/mapping/keyboard/KeyboardScancodes.h&gt;</code><br />
+<code>#include &lt;ship/window/Window.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="Matrix_8h_source.html">engine/Matrix.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Actor_8h_source.html">engine/Actor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Object_8h_source.html">engine/objects/Object.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GameObject_8h_source.html">engine/editor/GameObject.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Ship_8h_source.html">engine/actors/Ship.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Game_8h_source.html">port/Game.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Handles_8h_source.html">Handles.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="common__structs_8h_source.html">common_structs.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="actors_8h_source.html">actors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="actors_8h_source.html">racing/actors.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="camera_8h_source.html">camera.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="collision_8h_source.html">src/racing/collision.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="math__util_8h_source.html">math_util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="math__util_8h_source.html">racing/math_util.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Gizmo.cpp:</div>
 <div class="dyncontent">
@@ -138,9 +143,42 @@ Include dependency graph for Gizmo.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEditor.html">Editor</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html">TrackEditor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a1e1e5cd9d177667c94d8d7afcba24d56" id="r_a1e1e5cd9d177667c94d8d7afcba24d56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e1e5cd9d177667c94d8d7afcba24d56">EDITOR_CLAMP</a>(value,  min,  max)</td></tr>
+<tr class="separator:a1e1e5cd9d177667c94d8d7afcba24d56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a1e1e5cd9d177667c94d8d7afcba24d56" name="a1e1e5cd9d177667c94d8d7afcba24d56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e1e5cd9d177667c94d8d7afcba24d56">&#9670;&#160;</a></span>EDITOR_CLAMP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EDITOR_CLAMP</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>value</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>min</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>max</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">((value) &lt; (min) ? min : (value) &gt; (max) ? max : value)</div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

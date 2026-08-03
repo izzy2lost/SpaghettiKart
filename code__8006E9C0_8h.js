@@ -9,7 +9,7 @@ var code__8006E9C0_8h =
     [ "func_8006F8CC", "code__8006E9C0_8h.html#a22fb6641b6733568bce5847c9e1c8ae3", null ],
     [ "func_8006FA94", "code__8006E9C0_8h.html#a0a15839e2884f0317e950c05b03e4f0b", null ],
     [ "func_80070148", "code__8006E9C0_8h.html#a7ce8b772e14372f2078703a39e676d2a", null ],
-    [ "func_8007055C", "code__8006E9C0_8h.html#afef0314f6f435d008ed32c2aa1e2fed0", null ],
+    [ "func_8007055C", "code__8006E9C0_8h.html#adabe944683b893973bd60b26b4a9d6f6", null ],
     [ "func_80070714", "code__8006E9C0_8h.html#a34850e00e534f9bea4ee89568c0484e8", null ],
     [ "get_minimap_properties", "code__8006E9C0_8h.html#a0e71cf9dfcfef5c80bbb7072f220f55f", null ],
     [ "init_cloud_object", "code__8006E9C0_8h.html#a1a87887090ad29534c2cf177e7a01f82", null ],
@@ -26,6 +26,8 @@ var code__8006E9C0_8h =
     [ "init_stars", "code__8006E9C0_8h.html#a4169ccf57e19193e35c29a2225ae09c3", null ],
     [ "load_mario_kart_64_logo", "code__8006E9C0_8h.html#a76bd4b421a02ca09a11fa607fa9b5851", null ],
     [ "reset_object_variable", "code__8006E9C0_8h.html#a90b6f11f43c81c8c033805cfddb8fc89", null ],
+    [ "cloudvtx", "code__8006E9C0_8h.html#a86860c73ccac021967c9de5a22986c69", null ],
+    [ "cloudvtx2", "code__8006E9C0_8h.html#ac2e03bab413badd9cbd27948e7216504", null ],
     [ "D_800E5520", "code__8006E9C0_8h.html#aee58b6012d26ac5f24bc57244678bcee", null ],
     [ "gCourseOutlineTextures", "code__8006E9C0_8h.html#a625d0ad27f8c5a2b2d0efd1899f76dae", null ]
 ];

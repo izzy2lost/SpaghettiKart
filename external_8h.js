@@ -39,5 +39,6 @@ var external_8h =
     [ "SOUND_BANK_UNK5", "external_8h.html#a4d690fc552d7a3b4e57780f7b2095aa4", null ],
     [ "SOUND_MODE_HEADSET", "external_8h.html#a96b11a58db58d77a301217a5441f1fac", null ],
     [ "SOUND_MODE_MONO", "external_8h.html#a671ea17c7e5fd266cf3e28754ff46838", null ],
-    [ "SOUND_MODE_STEREO", "external_8h.html#aa771683a4289a048ae35ff410ce1df8e", null ]
+    [ "SOUND_MODE_STEREO", "external_8h.html#aa771683a4289a048ae35ff410ce1df8e", null ],
+    [ "SOUND_MODE_SURROUND", "external_8h.html#a717104ef170f8a6a97c3d00ec4bd1918", null ]
 ];

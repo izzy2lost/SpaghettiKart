@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: ABus Class Reference</title>
+<title>SpaghettiKart: ABus Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -106,6 +106,7 @@ $(function(){initNavTree('classABus.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Data Fields</a> &#124;
@@ -126,12 +127,21 @@ Collaboration diagram for ABus:</div>
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classABus__coll__graph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a3b606829d2b09a9842c16675740e0754" id="r_a3b606829d2b09a9842c16675740e0754"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b606829d2b09a9842c16675740e0754">SpawnMode</a> : uint16_t { <a class="el" href="#a3b606829d2b09a9842c16675740e0754a92a39ce8dce1526d636aa28f1bb02914">POINT</a>
+, <a class="el" href="#a3b606829d2b09a9842c16675740e0754a3eadc7f48bd7e55063bfa3a74293185c">AUTO</a>
+ }</td></tr>
+<tr class="separator:a3b606829d2b09a9842c16675740e0754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a664d535dc60bf3d1672792a14cff2089" id="r_a664d535dc60bf3d1672792a14cff2089"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a664d535dc60bf3d1672792a14cff2089">ABus</a> (f32 speedA, f32 speedB, <a class="el" href="structTrackPathPoint.html">TrackPathPoint</a> *path, uint32_t waypoint)</td></tr>
-<tr class="separator:a664d535dc60bf3d1672792a14cff2089"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabc43c4a5a7c5acc7daa5e89f9d42cdb" id="r_aabc43c4a5a7c5acc7daa5e89f9d42cdb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabc43c4a5a7c5acc7daa5e89f9d42cdb">ABus</a> (const <a class="el" href="structSpawnParams.html">SpawnParams</a> &amp;params)</td></tr>
+<tr class="separator:aabc43c4a5a7c5acc7daa5e89f9d42cdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1362338a1e7272bf92f25ce3bf71577b" id="r_a1362338a1e7272bf92f25ce3bf71577b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1362338a1e7272bf92f25ce3bf71577b">~ABus</a> ()</td></tr>
 <tr class="separator:a1362338a1e7272bf92f25ce3bf71577b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af94f121ac8d8f271b1ad89abd7356766" id="r_af94f121ac8d8f271b1ad89abd7356766"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af94f121ac8d8f271b1ad89abd7356766">SetSpawnParams</a> (<a class="el" href="structSpawnParams.html">SpawnParams</a> &amp;params) override</td></tr>
+<tr class="separator:af94f121ac8d8f271b1ad89abd7356766"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07af38f3fced338dc420cffcdfddb826" id="r_a07af38f3fced338dc420cffcdfddb826"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a07af38f3fced338dc420cffcdfddb826">Tick</a> () override</td></tr>
 <tr class="separator:a07af38f3fced338dc420cffcdfddb826"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bed69b35f192f67a63bf62a1635a74d" id="r_a9bed69b35f192f67a63bf62a1635a74d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bed69b35f192f67a63bf62a1635a74d">Draw</a> (<a class="el" href="structCamera.html">Camera</a> *camera) override</td></tr>
@@ -140,22 +150,40 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5246880511fb76b4cc5d02b9df8effc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a336a937ab5280dd4ccb38e0367c752" id="r_a7a336a937ab5280dd4ccb38e0367c752"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a336a937ab5280dd4ccb38e0367c752">IsMod</a> () override</td></tr>
 <tr class="separator:a7a336a937ab5280dd4ccb38e0367c752"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae92d8cd24a14f93545fd8c1fe25e9d78" id="r_ae92d8cd24a14f93545fd8c1fe25e9d78"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae92d8cd24a14f93545fd8c1fe25e9d78">DrawEditorProperties</a> () override</td></tr>
+<tr class="separator:ae92d8cd24a14f93545fd8c1fe25e9d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classAActor"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_methods_classAActor')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classAActor.html">AActor</a></td></tr>
 <tr class="memitem:a8c51b114c77b009e2192956ae1546ed3 inherit pub_methods_classAActor" id="r_a8c51b114c77b009e2192956ae1546ed3"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#a8c51b114c77b009e2192956ae1546ed3">~AActor</a> ()=default</td></tr>
 <tr class="separator:a8c51b114c77b009e2192956ae1546ed3 inherit pub_methods_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a679c43bacf3600fa2d7a6ab30e34a8a6 inherit pub_methods_classAActor" id="r_a679c43bacf3600fa2d7a6ab30e34a8a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#a679c43bacf3600fa2d7a6ab30e34a8a6">AActor</a> ()</td></tr>
 <tr class="separator:a679c43bacf3600fa2d7a6ab30e34a8a6 inherit pub_methods_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5695d0c1bfd8ae5fe08bf235c2801863 inherit pub_methods_classAActor" id="r_a5695d0c1bfd8ae5fe08bf235c2801863"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#a5695d0c1bfd8ae5fe08bf235c2801863">AActor</a> (<a class="el" href="structSpawnParams.html">SpawnParams</a> params)</td></tr>
+<tr class="separator:a5695d0c1bfd8ae5fe08bf235c2801863 inherit pub_methods_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa18a335c99d43d74ac46328df5c4918b inherit pub_methods_classAActor" id="r_aa18a335c99d43d74ac46328df5c4918b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#aa18a335c99d43d74ac46328df5c4918b">BeginPlay</a> ()</td></tr>
+<tr class="separator:aa18a335c99d43d74ac46328df5c4918b inherit pub_methods_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeaa70cd566baefbcccce8adfa608ca02 inherit pub_methods_classAActor" id="r_aeaa70cd566baefbcccce8adfa608ca02"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#aeaa70cd566baefbcccce8adfa608ca02">Collision</a> (<a class="el" href="structPlayer.html">Player</a> *player, <a class="el" href="classAActor.html">AActor</a> *actor)</td></tr>
 <tr class="separator:aeaa70cd566baefbcccce8adfa608ca02 inherit pub_methods_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2242f7915fdde70c732b6186ccb6ddcf inherit pub_methods_classAActor" id="r_a2242f7915fdde70c732b6186ccb6ddcf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#a2242f7915fdde70c732b6186ccb6ddcf">SetLocation</a> (<a class="el" href="structFVector.html">FVector</a> pos)</td></tr>
 <tr class="separator:a2242f7915fdde70c732b6186ccb6ddcf inherit pub_methods_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9f82c846dca23e89b66d1f5b847a34d inherit pub_methods_classAActor" id="r_ab9f82c846dca23e89b66d1f5b847a34d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFVector.html">FVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#ab9f82c846dca23e89b66d1f5b847a34d">GetLocation</a> () const</td></tr>
-<tr class="separator:ab9f82c846dca23e89b66d1f5b847a34d inherit pub_methods_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf21b02df0bf53ad12fd01a143700a7b inherit pub_methods_classAActor" id="r_acf21b02df0bf53ad12fd01a143700a7b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#acf21b02df0bf53ad12fd01a143700a7b">Destroy</a> ()</td></tr>
 <tr class="separator:acf21b02df0bf53ad12fd01a143700a7b inherit pub_methods_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9f82c846dca23e89b66d1f5b847a34d inherit pub_methods_classAActor" id="r_ab9f82c846dca23e89b66d1f5b847a34d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFVector.html">FVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#ab9f82c846dca23e89b66d1f5b847a34d">GetLocation</a> () const</td></tr>
+<tr class="separator:ab9f82c846dca23e89b66d1f5b847a34d inherit pub_methods_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4530faf2716a4a71764b1ab5a9db661 inherit pub_methods_classAActor" id="r_ac4530faf2716a4a71764b1ab5a9db661"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structIRotator.html">IRotator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#ac4530faf2716a4a71764b1ab5a9db661">GetRotation</a> () const</td></tr>
+<tr class="separator:ac4530faf2716a4a71764b1ab5a9db661 inherit pub_methods_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af82edbf492889f3ba82ab0ee59eec547 inherit pub_methods_classAActor" id="r_af82edbf492889f3ba82ab0ee59eec547"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFVector.html">FVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#af82edbf492889f3ba82ab0ee59eec547">GetScale</a> () const</td></tr>
+<tr class="separator:af82edbf492889f3ba82ab0ee59eec547 inherit pub_methods_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfa31ccf6a62e6dcb073cff34d6fa742 inherit pub_methods_classAActor" id="r_adfa31ccf6a62e6dcb073cff34d6fa742"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#adfa31ccf6a62e6dcb073cff34d6fa742">Translate</a> (<a class="el" href="structFVector.html">FVector</a> pos)</td></tr>
+<tr class="separator:adfa31ccf6a62e6dcb073cff34d6fa742 inherit pub_methods_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a665c115a340991755fdbf5d430508775 inherit pub_methods_classAActor" id="r_a665c115a340991755fdbf5d430508775"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#a665c115a340991755fdbf5d430508775">Rotate</a> (<a class="el" href="structIRotator.html">IRotator</a> rot)</td></tr>
+<tr class="separator:a665c115a340991755fdbf5d430508775 inherit pub_methods_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1524ae9171e0aa00e777cab2f9aba88b inherit pub_methods_classAActor" id="r_a1524ae9171e0aa00e777cab2f9aba88b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#a1524ae9171e0aa00e777cab2f9aba88b">SetScale</a> (<a class="el" href="structFVector.html">FVector</a> scale)</td></tr>
+<tr class="separator:a1524ae9171e0aa00e777cab2f9aba88b inherit pub_methods_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a456ce9ea8c555e72a30abe4b40bd2d7b" id="r_a456ce9ea8c555e72a30abe4b40bd2d7b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classABus.html">ABus</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a456ce9ea8c555e72a30abe4b40bd2d7b">Spawn</a> (f32 speedA, f32 speedB, uint32_t pathIndex, uint32_t pathPoint, <a class="el" href="#a3b606829d2b09a9842c16675740e0754">ABus::SpawnMode</a> spawnMode)</td></tr>
+<tr class="separator:a456ce9ea8c555e72a30abe4b40bd2d7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af516433fa4d84e8eaaf57b90b26002d1" id="r_af516433fa4d84e8eaaf57b90b26002d1"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af516433fa4d84e8eaaf57b90b26002d1">GetCount</a> ()</td></tr>
 <tr class="separator:af516433fa4d84e8eaaf57b90b26002d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -191,6 +219,14 @@ Data Fields</h2></td></tr>
 <tr class="separator:af8151ccad4c022e622e0bc192461b57b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a87dc2dc6acf1394471385b70a51037df" id="r_a87dc2dc6acf1394471385b70a51037df"><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a87dc2dc6acf1394471385b70a51037df">SoundBits</a> = <a class="el" href="sounds_8h.html#a71288c0bb15b503d4570b441a05013f4">SOUND_ARG_LOAD</a>(0x51, 0x01, 0x80, 0x03)</td></tr>
 <tr class="separator:a87dc2dc6acf1394471385b70a51037df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4de249de979c2d828f7c8974d9a41813" id="r_a4de249de979c2d828f7c8974d9a41813"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a3b606829d2b09a9842c16675740e0754">ABus::SpawnMode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4de249de979c2d828f7c8974d9a41813">SpawnType</a> = <a class="el" href="#a3b606829d2b09a9842c16675740e0754a3eadc7f48bd7e55063bfa3a74293185c">ABus::SpawnMode::AUTO</a></td></tr>
+<tr class="separator:a4de249de979c2d828f7c8974d9a41813"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9c7b8a9774eb0c447dd690ea8d39d57" id="r_ad9c7b8a9774eb0c447dd690ea8d39d57"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9c7b8a9774eb0c447dd690ea8d39d57">SpeedB</a> = 0.0f</td></tr>
+<tr class="separator:ad9c7b8a9774eb0c447dd690ea8d39d57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6ed781da83228a87173f8f608e98004" id="r_aa6ed781da83228a87173f8f608e98004"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6ed781da83228a87173f8f608e98004">PathIndex</a> = 0</td></tr>
+<tr class="separator:aa6ed781da83228a87173f8f608e98004"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a397d3eb58bac74eb3e8c3667d329b8e8" id="r_a397d3eb58bac74eb3e8c3667d329b8e8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a397d3eb58bac74eb3e8c3667d329b8e8">PathPoint</a> = 0</td></tr>
+<tr class="separator:a397d3eb58bac74eb3e8c3667d329b8e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_attribs_classAActor"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_attribs_classAActor')"><img src="closed.png" alt="-"/>&#160;Data Fields inherited from <a class="el" href="classAActor.html">AActor</a></td></tr>
 <tr class="memitem:ac8b32907b5a9f6242485cf6f41ade0e4 inherit pub_attribs_classAActor" id="r_ac8b32907b5a9f6242485cf6f41ade0e4"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#ac8b32907b5a9f6242485cf6f41ade0e4">Type</a> = 0</td></tr>
 <tr class="separator:ac8b32907b5a9f6242485cf6f41ade0e4 inherit pub_attribs_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -212,25 +248,60 @@ Data Fields</h2></td></tr>
 <tr class="separator:acd3ec7397ca7136e2b5b5cdec6365847 inherit pub_attribs_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaae055d5ec4e8bfacf16483a387330ad inherit pub_attribs_classAActor" id="r_aaae055d5ec4e8bfacf16483a387330ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#aaae055d5ec4e8bfacf16483a387330ad">Velocity</a> = {0, 0, 0}</td></tr>
 <tr class="separator:aaae055d5ec4e8bfacf16483a387330ad inherit pub_attribs_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a568339098359599aa952fa031721ee5d inherit pub_attribs_classAActor" id="r_a568339098359599aa952fa031721ee5d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structCollision.html">Collision</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#a568339098359599aa952fa031721ee5d">Unk30</a></td></tr>
-<tr class="separator:a568339098359599aa952fa031721ee5d inherit pub_attribs_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af44b022ebad2d99dcb3476d85c88ca20 inherit pub_attribs_classAActor" id="r_af44b022ebad2d99dcb3476d85c88ca20"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structCollision.html">Collision</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#af44b022ebad2d99dcb3476d85c88ca20">Unk30</a></td></tr>
+<tr class="separator:af44b022ebad2d99dcb3476d85c88ca20 inherit pub_attribs_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44ad3afad2605f1e8b6449b797b50369 inherit pub_attribs_classAActor" id="r_a44ad3afad2605f1e8b6449b797b50369"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#a44ad3afad2605f1e8b6449b797b50369">Model</a> = &quot;&quot;</td></tr>
+<tr class="separator:a44ad3afad2605f1e8b6449b797b50369 inherit pub_attribs_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad0d300f6ac4f1daa02669c340c7c523f inherit pub_attribs_classAActor" id="r_ad0d300f6ac4f1daa02669c340c7c523f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#ad0d300f6ac4f1daa02669c340c7c523f">uuid</a> [16]</td></tr>
 <tr class="separator:ad0d300f6ac4f1daa02669c340c7c523f inherit pub_attribs_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ada2b0b8507fa236b3f65a36ccc846a4f inherit pub_attribs_classAActor" id="r_ada2b0b8507fa236b3f65a36ccc846a4f"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#ada2b0b8507fa236b3f65a36ccc846a4f">Name</a> = &quot;&quot;</td></tr>
 <tr class="separator:ada2b0b8507fa236b3f65a36ccc846a4f inherit pub_attribs_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0062f91773730765fa95d13da7481b3 inherit pub_attribs_classAActor" id="r_aa0062f91773730765fa95d13da7481b3"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#aa0062f91773730765fa95d13da7481b3">ResourceName</a> = &quot;&quot;</td></tr>
+<tr class="separator:aa0062f91773730765fa95d13da7481b3 inherit pub_attribs_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7674660519f736e3fbd24bf86e8df4eb inherit pub_attribs_classAActor" id="r_a7674660519f736e3fbd24bf86e8df4eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFVector.html">FVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#a7674660519f736e3fbd24bf86e8df4eb">SpawnPos</a> = {0.0f, 0.0f, 0.0f}</td></tr>
+<tr class="separator:a7674660519f736e3fbd24bf86e8df4eb inherit pub_attribs_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab96ecc258c4e9ab79ac93048ebd36105 inherit pub_attribs_classAActor" id="r_ab96ecc258c4e9ab79ac93048ebd36105"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structIRotator.html">IRotator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#ab96ecc258c4e9ab79ac93048ebd36105">SpawnRot</a> = {0, 0, 0}</td></tr>
+<tr class="separator:ab96ecc258c4e9ab79ac93048ebd36105 inherit pub_attribs_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87396b4899e291181b4d159b5c28de1d inherit pub_attribs_classAActor" id="r_a87396b4899e291181b4d159b5c28de1d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFVector.html">FVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#a87396b4899e291181b4d159b5c28de1d">SpawnScale</a> = {1.0f, 1.0f, 1.0f}</td></tr>
+<tr class="separator:a87396b4899e291181b4d159b5c28de1d inherit pub_attribs_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5220d0d8dda8f500f5842d2732d68fe inherit pub_attribs_classAActor" id="r_ab5220d0d8dda8f500f5842d2732d68fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFVector.html">FVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#ab5220d0d8dda8f500f5842d2732d68fe">Scale</a> = {1, 1, 1}</td></tr>
 <tr class="separator:ab5220d0d8dda8f500f5842d2732d68fe inherit pub_attribs_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24d75e90075e71f95035ebd34a642d79 inherit pub_attribs_classAActor" id="r_a24d75e90075e71f95035ebd34a642d79"><td class="memItemLeft" align="right" valign="top">Gfx *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#a24d75e90075e71f95035ebd34a642d79">Model</a> = <a class="el" href="miniaudio_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
-<tr class="separator:a24d75e90075e71f95035ebd34a642d79 inherit pub_attribs_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6d2b2e2d387248e91af4bf95abf6b53 inherit pub_attribs_classAActor" id="r_aa6d2b2e2d387248e91af4bf95abf6b53"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#aa6d2b2e2d387248e91af4bf95abf6b53">Speed</a> = 0.0f</td></tr>
+<tr class="separator:aa6d2b2e2d387248e91af4bf95abf6b53 inherit pub_attribs_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae363cd01dad5b18af811ded27d623224 inherit pub_attribs_classAActor" id="r_ae363cd01dad5b18af811ded27d623224"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structTriangle.html">Triangle</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#ae363cd01dad5b18af811ded27d623224">Triangles</a></td></tr>
+<tr class="separator:ae363cd01dad5b18af811ded27d623224 inherit pub_attribs_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a14c7fbedee44f3e2967ca10b5d150b inherit pub_attribs_classAActor" id="r_a6a14c7fbedee44f3e2967ca10b5d150b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classAActor.html#a6a14c7fbedee44f3e2967ca10b5d150b">bPendingDestroy</a> = false</td></tr>
+<tr class="separator:a6a14c7fbedee44f3e2967ca10b5d150b inherit pub_attribs_classAActor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
 Static Private Attributes</h2></td></tr>
 <tr class="memitem:a78f0864f8c8543a73a2b383062f2667f" id="r_a78f0864f8c8543a73a2b383062f2667f"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78f0864f8c8543a73a2b383062f2667f">_count</a> = 0</td></tr>
 <tr class="separator:a78f0864f8c8543a73a2b383062f2667f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcf2419a021f8a7a098686b431e82886" id="r_afcf2419a021f8a7a098686b431e82886"><td class="memItemLeft" align="right" valign="top">static std::map&lt; uint32_t, std::vector&lt; uint32_t &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcf2419a021f8a7a098686b431e82886">BusCounts</a></td></tr>
+<tr class="separator:afcf2419a021f8a7a098686b431e82886"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Enumeration Documentation</h2>
+<a id="a3b606829d2b09a9842c16675740e0754" name="a3b606829d2b09a9842c16675740e0754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b606829d2b09a9842c16675740e0754">&#9670;&#160;</a></span>SpawnMode</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a3b606829d2b09a9842c16675740e0754">ABus::SpawnMode</a> : uint16_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a3b606829d2b09a9842c16675740e0754a92a39ce8dce1526d636aa28f1bb02914" name="a3b606829d2b09a9842c16675740e0754a92a39ce8dce1526d636aa28f1bb02914"></a>POINT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a3b606829d2b09a9842c16675740e0754a3eadc7f48bd7e55063bfa3a74293185c" name="a3b606829d2b09a9842c16675740e0754a3eadc7f48bd7e55063bfa3a74293185c"></a>AUTO&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a664d535dc60bf3d1672792a14cff2089" name="a664d535dc60bf3d1672792a14cff2089"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a664d535dc60bf3d1672792a14cff2089">&#9670;&#160;</a></span>ABus()</h2>
+<a id="aabc43c4a5a7c5acc7daa5e89f9d42cdb" name="aabc43c4a5a7c5acc7daa5e89f9d42cdb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabc43c4a5a7c5acc7daa5e89f9d42cdb">&#9670;&#160;</a></span>ABus()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -241,22 +312,8 @@ Static Private Attributes</h2></td></tr>
         <tr>
           <td class="memname">ABus::ABus </td>
           <td>(</td>
-          <td class="paramtype">f32</td>          <td class="paramname"><span class="paramname"><em>speedA</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const <a class="el" href="structSpawnParams.html">SpawnParams</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>params</em></span></td><td>)</td>
           <td></td>
-          <td class="paramtype">f32</td>          <td class="paramname"><span class="paramname"><em>speedB</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structTrackPathPoint.html">TrackPathPoint</a> *</td>          <td class="paramname"><span class="paramname"><em>path</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>waypoint</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -268,7 +325,12 @@ Static Private Attributes</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classABus_a664d535dc60bf3d1672792a14cff2089_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classABus_aabc43c4a5a7c5acc7daa5e89f9d42cdb_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classABus_aabc43c4a5a7c5acc7daa5e89f9d42cdb_icgraph.svg" width="262" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -322,12 +384,39 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classAActor.html#a803007dd95a33ecdb49e55a6947ce23a">AActor</a>.</p>
+<p>Reimplemented from <a class="el" href="classAActor.html#a85d714b98fe1a42151871f865c0e37f7">AActor</a>.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><iframe scrolling="no" frameborder="0" src="classABus_a9bed69b35f192f67a63bf62a1635a74d_cgraph.svg" width="319" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
+
+</div>
+</div>
+<a id="ae92d8cd24a14f93545fd8c1fe25e9d78" name="ae92d8cd24a14f93545fd8c1fe25e9d78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae92d8cd24a14f93545fd8c1fe25e9d78">&#9670;&#160;</a></span>DrawEditorProperties()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ABus::DrawEditorProperties </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented from <a class="el" href="classAActor.html#aafcc8d41bb922b265484c93977c2d99a">AActor</a>.</p>
 
 </div>
 </div>
@@ -380,6 +469,83 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Reimplemented from <a class="el" href="classAActor.html#af803b26b072a4154d4ead696c96273a0">AActor</a>.</p>
+
+</div>
+</div>
+<a id="af94f121ac8d8f271b1ad89abd7356766" name="af94f121ac8d8f271b1ad89abd7356766"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af94f121ac8d8f271b1ad89abd7356766">&#9670;&#160;</a></span>SetSpawnParams()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ABus::SetSpawnParams </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structSpawnParams.html">SpawnParams</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>params</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel override">override</span><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Make sure you call this in derived classes! Usage: MyActor::SetSpawnParams(SetSpawnParams&amp; params) { AActor::SetSpawnParams(params); // Calls default implementation } </p>
+
+<p>Reimplemented from <a class="el" href="classAActor.html#ab16eea21b72bb5626366533654f8aa5c">AActor</a>.</p>
+
+</div>
+</div>
+<a id="a456ce9ea8c555e72a30abe4b40bd2d7b" name="a456ce9ea8c555e72a30abe4b40bd2d7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a456ce9ea8c555e72a30abe4b40bd2d7b">&#9670;&#160;</a></span>Spawn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classABus.html">ABus</a> * ABus::Spawn </td>
+          <td>(</td>
+          <td class="paramtype">f32</td>          <td class="paramname"><span class="paramname"><em>speedA</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">f32</td>          <td class="paramname"><span class="paramname"><em>speedB</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>pathIndex</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>pathPoint</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="#a3b606829d2b09a9842c16675740e0754">ABus::SpawnMode</a></td>          <td class="paramname"><span class="paramname"><em>spawnMode</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classABus_a456ce9ea8c555e72a30abe4b40bd2d7b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
@@ -488,6 +654,28 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="afcf2419a021f8a7a098686b431e82886" name="afcf2419a021f8a7a098686b431e82886"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcf2419a021f8a7a098686b431e82886">&#9670;&#160;</a></span>BusCounts</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt; uint32_t, std::vector&lt; uint32_t &gt; &gt; ABus::BusCounts</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span><span class="mlabel private">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="adf0aa5439973b65949f95e15613b91ae" name="adf0aa5439973b65949f95e15613b91ae"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#adf0aa5439973b65949f95e15613b91ae">&#9670;&#160;</a></span>Index</h2>
 
@@ -496,6 +684,34 @@ Here is the call graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">size_t ABus::Index</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa6ed781da83228a87173f8f608e98004" name="aa6ed781da83228a87173f8f608e98004"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6ed781da83228a87173f8f608e98004">&#9670;&#160;</a></span>PathIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ABus::PathIndex = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a397d3eb58bac74eb3e8c3667d329b8e8" name="a397d3eb58bac74eb3e8c3667d329b8e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a397d3eb58bac74eb3e8c3667d329b8e8">&#9670;&#160;</a></span>PathPoint</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t ABus::PathPoint = 0</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -628,6 +844,20 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
+<a id="a4de249de979c2d828f7c8974d9a41813" name="a4de249de979c2d828f7c8974d9a41813"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4de249de979c2d828f7c8974d9a41813">&#9670;&#160;</a></span>SpawnType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a3b606829d2b09a9842c16675740e0754">ABus::SpawnMode</a> ABus::SpawnType = <a class="el" href="#a3b606829d2b09a9842c16675740e0754a3eadc7f48bd7e55063bfa3a74293185c">ABus::SpawnMode::AUTO</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a7a21e1500177bc8d10bcdd7fa6147bb1" name="a7a21e1500177bc8d10bcdd7fa6147bb1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7a21e1500177bc8d10bcdd7fa6147bb1">&#9670;&#160;</a></span>Speed</h2>
 
@@ -636,6 +866,20 @@ Here is the call graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">f32 ABus::Speed</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad9c7b8a9774eb0c447dd690ea8d39d57" name="ad9c7b8a9774eb0c447dd690ea8d39d57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9c7b8a9774eb0c447dd690ea8d39d57">&#9670;&#160;</a></span>SpeedB</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ABus::SpeedB = 0.0f</td>
         </tr>
       </table>
 </div><div class="memdoc">

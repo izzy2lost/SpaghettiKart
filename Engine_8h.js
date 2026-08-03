@@ -24,5 +24,7 @@ var Engine_8h =
     [ "OTRGetGameViewportHeight", "Engine_8h.html#ac9a41747a729cf288ae92fba19ba2f9a", null ],
     [ "OTRGetGameViewportWidth", "Engine_8h.html#a148024822cf8878855266d03c21a0bd8", null ],
     [ "OTRGetRectDimensionFromLeftEdge", "Engine_8h.html#af8ad96e953b60eb630f5261745844e45", null ],
-    [ "OTRGetRectDimensionFromRightEdge", "Engine_8h.html#a6a4636ed76942d3a15e97f85ff3196fb", null ]
+    [ "OTRGetRectDimensionFromRightEdge", "Engine_8h.html#a6a4636ed76942d3a15e97f85ff3196fb", null ],
+    [ "engine_asset_file", "Engine_8h.html#aeef5f907700723b99e6a2ee692e45b31", null ],
+    [ "game_asset_file", "Engine_8h.html#aff46ed20348d9c96aa36a10ade9a5dd7", null ]
 ];

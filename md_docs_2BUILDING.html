@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: Building SpagettiKart</title>
+<title>SpaghettiKart: Building SpagettiKart</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -109,7 +109,7 @@ $(function(){initNavTree('md_docs_2BUILDING.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="building-spagettikart"></a></p>
-<h1><a class="anchor" id="windows-1"></a>
+<h1><a class="anchor" id="windows"></a>
 Windows</h1>
 <p>Requires:</p><ul>
 <li>At least 8GB of RAM (machines with 4GB have seen complier failures)</li>
@@ -124,7 +124,7 @@ Windows</h1>
 <p><img src="https://user-images.githubusercontent.com/30329717/183511274-d11aceea-7900-46ec-acb6-3f2cc110021a.png" alt="image" class="inline"/> Doing so should also check one of the Windows SDKs by default. Then, in the installation details in the right-hand column, make sure you also check the v143 toolset. This is often done by default.</p>
 <p>It is recommended that you install Python and Git standalone, the install process in VS Installer has given some issues in the past.</p>
 <ol type="1">
-<li>Clone the Starship repository</li>
+<li>Clone the SpaghettiKart repository</li>
 </ol>
 <p><em><a class="el" href="structNote.html">Note</a>: Be sure to either clone with the <code>--recursive</code> flag or do <code>git submodule update --init</code> after cloning to pull in the libultraship submodule!</em></p>
 <ol type="1">
@@ -171,7 +171,7 @@ Additional CMake Targets</h2>
 Clean</h3>
 <div class="fragment"><div class="line"># If you need to clean the project you can run</div>
 <div class="line">C:\Program Files\CMake\bin\cmake.exe --build build-cmake --target clean</div>
-</div><!-- fragment --><h1><a class="anchor" id="linux-1"></a>
+</div><!-- fragment --><h1><a class="anchor" id="linux"></a>
 Linux</h1>
 <h2><a class="anchor" id="clone-the-repo-and-enter-the-directory"></a>
 Clone the repo and enter the directory</h2>
@@ -188,14 +188,14 @@ Debian/Ubuntu</h4>
 <div class="line"> </div>
 <div class="line"># or using clang</div>
 <div class="line">apt-get install clang git cmake ninja-build lsb-release libsdl2-dev libpng-dev libsdl2-net-dev libzip-dev zipcmp zipmerge ziptool nlohmann-json3-dev libtinyxml2-dev libspdlog-dev libboost-dev libopengl-dev libogg-dev libvorbis-dev</div>
-</div><!-- fragment --> <h4><a class="anchor" id="arch-1"></a>
+</div><!-- fragment --> <h4><a class="anchor" id="arch"></a>
 Arch</h4>
 <div class="fragment"><div class="line"># using gcc</div>
 <div class="line">pacman -S gcc git cmake ninja lsb-release sdl2 libpng libzip nlohmann-json tinyxml2 spdlog sdl2_net boost libogg libvorbis</div>
 <div class="line"> </div>
 <div class="line"># or using clang</div>
 <div class="line">pacman -S clang git cmake ninja lsb-release sdl2 libpng libzip nlohmann-json tinyxml2 spdlog sdl2_net boost libogg libvorbis</div>
-</div><!-- fragment --> <h4><a class="anchor" id="fedora-1"></a>
+</div><!-- fragment --> <h4><a class="anchor" id="fedora"></a>
 Fedora</h4>
 <div class="fragment"><div class="line"># using gcc</div>
 <div class="line">dnf install gcc gcc-c++ git cmake ninja-build lsb_release SDL2-devel SDL2_net-devel libpng-devel libzip-devel libzip-tools nlohmann-json-devel tinyxml2-devel spdlog-devel boost-devel libogg-devel libvorbis-devel</div>
@@ -233,7 +233,7 @@ Build</h3>
 <div class="line"># To develop the project open the repository in VSCode (or your preferred editor)</div>
 <div class="line"> </div>
 <div class="line"># System wide freezes may be due to low memory, add &quot;-j4&quot; to the end of the build command to use four cores.</div>
-</div><!-- fragment --><h2><a class="anchor" id="docker-1"></a>
+</div><!-- fragment --><h2><a class="anchor" id="docker"></a>
 Docker</h2>
 <h3><a class="anchor" id="create-the-docker-container"></a>
 Create the docker container</h3>
@@ -258,7 +258,7 @@ Additional CMake Targets</h2>
 Clean</h3>
 <div class="fragment"><div class="line"># If you need to clean the project you can run</div>
 <div class="line">cmake --build build-cmake --target clean</div>
-</div><!-- fragment --><h1><a class="anchor" id="macos-1"></a>
+</div><!-- fragment --><h1><a class="anchor" id="macos"></a>
 macOS</h1>
 <p>Requires Xcode (or xcode-tools) &amp;&amp; <code>sdl2, libpng, glew, ninja, cmake, nlohmann-json, libzip, vorbis-tools, sdl2_net, tinyxml2</code> (can be installed via homebrew, macports, etc)</p>
 <p><b>Important: For maximum performance make sure you have ninja build tools installed!</b></p>
@@ -297,7 +297,38 @@ Additional CMake Targets</h2>
 Clean</h3>
 <div class="fragment"><div class="line"># If you need to clean the project you can run</div>
 <div class="line">cmake --build build-cmake --target clean</div>
-</div><!-- fragment --><h1><a class="anchor" id="getting-ci-to-work-on-your-fork"></a>
+</div><!-- fragment --><h1><a class="anchor" id="android"></a>
+Android</h1>
+<h2><a class="anchor" id="requirements"></a>
+Requirements</h2>
+<ul>
+<li>Android SDK platform 36 and build-tools 36</li>
+<li>NDK <code>30.0.15729638</code></li>
+<li>CMake <code>3.30.3</code> (from the SDK's <code>cmake</code> package)</li>
+<li>JDK 17</li>
+</ul>
+<p>The Gradle project lives in <code>android/</code>. Point it at your SDK with an <code>android/local.properties</code> containing <code>sdk.dir=/path/to/Android/Sdk</code>, or export <code>ANDROID_HOME</code>.</p>
+<h2><a class="anchor" id="the-one-thing-that-is-not-built-by-gradle"></a>
+The one thing that is not built by Gradle</h2>
+<p><code>spaghetti.o2r</code> holds the port's own assets (fonts, shaders, custom tracks) and is packed by the Torch <em>executable</em>, which the NDK build cannot produce because it has no host toolchain. Build it on your machine first and drop it into the APK assets:</p>
+<div class="fragment"><div class="line">cmake -S torch -B torch/build-host -G Ninja \</div>
+<div class="line">  -DCMAKE_BUILD_TYPE=Release -DUSE_STANDALONE=ON \</div>
+<div class="line">  -DBUILD_MK64=ON -DBUILD_NAUDIO=ON \</div>
+<div class="line">  -DBUILD_SM64=OFF -DBUILD_SF64=OFF -DBUILD_FZERO=OFF -DBUILD_MARIO_ARTIST=OFF</div>
+<div class="line">cmake --build torch/build-host --parallel</div>
+<div class="line">torch/build-host/torch pack assets spaghetti.o2r o2r</div>
+<div class="line">cp spaghetti.o2r android/app/src/main/assets/</div>
+</div><!-- fragment --><p>The APK builds without it, but the app will stop at the launcher with a missing asset error. <code>mk64.o2r</code> is <em>not</em> built here — Torch is also linked into the game library and generates it on the device from the user's ROM.</p>
+<h2><a class="anchor" id="build-1"></a>
+Build</h2>
+<div class="fragment"><div class="line">cd android</div>
+<div class="line">./gradlew assembleDebug     # app/build/outputs/apk/debug/app-debug.apk</div>
+<div class="line">./gradlew assembleRelease   # needs KEYSTORE_FILE/KEYSTORE_PASSWORD/KEY_ALIAS/KEY_PASSWORD</div>
+</div><!-- fragment --><p>Gradle stages <code>config.yml</code>, <code>yamls/</code> and <code>meta/</code> into the APK assets itself (<code>stageTorchAssets</code>); the launcher unpacks them, along with <code>spaghetti.o2r</code>, into <code>Android/data/com.izzy.kart/files</code> on first run. That directory is where the game reads and writes everything, including the <code>mods</code> folder.</p>
+<h2><a class="anchor" id="keeping-the-sdl-glue-in-sync"></a>
+Keeping the SDL glue in sync</h2>
+<p><code>android/app/src/main/java/org/libsdl/app</code> is an unmodified copy of the Java glue from the SDL release that libultraship pins, and <code>SDLActivity</code> aborts at startup if the two disagree on their version. Whenever that pin moves in <code>libultraship/cmake/dependencies/android.cmake</code>, re-copy the directory from <code>android-project/app/src/main/java/org/libsdl/app</code> in the matching SDL tag — no local edits to re-apply, the game library name is overridden in <code>MainActivity.kt</code>.</p>
+<h1><a class="anchor" id="getting-ci-to-work-on-your-fork"></a>
 Getting CI to work on your fork</h1>
 <p>The CI works via <a href="https://github.com/features/actions">Github Actions</a> where we mostly make use of machines hosted by Github; except for the very first step of the CI process called "Extract assets". This steps extracts assets from the game file and generates an "assets" folder in <code>mm/</code>.</p>
 <p>To get this step working on your fork, you'll need to add a machine to your own repository as a self-hosted runner via "Settings &gt; Actions &gt; Runners" in your repository settings. Make sure to add the 'asset-builder' tag to your newly added runner to assign it to run this step. To setup your runner as a service read the docs <a href="https://docs.github.com/en/actions/hosting-your-own-runners/configuring-the-self-hosted-runner-application-as-a-service?platform=linux">here</a>.</p>

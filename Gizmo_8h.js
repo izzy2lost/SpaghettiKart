@@ -1,5 +1,5 @@
 var Gizmo_8h =
 [
-    [ "Editor::Gizmo", "classEditor_1_1Gizmo.html", "classEditor_1_1Gizmo" ],
-    [ "Editor::Gizmo::TrackDimensions", "structEditor_1_1Gizmo_1_1TrackDimensions.html", "structEditor_1_1Gizmo_1_1TrackDimensions" ]
+    [ "TrackEditor::Gizmo", "classTrackEditor_1_1Gizmo.html", "classTrackEditor_1_1Gizmo" ],
+    [ "TrackEditor::Gizmo::TrackDimensions", "structTrackEditor_1_1Gizmo_1_1TrackDimensions.html", "structTrackEditor_1_1Gizmo_1_1TrackDimensions" ]
 ];

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/audio/external.h File Reference</title>
+<title>SpaghettiKart: src/audio/external.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -113,11 +113,12 @@ $(function(){initNavTree('external_8h.html',''); initResizable(true); });
 <div class="contents">
 <div class="textblock"><code>#include &lt;libultraship.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="common__structs_8h_source.html">common_structs.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="defines_8h_source.html">defines.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="camera_8h_source.html">camera.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for external.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="external_8h__incl.svg" width="207" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="external_8h__incl.svg" width="275" height="256"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="external_8h_source.html">Go to the source code of this file.</a></p>
@@ -183,10 +184,12 @@ Macros</h2></td></tr>
 <tr class="separator:a0d7bb4041eb2a8fd5fe5953d4b4b9d7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa771683a4289a048ae35ff410ce1df8e" id="r_aa771683a4289a048ae35ff410ce1df8e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa771683a4289a048ae35ff410ce1df8e">SOUND_MODE_STEREO</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:aa771683a4289a048ae35ff410ce1df8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a671ea17c7e5fd266cf3e28754ff46838" id="r_a671ea17c7e5fd266cf3e28754ff46838"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a671ea17c7e5fd266cf3e28754ff46838">SOUND_MODE_MONO</a>&#160;&#160;&#160;3</td></tr>
-<tr class="separator:a671ea17c7e5fd266cf3e28754ff46838"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96b11a58db58d77a301217a5441f1fac" id="r_a96b11a58db58d77a301217a5441f1fac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96b11a58db58d77a301217a5441f1fac">SOUND_MODE_HEADSET</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:a96b11a58db58d77a301217a5441f1fac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a717104ef170f8a6a97c3d00ec4bd1918" id="r_a717104ef170f8a6a97c3d00ec4bd1918"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a717104ef170f8a6a97c3d00ec4bd1918">SOUND_MODE_SURROUND</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a717104ef170f8a6a97c3d00ec4bd1918"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a671ea17c7e5fd266cf3e28754ff46838" id="r_a671ea17c7e5fd266cf3e28754ff46838"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a671ea17c7e5fd266cf3e28754ff46838">SOUND_MODE_MONO</a>&#160;&#160;&#160;3</td></tr>
+<tr class="separator:a671ea17c7e5fd266cf3e28754ff46838"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a658c0b05589c4e2cdaa1d25d7171c448" id="r_a658c0b05589c4e2cdaa1d25d7171c448"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a658c0b05589c4e2cdaa1d25d7171c448">SEQ_PLAYER_LEVEL</a>&#160;&#160;&#160;0</td></tr>
 <tr class="separator:a658c0b05589c4e2cdaa1d25d7171c448"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1101f1910856bf00e312c510f77c5bb" id="r_ae1101f1910856bf00e312c510f77c5bb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae1101f1910856bf00e312c510f77c5bb">SEQ_PLAYER_ENV</a>&#160;&#160;&#160;1</td></tr>
@@ -631,6 +634,20 @@ Macros</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define SOUND_MODE_STEREO&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a717104ef170f8a6a97c3d00ec4bd1918" name="a717104ef170f8a6a97c3d00ec4bd1918"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a717104ef170f8a6a97c3d00ec4bd1918">&#9670;&#160;</a></span>SOUND_MODE_SURROUND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SOUND_MODE_SURROUND&#160;&#160;&#160;2</td>
         </tr>
       </table>
 </div><div class="memdoc">

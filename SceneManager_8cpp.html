@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/editor/SceneManager.cpp File Reference</title>
+<title>SpaghettiKart: src/engine/editor/SceneManager.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -107,24 +107,38 @@ $(function(){initNavTree('SceneManager_8cpp.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">SceneManager.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="SceneManager_8h_source.html">SceneManager.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Game_8h_source.html">port/Game.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="CoreMath_8h_source.html">CoreMath.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="World_8h_source.html">World.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="CoreMath_8h_source.html">engine/CoreMath.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="World_8h_source.html">engine/World.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GameObject_8h_source.html">GameObject.h</a>&quot;</code><br />
 <code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;memory&gt;</code><br />
+<code>#include &lt;optional&gt;</code><br />
 <code>#include &lt;nlohmann/json.hpp&gt;</code><br />
 <code>#include &quot;<a class="el" href="Engine_8h_source.html">port/Engine.h</a>&quot;</code><br />
-<code>#include &lt;libultraship/src/resource/type/Json.h&gt;</code><br />
+<code>#include &lt;ship/resource/type/Json.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="Minimap_8h_source.html">port/resource/type/Minimap.h</a>&quot;</code><br />
-<code>#include &lt;libultraship/src/resource/File.h&gt;</code><br />
+<code>#include &lt;ship/resource/File.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="ResourceType_8h_source.html">port/resource/type/ResourceType.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Train_8h_source.html">engine/vehicles/Train.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Finishline_8h_source.html">engine/actors/Finishline.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Object_8h_source.html">engine/objects/Object.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Thwomp_8h_source.html">engine/objects/Thwomp.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Snowman_8h_source.html">engine/objects/Snowman.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TourCamera_8h_source.html">engine/cameras/TourCamera.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TrackPathPointData_8h_source.html">port/resource/type/TrackPathPointData.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="common__structs_8h_source.html">common_structs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="actors_8h_source.html">racing/actors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="actor__types_8h_source.html">actor_types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="code__80005FD0_8h_source.html">code_80005FD0.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="code__800029B0_8h_source.html">code_800029B0.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="render__courses_8h_source.html">racing/render_courses.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for SceneManager.cpp:</div>
 <div class="dyncontent">
@@ -133,28 +147,45 @@ Include dependency graph for SceneManager.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEditor.html">Editor</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html">TrackEditor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7f2229e4a768c53fcfb4b8dd1b1272d9" id="r_a7f2229e4a768c53fcfb4b8dd1b1272d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEditor.html#a7f2229e4a768c53fcfb4b8dd1b1272d9">Editor::SaveLevel</a> ()</td></tr>
-<tr class="separator:a7f2229e4a768c53fcfb4b8dd1b1272d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a916fdd9cf148244bc96185b3bebcd5d1" id="r_a916fdd9cf148244bc96185b3bebcd5d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEditor.html#a916fdd9cf148244bc96185b3bebcd5d1">Editor::LoadLevel</a> (std::shared_ptr&lt; Ship::Archive &gt; archive, <a class="el" href="classCourse.html">Course</a> *course, std::string sceneFile)</td></tr>
-<tr class="separator:a916fdd9cf148244bc96185b3bebcd5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5682c68f8c058161eac4f98905aa0c86" id="r_a5682c68f8c058161eac4f98905aa0c86"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEditor.html#a5682c68f8c058161eac4f98905aa0c86">Editor::Load_AddStaticMeshActor</a> (const nlohmann::json &amp;actorJson)</td></tr>
-<tr class="separator:a5682c68f8c058161eac4f98905aa0c86"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85a38f16e0f715d247a34fc1a51d599d" id="r_a85a38f16e0f715d247a34fc1a51d599d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEditor.html#a85a38f16e0f715d247a34fc1a51d599d">Editor::SetSceneFile</a> (std::shared_ptr&lt; Ship::Archive &gt; archive, std::string sceneFile)</td></tr>
-<tr class="separator:a85a38f16e0f715d247a34fc1a51d599d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dbe8877c6ca208acd93d3a6840ccf2a" id="r_a6dbe8877c6ca208acd93d3a6840ccf2a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEditor.html#a6dbe8877c6ca208acd93d3a6840ccf2a">Editor::LoadMinimap</a> (std::shared_ptr&lt; Ship::Archive &gt; archive, <a class="el" href="classCourse.html">Course</a> *course, std::string filePath)</td></tr>
-<tr class="separator:a6dbe8877c6ca208acd93d3a6840ccf2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a073a9aac47059c4c68f3f11b3bb5e0ea" id="r_a073a9aac47059c4c68f3f11b3bb5e0ea"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; Ship::Archive &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEditor.html#a073a9aac47059c4c68f3f11b3bb5e0ea">Editor::CurrentArchive</a></td></tr>
-<tr class="separator:a073a9aac47059c4c68f3f11b3bb5e0ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c88eeb517c230f21fe1ad61e170cad1" id="r_a9c88eeb517c230f21fe1ad61e170cad1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEditor.html#a9c88eeb517c230f21fe1ad61e170cad1">Editor::SceneFile</a> = &quot;&quot;</td></tr>
-<tr class="separator:a9c88eeb517c230f21fe1ad61e170cad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6a563244a563bd17d12563a23eadba6" id="r_aa6a563244a563bd17d12563a23eadba6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#aa6a563244a563bd17d12563a23eadba6">TrackEditor::SaveLevel</a> (<a class="el" href="classTrack.html">Track</a> *track, const <a class="el" href="structTrackInfo.html">TrackInfo</a> *info)</td></tr>
+<tr class="separator:aa6a563244a563bd17d12563a23eadba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5a960e46705549c4ff5b8f8f55bc21c" id="r_af5a960e46705549c4ff5b8f8f55bc21c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#af5a960e46705549c4ff5b8f8f55bc21c">TrackEditor::LoadTrackDataFromJson</a> (<a class="el" href="classTrack.html">Track</a> *track, const std::string &amp;trackPath)</td></tr>
+<tr class="separator:af5a960e46705549c4ff5b8f8f55bc21c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a928be70c491755a0f3c0d3d85640d549" id="r_a928be70c491755a0f3c0d3d85640d549"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#a928be70c491755a0f3c0d3d85640d549">TrackEditor::LoadTrackInfo</a> (<a class="el" href="structTrackInfo.html">TrackInfo</a> &amp;info, std::shared_ptr&lt; Ship::Archive &gt; archive, std::string sceneFile)</td></tr>
+<tr class="separator:a928be70c491755a0f3c0d3d85640d549"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a219704236eea5ff0a1a39c0f53f7538c" id="r_a219704236eea5ff0a1a39c0f53f7538c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#a219704236eea5ff0a1a39c0f53f7538c">TrackEditor::Load_AddStaticMeshActor</a> (const nlohmann::json &amp;actorJson)</td></tr>
+<tr class="separator:a219704236eea5ff0a1a39c0f53f7538c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9075bc0d22971dfd312b0557e9d6bec8" id="r_a9075bc0d22971dfd312b0557e9d6bec8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#a9075bc0d22971dfd312b0557e9d6bec8">TrackEditor::LoadMinimap</a> (<a class="el" href="classTrack.html">Track</a> *track, std::string filePath)</td></tr>
+<tr class="separator:a9075bc0d22971dfd312b0557e9d6bec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a045e1f94de546859660d3a8b5f32a42e" id="r_a045e1f94de546859660d3a8b5f32a42e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#a045e1f94de546859660d3a8b5f32a42e">TrackEditor::SetDefaultMinimap</a> (<a class="el" href="classTrack.html">Track</a> *track)</td></tr>
+<tr class="separator:a045e1f94de546859660d3a8b5f32a42e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa2ba235a699aec4dd8136258d23586d" id="r_afa2ba235a699aec4dd8136258d23586d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#afa2ba235a699aec4dd8136258d23586d">TrackEditor::SaveActors</a> (nlohmann::json &amp;actorList)</td></tr>
+<tr class="separator:afa2ba235a699aec4dd8136258d23586d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7689815ab273744923f046207562067" id="r_aa7689815ab273744923f046207562067"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#aa7689815ab273744923f046207562067">TrackEditor::SaveStaticMeshActors</a> (nlohmann::json &amp;actorList)</td></tr>
+<tr class="separator:aa7689815ab273744923f046207562067"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ab33e5d4df5a5dc0b3df27c04de6fcc" id="r_a7ab33e5d4df5a5dc0b3df27c04de6fcc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#a7ab33e5d4df5a5dc0b3df27c04de6fcc">TrackEditor::SaveTour</a> (<a class="el" href="classTrack.html">Track</a> *track, nlohmann::json &amp;tour)</td></tr>
+<tr class="separator:a7ab33e5d4df5a5dc0b3df27c04de6fcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30c8330a0c072d3da8abbff873f05216" id="r_a30c8330a0c072d3da8abbff873f05216"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#a30c8330a0c072d3da8abbff873f05216">TrackEditor::SaveFog</a> (nlohmann::json &amp;fog)</td></tr>
+<tr class="separator:a30c8330a0c072d3da8abbff873f05216"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb5d75978b55f270e27829cffe67d2a4" id="r_aeb5d75978b55f270e27829cffe67d2a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#aeb5d75978b55f270e27829cffe67d2a4">TrackEditor::LoadProps</a> (<a class="el" href="classTrack.html">Track</a> *track, nlohmann::json &amp;data)</td></tr>
+<tr class="separator:aeb5d75978b55f270e27829cffe67d2a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9080bcebe7f661f02fd863fea0006aee" id="r_a9080bcebe7f661f02fd863fea0006aee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#a9080bcebe7f661f02fd863fea0006aee">TrackEditor::LoadPaths</a> (<a class="el" href="classTrack.html">Track</a> *track, const std::string &amp;trackPath)</td></tr>
+<tr class="separator:a9080bcebe7f661f02fd863fea0006aee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af77bf8a4a955ca00b2eef049b54f558d" id="r_af77bf8a4a955ca00b2eef049b54f558d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#af77bf8a4a955ca00b2eef049b54f558d">TrackEditor::LoadTrackInfoData</a> (<a class="el" href="structTrackInfo.html">TrackInfo</a> &amp;info, nlohmann::json &amp;data)</td></tr>
+<tr class="separator:af77bf8a4a955ca00b2eef049b54f558d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5a075fe1664d7de3addb34768b7c60c" id="r_ad5a075fe1664d7de3addb34768b7c60c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#ad5a075fe1664d7de3addb34768b7c60c">TrackEditor::LoadActors</a> (<a class="el" href="classTrack.html">Track</a> *track, nlohmann::json &amp;data)</td></tr>
+<tr class="separator:ad5a075fe1664d7de3addb34768b7c60c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a32d30c3e2c08be0ca763f6323bec6df2" id="r_a32d30c3e2c08be0ca763f6323bec6df2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#a32d30c3e2c08be0ca763f6323bec6df2">TrackEditor::LoadStaticMeshActors</a> (<a class="el" href="classTrack.html">Track</a> *track, nlohmann::json &amp;data)</td></tr>
+<tr class="separator:a32d30c3e2c08be0ca763f6323bec6df2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8ee12b66dfd279a0898c020b34581b2" id="r_aa8ee12b66dfd279a0898c020b34581b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#aa8ee12b66dfd279a0898c020b34581b2">TrackEditor::LoadTour</a> (<a class="el" href="classTrack.html">Track</a> *track, nlohmann::json &amp;data)</td></tr>
+<tr class="separator:aa8ee12b66dfd279a0898c020b34581b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add90fd8e24d64905c489b256d1e849d5" id="r_add90fd8e24d64905c489b256d1e849d5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#add90fd8e24d64905c489b256d1e849d5">TrackEditor::LoadFog</a> (nlohmann::json &amp;data)</td></tr>
+<tr class="separator:add90fd8e24d64905c489b256d1e849d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/editor/Editor.cpp File Reference</title>
+<title>SpaghettiKart: src/engine/editor/Editor.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -120,14 +120,15 @@ $(function(){initNavTree('Editor_8cpp.html',''); initResizable(true); });
 <code>#include &quot;<a class="el" href="Collision_8h_source.html">Collision.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Light_8h_source.html">Light.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Engine_8h_source.html">port/Engine.h</a>&quot;</code><br />
-<code>#include &lt;controller/controldevice/controller/mapping/keyboard/KeyboardScancodes.h&gt;</code><br />
-<code>#include &lt;window/Window.h&gt;</code><br />
+<code>#include &lt;ship/controller/controldevice/controller/mapping/keyboard/KeyboardScancodes.h&gt;</code><br />
+<code>#include &lt;ship/window/Window.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="TrackBrowser_8h_source.html">engine/TrackBrowser.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Ship_8h_source.html">engine/actors/Ship.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Game_8h_source.html">port/Game.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="common__structs_8h_source.html">common_structs.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="defines_8h_source.html">defines.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="actors_8h_source.html">actors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="actors_8h_source.html">racing/actors.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="camera_8h_source.html">camera.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Editor.cpp:</div>
@@ -137,14 +138,134 @@ Include dependency graph for Editor.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEditor.html">Editor</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html">TrackEditor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9833d93bbd8d17011d6d03ebab247768" id="r_a9833d93bbd8d17011d6d03ebab247768"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEditor.html#a9833d93bbd8d17011d6d03ebab247768">Editor::gfx_create_framebuffer</a> (uint32_t width, uint32_t height, uint32_t native_width, uint32_t native_height, uint8_t resize)</td></tr>
-<tr class="separator:a9833d93bbd8d17011d6d03ebab247768"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac957246665cecd41d35ea5d49adad72d" id="r_ac957246665cecd41d35ea5d49adad72d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac957246665cecd41d35ea5d49adad72d">Editor_Launch</a> (const char *resourceName)</td></tr>
+<tr class="separator:ac957246665cecd41d35ea5d49adad72d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50f75e52f4ce6b97bce5b5395bfb645a" id="r_a50f75e52f4ce6b97bce5b5395bfb645a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50f75e52f4ce6b97bce5b5395bfb645a">Editor_SetLevelDimensions</a> (s16 minX, s16 maxX, s16 minZ, s16 maxZ, s16 minY, s16 maxY)</td></tr>
+<tr class="separator:a50f75e52f4ce6b97bce5b5395bfb645a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9cda86dc3eb2b6511a8c9a951945014" id="r_ad9cda86dc3eb2b6511a8c9a951945014"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad9cda86dc3eb2b6511a8c9a951945014">Editor_IsEnabled</a> ()</td></tr>
+<tr class="separator:ad9cda86dc3eb2b6511a8c9a951945014"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc733fb4750ae40f17b975b5e509c102" id="r_afc733fb4750ae40f17b975b5e509c102"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc733fb4750ae40f17b975b5e509c102">Editor_IsPaused</a> ()</td></tr>
+<tr class="separator:afc733fb4750ae40f17b975b5e509c102"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ad9cda86dc3eb2b6511a8c9a951945014" name="ad9cda86dc3eb2b6511a8c9a951945014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9cda86dc3eb2b6511a8c9a951945014">&#9670;&#160;</a></span>Editor_IsEnabled()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Editor_IsEnabled </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Editor_8cpp_ad9cda86dc3eb2b6511a8c9a951945014_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="afc733fb4750ae40f17b975b5e509c102" name="afc733fb4750ae40f17b975b5e509c102"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc733fb4750ae40f17b975b5e509c102">&#9670;&#160;</a></span>Editor_IsPaused()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Editor_IsPaused </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Editor_8cpp_afc733fb4750ae40f17b975b5e509c102_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="ac957246665cecd41d35ea5d49adad72d" name="ac957246665cecd41d35ea5d49adad72d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac957246665cecd41d35ea5d49adad72d">&#9670;&#160;</a></span>Editor_Launch()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Editor_Launch </td>
+          <td>(</td>
+          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>resourceName</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>C BRIDGE FUNCTIONS </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Editor_8cpp_ac957246665cecd41d35ea5d49adad72d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a50f75e52f4ce6b97bce5b5395bfb645a" name="a50f75e52f4ce6b97bce5b5395bfb645a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50f75e52f4ce6b97bce5b5395bfb645a">&#9670;&#160;</a></span>Editor_SetLevelDimensions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Editor_SetLevelDimensions </td>
+          <td>(</td>
+          <td class="paramtype">s16</td>          <td class="paramname"><span class="paramname"><em>minX</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16</td>          <td class="paramname"><span class="paramname"><em>maxX</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16</td>          <td class="paramname"><span class="paramname"><em>minZ</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16</td>          <td class="paramname"><span class="paramname"><em>maxZ</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16</td>          <td class="paramname"><span class="paramname"><em>minY</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16</td>          <td class="paramname"><span class="paramname"><em>maxY</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Editor_8cpp_a50f75e52f4ce6b97bce5b5395bfb645a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

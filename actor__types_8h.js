@@ -23,6 +23,7 @@ var actor__types_8h =
     [ "FAKE_ITEM_BOX_ON_GROUND", "actor__types_8h.html#affb5ffde510634c5c1e09a5b934d29c3", null ],
     [ "GET_ACTOR", "actor__types_8h.html#aed038e4e6a4801ef264d0f74731ebdf8", null ],
     [ "HELD_FAKE_ITEM_BOX", "actor__types_8h.html#ae07d85ac7035dc21319b791b430d4246", null ],
+    [ "THROW_SHELL_BACKWARDS", "actor__types_8h.html#a189689ccc72ce97ca6c628e14361b033", null ],
     [ "ActorType", "actor__types_8h.html#a06ad3f803827afd107e7682c8c22d990", [
       [ "ACTOR_UNKNOWN_0x01", "actor__types_8h.html#a06ad3f803827afd107e7682c8c22d990a6b485834b31c0ee8417d4ca27f20c38e", null ],
       [ "ACTOR_TREE_MARIO_RACEWAY", "actor__types_8h.html#a06ad3f803827afd107e7682c8c22d990afa461a44c857f446e85c5ff28120c94b", null ],
@@ -49,9 +50,9 @@ var actor__types_8h =
       [ "ACTOR_MARIO_SIGN", "actor__types_8h.html#a06ad3f803827afd107e7682c8c22d990a2ac0f6d27bc85e9acaa4c3615a024559", null ],
       [ "ACTOR_UNKNOWN_0x18", "actor__types_8h.html#a06ad3f803827afd107e7682c8c22d990ae5bd09f1d3b66078ff95abc77bc907de", null ],
       [ "ACTOR_PALM_TREE", "actor__types_8h.html#a06ad3f803827afd107e7682c8c22d990a76971990fb5f769975a55ecd84cc0c5f", null ],
-      [ "ACTOR_UNKNOWN_0x1A", "actor__types_8h.html#a06ad3f803827afd107e7682c8c22d990ac0ffbe9258dd86b8b0621ccabe29a1f0", null ],
+      [ "ACTOR_TREE_LUIGI_RACEWAY", "actor__types_8h.html#a06ad3f803827afd107e7682c8c22d990ace12dfb2a194724a89440c6e83e6b2b4", null ],
       [ "ACTOR_UNKNOWN_0x1B", "actor__types_8h.html#a06ad3f803827afd107e7682c8c22d990a49ffbb63294f929c51bed3fa64373be8", null ],
-      [ "ACTOR_TREE_BOWSERS_CASTLE", "actor__types_8h.html#a06ad3f803827afd107e7682c8c22d990aef69c1242e4f96d235670d1555c40717", null ],
+      [ "ACTOR_TREE_PEACH_CASTLE", "actor__types_8h.html#a06ad3f803827afd107e7682c8c22d990abb79248aac81aebd93c90f10f7fcfe7f", null ],
       [ "ACTOR_TREE_FRAPPE_SNOWLAND", "actor__types_8h.html#a06ad3f803827afd107e7682c8c22d990af1c0f7f71d387812bcb7e30e4fb9c5e8", null ],
       [ "ACTOR_CACTUS1_KALAMARI_DESERT", "actor__types_8h.html#a06ad3f803827afd107e7682c8c22d990a68569d48f8e6e8d1787498e86d07ed0a", null ],
       [ "ACTOR_CACTUS2_KALAMARI_DESERT", "actor__types_8h.html#a06ad3f803827afd107e7682c8c22d990a20d8f73f86db4c1fca0c0ff22a89e16a", null ],
@@ -90,7 +91,5 @@ var actor__types_8h =
       [ "BLUE_SHELL_LOCK_ON", "actor__types_8h.html#ac01c8e97d91d8f2968ca1f8d4eb0495bacbbf8ec958ded92542c807a249ab5663", null ],
       [ "BLUE_SHELL_TARGET_ELIMINATED", "actor__types_8h.html#ac01c8e97d91d8f2968ca1f8d4eb0495ba5bedeedba66ded3f9a8f54f73bc2e6fa", null ]
     ] ],
-    [ "CM_GetActor", "actor__types_8h.html#a42d4e151ced45749de343d857cfb1f79", null ],
-    [ "CM_GetActorSize", "actor__types_8h.html#ada4fa2091de8a4a4b09435f95795fc40", null ],
     [ "gActorList", "actor__types_8h.html#a1f5d4f72f8fd53ac6a42c0bf2b2d8a61", null ]
 ];

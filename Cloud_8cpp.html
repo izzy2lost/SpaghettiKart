@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/actors/Cloud.cpp File Reference</title>
+<title>SpaghettiKart: src/engine/actors/Cloud.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -113,12 +113,14 @@ $(function(){initNavTree('Cloud_8cpp.html',''); initResizable(true); });
 <div class="textblock"><code>#include &lt;libultraship.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="Cloud_8h_source.html">Cloud.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Actor_8h_source.html">engine/Actor.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="World_8h_source.html">World.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="World_8h_source.html">engine/World.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Game_8h_source.html">port/Game.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="macros_8h_source.html">macros.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="common__structs_8h_source.html">common_structs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="math__util_8h_source.html">math_util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="math__util_8h_source.html">racing/math_util.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="actor__types_8h_source.html">actor_types.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="actors_8h_source.html">actors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="actors_8h_source.html">racing/actors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="other__textures_8h_source.html">assets/textures/other_textures.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Cloud.cpp:</div>
 <div class="dyncontent">
@@ -157,14 +159,14 @@ Variables</h2></td></tr>
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">    </div>
 <div class="line">    </div>
-<div class="line">    gsSPSetGeometryMode(G_LIGHTING),</div>
+<div class="line">    </div>
 <div class="line">    </div>
 <div class="line">    gsSPDisplayList(<a class="code hl_variable" href="#a8039b967c5b57c5c3537ed6f335e3ef1">mat_cloud_cutout</a>),</div>
 <div class="line">    gsSPDisplayList(<a class="code hl_variable" href="#a2d0ed68c89151bec5d738577632dbbc7">cloud_mesh_tri_0</a>),</div>
 <div class="line">    gsSPEndDisplayList(),</div>
 <div class="line">}</div>
-<div class="ttc" id="aCloud_8cpp_html_a2d0ed68c89151bec5d738577632dbbc7"><div class="ttname"><a href="#a2d0ed68c89151bec5d738577632dbbc7">cloud_mesh_tri_0</a></div><div class="ttdeci">Gfx cloud_mesh_tri_0[]</div><div class="ttdef"><b>Definition</b> Cloud.cpp:98</div></div>
-<div class="ttc" id="aCloud_8cpp_html_a8039b967c5b57c5c3537ed6f335e3ef1"><div class="ttname"><a href="#a8039b967c5b57c5c3537ed6f335e3ef1">mat_cloud_cutout</a></div><div class="ttdeci">Gfx mat_cloud_cutout[]</div><div class="ttdef"><b>Definition</b> Cloud.cpp:104</div></div>
+<div class="ttc" id="aCloud_8cpp_html_a2d0ed68c89151bec5d738577632dbbc7"><div class="ttname"><a href="#a2d0ed68c89151bec5d738577632dbbc7">cloud_mesh_tri_0</a></div><div class="ttdeci">Gfx cloud_mesh_tri_0[]</div><div class="ttdef"><b>Definition</b> Cloud.cpp:125</div></div>
+<div class="ttc" id="aCloud_8cpp_html_a8039b967c5b57c5c3537ed6f335e3ef1"><div class="ttname"><a href="#a8039b967c5b57c5c3537ed6f335e3ef1">mat_cloud_cutout</a></div><div class="ttdeci">Gfx mat_cloud_cutout[]</div><div class="ttdef"><b>Definition</b> Cloud.cpp:131</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -184,7 +186,7 @@ Variables</h2></td></tr>
 <div class="line">    gsSP2Triangles(0, 1, 2, 0, 0, 2, 3, 0),</div>
 <div class="line">    gsSPEndDisplayList(),</div>
 <div class="line">}</div>
-<div class="ttc" id="aCloud_8cpp_html_a161de0c5790c70dc1136dea3b3ce2265"><div class="ttname"><a href="#a161de0c5790c70dc1136dea3b3ce2265">cloud_mesh_vtx_0</a></div><div class="ttdeci">Vtx cloud_mesh_vtx_0[4]</div><div class="ttdef"><b>Definition</b> Cloud.cpp:91</div></div>
+<div class="ttc" id="aCloud_8cpp_html_a161de0c5790c70dc1136dea3b3ce2265"><div class="ttname"><a href="#a161de0c5790c70dc1136dea3b3ce2265">cloud_mesh_vtx_0</a></div><div class="ttdeci">Vtx cloud_mesh_vtx_0[4]</div><div class="ttdef"><b>Definition</b> Cloud.cpp:118</div></div>
 </div><!-- fragment -->
 </div>
 </div>

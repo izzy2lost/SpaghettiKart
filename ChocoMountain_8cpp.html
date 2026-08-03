@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/courses/ChocoMountain.cpp File Reference</title>
+<title>SpaghettiKart: src/engine/tracks/ChocoMountain.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -115,31 +115,33 @@ $(function(){initNavTree('ChocoMountain_8cpp.html',''); initResizable(true); });
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &quot;<a class="el" href="ChocoMountain_8h_source.html">ChocoMountain.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="World_8h_source.html">World.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="World_8h_source.html">engine/World.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="align__asset__macro_8h_source.html">align_asset_macro.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="BombKart_8h_source.html">engine/objects/BombKart.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="choco__mountain__data_8h_source.html">choco_mountain_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="models_2tracks_2choco__mountain_2choco__mountain__data_8h_source.html">assets/models/tracks/choco_mountain/choco_mountain_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="other_2tracks_2choco__mountain_2choco__mountain__data_8h_source.html">assets/other/tracks/choco_mountain/choco_mountain_data.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Finishline_8h_source.html">engine/actors/Finishline.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="FallingRock_8h_source.html">engine/actors/FallingRock.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="camera_8h_source.html">camera.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="course__offsets_8h_source.html">course_offsets.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__800029B0_8h_source.html">code_800029B0.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="render__courses_8h_source.html">render_courses.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="render__courses_8h_source.html">racing/render_courses.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__8006E9C0_8h_source.html">code_8006E9C0.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80057C60_8h_source.html">code_80057C60.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="defines_8h_source.html">defines.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="math__util_8h_source.html">math_util.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="external_8h_source.html">external.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="math__util_8h_source.html">racing/math_util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="external_8h_source.html">audio/external.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80005FD0_8h_source.html">code_80005FD0.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="spawn__players_8h_source.html">spawn_players.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="render__objects_8h_source.html">render_objects.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="common__data_8h_source.html">assets/common_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="models_2common__data_8h_source.html">assets/models/common_data.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="save_8h_source.html">save.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="replays_8h_source.html">replays.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="actors_8h_source.html">actors.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="collision_8h_source.html">collision.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="actors_8h_source.html">racing/actors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="collision_8h_source.html">racing/collision.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__8003DC40_8h_source.html">code_8003DC40.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="memory_8h_source.html">memory.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="course_8h_source.html">course.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ChocoMountain.cpp:</div>
 <div class="dyncontent">
@@ -148,14 +150,12 @@ Include dependency graph for ChocoMountain.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ae13f9a3f458d02b1e82dd30311bcf657" id="r_ae13f9a3f458d02b1e82dd30311bcf657"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae13f9a3f458d02b1e82dd30311bcf657">choco_mountain_dls</a> []</td></tr>
-<tr class="separator:ae13f9a3f458d02b1e82dd30311bcf657"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad08af67ec7c26645b2e684a59ae31954" id="r_ad08af67ec7c26645b2e684a59ae31954"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structcourse__texture.html">course_texture</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad08af67ec7c26645b2e684a59ae31954">choco_mountain_textures</a> []</td></tr>
-<tr class="separator:ad08af67ec7c26645b2e684a59ae31954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbbdf84637884267c5e6dff2b20f5988" id="r_acbbdf84637884267c5e6dff2b20f5988"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acbbdf84637884267c5e6dff2b20f5988">choco_mountain_dls</a> [96]</td></tr>
+<tr class="separator:acbbdf84637884267c5e6dff2b20f5988"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="ae13f9a3f458d02b1e82dd30311bcf657" name="ae13f9a3f458d02b1e82dd30311bcf657"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae13f9a3f458d02b1e82dd30311bcf657">&#9670;&#160;</a></span>choco_mountain_dls</h2>
+<a id="acbbdf84637884267c5e6dff2b20f5988" name="acbbdf84637884267c5e6dff2b20f5988"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbbdf84637884267c5e6dff2b20f5988">&#9670;&#160;</a></span>choco_mountain_dls</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,7 +164,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* choco_mountain_dls[]</td>
+          <td class="memname">const char* choco_mountain_dls[96]</td>
         </tr>
       </table>
   </td>
@@ -176,49 +176,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="ad08af67ec7c26645b2e684a59ae31954" name="ad08af67ec7c26645b2e684a59ae31954"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad08af67ec7c26645b2e684a59ae31954">&#9670;&#160;</a></span>choco_mountain_textures</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structcourse__texture.html">course_texture</a> choco_mountain_textures[]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    { gTexture64619C, 0x0124, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture64647C, 0x0829, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture647F4C, 0x05BC, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture64FBF4, 0x0274, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture653DB0, 0x06AE, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture652B54, 0x0606, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture65315C, 0x04A9, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture6684F8, 0x010D, 0x0800, 0x0 },</div>
-<div class="line">    { gTextureSignLuigis0, 0x0287, 0x1000, 0x0 },</div>
-<div class="line">    { gTextureSignLuigis1, 0x02AF, 0x1000, 0x0 },</div>
-<div class="line">    { gTextureSignNintendoRed0, 0x02A6, 0x1000, 0x0 },</div>
-<div class="line">    { gTextureSignNintendoRed1, 0x02F7, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture6774D8, 0x0113, 0x0800, 0x0 },</div>
-<div class="line">    { gTextureSignFallingRocks, 0x012C, 0x0800, 0x0 },</div>
-<div class="line">    { gTextureSignBackside, 0x011E, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture679C04, 0x012F, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture67B864, 0x014C, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture67DC20, 0x03EF, 0x0800, 0x0 },</div>
-<div class="line">    { gTextureSignYoshi, 0x04DF, 0x1000, 0x0 },</div>
-<div class="line">    { gTextureCheckerboardBlueGray, 0x04A1, 0x1000, 0x0 },</div>
-<div class="line">    { 0x00000000, 0x0000, 0x0000, 0x0 },</div>
-<div class="line">}</div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="dir_361caa2d8f272974fdb8d014c7b22bcf.html">courses</a></li><li class="navelem"><a class="el" href="ChocoMountain_8cpp.html">ChocoMountain.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="dir_8955581d22ca769fa1400ba486b7589a.html">tracks</a></li><li class="navelem"><a class="el" href="ChocoMountain_8cpp.html">ChocoMountain.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

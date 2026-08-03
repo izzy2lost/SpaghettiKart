@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/racing/collision.c File Reference</title>
+<title>SpaghettiKart: src/racing/collision.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -112,7 +112,8 @@ $(function(){initNavTree('collision_8c.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">collision.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;libultraship.h&gt;</code><br />
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;libultraship.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="macros_8h_source.html">macros.h</a>&gt;</code><br />
 <code>#include &lt;libultra/gbi.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="mk64_8h_source.html">mk64.h</a>&gt;</code><br />
@@ -124,8 +125,11 @@ $(function(){initNavTree('collision_8c.html',''); initResizable(true); });
 <code>#include &quot;<a class="el" href="math__util_8h_source.html">math_util.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__800029B0_8h_source.html">code_800029B0.h</a>&quot;</code><br />
 <code>#include &lt;<a class="el" href="defines_8h_source.html">defines.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="Engine_8h_source.html">port/Engine.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Game_8h_source.html">port/Game.h</a>&quot;</code><br />
+<code>#include &quot;libultraship/bridge/resourcebridge.h&quot;</code><br />
 <code>#include &lt;<a class="el" href="stdio_8h_source.html">stdio.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="RaceManager_8h_source.html">engine/RaceManager.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for collision.c:</div>
 <div class="dyncontent">
@@ -143,16 +147,16 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:a6275a3a99f8faf62b7c64d9aeca44c48" id="r_a6275a3a99f8faf62b7c64d9aeca44c48"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6275a3a99f8faf62b7c64d9aeca44c48">nullify_displaylist</a> (uintptr_t addr)</td></tr>
 <tr class="separator:a6275a3a99f8faf62b7c64d9aeca44c48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad72fef3ffe32191d73b1822f512ebf3f" id="r_ad72fef3ffe32191d73b1822f512ebf3f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad72fef3ffe32191d73b1822f512ebf3f">func_802AAAAC</a> (<a class="el" href="structCollision.html">Collision</a> *collision)</td></tr>
-<tr class="separator:ad72fef3ffe32191d73b1822f512ebf3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e74ebff09bd74ff932c03a455aeb8ea" id="r_a8e74ebff09bd74ff932c03a455aeb8ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e74ebff09bd74ff932c03a455aeb8ea">func_802AAAAC</a> (struct <a class="el" href="structCollision.html">Collision</a> *collision)</td></tr>
+<tr class="separator:a8e74ebff09bd74ff932c03a455aeb8ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61760d2ed3e30640a95e872ea8afc900" id="r_a61760d2ed3e30640a95e872ea8afc900"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61760d2ed3e30640a95e872ea8afc900">get_water_level</a> (<a class="el" href="structPlayer.html">Player</a> *player)</td></tr>
 <tr class="separator:a61760d2ed3e30640a95e872ea8afc900"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b48832a90e984536a0635a016ec4f28" id="r_a4b48832a90e984536a0635a016ec4f28"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b48832a90e984536a0635a016ec4f28">check_collision_zx</a> (<a class="el" href="structCollision.html">Collision</a> *collision, f32 boundingBoxSize, f32 posX, f32 posY, f32 posZ, u16 index)</td></tr>
-<tr class="separator:a4b48832a90e984536a0635a016ec4f28"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac312bf382cb40752f6b790a99e7cdcb6" id="r_ac312bf382cb40752f6b790a99e7cdcb6"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac312bf382cb40752f6b790a99e7cdcb6">check_collision_yx</a> (<a class="el" href="structCollision.html">Collision</a> *collision, f32 boundingBoxSize, f32 posX, f32 posY, f32 posZ, u16 index)</td></tr>
-<tr class="separator:ac312bf382cb40752f6b790a99e7cdcb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21fef964ab48191a1c0341954ef27a40" id="r_a21fef964ab48191a1c0341954ef27a40"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21fef964ab48191a1c0341954ef27a40">check_collision_zy</a> (<a class="el" href="structCollision.html">Collision</a> *collision, f32 boundingBoxSize, f32 posX, f32 posY, f32 posZ, u16 index)</td></tr>
-<tr class="separator:a21fef964ab48191a1c0341954ef27a40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15e47b9a6091ddc40b05f6ec8f998c2f" id="r_a15e47b9a6091ddc40b05f6ec8f998c2f"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15e47b9a6091ddc40b05f6ec8f998c2f">check_collision_zx</a> (struct <a class="el" href="structCollision.html">Collision</a> *collision, f32 boundingBoxSize, f32 posX, f32 posY, f32 posZ, u16 index)</td></tr>
+<tr class="separator:a15e47b9a6091ddc40b05f6ec8f998c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0275aa1dbebf396284ce1c268724e4cb" id="r_a0275aa1dbebf396284ce1c268724e4cb"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0275aa1dbebf396284ce1c268724e4cb">check_collision_yx</a> (struct <a class="el" href="structCollision.html">Collision</a> *collision, f32 boundingBoxSize, f32 posX, f32 posY, f32 posZ, u16 index)</td></tr>
+<tr class="separator:a0275aa1dbebf396284ce1c268724e4cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03e3d0e180a4bc7be74b0d9d4ebc5f49" id="r_a03e3d0e180a4bc7be74b0d9d4ebc5f49"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03e3d0e180a4bc7be74b0d9d4ebc5f49">check_collision_zy</a> (struct <a class="el" href="structCollision.html">Collision</a> *collision, f32 boundingBoxSize, f32 posX, f32 posY, f32 posZ, u16 index)</td></tr>
+<tr class="separator:a03e3d0e180a4bc7be74b0d9d4ebc5f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fe340ccfe1d926a592ea9a0c84d7574" id="r_a0fe340ccfe1d926a592ea9a0c84d7574"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0fe340ccfe1d926a592ea9a0c84d7574">check_horizontally_colliding_with_triangle</a> (f32 posX, f32 posZ, u16 index)</td></tr>
 <tr class="separator:a0fe340ccfe1d926a592ea9a0c84d7574"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9395b9fc31397e9e9d754b4887a12544" id="r_a9395b9fc31397e9e9d754b4887a12544"><td class="memItemLeft" align="right" valign="top">s8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9395b9fc31397e9e9d754b4887a12544">get_surface_type</a> (u16 index)</td></tr>
@@ -167,26 +171,26 @@ Functions</h2></td></tr>
 <tr class="separator:a0371e15af0413f7e110eb91a9995bcb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6527a2135a10909cdf9a1fd731be5628" id="r_a6527a2135a10909cdf9a1fd731be5628"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6527a2135a10909cdf9a1fd731be5628">calculate_surface_height</a> (f32 x, f32 y, f32 z, u16 index)</td></tr>
 <tr class="separator:a6527a2135a10909cdf9a1fd731be5628"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a503b45bd1853c2a4915ce6122dfef91c" id="r_a503b45bd1853c2a4915ce6122dfef91c"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a503b45bd1853c2a4915ce6122dfef91c">func_802ABEAC</a> (<a class="el" href="structCollision.html">Collision</a> *collision, <a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a> pos)</td></tr>
-<tr class="separator:a503b45bd1853c2a4915ce6122dfef91c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38ade4d86b7e9198afff9e9fd33eacb4" id="r_a38ade4d86b7e9198afff9e9fd33eacb4"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a38ade4d86b7e9198afff9e9fd33eacb4">func_802ABEAC</a> (struct <a class="el" href="structCollision.html">Collision</a> *collision, <a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a> pos)</td></tr>
+<tr class="separator:a38ade4d86b7e9198afff9e9fd33eacb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a026a6ef14501f1911f2f94c5dd7661d6" id="r_a026a6ef14501f1911f2f94c5dd7661d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a026a6ef14501f1911f2f94c5dd7661d6">process_shell_collision</a> (<a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a> pos, <a class="el" href="macros_8h.html#addf5ec070e9499d36b7f2009ce736076">UNUSED</a> f32 boundingBoxSize, <a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a> velocity, <a class="el" href="macros_8h.html#addf5ec070e9499d36b7f2009ce736076">UNUSED</a> f32 unk)</td></tr>
 <tr class="separator:a026a6ef14501f1911f2f94c5dd7661d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24c9df6b00fc739e341b6f28b06396e4" id="r_a24c9df6b00fc739e341b6f28b06396e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a24c9df6b00fc739e341b6f28b06396e4">shell_collision</a> (<a class="el" href="structCollision.html">Collision</a> *collision, <a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a> velocity)</td></tr>
-<tr class="separator:a24c9df6b00fc739e341b6f28b06396e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a415860ec87546ee164b790ce07326ea3" id="r_a415860ec87546ee164b790ce07326ea3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a415860ec87546ee164b790ce07326ea3">shell_collision</a> (struct <a class="el" href="structCollision.html">Collision</a> *collision, <a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a> velocity)</td></tr>
+<tr class="separator:a415860ec87546ee164b790ce07326ea3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf7d86058e2bab6c3926db52ca20d8c1" id="r_acf7d86058e2bab6c3926db52ca20d8c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf7d86058e2bab6c3926db52ca20d8c1">adjust_pos_orthogonally</a> (<a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a> pos1, f32 boundingBoxSize, <a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a> pos2, <a class="el" href="macros_8h.html#addf5ec070e9499d36b7f2009ce736076">UNUSED</a> f32 unk)</td></tr>
 <tr class="separator:acf7d86058e2bab6c3926db52ca20d8c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5215426a44c63db1cf89cb65ab65c1a7" id="r_a5215426a44c63db1cf89cb65ab65c1a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="macros_8h.html#addf5ec070e9499d36b7f2009ce736076">UNUSED</a> s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5215426a44c63db1cf89cb65ab65c1a7">detect_tyre_collision</a> (<a class="el" href="structKartTyre.html">KartTyre</a> *tyre)</td></tr>
 <tr class="separator:a5215426a44c63db1cf89cb65ab65c1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ea8b20f38e63c1b1157923085c8e306" id="r_a6ea8b20f38e63c1b1157923085c8e306"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ea8b20f38e63c1b1157923085c8e306">is_colliding_with_drivable_surface</a> (<a class="el" href="structCollision.html">Collision</a> *collision, f32 boundingBoxSize, f32 newX, f32 newY, f32 newZ, u16 index, f32 oldX, f32 oldY, f32 oldZ)</td></tr>
-<tr class="separator:a6ea8b20f38e63c1b1157923085c8e306"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23443870e0d3a6797de707a89ded7ef0" id="r_a23443870e0d3a6797de707a89ded7ef0"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23443870e0d3a6797de707a89ded7ef0">is_colliding_with_wall2</a> (<a class="el" href="structCollision.html">Collision</a> *arg, f32 boundingBoxSize, f32 x1, f32 y1, f32 z1, u16 surfaceIndex, f32 posX, f32 posY, f32 posZ)</td></tr>
-<tr class="separator:a23443870e0d3a6797de707a89ded7ef0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94970a4a6ca911f74e59114decd74557" id="r_a94970a4a6ca911f74e59114decd74557"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94970a4a6ca911f74e59114decd74557">is_colliding_with_wall1</a> (<a class="el" href="structCollision.html">Collision</a> *arg, f32 boundingBoxSize, f32 x1, f32 y1, f32 z1, u16 surfaceIndex, f32 posX, f32 posY, f32 posZ)</td></tr>
-<tr class="separator:a94970a4a6ca911f74e59114decd74557"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a79293dbdae52d290fdaf8dde9d5244ca" id="r_a79293dbdae52d290fdaf8dde9d5244ca"><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79293dbdae52d290fdaf8dde9d5244ca">actor_terrain_collision</a> (<a class="el" href="structCollision.html">Collision</a> *collision, f32 boundingBoxSize, f32 newX, f32 newY, f32 newZ, f32 oldX, f32 oldY, f32 oldZ)</td></tr>
-<tr class="separator:a79293dbdae52d290fdaf8dde9d5244ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37aa55b3768d001533ad75e7f1b8388a" id="r_a37aa55b3768d001533ad75e7f1b8388a"><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a37aa55b3768d001533ad75e7f1b8388a">check_bounding_collision</a> (<a class="el" href="structCollision.html">Collision</a> *collision, f32 boundingBoxSize, f32 posX, f32 posY, f32 posZ)</td></tr>
-<tr class="separator:a37aa55b3768d001533ad75e7f1b8388a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acff948f9bd6063bfff1145d765e44304" id="r_acff948f9bd6063bfff1145d765e44304"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acff948f9bd6063bfff1145d765e44304">is_colliding_with_drivable_surface</a> (struct <a class="el" href="structCollision.html">Collision</a> *collision, f32 boundingBoxSize, f32 newX, f32 newY, f32 newZ, u16 index, f32 oldX, f32 oldY, f32 oldZ)</td></tr>
+<tr class="separator:acff948f9bd6063bfff1145d765e44304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab354a14798e97b672f426ac78a0145a9" id="r_ab354a14798e97b672f426ac78a0145a9"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab354a14798e97b672f426ac78a0145a9">is_colliding_with_wall2</a> (struct <a class="el" href="structCollision.html">Collision</a> *arg, f32 boundingBoxSize, f32 x1, f32 y1, f32 z1, u16 surfaceIndex, f32 posX, f32 posY, f32 posZ)</td></tr>
+<tr class="separator:ab354a14798e97b672f426ac78a0145a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab06d443aef6df707339130ccda6bd8a1" id="r_ab06d443aef6df707339130ccda6bd8a1"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab06d443aef6df707339130ccda6bd8a1">is_colliding_with_wall1</a> (struct <a class="el" href="structCollision.html">Collision</a> *arg, f32 boundingBoxSize, f32 x1, f32 y1, f32 z1, u16 surfaceIndex, f32 posX, f32 posY, f32 posZ)</td></tr>
+<tr class="separator:ab06d443aef6df707339130ccda6bd8a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeed4ccbc47bad76140f1abb4b7d7c097" id="r_aeed4ccbc47bad76140f1abb4b7d7c097"><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeed4ccbc47bad76140f1abb4b7d7c097">actor_terrain_collision</a> (struct <a class="el" href="structCollision.html">Collision</a> *collision, f32 boundingBoxSize, f32 newX, f32 newY, f32 newZ, f32 oldX, f32 oldY, f32 oldZ)</td></tr>
+<tr class="separator:aeed4ccbc47bad76140f1abb4b7d7c097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54e6978a422f1ce11019accf727ce1bc" id="r_a54e6978a422f1ce11019accf727ce1bc"><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a54e6978a422f1ce11019accf727ce1bc">check_bounding_collision</a> (struct <a class="el" href="structCollision.html">Collision</a> *collision, f32 boundingBoxSize, f32 posX, f32 posY, f32 posZ)</td></tr>
+<tr class="separator:a54e6978a422f1ce11019accf727ce1bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad95e9ed2051529d5edee26109fa07427" id="r_ad95e9ed2051529d5edee26109fa07427"><td class="memItemLeft" align="right" valign="top">f32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad95e9ed2051529d5edee26109fa07427">spawn_actor_on_surface</a> (f32 posX, f32 posY, f32 posZ)</td></tr>
 <tr class="separator:ad95e9ed2051529d5edee26109fa07427"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c516edee107b39b30bb3a4d3c54534a" id="r_a8c516edee107b39b30bb3a4d3c54534a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c516edee107b39b30bb3a4d3c54534a">add_collision_triangle</a> (Vtx *vtx1, Vtx *vtx2, Vtx *vtx3, s8 surfaceType, u16 sectionId)</td></tr>
@@ -197,8 +201,12 @@ Functions</h2></td></tr>
 <tr class="separator:ac558a6e1314f154bbf53aaf15396ea1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a593833ca3f04f0c7d8f5dcabe6430115" id="r_a593833ca3f04f0c7d8f5dcabe6430115"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a593833ca3f04f0c7d8f5dcabe6430115">set_vtx_from_quadrangle</a> (u32 line, s8 surfaceType, u16 sectionId)</td></tr>
 <tr class="separator:a593833ca3f04f0c7d8f5dcabe6430115"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e31c59e4cf25a0a64d05dbde9d33661" id="r_a1e31c59e4cf25a0a64d05dbde9d33661"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e31c59e4cf25a0a64d05dbde9d33661">add_vtx_from_quadrangle</a> (Vtx *vert, size_t count)</td></tr>
+<tr class="separator:a1e31c59e4cf25a0a64d05dbde9d33661"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a30eb531df39ba558cd733e1d1cd6aaa0" id="r_a30eb531df39ba558cd733e1d1cd6aaa0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a30eb531df39ba558cd733e1d1cd6aaa0">set_vtx_buffer</a> (uintptr_t addr, u32 numVertices, u32 bufferIndex)</td></tr>
 <tr class="separator:a30eb531df39ba558cd733e1d1cd6aaa0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7edd3f38403de0388af87355d4daf611" id="r_a7edd3f38403de0388af87355d4daf611"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7edd3f38403de0388af87355d4daf611">is_point_inside_triangle</a> (s16 px, s16 pz, s16 x1, s16 z1, s16 x2, s16 z2, s16 x3, s16 z3)</td></tr>
+<tr class="separator:a7edd3f38403de0388af87355d4daf611"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7ef4f800cb44ad39ca233d0c76ce039a" id="r_a7ef4f800cb44ad39ca233d0c76ce039a"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ef4f800cb44ad39ca233d0c76ce039a">is_line_intersecting_rectangle</a> (s16 minX, s16 maxX, s16 minZ, s16 maxZ, s16 x1, s16 z1, s16 x2, s16 z2)</td></tr>
 <tr class="separator:a7ef4f800cb44ad39ca233d0c76ce039a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e4ec74302aec60828a8d271390f7631" id="r_a4e4ec74302aec60828a8d271390f7631"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e4ec74302aec60828a8d271390f7631">is_triangle_intersecting_bounding_box</a> (s16 minX, s16 maxX, s16 minZ, s16 maxZ, u16 index)</td></tr>
@@ -318,8 +326,8 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a79293dbdae52d290fdaf8dde9d5244ca" name="a79293dbdae52d290fdaf8dde9d5244ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a79293dbdae52d290fdaf8dde9d5244ca">&#9670;&#160;</a></span>actor_terrain_collision()</h2>
+<a id="aeed4ccbc47bad76140f1abb4b7d7c097" name="aeed4ccbc47bad76140f1abb4b7d7c097"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeed4ccbc47bad76140f1abb4b7d7c097">&#9670;&#160;</a></span>actor_terrain_collision()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -327,7 +335,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">u16 actor_terrain_collision </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span>, </td>
+          <td class="paramtype">struct <a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -369,12 +377,12 @@ Variables</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a79293dbdae52d290fdaf8dde9d5244ca_cgraph.svg" width="416" height="151"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_aeed4ccbc47bad76140f1abb4b7d7c097_cgraph.svg" width="416" height="151"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a79293dbdae52d290fdaf8dde9d5244ca_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_aeed4ccbc47bad76140f1abb4b7d7c097_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -415,12 +423,38 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a8c516edee107b39b30bb3a4d3c54534a_cgraph.svg" width="275" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a8c516edee107b39b30bb3a4d3c54534a_cgraph.svg" width="450" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a8c516edee107b39b30bb3a4d3c54534a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a1e31c59e4cf25a0a64d05dbde9d33661" name="a1e31c59e4cf25a0a64d05dbde9d33661"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e31c59e4cf25a0a64d05dbde9d33661">&#9670;&#160;</a></span>add_vtx_from_quadrangle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void add_vtx_from_quadrangle </td>
+          <td>(</td>
+          <td class="paramtype">Vtx *</td>          <td class="paramname"><span class="paramname"><em>vert</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a1e31c59e4cf25a0a64d05dbde9d33661_cgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -457,7 +491,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_acf7d86058e2bab6c3926db52ca20d8c1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_acf7d86058e2bab6c3926db52ca20d8c1_icgraph.svg" width="395" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -498,8 +532,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a37aa55b3768d001533ad75e7f1b8388a" name="a37aa55b3768d001533ad75e7f1b8388a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37aa55b3768d001533ad75e7f1b8388a">&#9670;&#160;</a></span>check_bounding_collision()</h2>
+<a id="a54e6978a422f1ce11019accf727ce1bc" name="a54e6978a422f1ce11019accf727ce1bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54e6978a422f1ce11019accf727ce1bc">&#9670;&#160;</a></span>check_bounding_collision()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -507,7 +541,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">u16 check_bounding_collision </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span>, </td>
+          <td class="paramtype">struct <a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -534,18 +568,18 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a37aa55b3768d001533ad75e7f1b8388a_cgraph.svg" width="391" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a54e6978a422f1ce11019accf727ce1bc_cgraph.svg" width="391" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a37aa55b3768d001533ad75e7f1b8388a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a54e6978a422f1ce11019accf727ce1bc_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
-<a id="ac312bf382cb40752f6b790a99e7cdcb6" name="ac312bf382cb40752f6b790a99e7cdcb6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac312bf382cb40752f6b790a99e7cdcb6">&#9670;&#160;</a></span>check_collision_yx()</h2>
+<a id="a0275aa1dbebf396284ce1c268724e4cb" name="a0275aa1dbebf396284ce1c268724e4cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0275aa1dbebf396284ce1c268724e4cb">&#9670;&#160;</a></span>check_collision_yx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -553,7 +587,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">s32 check_collision_yx </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span>, </td>
+          <td class="paramtype">struct <a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -585,13 +619,13 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_ac312bf382cb40752f6b790a99e7cdcb6_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a0275aa1dbebf396284ce1c268724e4cb_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
-<a id="a4b48832a90e984536a0635a016ec4f28" name="a4b48832a90e984536a0635a016ec4f28"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b48832a90e984536a0635a016ec4f28">&#9670;&#160;</a></span>check_collision_zx()</h2>
+<a id="a15e47b9a6091ddc40b05f6ec8f998c2f" name="a15e47b9a6091ddc40b05f6ec8f998c2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15e47b9a6091ddc40b05f6ec8f998c2f">&#9670;&#160;</a></span>check_collision_zx()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -599,7 +633,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">s32 check_collision_zx </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span>, </td>
+          <td class="paramtype">struct <a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -631,13 +665,13 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a4b48832a90e984536a0635a016ec4f28_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a15e47b9a6091ddc40b05f6ec8f998c2f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
-<a id="a21fef964ab48191a1c0341954ef27a40" name="a21fef964ab48191a1c0341954ef27a40"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21fef964ab48191a1c0341954ef27a40">&#9670;&#160;</a></span>check_collision_zy()</h2>
+<a id="a03e3d0e180a4bc7be74b0d9d4ebc5f49" name="a03e3d0e180a4bc7be74b0d9d4ebc5f49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03e3d0e180a4bc7be74b0d9d4ebc5f49">&#9670;&#160;</a></span>check_collision_zy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -645,7 +679,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">s32 check_collision_zy </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span>, </td>
+          <td class="paramtype">struct <a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -677,7 +711,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a21fef964ab48191a1c0341954ef27a40_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a03e3d0e180a4bc7be74b0d9d4ebc5f49_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -727,7 +761,6 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000014">Bug</a></b></dt><dd></dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -760,6 +793,11 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Search for G_SETTILESIZE and set its args. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_ad4acc660e55a551946cb912b19b1dc18_cgraph.svg" width="530" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -805,7 +843,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a7fe1ddc7a4c312ab8f9519229963450b_cgraph.svg" width="391" height="60"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a7fe1ddc7a4c312ab8f9519229963450b_cgraph.svg" width="551" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -815,8 +853,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="ad72fef3ffe32191d73b1822f512ebf3f" name="ad72fef3ffe32191d73b1822f512ebf3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad72fef3ffe32191d73b1822f512ebf3f">&#9670;&#160;</a></span>func_802AAAAC()</h2>
+<a id="a8e74ebff09bd74ff932c03a455aeb8ea" name="a8e74ebff09bd74ff932c03a455aeb8ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e74ebff09bd74ff932c03a455aeb8ea">&#9670;&#160;</a></span>func_802AAAAC()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -824,7 +862,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void func_802AAAAC </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span></td><td>)</td>
+          <td class="paramtype">struct <a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -832,12 +870,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_ad72fef3ffe32191d73b1822f512ebf3f_cgraph.svg" width="271" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a8e74ebff09bd74ff932c03a455aeb8ea_cgraph.svg" width="271" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_ad72fef3ffe32191d73b1822f512ebf3f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a8e74ebff09bd74ff932c03a455aeb8ea_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -908,8 +946,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a503b45bd1853c2a4915ce6122dfef91c" name="a503b45bd1853c2a4915ce6122dfef91c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a503b45bd1853c2a4915ce6122dfef91c">&#9670;&#160;</a></span>func_802ABEAC()</h2>
+<a id="a38ade4d86b7e9198afff9e9fd33eacb4" name="a38ade4d86b7e9198afff9e9fd33eacb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38ade4d86b7e9198afff9e9fd33eacb4">&#9670;&#160;</a></span>func_802ABEAC()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -917,7 +955,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">f32 func_802ABEAC </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span>, </td>
+          <td class="paramtype">struct <a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -929,12 +967,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a503b45bd1853c2a4915ce6122dfef91c_cgraph.svg" width="368" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a38ade4d86b7e9198afff9e9fd33eacb4_cgraph.svg" width="368" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a503b45bd1853c2a4915ce6122dfef91c_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a38ade4d86b7e9198afff9e9fd33eacb4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -953,11 +991,11 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Splits the collision mesh into 32x32 sections. This allows the game to check only nearby geography for a collision rather than checking against the whole collision mesh. (checking against the whole mesh for every actor would be expensive) </p>
+<p>Splits the collision mesh into a 32x32 grid of cells. This allows the game to check only nearby geography for a collision rather than checking against the whole collision mesh. (checking against the whole mesh for every actor would be expensive) </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_aa1116ededb9ebc0ee976259f02fe2a4e_cgraph.svg" width="603" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_aa1116ededb9ebc0ee976259f02fe2a4e_cgraph.svg" width="631" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -993,7 +1031,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a3081198f925be148fc9f05897a3bddd3_cgraph.svg" width="100%" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a3081198f925be148fc9f05897a3bddd3_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1025,7 +1063,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a0c0f33fa7f0e76fa9cd556c9f1401b36_cgraph.svg" width="100%" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a0c0f33fa7f0e76fa9cd556c9f1401b36_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1053,7 +1091,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a9ab05719b77156569d97b4397d922d62_cgraph.svg" width="100%" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a9ab05719b77156569d97b4397d922d62_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1124,7 +1162,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a61760d2ed3e30640a95e872ea8afc900_cgraph.svg" width="332" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a61760d2ed3e30640a95e872ea8afc900_cgraph.svg" width="504" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1134,8 +1172,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a6ea8b20f38e63c1b1157923085c8e306" name="a6ea8b20f38e63c1b1157923085c8e306"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ea8b20f38e63c1b1157923085c8e306">&#9670;&#160;</a></span>is_colliding_with_drivable_surface()</h2>
+<a id="acff948f9bd6063bfff1145d765e44304" name="acff948f9bd6063bfff1145d765e44304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acff948f9bd6063bfff1145d765e44304">&#9670;&#160;</a></span>is_colliding_with_drivable_surface()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1143,7 +1181,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">s32 is_colliding_with_drivable_surface </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span>, </td>
+          <td class="paramtype">struct <a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1190,13 +1228,13 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a6ea8b20f38e63c1b1157923085c8e306_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_acff948f9bd6063bfff1145d765e44304_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
-<a id="a94970a4a6ca911f74e59114decd74557" name="a94970a4a6ca911f74e59114decd74557"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94970a4a6ca911f74e59114decd74557">&#9670;&#160;</a></span>is_colliding_with_wall1()</h2>
+<a id="ab06d443aef6df707339130ccda6bd8a1" name="ab06d443aef6df707339130ccda6bd8a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab06d443aef6df707339130ccda6bd8a1">&#9670;&#160;</a></span>is_colliding_with_wall1()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1204,7 +1242,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">s32 is_colliding_with_wall1 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>, </td>
+          <td class="paramtype">struct <a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1252,13 +1290,13 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a94970a4a6ca911f74e59114decd74557_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_ab06d443aef6df707339130ccda6bd8a1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
-<a id="a23443870e0d3a6797de707a89ded7ef0" name="a23443870e0d3a6797de707a89ded7ef0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23443870e0d3a6797de707a89ded7ef0">&#9670;&#160;</a></span>is_colliding_with_wall2()</h2>
+<a id="ab354a14798e97b672f426ac78a0145a9" name="ab354a14798e97b672f426ac78a0145a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab354a14798e97b672f426ac78a0145a9">&#9670;&#160;</a></span>is_colliding_with_wall2()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1266,7 +1304,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">s32 is_colliding_with_wall2 </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>, </td>
+          <td class="paramtype">struct <a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>arg</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1314,7 +1352,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a23443870e0d3a6797de707a89ded7ef0_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_ab354a14798e97b672f426ac78a0145a9_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1404,6 +1442,63 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a7edd3f38403de0388af87355d4daf611" name="a7edd3f38403de0388af87355d4daf611"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7edd3f38403de0388af87355d4daf611">&#9670;&#160;</a></span>is_point_inside_triangle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">s32 is_point_inside_triangle </td>
+          <td>(</td>
+          <td class="paramtype">s16</td>          <td class="paramname"><span class="paramname"><em>px</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16</td>          <td class="paramname"><span class="paramname"><em>pz</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16</td>          <td class="paramname"><span class="paramname"><em>x1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16</td>          <td class="paramname"><span class="paramname"><em>z1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16</td>          <td class="paramname"><span class="paramname"><em>x2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16</td>          <td class="paramname"><span class="paramname"><em>z2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16</td>          <td class="paramname"><span class="paramname"><em>x3</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s16</td>          <td class="paramname"><span class="paramname"><em>z3</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Source: <a href="https://web.archive.org/web/20220920081010/https://www.gamedev.net/forums/topic.asp?topic_id=295943">https://web.archive.org/web/20220920081010/https://www.gamedev.net/forums/topic.asp?topic_id=295943</a> </p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a7edd3f38403de0388af87355d4daf611_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
 <a id="a4e4ec74302aec60828a8d271390f7631" name="a4e4ec74302aec60828a8d271390f7631"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4e4ec74302aec60828a8d271390f7631">&#9670;&#160;</a></span>is_triangle_intersecting_bounding_box()</h2>
 
@@ -1437,10 +1532,11 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Check if any point of the bounding box is inside the triangle Bug fix that was not in the original game. Without this, triangles that are bigger than a collision grid cell, will not be included in that cell Thus, players would spawn in the air at 3000.0f as a fallback, or could fall through that portion of the track.</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a4e4ec74302aec60828a8d271390f7631_cgraph.svg" width="382" height="51"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a4e4ec74302aec60828a8d271390f7631_cgraph.svg" width="410" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1633,7 +1729,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Generates a list of pointers to course vtx. </p>
+<p>Generates a list of pointers to track vtx. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1668,7 +1764,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a593833ca3f04f0c7d8f5dcabe6430115_cgraph.svg" width="511" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a593833ca3f04f0c7d8f5dcabe6430115_cgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1709,7 +1805,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_ac558a6e1314f154bbf53aaf15396ea1e_cgraph.svg" width="460" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_ac558a6e1314f154bbf53aaf15396ea1e_cgraph.svg" width="635" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1746,7 +1842,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a335dc7fed8a2540ca0a5b0a466545845_cgraph.svg" width="488" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a335dc7fed8a2540ca0a5b0a466545845_cgraph.svg" width="663" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1756,8 +1852,8 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a24c9df6b00fc739e341b6f28b06396e4" name="a24c9df6b00fc739e341b6f28b06396e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24c9df6b00fc739e341b6f28b06396e4">&#9670;&#160;</a></span>shell_collision()</h2>
+<a id="a415860ec87546ee164b790ce07326ea3" name="a415860ec87546ee164b790ce07326ea3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a415860ec87546ee164b790ce07326ea3">&#9670;&#160;</a></span>shell_collision()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1765,7 +1861,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void shell_collision </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span>, </td>
+          <td class="paramtype">struct <a class="el" href="structCollision.html">Collision</a> *</td>          <td class="paramname"><span class="paramname"><em>collision</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -1777,12 +1873,12 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a24c9df6b00fc739e341b6f28b06396e4_cgraph.svg" width="444" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="collision_8c_a415860ec87546ee164b790ce07326ea3_cgraph.svg" width="444" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a24c9df6b00fc739e341b6f28b06396e4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="collision_8c_a415860ec87546ee164b790ce07326ea3_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>

@@ -1,4 +1,4 @@
 var SceneExplorer_8h =
 [
-    [ "Editor::SceneExplorerWindow", "classEditor_1_1SceneExplorerWindow.html", "classEditor_1_1SceneExplorerWindow" ]
+    [ "TrackEditor::SceneExplorerWindow", "classTrackEditor_1_1SceneExplorerWindow.html", "classTrackEditor_1_1SceneExplorerWindow" ]
 ];

@@ -318,8 +318,6 @@ var menu__items_8c =
     [ "render_pause_menu_versus", "menu__items_8c.html#a9c94275cf0785303b4c1e8ba05c6d4ab", null ],
     [ "replace_texture", "menu__items_8c.html#aa870b10b1c43ab915495a7d96f22f6dd", null ],
     [ "resize_menu_texture", "menu__items_8c.html#a35d6ec0fb783aa79c66a9639a896a115", null ],
-    [ "segmented_to_virtual_dupe", "menu__items_8c.html#a2d2758c3a87de891a40840727bef3306", null ],
-    [ "segmented_to_virtual_dupe_2", "menu__items_8c.html#a7f945b0137dc9c27332444441ca8ac67", null ],
     [ "set_text_color", "menu__items_8c.html#a1a002f259a6c887d6672085b8cda7d4d", null ],
     [ "set_text_color_rainbow_if_selected", "menu__items_8c.html#a960c75527cc1520edcec6ce756ed931b", null ],
     [ "setup_menus", "menu__items_8c.html#af5c5dbc8b13a37e983a1a137457e0f06", null ],

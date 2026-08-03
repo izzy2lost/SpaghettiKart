@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/render_player.c File Reference</title>
+<title>SpaghettiKart: src/render_player.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -107,6 +107,7 @@ $(function(){initNavTree('render__player_8c.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">render_player.c File Reference</div></div>
@@ -120,7 +121,7 @@ $(function(){initNavTree('render__player_8c.html',''); initResizable(true); });
 <code>#include &lt;<a class="el" href="defines_8h_source.html">defines.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="code__800029B0_8h_source.html">code_800029B0.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="camera_8h_source.html">camera.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="math__util_8h_source.html">math_util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="math__util_8h_source.html">racing/math_util.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="math__util__2_8h_source.html">math_util_2.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="decode_8h_source.html">decode.h</a>&quot;</code><br />
@@ -133,17 +134,17 @@ $(function(){initNavTree('render__player_8c.html',''); initResizable(true); });
 <code>#include &quot;<a class="el" href="waypoints_8h_source.html">waypoints.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="player__controller_8h_source.html">player_controller.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="render__objects_8h_source.html">render_objects.h</a>&quot;</code><br />
-<code>#include &lt;<a class="el" href="common__data_8h_source.html">assets/common_data.h</a>&gt;</code><br />
-<code>#include &quot;<a class="el" href="skybox__and__splitscreen_8h_source.html">skybox_and_splitscreen.h</a>&quot;</code><br />
+<code>#include &lt;<a class="el" href="models_2common__data_8h_source.html">assets/models/common_data.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="skybox__and__splitscreen_8h_source.html">racing/skybox_and_splitscreen.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="spawn__players_8h_source.html">spawn_players.h</a>&quot;</code><br />
-<code>#include &lt;<a class="el" href="mario__kart_8h_source.html">assets/mario_kart.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="luigi__kart_8h_source.html">assets/luigi_kart.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="peach__kart_8h_source.html">assets/peach_kart.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="yoshi__kart_8h_source.html">assets/yoshi_kart.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="toad__kart_8h_source.html">assets/toad_kart.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="bowser__kart_8h_source.html">assets/bowser_kart.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="wario__kart_8h_source.html">assets/wario_kart.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="donkeykong__kart_8h_source.html">assets/donkeykong_kart.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="mario__kart_8h_source.html">assets/textures/karts/mario_kart.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="luigi__kart_8h_source.html">assets/textures/karts/luigi_kart.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="peach__kart_8h_source.html">assets/textures/karts/peach_kart.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="yoshi__kart_8h_source.html">assets/textures/karts/yoshi_kart.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="toad__kart_8h_source.html">assets/textures/karts/toad_kart.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="bowser__kart_8h_source.html">assets/textures/karts/bowser_kart.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="wario__kart_8h_source.html">assets/textures/karts/wario_kart.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="donkeykong__kart_8h_source.html">assets/textures/karts/donkeykong_kart.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="Game_8h_source.html">port/Game.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Matrix_8h_source.html">engine/Matrix.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="FrameInterpolation_8h_source.html">port/interpolation/FrameInterpolation.h</a>&quot;</code><br />
@@ -156,8 +157,13 @@ Include dependency graph for render_player.c:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a36cba1855f4b8e02b46c3aa707568b4f" id="r_a36cba1855f4b8e02b46c3aa707568b4f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36cba1855f4b8e02b46c3aa707568b4f">D_802F1F80_WHEEL</a>(a,  screenId,  playerId)</td></tr>
-<tr class="separator:a36cba1855f4b8e02b46c3aa707568b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19564c696cca8bff6451f90c98844c30" id="r_a19564c696cca8bff6451f90c98844c30"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19564c696cca8bff6451f90c98844c30">PLAYER_WHEEL_MACRO</a>(a,  screenId,  playerId)</td></tr>
+<tr class="separator:a19564c696cca8bff6451f90c98844c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a14b98eb273b9fa59279f5c2dd34d528e" id="r_a14b98eb273b9fa59279f5c2dd34d528e"><td class="memItemLeft" align="right" valign="top">typedef u8 **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14b98eb273b9fa59279f5c2dd34d528e">kart_texture_t</a></td></tr>
+<tr class="separator:a14b98eb273b9fa59279f5c2dd34d528e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -172,24 +178,12 @@ Functions</h2></td></tr>
 <tr class="memitem:a01499b43d51c6cf4d9f2da56acba5c02" id="r_a01499b43d51c6cf4d9f2da56acba5c02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01499b43d51c6cf4d9f2da56acba5c02">init_render_player</a> (<a class="el" href="structPlayer.html">Player</a> *player, <a class="el" href="structCamera.html">Camera</a> *camera, s8 playerId, s8 screenId)</td></tr>
 <tr class="memdesc:a01499b43d51c6cf4d9f2da56acba5c02"><td class="mdescLeft">&#160;</td><td class="mdescRight">one of his function is to put the frame to load in to a list to load it to be only applied for the next frame  <br /></td></tr>
 <tr class="separator:a01499b43d51c6cf4d9f2da56acba5c02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a72536e09c0a64fb44bb8ba12f1b10fdd" id="r_a72536e09c0a64fb44bb8ba12f1b10fdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a72536e09c0a64fb44bb8ba12f1b10fdd">load_kart_texture_and_render_kart_particle_on_screen_one</a> (void)</td></tr>
-<tr class="separator:a72536e09c0a64fb44bb8ba12f1b10fdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3b316706b817560006c24f56d5d7c11" id="r_aa3b316706b817560006c24f56d5d7c11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3b316706b817560006c24f56d5d7c11">load_kart_texture_and_render_kart_particle_on_screen_two</a> (void)</td></tr>
-<tr class="separator:aa3b316706b817560006c24f56d5d7c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af454408df2313a0e8ba7af22fec885c7" id="r_af454408df2313a0e8ba7af22fec885c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af454408df2313a0e8ba7af22fec885c7">load_kart_texture_and_render_kart_particle_on_screen_three</a> (void)</td></tr>
-<tr class="separator:af454408df2313a0e8ba7af22fec885c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4602ce59500eb085a7c494fe52ad9de4" id="r_a4602ce59500eb085a7c494fe52ad9de4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4602ce59500eb085a7c494fe52ad9de4">load_kart_texture_and_render_kart_particle_on_screen_four</a> (void)</td></tr>
-<tr class="separator:a4602ce59500eb085a7c494fe52ad9de4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a229ab780a8a5b76c08608148c5542534" id="r_a229ab780a8a5b76c08608148c5542534"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a229ab780a8a5b76c08608148c5542534">try_rendering_player</a> (<a class="el" href="structPlayer.html">Player</a> *player, s8 playerId, s8 arg2)</td></tr>
-<tr class="separator:a229ab780a8a5b76c08608148c5542534"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6bc32c583b2a3886183f09447e213be8" id="r_a6bc32c583b2a3886183f09447e213be8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bc32c583b2a3886183f09447e213be8">render_players_on_screen_one</a> (void)</td></tr>
-<tr class="separator:a6bc32c583b2a3886183f09447e213be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43de8cdea70bb468b90f6f9357278e7e" id="r_a43de8cdea70bb468b90f6f9357278e7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a43de8cdea70bb468b90f6f9357278e7e">render_players_on_screen_two</a> (void)</td></tr>
-<tr class="separator:a43de8cdea70bb468b90f6f9357278e7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfa221415dd91abfc493ca92b21998fa" id="r_acfa221415dd91abfc493ca92b21998fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfa221415dd91abfc493ca92b21998fa">render_players_on_screen_three</a> (void)</td></tr>
-<tr class="separator:acfa221415dd91abfc493ca92b21998fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68976a398fda97f1349fda137a3eaa26" id="r_a68976a398fda97f1349fda137a3eaa26"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68976a398fda97f1349fda137a3eaa26">render_players_on_screen_four</a> (void)</td></tr>
-<tr class="separator:a68976a398fda97f1349fda137a3eaa26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac24fc5ffaaa76695b373321ef03cf370" id="r_ac24fc5ffaaa76695b373321ef03cf370"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac24fc5ffaaa76695b373321ef03cf370">load_kart_texture_and_render_kart_particles</a> (s32 screenIdx)</td></tr>
+<tr class="separator:ac24fc5ffaaa76695b373321ef03cf370"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc527b5994dfca4582442b8bd35bbf52" id="r_afc527b5994dfca4582442b8bd35bbf52"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc527b5994dfca4582442b8bd35bbf52">try_rendering_player</a> (<a class="el" href="structPlayer.html">Player</a> *player, s8 playerId, s8 screenIdx)</td></tr>
+<tr class="separator:afc527b5994dfca4582442b8bd35bbf52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26fb4ad724f6adf5cdaa5b79c5e3d5d1" id="r_a26fb4ad724f6adf5cdaa5b79c5e3d5d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26fb4ad724f6adf5cdaa5b79c5e3d5d1">render_players</a> (<a class="el" href="structCamera.html">Camera</a> *camera, s32 screenIdx)</td></tr>
+<tr class="separator:a26fb4ad724f6adf5cdaa5b79c5e3d5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01be050002fbc5c7f80bda44baae4a79" id="r_a01be050002fbc5c7f80bda44baae4a79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01be050002fbc5c7f80bda44baae4a79">func_80021B0C</a> (void)</td></tr>
 <tr class="separator:a01be050002fbc5c7f80bda44baae4a79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a078a3fa98164ddde21e074d7e0228b29" id="r_a078a3fa98164ddde21e074d7e0228b29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a078a3fa98164ddde21e074d7e0228b29">func_80021C78</a> (void)</td></tr>
@@ -359,26 +353,34 @@ Variables</h2></td></tr>
 <tr class="separator:ae07fe46a2e8582ff0d84c356e9aa868e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a937586f273566b74b01c10c3af5a0b7c" id="r_a937586f273566b74b01c10c3af5a0b7c"><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a937586f273566b74b01c10c3af5a0b7c">gKartWarioWheels1</a> [] = { 1076, 1076, 996, 916, 916, 916, 836, 756, 756 }</td></tr>
 <tr class="separator:a937586f273566b74b01c10c3af5a0b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8ead8d5dd1a49e59c1a7ef99703b49d" id="r_ad8ead8d5dd1a49e59c1a7ef99703b49d"><td class="memItemLeft" align="right" valign="top">u32 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8ead8d5dd1a49e59c1a7ef99703b49d">D_800DDE34</a> []</td></tr>
-<tr class="separator:ad8ead8d5dd1a49e59c1a7ef99703b49d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6495f28ce408cde39955cf5ec4ade09b" id="r_a6495f28ce408cde39955cf5ec4ade09b"><td class="memItemLeft" align="right" valign="top">u32 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6495f28ce408cde39955cf5ec4ade09b">D_800DDE54</a> []</td></tr>
-<tr class="separator:a6495f28ce408cde39955cf5ec4ade09b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a021c7976de2283e000a1ff399b9175ec" id="r_a021c7976de2283e000a1ff399b9175ec"><td class="memItemLeft" align="right" valign="top">u32 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a021c7976de2283e000a1ff399b9175ec">gPaletteWheel0Offset</a> []</td></tr>
+<tr class="separator:a021c7976de2283e000a1ff399b9175ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7027df78a5e1091dff23d279f9003b8" id="r_ac7027df78a5e1091dff23d279f9003b8"><td class="memItemLeft" align="right" valign="top">u32 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac7027df78a5e1091dff23d279f9003b8">gPaletteWheel1Offset</a> []</td></tr>
+<tr class="separator:ac7027df78a5e1091dff23d279f9003b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86683a745fd28e9b7283a6ed3fb0b2e3" id="r_a86683a745fd28e9b7283a6ed3fb0b2e3"><td class="memItemLeft" align="right" valign="top">const char **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86683a745fd28e9b7283a6ed3fb0b2e3">wheelPtr</a> []</td></tr>
 <tr class="separator:a86683a745fd28e9b7283a6ed3fb0b2e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a834cfef30aaa302a0078fd9187993cfa" id="r_a834cfef30aaa302a0078fd9187993cfa"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a834cfef30aaa302a0078fd9187993cfa">D_800DDE74</a> [] = { 96, 128, 192, 256, 288, 384, 512, 544, 576, 0, 0 }</td></tr>
 <tr class="separator:a834cfef30aaa302a0078fd9187993cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26f92e74c10bdc3d173678bcf8f49fc6" id="r_a26f92e74c10bdc3d173678bcf8f49fc6"><td class="memItemLeft" align="right" valign="top">Vtx&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26f92e74c10bdc3d173678bcf8f49fc6">gKartShadowVertices</a> []</td></tr>
 <tr class="separator:a26f92e74c10bdc3d173678bcf8f49fc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a3ae58b761b7b0d14a08ecfaf1c10ad" id="r_a1a3ae58b761b7b0d14a08ecfaf1c10ad"><td class="memItemLeft" align="right" valign="top"><a class="el" href="kart__dma_8c.html#a14b98eb273b9fa59279f5c2dd34d528e">kart_texture_t</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a3ae58b761b7b0d14a08ecfaf1c10ad">gKartTextureTable0</a> []</td></tr>
+<tr class="separator:a1a3ae58b761b7b0d14a08ecfaf1c10ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a620d7dc39bad1dcdb8905575a9fe1323" id="r_a620d7dc39bad1dcdb8905575a9fe1323"><td class="memItemLeft" align="right" valign="top"><a class="el" href="kart__dma_8c.html#a14b98eb273b9fa59279f5c2dd34d528e">kart_texture_t</a> **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a620d7dc39bad1dcdb8905575a9fe1323">gKartTextureTable1</a> []</td></tr>
+<tr class="separator:a620d7dc39bad1dcdb8905575a9fe1323"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e5e56075cf8fdc81ea9d38260bdd63c" id="r_a0e5e56075cf8fdc81ea9d38260bdd63c"><td class="memItemLeft" align="right" valign="top">u8 **&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e5e56075cf8fdc81ea9d38260bdd63c">gKartTextureTumbles</a> []</td></tr>
+<tr class="separator:a0e5e56075cf8fdc81ea9d38260bdd63c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a67d73976cef8cc120c86760976819536" id="r_a67d73976cef8cc120c86760976819536"><td class="memItemLeft" align="right" valign="top">u32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67d73976cef8cc120c86760976819536">wheel_offset</a> [] = { 1076, 1076, 996, 916, 916, 916, 836, 756, 756 }</td></tr>
+<tr class="separator:a67d73976cef8cc120c86760976819536"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a36cba1855f4b8e02b46c3aa707568b4f" name="a36cba1855f4b8e02b46c3aa707568b4f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a36cba1855f4b8e02b46c3aa707568b4f">&#9670;&#160;</a></span>D_802F1F80_WHEEL</h2>
+<a id="a19564c696cca8bff6451f90c98844c30" name="a19564c696cca8bff6451f90c98844c30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19564c696cca8bff6451f90c98844c30">&#9670;&#160;</a></span>PLAYER_WHEEL_MACRO</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define D_802F1F80_WHEEL</td>
+          <td class="memname">#define PLAYER_WHEEL_MACRO</td>
           <td>(</td>
           <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>a</em></span>, </td>
         </tr>
@@ -396,8 +398,23 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">&amp;<a class="code hl_variable" href="buffers_8h.html#a971064608968224d5893f0529599f48e">gPlayerPalettesList</a>[a][screenId][(<a class="code hl_enumeration" href="defines_8h.html#a698be281bf8b3216136b9440f534ca11">PlayerId</a> * 0x100) + 0xC0]</div>
 <div class="ttc" id="abuffers_8h_html_a971064608968224d5893f0529599f48e"><div class="ttname"><a href="buffers_8h.html#a971064608968224d5893f0529599f48e">gPlayerPalettesList</a></div><div class="ttdeci">u16 gPlayerPalettesList[][4][0x100 *8]</div><div class="ttdef"><b>Definition</b> buffers.c:16</div></div>
-<div class="ttc" id="adefines_8h_html_a698be281bf8b3216136b9440f534ca11"><div class="ttname"><a href="defines_8h.html#a698be281bf8b3216136b9440f534ca11">PlayerId</a></div><div class="ttdeci">PlayerId</div><div class="ttdef"><b>Definition</b> defines.h:115</div></div>
+<div class="ttc" id="adefines_8h_html_a698be281bf8b3216136b9440f534ca11"><div class="ttname"><a href="defines_8h.html#a698be281bf8b3216136b9440f534ca11">PlayerId</a></div><div class="ttdeci">PlayerId</div><div class="ttdef"><b>Definition</b> defines.h:127</div></div>
 </div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a14b98eb273b9fa59279f5c2dd34d528e" name="a14b98eb273b9fa59279f5c2dd34d528e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a14b98eb273b9fa59279f5c2dd34d528e">&#9670;&#160;</a></span>kart_texture_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef u8** <a class="el" href="kart__dma_8c.html#a14b98eb273b9fa59279f5c2dd34d528e">kart_texture_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
@@ -888,7 +905,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a6f4aaf3ac0ad53a8a8e1cb6055b5a048_cgraph.svg" width="100%" height="535"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a6f4aaf3ac0ad53a8a8e1cb6055b5a048_cgraph.svg" width="100%" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -919,7 +936,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a383e46f328ac76bdef92f8fc53bbc2a4_cgraph.svg" width="100%" height="535"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a383e46f328ac76bdef92f8fc53bbc2a4_cgraph.svg" width="100%" height="536"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1364,7 +1381,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="render__player_8c_a134979f530082395406ddce35d8ff702_cgraph.svg" width="574" height="166"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="render__player_8c_a134979f530082395406ddce35d8ff702_cgraph.svg" width="574" height="190"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -1374,110 +1391,34 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a4602ce59500eb085a7c494fe52ad9de4" name="a4602ce59500eb085a7c494fe52ad9de4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4602ce59500eb085a7c494fe52ad9de4">&#9670;&#160;</a></span>load_kart_texture_and_render_kart_particle_on_screen_four()</h2>
+<a id="ac24fc5ffaaa76695b373321ef03cf370" name="ac24fc5ffaaa76695b373321ef03cf370"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac24fc5ffaaa76695b373321ef03cf370">&#9670;&#160;</a></span>load_kart_texture_and_render_kart_particles()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void load_kart_texture_and_render_kart_particle_on_screen_four </td>
+          <td class="memname">void load_kart_texture_and_render_kart_particles </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>screenIdx</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>This function used to be split for each player screen. It is combined now.</p>
+<p>Check <a class="el" href="buffers_8c.html">buffers.c</a> // [nothing][screen][player] ALIGNED8 <a class="el" href="structstruct__D__802DFB80.html">struct_D_802DFB80</a> gEncodedKartTexture[2][2][8];</p>
+<p>The buffer is sized for two screens. In 3P/4P mode, the player and screen indexes need to be adjusted like so:</p>
+<p>Screen 3 uses buffer[unused][screen 1][slots 5-8] Screen 4 uses buffer[unused][screen 2][slots 5-8]</p>
+<p>Due to this remapping, 3P/4P modes only support upto four racers. </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a4602ce59500eb085a7c494fe52ad9de4_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_ac24fc5ffaaa76695b373321ef03cf370_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a4602ce59500eb085a7c494fe52ad9de4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="a72536e09c0a64fb44bb8ba12f1b10fdd" name="a72536e09c0a64fb44bb8ba12f1b10fdd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a72536e09c0a64fb44bb8ba12f1b10fdd">&#9670;&#160;</a></span>load_kart_texture_and_render_kart_particle_on_screen_one()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void load_kart_texture_and_render_kart_particle_on_screen_one </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a72536e09c0a64fb44bb8ba12f1b10fdd_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a72536e09c0a64fb44bb8ba12f1b10fdd_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="af454408df2313a0e8ba7af22fec885c7" name="af454408df2313a0e8ba7af22fec885c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af454408df2313a0e8ba7af22fec885c7">&#9670;&#160;</a></span>load_kart_texture_and_render_kart_particle_on_screen_three()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void load_kart_texture_and_render_kart_particle_on_screen_three </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_af454408df2313a0e8ba7af22fec885c7_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_af454408df2313a0e8ba7af22fec885c7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="aa3b316706b817560006c24f56d5d7c11" name="aa3b316706b817560006c24f56d5d7c11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3b316706b817560006c24f56d5d7c11">&#9670;&#160;</a></span>load_kart_texture_and_render_kart_particle_on_screen_two()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void load_kart_texture_and_render_kart_particle_on_screen_two </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_aa3b316706b817560006c24f56d5d7c11_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_aa3b316706b817560006c24f56d5d7c11_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_ac24fc5ffaaa76695b373321ef03cf370_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -1748,6 +1689,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000015">Bug</a></b></dt><dd>For the second last lamp </dd></dl>
+<p>The condition for this lamp does not work, and if it did, the lamp area extends nearly to the finishline. This adjustment places the lamp glow into a suitable area</p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -1910,116 +1853,39 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a68976a398fda97f1349fda137a3eaa26" name="a68976a398fda97f1349fda137a3eaa26"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68976a398fda97f1349fda137a3eaa26">&#9670;&#160;</a></span>render_players_on_screen_four()</h2>
+<a id="a26fb4ad724f6adf5cdaa5b79c5e3d5d1" name="a26fb4ad724f6adf5cdaa5b79c5e3d5d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26fb4ad724f6adf5cdaa5b79c5e3d5d1">&#9670;&#160;</a></span>render_players()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void render_players_on_screen_four </td>
+          <td class="memname">void render_players </td>
           <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structCamera.html">Camera</a> *</td>          <td class="paramname"><span class="paramname"><em>camera</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>screenIdx</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a68976a398fda97f1349fda137a3eaa26_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a26fb4ad724f6adf5cdaa5b79c5e3d5d1_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a68976a398fda97f1349fda137a3eaa26_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a26fb4ad724f6adf5cdaa5b79c5e3d5d1_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
 </div>
-<a id="a6bc32c583b2a3886183f09447e213be8" name="a6bc32c583b2a3886183f09447e213be8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6bc32c583b2a3886183f09447e213be8">&#9670;&#160;</a></span>render_players_on_screen_one()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void render_players_on_screen_one </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a6bc32c583b2a3886183f09447e213be8_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a6bc32c583b2a3886183f09447e213be8_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="acfa221415dd91abfc493ca92b21998fa" name="acfa221415dd91abfc493ca92b21998fa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfa221415dd91abfc493ca92b21998fa">&#9670;&#160;</a></span>render_players_on_screen_three()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void render_players_on_screen_three </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_acfa221415dd91abfc493ca92b21998fa_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_acfa221415dd91abfc493ca92b21998fa_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="a43de8cdea70bb468b90f6f9357278e7e" name="a43de8cdea70bb468b90f6f9357278e7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43de8cdea70bb468b90f6f9357278e7e">&#9670;&#160;</a></span>render_players_on_screen_two()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void render_players_on_screen_two </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a43de8cdea70bb468b90f6f9357278e7e_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a43de8cdea70bb468b90f6f9357278e7e_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="a229ab780a8a5b76c08608148c5542534" name="a229ab780a8a5b76c08608148c5542534"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a229ab780a8a5b76c08608148c5542534">&#9670;&#160;</a></span>try_rendering_player()</h2>
+<a id="afc527b5994dfca4582442b8bd35bbf52" name="afc527b5994dfca4582442b8bd35bbf52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc527b5994dfca4582442b8bd35bbf52">&#9670;&#160;</a></span>try_rendering_player()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -2037,19 +1903,19 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">s8</td>          <td class="paramname"><span class="paramname"><em>arg2</em></span>&#160;)</td>
+          <td class="paramtype">s8</td>          <td class="paramname"><span class="paramname"><em>screenIdx</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a229ab780a8a5b76c08608148c5542534_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_afc527b5994dfca4582442b8bd35bbf52_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_a229ab780a8a5b76c08608148c5542534_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="render__player_8c_afc527b5994dfca4582442b8bd35bbf52_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -2108,54 +1974,6 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="ad8ead8d5dd1a49e59c1a7ef99703b49d" name="ad8ead8d5dd1a49e59c1a7ef99703b49d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8ead8d5dd1a49e59c1a7ef99703b49d">&#9670;&#160;</a></span>D_800DDE34</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">u32* D_800DDE34[]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= { <a class="code hl_variable" href="#a0c43e87f0f1b8b81adb972bcf4ac7752">gKartMarioWheels0</a>, <a class="code hl_variable" href="#a05c08a158620c79b7fde20dfa6280b42">gKartLuigiWheels0</a>, <a class="code hl_variable" href="#abc9e9b376842722e2deeb56302f469ed">gKartYoshiWheels0</a>, <a class="code hl_variable" href="#a2b2f28a894b719b9f7ea6d864f657dfc">gKartToadWheels0</a>,</div>
-<div class="line">                      <a class="code hl_variable" href="#ab39fbcd6761d5f6341fd4b4c6e29e734">gKartDKWheels0</a>,    <a class="code hl_variable" href="#ae07fe46a2e8582ff0d84c356e9aa868e">gKartWarioWheels0</a>, <a class="code hl_variable" href="#a1b4c1f505293981dcb7285bac305c8f4">gKartPeachWheels0</a>, <a class="code hl_variable" href="#a56967eb12f31f9705bd09ece6b133fa0">gKartBowserWheels0</a> }</div>
-<div class="ttc" id="arender__player_8c_html_a05c08a158620c79b7fde20dfa6280b42"><div class="ttname"><a href="#a05c08a158620c79b7fde20dfa6280b42">gKartLuigiWheels0</a></div><div class="ttdeci">u32 gKartLuigiWheels0[]</div><div class="ttdef"><b>Definition</b> render_player.c:596</div></div>
-<div class="ttc" id="arender__player_8c_html_a0c43e87f0f1b8b81adb972bcf4ac7752"><div class="ttname"><a href="#a0c43e87f0f1b8b81adb972bcf4ac7752">gKartMarioWheels0</a></div><div class="ttdeci">u32 gKartMarioWheels0[]</div><div class="ttdef"><b>Definition</b> render_player.c:593</div></div>
-<div class="ttc" id="arender__player_8c_html_a1b4c1f505293981dcb7285bac305c8f4"><div class="ttname"><a href="#a1b4c1f505293981dcb7285bac305c8f4">gKartPeachWheels0</a></div><div class="ttdeci">u32 gKartPeachWheels0[]</div><div class="ttdef"><b>Definition</b> render_player.c:613</div></div>
-<div class="ttc" id="arender__player_8c_html_a2b2f28a894b719b9f7ea6d864f657dfc"><div class="ttname"><a href="#a2b2f28a894b719b9f7ea6d864f657dfc">gKartToadWheels0</a></div><div class="ttdeci">u32 gKartToadWheels0[]</div><div class="ttdef"><b>Definition</b> render_player.c:602</div></div>
-<div class="ttc" id="arender__player_8c_html_a56967eb12f31f9705bd09ece6b133fa0"><div class="ttname"><a href="#a56967eb12f31f9705bd09ece6b133fa0">gKartBowserWheels0</a></div><div class="ttdeci">u32 gKartBowserWheels0[]</div><div class="ttdef"><b>Definition</b> render_player.c:599</div></div>
-<div class="ttc" id="arender__player_8c_html_ab39fbcd6761d5f6341fd4b4c6e29e734"><div class="ttname"><a href="#ab39fbcd6761d5f6341fd4b4c6e29e734">gKartDKWheels0</a></div><div class="ttdeci">u32 gKartDKWheels0[]</div><div class="ttdef"><b>Definition</b> render_player.c:610</div></div>
-<div class="ttc" id="arender__player_8c_html_abc9e9b376842722e2deeb56302f469ed"><div class="ttname"><a href="#abc9e9b376842722e2deeb56302f469ed">gKartYoshiWheels0</a></div><div class="ttdeci">u32 gKartYoshiWheels0[]</div><div class="ttdef"><b>Definition</b> render_player.c:607</div></div>
-<div class="ttc" id="arender__player_8c_html_ae07fe46a2e8582ff0d84c356e9aa868e"><div class="ttname"><a href="#ae07fe46a2e8582ff0d84c356e9aa868e">gKartWarioWheels0</a></div><div class="ttdeci">u32 gKartWarioWheels0[]</div><div class="ttdef"><b>Definition</b> render_player.c:616</div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a6495f28ce408cde39955cf5ec4ade09b" name="a6495f28ce408cde39955cf5ec4ade09b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6495f28ce408cde39955cf5ec4ade09b">&#9670;&#160;</a></span>D_800DDE54</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">u32* D_800DDE54[]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= { <a class="code hl_variable" href="#af8dafe2ba2b25b088fc17add3ddd2cfe">gKartMarioWheels1</a>, <a class="code hl_variable" href="#a3a342c1403598f27003bbaa561dae146">gKartLuigiWheels1</a>, <a class="code hl_variable" href="#a9fee64d4d2d83d540f523f3de218b663">gKartYoshiWheels1</a>, <a class="code hl_variable" href="#a158b48200549d664c74835f33b442f12">gKartToadWheels1</a>,</div>
-<div class="line">                      <a class="code hl_variable" href="#a09e3e38d39d5a5c1ba4e97241a5ed8cf">gKartDKWheels1</a>,    <a class="code hl_variable" href="#a937586f273566b74b01c10c3af5a0b7c">gKartWarioWheels1</a>, <a class="code hl_variable" href="#a2aa89d4fc7070bdd407ce7e9e2b8671e">gKartPeachWheels1</a>, <a class="code hl_variable" href="#a35069b513a0c5f0b544688a61cb74aac">gKartBowserWheels1</a> }</div>
-<div class="ttc" id="arender__player_8c_html_a09e3e38d39d5a5c1ba4e97241a5ed8cf"><div class="ttname"><a href="#a09e3e38d39d5a5c1ba4e97241a5ed8cf">gKartDKWheels1</a></div><div class="ttdeci">u32 gKartDKWheels1[]</div><div class="ttdef"><b>Definition</b> render_player.c:611</div></div>
-<div class="ttc" id="arender__player_8c_html_a158b48200549d664c74835f33b442f12"><div class="ttname"><a href="#a158b48200549d664c74835f33b442f12">gKartToadWheels1</a></div><div class="ttdeci">u32 gKartToadWheels1[]</div><div class="ttdef"><b>Definition</b> render_player.c:603</div></div>
-<div class="ttc" id="arender__player_8c_html_a2aa89d4fc7070bdd407ce7e9e2b8671e"><div class="ttname"><a href="#a2aa89d4fc7070bdd407ce7e9e2b8671e">gKartPeachWheels1</a></div><div class="ttdeci">u32 gKartPeachWheels1[]</div><div class="ttdef"><b>Definition</b> render_player.c:614</div></div>
-<div class="ttc" id="arender__player_8c_html_a35069b513a0c5f0b544688a61cb74aac"><div class="ttname"><a href="#a35069b513a0c5f0b544688a61cb74aac">gKartBowserWheels1</a></div><div class="ttdeci">u32 gKartBowserWheels1[]</div><div class="ttdef"><b>Definition</b> render_player.c:600</div></div>
-<div class="ttc" id="arender__player_8c_html_a3a342c1403598f27003bbaa561dae146"><div class="ttname"><a href="#a3a342c1403598f27003bbaa561dae146">gKartLuigiWheels1</a></div><div class="ttdeci">u32 gKartLuigiWheels1[]</div><div class="ttdef"><b>Definition</b> render_player.c:597</div></div>
-<div class="ttc" id="arender__player_8c_html_a937586f273566b74b01c10c3af5a0b7c"><div class="ttname"><a href="#a937586f273566b74b01c10c3af5a0b7c">gKartWarioWheels1</a></div><div class="ttdeci">u32 gKartWarioWheels1[]</div><div class="ttdef"><b>Definition</b> render_player.c:617</div></div>
-<div class="ttc" id="arender__player_8c_html_a9fee64d4d2d83d540f523f3de218b663"><div class="ttname"><a href="#a9fee64d4d2d83d540f523f3de218b663">gKartYoshiWheels1</a></div><div class="ttdeci">u32 gKartYoshiWheels1[]</div><div class="ttdef"><b>Definition</b> render_player.c:608</div></div>
-<div class="ttc" id="arender__player_8c_html_af8dafe2ba2b25b088fc17add3ddd2cfe"><div class="ttname"><a href="#af8dafe2ba2b25b088fc17add3ddd2cfe">gKartMarioWheels1</a></div><div class="ttdeci">u32 gKartMarioWheels1[]</div><div class="ttdef"><b>Definition</b> render_player.c:594</div></div>
-</div><!-- fragment -->
 </div>
 </div>
 <a id="a834cfef30aaa302a0078fd9187993cfa" name="a834cfef30aaa302a0078fd9187993cfa"></a>
@@ -2430,6 +2248,72 @@ Here is the caller graph for this function:</div>
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a1a3ae58b761b7b0d14a08ecfaf1c10ad" name="a1a3ae58b761b7b0d14a08ecfaf1c10ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1a3ae58b761b7b0d14a08ecfaf1c10ad">&#9670;&#160;</a></span>gKartTextureTable0</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="kart__dma_8c.html#a14b98eb273b9fa59279f5c2dd34d528e">kart_texture_t</a>** gKartTextureTable0[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a620d7dc39bad1dcdb8905575a9fe1323" name="a620d7dc39bad1dcdb8905575a9fe1323"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a620d7dc39bad1dcdb8905575a9fe1323">&#9670;&#160;</a></span>gKartTextureTable1</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="kart__dma_8c.html#a14b98eb273b9fa59279f5c2dd34d528e">kart_texture_t</a>** gKartTextureTable1[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0e5e56075cf8fdc81ea9d38260bdd63c" name="a0e5e56075cf8fdc81ea9d38260bdd63c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e5e56075cf8fdc81ea9d38260bdd63c">&#9670;&#160;</a></span>gKartTextureTumbles</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">u8** gKartTextureTumbles[]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a2b2f28a894b719b9f7ea6d864f657dfc" name="a2b2f28a894b719b9f7ea6d864f657dfc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2b2f28a894b719b9f7ea6d864f657dfc">&#9670;&#160;</a></span>gKartToadWheels0</h2>
 
@@ -2554,6 +2438,54 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+</div>
+</div>
+<a id="a021c7976de2283e000a1ff399b9175ec" name="a021c7976de2283e000a1ff399b9175ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a021c7976de2283e000a1ff399b9175ec">&#9670;&#160;</a></span>gPaletteWheel0Offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32* gPaletteWheel0Offset[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= { <a class="code hl_variable" href="#a0c43e87f0f1b8b81adb972bcf4ac7752">gKartMarioWheels0</a>, <a class="code hl_variable" href="#a05c08a158620c79b7fde20dfa6280b42">gKartLuigiWheels0</a>, <a class="code hl_variable" href="#abc9e9b376842722e2deeb56302f469ed">gKartYoshiWheels0</a>, <a class="code hl_variable" href="#a2b2f28a894b719b9f7ea6d864f657dfc">gKartToadWheels0</a>,</div>
+<div class="line">                      <a class="code hl_variable" href="#ab39fbcd6761d5f6341fd4b4c6e29e734">gKartDKWheels0</a>,    <a class="code hl_variable" href="#ae07fe46a2e8582ff0d84c356e9aa868e">gKartWarioWheels0</a>, <a class="code hl_variable" href="#a1b4c1f505293981dcb7285bac305c8f4">gKartPeachWheels0</a>, <a class="code hl_variable" href="#a56967eb12f31f9705bd09ece6b133fa0">gKartBowserWheels0</a> }</div>
+<div class="ttc" id="arender__player_8c_html_a05c08a158620c79b7fde20dfa6280b42"><div class="ttname"><a href="#a05c08a158620c79b7fde20dfa6280b42">gKartLuigiWheels0</a></div><div class="ttdeci">u32 gKartLuigiWheels0[]</div><div class="ttdef"><b>Definition</b> render_player.c:410</div></div>
+<div class="ttc" id="arender__player_8c_html_a0c43e87f0f1b8b81adb972bcf4ac7752"><div class="ttname"><a href="#a0c43e87f0f1b8b81adb972bcf4ac7752">gKartMarioWheels0</a></div><div class="ttdeci">u32 gKartMarioWheels0[]</div><div class="ttdef"><b>Definition</b> render_player.c:407</div></div>
+<div class="ttc" id="arender__player_8c_html_a1b4c1f505293981dcb7285bac305c8f4"><div class="ttname"><a href="#a1b4c1f505293981dcb7285bac305c8f4">gKartPeachWheels0</a></div><div class="ttdeci">u32 gKartPeachWheels0[]</div><div class="ttdef"><b>Definition</b> render_player.c:427</div></div>
+<div class="ttc" id="arender__player_8c_html_a2b2f28a894b719b9f7ea6d864f657dfc"><div class="ttname"><a href="#a2b2f28a894b719b9f7ea6d864f657dfc">gKartToadWheels0</a></div><div class="ttdeci">u32 gKartToadWheels0[]</div><div class="ttdef"><b>Definition</b> render_player.c:416</div></div>
+<div class="ttc" id="arender__player_8c_html_a56967eb12f31f9705bd09ece6b133fa0"><div class="ttname"><a href="#a56967eb12f31f9705bd09ece6b133fa0">gKartBowserWheels0</a></div><div class="ttdeci">u32 gKartBowserWheels0[]</div><div class="ttdef"><b>Definition</b> render_player.c:413</div></div>
+<div class="ttc" id="arender__player_8c_html_ab39fbcd6761d5f6341fd4b4c6e29e734"><div class="ttname"><a href="#ab39fbcd6761d5f6341fd4b4c6e29e734">gKartDKWheels0</a></div><div class="ttdeci">u32 gKartDKWheels0[]</div><div class="ttdef"><b>Definition</b> render_player.c:424</div></div>
+<div class="ttc" id="arender__player_8c_html_abc9e9b376842722e2deeb56302f469ed"><div class="ttname"><a href="#abc9e9b376842722e2deeb56302f469ed">gKartYoshiWheels0</a></div><div class="ttdeci">u32 gKartYoshiWheels0[]</div><div class="ttdef"><b>Definition</b> render_player.c:421</div></div>
+<div class="ttc" id="arender__player_8c_html_ae07fe46a2e8582ff0d84c356e9aa868e"><div class="ttname"><a href="#ae07fe46a2e8582ff0d84c356e9aa868e">gKartWarioWheels0</a></div><div class="ttdeci">u32 gKartWarioWheels0[]</div><div class="ttdef"><b>Definition</b> render_player.c:430</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac7027df78a5e1091dff23d279f9003b8" name="ac7027df78a5e1091dff23d279f9003b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac7027df78a5e1091dff23d279f9003b8">&#9670;&#160;</a></span>gPaletteWheel1Offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32* gPaletteWheel1Offset[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= { <a class="code hl_variable" href="#af8dafe2ba2b25b088fc17add3ddd2cfe">gKartMarioWheels1</a>, <a class="code hl_variable" href="#a3a342c1403598f27003bbaa561dae146">gKartLuigiWheels1</a>, <a class="code hl_variable" href="#a9fee64d4d2d83d540f523f3de218b663">gKartYoshiWheels1</a>, <a class="code hl_variable" href="#a158b48200549d664c74835f33b442f12">gKartToadWheels1</a>,</div>
+<div class="line">                      <a class="code hl_variable" href="#a09e3e38d39d5a5c1ba4e97241a5ed8cf">gKartDKWheels1</a>,    <a class="code hl_variable" href="#a937586f273566b74b01c10c3af5a0b7c">gKartWarioWheels1</a>, <a class="code hl_variable" href="#a2aa89d4fc7070bdd407ce7e9e2b8671e">gKartPeachWheels1</a>, <a class="code hl_variable" href="#a35069b513a0c5f0b544688a61cb74aac">gKartBowserWheels1</a> }</div>
+<div class="ttc" id="arender__player_8c_html_a09e3e38d39d5a5c1ba4e97241a5ed8cf"><div class="ttname"><a href="#a09e3e38d39d5a5c1ba4e97241a5ed8cf">gKartDKWheels1</a></div><div class="ttdeci">u32 gKartDKWheels1[]</div><div class="ttdef"><b>Definition</b> render_player.c:425</div></div>
+<div class="ttc" id="arender__player_8c_html_a158b48200549d664c74835f33b442f12"><div class="ttname"><a href="#a158b48200549d664c74835f33b442f12">gKartToadWheels1</a></div><div class="ttdeci">u32 gKartToadWheels1[]</div><div class="ttdef"><b>Definition</b> render_player.c:417</div></div>
+<div class="ttc" id="arender__player_8c_html_a2aa89d4fc7070bdd407ce7e9e2b8671e"><div class="ttname"><a href="#a2aa89d4fc7070bdd407ce7e9e2b8671e">gKartPeachWheels1</a></div><div class="ttdeci">u32 gKartPeachWheels1[]</div><div class="ttdef"><b>Definition</b> render_player.c:428</div></div>
+<div class="ttc" id="arender__player_8c_html_a35069b513a0c5f0b544688a61cb74aac"><div class="ttname"><a href="#a35069b513a0c5f0b544688a61cb74aac">gKartBowserWheels1</a></div><div class="ttdeci">u32 gKartBowserWheels1[]</div><div class="ttdef"><b>Definition</b> render_player.c:414</div></div>
+<div class="ttc" id="arender__player_8c_html_a3a342c1403598f27003bbaa561dae146"><div class="ttname"><a href="#a3a342c1403598f27003bbaa561dae146">gKartLuigiWheels1</a></div><div class="ttdeci">u32 gKartLuigiWheels1[]</div><div class="ttdef"><b>Definition</b> render_player.c:411</div></div>
+<div class="ttc" id="arender__player_8c_html_a937586f273566b74b01c10c3af5a0b7c"><div class="ttname"><a href="#a937586f273566b74b01c10c3af5a0b7c">gKartWarioWheels1</a></div><div class="ttdeci">u32 gKartWarioWheels1[]</div><div class="ttdef"><b>Definition</b> render_player.c:431</div></div>
+<div class="ttc" id="arender__player_8c_html_a9fee64d4d2d83d540f523f3de218b663"><div class="ttname"><a href="#a9fee64d4d2d83d540f523f3de218b663">gKartYoshiWheels1</a></div><div class="ttdeci">u32 gKartYoshiWheels1[]</div><div class="ttdef"><b>Definition</b> render_player.c:422</div></div>
+<div class="ttc" id="arender__player_8c_html_af8dafe2ba2b25b088fc17add3ddd2cfe"><div class="ttname"><a href="#af8dafe2ba2b25b088fc17add3ddd2cfe">gKartMarioWheels1</a></div><div class="ttdeci">u32 gKartMarioWheels1[]</div><div class="ttdef"><b>Definition</b> render_player.c:408</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3a73c87d50cf07d03658a5fdc57d61f0" name="a3a73c87d50cf07d03658a5fdc57d61f0"></a>
@@ -2812,6 +2744,20 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a67d73976cef8cc120c86760976819536" name="a67d73976cef8cc120c86760976819536"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67d73976cef8cc120c86760976819536">&#9670;&#160;</a></span>wheel_offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u32 wheel_offset[] = { 1076, 1076, 996, 916, 916, 916, 836, 756, 756 }</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a86683a745fd28e9b7283a6ed3fb0b2e3" name="a86683a745fd28e9b7283a6ed3fb0b2e3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a86683a745fd28e9b7283a6ed3fb0b2e3">&#9670;&#160;</a></span>wheelPtr</h2>
 
@@ -2827,14 +2773,14 @@ Here is the caller graph for this function:</div>
 <div class="line">    <a class="code hl_variable" href="mario__kart_8h.html#ab481657707e6f0a434573598e09bb389">mario_kart_wheels</a>,      <a class="code hl_variable" href="luigi__kart_8h.html#a0e16ca5cc7e6e03a3d7d86eca7f3dbb7">luigi_kart_wheels</a>, <a class="code hl_variable" href="yoshi__kart_8h.html#a2fa260b0b9d7d1938c3ddbffd472d17a">yoshi_kart_wheels</a>, <a class="code hl_variable" href="toad__kart_8h.html#a640a911025312c8ffb90ac5e9d45a7b9">toad_kart_wheels</a>,</div>
 <div class="line">    <a class="code hl_variable" href="donkeykong__kart_8h.html#a0f0b9e82da70be276ff00dc553fcd405">donkeykong_kart_wheels</a>, <a class="code hl_variable" href="wario__kart_8h.html#a0aba8c75d1ca16c9a80c5380575c3105">wario_kart_wheels</a>, <a class="code hl_variable" href="peach__kart_8h.html#a6132c127dadd0124f133917b0384ce6f">peach_kart_wheels</a>, <a class="code hl_variable" href="bowser__kart_8h.html#a7c8f90fc6c80c0ff6ce32285079952e1">bowser_kart_wheels</a>,</div>
 <div class="line">}</div>
-<div class="ttc" id="abowser__kart_8h_html_a7c8f90fc6c80c0ff6ce32285079952e1"><div class="ttname"><a href="bowser__kart_8h.html#a7c8f90fc6c80c0ff6ce32285079952e1">bowser_kart_wheels</a></div><div class="ttdeci">static const char * bowser_kart_wheels[]</div><div class="ttdef"><b>Definition</b> bowser_kart.h:2960</div></div>
-<div class="ttc" id="adonkeykong__kart_8h_html_a0f0b9e82da70be276ff00dc553fcd405"><div class="ttname"><a href="donkeykong__kart_8h.html#a0f0b9e82da70be276ff00dc553fcd405">donkeykong_kart_wheels</a></div><div class="ttdeci">static const char * donkeykong_kart_wheels[]</div><div class="ttdef"><b>Definition</b> donkeykong_kart.h:2960</div></div>
-<div class="ttc" id="aluigi__kart_8h_html_a0e16ca5cc7e6e03a3d7d86eca7f3dbb7"><div class="ttname"><a href="luigi__kart_8h.html#a0e16ca5cc7e6e03a3d7d86eca7f3dbb7">luigi_kart_wheels</a></div><div class="ttdeci">static const char * luigi_kart_wheels[]</div><div class="ttdef"><b>Definition</b> luigi_kart.h:2960</div></div>
-<div class="ttc" id="amario__kart_8h_html_ab481657707e6f0a434573598e09bb389"><div class="ttname"><a href="mario__kart_8h.html#ab481657707e6f0a434573598e09bb389">mario_kart_wheels</a></div><div class="ttdeci">static const char * mario_kart_wheels[]</div><div class="ttdef"><b>Definition</b> mario_kart.h:2960</div></div>
-<div class="ttc" id="apeach__kart_8h_html_a6132c127dadd0124f133917b0384ce6f"><div class="ttname"><a href="peach__kart_8h.html#a6132c127dadd0124f133917b0384ce6f">peach_kart_wheels</a></div><div class="ttdeci">static const char * peach_kart_wheels[]</div><div class="ttdef"><b>Definition</b> peach_kart.h:2960</div></div>
-<div class="ttc" id="atoad__kart_8h_html_a640a911025312c8ffb90ac5e9d45a7b9"><div class="ttname"><a href="toad__kart_8h.html#a640a911025312c8ffb90ac5e9d45a7b9">toad_kart_wheels</a></div><div class="ttdeci">static const char * toad_kart_wheels[]</div><div class="ttdef"><b>Definition</b> toad_kart.h:2960</div></div>
-<div class="ttc" id="awario__kart_8h_html_a0aba8c75d1ca16c9a80c5380575c3105"><div class="ttname"><a href="wario__kart_8h.html#a0aba8c75d1ca16c9a80c5380575c3105">wario_kart_wheels</a></div><div class="ttdeci">static const char * wario_kart_wheels[]</div><div class="ttdef"><b>Definition</b> wario_kart.h:2960</div></div>
-<div class="ttc" id="ayoshi__kart_8h_html_a2fa260b0b9d7d1938c3ddbffd472d17a"><div class="ttname"><a href="yoshi__kart_8h.html#a2fa260b0b9d7d1938c3ddbffd472d17a">yoshi_kart_wheels</a></div><div class="ttdeci">static const char * yoshi_kart_wheels[]</div><div class="ttdef"><b>Definition</b> yoshi_kart.h:2960</div></div>
+<div class="ttc" id="abowser__kart_8h_html_a7c8f90fc6c80c0ff6ce32285079952e1"><div class="ttname"><a href="bowser__kart_8h.html#a7c8f90fc6c80c0ff6ce32285079952e1">bowser_kart_wheels</a></div><div class="ttdeci">static const char * bowser_kart_wheels[]</div><div class="ttdef"><b>Definition</b> bowser_kart.h:4694</div></div>
+<div class="ttc" id="adonkeykong__kart_8h_html_a0f0b9e82da70be276ff00dc553fcd405"><div class="ttname"><a href="donkeykong__kart_8h.html#a0f0b9e82da70be276ff00dc553fcd405">donkeykong_kart_wheels</a></div><div class="ttdeci">static const char * donkeykong_kart_wheels[]</div><div class="ttdef"><b>Definition</b> donkeykong_kart.h:4694</div></div>
+<div class="ttc" id="aluigi__kart_8h_html_a0e16ca5cc7e6e03a3d7d86eca7f3dbb7"><div class="ttname"><a href="luigi__kart_8h.html#a0e16ca5cc7e6e03a3d7d86eca7f3dbb7">luigi_kart_wheels</a></div><div class="ttdeci">static const char * luigi_kart_wheels[]</div><div class="ttdef"><b>Definition</b> luigi_kart.h:4694</div></div>
+<div class="ttc" id="amario__kart_8h_html_ab481657707e6f0a434573598e09bb389"><div class="ttname"><a href="mario__kart_8h.html#ab481657707e6f0a434573598e09bb389">mario_kart_wheels</a></div><div class="ttdeci">static const char * mario_kart_wheels[]</div><div class="ttdef"><b>Definition</b> mario_kart.h:4694</div></div>
+<div class="ttc" id="apeach__kart_8h_html_a6132c127dadd0124f133917b0384ce6f"><div class="ttname"><a href="peach__kart_8h.html#a6132c127dadd0124f133917b0384ce6f">peach_kart_wheels</a></div><div class="ttdeci">static const char * peach_kart_wheels[]</div><div class="ttdef"><b>Definition</b> peach_kart.h:4694</div></div>
+<div class="ttc" id="atoad__kart_8h_html_a640a911025312c8ffb90ac5e9d45a7b9"><div class="ttname"><a href="toad__kart_8h.html#a640a911025312c8ffb90ac5e9d45a7b9">toad_kart_wheels</a></div><div class="ttdeci">static const char * toad_kart_wheels[]</div><div class="ttdef"><b>Definition</b> toad_kart.h:4694</div></div>
+<div class="ttc" id="awario__kart_8h_html_a0aba8c75d1ca16c9a80c5380575c3105"><div class="ttname"><a href="wario__kart_8h.html#a0aba8c75d1ca16c9a80c5380575c3105">wario_kart_wheels</a></div><div class="ttdeci">static const char * wario_kart_wheels[]</div><div class="ttdef"><b>Definition</b> wario_kart.h:4694</div></div>
+<div class="ttc" id="ayoshi__kart_8h_html_a2fa260b0b9d7d1938c3ddbffd472d17a"><div class="ttname"><a href="yoshi__kart_8h.html#a2fa260b0b9d7d1938c3ddbffd472d17a">yoshi_kart_wheels</a></div><div class="ttdeci">static const char * yoshi_kart_wheels[]</div><div class="ttdef"><b>Definition</b> yoshi_kart.h:4694</div></div>
 </div><!-- fragment -->
 </div>
 </div>

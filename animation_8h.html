@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/animation.h File Reference</title>
+<title>SpaghettiKart: src/animation.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -123,7 +123,7 @@ Include dependency graph for animation.h:</div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="animation_8h__dep__incl.svg" width="100%" height="580"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="animation_8h__dep__incl.svg" width="100%" height="514"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div>
 <p><a href="animation_8h_source.html">Go to the source code of this file.</a></p>
@@ -211,9 +211,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#ad2930e1d05f3b039396c5149ac1cb65c">ANIMATION_RENDER_MODEL_AT</a>((<a class="code hl_typedef" href="llconv_8c.html#a5ace6ff5dbe86acc6c8b3387b8d80ecc">s64</a>) <a class="code hl_define" href="miniaudio_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, x, y, z)</div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_define" href="#ad2930e1d05f3b039396c5149ac1cb65c">ANIMATION_RENDER_MODEL_AT</a>((uintptr_t) <a class="code hl_define" href="miniaudio_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, x, y, z)</div>
 <div class="ttc" id="aanimation_8h_html_ad2930e1d05f3b039396c5149ac1cb65c"><div class="ttname"><a href="#ad2930e1d05f3b039396c5149ac1cb65c">ANIMATION_RENDER_MODEL_AT</a></div><div class="ttdeci">#define ANIMATION_RENDER_MODEL_AT(model, x, y, z)</div><div class="ttdoc">the pos is relative to the previous RENDER_MODEL_OR_ADD_POS if ANIMATION_DISABLE_AUTOMATIC_POP is use...</div><div class="ttdef"><b>Definition</b> animation.h:171</div></div>
-<div class="ttc" id="allconv_8c_html_a5ace6ff5dbe86acc6c8b3387b8d80ecc"><div class="ttname"><a href="llconv_8c.html#a5ace6ff5dbe86acc6c8b3387b8d80ecc">s64</a></div><div class="ttdeci">signed long long int s64</div><div class="ttdef"><b>Definition</b> llconv.c:1</div></div>
 <div class="ttc" id="aminiaudio_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="miniaudio_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition</b> miniaudio.h:3851</div></div>
 </div><!-- fragment -->
 <p>use RENDER_MODEL_OR_ADD_POS </p>
@@ -296,7 +295,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_enumvalue" href="#a52e412534f1af21caf39f50ea61280cea89e2160937075058c35008e43581de7e">RENDER_MODEL_OR_ADD_POS</a>, 0x00000007, 0x00000000, (<a class="code hl_typedef" href="llconv_8c.html#a5ace6ff5dbe86acc6c8b3387b8d80ecc">s64</a>) model, x, y, z</div>
+<b>Value:</b><div class="fragment"><div class="line"><a class="code hl_enumvalue" href="#a52e412534f1af21caf39f50ea61280cea89e2160937075058c35008e43581de7e">RENDER_MODEL_OR_ADD_POS</a>, 0x00000007, 0x00000000, (uintptr_t) model, x, y, z</div>
 <div class="ttc" id="aanimation_8h_html_a52e412534f1af21caf39f50ea61280cea89e2160937075058c35008e43581de7e"><div class="ttname"><a href="#a52e412534f1af21caf39f50ea61280cea89e2160937075058c35008e43581de7e">RENDER_MODEL_OR_ADD_POS</a></div><div class="ttdeci">@ RENDER_MODEL_OR_ADD_POS</div><div class="ttdef"><b>Definition</b> animation.h:177</div></div>
 </div><!-- fragment -->
 <p>the pos is relative to the previous RENDER_MODEL_OR_ADD_POS if ANIMATION_DISABLE_AUTOMATIC_POP is used </p>

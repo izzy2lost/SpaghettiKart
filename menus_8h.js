@@ -50,6 +50,7 @@ var menus_8h =
       [ "DEBUG_MENU_SCREEN_MODE", "menus_8h.html#ae19736bcf4a3556fd62ad21bf5773e7ca4be120a56f99914d803d852c29f78af7", null ],
       [ "DEBUG_MENU_PLAYER", "menus_8h.html#ae19736bcf4a3556fd62ad21bf5773e7ca83aed20e05b9f4455d08d8c95844dbc4", null ],
       [ "DEBUG_MENU_SOUND_MODE", "menus_8h.html#ae19736bcf4a3556fd62ad21bf5773e7caea406d2fa030183f08b58432e98a2def", null ],
+      [ "DEBUG_MENU_LAUNCH_EDITOR", "menus_8h.html#ae19736bcf4a3556fd62ad21bf5773e7cada1984f0273714510270fceebc74a0b0", null ],
       [ "DEBUG_MENU_GIVE_ALL_GOLD_CUP", "menus_8h.html#ae19736bcf4a3556fd62ad21bf5773e7ca70c464afdb5c2c851ecae709e7b5b71d", null ],
       [ "DEBUG_MENU_OPTION_SELECTED", "menus_8h.html#ae19736bcf4a3556fd62ad21bf5773e7ca520c391db4f8a90acb8bf5d520da20b0", null ]
     ] ],
@@ -169,7 +170,6 @@ var menus_8h =
     [ "gControllerPakSelectedTableRow", "menus_8h.html#a57fe07151f509d6744b8d1c833092441", null ],
     [ "gControllerPakVisibleTableRows", "menus_8h.html#a27eb671c5c32e9256d6b888c00d129c7", null ],
     [ "gCourseIndexInCup", "menus_8h.html#a74be912e8257090794cfa87efabf6f98", null ],
-    [ "gCourseMapInit", "menus_8h.html#a1a54c2d14262c5105a382a6f87efab84", null ],
     [ "gCourseRecordsMenuSelection", "menus_8h.html#a58e992f1060c02737f9e3a3a737b08b9", null ],
     [ "gCourseRecordsSubMenuSelection", "menus_8h.html#a7f7ed21e335dd7e240d9ef23615b6b04", null ],
     [ "gCupCourseOrder", "menus_8h.html#a3ae54c53b0440d6078f34cc9b50af9e8", null ],
@@ -204,6 +204,7 @@ var menus_8h =
     [ "gSubMenuSelection", "menus_8h.html#a1f299d56d9d5919d9a86e79ffc87dfb0", null ],
     [ "gTimeTrialDataCourseIndex", "menus_8h.html#a14db07fddab03b07c2949902dad0ffd8", null ],
     [ "gTimeTrialsResultCursorSelection", "menus_8h.html#a7e69e22a0a18014a2ce5337a611bf67e", null ],
+    [ "gTrackMapInit", "menus_8h.html#afdfca5e0b5c9d84dfd1444dd8163ae29", null ],
     [ "gVersusResultCursorSelection", "menus_8h.html#ad73f0b009380559c79f4a3e291b8cf8a", null ],
     [ "sCharacterGridOrder", "menus_8h.html#a5664cd9260fe5fbdb0e4d29dd748e5d5", null ],
     [ "sGameModePlayerColumnDefault", "menus_8h.html#a347e763cb512143cde42c05344c8a122", null ],

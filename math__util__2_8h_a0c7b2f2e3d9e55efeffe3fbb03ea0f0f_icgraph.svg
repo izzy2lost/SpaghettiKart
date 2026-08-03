@@ -283,9 +283,9 @@ var sectionId = 'dynsection-4';
 <!-- Node4 -->
 <g id="Node000004" class="node">
 <title>Node4</title>
-<g id="a_Node000004"><a xlink:href="Game_8cpp.html#a6637da587160fff999705feef425e14b" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1910.5,-411 1767.5,-411 1767.5,-392 1910.5,-392 1910.5,-411"/>
-<text text-anchor="middle" x="1839" y="-399" font-family="Helvetica,sans-Serif" font-size="10.00">CM_UpdateCourseObjects</text>
+<g id="a_Node000004"><a xlink:href="Game_8cpp.html#aa7aef6b733545609568083638a4bb38e" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="1899,-411 1779,-411 1779,-392 1899,-392 1899,-411"/>
+<text text-anchor="middle" x="1839" y="-399" font-family="Helvetica,sans-Serif" font-size="10.00">CM_TickTrackObjects</text>
 </a>
 </g>
 </g>
@@ -293,7 +293,7 @@ var sectionId = 'dynsection-4';
 <g id="edge3_Node000003_Node000004" class="edge">
 <title>Node3&#45;&gt;Node4</title>
 <g id="a_edge3_Node000003_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1994.52,-401.5C1968.84,-401.5 1938.11,-401.5 1910.84,-401.5"/>
+<path fill="none" stroke="#63b8ff" d="M1994.71,-401.5C1965.26,-401.5 1929.13,-401.5 1899.2,-401.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1994.82,-405 2004.82,-401.5 1994.82,-398 1994.82,-405"/>
 </a>
 </g>
@@ -301,9 +301,9 @@ var sectionId = 'dynsection-4';
 <!-- Node5 -->
 <g id="Node000005" class="node">
 <title>Node5</title>
-<g id="a_Node000005"><a xlink:href="code__80057C60_8c.html#a22c0f603a5c87f883a26284082d099f8" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1686.5,-411 1600.5,-411 1600.5,-392 1686.5,-392 1686.5,-411"/>
-<text text-anchor="middle" x="1643.5" y="-399" font-family="Helvetica,sans-Serif" font-size="10.00">update_object</text>
+<g id="a_Node000005"><a xlink:href="code__80057C60_8c.html#a47dd2884e5a0c8902fd6ee5804e52bf9" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="1681,-411 1606,-411 1606,-392 1681,-392 1681,-411"/>
+<text text-anchor="middle" x="1643.5" y="-399" font-family="Helvetica,sans-Serif" font-size="10.00">tick_objects</text>
 </a>
 </g>
 </g>
@@ -311,8 +311,8 @@ var sectionId = 'dynsection-4';
 <g id="edge4_Node000004_Node000005" class="edge">
 <title>Node4&#45;&gt;Node5</title>
 <g id="a_edge4_Node000004_Node000005"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1757.04,-401.5C1732.81,-401.5 1707.23,-401.5 1686.58,-401.5"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1757.32,-405 1767.32,-401.5 1757.32,-398 1757.32,-405"/>
+<path fill="none" stroke="#63b8ff" d="M1768.6,-401.5C1739.02,-401.5 1705.72,-401.5 1681.07,-401.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1768.89,-405 1778.89,-401.5 1768.89,-398 1768.89,-405"/>
 </a>
 </g>
 </g>
@@ -329,8 +329,8 @@ var sectionId = 'dynsection-4';
 <g id="edge5_Node000005_Node000006" class="edge">
 <title>Node5&#45;&gt;Node6</title>
 <g id="a_edge5_Node000005_Node000006"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1590.04,-401.5C1576.37,-401.5 1561.76,-401.5 1548.49,-401.5"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="1590.27,-405 1600.27,-401.5 1590.27,-398 1590.27,-405"/>
+<path fill="none" stroke="#63b8ff" d="M1595.56,-401.5C1580.25,-401.5 1563.3,-401.5 1548.13,-401.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="1595.85,-405 1605.85,-401.5 1595.85,-398 1595.85,-405"/>
 </a>
 </g>
 </g>
@@ -772,9 +772,9 @@ var sectionId = 'dynsection-4';
 <!-- Node52 -->
 <g id="Node000052" class="node">
 <title>Node52</title>
-<g id="a_Node000052"><a xlink:href="classDKJungle.html#a82dac562614420b4bcc2a7fa31a27e77" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="1925.5,-454 1752.5,-454 1752.5,-435 1925.5,-435 1925.5,-454"/>
-<text text-anchor="middle" x="1839" y="-442" font-family="Helvetica,sans-Serif" font-size="10.00">DKJungle::UpdateCourseObjects</text>
+<g id="a_Node000052"><a xlink:href="classDKJungle.html#abe804d70a4ca7d014824bc248e7f3133" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="1913.5,-454 1764.5,-454 1764.5,-435 1913.5,-435 1913.5,-454"/>
+<text text-anchor="middle" x="1839" y="-442" font-family="Helvetica,sans-Serif" font-size="10.00">DKJungle::TickTrackObjects</text>
 </a>
 </g>
 </g>
@@ -782,7 +782,7 @@ var sectionId = 'dynsection-4';
 <g id="edge38_Node000051_Node000052" class="edge">
 <title>Node51&#45;&gt;Node52</title>
 <g id="a_edge38_Node000051_Node000052"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M1978.37,-444.5C1961.37,-444.5 1943.09,-444.5 1925.57,-444.5"/>
+<path fill="none" stroke="#63b8ff" d="M1978.64,-444.5C1957.67,-444.5 1934.72,-444.5 1913.64,-444.5"/>
 <polygon fill="#63b8ff" stroke="#63b8ff" points="1978.77,-448 1988.77,-444.5 1978.77,-441 1978.77,-448"/>
 </a>
 </g>

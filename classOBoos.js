@@ -1,11 +1,12 @@
 var classOBoos =
 [
-    [ "OBoos", "classOBoos.html#abe825a5b1651287a9516ddb09d3eb00a", null ],
+    [ "OBoos", "classOBoos.html#a5ca65fe45b8fad72d56d3a8c68f7b23d", null ],
     [ "~OBoos", "classOBoos.html#a1f9d6082a095f8b1b94718e962803d49", null ],
     [ "BooExit", "classOBoos.html#a7978ba6a56cdfa9ffba006b17eea9924", null ],
     [ "BooStart", "classOBoos.html#ae483fd8a41943142007f6cc050efe7d0", null ],
     [ "Draw", "classOBoos.html#a0d0c2c54e84a8b7f384680c13af12673", null ],
-    [ "func_800523B8", "classOBoos.html#a6481d9811ecb0b976fd51ccbb1011ba5", null ],
+    [ "DrawEditorProperties", "classOBoos.html#a485598b249951b9b1a2591df9e159ce1", null ],
+    [ "func_800523B8", "classOBoos.html#a788942157fec6b0285d501947000f9c5", null ],
     [ "func_8007C4A4", "classOBoos.html#a0f55a08d009e8e79d1da684a2881c983", null ],
     [ "func_8007C550", "classOBoos.html#a3b36c7f54ce8cecb2e968dfa1481c31c", null ],
     [ "func_8007C5B4", "classOBoos.html#a186ed6315077567455c3f8cb258223c9", null ],
@@ -13,15 +14,17 @@ var classOBoos =
     [ "func_8007C9F8", "classOBoos.html#a5a84299515b67c4a13617843fff97e61", null ],
     [ "func_8007CA70", "classOBoos.html#a6f41eb48db6d60ec48989dfd30d2fcd9", null ],
     [ "GetCount", "classOBoos.html#a12cd9861039fafc289bad7b2a9459c47", null ],
+    [ "SetSpawnParams", "classOBoos.html#a123adc574849a28fab28a6bfa3b49228", null ],
+    [ "Spawn", "classOBoos.html#a34df91f7b0d5547de03511ddecfaabbc", null ],
     [ "Tick", "classOBoos.html#a12c6c9d602befe0bdc7383aa3f3530ed", null ],
-    [ "_active", "classOBoos.html#ad7d7a50b1634e9dc3666ffe9cb2b828d", null ],
     [ "_count", "classOBoos.html#a6b6c023d8a81b51a39dcccbb277f2361", null ],
     [ "_idx", "classOBoos.html#a402be78765793b96f78bb11d4ed72437", null ],
     [ "_indices", "classOBoos.html#a4f7a4190d1c52660c58e0de843b1a2d2", null ],
     [ "_isActive", "classOBoos.html#a6a8f8e69d489509fc66f8c48115196cb", null ],
-    [ "_leftBoundary", "classOBoos.html#a859ad574ee7050d1c09c52a8198bbd90", null ],
     [ "_numBoos", "classOBoos.html#abda2a54d3069acb859773161d1970da5", null ],
     [ "_playerId", "classOBoos.html#a494f0a297ebf1f3c9017d79b9ae00788", null ],
     [ "_pos", "classOBoos.html#ae265aafb6a43d4628b7f6afe8635e303", null ],
-    [ "_rightBoundary", "classOBoos.html#a5259c1df9330c62388cd5dc53576877a", null ]
+    [ "ActiveZone", "classOBoos.html#addc207bead6c10be75cedbe7db434b1b", null ],
+    [ "LeftTrigger", "classOBoos.html#a07e984e446fb9d77a66287bae5676ab1", null ],
+    [ "RightTrigger", "classOBoos.html#a06c7ba813761c3f04155694f28031269", null ]
 ];

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/port/resource/type/TrackSections.h Source File</title>
+<title>SpaghettiKart: src/port/resource/type/TrackSections.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -110,77 +110,52 @@ $(function(){initNavTree('TrackSections_8h_source.html',''); initResizable(true)
 <div class="contents">
 <a href="TrackSections_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;resource/Resource.h&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;ship/resource/Resource.h&quot;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;libultra/gbi.h&gt;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="structTrackSectionsI.html">    7</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="structTrackSectionsI.html#aff11083f81a72bfe003420a1d7a3bec2">    8</a></span>    uintptr_t <a class="code hl_variable" href="structTrackSectionsI.html#aff11083f81a72bfe003420a1d7a3bec2">addr</a>;</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="structTrackSectionsI.html#a4312f7c330393b6a80c29fcf0e23205c">    9</a></span>    uint8_t <a class="code hl_variable" href="structTrackSectionsI.html#a4312f7c330393b6a80c29fcf0e23205c">surfaceType</a>;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="structTrackSectionsI.html#a8f2ba4781a6eff3e7a13abf678cc0cf3">   10</a></span>    uint8_t <a class="code hl_variable" href="structTrackSectionsI.html#a8f2ba4781a6eff3e7a13abf678cc0cf3">sectionId</a>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="structTrackSectionsI.html#acfdbf1ddbc243019642409ff3422efb4">   11</a></span>    uint16_t <a class="code hl_variable" href="structTrackSectionsI.html#acfdbf1ddbc243019642409ff3422efb4">flags</a>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>} <a class="code hl_struct" href="structTrackSectionsI.html">TrackSectionsI</a>;</div>
-</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structTrackSectionsO2R.html">   14</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="structTrackSectionsO2R.html#a0deba07df881ceb9c2f11fe082af3bd9">   15</a></span>    std::string <a class="code hl_variable" href="structTrackSectionsO2R.html#a0deba07df881ceb9c2f11fe082af3bd9">addr</a>;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structTrackSectionsO2R.html#a386f5f12c36e052bdd209f7ecf7e68ef">   16</a></span>    uint8_t <a class="code hl_variable" href="structTrackSectionsO2R.html#a386f5f12c36e052bdd209f7ecf7e68ef">surfaceType</a>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structTrackSectionsO2R.html#a7aa303cbc301417d8c93336ce13de273">   17</a></span>    uint8_t <a class="code hl_variable" href="structTrackSectionsO2R.html#a7aa303cbc301417d8c93336ce13de273">sectionId</a>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structTrackSectionsO2R.html#afee03b5d9e6dde4d070710e79c482f67">   18</a></span>    uint16_t <a class="code hl_variable" href="structTrackSectionsO2R.html#afee03b5d9e6dde4d070710e79c482f67">flags</a>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>} <a class="code hl_struct" href="structTrackSectionsO2R.html">TrackSectionsO2R</a>;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="Track_8h.html">src/engine/tracks/Track.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceMK64.html">MK64</a> {</div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classMK64_1_1TrackSectionsClass.html">    9</a></span><span class="keyword">class </span><a class="code hl_function" href="classMK64_1_1TrackSectionsClass.html#a0b26779156621d4e6c942c2a25c638f7">TrackSectionsClass</a> : <span class="keyword">public</span> Ship::Resource&lt;TrackSections&gt; {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">using </span>Resource::Resource;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_function" href="classMK64_1_1TrackSectionsClass.html#a0b26779156621d4e6c942c2a25c638f7">TrackSectionsClass</a>();</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <a class="code hl_struct" href="structTrackSections.html">TrackSections</a>* <a class="code hl_function" href="classMK64_1_1TrackSectionsClass.html#a7439c691d1a414b2e2718572d95f559c">GetPointer</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classMK64_1_1TrackSectionsClass.html#a51b3d54fbbff5e6650552eb2897a6c7a">GetPointerSize</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classMK64_1_1TrackSectionsClass.html#aa43f9663e620819d45a8994dab462f53">   18</a></span>    std::vector&lt;TrackSections&gt; <a class="code hl_variable" href="classMK64_1_1TrackSectionsClass.html#aa43f9663e620819d45a8994dab462f53">TrackSectionsList</a>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>};</div>
 </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceMK64.html">MK64</a> {</div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classMK64_1_1TrackSectionsClass.html">   22</a></span><span class="keyword">class </span><a class="code hl_function" href="classMK64_1_1TrackSectionsClass.html#a0b26779156621d4e6c942c2a25c638f7">TrackSectionsClass</a> : <span class="keyword">public</span> Ship::Resource&lt;TrackSectionsI&gt; {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">using </span>Resource::Resource;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_function" href="classMK64_1_1TrackSectionsClass.html#a0b26779156621d4e6c942c2a25c638f7">TrackSectionsClass</a>();</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_struct" href="structTrackSectionsI.html">TrackSectionsI</a>* <a class="code hl_function" href="classMK64_1_1TrackSectionsClass.html#a996e5a51151c4e1a69b52bd5cc70d5bd">GetPointer</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classMK64_1_1TrackSectionsClass.html#a51b3d54fbbff5e6650552eb2897a6c7a">GetPointerSize</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classMK64_1_1TrackSectionsClass.html#adec064e8ac00318ae42309fb28fe710a">   31</a></span>    std::vector&lt;TrackSectionsI&gt; <a class="code hl_variable" href="classMK64_1_1TrackSectionsClass.html#adec064e8ac00318ae42309fb28fe710a">TrackSectionsList</a>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="};">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classMK64_1_1TrackSectionsO2RClass.html">   21</a></span><span class="keyword">class </span><a class="code hl_function" href="classMK64_1_1TrackSectionsO2RClass.html#ac4757b8627dc3255856dacf5f76702ed">TrackSectionsO2RClass</a> : <span class="keyword">public</span> Ship::Resource&lt;TrackSections&gt; {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">using </span>Resource::Resource;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_function" href="classMK64_1_1TrackSectionsO2RClass.html#ac4757b8627dc3255856dacf5f76702ed">TrackSectionsO2RClass</a>();</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_struct" href="structTrackSections.html">TrackSections</a>* <a class="code hl_function" href="classMK64_1_1TrackSectionsO2RClass.html#ab5bb928d2919508d979dee040b3410c0">GetPointer</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classMK64_1_1TrackSectionsO2RClass.html#aa23c2e401f323aff2ed569b76c196c65">GetPointerSize</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classMK64_1_1TrackSectionsO2RClass.html#a198f4f9a50471b8e719d5e0450669796">   30</a></span>    std::vector&lt;TrackSections&gt; <a class="code hl_variable" href="classMK64_1_1TrackSectionsO2RClass.html#a198f4f9a50471b8e719d5e0450669796">TrackSectionsList</a>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>};</div>
 </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="foldopen" id="foldopen00034" data-start="{" data-end="};">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classMK64_1_1TrackSectionsO2RClass.html">   34</a></span><span class="keyword">class </span><a class="code hl_function" href="classMK64_1_1TrackSectionsO2RClass.html#ac4757b8627dc3255856dacf5f76702ed">TrackSectionsO2RClass</a> : <span class="keyword">public</span> Ship::Resource&lt;TrackSectionsO2R&gt; {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">using </span>Resource::Resource;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_function" href="classMK64_1_1TrackSectionsO2RClass.html#ac4757b8627dc3255856dacf5f76702ed">TrackSectionsO2RClass</a>();</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_struct" href="structTrackSectionsO2R.html">TrackSectionsO2R</a>* <a class="code hl_function" href="classMK64_1_1TrackSectionsO2RClass.html#ad6decdb1b0b974561121a1e25b61da32">GetPointer</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">size_t</span> <a class="code hl_function" href="classMK64_1_1TrackSectionsO2RClass.html#aa23c2e401f323aff2ed569b76c196c65">GetPointerSize</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classMK64_1_1TrackSectionsO2RClass.html#a42f9d5ac2f0162c483887ce690552794">   43</a></span>    std::vector&lt;TrackSectionsO2R&gt; <a class="code hl_variable" href="classMK64_1_1TrackSectionsO2RClass.html#a42f9d5ac2f0162c483887ce690552794">TrackSectionsList</a>;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>};</div>
-</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>} <span class="comment">// namespace MK64</span></div>
-<div class="ttc" id="aclassMK64_1_1TrackSectionsClass_html_a0b26779156621d4e6c942c2a25c638f7"><div class="ttname"><a href="classMK64_1_1TrackSectionsClass.html#a0b26779156621d4e6c942c2a25c638f7">MK64::TrackSectionsClass::TrackSectionsClass</a></div><div class="ttdeci">TrackSectionsClass()</div><div class="ttdef"><b>Definition</b> TrackSections.cpp:5</div></div>
-<div class="ttc" id="aclassMK64_1_1TrackSectionsClass_html_a51b3d54fbbff5e6650552eb2897a6c7a"><div class="ttname"><a href="classMK64_1_1TrackSectionsClass.html#a51b3d54fbbff5e6650552eb2897a6c7a">MK64::TrackSectionsClass::GetPointerSize</a></div><div class="ttdeci">size_t GetPointerSize() override</div><div class="ttdef"><b>Definition</b> TrackSections.cpp:12</div></div>
-<div class="ttc" id="aclassMK64_1_1TrackSectionsClass_html_a996e5a51151c4e1a69b52bd5cc70d5bd"><div class="ttname"><a href="classMK64_1_1TrackSectionsClass.html#a996e5a51151c4e1a69b52bd5cc70d5bd">MK64::TrackSectionsClass::GetPointer</a></div><div class="ttdeci">TrackSectionsI * GetPointer() override</div><div class="ttdef"><b>Definition</b> TrackSections.cpp:8</div></div>
-<div class="ttc" id="aclassMK64_1_1TrackSectionsClass_html_adec064e8ac00318ae42309fb28fe710a"><div class="ttname"><a href="classMK64_1_1TrackSectionsClass.html#adec064e8ac00318ae42309fb28fe710a">MK64::TrackSectionsClass::TrackSectionsList</a></div><div class="ttdeci">std::vector&lt; TrackSectionsI &gt; TrackSectionsList</div><div class="ttdef"><b>Definition</b> TrackSections.h:31</div></div>
-<div class="ttc" id="aclassMK64_1_1TrackSectionsO2RClass_html_a42f9d5ac2f0162c483887ce690552794"><div class="ttname"><a href="classMK64_1_1TrackSectionsO2RClass.html#a42f9d5ac2f0162c483887ce690552794">MK64::TrackSectionsO2RClass::TrackSectionsList</a></div><div class="ttdeci">std::vector&lt; TrackSectionsO2R &gt; TrackSectionsList</div><div class="ttdef"><b>Definition</b> TrackSections.h:43</div></div>
-<div class="ttc" id="aclassMK64_1_1TrackSectionsO2RClass_html_aa23c2e401f323aff2ed569b76c196c65"><div class="ttname"><a href="classMK64_1_1TrackSectionsO2RClass.html#aa23c2e401f323aff2ed569b76c196c65">MK64::TrackSectionsO2RClass::GetPointerSize</a></div><div class="ttdeci">size_t GetPointerSize() override</div><div class="ttdef"><b>Definition</b> TrackSections.cpp:23</div></div>
-<div class="ttc" id="aclassMK64_1_1TrackSectionsO2RClass_html_ac4757b8627dc3255856dacf5f76702ed"><div class="ttname"><a href="classMK64_1_1TrackSectionsO2RClass.html#ac4757b8627dc3255856dacf5f76702ed">MK64::TrackSectionsO2RClass::TrackSectionsO2RClass</a></div><div class="ttdeci">TrackSectionsO2RClass()</div><div class="ttdef"><b>Definition</b> TrackSections.cpp:16</div></div>
-<div class="ttc" id="aclassMK64_1_1TrackSectionsO2RClass_html_ad6decdb1b0b974561121a1e25b61da32"><div class="ttname"><a href="classMK64_1_1TrackSectionsO2RClass.html#ad6decdb1b0b974561121a1e25b61da32">MK64::TrackSectionsO2RClass::GetPointer</a></div><div class="ttdeci">TrackSectionsO2R * GetPointer() override</div><div class="ttdef"><b>Definition</b> TrackSections.cpp:19</div></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>} <span class="comment">// namespace MK64</span></div>
+<div class="ttc" id="aTrack_8h_html"><div class="ttname"><a href="Track_8h.html">Track.h</a></div></div>
+<div class="ttc" id="aclassMK64_1_1TrackSectionsClass_html_a0b26779156621d4e6c942c2a25c638f7"><div class="ttname"><a href="classMK64_1_1TrackSectionsClass.html#a0b26779156621d4e6c942c2a25c638f7">MK64::TrackSectionsClass::TrackSectionsClass</a></div><div class="ttdeci">TrackSectionsClass()</div><div class="ttdef"><b>Definition</b> TrackSections.cpp:6</div></div>
+<div class="ttc" id="aclassMK64_1_1TrackSectionsClass_html_a51b3d54fbbff5e6650552eb2897a6c7a"><div class="ttname"><a href="classMK64_1_1TrackSectionsClass.html#a51b3d54fbbff5e6650552eb2897a6c7a">MK64::TrackSectionsClass::GetPointerSize</a></div><div class="ttdeci">size_t GetPointerSize() override</div><div class="ttdef"><b>Definition</b> TrackSections.cpp:13</div></div>
+<div class="ttc" id="aclassMK64_1_1TrackSectionsClass_html_a7439c691d1a414b2e2718572d95f559c"><div class="ttname"><a href="classMK64_1_1TrackSectionsClass.html#a7439c691d1a414b2e2718572d95f559c">MK64::TrackSectionsClass::GetPointer</a></div><div class="ttdeci">TrackSections * GetPointer() override</div><div class="ttdef"><b>Definition</b> TrackSections.cpp:9</div></div>
+<div class="ttc" id="aclassMK64_1_1TrackSectionsClass_html_aa43f9663e620819d45a8994dab462f53"><div class="ttname"><a href="classMK64_1_1TrackSectionsClass.html#aa43f9663e620819d45a8994dab462f53">MK64::TrackSectionsClass::TrackSectionsList</a></div><div class="ttdeci">std::vector&lt; TrackSections &gt; TrackSectionsList</div><div class="ttdef"><b>Definition</b> TrackSections.h:18</div></div>
+<div class="ttc" id="aclassMK64_1_1TrackSectionsO2RClass_html_a198f4f9a50471b8e719d5e0450669796"><div class="ttname"><a href="classMK64_1_1TrackSectionsO2RClass.html#a198f4f9a50471b8e719d5e0450669796">MK64::TrackSectionsO2RClass::TrackSectionsList</a></div><div class="ttdeci">std::vector&lt; TrackSections &gt; TrackSectionsList</div><div class="ttdef"><b>Definition</b> TrackSections.h:30</div></div>
+<div class="ttc" id="aclassMK64_1_1TrackSectionsO2RClass_html_aa23c2e401f323aff2ed569b76c196c65"><div class="ttname"><a href="classMK64_1_1TrackSectionsO2RClass.html#aa23c2e401f323aff2ed569b76c196c65">MK64::TrackSectionsO2RClass::GetPointerSize</a></div><div class="ttdeci">size_t GetPointerSize() override</div><div class="ttdef"><b>Definition</b> TrackSections.cpp:24</div></div>
+<div class="ttc" id="aclassMK64_1_1TrackSectionsO2RClass_html_ab5bb928d2919508d979dee040b3410c0"><div class="ttname"><a href="classMK64_1_1TrackSectionsO2RClass.html#ab5bb928d2919508d979dee040b3410c0">MK64::TrackSectionsO2RClass::GetPointer</a></div><div class="ttdeci">TrackSections * GetPointer() override</div><div class="ttdef"><b>Definition</b> TrackSections.cpp:20</div></div>
+<div class="ttc" id="aclassMK64_1_1TrackSectionsO2RClass_html_ac4757b8627dc3255856dacf5f76702ed"><div class="ttname"><a href="classMK64_1_1TrackSectionsO2RClass.html#ac4757b8627dc3255856dacf5f76702ed">MK64::TrackSectionsO2RClass::TrackSectionsO2RClass</a></div><div class="ttdeci">TrackSectionsO2RClass()</div><div class="ttdef"><b>Definition</b> TrackSections.cpp:17</div></div>
 <div class="ttc" id="anamespaceMK64_html"><div class="ttname"><a href="namespaceMK64.html">MK64</a></div><div class="ttdef"><b>Definition</b> ActorSpawnDataFactory.cpp:7</div></div>
-<div class="ttc" id="astructTrackSectionsI_html"><div class="ttname"><a href="structTrackSectionsI.html">TrackSectionsI</a></div><div class="ttdef"><b>Definition</b> TrackSections.h:7</div></div>
-<div class="ttc" id="astructTrackSectionsI_html_a4312f7c330393b6a80c29fcf0e23205c"><div class="ttname"><a href="structTrackSectionsI.html#a4312f7c330393b6a80c29fcf0e23205c">TrackSectionsI::surfaceType</a></div><div class="ttdeci">uint8_t surfaceType</div><div class="ttdef"><b>Definition</b> TrackSections.h:9</div></div>
-<div class="ttc" id="astructTrackSectionsI_html_a8f2ba4781a6eff3e7a13abf678cc0cf3"><div class="ttname"><a href="structTrackSectionsI.html#a8f2ba4781a6eff3e7a13abf678cc0cf3">TrackSectionsI::sectionId</a></div><div class="ttdeci">uint8_t sectionId</div><div class="ttdef"><b>Definition</b> TrackSections.h:10</div></div>
-<div class="ttc" id="astructTrackSectionsI_html_acfdbf1ddbc243019642409ff3422efb4"><div class="ttname"><a href="structTrackSectionsI.html#acfdbf1ddbc243019642409ff3422efb4">TrackSectionsI::flags</a></div><div class="ttdeci">uint16_t flags</div><div class="ttdef"><b>Definition</b> TrackSections.h:11</div></div>
-<div class="ttc" id="astructTrackSectionsI_html_aff11083f81a72bfe003420a1d7a3bec2"><div class="ttname"><a href="structTrackSectionsI.html#aff11083f81a72bfe003420a1d7a3bec2">TrackSectionsI::addr</a></div><div class="ttdeci">uintptr_t addr</div><div class="ttdef"><b>Definition</b> TrackSections.h:8</div></div>
-<div class="ttc" id="astructTrackSectionsO2R_html"><div class="ttname"><a href="structTrackSectionsO2R.html">TrackSectionsO2R</a></div><div class="ttdef"><b>Definition</b> TrackSections.h:14</div></div>
-<div class="ttc" id="astructTrackSectionsO2R_html_a0deba07df881ceb9c2f11fe082af3bd9"><div class="ttname"><a href="structTrackSectionsO2R.html#a0deba07df881ceb9c2f11fe082af3bd9">TrackSectionsO2R::addr</a></div><div class="ttdeci">std::string addr</div><div class="ttdef"><b>Definition</b> TrackSections.h:15</div></div>
-<div class="ttc" id="astructTrackSectionsO2R_html_a386f5f12c36e052bdd209f7ecf7e68ef"><div class="ttname"><a href="structTrackSectionsO2R.html#a386f5f12c36e052bdd209f7ecf7e68ef">TrackSectionsO2R::surfaceType</a></div><div class="ttdeci">uint8_t surfaceType</div><div class="ttdef"><b>Definition</b> TrackSections.h:16</div></div>
-<div class="ttc" id="astructTrackSectionsO2R_html_a7aa303cbc301417d8c93336ce13de273"><div class="ttname"><a href="structTrackSectionsO2R.html#a7aa303cbc301417d8c93336ce13de273">TrackSectionsO2R::sectionId</a></div><div class="ttdeci">uint8_t sectionId</div><div class="ttdef"><b>Definition</b> TrackSections.h:17</div></div>
-<div class="ttc" id="astructTrackSectionsO2R_html_afee03b5d9e6dde4d070710e79c482f67"><div class="ttname"><a href="structTrackSectionsO2R.html#afee03b5d9e6dde4d070710e79c482f67">TrackSectionsO2R::flags</a></div><div class="ttdeci">uint16_t flags</div><div class="ttdef"><b>Definition</b> TrackSections.h:18</div></div>
+<div class="ttc" id="astructTrackSections_html"><div class="ttname"><a href="structTrackSections.html">TrackSections</a></div><div class="ttdef"><b>Definition</b> Track.h:81</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

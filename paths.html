@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: Paths</title>
+<title>SpaghettiKart: Paths</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -108,16 +108,33 @@ $(function(){initNavTree('paths.html',''); initResizable(true); });
   <div class="headertitle"><div class="title">Paths</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The game uses multiple types of course paths</p>
-<h1><a class="anchor" id="course-paths"></a>
-Course Paths</h1>
-<p>Used by courses</p>
-<h1><a class="anchor" id="horizontal-paths-no-y-coordinate"></a>
-Horizontal Paths (no Y coordinate)</h1>
-<p>Used by the train</p>
-<h1><a class="anchor" id="camera-rails"></a>
-Camera Rails</h1>
-<p>Pathing for the camera during end of race scene, podium ceremony, and credits. </p>
+<div class="textblock"><p>The game uses multiple types of track paths</p>
+<h1><a class="anchor" id="track-paths"></a>
+Track Paths</h1>
+<p>Allows CPUs to follow the track and for the game to track player progress</p><ul>
+<li>Up to fourth track paths are allowed and one vehicle path</li>
+<li>Average track uses ~800 points. Any number is allowed.</li>
+<li>For best results, place path points evenly apart spacing each one by around 0.20 blender units</li>
+<li>The first path point must be placed at (0,0,0)</li>
+</ul>
+<h1><a class="anchor" id="supported-blender-paths"></a>
+Supported Blender paths</h1>
+<ul>
+<li>Bezier Curve</li>
+<li>Nurbs Path (just called path)</li>
+</ul>
+<p><img src="image-23.png" alt="alt text" class="inline"/></p>
+<ul>
+<li>The nurbs path is the easiest to use.</li>
+<li>The track path must face positive Y in blender</li>
+</ul>
+<h2><a class="anchor" id="path-type"></a>
+Path Type</h2>
+<p>This allows the user to select which path is which. Path 1 is required and must be the main path.</p>
+<p>The other paths must circle the entire track, splitting off wherever, and are optional.</p>
+<p>The vehicle path is for trains, boats, cars, etc.</p>
+<p><img src="image-24.png" alt="alt text" class="inline"/></p>
+<p>See the overview guide for more details </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
 </div><!-- doc-content -->

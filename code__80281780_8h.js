@@ -4,8 +4,6 @@ var code__80281780_8h =
     [ "func_80281880", "code__80281780_8h.html#a934c8238d1e7f3ddbbef4c6738194097", null ],
     [ "func_802818BC", "code__80281780_8h.html#af05d725c838e028965e71803e80f9d4e", null ],
     [ "setup_podium_ceremony", "code__80281780_8h.html#a59f61302f1f5f6ecab728bf08608d16b", null ],
-    [ "_course_banshee_boardwalk_dl_mio0SegmentRomStart", "code__80281780_8h.html#ad268afb00054fde31e524c405a1fc2f2", null ],
-    [ "_course_yoshi_valley_dl_mio0SegmentRomStart", "code__80281780_8h.html#a005b62c27cfa93961efe75384d92d681", null ],
     [ "D_00821D10", "code__80281780_8h.html#ad7d874f07f97fb0969868322d078704b", null ],
     [ "D_00825800", "code__80281780_8h.html#a9040da0a8a5bf6770a24cf227bbe16b8", null ],
     [ "D_00831DC0", "code__80281780_8h.html#a694644a346efb3a09fe8da49a19cb6e0", null ],

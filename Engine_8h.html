@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/port/Engine.h File Reference</title>
+<title>SpaghettiKart: src/port/Engine.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -107,7 +107,8 @@ $(function(){initNavTree('Engine_8h.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">Engine.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -180,6 +181,13 @@ Functions</h2></td></tr>
 <tr class="separator:acb7976888628f12ad709757f72eabffb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8da2f86fab143dd6c2be01e2265264e7" id="r_a8da2f86fab143dd6c2be01e2265264e7"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8da2f86fab143dd6c2be01e2265264e7">GameEngine_ResourceGetTexTypeByName</a> (const char *name)</td></tr>
 <tr class="separator:a8da2f86fab143dd6c2be01e2265264e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aff46ed20348d9c96aa36a10ade9a5dd7" id="r_aff46ed20348d9c96aa36a10ade9a5dd7"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff46ed20348d9c96aa36a10ade9a5dd7">game_asset_file</a> [] = &quot;mk64.o2r&quot;</td></tr>
+<tr class="separator:aff46ed20348d9c96aa36a10ade9a5dd7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeef5f907700723b99e6a2ee692e45b31" id="r_aeef5f907700723b99e6a2ee692e45b31"><td class="memItemLeft" align="right" valign="top">static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeef5f907700723b99e6a2ee692e45b31">engine_asset_file</a> [] = &quot;spaghetti.o2r&quot;</td></tr>
+<tr class="separator:aeef5f907700723b99e6a2ee692e45b31"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a79a4b47022d9d400a75e30aecb495845" name="a79a4b47022d9d400a75e30aecb495845"></a>
@@ -198,7 +206,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">(path == <a class="code hl_define" href="miniaudio_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> ? <a class="code hl_define" href="miniaudio_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> \</div>
 <div class="line">  : (<a class="code hl_function" href="Engine_8cpp.html#a223c8bc63f228dc11177515e38eff2db">GameEngine_OTRSigCheck</a>((<span class="keyword">const</span> <span class="keywordtype">char</span>*) path) ? ResourceGetDataByName((<span class="keyword">const</span> <span class="keywordtype">char</span>*) path) : path))</div>
-<div class="ttc" id="aEngine_8cpp_html_a223c8bc63f228dc11177515e38eff2db"><div class="ttname"><a href="Engine_8cpp.html#a223c8bc63f228dc11177515e38eff2db">GameEngine_OTRSigCheck</a></div><div class="ttdeci">bool GameEngine_OTRSigCheck(const char *data)</div><div class="ttdef"><b>Definition</b> Engine.cpp:762</div></div>
+<div class="ttc" id="aEngine_8cpp_html_a223c8bc63f228dc11177515e38eff2db"><div class="ttname"><a href="Engine_8cpp.html#a223c8bc63f228dc11177515e38eff2db">GameEngine_OTRSigCheck</a></div><div class="ttdeci">bool GameEngine_OTRSigCheck(const char *data)</div><div class="ttdef"><b>Definition</b> Engine.cpp:739</div></div>
 <div class="ttc" id="aminiaudio_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="miniaudio_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition</b> miniaudio.h:3851</div></div>
 </div><!-- fragment -->
 </div>
@@ -417,7 +425,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Engine_8h_a8da2f86fab143dd6c2be01e2265264e7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Engine_8h_a8da2f86fab143dd6c2be01e2265264e7_icgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -662,7 +670,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Engine_8h_ac9a41747a729cf288ae92fba19ba2f9a_icgraph.svg" width="594" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="Engine_8h_ac9a41747a729cf288ae92fba19ba2f9a_icgraph.svg" width="627" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -689,7 +697,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Engine_8h_a148024822cf8878855266d03c21a0bd8_icgraph.svg" width="588" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="Engine_8h_a148024822cf8878855266d03c21a0bd8_icgraph.svg" width="622" height="179"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -745,6 +753,51 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Engine_8h_a6a4636ed76942d3a15e97f85ff3196fb_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="aeef5f907700723b99e6a2ee692e45b31" name="aeef5f907700723b99e6a2ee692e45b31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeef5f907700723b99e6a2ee692e45b31">&#9670;&#160;</a></span>engine_asset_file</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char engine_asset_file[] = &quot;spaghetti.o2r&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aff46ed20348d9c96aa36a10ade9a5dd7" name="aff46ed20348d9c96aa36a10ade9a5dd7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff46ed20348d9c96aa36a10ade9a5dd7">&#9670;&#160;</a></span>game_asset_file</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char game_asset_file[] = &quot;mk64.o2r&quot;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

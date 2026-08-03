@@ -1,4 +1,4 @@
 var wario__stadium__vertices_8h =
 [
-    [ "ALIGN_ASSET", "wario__stadium__vertices_8h.html#a45fc6815813e927df2e46e3fd8a73723", null ]
+    [ "ALIGN_ASSET", "wario__stadium__vertices_8h.html#adceeed2ac2eedb870b0e36d05d0c195e", null ]
 ];

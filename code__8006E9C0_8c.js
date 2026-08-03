@@ -8,7 +8,7 @@ var code__8006E9C0_8c =
     [ "func_8006F824", "code__8006E9C0_8c.html#a29fb6001891ade9e060f510c2b9bb90a", null ],
     [ "func_8006F8CC", "code__8006E9C0_8c.html#a22fb6641b6733568bce5847c9e1c8ae3", null ],
     [ "func_80070148", "code__8006E9C0_8c.html#a7ce8b772e14372f2078703a39e676d2a", null ],
-    [ "func_8007055C", "code__8006E9C0_8c.html#afef0314f6f435d008ed32c2aa1e2fed0", null ],
+    [ "func_8007055C", "code__8006E9C0_8c.html#adabe944683b893973bd60b26b4a9d6f6", null ],
     [ "func_80070714", "code__8006E9C0_8c.html#a34850e00e534f9bea4ee89568c0484e8", null ],
     [ "get_minimap_properties", "code__8006E9C0_8c.html#a0ede9f9c522b0c1e4ceb7de73d07f34b", null ],
     [ "init_cloud_object", "code__8006E9C0_8c.html#a8b7161c599a6246ac3f2bd86e47a3495", null ],

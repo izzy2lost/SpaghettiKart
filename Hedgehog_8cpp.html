@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/objects/Hedgehog.cpp File Reference</title>
+<title>SpaghettiKart: src/engine/objects/Hedgehog.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -111,16 +111,18 @@ $(function(){initNavTree('Hedgehog_8cpp.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="Hedgehog_8h_source.html">Hedgehog.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="World_8h_source.html">World.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="World_8h_source.html">engine/World.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Game_8h_source.html">port/Game.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="FrameInterpolation_8h_source.html">port/interpolation/FrameInterpolation.h</a>&quot;</code><br />
+<code>#include &lt;cstdint&gt;</code><br />
 <code>#include &quot;<a class="el" href="render__objects_8h_source.html">render_objects.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="update__objects_8h_source.html">update_objects.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="yoshi__valley__data_8h_source.html">assets/yoshi_valley_data.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="common__data_8h_source.html">assets/common_data.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="math__util_8h_source.html">math_util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="mk64_8h_source.html">mk64.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="textures_2tracks_2yoshi__valley_2yoshi__valley__data_8h_source.html">assets/textures/tracks/yoshi_valley/yoshi_valley_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="models_2common__data_8h_source.html">assets/models/common_data.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="math__util__2_8h_source.html">math_util_2.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80086E70_8h_source.html">code_80086E70.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80057C60_8h_source.html">code_80057C60.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="FrameInterpolation_8h_source.html">port/interpolation/FrameInterpolation.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Hedgehog.cpp:</div>
 <div class="dyncontent">
@@ -131,8 +133,52 @@ Include dependency graph for Hedgehog.cpp:</div>
 Variables</h2></td></tr>
 <tr class="memitem:a1f079b9dd17a0f9ef327cb49816409e2" id="r_a1f079b9dd17a0f9ef327cb49816409e2"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f079b9dd17a0f9ef327cb49816409e2">sHedgehogTexList</a> [] = { d_course_yoshi_valley_hedgehog }</td></tr>
 <tr class="separator:a1f079b9dd17a0f9ef327cb49816409e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15a6af4b7ca2f5ea803a149177978f41" id="r_a15a6af4b7ca2f5ea803a149177978f41"><td class="memItemLeft" align="right" valign="top">Vtx&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a15a6af4b7ca2f5ea803a149177978f41">gVtxHedgehogRight</a> []</td></tr>
+<tr class="separator:a15a6af4b7ca2f5ea803a149177978f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5ac22cbf088a09f37f3bbdfada033df" id="r_ab5ac22cbf088a09f37f3bbdfada033df"><td class="memItemLeft" align="right" valign="top">Vtx&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5ac22cbf088a09f37f3bbdfada033df">gVtxHedgehogLeft</a> []</td></tr>
+<tr class="separator:ab5ac22cbf088a09f37f3bbdfada033df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
+<a id="ab5ac22cbf088a09f37f3bbdfada033df" name="ab5ac22cbf088a09f37f3bbdfada033df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5ac22cbf088a09f37f3bbdfada033df">&#9670;&#160;</a></span>gVtxHedgehogLeft</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vtx gVtxHedgehogLeft[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    {{{   -32,    -31,      0}, 0, {  4032,      0}, {255, 255, 255, 255}}},</div>
+<div class="line">    {{{    31,    -31,      0}, 0, {     0,      0}, {255, 255, 255, 255}}},</div>
+<div class="line">    {{{    31,      31,      0}, 0, {     0,   3968}, {255, 255, 255, 255}}},</div>
+<div class="line">    {{{   -32,      31,      0}, 0, {  4032,   3968}, {255, 255, 255, 255}}},</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a15a6af4b7ca2f5ea803a149177978f41" name="a15a6af4b7ca2f5ea803a149177978f41"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15a6af4b7ca2f5ea803a149177978f41">&#9670;&#160;</a></span>gVtxHedgehogRight</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vtx gVtxHedgehogRight[]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    {{{   -32,    -31,      0}, 0, {     0,      0}, {255, 255, 255, 255}}},</div>
+<div class="line">    {{{    31,    -31,      0}, 0, {  4032,      0}, {255, 255, 255, 255}}},</div>
+<div class="line">    {{{    31,      31,      0}, 0, {  4032,   3968}, {255, 255, 255, 255}}},</div>
+<div class="line">    {{{   -32,      31,      0}, 0, {     0,   3968}, {255, 255, 255, 255}}},</div>
+<div class="line">}</div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a1f079b9dd17a0f9ef327cb49816409e2" name="a1f079b9dd17a0f9ef327cb49816409e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1f079b9dd17a0f9ef327cb49816409e2">&#9670;&#160;</a></span>sHedgehogTexList</h2>
 

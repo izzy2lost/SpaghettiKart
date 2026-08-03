@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/actors/kiwano_fruit/render.inc.c Source File</title>
+<title>SpaghettiKart: src/actors/kiwano_fruit/render.inc.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -108,10 +108,10 @@ $(function(){initNavTree('kiwano__fruit_2render_8inc_8c_source.html',''); initRe
   <div class="headertitle"><div class="title">render.inc.c</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="kiwano__fruit_2render_8inc_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;<a class="code" href="actors_8h.html">actors.h</a>&gt;</span></div>
+<a href="kiwano__fruit_2render_8inc_8c.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &lt;<a class="code" href="actors_8h.html">racing/actors.h</a>&gt;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;libultra/gbi.h&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;<a class="code" href="main_8h.html">main.h</a>&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="other__textures_8h.html">assets/other_textures.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="other__textures_8h.html">assets/textures/other_textures.h</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">// #include &lt;assets/dks_jungle_parkway_data.h&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
 <div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
@@ -147,28 +147,27 @@ $(function(){initNavTree('kiwano__fruit_2render_8inc_8c_source.html',''); initRe
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>            <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    }</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">//addr = segmented_texture_to_virtual((actor-&gt;rot[0] &lt;&lt; 0xA) + 0x03009000);</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    gDPLoadTextureBlock(<a class="code hl_variable" href="main_8c.html#a126651d46f16435589024505d8aef7b7">gDisplayListHead</a>++, <a class="code hl_define" href="macros_8h.html#af0a1d439c0dd0d6ceb64be64f1650bbc">VIRTUAL_TO_PHYSICAL</a>(addr), G_IM_FMT_CI, G_IM_SIZ_8b, 32, 32, 0,</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                        G_TX_NOMIRROR | G_TX_CLAMP, G_TX_NOMIRROR | G_TX_CLAMP, G_TX_NOMASK, G_TX_NOMASK, G_TX_NOLOD,</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                        G_TX_NOLOD);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_function" href="GBIMiddleware_8cpp.html#a4ecc44e3c6f1ca5a6b4a20c41d3bd2d2">gSPDisplayList</a>(<a class="code hl_variable" href="main_8c.html#a126651d46f16435589024505d8aef7b7">gDisplayListHead</a>++, d_course_dks_jungle_parkway_dl_kiwano_fruit);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    gDPLoadTextureBlock(<a class="code hl_variable" href="main_8c.html#a126651d46f16435589024505d8aef7b7">gDisplayListHead</a>++, <a class="code hl_define" href="macros_8h.html#af0a1d439c0dd0d6ceb64be64f1650bbc">VIRTUAL_TO_PHYSICAL</a>(addr), G_IM_FMT_CI, G_IM_SIZ_8b, 32, 32, 0,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                        G_TX_NOMIRROR | G_TX_CLAMP, G_TX_NOMIRROR | G_TX_CLAMP, G_TX_NOMASK, G_TX_NOMASK, G_TX_NOLOD,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                        G_TX_NOLOD);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_function" href="GBIMiddleware_8cpp.html#a4ecc44e3c6f1ca5a6b4a20c41d3bd2d2">gSPDisplayList</a>(<a class="code hl_variable" href="main_8c.html#a126651d46f16435589024505d8aef7b7">gDisplayListHead</a>++, d_course_dks_jungle_parkway_dl_kiwano_fruit);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>}</div>
 </div>
-<div class="ttc" id="aGBIMiddleware_8cpp_html_a4ecc44e3c6f1ca5a6b4a20c41d3bd2d2"><div class="ttname"><a href="GBIMiddleware_8cpp.html#a4ecc44e3c6f1ca5a6b4a20c41d3bd2d2">gSPDisplayList</a></div><div class="ttdeci">void gSPDisplayList(Gfx *pkt, Gfx *dl)</div><div class="ttdef"><b>Definition</b> GBIMiddleware.cpp:11</div></div>
+<div class="ttc" id="aGBIMiddleware_8cpp_html_a4ecc44e3c6f1ca5a6b4a20c41d3bd2d2"><div class="ttname"><a href="GBIMiddleware_8cpp.html#a4ecc44e3c6f1ca5a6b4a20c41d3bd2d2">gSPDisplayList</a></div><div class="ttdeci">void gSPDisplayList(Gfx *pkt, Gfx *dl)</div><div class="ttdef"><b>Definition</b> GBIMiddleware.cpp:12</div></div>
 <div class="ttc" id="aactors_8h_html"><div class="ttname"><a href="actors_8h.html">actors.h</a></div></div>
 <div class="ttc" id="acommon__structs_8h_html_ab7160f77e736961cfa2aff581aeee005"><div class="ttname"><a href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a></div><div class="ttdeci">f32 Mat4[4][4]</div><div class="ttdef"><b>Definition</b> common_structs.h:20</div></div>
 <div class="ttc" id="akiwano__fruit_2render_8inc_8c_html_a7b9f60e6ea988a135b0c5ce1b6fe61a0"><div class="ttname"><a href="kiwano__fruit_2render_8inc_8c.html#a7b9f60e6ea988a135b0c5ce1b6fe61a0">render_actor_kiwano_fruit</a></div><div class="ttdeci">void render_actor_kiwano_fruit(UNUSED Camera *camera, Mat4 arg1, struct Actor *actor)</div><div class="ttdoc">Renders the kiwano fruit actor. Actor used in DK&#39;s Jungle Parkway.</div><div class="ttdef"><b>Definition</b> render.inc.c:15</div></div>
-<div class="ttc" id="amacros_8h_html_addf5ec070e9499d36b7f2009ce736076"><div class="ttname"><a href="macros_8h.html#addf5ec070e9499d36b7f2009ce736076">UNUSED</a></div><div class="ttdeci">#define UNUSED</div><div class="ttdef"><b>Definition</b> macros.h:26</div></div>
-<div class="ttc" id="amacros_8h_html_af0a1d439c0dd0d6ceb64be64f1650bbc"><div class="ttname"><a href="macros_8h.html#af0a1d439c0dd0d6ceb64be64f1650bbc">VIRTUAL_TO_PHYSICAL</a></div><div class="ttdeci">#define VIRTUAL_TO_PHYSICAL(addr)</div><div class="ttdef"><b>Definition</b> macros.h:91</div></div>
-<div class="ttc" id="amain_8c_html_a126651d46f16435589024505d8aef7b7"><div class="ttname"><a href="main_8c.html#a126651d46f16435589024505d8aef7b7">gDisplayListHead</a></div><div class="ttdeci">Gfx * gDisplayListHead</div><div class="ttdef"><b>Definition</b> main.c:137</div></div>
+<div class="ttc" id="amacros_8h_html_addf5ec070e9499d36b7f2009ce736076"><div class="ttname"><a href="macros_8h.html#addf5ec070e9499d36b7f2009ce736076">UNUSED</a></div><div class="ttdeci">#define UNUSED</div><div class="ttdef"><b>Definition</b> macros.h:40</div></div>
+<div class="ttc" id="amacros_8h_html_af0a1d439c0dd0d6ceb64be64f1650bbc"><div class="ttname"><a href="macros_8h.html#af0a1d439c0dd0d6ceb64be64f1650bbc">VIRTUAL_TO_PHYSICAL</a></div><div class="ttdeci">#define VIRTUAL_TO_PHYSICAL(addr)</div><div class="ttdef"><b>Definition</b> macros.h:105</div></div>
+<div class="ttc" id="amain_8c_html_a126651d46f16435589024505d8aef7b7"><div class="ttname"><a href="main_8c.html#a126651d46f16435589024505d8aef7b7">gDisplayListHead</a></div><div class="ttdeci">Gfx * gDisplayListHead</div><div class="ttdef"><b>Definition</b> main.c:129</div></div>
 <div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div></div>
-<div class="ttc" id="amath__util_8c_html_a1e5d28a1962fbb390c7551f66c2f099a"><div class="ttname"><a href="math__util_8c.html#a1e5d28a1962fbb390c7551f66c2f099a">render_set_position</a></div><div class="ttdeci">s32 render_set_position(Mat4 mtx, s32 arg1)</div><div class="ttdef"><b>Definition</b> math_util.c:54</div></div>
+<div class="ttc" id="amath__util_8c_html_a1e5d28a1962fbb390c7551f66c2f099a"><div class="ttname"><a href="math__util_8c.html#a1e5d28a1962fbb390c7551f66c2f099a">render_set_position</a></div><div class="ttdeci">s32 render_set_position(Mat4 mtx, s32 arg1)</div><div class="ttdef"><b>Definition</b> math_util.c:53</div></div>
 <div class="ttc" id="aother__textures_8h_html"><div class="ttname"><a href="other__textures_8h.html">other_textures.h</a></div></div>
 <div class="ttc" id="astructActor_html"><div class="ttname"><a href="structActor.html">Actor</a></div><div class="ttdef"><b>Definition</b> actor_types.h:124</div></div>
 <div class="ttc" id="astructActor_html_a8fedca3871be05588e5263f4a184ad5d"><div class="ttname"><a href="structActor.html#a8fedca3871be05588e5263f4a184ad5d">Actor::state</a></div><div class="ttdeci">s16 state</div><div class="ttdef"><b>Definition</b> actor_types.h:128</div></div>
 <div class="ttc" id="astructActor_html_aafc0746715101e8b4dd9afcd88a90ab9"><div class="ttname"><a href="structActor.html#aafc0746715101e8b4dd9afcd88a90ab9">Actor::rot</a></div><div class="ttdeci">Vec3s rot</div><div class="ttdef"><b>Definition</b> actor_types.h:131</div></div>
 <div class="ttc" id="astructActor_html_afa1455dbf1a4698584ed8c501439692f"><div class="ttname"><a href="structActor.html#afa1455dbf1a4698584ed8c501439692f">Actor::pos</a></div><div class="ttdeci">Vec3f pos</div><div class="ttdef"><b>Definition</b> actor_types.h:133</div></div>
-<div class="ttc" id="astructCamera_html"><div class="ttname"><a href="structCamera.html">Camera</a></div><div class="ttdef"><b>Definition</b> camera.h:27</div></div>
+<div class="ttc" id="astructCamera_html"><div class="ttname"><a href="structCamera.html">Camera</a></div><div class="ttdef"><b>Definition</b> camera.h:35</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

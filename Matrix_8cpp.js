@@ -9,6 +9,7 @@ var Matrix_8cpp =
     [ "AddObjectMatrix", "Matrix_8cpp.html#a6416f9a60a7397e8b517b1483adb96e8", null ],
     [ "AddTextMatrix", "Matrix_8cpp.html#a6f64c44efb9bdfff802175a9739ce1f1", null ],
     [ "ApplyMatrixTransformations", "Matrix_8cpp.html#a63625de4c7f9e2e9cd5b04eed49acfcb", null ],
+    [ "ApplySphericalBillBoard", "Matrix_8cpp.html#a2039e0b8df030349571010b46c2aa14b", null ],
     [ "ClearMatrixPools", "Matrix_8cpp.html#a5ebb6ec3e4ef36c159c344784d791f60", null ],
     [ "ClearObjectsMatrixPool", "Matrix_8cpp.html#af39326f348cc7842daad2b60055f9949", null ],
     [ "GetEffectMatrix", "Matrix_8cpp.html#a2d9039ed2444ffea804021594f76419d", null ],

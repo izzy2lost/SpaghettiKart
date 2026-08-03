@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/editor/Collision.h Source File</title>
+<title>SpaghettiKart: src/engine/editor/Collision.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -113,23 +113,27 @@ $(function(){initNavTree('Collision_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;libultraship/libultraship.h&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;libultra/gbi.h&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="GameObject_8h.html">GameObject.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="EditorMath_8h.html">EditorMath.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="Collision_8h.html#a55d861b7102c14c27bb01a93b5409181">   18</a></span><span class="preprocessor">#define EDITOR_GFX_GET_OPCODE(var) ((uint32_t) ((var) &amp; 0xFF000000))</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="Actor_8h.html">engine/Actor.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="Object_8h.html">engine/objects/Object.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="EditorMath_8h.html">EditorMath.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceEditor.html">Editor</a> {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceEditor.html#a017036e049cff3eff7aef142c0d6e4c2">GenerateCollisionMesh</a>(GameObject* <span class="keywordtype">object</span>, Gfx* model, <span class="keywordtype">float</span> scale);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceEditor.html#a7790a67d355b592a32ebcc62ecbda661">DebugCollision</a>(GameObject* obj, <a class="code hl_struct" href="structFVector.html">FVector</a> pos, <a class="code hl_struct" href="structIRotator.html">IRotator</a> rot, <a class="code hl_struct" href="structFVector.html">FVector</a> scale, <span class="keyword">const</span> std::vector&lt;Triangle&gt;&amp; triangles);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>}</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="Collision_8h.html#a55d861b7102c14c27bb01a93b5409181">   20</a></span><span class="preprocessor">#define EDITOR_GFX_GET_OPCODE(var) ((uint32_t) ((var) &amp; 0xFF000000))</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceTrackEditor.html">TrackEditor</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceTrackEditor.html#a79d25f3b85758b1d930e2eb429655ead">GenerateCollisionMesh</a>(std::variant&lt;AActor*, OObject*, GameObject*&gt; <span class="keywordtype">object</span>, Gfx* model, <span class="keywordtype">float</span> scale);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespaceTrackEditor.html#a3c32bf38d445b20d55a7092da6b673a5">DebugCollision</a>(GameObject* obj, <a class="code hl_struct" href="structFVector.html">FVector</a> pos, <a class="code hl_struct" href="structIRotator.html">IRotator</a> rot, <a class="code hl_struct" href="structFVector.html">FVector</a> scale, <span class="keyword">const</span> std::vector&lt;Triangle&gt;&amp; triangles);</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>}</div>
+<div class="ttc" id="aActor_8h_html"><div class="ttname"><a href="Actor_8h.html">Actor.h</a></div></div>
 <div class="ttc" id="aEditorMath_8h_html"><div class="ttname"><a href="EditorMath_8h.html">EditorMath.h</a></div></div>
 <div class="ttc" id="aGameObject_8h_html"><div class="ttname"><a href="GameObject_8h.html">GameObject.h</a></div></div>
-<div class="ttc" id="anamespaceEditor_html"><div class="ttname"><a href="namespaceEditor.html">Editor</a></div><div class="ttdef"><b>Definition</b> Collision.cpp:12</div></div>
-<div class="ttc" id="anamespaceEditor_html_a017036e049cff3eff7aef142c0d6e4c2"><div class="ttname"><a href="namespaceEditor.html#a017036e049cff3eff7aef142c0d6e4c2">Editor::GenerateCollisionMesh</a></div><div class="ttdeci">void GenerateCollisionMesh(GameObject *object, Gfx *model, float scale)</div><div class="ttdef"><b>Definition</b> Collision.cpp:13</div></div>
-<div class="ttc" id="anamespaceEditor_html_a7790a67d355b592a32ebcc62ecbda661"><div class="ttname"><a href="namespaceEditor.html#a7790a67d355b592a32ebcc62ecbda661">Editor::DebugCollision</a></div><div class="ttdeci">void DebugCollision(GameObject *obj, FVector pos, IRotator rot, FVector scale, const std::vector&lt; Triangle &gt; &amp;triangles)</div><div class="ttdef"><b>Definition</b> Collision.cpp:147</div></div>
-<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:18</div></div>
-<div class="ttc" id="astructIRotator_html"><div class="ttname"><a href="structIRotator.html">IRotator</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:123</div></div>
+<div class="ttc" id="aObject_8h_html"><div class="ttname"><a href="Object_8h.html">Object.h</a></div></div>
+<div class="ttc" id="anamespaceTrackEditor_html"><div class="ttname"><a href="namespaceTrackEditor.html">TrackEditor</a></div><div class="ttdef"><b>Definition</b> Collision.cpp:17</div></div>
+<div class="ttc" id="anamespaceTrackEditor_html_a3c32bf38d445b20d55a7092da6b673a5"><div class="ttname"><a href="namespaceTrackEditor.html#a3c32bf38d445b20d55a7092da6b673a5">TrackEditor::DebugCollision</a></div><div class="ttdeci">void DebugCollision(GameObject *obj, FVector pos, IRotator rot, FVector scale, const std::vector&lt; Triangle &gt; &amp;triangles)</div><div class="ttdef"><b>Definition</b> Collision.cpp:169</div></div>
+<div class="ttc" id="anamespaceTrackEditor_html_a79d25f3b85758b1d930e2eb429655ead"><div class="ttname"><a href="namespaceTrackEditor.html#a79d25f3b85758b1d930e2eb429655ead">TrackEditor::GenerateCollisionMesh</a></div><div class="ttdeci">void GenerateCollisionMesh(std::variant&lt; AActor *, OObject *, GameObject * &gt; object, Gfx *model, float scale)</div><div class="ttdef"><b>Definition</b> Collision.cpp:18</div></div>
+<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:30</div></div>
+<div class="ttc" id="astructIRotator_html"><div class="ttname"><a href="structIRotator.html">IRotator</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:141</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

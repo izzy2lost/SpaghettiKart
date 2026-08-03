@@ -28,5 +28,19 @@ var searchData=
   ['gobjectparticle4_5fsize_25',['gObjectParticle4_SIZE',['../objects_8h.html#aa0b2f0590bfac947f05d609d8e6e5ed6',1,'objects.h']]],
   ['gpack_5frgb888_26',['GPACK_RGB888',['../defines_8h.html#a69522ff76a05664bd061ea34b0022a49',1,'defines.h']]],
   ['grand_5fprix_27',['GRAND_PRIX',['../defines_8h.html#a8243137b0c8b7200c20479738cdbe365',1,'defines.h']]],
-  ['grid_5fsize_28',['GRID_SIZE',['../defines_8h.html#a08246606c233e7785a497c09672f366f',1,'defines.h']]]
+  ['grid_5fsize_28',['GRID_SIZE',['../defines_8h.html#a08246606c233e7785a497c09672f366f',1,'defines.h']]],
+  ['group_5f0_5fcomment_29',['GROUP_0_COMMENT',['../kart__dma_8c.html#acd6a7f49f40f34949f2880eefc503694',1,'kart_dma.c']]],
+  ['group_5f11_5fcomment_30',['GROUP_11_COMMENT',['../kart__dma_8c.html#a959e15332f313c33fda7a2c6935f9609',1,'kart_dma.c']]],
+  ['group_5f12_5f13_5f14_5fcomment_31',['GROUP_12_13_14_COMMENT',['../kart__dma_8c.html#a1a54cb5d4373cab2953192a902b5fd89',1,'kart_dma.c']]],
+  ['group_5f15_5fcomment_32',['GROUP_15_COMMENT',['../kart__dma_8c.html#a96e95920d8844eb7e3188ffa45328c53',1,'kart_dma.c']]],
+  ['group_5f16_5f17_5fcomment_33',['GROUP_16_17_COMMENT',['../kart__dma_8c.html#a3ade6e4665e590ce2290e133e8b52acc',1,'kart_dma.c']]],
+  ['group_5f1_5fcomment_34',['GROUP_1_COMMENT',['../kart__dma_8c.html#a832b760f9a23d890413ac8ff5fbe0732',1,'kart_dma.c']]],
+  ['group_5f2_5fcomment_35',['GROUP_2_COMMENT',['../kart__dma_8c.html#a7ae51915a54d3c217bbbfa97d51621a8',1,'kart_dma.c']]],
+  ['group_5f3_5fcomment_36',['GROUP_3_COMMENT',['../kart__dma_8c.html#a68bbd07cb313450bdf39dfc6352b59c1',1,'kart_dma.c']]],
+  ['group_5f4_5fcomment_37',['GROUP_4_COMMENT',['../kart__dma_8c.html#a9a9f50db7b27ee5b61fc54e7ff2ac848',1,'kart_dma.c']]],
+  ['group_5f5_5fcomment_38',['GROUP_5_COMMENT',['../kart__dma_8c.html#adf69757a27674f8c75f2fc39499d6103',1,'kart_dma.c']]],
+  ['group_5f6_5fcomment_39',['GROUP_6_COMMENT',['../kart__dma_8c.html#a1c425e11a71db7ded10c0ed5c51311be',1,'kart_dma.c']]],
+  ['group_5f7_5fcomment_40',['GROUP_7_COMMENT',['../kart__dma_8c.html#a523d07b0041790e6785f4a4d61e26f02',1,'kart_dma.c']]],
+  ['group_5f8_5fcomment_41',['GROUP_8_COMMENT',['../kart__dma_8c.html#a051e80648c6928dafd8bc3a7f529d219',1,'kart_dma.c']]],
+  ['group_5f9_5f10_5fcomment_42',['GROUP_9_10_COMMENT',['../kart__dma_8c.html#a02fc0d4eb18e2895d5d222e59d640bf4',1,'kart_dma.c']]]
 ];

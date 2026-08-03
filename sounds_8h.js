@@ -44,6 +44,7 @@ var sounds_8h =
     [ "SOUND_MENU_SELECT_MAP", "sounds_8h.html#a24a363b6d18669439fb7ef28d60682d9", null ],
     [ "SOUND_MENU_SELECT_PLAYER", "sounds_8h.html#accdc6dfaa039039a066acbc8cac43bfb", null ],
     [ "SOUND_MENU_STEREO", "sounds_8h.html#a3fd728a58940cffdd78dac4be87e1152", null ],
+    [ "SOUND_MENU_SURROUND", "sounds_8h.html#ad271c414e9bac13a4198fb1ed9a8f71f", null ],
     [ "SOUND_MENU_TIME_TRIALS", "sounds_8h.html#a178c673b7d1cfa01a2fb1957d674762d", null ],
     [ "SOUND_MENU_VERSUS", "sounds_8h.html#a457ac1730cdbe2b3e2afcd6fa697b6ff", null ],
     [ "MusicSeq", "sounds_8h.html#a462955cf4ece430059af4e4185a8727c", [
@@ -70,7 +71,7 @@ var sounds_8h =
       [ "MUSIC_SEQ_DK_JUNGLE", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca58b5b5e40ba246fae20211899a05a1e4", null ],
       [ "MUSIC_SEQ_GAME_OVER", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca2aa337531285b8b9a00d5022d4857686", null ],
       [ "MUSIC_SEQ_TOADS_TURNPIKE", "sounds_8h.html#a462955cf4ece430059af4e4185a8727caf9d381c65a937d3a9de7e876cb7b0275", null ],
-      [ "MUSIC_SEQ_START_GIRD_TIME_ATTACK", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca1907055ad76432e88968bcde5646335d", null ],
+      [ "MUSIC_SEQ_START_GRID_TIME_ATTACK", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca7003ace5d278d0f6d649d940fa232383", null ],
       [ "MUSIC_SEQ_VS_BATTLE_RESULTS", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca46ddd4c182ab350d9afde653544f144c", null ],
       [ "MUSIC_SEQ_LOSING_RESULTS", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca8b7586563ff84678966d163a523140f1", null ],
       [ "MUSIC_SEQ_BATTLE_ARENAS", "sounds_8h.html#a462955cf4ece430059af4e4185a8727ca8b7b47a73c80e66655457d00870b8d9b", null ],

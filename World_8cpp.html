@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/World.cpp File Reference</title>
+<title>SpaghettiKart: src/engine/World.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -113,21 +113,19 @@ $(function(){initNavTree('World_8cpp.html',''); initResizable(true); });
 <div class="textblock"><code>#include &lt;libultraship.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="World_8h_source.html">World.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Cup_8h_source.html">Cup.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Course_8h_source.html">courses/Course.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BombKart_8h_source.html">objects/BombKart.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Track_8h_source.html">tracks/Track.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TrainCrossing_8h_source.html">TrainCrossing.h</a>&quot;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &quot;<a class="el" href="Object_8h_source.html">objects/Object.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Game_8h_source.html">port/Game.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GameObject_8h_source.html">editor/GameObject.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="camera_8h_source.html">camera.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Sky_8h_source.html">engine/sky/Sky.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="objects_8h_source.html">objects.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="defines_8h_source.html">defines.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="external_8h_source.html">audio/external.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="menus_8h_source.html">menus.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="common__data_8h_source.html">common_data.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="mario__raceway__data_8h_source.html">mario_raceway_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="code__800029B0_8h_source.html">code_800029B0.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GameCamera_8h_source.html">engine/cameras/GameCamera.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for World.cpp:</div>
 <div class="dyncontent">
@@ -136,26 +134,12 @@ Include dependency graph for World.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:acc7c61455be87e7ece8b4c70896ef569" id="r_acc7c61455be87e7ece8b4c70896ef569"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classCourse.html">Course</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acc7c61455be87e7ece8b4c70896ef569">CurrentCourse</a></td></tr>
-<tr class="separator:acc7c61455be87e7ece8b4c70896ef569"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a443aba2bb424aa8a4042046c5ab422fd" id="r_a443aba2bb424aa8a4042046c5ab422fd"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classTrack.html">Track</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a443aba2bb424aa8a4042046c5ab422fd">mTrack</a></td></tr>
+<tr class="separator:a443aba2bb424aa8a4042046c5ab422fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79811acfd6178798165ac61d8efce2ee" id="r_a79811acfd6178798165ac61d8efce2ee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCup.html">Cup</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a79811acfd6178798165ac61d8efce2ee">CurrentCup</a></td></tr>
 <tr class="separator:a79811acfd6178798165ac61d8efce2ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
-<a id="acc7c61455be87e7ece8b4c70896ef569" name="acc7c61455be87e7ece8b4c70896ef569"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc7c61455be87e7ece8b4c70896ef569">&#9670;&#160;</a></span>CurrentCourse</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt;<a class="el" href="classCourse.html">Course</a>&gt; CurrentCourse</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a79811acfd6178798165ac61d8efce2ee" name="a79811acfd6178798165ac61d8efce2ee"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a79811acfd6178798165ac61d8efce2ee">&#9670;&#160;</a></span>CurrentCup</h2>
 
@@ -164,6 +148,20 @@ Variables</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname"><a class="el" href="classCup.html">Cup</a>* CurrentCup</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a443aba2bb424aa8a4042046c5ab422fd" name="a443aba2bb424aa8a4042046c5ab422fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a443aba2bb424aa8a4042046c5ab422fd">&#9670;&#160;</a></span>mTrack</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classTrack.html">Track</a>&gt; mTrack</td>
         </tr>
       </table>
 </div><div class="memdoc">

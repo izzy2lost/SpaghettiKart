@@ -1,6 +1,6 @@
 var classOSnowman =
 [
-    [ "OSnowman", "classOSnowman.html#a32940bf9857a85b80f7ad16b8eb41474", null ],
+    [ "OSnowman", "classOSnowman.html#af37eeb06ff0bb92595794103983548cf", null ],
     [ "~OSnowman", "classOSnowman.html#af420809ffa701177e36c084fb129c0ce", null ],
     [ "Draw", "classOSnowman.html#a43b2b34a94dbde2f174d971bfa763ac0", null ],
     [ "DrawBody", "classOSnowman.html#abb32ca3bd6c2d1e50779e2b58b94607f", null ],
@@ -16,10 +16,12 @@ var classOSnowman =
     [ "func_80083BE4", "classOSnowman.html#a1499c98a5fa8db7da8225623989d30ce", null ],
     [ "func_80083C04", "classOSnowman.html#a677828897f8c77109e75feb9b7620a5e", null ],
     [ "GetCount", "classOSnowman.html#ad16e097f2d3da9709acf796eb963dce4", null ],
+    [ "Spawn", "classOSnowman.html#a4ed5e3e619ec3b84efb3d0547f028304", null ],
     [ "Tick", "classOSnowman.html#ae84de267ff70c7e2ac5748b9bd738ada", null ],
+    [ "Translate", "classOSnowman.html#a914dc34a193f389f90f9cf2ed3063c25", null ],
     [ "_bodyIndex", "classOSnowman.html#a5506eb12573f3bf31aa8e3d0c953fc41", null ],
     [ "_count", "classOSnowman.html#ae4da43baafec1ce6ae94c4228ed02041", null ],
     [ "_headIndex", "classOSnowman.html#a0217cd01efce681e431f99568ec9cb0a", null ],
     [ "_idx", "classOSnowman.html#a42f78b45cb45cfa206f110e6697c192b", null ],
-    [ "_pos", "classOSnowman.html#a18494cf99ba834bb8d378bf7662a402f", null ]
+    [ "Pos", "classOSnowman.html#a9c9b5bc9ee6d3f176c41d3e071c0881f", null ]
 ];

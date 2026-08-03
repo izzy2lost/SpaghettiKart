@@ -17,7 +17,7 @@ var dir_9d35e33a62367a6e44d3f53c24813abf =
     [ "rainbow_road", "dir_442ddcf260c15d51851ed98578f803dc.html", "dir_442ddcf260c15d51851ed98578f803dc" ],
     [ "royal_raceway", "dir_404a36c8141d9034ee6fc6ed7a4180e7.html", "dir_404a36c8141d9034ee6fc6ed7a4180e7" ],
     [ "sherbet_land", "dir_bd282373516b07341e164b3414026660.html", "dir_bd282373516b07341e164b3414026660" ],
-    [ "test_course", "dir_ecc53a511c2f7e4bbfdf68735d522b0c.html", "dir_ecc53a511c2f7e4bbfdf68735d522b0c" ],
+    [ "test_track", "dir_f7b458177ca2b8753a0b0d1ce17ac481.html", "dir_f7b458177ca2b8753a0b0d1ce17ac481" ],
     [ "toads_turnpike", "dir_11f583dcfcc8a4ca90492e903437d2b1.html", "dir_11f583dcfcc8a4ca90492e903437d2b1" ],
     [ "wario_stadium", "dir_f961201ea9bc00e4a5e2da1b1bc088ef.html", "dir_f961201ea9bc00e4a5e2da1b1bc088ef" ],
     [ "yoshi_valley", "dir_de902027e8dc7f16c92ad572cdca83ea.html", "dir_de902027e8dc7f16c92ad572cdca83ea" ],
@@ -25,8 +25,6 @@ var dir_9d35e33a62367a6e44d3f53c24813abf =
     [ "all_course_model.h", "all__course__model_8h.html", "all__course__model_8h" ],
     [ "all_course_offsets.h", "all__course__offsets_8h.html", "all__course__offsets_8h" ],
     [ "all_course_packed.h", "all__course__packed_8h.html", null ],
-    [ "courseTable.c", "courseTable_8c.html", null ],
-    [ "courseTable.h", "courseTable_8h.html", "courseTable_8h" ],
     [ "staff_ghost_data.c", "staff__ghost__data_8c.html", "staff__ghost__data_8c" ],
     [ "staff_ghost_data.h", "staff__ghost__data_8h.html", "staff__ghost__data_8h" ]
 ];

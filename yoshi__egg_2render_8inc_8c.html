@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/actors/yoshi_egg/render.inc.c File Reference</title>
+<title>SpaghettiKart: src/actors/yoshi_egg/render.inc.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -111,7 +111,7 @@ $(function(){initNavTree('yoshi__egg_2render_8inc_8c.html',''); initResizable(tr
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;<a class="el" href="camera_8h_source.html">camera.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="actors_8h_source.html">actors.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="actors_8h_source.html">racing/actors.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="defines_8h_source.html">defines.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="main_8h_source.html">main.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="FrameInterpolation_8h_source.html">port/interpolation/FrameInterpolation.h</a>&quot;</code><br />
@@ -130,13 +130,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4d082cb0256600e693927bccddbee605" id="r_a4d082cb0256600e693927bccddbee605"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4d082cb0256600e693927bccddbee605">render_actor_yoshi_egg</a> (<a class="el" href="structCamera.html">Camera</a> *arg0, <a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> arg1, struct <a class="el" href="structYoshiValleyEgg.html">YoshiValleyEgg</a> *egg, u16 arg3)</td></tr>
-<tr class="memdesc:a4d082cb0256600e693927bccddbee605"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the Yoshi egg actor. <a class="el" href="structActor.html">Actor</a> used in Yoshi Valley.  <br /></td></tr>
-<tr class="separator:a4d082cb0256600e693927bccddbee605"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd8ade327cc04f2d1dd0de7ff85d6d8d" id="r_acd8ade327cc04f2d1dd0de7ff85d6d8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd8ade327cc04f2d1dd0de7ff85d6d8d">render_actor_yoshi_egg</a> (<a class="el" href="structCamera.html">Camera</a> *camera, <a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> arg1, struct <a class="el" href="structYoshiValleyEgg.html">YoshiValleyEgg</a> *egg, u16 arg3)</td></tr>
+<tr class="memdesc:acd8ade327cc04f2d1dd0de7ff85d6d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the Yoshi egg actor. <a class="el" href="structActor.html">Actor</a> used in Yoshi Valley.  <br /></td></tr>
+<tr class="separator:acd8ade327cc04f2d1dd0de7ff85d6d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a4d082cb0256600e693927bccddbee605" name="a4d082cb0256600e693927bccddbee605"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d082cb0256600e693927bccddbee605">&#9670;&#160;</a></span>render_actor_yoshi_egg()</h2>
+<a id="acd8ade327cc04f2d1dd0de7ff85d6d8d" name="acd8ade327cc04f2d1dd0de7ff85d6d8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd8ade327cc04f2d1dd0de7ff85d6d8d">&#9670;&#160;</a></span>render_actor_yoshi_egg()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -144,7 +144,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void render_actor_yoshi_egg </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCamera.html">Camera</a> *</td>          <td class="paramname"><span class="paramname"><em>arg0</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structCamera.html">Camera</a> *</td>          <td class="paramname"><span class="paramname"><em>camera</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -167,7 +167,7 @@ Functions</h2></td></tr>
 <p>Renders the Yoshi egg actor. <a class="el" href="structActor.html">Actor</a> used in Yoshi Valley. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arg0</td><td></td></tr>
+    <tr><td class="paramname">camera</td><td></td></tr>
     <tr><td class="paramname">arg1</td><td></td></tr>
     <tr><td class="paramname">egg</td><td></td></tr>
     <tr><td class="paramname">arg3</td><td></td></tr>
@@ -177,12 +177,12 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="yoshi__egg_2render_8inc_8c_a4d082cb0256600e693927bccddbee605_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="yoshi__egg_2render_8inc_8c_acd8ade327cc04f2d1dd0de7ff85d6d8d_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="yoshi__egg_2render_8inc_8c_a4d082cb0256600e693927bccddbee605_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="yoshi__egg_2render_8inc_8c_acd8ade327cc04f2d1dd0de7ff85d6d8d_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>

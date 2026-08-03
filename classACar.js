@@ -1,15 +1,25 @@
 var classACar =
 [
-    [ "ACar", "classACar.html#a731ef235852350fe580c8583e05b4377", null ],
+    [ "SpawnMode", "classACar.html#a99d0539b055526b17dda89ee7a9b233a", [
+      [ "POINT", "classACar.html#a99d0539b055526b17dda89ee7a9b233aad2c36f38cc645de6132965e1522e3bd3", null ],
+      [ "AUTO", "classACar.html#a99d0539b055526b17dda89ee7a9b233aa5c6ac5199955c5b849a037076cffea43", null ]
+    ] ],
+    [ "ACar", "classACar.html#a7c537f8a1af7c93b57a6fbf2f52a894d", null ],
     [ "~ACar", "classACar.html#a0c9f41b076e8ab78d820ec4789eb514b", null ],
     [ "Draw", "classACar.html#aee6c848b11e9dafe6f2c947e78cb4867", null ],
+    [ "DrawEditorProperties", "classACar.html#ae38b34dcbbb0eecf89accc4a6ac23202", null ],
     [ "GetCount", "classACar.html#afa2946bbeaeb2a5ffaf917eca63713c7", null ],
     [ "IsMod", "classACar.html#af7f3aa4373f200b2d3322d65f2cce81f", null ],
+    [ "SetSpawnParams", "classACar.html#a50b8c522ce21ef770090b8c965be1fef", null ],
+    [ "Spawn", "classACar.html#a657415a24ab2c0d907f25fd227156848", null ],
     [ "Tick", "classACar.html#aa5a07144df2ce488c986f2c9eece9916", null ],
     [ "VehicleCollision", "classACar.html#a807f87400ace96904e2ad6dc4a27409a", null ],
     [ "_count", "classACar.html#a9ef1f8cda27d51f731b911df6db79c4d", null ],
     [ "ActorIndex", "classACar.html#ab40c38ab9e236b31167bf794b73b3ab8", null ],
+    [ "CarCounts", "classACar.html#a4ef61f1de8a5894cbab9d44f8fc071cc", null ],
     [ "Index", "classACar.html#afac2eb5a1ae0d874d6ce60d12506d2ee", null ],
+    [ "PathIndex", "classACar.html#afe1557f19b375bbb96f879bfd9da18ca", null ],
+    [ "PathPoint", "classACar.html#a9dae5a82fe3ca5e9623088789025fa49", null ],
     [ "Position", "classACar.html#acfea44f8d96f8860a8a89175b4cfd6bd", null ],
     [ "Rotation", "classACar.html#a5ca99f4e4beec67b51375356116593fa", null ],
     [ "SomeArg3", "classACar.html#aeca410a32d8e5e70001c75f906460058", null ],
@@ -19,7 +29,9 @@ var classACar =
     [ "SomeMultiplierTheSequel", "classACar.html#a31ac0024ddb11a732ae08114ee909f7d", null ],
     [ "SomeType", "classACar.html#a5ff40737787649817e59d71a8a78850e", null ],
     [ "SoundBits", "classACar.html#a816dab1c6281d759dac1d7a86d6b6f12", null ],
+    [ "SpawnType", "classACar.html#a4f50cdf896740d0f09fffb1f79f139d1", null ],
     [ "Speed", "classACar.html#a7b80788be2823c90c45e7b97675d1d1f", null ],
+    [ "SpeedB", "classACar.html#a5819515d64221bdedb3c83f3e177e9e4", null ],
     [ "Type", "classACar.html#a5228c5229fd025a0bae4c8ee45950f5b", null ],
     [ "Velocity", "classACar.html#ac24730c09357ec3241622320ea552c2a", null ],
     [ "WaypointIndex", "classACar.html#a9ce5827639f535a242cec247d2259ef1", null ]

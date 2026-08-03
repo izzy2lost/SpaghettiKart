@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: TrackSections Struct Reference</title>
+<title>SpaghettiKart: TrackSections Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -111,47 +111,115 @@ $(function(){initNavTree('structTrackSections.html',''); initResizable(true); })
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="course_8h_source.html">course.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Track_8h_source.html">Track.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for TrackSections:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="structTrackSections__coll__graph.svg" width="234" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="structTrackSections__coll__graph.svg" width="100%" height="584"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a095fe08228ac18a98e54f01c5ecc5a71" id="r_a095fe08228ac18a98e54f01c5ecc5a71"><td class="memItemLeft" align="right" valign="top">Gfx *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a095fe08228ac18a98e54f01c5ecc5a71">addr</a></td></tr>
-<tr class="separator:a095fe08228ac18a98e54f01c5ecc5a71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab791855d92e829e0f5e31086ee6557b9" id="r_ab791855d92e829e0f5e31086ee6557b9"><td class="memItemLeft" >union {&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af9afe5b78a6d8b5a3eb480952deb9ed9" id="r_af9afe5b78a6d8b5a3eb480952deb9ed9"><td class="memItemLeft" >&#160;&#160;&#160;uint64_t&#160;&#160;&#160;<a class="el" href="#a4616695b955d9f9c5f654f2d8fb18430">crc</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:af9afe5b78a6d8b5a3eb480952deb9ed9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89b64ad3809b11b9751cdcc597249b56" id="r_a89b64ad3809b11b9751cdcc597249b56"><td class="memItemLeft" >&#160;&#160;&#160;void *&#160;&#160;&#160;<a class="el" href="#a51b2e9bf9b66a5ce5795e47b31177990">model</a>&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:a89b64ad3809b11b9751cdcc597249b56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab791855d92e829e0f5e31086ee6557b9" id="r_ab791855d92e829e0f5e31086ee6557b9"><td class="memItemLeft" valign="top">};&#160;</td><td class="memItemRight" valign="bottom">&#160;</td><td class="memItemRight" valign="bottom"></td></tr>
+<tr class="separator:ab791855d92e829e0f5e31086ee6557b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5da9422111f0325e591566d162776c1d" id="r_a5da9422111f0325e591566d162776c1d"><td class="memItemLeft" align="right" valign="top">u8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5da9422111f0325e591566d162776c1d">surfaceType</a></td></tr>
 <tr class="separator:a5da9422111f0325e591566d162776c1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a53d5aca8370d2850514a4507044dcbd3" id="r_a53d5aca8370d2850514a4507044dcbd3"><td class="memItemLeft" align="right" valign="top">u8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a53d5aca8370d2850514a4507044dcbd3">sectionId</a></td></tr>
 <tr class="separator:a53d5aca8370d2850514a4507044dcbd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5b479d66f3ab630872a6a2042ad8270" id="r_ad5b479d66f3ab630872a6a2042ad8270"><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad5b479d66f3ab630872a6a2042ad8270">flags</a></td></tr>
-<tr class="separator:ad5b479d66f3ab630872a6a2042ad8270"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6219b6ddb7550ae609c95d393040bee5" id="r_a6219b6ddb7550ae609c95d393040bee5"><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6219b6ddb7550ae609c95d393040bee5">clip</a></td></tr>
+<tr class="separator:a6219b6ddb7550ae609c95d393040bee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56bf37b419cfcea6ae9a23f780dc0036" id="r_a56bf37b419cfcea6ae9a23f780dc0036"><td class="memItemLeft" align="right" valign="top">u16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56bf37b419cfcea6ae9a23f780dc0036">layer</a></td></tr>
+<tr class="separator:a56bf37b419cfcea6ae9a23f780dc0036"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c84330b0fdeedd8de40299c52ff4faf" id="r_a6c84330b0fdeedd8de40299c52ff4faf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6c84330b0fdeedd8de40299c52ff4faf">location</a></td></tr>
+<tr class="separator:a6c84330b0fdeedd8de40299c52ff4faf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Field Documentation</h2>
-<a id="a095fe08228ac18a98e54f01c5ecc5a71" name="a095fe08228ac18a98e54f01c5ecc5a71"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a095fe08228ac18a98e54f01c5ecc5a71">&#9670;&#160;</a></span>addr</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A container of models that make up each section of the track The game displays each model depending on the location of the player and the direction they are facing This work is done in <a class="el" href="render__courses_8c.html#aa2d036c2083162fb6a9fe86ebd20386b">render_track_sections()</a> </p>
+</div><h2 class="groupheader">Field Documentation</h2>
+<a id="ab791855d92e829e0f5e31086ee6557b9" name="ab791855d92e829e0f5e31086ee6557b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab791855d92e829e0f5e31086ee6557b9">&#9670;&#160;</a></span>[union]</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Gfx* TrackSections::addr</td>
+          <td class="memname">union  { ... }  <a class="el" href="structTrackSections.html">TrackSections</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ad5b479d66f3ab630872a6a2042ad8270" name="ad5b479d66f3ab630872a6a2042ad8270"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad5b479d66f3ab630872a6a2042ad8270">&#9670;&#160;</a></span>flags</h2>
+<a id="a6219b6ddb7550ae609c95d393040bee5" name="a6219b6ddb7550ae609c95d393040bee5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6219b6ddb7550ae609c95d393040bee5">&#9670;&#160;</a></span>clip</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">u16 TrackSections::flags</td>
+          <td class="memname">u16 TrackSections::clip</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a4616695b955d9f9c5f654f2d8fb18430" name="a4616695b955d9f9c5f654f2d8fb18430"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4616695b955d9f9c5f654f2d8fb18430">&#9670;&#160;</a></span>crc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint64_t TrackSections::crc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a56bf37b419cfcea6ae9a23f780dc0036" name="a56bf37b419cfcea6ae9a23f780dc0036"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56bf37b419cfcea6ae9a23f780dc0036">&#9670;&#160;</a></span>layer</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">u16 TrackSections::layer</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6c84330b0fdeedd8de40299c52ff4faf" name="a6c84330b0fdeedd8de40299c52ff4faf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c84330b0fdeedd8de40299c52ff4faf">&#9670;&#160;</a></span>location</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="common__structs_8h.html#a5290523279339ea495248ab3a36cb46e">Vec3f</a> TrackSections::location</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a51b2e9bf9b66a5ce5795e47b31177990" name="a51b2e9bf9b66a5ce5795e47b31177990"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51b2e9bf9b66a5ce5795e47b31177990">&#9670;&#160;</a></span>model</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* TrackSections::model</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -187,7 +255,7 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>include/<a class="el" href="course_8h_source.html">course.h</a></li>
+<li>src/engine/tracks/<a class="el" href="Track_8h_source.html">Track.h</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

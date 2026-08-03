@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: OSeagull Class Reference</title>
+<title>SpaghettiKart: OSeagull Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -128,16 +128,16 @@ Collaboration diagram for OSeagull:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4dc7ec474bcdfc2469500232b6419b87" id="r_a4dc7ec474bcdfc2469500232b6419b87"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4dc7ec474bcdfc2469500232b6419b87">OSeagull</a> (<a class="el" href="structFVector.html">FVector</a> pos)</td></tr>
-<tr class="separator:a4dc7ec474bcdfc2469500232b6419b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a39fdc9ecc362a16afa1572ca21f001f0" id="r_a39fdc9ecc362a16afa1572ca21f001f0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39fdc9ecc362a16afa1572ca21f001f0">OSeagull</a> (const <a class="el" href="structSpawnParams.html">SpawnParams</a> &amp;params)</td></tr>
+<tr class="separator:a39fdc9ecc362a16afa1572ca21f001f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b09c35c5bf5e0ecc4fd2f90d71d65c0" id="r_a8b09c35c5bf5e0ecc4fd2f90d71d65c0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b09c35c5bf5e0ecc4fd2f90d71d65c0">~OSeagull</a> ()</td></tr>
 <tr class="separator:a8b09c35c5bf5e0ecc4fd2f90d71d65c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86b5da4447db382837540ab7dc34c95a" id="r_a86b5da4447db382837540ab7dc34c95a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86b5da4447db382837540ab7dc34c95a">Tick</a> () override</td></tr>
 <tr class="separator:a86b5da4447db382837540ab7dc34c95a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8b22830202db11f9023229cbd9d2f8c" id="r_aa8b22830202db11f9023229cbd9d2f8c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8b22830202db11f9023229cbd9d2f8c">Draw</a> (s32 cameraId) override</td></tr>
 <tr class="separator:aa8b22830202db11f9023229cbd9d2f8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6af838a820a0232e940575521844caa" id="r_ac6af838a820a0232e940575521844caa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6af838a820a0232e940575521844caa">func_800552BC</a> (s32 objectIndex)</td></tr>
-<tr class="separator:ac6af838a820a0232e940575521844caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a62e1843ac6fce6b1be77adc410f509" id="r_a6a62e1843ac6fce6b1be77adc410f509"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6a62e1843ac6fce6b1be77adc410f509">func_800552BC</a> (s32 cameraId, s32 objectIndex)</td></tr>
+<tr class="separator:a6a62e1843ac6fce6b1be77adc410f509"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb8d3fd824adf5e5edbf698c94f59111" id="r_afb8d3fd824adf5e5edbf698c94f59111"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb8d3fd824adf5e5edbf698c94f59111">func_8008275C</a> (s32 objectIndex)</td></tr>
 <tr class="separator:afb8d3fd824adf5e5edbf698c94f59111"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aecaeaea3ef1cd4205d9049803ea997e5" id="r_aecaeaea3ef1cd4205d9049803ea997e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecaeaea3ef1cd4205d9049803ea997e5">func_8008241C</a> (s32 objectIndex, s32 arg1)</td></tr>
@@ -149,6 +149,10 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9591f7c6b916313298bf7bfc2b68c7d3 inherit pub_methods_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a629d0dcbb210e289cdf541a91321c86b inherit pub_methods_classOObject" id="r_a629d0dcbb210e289cdf541a91321c86b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#a629d0dcbb210e289cdf541a91321c86b">OObject</a> ()</td></tr>
 <tr class="separator:a629d0dcbb210e289cdf541a91321c86b inherit pub_methods_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03ed7d790d8528c0bfa1a8307734bbf8 inherit pub_methods_classOObject" id="r_a03ed7d790d8528c0bfa1a8307734bbf8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#a03ed7d790d8528c0bfa1a8307734bbf8">OObject</a> (<a class="el" href="structSpawnParams.html">SpawnParams</a> params)</td></tr>
+<tr class="separator:a03ed7d790d8528c0bfa1a8307734bbf8 inherit pub_methods_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25a846626b1b64226977f2c8b373d808 inherit pub_methods_classOObject" id="r_a25a846626b1b64226977f2c8b373d808"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#a25a846626b1b64226977f2c8b373d808">SetSpawnParams</a> (<a class="el" href="structSpawnParams.html">SpawnParams</a> &amp;params)</td></tr>
+<tr class="separator:a25a846626b1b64226977f2c8b373d808 inherit pub_methods_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afc95f8c2895660c7cee4f641abe887d2 inherit pub_methods_classOObject" id="r_afc95f8c2895660c7cee4f641abe887d2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#afc95f8c2895660c7cee4f641abe887d2">Tick60fps</a> ()</td></tr>
 <tr class="separator:afc95f8c2895660c7cee4f641abe887d2 inherit pub_methods_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af83224b938e210c3f4f856ec1e9dec7a inherit pub_methods_classOObject" id="r_af83224b938e210c3f4f856ec1e9dec7a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#af83224b938e210c3f4f856ec1e9dec7a">Expire</a> ()</td></tr>
@@ -157,16 +161,30 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a51b152c5674bd2b8e72d03a9ea363eab inherit pub_methods_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accee91ec8d2ddcbb08688bff628b6642 inherit pub_methods_classOObject" id="r_accee91ec8d2ddcbb08688bff628b6642"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#accee91ec8d2ddcbb08688bff628b6642">Reset</a> ()</td></tr>
 <tr class="separator:accee91ec8d2ddcbb08688bff628b6642 inherit pub_methods_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af66687c4b85690be7a33ad6d8d512575 inherit pub_methods_classOObject" id="r_af66687c4b85690be7a33ad6d8d512575"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFVector.html">FVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#af66687c4b85690be7a33ad6d8d512575">GetLocation</a> () const</td></tr>
+<tr class="separator:af66687c4b85690be7a33ad6d8d512575 inherit pub_methods_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a097f52f5733c8ffaf9a87878b1dc827f inherit pub_methods_classOObject" id="r_a097f52f5733c8ffaf9a87878b1dc827f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structIRotator.html">IRotator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#a097f52f5733c8ffaf9a87878b1dc827f">GetRotation</a> () const</td></tr>
+<tr class="separator:a097f52f5733c8ffaf9a87878b1dc827f inherit pub_methods_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a522eaa0e5c0b800ba190419b155b9884 inherit pub_methods_classOObject" id="r_a522eaa0e5c0b800ba190419b155b9884"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFVector.html">FVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#a522eaa0e5c0b800ba190419b155b9884">GetScale</a> () const</td></tr>
+<tr class="separator:a522eaa0e5c0b800ba190419b155b9884 inherit pub_methods_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2399738064a1f536548473ef250e639d inherit pub_methods_classOObject" id="r_a2399738064a1f536548473ef250e639d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#a2399738064a1f536548473ef250e639d">Translate</a> (<a class="el" href="structFVector.html">FVector</a> pos)</td></tr>
+<tr class="separator:a2399738064a1f536548473ef250e639d inherit pub_methods_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26a49a83acf5ca630d9e815d9a02d55f inherit pub_methods_classOObject" id="r_a26a49a83acf5ca630d9e815d9a02d55f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#a26a49a83acf5ca630d9e815d9a02d55f">Rotate</a> (<a class="el" href="structIRotator.html">IRotator</a> rot)</td></tr>
+<tr class="separator:a26a49a83acf5ca630d9e815d9a02d55f inherit pub_methods_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eec46e6bc8a97ad6a38e2755f63355f inherit pub_methods_classOObject" id="r_a8eec46e6bc8a97ad6a38e2755f63355f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#a8eec46e6bc8a97ad6a38e2755f63355f">SetScale</a> (<a class="el" href="structFVector.html">FVector</a> scale)</td></tr>
+<tr class="separator:a8eec46e6bc8a97ad6a38e2755f63355f inherit pub_methods_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf4347c4d6c51a0b41dbc9b98a0f96aa inherit pub_methods_classOObject" id="r_aaf4347c4d6c51a0b41dbc9b98a0f96aa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#aaf4347c4d6c51a0b41dbc9b98a0f96aa">DrawEditorProperties</a> ()</td></tr>
+<tr class="separator:aaf4347c4d6c51a0b41dbc9b98a0f96aa inherit pub_methods_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a8be68367cbb03b447cb8e0f523fc9ee1" id="r_a8be68367cbb03b447cb8e0f523fc9ee1"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8be68367cbb03b447cb8e0f523fc9ee1">GetCount</a> ()</td></tr>
 <tr class="separator:a8be68367cbb03b447cb8e0f523fc9ee1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b3711a3b09b0c8c923bd67629f8eff1" id="r_a4b3711a3b09b0c8c923bd67629f8eff1"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classOSeagull.html">OSeagull</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b3711a3b09b0c8c923bd67629f8eff1">Spawn</a> (const <a class="el" href="structFVector.html">FVector</a> &amp;pos)</td></tr>
+<tr class="separator:a4b3711a3b09b0c8c923bd67629f8eff1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:ad672861e9be352e001a012abde21e18d" id="r_ad672861e9be352e001a012abde21e18d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFVector.html">FVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad672861e9be352e001a012abde21e18d">_pos</a></td></tr>
-<tr class="separator:ad672861e9be352e001a012abde21e18d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a51790069af0fc5cc0fa08ba160e25632" id="r_a51790069af0fc5cc0fa08ba160e25632"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51790069af0fc5cc0fa08ba160e25632">_idx</a></td></tr>
 <tr class="separator:a51790069af0fc5cc0fa08ba160e25632"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a796433ca1465ee9f2614079a6609dad1" id="r_a796433ca1465ee9f2614079a6609dad1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a796433ca1465ee9f2614079a6609dad1">_toggle</a></td></tr>
@@ -188,16 +206,30 @@ Additional Inherited Members</h2></td></tr>
 <tr class="separator:ac2f36c2fe1e49d5e06547799f5ee6a44 inherit pub_attribs_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab20fd2c33df107f8d4e529bed4ccfca0 inherit pub_attribs_classOObject" id="r_ab20fd2c33df107f8d4e529bed4ccfca0"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#ab20fd2c33df107f8d4e529bed4ccfca0">Name</a> = &quot;&quot;</td></tr>
 <tr class="separator:ab20fd2c33df107f8d4e529bed4ccfca0 inherit pub_attribs_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62614f4f89f45977d456900c9878be97 inherit pub_attribs_classOObject" id="r_a62614f4f89f45977d456900c9878be97"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#a62614f4f89f45977d456900c9878be97">ResourceName</a> = &quot;&quot;</td></tr>
+<tr class="separator:a62614f4f89f45977d456900c9878be97 inherit pub_attribs_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab801bb96b735d86e0850f26a70667530 inherit pub_attribs_classOObject" id="r_ab801bb96b735d86e0850f26a70667530"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#ab801bb96b735d86e0850f26a70667530">bPendingDestroy</a> = false</td></tr>
 <tr class="separator:ab801bb96b735d86e0850f26a70667530 inherit pub_attribs_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b983519e7109f80064a14f0f620eadf inherit pub_attribs_classOObject" id="r_a9b983519e7109f80064a14f0f620eadf"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#a9b983519e7109f80064a14f0f620eadf">_objectIndex</a> = -1</td></tr>
 <tr class="separator:a9b983519e7109f80064a14f0f620eadf inherit pub_attribs_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e4242c0ead005d0a05b802ec17db9fa inherit pub_attribs_classOObject" id="r_a6e4242c0ead005d0a05b802ec17db9fa"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#a6e4242c0ead005d0a05b802ec17db9fa">Model</a> = &quot;&quot;</td></tr>
+<tr class="separator:a6e4242c0ead005d0a05b802ec17db9fa inherit pub_attribs_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf9428a8dfabbe891d7e897a17b7e187 inherit pub_attribs_classOObject" id="r_adf9428a8dfabbe891d7e897a17b7e187"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFVector.html">FVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#adf9428a8dfabbe891d7e897a17b7e187">SpawnPos</a> = {0.0f, 0.0f, 0.0f}</td></tr>
+<tr class="separator:adf9428a8dfabbe891d7e897a17b7e187 inherit pub_attribs_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a995445195241b4ce2925575b5fae097c inherit pub_attribs_classOObject" id="r_a995445195241b4ce2925575b5fae097c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structIRotator.html">IRotator</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#a995445195241b4ce2925575b5fae097c">SpawnRot</a> = {0, 0, 0}</td></tr>
+<tr class="separator:a995445195241b4ce2925575b5fae097c inherit pub_attribs_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3418b04afc72e9ac7ea4a4b5457acaf inherit pub_attribs_classOObject" id="r_ad3418b04afc72e9ac7ea4a4b5457acaf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structFVector.html">FVector</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#ad3418b04afc72e9ac7ea4a4b5457acaf">SpawnScale</a> = {1.0f, 1.0f, 1.0f}</td></tr>
+<tr class="separator:ad3418b04afc72e9ac7ea4a4b5457acaf inherit pub_attribs_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc51984dcbd7606c153e2a91a2f98ec8 inherit pub_attribs_classOObject" id="r_afc51984dcbd7606c153e2a91a2f98ec8"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#afc51984dcbd7606c153e2a91a2f98ec8">Speed</a> = 0.0f</td></tr>
+<tr class="separator:afc51984dcbd7606c153e2a91a2f98ec8 inherit pub_attribs_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa337ef2d48b0389f526070dc8ca0fa3d inherit pub_attribs_classOObject" id="r_aa337ef2d48b0389f526070dc8ca0fa3d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structTriangle.html">Triangle</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classOObject.html#aa337ef2d48b0389f526070dc8ca0fa3d">Triangles</a></td></tr>
+<tr class="separator:aa337ef2d48b0389f526070dc8ca0fa3d inherit pub_attribs_classOObject"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000015">Todo</a></b></dt><dd>unk_0D5 needs to be a struct variable probably. What does it do? Behaviour? </dd></dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4dc7ec474bcdfc2469500232b6419b87" name="a4dc7ec474bcdfc2469500232b6419b87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4dc7ec474bcdfc2469500232b6419b87">&#9670;&#160;</a></span>OSeagull()</h2>
+<a id="a39fdc9ecc362a16afa1572ca21f001f0" name="a39fdc9ecc362a16afa1572ca21f001f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a39fdc9ecc362a16afa1572ca21f001f0">&#9670;&#160;</a></span>OSeagull()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -208,7 +240,7 @@ Additional Inherited Members</h2></td></tr>
         <tr>
           <td class="memname">OSeagull::OSeagull </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structFVector.html">FVector</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
+          <td class="paramtype">const <a class="el" href="structSpawnParams.html">SpawnParams</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>params</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -221,7 +253,12 @@ Additional Inherited Members</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classOSeagull_a4dc7ec474bcdfc2469500232b6419b87_cgraph.svg" width="595" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classOSeagull_a39fdc9ecc362a16afa1572ca21f001f0_cgraph.svg" width="595" height="234"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classOSeagull_a39fdc9ecc362a16afa1572ca21f001f0_icgraph.svg" width="336" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -284,8 +321,8 @@ Here is the call graph for this function:</div>
 
 </div>
 </div>
-<a id="ac6af838a820a0232e940575521844caa" name="ac6af838a820a0232e940575521844caa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6af838a820a0232e940575521844caa">&#9670;&#160;</a></span>func_800552BC()</h2>
+<a id="a6a62e1843ac6fce6b1be77adc410f509" name="a6a62e1843ac6fce6b1be77adc410f509"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a62e1843ac6fce6b1be77adc410f509">&#9670;&#160;</a></span>func_800552BC()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -293,20 +330,24 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void OSeagull::func_800552BC </td>
           <td>(</td>
-          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>objectIndex</em></span></td><td>)</td>
+          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>cameraId</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>objectIndex</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classOSeagull_ac6af838a820a0232e940575521844caa_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classOSeagull_a6a62e1843ac6fce6b1be77adc410f509_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classOSeagull_ac6af838a820a0232e940575521844caa_icgraph.svg" width="371" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classOSeagull_a6a62e1843ac6fce6b1be77adc410f509_icgraph.svg" width="371" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -425,6 +466,36 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a4b3711a3b09b0c8c923bd67629f8eff1" name="a4b3711a3b09b0c8c923bd67629f8eff1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b3711a3b09b0c8c923bd67629f8eff1">&#9670;&#160;</a></span>Spawn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="classOSeagull.html">OSeagull</a> * OSeagull::Spawn </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structFVector.html">FVector</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>pos</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel inline">inline</span><span class="mlabel static">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classOSeagull_a4b3711a3b09b0c8c923bd67629f8eff1_cgraph.svg" width="100%" height="549"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
 <a id="a86b5da4447db382837540ab7dc34c95a" name="a86b5da4447db382837540ab7dc34c95a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a86b5da4447db382837540ab7dc34c95a">&#9670;&#160;</a></span>Tick()</h2>
 
@@ -491,28 +562,6 @@ Here is the call graph for this function:</div>
       <table class="memname">
         <tr>
           <td class="memname">s32 OSeagull::_idx</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel private">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad672861e9be352e001a012abde21e18d" name="ad672861e9be352e001a012abde21e18d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad672861e9be352e001a012abde21e18d">&#9670;&#160;</a></span>_pos</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structFVector.html">FVector</a> OSeagull::_pos</td>
         </tr>
       </table>
   </td>

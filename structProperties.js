@@ -8,7 +8,6 @@ var structProperties =
     [ "CloudList", "structProperties.html#ae58982c5d539015dea9697ac68c35970", null ],
     [ "Clouds", "structProperties.html#a2e98c1e2daf66a1c8450e105f7ba5a4b", null ],
     [ "CloudTexture", "structProperties.html#a03cd75aab731622f02d631906ab7d481", null ],
-    [ "CourseLength", "structProperties.html#a914dfa6c1429c513e7699fa2c90182e2", null ],
     [ "CurveTargetSpeed", "structProperties.html#a387dfb070695c9b1e218c5469512bc52", null ],
     [ "D_0D0096B8", "structProperties.html#a316fd9e1ee2dd9d91994a62086dd079d", null ],
     [ "DebugName", "structProperties.html#acea54ae83279167c2b4de58d6cd232be", null ],
@@ -19,11 +18,11 @@ var structProperties =
     [ "NearPersp", "structProperties.html#ab4770f66f45517c45796bf048e326c83", null ],
     [ "NormalTargetSpeed", "structProperties.html#af839b1223590498402d9389a7218d2cc", null ],
     [ "OffTrackTargetSpeed", "structProperties.html#a5d03cff5d613b7f1bf327cc7c28158f9", null ],
-    [ "PathSizes", "structProperties.html#a24374f73c91c6c4f9096690f1baf5d8b", null ],
+    [ "PathSizes", "structProperties.html#a9288c516957161c0c4d2c83d811f50fa", null ],
     [ "PathTable", "structProperties.html#a7a3eb51cc47be9c2bcbd1b2f18622f1e", null ],
-    [ "PathTable2", "structProperties.html#a57f5f55c332a9e4a14ab6853352a693c", null ],
+    [ "PathTable2", "structProperties.html#a2a82bd54b19123b9c4a4477c029baf80", null ],
     [ "Sequence", "structProperties.html#acd753e07362c52af62ea8b632c50570e", null ],
     [ "Skybox", "structProperties.html#ac3c175569725579891325503e37e0bce", null ],
-    [ "textures", "structProperties.html#a065b83567002440e6f6a7dd133e9939c", null ],
+    [ "TrackLength", "structProperties.html#ac6c76f0d3fd68ef6f705442fa23cb028", null ],
     [ "WaterLevel", "structProperties.html#a5a569b3eb054872e27543cf171a609c3", null ]
 ];

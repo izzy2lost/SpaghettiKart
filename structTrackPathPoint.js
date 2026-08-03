@@ -1,7 +1,7 @@
 var structTrackPathPoint =
 [
-    [ "posX", "structTrackPathPoint.html#a08ddd8f8aa6861879491267096956278", null ],
-    [ "posY", "structTrackPathPoint.html#a78cf2f99584e1d3efc59d53ded671774", null ],
-    [ "posZ", "structTrackPathPoint.html#a3a789afaadf7e222bf1e18d11f5c7e9a", null ],
-    [ "trackSectionId", "structTrackPathPoint.html#a3572feaaa5b94c4948f447adfd4aa66e", null ]
+    [ "trackSectionId", "structTrackPathPoint.html#a3572feaaa5b94c4948f447adfd4aa66e", null ],
+    [ "x", "structTrackPathPoint.html#a81874c9faad9ec29392005ead73f1235", null ],
+    [ "y", "structTrackPathPoint.html#a5e6d0c98475ce0a7f32004c557c22c43", null ],
+    [ "z", "structTrackPathPoint.html#aea15cf416227357e9eaef635fa7d6c14", null ]
 ];

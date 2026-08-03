@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/actors/WarioSign.h Source File</title>
+<title>SpaghettiKart: src/engine/actors/WarioSign.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -111,34 +111,61 @@ $(function(){initNavTree('WarioSign_8h_source.html',''); initResizable(true); })
 <a href="WarioSign_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;libultraship.h&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="Actor_8h.html">engine/Actor.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="CoreMath_8h.html">CoreMath.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="common__structs_8h.html">common_structs.h</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>}</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="RegisterContent_8h.html">engine/registry/RegisterContent.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="Actor_8h.html">engine/Actor.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="CoreMath_8h.html">engine/CoreMath.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
+<div class="foldopen" id="foldopen00008" data-start="{" data-end="};">
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classAWarioSign.html">    8</a></span><span class="keyword">class </span><a class="code hl_function" href="classAWarioSign.html#a8b1dbadc1b7f123b87b9f7d9a078a934">AWarioSign</a> : <span class="keyword">public</span> <a class="code hl_function" href="classAActor.html#a679c43bacf3600fa2d7a6ab30e34a8a6">AActor</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classAWarioSign.html">   11</a></span><span class="keyword">class </span><a class="code hl_function" href="classAWarioSign.html#a7ea4fcbbb19ab84a4a0c29a13936050e">AWarioSign</a> : <span class="keyword">public</span> <a class="code hl_function" href="classAActor.html#a679c43bacf3600fa2d7a6ab30e34a8a6">AActor</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classAWarioSign.html#aa92ffb76f7a2c729fd1af9f4b0197c6d">   14</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classAWarioSign.html#aa92ffb76f7a2c729fd1af9f4b0197c6d">~AWarioSign</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classAWarioSign.html#a7ea4fcbbb19ab84a4a0c29a13936050e">AWarioSign</a>(<a class="code hl_struct" href="structFVector.html">FVector</a> pos);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classAWarioSign.html#a20207b1db85d661c98a11f79b85c7afd">Tick</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classAWarioSign.html#a6afbd9954a4ba3615eb120bffc0493a6">Draw</a>(<a class="code hl_struct" href="structCamera.html">Camera</a>*) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>};</div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="}">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classAWarioSign.html#a35b970ece194db9485e42c1bd05b765c">   11</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classAWarioSign.html#a35b970ece194db9485e42c1bd05b765c">~AWarioSign</a>() {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>        <a class="code hl_variable" href="classAWarioSign.html#ac5c2099de568afe7db6fd8f702e21013">_count</a> -= 1;</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    };</div>
+</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classAWarioSign.html#a8b1dbadc1b7f123b87b9f7d9a078a934">AWarioSign</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a>&amp; params);</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="comment">// This is simply a helper function to keep Spawning code clean</span></div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classAWarioSign.html#a738055428c4026f4d3ed3ac869954c32">   17</a></span>    <span class="keyword">static</span> <a class="code hl_function" href="classAWarioSign.html#a8b1dbadc1b7f123b87b9f7d9a078a934">AWarioSign</a>* <a class="code hl_function" href="classAWarioSign.html#a738055428c4026f4d3ed3ac869954c32">Spawn</a>(<a class="code hl_struct" href="structFVector.html">FVector</a> pos, <a class="code hl_struct" href="structIRotator.html">IRotator</a> rot, <a class="code hl_struct" href="structFVector.html">FVector</a> velocity, <a class="code hl_struct" href="structFVector.html">FVector</a> scale) {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a> params = {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>            .Name = <span class="stringliteral">&quot;mk:wario_sign&quot;</span>,</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>            .Location = pos,</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>            .Rotation = rot,</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>            .Scale = scale,</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            .Velocity = velocity,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            .Speed = 182,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        };</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><a class="code hl_function" href="classAWarioSign.html#a8b1dbadc1b7f123b87b9f7d9a078a934">AWarioSign</a>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="RegisterContent_8h.html#aa90aab222b9cb6a7a75c2ed09379eb4e">AddActorToWorld&lt;AWarioSign&gt;</a>(params));</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    }</div>
+</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classAWarioSign.html#ae1471e17f129ad1d28278f9e3265d76e">IsMod</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classAWarioSign.html#a20207b1db85d661c98a11f79b85c7afd">Tick</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classAWarioSign.html#a6afbd9954a4ba3615eb120bffc0493a6">Draw</a>(<a class="code hl_struct" href="structCamera.html">Camera</a>*) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classAWarioSign.html#ac5c2099de568afe7db6fd8f702e21013">   33</a></span>    <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="classAWarioSign.html#ac5c2099de568afe7db6fd8f702e21013">_count</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classAWarioSign.html#afafed4a2bb89869afc49f19ac87155e4">   34</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="classAWarioSign.html#afafed4a2bb89869afc49f19ac87155e4">_idx</a>;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>};</div>
 </div>
 <div class="ttc" id="aActor_8h_html"><div class="ttname"><a href="Actor_8h.html">Actor.h</a></div></div>
 <div class="ttc" id="aCoreMath_8h_html"><div class="ttname"><a href="CoreMath_8h.html">CoreMath.h</a></div></div>
-<div class="ttc" id="aclassAActor_html_a679c43bacf3600fa2d7a6ab30e34a8a6"><div class="ttname"><a href="classAActor.html#a679c43bacf3600fa2d7a6ab30e34a8a6">AActor::AActor</a></div><div class="ttdeci">AActor()</div><div class="ttdef"><b>Definition</b> Actor.cpp:10</div></div>
-<div class="ttc" id="aclassAWarioSign_html_a20207b1db85d661c98a11f79b85c7afd"><div class="ttname"><a href="classAWarioSign.html#a20207b1db85d661c98a11f79b85c7afd">AWarioSign::Tick</a></div><div class="ttdeci">virtual void Tick() override</div><div class="ttdef"><b>Definition</b> WarioSign.cpp:21</div></div>
-<div class="ttc" id="aclassAWarioSign_html_a6afbd9954a4ba3615eb120bffc0493a6"><div class="ttname"><a href="classAWarioSign.html#a6afbd9954a4ba3615eb120bffc0493a6">AWarioSign::Draw</a></div><div class="ttdeci">virtual void Draw(Camera *) override</div><div class="ttdef"><b>Definition</b> WarioSign.cpp:25</div></div>
-<div class="ttc" id="aclassAWarioSign_html_a7ea4fcbbb19ab84a4a0c29a13936050e"><div class="ttname"><a href="classAWarioSign.html#a7ea4fcbbb19ab84a4a0c29a13936050e">AWarioSign::AWarioSign</a></div><div class="ttdeci">AWarioSign(FVector pos)</div><div class="ttdef"><b>Definition</b> WarioSign.cpp:13</div></div>
-<div class="ttc" id="aclassAWarioSign_html_aa92ffb76f7a2c729fd1af9f4b0197c6d"><div class="ttname"><a href="classAWarioSign.html#aa92ffb76f7a2c729fd1af9f4b0197c6d">AWarioSign::~AWarioSign</a></div><div class="ttdeci">virtual ~AWarioSign()=default</div></div>
-<div class="ttc" id="acommon__structs_8h_html"><div class="ttname"><a href="common__structs_8h.html">common_structs.h</a></div></div>
-<div class="ttc" id="astructCamera_html"><div class="ttname"><a href="structCamera.html">Camera</a></div><div class="ttdef"><b>Definition</b> camera.h:27</div></div>
-<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:18</div></div>
+<div class="ttc" id="aRegisterContent_8h_html"><div class="ttname"><a href="RegisterContent_8h.html">RegisterContent.h</a></div></div>
+<div class="ttc" id="aRegisterContent_8h_html_aa90aab222b9cb6a7a75c2ed09379eb4e"><div class="ttname"><a href="RegisterContent_8h.html#aa90aab222b9cb6a7a75c2ed09379eb4e">AddActorToWorld</a></div><div class="ttdeci">static AActor * AddActorToWorld(const SpawnParams &amp;params)</div><div class="ttdef"><b>Definition</b> RegisterContent.h:14</div></div>
+<div class="ttc" id="aclassAActor_html_a679c43bacf3600fa2d7a6ab30e34a8a6"><div class="ttname"><a href="classAActor.html#a679c43bacf3600fa2d7a6ab30e34a8a6">AActor::AActor</a></div><div class="ttdeci">AActor()</div><div class="ttdef"><b>Definition</b> Actor.cpp:13</div></div>
+<div class="ttc" id="aclassAWarioSign_html_a20207b1db85d661c98a11f79b85c7afd"><div class="ttname"><a href="classAWarioSign.html#a20207b1db85d661c98a11f79b85c7afd">AWarioSign::Tick</a></div><div class="ttdeci">virtual void Tick() override</div><div class="ttdef"><b>Definition</b> WarioSign.cpp:49</div></div>
+<div class="ttc" id="aclassAWarioSign_html_a35b970ece194db9485e42c1bd05b765c"><div class="ttname"><a href="classAWarioSign.html#a35b970ece194db9485e42c1bd05b765c">AWarioSign::~AWarioSign</a></div><div class="ttdeci">virtual ~AWarioSign()</div><div class="ttdef"><b>Definition</b> WarioSign.h:11</div></div>
+<div class="ttc" id="aclassAWarioSign_html_a6afbd9954a4ba3615eb120bffc0493a6"><div class="ttname"><a href="classAWarioSign.html#a6afbd9954a4ba3615eb120bffc0493a6">AWarioSign::Draw</a></div><div class="ttdeci">virtual void Draw(Camera *) override</div><div class="ttdef"><b>Definition</b> WarioSign.cpp:53</div></div>
+<div class="ttc" id="aclassAWarioSign_html_a738055428c4026f4d3ed3ac869954c32"><div class="ttname"><a href="classAWarioSign.html#a738055428c4026f4d3ed3ac869954c32">AWarioSign::Spawn</a></div><div class="ttdeci">static AWarioSign * Spawn(FVector pos, IRotator rot, FVector velocity, FVector scale)</div><div class="ttdef"><b>Definition</b> WarioSign.h:17</div></div>
+<div class="ttc" id="aclassAWarioSign_html_a8b1dbadc1b7f123b87b9f7d9a078a934"><div class="ttname"><a href="classAWarioSign.html#a8b1dbadc1b7f123b87b9f7d9a078a934">AWarioSign::AWarioSign</a></div><div class="ttdeci">AWarioSign(const SpawnParams &amp;params)</div><div class="ttdef"><b>Definition</b> WarioSign.cpp:18</div></div>
+<div class="ttc" id="aclassAWarioSign_html_ac5c2099de568afe7db6fd8f702e21013"><div class="ttname"><a href="classAWarioSign.html#ac5c2099de568afe7db6fd8f702e21013">AWarioSign::_count</a></div><div class="ttdeci">static size_t _count</div><div class="ttdef"><b>Definition</b> WarioSign.h:33</div></div>
+<div class="ttc" id="aclassAWarioSign_html_ae1471e17f129ad1d28278f9e3265d76e"><div class="ttname"><a href="classAWarioSign.html#ae1471e17f129ad1d28278f9e3265d76e">AWarioSign::IsMod</a></div><div class="ttdeci">virtual bool IsMod() override</div><div class="ttdef"><b>Definition</b> WarioSign.cpp:45</div></div>
+<div class="ttc" id="aclassAWarioSign_html_afafed4a2bb89869afc49f19ac87155e4"><div class="ttname"><a href="classAWarioSign.html#afafed4a2bb89869afc49f19ac87155e4">AWarioSign::_idx</a></div><div class="ttdeci">size_t _idx</div><div class="ttdef"><b>Definition</b> WarioSign.h:34</div></div>
+<div class="ttc" id="astructCamera_html"><div class="ttname"><a href="structCamera.html">Camera</a></div><div class="ttdef"><b>Definition</b> camera.h:35</div></div>
+<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:30</div></div>
+<div class="ttc" id="astructIRotator_html"><div class="ttname"><a href="structIRotator.html">IRotator</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:141</div></div>
+<div class="ttc" id="astructSpawnParams_html"><div class="ttname"><a href="structSpawnParams.html">SpawnParams</a></div><div class="ttdef"><b>Definition</b> SpawnParams.h:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

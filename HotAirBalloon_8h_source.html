@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/objects/HotAirBalloon.h Source File</title>
+<title>SpaghettiKart: src/engine/objects/HotAirBalloon.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -111,59 +111,59 @@ $(function(){initNavTree('HotAirBalloon_8h_source.html',''); initResizable(true)
 <a href="HotAirBalloon_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;libultraship.h&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="Object_8h.html">Object.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="World_8h.html">World.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="Object_8h.html">Object.h</a>&quot;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="RegisterContent_8h.html">engine/registry/RegisterContent.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="World_8h.html">engine/World.h</a>&quot;</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="macros_8h.html">macros.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="main_8h.html">main.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="vehicles_8h.html">vehicles.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="waypoints_8h.html">waypoints.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="common__structs_8h.html">common_structs.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="objects_8h.html">objects.h</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="camera_8h.html">camera.h</a>&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;some_data.h&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classOHotAirBalloon.html">   20</a></span><span class="keyword">class </span><a class="code hl_function" href="classOHotAirBalloon.html#ada883b011a78b888dd554d7bccec3edf">OHotAirBalloon</a> : <span class="keyword">public</span> <a class="code hl_function" href="classOObject.html#a629d0dcbb210e289cdf541a91321c86b">OObject</a> {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classOHotAirBalloon.html#ada883b011a78b888dd554d7bccec3edf">OHotAirBalloon</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structFVector.html">FVector</a>&amp; pos);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOHotAirBalloon.html#a59cdcf707eed92e7a9f72626d093fc23">Tick</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOHotAirBalloon.html#a42ba04a6db43192cd2495b19da3face7">Draw</a>(s32 cameraId) <span class="keyword">override</span>;</div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classOHotAirBalloon.html">    9</a></span><span class="keyword">class </span><a class="code hl_function" href="classOHotAirBalloon.html#a4e18d733a47668186c68872b87f31a1c">OHotAirBalloon</a> : <span class="keyword">public</span> <a class="code hl_function" href="classOObject.html#a629d0dcbb210e289cdf541a91321c86b">OObject</a> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classOHotAirBalloon.html#a4e18d733a47668186c68872b87f31a1c">OHotAirBalloon</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a>&amp; params);</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="comment">// This is simply a helper function to keep Spawning code clean</span></div>
+<div class="foldopen" id="foldopen00014" data-start="{" data-end="}">
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classOHotAirBalloon.html#a32b443047f84888dd4b4717e8f03920c">   14</a></span>    <span class="keyword">static</span> <a class="code hl_function" href="classOHotAirBalloon.html#a4e18d733a47668186c68872b87f31a1c">OHotAirBalloon</a>* <a class="code hl_function" href="classOHotAirBalloon.html#a32b443047f84888dd4b4717e8f03920c">Spawn</a>(<a class="code hl_struct" href="structFVector.html">FVector</a> pos) {</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        <a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a> params = {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>            .Name = <span class="stringliteral">&quot;mk:hot_air_balloon&quot;</span>,</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>            .Location = pos,</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        };</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><a class="code hl_function" href="classOHotAirBalloon.html#a4e18d733a47668186c68872b87f31a1c">OHotAirBalloon</a>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="RegisterContent_8h.html#aa0abd506fe572b3e6491f613a4017641">AddObjectToWorld&lt;OHotAirBalloon&gt;</a>(params));</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
+</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOHotAirBalloon.html#a59cdcf707eed92e7a9f72626d093fc23">Tick</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOHotAirBalloon.html#a42ba04a6db43192cd2495b19da3face7">Draw</a>(s32 cameraId) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOHotAirBalloon.html#ae5b355a03c0a4ba5d20c3487b7a232fe">SetSpawnParams</a>(<a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a>&amp; params) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOHotAirBalloon.html#abc997fe9319a640da556d0516417ac3e">func_80055CCC</a>(s32 objectIndex, s32 cameraId);</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOHotAirBalloon.html#a401de1da0d55d973c05514589e2b5298">init_hot_air_balloon</a>(s32 objectIndex);</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOHotAirBalloon.html#aa36b4dc68be94cae680263d5d5d1c071">func_80085534</a>(s32 objectIndex);</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOHotAirBalloon.html#a40bc8d453d3d79b9a7accdc5b4e1420d">func_80085768</a>(s32 objectIndex);</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classOHotAirBalloon.html#a0b0351d8ec3ce6ab50e6779772f628e4">   32</a></span>    <a class="code hl_struct" href="structFVector.html">FVector</a> <a class="code hl_variable" href="classOHotAirBalloon.html#a0b0351d8ec3ce6ab50e6779772f628e4">_pos</a>;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="classOHotAirBalloon.html#a2d1ff17764ff93db74eccec3261951c3">   32</a></span>    <a class="code hl_struct" href="structFVector.html">FVector</a> <a class="code hl_variable" href="classOHotAirBalloon.html#a2d1ff17764ff93db74eccec3261951c3">Pos</a>;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classOHotAirBalloon.html#a05d4c1e7c8aaa596e044986f3bd0ae18">   33</a></span>    <span class="keywordtype">bool</span> *<a class="code hl_variable" href="classOHotAirBalloon.html#a05d4c1e7c8aaa596e044986f3bd0ae18">_visible</a>;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>};</div>
 </div>
 <div class="ttc" id="aObject_8h_html"><div class="ttname"><a href="Object_8h.html">Object.h</a></div></div>
+<div class="ttc" id="aRegisterContent_8h_html"><div class="ttname"><a href="RegisterContent_8h.html">RegisterContent.h</a></div></div>
+<div class="ttc" id="aRegisterContent_8h_html_aa0abd506fe572b3e6491f613a4017641"><div class="ttname"><a href="RegisterContent_8h.html#aa0abd506fe572b3e6491f613a4017641">AddObjectToWorld</a></div><div class="ttdeci">static OObject * AddObjectToWorld(const SpawnParams &amp;params)</div><div class="ttdef"><b>Definition</b> RegisterContent.h:10</div></div>
 <div class="ttc" id="aWorld_8h_html"><div class="ttname"><a href="World_8h.html">World.h</a></div></div>
-<div class="ttc" id="acamera_8h_html"><div class="ttname"><a href="camera_8h.html">camera.h</a></div></div>
 <div class="ttc" id="aclassOHotAirBalloon_html_a05d4c1e7c8aaa596e044986f3bd0ae18"><div class="ttname"><a href="classOHotAirBalloon.html#a05d4c1e7c8aaa596e044986f3bd0ae18">OHotAirBalloon::_visible</a></div><div class="ttdeci">bool * _visible</div><div class="ttdef"><b>Definition</b> HotAirBalloon.h:33</div></div>
-<div class="ttc" id="aclassOHotAirBalloon_html_a0b0351d8ec3ce6ab50e6779772f628e4"><div class="ttname"><a href="classOHotAirBalloon.html#a0b0351d8ec3ce6ab50e6779772f628e4">OHotAirBalloon::_pos</a></div><div class="ttdeci">FVector _pos</div><div class="ttdef"><b>Definition</b> HotAirBalloon.h:32</div></div>
-<div class="ttc" id="aclassOHotAirBalloon_html_a401de1da0d55d973c05514589e2b5298"><div class="ttname"><a href="classOHotAirBalloon.html#a401de1da0d55d973c05514589e2b5298">OHotAirBalloon::init_hot_air_balloon</a></div><div class="ttdeci">void init_hot_air_balloon(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> HotAirBalloon.cpp:99</div></div>
-<div class="ttc" id="aclassOHotAirBalloon_html_a40bc8d453d3d79b9a7accdc5b4e1420d"><div class="ttname"><a href="classOHotAirBalloon.html#a40bc8d453d3d79b9a7accdc5b4e1420d">OHotAirBalloon::func_80085768</a></div><div class="ttdeci">void func_80085768(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> HotAirBalloon.cpp:168</div></div>
-<div class="ttc" id="aclassOHotAirBalloon_html_a42ba04a6db43192cd2495b19da3face7"><div class="ttname"><a href="classOHotAirBalloon.html#a42ba04a6db43192cd2495b19da3face7">OHotAirBalloon::Draw</a></div><div class="ttdeci">virtual void Draw(s32 cameraId) override</div><div class="ttdef"><b>Definition</b> HotAirBalloon.cpp:53</div></div>
-<div class="ttc" id="aclassOHotAirBalloon_html_a59cdcf707eed92e7a9f72626d093fc23"><div class="ttname"><a href="classOHotAirBalloon.html#a59cdcf707eed92e7a9f72626d093fc23">OHotAirBalloon::Tick</a></div><div class="ttdeci">virtual void Tick() override</div><div class="ttdef"><b>Definition</b> HotAirBalloon.cpp:36</div></div>
-<div class="ttc" id="aclassOHotAirBalloon_html_aa36b4dc68be94cae680263d5d5d1c071"><div class="ttname"><a href="classOHotAirBalloon.html#aa36b4dc68be94cae680263d5d5d1c071">OHotAirBalloon::func_80085534</a></div><div class="ttdeci">void func_80085534(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> HotAirBalloon.cpp:117</div></div>
-<div class="ttc" id="aclassOHotAirBalloon_html_abc997fe9319a640da556d0516417ac3e"><div class="ttname"><a href="classOHotAirBalloon.html#abc997fe9319a640da556d0516417ac3e">OHotAirBalloon::func_80055CCC</a></div><div class="ttdeci">void func_80055CCC(s32 objectIndex, s32 cameraId)</div><div class="ttdef"><b>Definition</b> HotAirBalloon.cpp:69</div></div>
-<div class="ttc" id="aclassOHotAirBalloon_html_ada883b011a78b888dd554d7bccec3edf"><div class="ttname"><a href="classOHotAirBalloon.html#ada883b011a78b888dd554d7bccec3edf">OHotAirBalloon::OHotAirBalloon</a></div><div class="ttdeci">OHotAirBalloon(const FVector &amp;pos)</div><div class="ttdef"><b>Definition</b> HotAirBalloon.cpp:17</div></div>
+<div class="ttc" id="aclassOHotAirBalloon_html_a2d1ff17764ff93db74eccec3261951c3"><div class="ttname"><a href="classOHotAirBalloon.html#a2d1ff17764ff93db74eccec3261951c3">OHotAirBalloon::Pos</a></div><div class="ttdeci">FVector Pos</div><div class="ttdef"><b>Definition</b> HotAirBalloon.h:32</div></div>
+<div class="ttc" id="aclassOHotAirBalloon_html_a32b443047f84888dd4b4717e8f03920c"><div class="ttname"><a href="classOHotAirBalloon.html#a32b443047f84888dd4b4717e8f03920c">OHotAirBalloon::Spawn</a></div><div class="ttdeci">static OHotAirBalloon * Spawn(FVector pos)</div><div class="ttdef"><b>Definition</b> HotAirBalloon.h:14</div></div>
+<div class="ttc" id="aclassOHotAirBalloon_html_a401de1da0d55d973c05514589e2b5298"><div class="ttname"><a href="classOHotAirBalloon.html#a401de1da0d55d973c05514589e2b5298">OHotAirBalloon::init_hot_air_balloon</a></div><div class="ttdeci">void init_hot_air_balloon(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> HotAirBalloon.cpp:113</div></div>
+<div class="ttc" id="aclassOHotAirBalloon_html_a40bc8d453d3d79b9a7accdc5b4e1420d"><div class="ttname"><a href="classOHotAirBalloon.html#a40bc8d453d3d79b9a7accdc5b4e1420d">OHotAirBalloon::func_80085768</a></div><div class="ttdeci">void func_80085768(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> HotAirBalloon.cpp:182</div></div>
+<div class="ttc" id="aclassOHotAirBalloon_html_a42ba04a6db43192cd2495b19da3face7"><div class="ttname"><a href="classOHotAirBalloon.html#a42ba04a6db43192cd2495b19da3face7">OHotAirBalloon::Draw</a></div><div class="ttdeci">virtual void Draw(s32 cameraId) override</div><div class="ttdef"><b>Definition</b> HotAirBalloon.cpp:61</div></div>
+<div class="ttc" id="aclassOHotAirBalloon_html_a4e18d733a47668186c68872b87f31a1c"><div class="ttname"><a href="classOHotAirBalloon.html#a4e18d733a47668186c68872b87f31a1c">OHotAirBalloon::OHotAirBalloon</a></div><div class="ttdeci">OHotAirBalloon(const SpawnParams &amp;params)</div><div class="ttdef"><b>Definition</b> HotAirBalloon.cpp:18</div></div>
+<div class="ttc" id="aclassOHotAirBalloon_html_a59cdcf707eed92e7a9f72626d093fc23"><div class="ttname"><a href="classOHotAirBalloon.html#a59cdcf707eed92e7a9f72626d093fc23">OHotAirBalloon::Tick</a></div><div class="ttdeci">virtual void Tick() override</div><div class="ttdef"><b>Definition</b> HotAirBalloon.cpp:44</div></div>
+<div class="ttc" id="aclassOHotAirBalloon_html_aa36b4dc68be94cae680263d5d5d1c071"><div class="ttname"><a href="classOHotAirBalloon.html#aa36b4dc68be94cae680263d5d5d1c071">OHotAirBalloon::func_80085534</a></div><div class="ttdeci">void func_80085534(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> HotAirBalloon.cpp:131</div></div>
+<div class="ttc" id="aclassOHotAirBalloon_html_abc997fe9319a640da556d0516417ac3e"><div class="ttname"><a href="classOHotAirBalloon.html#abc997fe9319a640da556d0516417ac3e">OHotAirBalloon::func_80055CCC</a></div><div class="ttdeci">void func_80055CCC(s32 objectIndex, s32 cameraId)</div><div class="ttdef"><b>Definition</b> HotAirBalloon.cpp:77</div></div>
+<div class="ttc" id="aclassOHotAirBalloon_html_ae5b355a03c0a4ba5d20c3487b7a232fe"><div class="ttname"><a href="classOHotAirBalloon.html#ae5b355a03c0a4ba5d20c3487b7a232fe">OHotAirBalloon::SetSpawnParams</a></div><div class="ttdeci">virtual void SetSpawnParams(SpawnParams &amp;params) override</div><div class="ttdef"><b>Definition</b> HotAirBalloon.cpp:40</div></div>
 <div class="ttc" id="aclassOObject_html_a629d0dcbb210e289cdf541a91321c86b"><div class="ttname"><a href="classOObject.html#a629d0dcbb210e289cdf541a91321c86b">OObject::OObject</a></div><div class="ttdeci">OObject()</div><div class="ttdef"><b>Definition</b> Object.cpp:13</div></div>
-<div class="ttc" id="acommon__structs_8h_html"><div class="ttname"><a href="common__structs_8h.html">common_structs.h</a></div></div>
-<div class="ttc" id="amacros_8h_html"><div class="ttname"><a href="macros_8h.html">macros.h</a></div></div>
-<div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div></div>
-<div class="ttc" id="aobjects_8h_html"><div class="ttname"><a href="objects_8h.html">objects.h</a></div></div>
-<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:18</div></div>
-<div class="ttc" id="avehicles_8h_html"><div class="ttname"><a href="vehicles_8h.html">vehicles.h</a></div></div>
-<div class="ttc" id="awaypoints_8h_html"><div class="ttname"><a href="waypoints_8h.html">waypoints.h</a></div></div>
+<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:30</div></div>
+<div class="ttc" id="astructSpawnParams_html"><div class="ttname"><a href="structSpawnParams.html">SpawnParams</a></div><div class="ttdef"><b>Definition</b> SpawnParams.h:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

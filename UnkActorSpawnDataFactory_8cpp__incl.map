@@ -1,28 +1,27 @@
 <map id="src/port/resource/importers/UnkActorSpawnDataFactory.cpp" name="src/port/resource/importers/UnkActorSpawnDataFactory.cpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="687,5,919,45"/>
-<area shape="rect" id="Node000002" href="$UnkActorSpawnDataFactory_8h.html" title=" " alt="" coords="181,101,394,126"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="691,48,370,101,369,96,690,43"/>
-<area shape="rect" id="Node000006" href="$UnkSpawnData_8h.html" title=" " alt="" coords="587,101,766,126"/>
-<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="777,48,707,95,704,91,774,43"/>
-<area shape="rect" id="Node000010" href="$common__structs_8h.html" title=" " alt="" coords="808,181,951,207"/>
-<area shape="poly" id="edge13_Node000001_Node000010" title=" " alt="" coords="808,45,815,86,831,132,859,170,855,173,826,135,810,88,802,46"/>
-<area shape="rect" id="Node000012" title=" " alt="" coords="841,101,965,126"/>
-<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="827,44,881,89,877,93,824,48"/>
-<area shape="rect" id="Node000013" title=" " alt="" coords="989,93,1135,133"/>
-<area shape="poly" id="edge12_Node000001_Node000013" title=" " alt="" coords="861,43,993,86,991,92,859,48"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="5,181,100,207"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="254,129,100,180,99,175,252,123"/>
-<area shape="rect" id="Node000004" title=" " alt="" coords="125,181,306,207"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="279,128,237,173,233,169,275,124"/>
-<area shape="rect" id="Node000005" title=" " alt="" coords="331,181,388,207"/>
-<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="300,124,341,169,337,173,296,128"/>
-<area shape="rect" id="Node000007" title=" " alt="" coords="413,181,567,207"/>
-<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="651,128,531,179,529,174,648,124"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="592,181,655,207"/>
-<area shape="poly" id="edge7_Node000006_Node000008" title=" " alt="" coords="671,128,641,171,637,168,667,125"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="679,181,783,207"/>
-<area shape="poly" id="edge8_Node000006_Node000009" title=" " alt="" coords="687,125,718,169,713,172,683,128"/>
-<area shape="poly" id="edge9_Node000006_Node000010" title=" " alt="" coords="707,124,838,174,836,179,705,128"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="826,255,933,280"/>
-<area shape="poly" id="edge10_Node000010_Node000011" title=" " alt="" coords="882,207,882,241,877,241,877,207"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="726,5,958,45"/>
+<area shape="rect" id="Node000002" href="$UnkActorSpawnDataFactory_8h.html" title=" " alt="" coords="330,101,543,126"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="754,48,504,100,503,95,752,43"/>
+<area shape="rect" id="Node000006" href="$UnkSpawnData_8h.html" title=" " alt="" coords="626,101,805,126"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="815,48,745,95,742,91,812,43"/>
+<area shape="rect" id="Node000009" href="$common__structs_8h.html" title=" " alt="" coords="847,189,989,214"/>
+<area shape="poly" id="edge13_Node000001_Node000009" title=" " alt="" coords="847,45,854,86,870,132,884,156,900,176,896,180,879,159,865,134,849,88,841,46"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="880,101,1004,126"/>
+<area shape="poly" id="edge11_Node000001_Node000011" title=" " alt="" coords="866,44,920,89,916,93,862,48"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="1028,93,1173,133"/>
+<area shape="poly" id="edge12_Node000001_Node000012" title=" " alt="" coords="900,43,1032,86,1030,92,898,48"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="421,189,607,214"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="449,124,496,176,492,180,445,128"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,181,225,221"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="394,129,200,180,198,175,393,124"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="249,189,397,214"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="423,128,351,182,348,178,420,124"/>
+<area shape="poly" id="edge6_Node000006_Node000003" title=" " alt="" coords="689,129,555,185,553,181,687,124"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="631,189,693,214"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="710,128,679,178,674,175,706,125"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="718,189,822,214"/>
+<area shape="poly" id="edge8_Node000006_Node000008" title=" " alt="" coords="725,125,757,175,753,178,720,128"/>
+<area shape="poly" id="edge9_Node000006_Node000009" title=" " alt="" coords="744,124,879,181,877,185,742,129"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="865,269,971,295"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="921,214,921,255,915,255,915,214"/>
 </map>

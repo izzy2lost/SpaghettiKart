@@ -1,4 +1,4 @@
 var Tools_8h =
 [
-    [ "Editor::ToolsWindow", "classEditor_1_1ToolsWindow.html", "classEditor_1_1ToolsWindow" ]
+    [ "TrackEditor::ToolsWindow", "classTrackEditor_1_1ToolsWindow.html", "classTrackEditor_1_1ToolsWindow" ]
 ];

@@ -1,4 +1,4 @@
 var yoshi__valley__vertices_8h =
 [
-    [ "ALIGN_ASSET", "yoshi__valley__vertices_8h.html#ad27b63f4487198e1902b64319926d0c3", null ]
+    [ "ALIGN_ASSET", "yoshi__valley__vertices_8h.html#a2d7671e20da33b4030f13f0b6966c99e", null ]
 ];

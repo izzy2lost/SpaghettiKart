@@ -8,7 +8,7 @@ var dir_f4f7efabaac21873a58d10d576a92da6 =
     [ "EditorMath.h", "EditorMath_8h.html", "EditorMath_8h" ],
     [ "GameObject.cpp", "GameObject_8cpp.html", null ],
     [ "GameObject.h", "GameObject_8h.html", "GameObject_8h" ],
-    [ "Gizmo.cpp", "Gizmo_8cpp.html", null ],
+    [ "Gizmo.cpp", "Gizmo_8cpp.html", "Gizmo_8cpp" ],
     [ "Gizmo.h", "Gizmo_8h.html", "Gizmo_8h" ],
     [ "Handles.cpp", "Handles_8cpp.html", null ],
     [ "Handles.h", "Handles_8h.html", "Handles_8h" ],

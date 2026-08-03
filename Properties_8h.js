@@ -1,4 +1,4 @@
 var Properties_8h =
 [
-    [ "Editor::PropertiesWindow", "classEditor_1_1PropertiesWindow.html", "classEditor_1_1PropertiesWindow" ]
+    [ "TrackEditor::PropertiesWindow", "classTrackEditor_1_1PropertiesWindow.html", "classTrackEditor_1_1PropertiesWindow" ]
 ];

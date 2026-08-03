@@ -1,4 +1,4 @@
 var Light_8h =
 [
-    [ "Editor::LightObject", "classEditor_1_1LightObject.html", "classEditor_1_1LightObject" ]
+    [ "TrackEditor::LightObject", "classTrackEditor_1_1LightObject.html", "classTrackEditor_1_1LightObject" ]
 ];

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/menu_items.c File Reference</title>
+<title>SpaghettiKart: src/menu_items.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -114,37 +114,37 @@ $(function(){initNavTree('menu__items_8c.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;libultraship.h&gt;</code><br />
+<code>#include &lt;libultra/types.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="macros_8h_source.html">macros.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="string_8h_source.html">string.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="mk64_8h_source.html">mk64.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="stubs_8h_source.html">stubs.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="defines_8h_source.html">defines.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="segments_8h_source.html">segments.h</a>&gt;</code><br />
-<code>#include &lt;libultra/types.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="sounds_8h_source.html">sounds.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="texture__data__2_8h_source.html">assets/texture_data_2.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="texture__data__2_8h_source.html">assets/textures/texture_data_2.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="code__800029B0_8h_source.html">code_800029B0.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="menu__items_8h_source.html">menu_items.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80005FD0_8h_source.html">code_80005FD0.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__8006E9C0_8h_source.html">code_8006E9C0.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="menus_8h_source.html">menus.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="memory_8h_source.html">racing/memory.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="save_8h_source.html">save.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80057C60_8h_source.html">code_80057C60.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="credits_8h_source.html">credits.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="data__segment2_8h_source.html">data_segment2.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="credits_8h_source.html">ending/credits.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="data__segment2_8h_source.html">assets/models/data_segment2.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__800AF9B0_8h_source.html">code_800AF9B0.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="code__80281780_8h_source.html">code_80281780.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="memory_8h_source.html">memory.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="code__80281780_8h_source.html">ending/code_80281780.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="external_8h_source.html">audio/external.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="render__objects_8h_source.html">render_objects.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="replays_8h_source.html">replays.h</a>&quot;</code><br />
-<code>#include &lt;<a class="el" href="common__data_8h_source.html">assets/common_data.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="models_2common__data_8h_source.html">assets/models/common_data.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="textures_8h_source.html">textures.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="math__util_8h_source.html">math_util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="math__util_8h_source.html">racing/math_util.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="save__data_8h_source.html">save_data.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="podium__ceremony__actors_8h_source.html">podium_ceremony_actors.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="skybox__and__splitscreen_8h_source.html">skybox_and_splitscreen.h</a>&quot;</code><br />
-<code>#include &lt;<a class="el" href="startup__logo_8h_source.html">assets/startup_logo.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="podium__ceremony__actors_8h_source.html">ending/podium_ceremony_actors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="skybox__and__splitscreen_8h_source.html">racing/skybox_and_splitscreen.h</a>&quot;</code><br />
+<code>#include &lt;<a class="el" href="textures_2startup__logo_8h_source.html">assets/textures/startup_logo.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="buffers_8h_source.html">buffers.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="race__logic_8h_source.html">racing/race_logic.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80281C40_8h_source.html">ending/code_80281C40.h</a>&quot;</code><br />
@@ -155,17 +155,15 @@ $(function(){initNavTree('menu__items_8c.html',''); initResizable(true); });
 <code>#include &quot;<a class="el" href="stdio_8h_source.html">stdio.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Engine_8h_source.html">port/Engine.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Game_8h_source.html">port/Game.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Course_8h_source.html">engine/courses/Course.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Editor_8h_source.html">engine/editor/Editor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Matrix_8h_source.html">engine/Matrix.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Track_8h_source.html">engine/tracks/Track.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TrackBrowser_8h_source.html">engine/TrackBrowser.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="HM__Intro_8h_source.html">src/engine/HM_Intro.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="FrameInterpolation_8h_source.html">src/port/interpolation/FrameInterpolation.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="heap_8h_source.html">heap.h</a>&quot;</code><br />
-<code>#include &lt;<a class="el" href="player__selection_8h_source.html">assets/player_selection.h</a>&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for menu_items.c:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
+<code>#include &quot;<a class="el" href="heap_8h_source.html">audio/heap.h</a>&quot;</code><br />
+<code>#include &lt;<a class="el" href="models_2startup__logo_8h_source.html">assets/models/startup_logo.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="player__selection_8h_source.html">assets/textures/player_selection.h</a>&gt;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Data Structures</h2></td></tr>
@@ -379,10 +377,6 @@ Functions</h2></td></tr>
 <tr class="separator:aa870b10b1c43ab915495a7d96f22f6dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfa6c366f02a470bbfcddb66359eec13" id="r_abfa6c366f02a470bbfcddb66359eec13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abfa6c366f02a470bbfcddb66359eec13">clear_menu_textures</a> (void)</td></tr>
 <tr class="separator:abfa6c366f02a470bbfcddb66359eec13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d2758c3a87de891a40840727bef3306" id="r_a2d2758c3a87de891a40840727bef3306"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d2758c3a87de891a40840727bef3306">segmented_to_virtual_dupe</a> (const void *addr)</td></tr>
-<tr class="separator:a2d2758c3a87de891a40840727bef3306"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f945b0137dc9c27332444441ca8ac67" id="r_a7f945b0137dc9c27332444441ca8ac67"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f945b0137dc9c27332444441ca8ac67">segmented_to_virtual_dupe_2</a> (const void *addr)</td></tr>
-<tr class="separator:a7f945b0137dc9c27332444441ca8ac67"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68e560d23390d5add7cb57ccd82e21ae" id="r_a68e560d23390d5add7cb57ccd82e21ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a68e560d23390d5add7cb57ccd82e21ae">load_menu_img</a> (<a class="el" href="structMenuTexture.html">MenuTexture</a> *addr)</td></tr>
 <tr class="separator:a68e560d23390d5add7cb57ccd82e21ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92d60f657ea7fac0663fd35085b6e141" id="r_a92d60f657ea7fac0663fd35085b6e141"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92d60f657ea7fac0663fd35085b6e141">func_80099394</a> (<a class="el" href="structMenuTexture.html">MenuTexture</a> *addr)</td></tr>
@@ -1004,7 +998,7 @@ Variables</h2></td></tr>
 <tr class="separator:ade9df50d9c1ce6c5f1ef6f8fc9945036"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c1f576259dc67d2a3dbc1dc1a78a2fd" id="r_a8c1f576259dc67d2a3dbc1dc1a78a2fd"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8c1f576259dc67d2a3dbc1dc1a78a2fd">gDebugSoundModeNames</a> []</td></tr>
 <tr class="separator:a8c1f576259dc67d2a3dbc1dc1a78a2fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74933bddc6e45c2446ce6a4677e1de09" id="r_a74933bddc6e45c2446ce6a4677e1de09"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74933bddc6e45c2446ce6a4677e1de09">gSoundModeNames</a> [<a class="el" href="defines_8h.html#a6da0f30c4f52ef4b3f07f38bea0b9aa6">NUM_SOUND_MODES</a>] = { &quot;STEREO&quot;, &quot;HEADPHONE&quot;, &quot;&quot;, &quot;MONO&quot; }</td></tr>
+<tr class="memitem:a74933bddc6e45c2446ce6a4677e1de09" id="r_a74933bddc6e45c2446ce6a4677e1de09"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74933bddc6e45c2446ce6a4677e1de09">gSoundModeNames</a> [<a class="el" href="defines_8h.html#a6da0f30c4f52ef4b3f07f38bea0b9aa6">NUM_SOUND_MODES</a>] = { &quot;STEREO&quot;, &quot;HEADPHONE&quot;, &quot;SURROUND&quot;, &quot;MONO&quot; }</td></tr>
 <tr class="separator:a74933bddc6e45c2446ce6a4677e1de09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd5d24c826f7fa0e334dd23690f689a8" id="r_abd5d24c826f7fa0e334dd23690f689a8"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abd5d24c826f7fa0e334dd23690f689a8">gWinLoseText</a> []</td></tr>
 <tr class="separator:abd5d24c826f7fa0e334dd23690f689a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1716,7 +1710,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p>Renders</p>
-<p>Menus: Menu transition swipes, course label highlight</p>
+<p>Menus: Menu transition swipes, track label highlight</p>
 <p>All game modes: Background cover at pause screen </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
@@ -2398,7 +2392,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000041">Todo</a></b></dt><dd>These sizes need to be sizeof() for shiftability if possible </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000052">Todo</a></b></dt><dd>These sizes need to be sizeof() for shiftability if possible </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -3216,7 +3210,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_adbd28a1b1d900463cb8b1fb645179c71_cgraph.svg" width="100%" height="555"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_adbd28a1b1d900463cb8b1fb645179c71_cgraph.svg" width="100%" height="576"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -4233,7 +4227,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a92d60f657ea7fac0663fd35085b6e141_cgraph.svg" width="383" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a92d60f657ea7fac0663fd35085b6e141_cgraph.svg" width="284" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -4255,7 +4249,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a1a935d1655795dcf27dcef1cb73470b2_cgraph.svg" width="384" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a1a935d1655795dcf27dcef1cb73470b2_cgraph.svg" width="286" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -4286,7 +4280,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_aac9784d4cb07c7215b987cd6977cac0a_cgraph.svg" width="383" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_aac9784d4cb07c7215b987cd6977cac0a_cgraph.svg" width="284" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -4390,11 +4384,6 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a34e938762875c4c1d00067a4ab30e177_cgraph.svg" width="383" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a34e938762875c4c1d00067a4ab30e177_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
@@ -4472,7 +4461,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_af8a43216551bc7fec0b6c1bbca329391_cgraph.svg" width="539" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_af8a43216551bc7fec0b6c1bbca329391_cgraph.svg" width="539" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -4520,7 +4509,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a062afe249e0193e30bdd29c511a36d90_cgraph.svg" width="596" height="126"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a062afe249e0193e30bdd29c511a36d90_cgraph.svg" width="455" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -4592,7 +4581,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a5357c731c8075fc00c3b89630d2397e0_cgraph.svg" width="596" height="152"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a5357c731c8075fc00c3b89630d2397e0_cgraph.svg" width="303" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -4619,7 +4608,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a542612c8fd0d6566ae6133119b5fe9a2_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a542612c8fd0d6566ae6133119b5fe9a2_cgraph.svg" width="100%" height="493"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -4655,7 +4644,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a95b3021d5115ba9961b35c05cac3cd51_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a95b3021d5115ba9961b35c05cac3cd51_cgraph.svg" width="100%" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -4691,7 +4680,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a330704d30d106268fbb062e6ced61926_cgraph.svg" width="100%" height="442"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a330704d30d106268fbb062e6ced61926_cgraph.svg" width="100%" height="405"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -4737,7 +4726,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a7cb788fd817b7a72620b04ad4c4cbfda_cgraph.svg" width="100%" height="478"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a7cb788fd817b7a72620b04ad4c4cbfda_cgraph.svg" width="100%" height="401"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -4759,7 +4748,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_af958f498a1781e584897c0f68028df0e_cgraph.svg" width="384" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_af958f498a1781e584897c0f68028df0e_cgraph.svg" width="304" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -4790,7 +4779,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_ad23a34e252fd1b58ae289e9cf233fd8b_cgraph.svg" width="554" height="62"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_ad23a34e252fd1b58ae289e9cf233fd8b_cgraph.svg" width="303" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -4943,11 +4932,6 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a8acc03351213ae18cbc198c3fdfc7b43_cgraph.svg" width="384" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
 
 </div>
 </div>
@@ -4989,7 +4973,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_af7e62f3264a86af24e6b3a7c54712160_cgraph.svg" width="100%" height="364"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_af7e62f3264a86af24e6b3a7c54712160_cgraph.svg" width="655" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -5035,7 +5019,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a1a33a95632b97a1ce9511c4f9f6fd0d7_cgraph.svg" width="100%" height="549"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a1a33a95632b97a1ce9511c4f9f6fd0d7_cgraph.svg" width="659" height="283"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -5081,7 +5065,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a0b463bd4e8a6fcec37daca803af465c4_cgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a0b463bd4e8a6fcec37daca803af465c4_cgraph.svg" width="658" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -5219,7 +5203,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_ad2f561ff7256d7373577161c5027d6ba_cgraph.svg" width="100%" height="401"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_ad2f561ff7256d7373577161c5027d6ba_cgraph.svg" width="656" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -6410,7 +6394,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a6331193031af439e18d5a386f428a302_cgraph.svg" width="100%" height="512"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a6331193031af439e18d5a386f428a302_cgraph.svg" width="100%" height="475"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -6432,7 +6416,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a8830c9f56472c12b14371b685198c06f_cgraph.svg" width="100%" height="517"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a8830c9f56472c12b14371b685198c06f_cgraph.svg" width="100%" height="478"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -7153,7 +7137,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_afb0037232825908f6ded64be5f9c7be2_cgraph.svg" width="100%" height="402"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_afb0037232825908f6ded64be5f9c7be2_cgraph.svg" width="100%" height="365"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -7223,7 +7207,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_ae31c845a1fca34a8207f1ac6e2151f13_cgraph.svg" width="100%" height="402"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_ae31c845a1fca34a8207f1ac6e2151f13_cgraph.svg" width="100%" height="439"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -7245,7 +7229,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a63851af2bb3f12754e69e2ac4430722b_cgraph.svg" width="100%" height="439"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a63851af2bb3f12754e69e2ac4430722b_cgraph.svg" width="100%" height="477"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -7573,7 +7557,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_affadf473bada8b35ccd30a46a44d1007_cgraph.svg" width="516" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_affadf473bada8b35ccd30a46a44d1007_cgraph.svg" width="475" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -7788,7 +7772,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a84fac449a24918faac0e7cf3c152dd3d_cgraph.svg" width="518" height="151"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a84fac449a24918faac0e7cf3c152dd3d_cgraph.svg" width="479" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -7810,7 +7794,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a16ac413daca9c5080b71fb911510720c_cgraph.svg" width="518" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a16ac413daca9c5080b71fb911510720c_cgraph.svg" width="479" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -7886,7 +7870,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_ad0f2847902bae95b2222b52f85d646be_cgraph.svg" width="518" height="200"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_ad0f2847902bae95b2222b52f85d646be_cgraph.svg" width="479" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -7984,7 +7968,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a1a373d6d66930cb8b480a181ac3fc7cd_cgraph.svg" width="288" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a1a373d6d66930cb8b480a181ac3fc7cd_cgraph.svg" width="487" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -8011,7 +7995,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a08a19719f65033d1747f79147e1172eb_cgraph.svg" width="476" height="110"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a08a19719f65033d1747f79147e1172eb_cgraph.svg" width="504" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -8038,7 +8022,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a8d9a55eb241cdf97e215803dc761fa4a_cgraph.svg" width="288" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a8d9a55eb241cdf97e215803dc761fa4a_cgraph.svg" width="487" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -8065,7 +8049,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a8a96f1868eccb3a1c303ecb642df9f72_cgraph.svg" width="516" height="151"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a8a96f1868eccb3a1c303ecb642df9f72_cgraph.svg" width="503" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -8119,7 +8103,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a29006c997d21572b6e5e5bd0b02146e3_cgraph.svg" width="518" height="287"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a29006c997d21572b6e5e5bd0b02146e3_cgraph.svg" width="506" height="283"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -8266,7 +8250,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a3934f8e51aaa864588a0ef59f55b4a22_cgraph.svg" width="100%" height="439"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a3934f8e51aaa864588a0ef59f55b4a22_cgraph.svg" width="100%" height="479"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -8293,7 +8277,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a2b5181d31654973124ba655ff4053672_cgraph.svg" width="100%" height="439"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a2b5181d31654973124ba655ff4053672_cgraph.svg" width="100%" height="479"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -8445,7 +8429,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_aa04dd5d076352a0ebec71e5474b707a6_cgraph.svg" width="526" height="184"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_aa04dd5d076352a0ebec71e5474b707a6_cgraph.svg" width="100%" height="456"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -8472,7 +8456,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_ab39eb3af2efb6cf8b6f8b1088c6d22d5_cgraph.svg" width="528" height="258"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_ab39eb3af2efb6cf8b6f8b1088c6d22d5_cgraph.svg" width="100%" height="493"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -8499,7 +8483,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a1829bbbf4a29d146eeee80295262c910_cgraph.svg" width="100%" height="554"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a1829bbbf4a29d146eeee80295262c910_cgraph.svg" width="524" height="283"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -8754,7 +8738,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a94abde2ff4555d667a570000e7952be2_cgraph.svg" width="516" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a94abde2ff4555d667a570000e7952be2_cgraph.svg" width="100%" height="419"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -8803,7 +8787,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_acd76bfa35ebc3ef8dfe3db5ec84ca3d1_cgraph.svg" width="522" height="296"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_acd76bfa35ebc3ef8dfe3db5ec84ca3d1_cgraph.svg" width="100%" height="522"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -8857,7 +8841,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a960fca1091846210fc1cf2226ef10630_cgraph.svg" width="100%" height="562"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a960fca1091846210fc1cf2226ef10630_cgraph.svg" width="476" height="258"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -9150,7 +9134,12 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000039">Todo</a></b></dt><dd>Move gGfxPool out of <a class="el" href="main_8h.html">main.h</a> </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000051">Todo</a></b></dt><dd>Move gGfxPool out of <a class="el" href="main_8h.html">main.h</a> </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_af21f89b45e081c9857c7c6689737ea93_cgraph.svg" width="331" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -9342,7 +9331,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a68e560d23390d5add7cb57ccd82e21ae_cgraph.svg" width="388" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a68e560d23390d5add7cb57ccd82e21ae_cgraph.svg" width="290" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -10477,7 +10466,7 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000013">Bug</a></b></dt><dd>todo: This function will not work in custom courses. </dd></dl>
+<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000014">Bug</a></b></dt><dd>todo: This function will not work in custom courses. </dd></dl>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -10782,58 +10771,6 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2d2758c3a87de891a40840727bef3306" name="a2d2758c3a87de891a40840727bef3306"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d2758c3a87de891a40840727bef3306">&#9670;&#160;</a></span>segmented_to_virtual_dupe()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * segmented_to_virtual_dupe </td>
-          <td>(</td>
-          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>addr</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Differs from <a class="el" href="memory_8c.html">memory.c</a> with <code>+ 0x8</code> instead of <code>| 0x8</code></p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">addr</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>void* </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a2d2758c3a87de891a40840727bef3306_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="a7f945b0137dc9c27332444441ca8ac67" name="a7f945b0137dc9c27332444441ca8ac67"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f945b0137dc9c27332444441ca8ac67">&#9670;&#160;</a></span>segmented_to_virtual_dupe_2()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * segmented_to_virtual_dupe_2 </td>
-          <td>(</td>
-          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>addr</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menu__items_8c_a7f945b0137dc9c27332444441ca8ac67_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
 
 </div>
 </div>
@@ -12641,26 +12578,26 @@ Here is the caller graph for this function:</div>
 <div class="line">    <a class="code hl_variable" href="textures_8c.html#a42bb174a905b6fd7c7ba51ca840f94d3">D_02001DFC</a>,</div>
 <div class="line">    <a class="code hl_variable" href="textures_8c.html#af72685374564ccc775706d3ffd31c025">D_02001E24</a>,</div>
 <div class="line">}</div>
-<div class="ttc" id="atextures_8c_html_a01a0b357b4a76d0695464e19513a7f68"><div class="ttname"><a href="textures_8c.html#a01a0b357b4a76d0695464e19513a7f68">D_02001D34</a></div><div class="ttdeci">MenuTexture D_02001D34[2]</div><div class="ttdoc">MenuTexture of Course Preview Rainbow Road.</div><div class="ttdef"><b>Definition</b> textures.c:1685</div></div>
-<div class="ttc" id="atextures_8c_html_a0d6fdbf0648ba75d4a5b4d9f21112ed9"><div class="ttname"><a href="textures_8c.html#a0d6fdbf0648ba75d4a5b4d9f21112ed9">D_02001C94</a></div><div class="ttdeci">MenuTexture D_02001C94[2]</div><div class="ttdoc">MenuTexture of Course Preview Moo Moo Farm.</div><div class="ttdef"><b>Definition</b> textures.c:1649</div></div>
-<div class="ttc" id="atextures_8c_html_a15171f2ec20e08a05cea100ae4eb1d86"><div class="ttname"><a href="textures_8c.html#a15171f2ec20e08a05cea100ae4eb1d86">D_02001D84</a></div><div class="ttdeci">MenuTexture D_02001D84[2]</div><div class="ttdoc">MenuTexture of Course Preview Block Fort.</div><div class="ttdef"><b>Definition</b> textures.c:1703</div></div>
-<div class="ttc" id="atextures_8c_html_a17416633cc66c0326da0175c920a7c1c"><div class="ttname"><a href="textures_8c.html#a17416633cc66c0326da0175c920a7c1c">D_02001DD4</a></div><div class="ttdeci">MenuTexture D_02001DD4[2]</div><div class="ttdoc">MenuTexture of Course Preview Double Deck.</div><div class="ttdef"><b>Definition</b> textures.c:1721</div></div>
-<div class="ttc" id="atextures_8c_html_a401f93a5a72ff4b0d25822ab1e3a8a2e"><div class="ttname"><a href="textures_8c.html#a401f93a5a72ff4b0d25822ab1e3a8a2e">D_02001BF4</a></div><div class="ttdeci">MenuTexture D_02001BF4[2]</div><div class="ttdoc">MenuTexture of Course Preview Frappe Snowland.</div><div class="ttdef"><b>Definition</b> textures.c:1613</div></div>
-<div class="ttc" id="atextures_8c_html_a42bb174a905b6fd7c7ba51ca840f94d3"><div class="ttname"><a href="textures_8c.html#a42bb174a905b6fd7c7ba51ca840f94d3">D_02001DFC</a></div><div class="ttdeci">MenuTexture D_02001DFC[2]</div><div class="ttdoc">MenuTexture of Course Preview DKs Jungle Parkway.</div><div class="ttdef"><b>Definition</b> textures.c:1730</div></div>
-<div class="ttc" id="atextures_8c_html_a45e97f1c92e6b6bd10e77625d3b381f7"><div class="ttname"><a href="textures_8c.html#a45e97f1c92e6b6bd10e77625d3b381f7">D_02001D5C</a></div><div class="ttdeci">MenuTexture D_02001D5C[2]</div><div class="ttdoc">MenuTexture of Course Preview Wario Stadium.</div><div class="ttdef"><b>Definition</b> textures.c:1694</div></div>
-<div class="ttc" id="atextures_8c_html_a46edec70dd251740a8a27f09b2417a98"><div class="ttname"><a href="textures_8c.html#a46edec70dd251740a8a27f09b2417a98">D_02001D0C</a></div><div class="ttdeci">MenuTexture D_02001D0C[2]</div><div class="ttdoc">MenuTexture of Course Preview Sherbet Land.</div><div class="ttdef"><b>Definition</b> textures.c:1676</div></div>
-<div class="ttc" id="atextures_8c_html_a48444d7b51dea788c1177beac65ba4ef"><div class="ttname"><a href="textures_8c.html#a48444d7b51dea788c1177beac65ba4ef">D_02001C6C</a></div><div class="ttdeci">MenuTexture D_02001C6C[2]</div><div class="ttdoc">MenuTexture of Course Preview Luigi Raceway.</div><div class="ttdef"><b>Definition</b> textures.c:1640</div></div>
-<div class="ttc" id="atextures_8c_html_a58992f9efe4b0d5a868b74bfd88b2f9a"><div class="ttname"><a href="textures_8c.html#a58992f9efe4b0d5a868b74bfd88b2f9a">D_02001C44</a></div><div class="ttdeci">MenuTexture D_02001C44[2]</div><div class="ttdoc">MenuTexture of Course Preview Royal Raceway.</div><div class="ttdef"><b>Definition</b> textures.c:1631</div></div>
-<div class="ttc" id="atextures_8c_html_a7c19ee4c75563d3a94394bd9a4cb255e"><div class="ttname"><a href="textures_8c.html#a7c19ee4c75563d3a94394bd9a4cb255e">D_02001B54</a></div><div class="ttdeci">MenuTexture D_02001B54[2]</div><div class="ttdoc">MenuTexture of Course Preview Choco Mountain.</div><div class="ttdef"><b>Definition</b> textures.c:1577</div></div>
-<div class="ttc" id="atextures_8c_html_a8830e09da497ee3be6bb5cf139f60603"><div class="ttname"><a href="textures_8c.html#a8830e09da497ee3be6bb5cf139f60603">D_02001BCC</a></div><div class="ttdeci">MenuTexture D_02001BCC[2]</div><div class="ttdoc">MenuTexture of Course Preview Yoshi Valley.</div><div class="ttdef"><b>Definition</b> textures.c:1604</div></div>
-<div class="ttc" id="atextures_8c_html_a9dd1d5d4024529d5121b1a72fe1f1039"><div class="ttname"><a href="textures_8c.html#a9dd1d5d4024529d5121b1a72fe1f1039">D_02001CBC</a></div><div class="ttdeci">MenuTexture D_02001CBC[2]</div><div class="ttdoc">MenuTexture of Course Preview Toads Turnpike.</div><div class="ttdef"><b>Definition</b> textures.c:1658</div></div>
-<div class="ttc" id="atextures_8c_html_aa5eeedac2cd89d5b8b68de1c8a5ee14b"><div class="ttname"><a href="textures_8c.html#aa5eeedac2cd89d5b8b68de1c8a5ee14b">D_02001BA4</a></div><div class="ttdeci">MenuTexture D_02001BA4[2]</div><div class="ttdoc">MenuTexture of Course Preview Banshee Boardwalk.</div><div class="ttdef"><b>Definition</b> textures.c:1595</div></div>
-<div class="ttc" id="atextures_8c_html_ab9e37bcaa13f22ed03ee692ff515e549"><div class="ttname"><a href="textures_8c.html#ab9e37bcaa13f22ed03ee692ff515e549">D_02001B7C</a></div><div class="ttdeci">MenuTexture D_02001B7C[2]</div><div class="ttdoc">MenuTexture of Course Preview Bowser Castle.</div><div class="ttdef"><b>Definition</b> textures.c:1586</div></div>
-<div class="ttc" id="atextures_8c_html_ad726ffdcbc68d68349643733c38f3412"><div class="ttname"><a href="textures_8c.html#ad726ffdcbc68d68349643733c38f3412">seg2_mario_raceway_preview_texture</a></div><div class="ttdeci">MenuTexture seg2_mario_raceway_preview_texture[2]</div><div class="ttdoc">MenuTexture of Course Preview Mario Raceway.</div><div class="ttdef"><b>Definition</b> textures.c:1568</div></div>
-<div class="ttc" id="atextures_8c_html_ad96022e78ccbf8a5f224395e938657c7"><div class="ttname"><a href="textures_8c.html#ad96022e78ccbf8a5f224395e938657c7">D_02001DAC</a></div><div class="ttdeci">MenuTexture D_02001DAC[2]</div><div class="ttdoc">MenuTexture of Course Preview Skyscraper.</div><div class="ttdef"><b>Definition</b> textures.c:1712</div></div>
-<div class="ttc" id="atextures_8c_html_ae10b5222cab881d683a2859c3f531f2e"><div class="ttname"><a href="textures_8c.html#ae10b5222cab881d683a2859c3f531f2e">D_02001CE4</a></div><div class="ttdeci">MenuTexture D_02001CE4[2]</div><div class="ttdoc">MenuTexture of Course Preview Kalimari Desert.</div><div class="ttdef"><b>Definition</b> textures.c:1667</div></div>
-<div class="ttc" id="atextures_8c_html_ae740e15429611b2db84588266dba56d5"><div class="ttname"><a href="textures_8c.html#ae740e15429611b2db84588266dba56d5">D_02001C1C</a></div><div class="ttdeci">MenuTexture D_02001C1C[2]</div><div class="ttdoc">MenuTexture of Course Preview Koopa Troopa Beach.</div><div class="ttdef"><b>Definition</b> textures.c:1622</div></div>
-<div class="ttc" id="atextures_8c_html_af72685374564ccc775706d3ffd31c025"><div class="ttname"><a href="textures_8c.html#af72685374564ccc775706d3ffd31c025">D_02001E24</a></div><div class="ttdeci">MenuTexture D_02001E24[2]</div><div class="ttdoc">MenuTexture of Course Preview Big Donut.</div><div class="ttdef"><b>Definition</b> textures.c:1739</div></div>
+<div class="ttc" id="atextures_8c_html_a01a0b357b4a76d0695464e19513a7f68"><div class="ttname"><a href="textures_8c.html#a01a0b357b4a76d0695464e19513a7f68">D_02001D34</a></div><div class="ttdeci">MenuTexture D_02001D34[2]</div><div class="ttdoc">MenuTexture of Track Preview Rainbow Road.</div><div class="ttdef"><b>Definition</b> textures.c:1685</div></div>
+<div class="ttc" id="atextures_8c_html_a0d6fdbf0648ba75d4a5b4d9f21112ed9"><div class="ttname"><a href="textures_8c.html#a0d6fdbf0648ba75d4a5b4d9f21112ed9">D_02001C94</a></div><div class="ttdeci">MenuTexture D_02001C94[2]</div><div class="ttdoc">MenuTexture of Track Preview Moo Moo Farm.</div><div class="ttdef"><b>Definition</b> textures.c:1649</div></div>
+<div class="ttc" id="atextures_8c_html_a15171f2ec20e08a05cea100ae4eb1d86"><div class="ttname"><a href="textures_8c.html#a15171f2ec20e08a05cea100ae4eb1d86">D_02001D84</a></div><div class="ttdeci">MenuTexture D_02001D84[2]</div><div class="ttdoc">MenuTexture of Track Preview Block Fort.</div><div class="ttdef"><b>Definition</b> textures.c:1703</div></div>
+<div class="ttc" id="atextures_8c_html_a17416633cc66c0326da0175c920a7c1c"><div class="ttname"><a href="textures_8c.html#a17416633cc66c0326da0175c920a7c1c">D_02001DD4</a></div><div class="ttdeci">MenuTexture D_02001DD4[2]</div><div class="ttdoc">MenuTexture of Track Preview Double Deck.</div><div class="ttdef"><b>Definition</b> textures.c:1721</div></div>
+<div class="ttc" id="atextures_8c_html_a401f93a5a72ff4b0d25822ab1e3a8a2e"><div class="ttname"><a href="textures_8c.html#a401f93a5a72ff4b0d25822ab1e3a8a2e">D_02001BF4</a></div><div class="ttdeci">MenuTexture D_02001BF4[2]</div><div class="ttdoc">MenuTexture of Track Preview Frappe Snowland.</div><div class="ttdef"><b>Definition</b> textures.c:1613</div></div>
+<div class="ttc" id="atextures_8c_html_a42bb174a905b6fd7c7ba51ca840f94d3"><div class="ttname"><a href="textures_8c.html#a42bb174a905b6fd7c7ba51ca840f94d3">D_02001DFC</a></div><div class="ttdeci">MenuTexture D_02001DFC[2]</div><div class="ttdoc">MenuTexture of Track Preview DKs Jungle Parkway.</div><div class="ttdef"><b>Definition</b> textures.c:1730</div></div>
+<div class="ttc" id="atextures_8c_html_a45e97f1c92e6b6bd10e77625d3b381f7"><div class="ttname"><a href="textures_8c.html#a45e97f1c92e6b6bd10e77625d3b381f7">D_02001D5C</a></div><div class="ttdeci">MenuTexture D_02001D5C[2]</div><div class="ttdoc">MenuTexture of Track Preview Wario Stadium.</div><div class="ttdef"><b>Definition</b> textures.c:1694</div></div>
+<div class="ttc" id="atextures_8c_html_a46edec70dd251740a8a27f09b2417a98"><div class="ttname"><a href="textures_8c.html#a46edec70dd251740a8a27f09b2417a98">D_02001D0C</a></div><div class="ttdeci">MenuTexture D_02001D0C[2]</div><div class="ttdoc">MenuTexture of Track Preview Sherbet Land.</div><div class="ttdef"><b>Definition</b> textures.c:1676</div></div>
+<div class="ttc" id="atextures_8c_html_a48444d7b51dea788c1177beac65ba4ef"><div class="ttname"><a href="textures_8c.html#a48444d7b51dea788c1177beac65ba4ef">D_02001C6C</a></div><div class="ttdeci">MenuTexture D_02001C6C[2]</div><div class="ttdoc">MenuTexture of Track Preview Luigi Raceway.</div><div class="ttdef"><b>Definition</b> textures.c:1640</div></div>
+<div class="ttc" id="atextures_8c_html_a58992f9efe4b0d5a868b74bfd88b2f9a"><div class="ttname"><a href="textures_8c.html#a58992f9efe4b0d5a868b74bfd88b2f9a">D_02001C44</a></div><div class="ttdeci">MenuTexture D_02001C44[2]</div><div class="ttdoc">MenuTexture of Track Preview Royal Raceway.</div><div class="ttdef"><b>Definition</b> textures.c:1631</div></div>
+<div class="ttc" id="atextures_8c_html_a7c19ee4c75563d3a94394bd9a4cb255e"><div class="ttname"><a href="textures_8c.html#a7c19ee4c75563d3a94394bd9a4cb255e">D_02001B54</a></div><div class="ttdeci">MenuTexture D_02001B54[2]</div><div class="ttdoc">MenuTexture of Track Preview Choco Mountain.</div><div class="ttdef"><b>Definition</b> textures.c:1577</div></div>
+<div class="ttc" id="atextures_8c_html_a8830e09da497ee3be6bb5cf139f60603"><div class="ttname"><a href="textures_8c.html#a8830e09da497ee3be6bb5cf139f60603">D_02001BCC</a></div><div class="ttdeci">MenuTexture D_02001BCC[2]</div><div class="ttdoc">MenuTexture of Track Preview Yoshi Valley.</div><div class="ttdef"><b>Definition</b> textures.c:1604</div></div>
+<div class="ttc" id="atextures_8c_html_a9dd1d5d4024529d5121b1a72fe1f1039"><div class="ttname"><a href="textures_8c.html#a9dd1d5d4024529d5121b1a72fe1f1039">D_02001CBC</a></div><div class="ttdeci">MenuTexture D_02001CBC[2]</div><div class="ttdoc">MenuTexture of Track Preview Toads Turnpike.</div><div class="ttdef"><b>Definition</b> textures.c:1658</div></div>
+<div class="ttc" id="atextures_8c_html_aa5eeedac2cd89d5b8b68de1c8a5ee14b"><div class="ttname"><a href="textures_8c.html#aa5eeedac2cd89d5b8b68de1c8a5ee14b">D_02001BA4</a></div><div class="ttdeci">MenuTexture D_02001BA4[2]</div><div class="ttdoc">MenuTexture of Track Preview Banshee Boardwalk.</div><div class="ttdef"><b>Definition</b> textures.c:1595</div></div>
+<div class="ttc" id="atextures_8c_html_ab9e37bcaa13f22ed03ee692ff515e549"><div class="ttname"><a href="textures_8c.html#ab9e37bcaa13f22ed03ee692ff515e549">D_02001B7C</a></div><div class="ttdeci">MenuTexture D_02001B7C[2]</div><div class="ttdoc">MenuTexture of Track Preview Bowser Castle.</div><div class="ttdef"><b>Definition</b> textures.c:1586</div></div>
+<div class="ttc" id="atextures_8c_html_ad726ffdcbc68d68349643733c38f3412"><div class="ttname"><a href="textures_8c.html#ad726ffdcbc68d68349643733c38f3412">seg2_mario_raceway_preview_texture</a></div><div class="ttdeci">MenuTexture seg2_mario_raceway_preview_texture[2]</div><div class="ttdoc">MenuTexture of Track Preview Mario Raceway.</div><div class="ttdef"><b>Definition</b> textures.c:1568</div></div>
+<div class="ttc" id="atextures_8c_html_ad96022e78ccbf8a5f224395e938657c7"><div class="ttname"><a href="textures_8c.html#ad96022e78ccbf8a5f224395e938657c7">D_02001DAC</a></div><div class="ttdeci">MenuTexture D_02001DAC[2]</div><div class="ttdoc">MenuTexture of Track Preview Skyscraper.</div><div class="ttdef"><b>Definition</b> textures.c:1712</div></div>
+<div class="ttc" id="atextures_8c_html_ae10b5222cab881d683a2859c3f531f2e"><div class="ttname"><a href="textures_8c.html#ae10b5222cab881d683a2859c3f531f2e">D_02001CE4</a></div><div class="ttdeci">MenuTexture D_02001CE4[2]</div><div class="ttdoc">MenuTexture of Track Preview Kalimari Desert.</div><div class="ttdef"><b>Definition</b> textures.c:1667</div></div>
+<div class="ttc" id="atextures_8c_html_ae740e15429611b2db84588266dba56d5"><div class="ttname"><a href="textures_8c.html#ae740e15429611b2db84588266dba56d5">D_02001C1C</a></div><div class="ttdeci">MenuTexture D_02001C1C[2]</div><div class="ttdoc">MenuTexture of Track Preview Koopa Troopa Beach.</div><div class="ttdef"><b>Definition</b> textures.c:1622</div></div>
+<div class="ttc" id="atextures_8c_html_af72685374564ccc775706d3ffd31c025"><div class="ttname"><a href="textures_8c.html#af72685374564ccc775706d3ffd31c025">D_02001E24</a></div><div class="ttdeci">MenuTexture D_02001E24[2]</div><div class="ttdoc">MenuTexture of Track Preview Big Donut.</div><div class="ttdef"><b>Definition</b> textures.c:1739</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -12930,7 +12867,7 @@ Here is the caller graph for this function:</div>
 <div class="ttc" id="atextures_8c_html_a7b22f67e3ae662489b54dc2ec0d14d4e"><div class="ttname"><a href="textures_8c.html#a7b22f67e3ae662489b54dc2ec0d14d4e">seg2_mushroom_cup_texture</a></div><div class="ttdeci">MenuTexture seg2_mushroom_cup_texture[2]</div><div class="ttdoc">MenuTextures for Menu Mushroom Cup.</div><div class="ttdef"><b>Definition</b> textures.c:4466</div></div>
 <div class="ttc" id="atextures_8c_html_a82b9e159ebbc69735f368f6ed7a7ad2a"><div class="ttname"><a href="textures_8c.html#a82b9e159ebbc69735f368f6ed7a7ad2a">D_02004E80</a></div><div class="ttdeci">MenuTexture D_02004E80[2]</div><div class="ttdoc">MenuTextures Menu OK.</div><div class="ttdef"><b>Definition</b> textures.c:4571</div></div>
 <div class="ttc" id="atextures_8c_html_a99ed6043cd3021702031526b640096c5"><div class="ttname"><a href="textures_8c.html#a99ed6043cd3021702031526b640096c5">seg2_special_cup_title_texture</a></div><div class="ttdeci">MenuTexture seg2_special_cup_title_texture[5]</div><div class="ttdoc">MenuTexture title for special cup.</div><div class="ttdef"><b>Definition</b> textures.c:4547</div></div>
-<div class="ttc" id="atextures_8c_html_ab6ea3ce8b7706612415427ffe802e567"><div class="ttname"><a href="textures_8c.html#ab6ea3ce8b7706612415427ffe802e567">seg2_mario_raceway_preview_small_texture</a></div><div class="ttdeci">MenuTexture seg2_mario_raceway_preview_small_texture[2]</div><div class="ttdoc">MenuTextures for the course preview mario raceway.</div><div class="ttdef"><b>Definition</b> textures.c:4502</div></div>
+<div class="ttc" id="atextures_8c_html_ab6ea3ce8b7706612415427ffe802e567"><div class="ttname"><a href="textures_8c.html#ab6ea3ce8b7706612415427ffe802e567">seg2_mario_raceway_preview_small_texture</a></div><div class="ttdeci">MenuTexture seg2_mario_raceway_preview_small_texture[2]</div><div class="ttdoc">MenuTextures for the track preview mario raceway.</div><div class="ttdef"><b>Definition</b> textures.c:4502</div></div>
 <div class="ttc" id="atextures_8c_html_ac8f7ad1bc37e5160f00401614b03c050"><div class="ttname"><a href="textures_8c.html#ac8f7ad1bc37e5160f00401614b03c050">seg2_star_cup_texture</a></div><div class="ttdeci">MenuTexture seg2_star_cup_texture[2]</div><div class="ttdoc">MenuTextures for Menu Star Cup.</div><div class="ttdef"><b>Definition</b> textures.c:4484</div></div>
 <div class="ttc" id="atextures_8c_html_acb87b670b3d36e83e6836c3960d101f2"><div class="ttname"><a href="textures_8c.html#acb87b670b3d36e83e6836c3960d101f2">seg2_star_cup_title_texture</a></div><div class="ttdeci">MenuTexture seg2_star_cup_title_texture[5]</div><div class="ttdoc">MenuTexture title for star cup.</div><div class="ttdef"><b>Definition</b> textures.c:4535</div></div>
 <div class="ttc" id="atextures_8c_html_ae27604d45f7fce558c987aa816b9c172"><div class="ttname"><a href="textures_8c.html#ae27604d45f7fce558c987aa816b9c172">seg2_flower_cup_title_texture</a></div><div class="ttdeci">MenuTexture seg2_flower_cup_title_texture[5]</div><div class="ttdoc">MenuTexture title for flower cup.</div><div class="ttdef"><b>Definition</b> textures.c:4523</div></div>
@@ -13988,7 +13925,7 @@ Here is the caller graph for this function:</div>
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">    <span class="stringliteral">&quot;stereo&quot;</span>,</div>
 <div class="line">    <span class="stringliteral">&quot;head phone&quot;</span>,</div>
-<div class="line">    <span class="stringliteral">&quot;xxx&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;surround&quot;</span>,</div>
 <div class="line">    <span class="stringliteral">&quot;monaural&quot;</span>,</div>
 <div class="line">}</div>
 </div><!-- fragment -->
@@ -14268,7 +14205,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char* gSoundModeNames[<a class="el" href="defines_8h.html#a6da0f30c4f52ef4b3f07f38bea0b9aa6">NUM_SOUND_MODES</a>] = { &quot;STEREO&quot;, &quot;HEADPHONE&quot;, &quot;&quot;, &quot;MONO&quot; }</td>
+          <td class="memname">char* gSoundModeNames[<a class="el" href="defines_8h.html#a6da0f30c4f52ef4b3f07f38bea0b9aa6">NUM_SOUND_MODES</a>] = { &quot;STEREO&quot;, &quot;HEADPHONE&quot;, &quot;SURROUND&quot;, &quot;MONO&quot; }</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -14363,8 +14300,8 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">    <span class="stringliteral">&quot;return to menu&quot;</span>,</div>
-<div class="line">    <span class="stringliteral">&quot;erase records for this course&quot;</span>,</div>
-<div class="line">    <span class="stringliteral">&quot;erase ghost from this course&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;erase records for this track&quot;</span>,</div>
+<div class="line">    <span class="stringliteral">&quot;erase ghost from this track&quot;</span>,</div>
 <div class="line">}</div>
 </div><!-- fragment -->
 </div>

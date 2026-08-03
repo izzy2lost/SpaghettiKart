@@ -1,15 +1,24 @@
 var classATruck =
 [
-    [ "ATruck", "classATruck.html#ad0c35adc2cbc53ad8ba417172e61093a", null ],
+    [ "SpawnMode", "classATruck.html#aa1c986c1ca35dc614619af0f2282ba60", [
+      [ "POINT", "classATruck.html#aa1c986c1ca35dc614619af0f2282ba60a0df36f95ff4dbbceea0ae26df90d5273", null ],
+      [ "AUTO", "classATruck.html#aa1c986c1ca35dc614619af0f2282ba60a237ed3d7691fc50fc64aa6e96b21bffa", null ]
+    ] ],
+    [ "ATruck", "classATruck.html#a8b5a611d66bd00a6ddf86eec0920a583", null ],
     [ "~ATruck", "classATruck.html#a586085fa84f58635af7e5bd10c19f839", null ],
     [ "Draw", "classATruck.html#aac764e5f6f97ba5b376bb4740fea3ffb", null ],
+    [ "DrawEditorProperties", "classATruck.html#a39a7e468b63259c7f0d71a42fce5734c", null ],
     [ "GetCount", "classATruck.html#a5709d7ff936686033b1a2ae766327f64", null ],
     [ "IsMod", "classATruck.html#a758db167c0e1915f3c5fc7c738b21878", null ],
+    [ "SetSpawnParams", "classATruck.html#a6760c2d20998e4d46db66440aab1ee0a", null ],
+    [ "Spawn", "classATruck.html#afe7c33a6d77655f1404a658a747fa3f6", null ],
     [ "Tick", "classATruck.html#a251df5418c913a4e27ab67cfb068fdfc", null ],
     [ "VehicleCollision", "classATruck.html#a7d1a8e16b8b0e0231fac07674d25dd8c", null ],
     [ "_count", "classATruck.html#aa807bdc1b580c5cff3028ce64a9a182c", null ],
     [ "ActorIndex", "classATruck.html#a48146b60efc961e3ea142dfc25f7cb82", null ],
     [ "Index", "classATruck.html#a2606fdf7a57a94227fa1f8b93b8f6164", null ],
+    [ "PathIndex", "classATruck.html#a128271a0cd7c7bd6d606e28c029f46eb", null ],
+    [ "PathPoint", "classATruck.html#afcd788c07f9ccdccaa3f4a386f1386e1", null ],
     [ "Position", "classATruck.html#a20f3084790c6b4a40bac0d0d28a82690", null ],
     [ "Rotation", "classATruck.html#a34dc95c745bc232aee59a32af9cb3c8b", null ],
     [ "SomeArg3", "classATruck.html#a4fcd86cd9507c81e4eb669e1b479f422", null ],
@@ -19,7 +28,10 @@ var classATruck =
     [ "SomeMultiplierTheSequel", "classATruck.html#ad195778f7f23a42ac16b3eb23be5a756", null ],
     [ "SomeType", "classATruck.html#a0a53399976b8faa30163f2a261cac233", null ],
     [ "SoundBits", "classATruck.html#a872bbc0f62a219b7b4b35cbb3b248651", null ],
+    [ "SpawnType", "classATruck.html#aad619a5121ddc5c22ea552dab86e26d7", null ],
     [ "Speed", "classATruck.html#adca377d6f58b5f5bd49da82ccf039eca", null ],
+    [ "SpeedB", "classATruck.html#a22710c14780a0f47d0c75ac7a1edab6b", null ],
+    [ "TruckCounts", "classATruck.html#ae535002bd305906b618fb7eec485140f", null ],
     [ "Type", "classATruck.html#ab24f7f3c32ddbca530f9631d63b74b1e", null ],
     [ "Velocity", "classATruck.html#a8903ea17a8394de12c7a3ac0c0750554", null ],
     [ "WaypointIndex", "classATruck.html#aa3ca7a3cb11143831bebdc1633dc6fa1", null ]

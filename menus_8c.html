@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/menus.c File Reference</title>
+<title>SpaghettiKart: src/menus.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -112,15 +112,18 @@ $(function(){initNavTree('menus_8c.html',''); initResizable(true); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;libultraship.h&gt;</code><br />
+<code>#include &lt;libultraship/bridge/audiobridge.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="macros_8h_source.html">macros.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="defines_8h_source.html">defines.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="common__structs_8h_source.html">common_structs.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="mk64_8h_source.html">mk64.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="stubs_8h_source.html">stubs.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="menus_8h_source.html">menus.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="TrackBrowser_8h_source.html">engine/TrackBrowser.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Editor_8h_source.html">engine/editor/Editor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__800029B0_8h_source.html">code_800029B0.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="actors_8h_source.html">actors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="actors_8h_source.html">racing/actors.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="external_8h_source.html">audio/external.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80005FD0_8h_source.html">code_80005FD0.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="menu__items_8h_source.html">menu_items.h</a>&quot;</code><br />
@@ -234,8 +237,8 @@ Variables</h2></td></tr>
 <tr class="separator:a8aa851d10d529a40b5e373b5de5739bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a541976407e77962ef3d85371da61ea91" id="r_a541976407e77962ef3d85371da61ea91"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a541976407e77962ef3d85371da61ea91">gGhostPlayerInit</a></td></tr>
 <tr class="separator:a541976407e77962ef3d85371da61ea91"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a54c2d14262c5105a382a6f87efab84" id="r_a1a54c2d14262c5105a382a6f87efab84"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1a54c2d14262c5105a382a6f87efab84">gCourseMapInit</a></td></tr>
-<tr class="separator:a1a54c2d14262c5105a382a6f87efab84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdfca5e0b5c9d84dfd1444dd8163ae29" id="r_afdfca5e0b5c9d84dfd1444dd8163ae29"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afdfca5e0b5c9d84dfd1444dd8163ae29">gTrackMapInit</a></td></tr>
+<tr class="separator:afdfca5e0b5c9d84dfd1444dd8163ae29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d53d246e2451256c9aa3598cc3e010b" id="r_a2d53d246e2451256c9aa3598cc3e010b"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d53d246e2451256c9aa3598cc3e010b">gMenuTimingCounter</a></td></tr>
 <tr class="separator:a2d53d246e2451256c9aa3598cc3e010b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a335967591890ac1380141d8cf0168c0b" id="r_a335967591890ac1380141d8cf0168c0b"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a335967591890ac1380141d8cf0168c0b">gMenuDelayTimer</a></td></tr>
@@ -294,7 +297,7 @@ Variables</h2></td></tr>
 <tr class="separator:a222e4373dee5eff0b59adeaefa82e9b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa78bb57632807d5874d8a7492bb9268e" id="r_aa78bb57632807d5874d8a7492bb9268e"><td class="memItemLeft" align="right" valign="top">const s8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa78bb57632807d5874d8a7492bb9268e">sScreenModeIdxFromPlayerMode</a> [4] = { 0, 1, 3, 4 }</td></tr>
 <tr class="separator:aa78bb57632807d5874d8a7492bb9268e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a482e5aa8d8581771ca9514a26b64fcfd" id="r_a482e5aa8d8581771ca9514a26b64fcfd"><td class="memItemLeft" align="right" valign="top">const union <a class="el" href="unionGameModePack.html">GameModePack</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a482e5aa8d8581771ca9514a26b64fcfd">sSoundMenuPack</a> = { { <a class="el" href="defines_8h.html#a14799bbba35e4e84b1b7d5c5788c7cf2">SOUND_STEREO</a>, <a class="el" href="defines_8h.html#aaaaa1f121d97afbf02fcdcb0cc11e5e8">SOUND_HEADPHONES</a>, <a class="el" href="defines_8h.html#ac23e3322221bf17b68cd008dc95bca48">SOUND_UNUSED</a>, <a class="el" href="defines_8h.html#a090130d9c333ac08a748b2eac40085cb">SOUND_MONO</a> } }</td></tr>
+<tr class="memitem:a482e5aa8d8581771ca9514a26b64fcfd" id="r_a482e5aa8d8581771ca9514a26b64fcfd"><td class="memItemLeft" align="right" valign="top">const union <a class="el" href="unionGameModePack.html">GameModePack</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a482e5aa8d8581771ca9514a26b64fcfd">sSoundMenuPack</a> = { { <a class="el" href="defines_8h.html#a14799bbba35e4e84b1b7d5c5788c7cf2">SOUND_STEREO</a>, <a class="el" href="defines_8h.html#aaaaa1f121d97afbf02fcdcb0cc11e5e8">SOUND_HEADPHONES</a>, <a class="el" href="defines_8h.html#a8c60c63c057abd0972a9a686881f72f6">SOUND_SURROUND</a>, <a class="el" href="defines_8h.html#a090130d9c333ac08a748b2eac40085cb">SOUND_MONO</a> } }</td></tr>
 <tr class="separator:a482e5aa8d8581771ca9514a26b64fcfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
@@ -348,7 +351,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Navigation of the course records data menu </p>
+<p>Navigation of the track records data menu </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -380,8 +383,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Navigation of the map select course menu screen </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000030">Todo</a></b></dt><dd><a class="el" href="Game_8cpp.html#af96f9195419b1a81241a2bd5fc03f93b">SetCourse()</a> to course one; </dd></dl>
+<p>Navigation of the map select track menu screen </p>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
@@ -468,6 +470,11 @@ Here is the call graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="menus_8c_a0499ce6f7f2cd1b56b0674de6c0cc813_cgraph.svg" width="316" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -712,6 +719,11 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="menus_8c_ac6e39e50381ae8908aa5e7053c3d35a0_cgraph.svg" width="400" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
@@ -790,6 +802,11 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menus_8c_abdb3ad7cafa1977c6b7da7dbed8a7df6_cgraph.svg" width="100%" height="401"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menus_8c_abdb3ad7cafa1977c6b7da7dbed8a7df6_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
@@ -811,6 +828,11 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="menus_8c_aa8c27c9a84fd3362f3cdce18720d5a4e_cgraph.svg" width="100%" height="401"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -946,20 +968,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a1a54c2d14262c5105a382a6f87efab84" name="a1a54c2d14262c5105a382a6f87efab84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a54c2d14262c5105a382a6f87efab84">&#9670;&#160;</a></span>gCourseMapInit</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool gCourseMapInit</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a58e992f1060c02737f9e3a3a737b08b9" name="a58e992f1060c02737f9e3a3a737b08b9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a58e992f1060c02737f9e3a3a737b08b9">&#9670;&#160;</a></span>gCourseRecordsMenuSelection</h2>
 
@@ -1001,36 +1009,36 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">    </div>
-<div class="line">    { <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a39770529445f7fbbcd4d98e5069bfcf0">COURSE_LUIGI_RACEWAY</a>, <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88ac2de96c4eae26b588aa604ccfdfe17a7">COURSE_MOO_MOO_FARM</a>, <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88aad2aeb452d05375037e928a747061862">COURSE_KOOPA_BEACH</a>, <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a338872b48fb1561d31a441aaf0a52cd0">COURSE_KALIMARI_DESERT</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a804b7b296119334e15b87db3bc30a260">TRACK_LUIGI_RACEWAY</a>, <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a880a7185bfa93ee5d94f15b06710f333">TRACK_MOO_MOO_FARM</a>, <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a11113283a7b0a8a0481296780355c925">TRACK_KOOPA_BEACH</a>, <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0af15f34075b0888881fc02fa46c7051ae">TRACK_KALIMARI_DESERT</a> },</div>
 <div class="line">    </div>
-<div class="line">    { <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a760b521013b956257751e8d7c181b783">COURSE_TOADS_TURNPIKE</a>, <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a389f0d184c4fbb9c292313d833c28474">COURSE_FRAPPE_SNOWLAND</a>, <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a5be72eac26f2579975f7f17bb46378ec">COURSE_CHOCO_MOUNTAIN</a>, <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a1013d9dfd3dc6f49c3dc2b35ce6df371">COURSE_MARIO_RACEWAY</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a7ae66f8ffa79faa98487e22d3414235f">TRACK_TOADS_TURNPIKE</a>, <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a352e1d12d122c451e3e8b900f8d13418">TRACK_FRAPPE_SNOWLAND</a>, <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0aeb1a51c1d1a54b03c89535861a5cdac3">TRACK_CHOCO_MOUNTAIN</a>, <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0ab8382b3eb2dcb7b28b2232354ba8a0c0">TRACK_MARIO_RACEWAY</a> },</div>
 <div class="line">    </div>
-<div class="line">    { <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a0ffab71be7660244b308ec7f9377b9fc">COURSE_WARIO_STADIUM</a>, <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88adffb845d6b01049394cea12e2eea5b01">COURSE_SHERBET_LAND</a>, <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a20aff87970b4015a467d7e6a2b14f72b">COURSE_ROYAL_RACEWAY</a>, <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88aa7fddb5027be204be3744c5bdf5b0fdf">COURSE_BOWSER_CASTLE</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0acadd09bd7d466047f66fdcb04b926da6">TRACK_WARIO_STADIUM</a>, <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a484fe82aef8e7c1c06167ee63e1e85b7">TRACK_SHERBET_LAND</a>, <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0ac0fd2256daaad651c8c077d2b7c95337">TRACK_ROYAL_RACEWAY</a>, <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a72d867181c1a1d7732ed37d11554416d">TRACK_BOWSER_CASTLE</a> },</div>
 <div class="line">    </div>
-<div class="line">    { <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88ac825c98c8fe3f1d9bc84ea81d2fcb7e5">COURSE_DK_JUNGLE</a>, <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a4b6d6cdaa7ed40498052e3c7aabc1e57">COURSE_YOSHI_VALLEY</a>, <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a11c1ecabaa01524ea23a1576a4d44b53">COURSE_BANSHEE_BOARDWALK</a>, <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a3b9286cb989b34063c66fe7311ea92f9">COURSE_RAINBOW_ROAD</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a1279530944c671cde70f99ba3182a6a3">TRACK_DK_JUNGLE</a>, <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a4253749749987adf0de3aeea0169660f">TRACK_YOSHI_VALLEY</a>, <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a323f9197a7c35b8c29451d3e280306cb">TRACK_BANSHEE_BOARDWALK</a>, <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a93214bd75704d7ddaebf8fe2d1fde49f">TRACK_RAINBOW_ROAD</a> },</div>
 <div class="line">    </div>
-<div class="line">    { <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a166bae031c2161dad321e1f7460c2c2f">COURSE_BIG_DONUT</a>, <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a286f4605d59b2d837791bc5ac3a5e314">COURSE_BLOCK_FORT</a>, <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88aa3ec272a814b881c2285053650e5e0d0">COURSE_DOUBLE_DECK</a>, <a class="code hl_enumvalue" href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a9546ec6c77641ea8cd2cca35a0078b8d">COURSE_SKYSCRAPER</a> },</div>
+<div class="line">    { <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0ab3e2af1ecedd9d93eb628fcf60db9423">TRACK_BIG_DONUT</a>, <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a21bc4d4a830bf89b7d5579ca5619d712">TRACK_BLOCK_FORT</a>, <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0ab3f223fb60e50ed097692f1c21715a80">TRACK_DOUBLE_DECK</a>, <a class="code hl_enumvalue" href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a3d8ef1b87998a5f156130f55bf71607b">TRACK_SKYSCRAPER</a> },</div>
 <div class="line">}</div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88a0ffab71be7660244b308ec7f9377b9fc"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a0ffab71be7660244b308ec7f9377b9fc">COURSE_WARIO_STADIUM</a></div><div class="ttdeci">@ COURSE_WARIO_STADIUM</div><div class="ttdef"><b>Definition</b> mk64.h:49</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88a1013d9dfd3dc6f49c3dc2b35ce6df371"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a1013d9dfd3dc6f49c3dc2b35ce6df371">COURSE_MARIO_RACEWAY</a></div><div class="ttdeci">@ COURSE_MARIO_RACEWAY</div><div class="ttdef"><b>Definition</b> mk64.h:35</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88a11c1ecabaa01524ea23a1576a4d44b53"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a11c1ecabaa01524ea23a1576a4d44b53">COURSE_BANSHEE_BOARDWALK</a></div><div class="ttdeci">@ COURSE_BANSHEE_BOARDWALK</div><div class="ttdef"><b>Definition</b> mk64.h:38</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88a166bae031c2161dad321e1f7460c2c2f"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a166bae031c2161dad321e1f7460c2c2f">COURSE_BIG_DONUT</a></div><div class="ttdeci">@ COURSE_BIG_DONUT</div><div class="ttdef"><b>Definition</b> mk64.h:54</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88a20aff87970b4015a467d7e6a2b14f72b"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a20aff87970b4015a467d7e6a2b14f72b">COURSE_ROYAL_RACEWAY</a></div><div class="ttdeci">@ COURSE_ROYAL_RACEWAY</div><div class="ttdef"><b>Definition</b> mk64.h:42</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88a286f4605d59b2d837791bc5ac3a5e314"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a286f4605d59b2d837791bc5ac3a5e314">COURSE_BLOCK_FORT</a></div><div class="ttdeci">@ COURSE_BLOCK_FORT</div><div class="ttdef"><b>Definition</b> mk64.h:50</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88a338872b48fb1561d31a441aaf0a52cd0"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a338872b48fb1561d31a441aaf0a52cd0">COURSE_KALIMARI_DESERT</a></div><div class="ttdeci">@ COURSE_KALIMARI_DESERT</div><div class="ttdef"><b>Definition</b> mk64.h:46</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88a389f0d184c4fbb9c292313d833c28474"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a389f0d184c4fbb9c292313d833c28474">COURSE_FRAPPE_SNOWLAND</a></div><div class="ttdeci">@ COURSE_FRAPPE_SNOWLAND</div><div class="ttdef"><b>Definition</b> mk64.h:40</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88a39770529445f7fbbcd4d98e5069bfcf0"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a39770529445f7fbbcd4d98e5069bfcf0">COURSE_LUIGI_RACEWAY</a></div><div class="ttdeci">@ COURSE_LUIGI_RACEWAY</div><div class="ttdef"><b>Definition</b> mk64.h:43</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88a3b9286cb989b34063c66fe7311ea92f9"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a3b9286cb989b34063c66fe7311ea92f9">COURSE_RAINBOW_ROAD</a></div><div class="ttdeci">@ COURSE_RAINBOW_ROAD</div><div class="ttdef"><b>Definition</b> mk64.h:48</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88a4b6d6cdaa7ed40498052e3c7aabc1e57"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a4b6d6cdaa7ed40498052e3c7aabc1e57">COURSE_YOSHI_VALLEY</a></div><div class="ttdeci">@ COURSE_YOSHI_VALLEY</div><div class="ttdef"><b>Definition</b> mk64.h:39</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88a5be72eac26f2579975f7f17bb46378ec"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a5be72eac26f2579975f7f17bb46378ec">COURSE_CHOCO_MOUNTAIN</a></div><div class="ttdeci">@ COURSE_CHOCO_MOUNTAIN</div><div class="ttdef"><b>Definition</b> mk64.h:36</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88a760b521013b956257751e8d7c181b783"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a760b521013b956257751e8d7c181b783">COURSE_TOADS_TURNPIKE</a></div><div class="ttdeci">@ COURSE_TOADS_TURNPIKE</div><div class="ttdef"><b>Definition</b> mk64.h:45</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88a9546ec6c77641ea8cd2cca35a0078b8d"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88a9546ec6c77641ea8cd2cca35a0078b8d">COURSE_SKYSCRAPER</a></div><div class="ttdeci">@ COURSE_SKYSCRAPER</div><div class="ttdef"><b>Definition</b> mk64.h:51</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88aa3ec272a814b881c2285053650e5e0d0"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88aa3ec272a814b881c2285053650e5e0d0">COURSE_DOUBLE_DECK</a></div><div class="ttdeci">@ COURSE_DOUBLE_DECK</div><div class="ttdef"><b>Definition</b> mk64.h:52</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88aa7fddb5027be204be3744c5bdf5b0fdf"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88aa7fddb5027be204be3744c5bdf5b0fdf">COURSE_BOWSER_CASTLE</a></div><div class="ttdeci">@ COURSE_BOWSER_CASTLE</div><div class="ttdef"><b>Definition</b> mk64.h:37</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88aad2aeb452d05375037e928a747061862"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88aad2aeb452d05375037e928a747061862">COURSE_KOOPA_BEACH</a></div><div class="ttdeci">@ COURSE_KOOPA_BEACH</div><div class="ttdef"><b>Definition</b> mk64.h:41</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88ac2de96c4eae26b588aa604ccfdfe17a7"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88ac2de96c4eae26b588aa604ccfdfe17a7">COURSE_MOO_MOO_FARM</a></div><div class="ttdeci">@ COURSE_MOO_MOO_FARM</div><div class="ttdef"><b>Definition</b> mk64.h:44</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88ac825c98c8fe3f1d9bc84ea81d2fcb7e5"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88ac825c98c8fe3f1d9bc84ea81d2fcb7e5">COURSE_DK_JUNGLE</a></div><div class="ttdeci">@ COURSE_DK_JUNGLE</div><div class="ttdef"><b>Definition</b> mk64.h:53</div></div>
-<div class="ttc" id="amk64_8h_html_acf250ad4ca05ca435a61203c41d4ca88adffb845d6b01049394cea12e2eea5b01"><div class="ttname"><a href="mk64_8h.html#acf250ad4ca05ca435a61203c41d4ca88adffb845d6b01049394cea12e2eea5b01">COURSE_SHERBET_LAND</a></div><div class="ttdeci">@ COURSE_SHERBET_LAND</div><div class="ttdef"><b>Definition</b> mk64.h:47</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0a11113283a7b0a8a0481296780355c925"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a11113283a7b0a8a0481296780355c925">TRACK_KOOPA_BEACH</a></div><div class="ttdeci">@ TRACK_KOOPA_BEACH</div><div class="ttdef"><b>Definition</b> mk64.h:41</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0a1279530944c671cde70f99ba3182a6a3"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a1279530944c671cde70f99ba3182a6a3">TRACK_DK_JUNGLE</a></div><div class="ttdeci">@ TRACK_DK_JUNGLE</div><div class="ttdef"><b>Definition</b> mk64.h:53</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0a21bc4d4a830bf89b7d5579ca5619d712"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a21bc4d4a830bf89b7d5579ca5619d712">TRACK_BLOCK_FORT</a></div><div class="ttdeci">@ TRACK_BLOCK_FORT</div><div class="ttdef"><b>Definition</b> mk64.h:50</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0a323f9197a7c35b8c29451d3e280306cb"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a323f9197a7c35b8c29451d3e280306cb">TRACK_BANSHEE_BOARDWALK</a></div><div class="ttdeci">@ TRACK_BANSHEE_BOARDWALK</div><div class="ttdef"><b>Definition</b> mk64.h:38</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0a352e1d12d122c451e3e8b900f8d13418"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a352e1d12d122c451e3e8b900f8d13418">TRACK_FRAPPE_SNOWLAND</a></div><div class="ttdeci">@ TRACK_FRAPPE_SNOWLAND</div><div class="ttdef"><b>Definition</b> mk64.h:40</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0a3d8ef1b87998a5f156130f55bf71607b"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a3d8ef1b87998a5f156130f55bf71607b">TRACK_SKYSCRAPER</a></div><div class="ttdeci">@ TRACK_SKYSCRAPER</div><div class="ttdef"><b>Definition</b> mk64.h:51</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0a4253749749987adf0de3aeea0169660f"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a4253749749987adf0de3aeea0169660f">TRACK_YOSHI_VALLEY</a></div><div class="ttdeci">@ TRACK_YOSHI_VALLEY</div><div class="ttdef"><b>Definition</b> mk64.h:39</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0a484fe82aef8e7c1c06167ee63e1e85b7"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a484fe82aef8e7c1c06167ee63e1e85b7">TRACK_SHERBET_LAND</a></div><div class="ttdeci">@ TRACK_SHERBET_LAND</div><div class="ttdef"><b>Definition</b> mk64.h:47</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0a72d867181c1a1d7732ed37d11554416d"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a72d867181c1a1d7732ed37d11554416d">TRACK_BOWSER_CASTLE</a></div><div class="ttdeci">@ TRACK_BOWSER_CASTLE</div><div class="ttdef"><b>Definition</b> mk64.h:37</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0a7ae66f8ffa79faa98487e22d3414235f"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a7ae66f8ffa79faa98487e22d3414235f">TRACK_TOADS_TURNPIKE</a></div><div class="ttdeci">@ TRACK_TOADS_TURNPIKE</div><div class="ttdef"><b>Definition</b> mk64.h:45</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0a804b7b296119334e15b87db3bc30a260"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a804b7b296119334e15b87db3bc30a260">TRACK_LUIGI_RACEWAY</a></div><div class="ttdeci">@ TRACK_LUIGI_RACEWAY</div><div class="ttdef"><b>Definition</b> mk64.h:43</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0a880a7185bfa93ee5d94f15b06710f333"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a880a7185bfa93ee5d94f15b06710f333">TRACK_MOO_MOO_FARM</a></div><div class="ttdeci">@ TRACK_MOO_MOO_FARM</div><div class="ttdef"><b>Definition</b> mk64.h:44</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0a93214bd75704d7ddaebf8fe2d1fde49f"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0a93214bd75704d7ddaebf8fe2d1fde49f">TRACK_RAINBOW_ROAD</a></div><div class="ttdeci">@ TRACK_RAINBOW_ROAD</div><div class="ttdef"><b>Definition</b> mk64.h:48</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0ab3e2af1ecedd9d93eb628fcf60db9423"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0ab3e2af1ecedd9d93eb628fcf60db9423">TRACK_BIG_DONUT</a></div><div class="ttdeci">@ TRACK_BIG_DONUT</div><div class="ttdef"><b>Definition</b> mk64.h:54</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0ab3f223fb60e50ed097692f1c21715a80"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0ab3f223fb60e50ed097692f1c21715a80">TRACK_DOUBLE_DECK</a></div><div class="ttdeci">@ TRACK_DOUBLE_DECK</div><div class="ttdef"><b>Definition</b> mk64.h:52</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0ab8382b3eb2dcb7b28b2232354ba8a0c0"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0ab8382b3eb2dcb7b28b2232354ba8a0c0">TRACK_MARIO_RACEWAY</a></div><div class="ttdeci">@ TRACK_MARIO_RACEWAY</div><div class="ttdef"><b>Definition</b> mk64.h:35</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0ac0fd2256daaad651c8c077d2b7c95337"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0ac0fd2256daaad651c8c077d2b7c95337">TRACK_ROYAL_RACEWAY</a></div><div class="ttdeci">@ TRACK_ROYAL_RACEWAY</div><div class="ttdef"><b>Definition</b> mk64.h:42</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0acadd09bd7d466047f66fdcb04b926da6"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0acadd09bd7d466047f66fdcb04b926da6">TRACK_WARIO_STADIUM</a></div><div class="ttdeci">@ TRACK_WARIO_STADIUM</div><div class="ttdef"><b>Definition</b> mk64.h:49</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0aeb1a51c1d1a54b03c89535861a5cdac3"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0aeb1a51c1d1a54b03c89535861a5cdac3">TRACK_CHOCO_MOUNTAIN</a></div><div class="ttdeci">@ TRACK_CHOCO_MOUNTAIN</div><div class="ttdef"><b>Definition</b> mk64.h:36</div></div>
+<div class="ttc" id="amk64_8h_html_a845f5f9d73146971c78756dc81bc17a0af15f34075b0888881fc02fa46c7051ae"><div class="ttname"><a href="mk64_8h.html#a845f5f9d73146971c78756dc81bc17a0af15f34075b0888881fc02fa46c7051ae">TRACK_KALIMARI_DESERT</a></div><div class="ttdeci">@ TRACK_KALIMARI_DESERT</div><div class="ttdef"><b>Definition</b> mk64.h:46</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1135,10 +1143,10 @@ Here is the caller graph for this function:</div>
 <div class="line">    { <a class="code hl_define" href="defines_8h.html#a6a20b2541362f25ac8099bf1e8fbfee6">VERSUS</a>, <a class="code hl_define" href="defines_8h.html#a3f48cce4d2125604131fc7878460f44a">BATTLE</a>, 0x00000000 },          </div>
 <div class="line">    { <a class="code hl_define" href="defines_8h.html#a6a20b2541362f25ac8099bf1e8fbfee6">VERSUS</a>, <a class="code hl_define" href="defines_8h.html#a3f48cce4d2125604131fc7878460f44a">BATTLE</a>, 0x00000000 },          </div>
 <div class="line">}</div>
-<div class="ttc" id="adefines_8h_html_a3f48cce4d2125604131fc7878460f44a"><div class="ttname"><a href="defines_8h.html#a3f48cce4d2125604131fc7878460f44a">BATTLE</a></div><div class="ttdeci">#define BATTLE</div><div class="ttdef"><b>Definition</b> defines.h:147</div></div>
-<div class="ttc" id="adefines_8h_html_a6a20b2541362f25ac8099bf1e8fbfee6"><div class="ttname"><a href="defines_8h.html#a6a20b2541362f25ac8099bf1e8fbfee6">VERSUS</a></div><div class="ttdeci">#define VERSUS</div><div class="ttdef"><b>Definition</b> defines.h:146</div></div>
-<div class="ttc" id="adefines_8h_html_a8243137b0c8b7200c20479738cdbe365"><div class="ttname"><a href="defines_8h.html#a8243137b0c8b7200c20479738cdbe365">GRAND_PRIX</a></div><div class="ttdeci">#define GRAND_PRIX</div><div class="ttdoc">Options for gModeSelection.</div><div class="ttdef"><b>Definition</b> defines.h:144</div></div>
-<div class="ttc" id="adefines_8h_html_afbeb33d5671062036763d003c802e378"><div class="ttname"><a href="defines_8h.html#afbeb33d5671062036763d003c802e378">TIME_TRIALS</a></div><div class="ttdeci">#define TIME_TRIALS</div><div class="ttdef"><b>Definition</b> defines.h:145</div></div>
+<div class="ttc" id="adefines_8h_html_a3f48cce4d2125604131fc7878460f44a"><div class="ttname"><a href="defines_8h.html#a3f48cce4d2125604131fc7878460f44a">BATTLE</a></div><div class="ttdeci">#define BATTLE</div><div class="ttdef"><b>Definition</b> defines.h:159</div></div>
+<div class="ttc" id="adefines_8h_html_a6a20b2541362f25ac8099bf1e8fbfee6"><div class="ttname"><a href="defines_8h.html#a6a20b2541362f25ac8099bf1e8fbfee6">VERSUS</a></div><div class="ttdeci">#define VERSUS</div><div class="ttdef"><b>Definition</b> defines.h:158</div></div>
+<div class="ttc" id="adefines_8h_html_a8243137b0c8b7200c20479738cdbe365"><div class="ttname"><a href="defines_8h.html#a8243137b0c8b7200c20479738cdbe365">GRAND_PRIX</a></div><div class="ttdeci">#define GRAND_PRIX</div><div class="ttdoc">Options for gModeSelection.</div><div class="ttdef"><b>Definition</b> defines.h:156</div></div>
+<div class="ttc" id="adefines_8h_html_afbeb33d5671062036763d003c802e378"><div class="ttname"><a href="defines_8h.html#afbeb33d5671062036763d003c802e378">TIME_TRIALS</a></div><div class="ttdeci">#define TIME_TRIALS</div><div class="ttdef"><b>Definition</b> defines.h:157</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1483,6 +1491,20 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="afdfca5e0b5c9d84dfd1444dd8163ae29" name="afdfca5e0b5c9d84dfd1444dd8163ae29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdfca5e0b5c9d84dfd1444dd8163ae29">&#9670;&#160;</a></span>gTrackMapInit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool gTrackMapInit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ad73f0b009380559c79f4a3e291b8cf8a" name="ad73f0b009380559c79f4a3e291b8cf8a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad73f0b009380559c79f4a3e291b8cf8a">&#9670;&#160;</a></span>gVersusResultCursorSelection</h2>
 
@@ -1511,14 +1533,14 @@ Here is the caller graph for this function:</div>
 <b>Initial value:</b><div class="fragment"><div class="line">= {</div>
 <div class="line">    <a class="code hl_define" href="defines_8h.html#a4d063ca1755e7483e4d0d5d22b0bf21e">MARIO</a>, <a class="code hl_define" href="defines_8h.html#a1ba3226d974a364d7682f44614e311d9">LUIGI</a>, <a class="code hl_define" href="defines_8h.html#af96789c285aa5b40d948369c9867ba52">PEACH</a>, <a class="code hl_define" href="defines_8h.html#afd95aa649c35f54671dc41e1f757b89c">TOAD</a>, <a class="code hl_define" href="defines_8h.html#a6a404189274b097f2b1d7d6bde0d490d">YOSHI</a>, <a class="code hl_define" href="defines_8h.html#a78970dd75cad4541ac7435082258c2ea">DK</a>, <a class="code hl_define" href="defines_8h.html#ade68d6c1932c4ee33cd68b2fea48157d">WARIO</a>, <a class="code hl_define" href="defines_8h.html#a25bbf0d263c780d3379040bf765369e2">BOWSER</a>,</div>
 <div class="line">}</div>
-<div class="ttc" id="adefines_8h_html_a1ba3226d974a364d7682f44614e311d9"><div class="ttname"><a href="defines_8h.html#a1ba3226d974a364d7682f44614e311d9">LUIGI</a></div><div class="ttdeci">#define LUIGI</div><div class="ttdef"><b>Definition</b> defines.h:185</div></div>
-<div class="ttc" id="adefines_8h_html_a25bbf0d263c780d3379040bf765369e2"><div class="ttname"><a href="defines_8h.html#a25bbf0d263c780d3379040bf765369e2">BOWSER</a></div><div class="ttdeci">#define BOWSER</div><div class="ttdef"><b>Definition</b> defines.h:191</div></div>
-<div class="ttc" id="adefines_8h_html_a4d063ca1755e7483e4d0d5d22b0bf21e"><div class="ttname"><a href="defines_8h.html#a4d063ca1755e7483e4d0d5d22b0bf21e">MARIO</a></div><div class="ttdeci">#define MARIO</div><div class="ttdoc">Character IDs Note that these are not the same as the values found in gCharacterGridSelections as tho...</div><div class="ttdef"><b>Definition</b> defines.h:184</div></div>
-<div class="ttc" id="adefines_8h_html_a6a404189274b097f2b1d7d6bde0d490d"><div class="ttname"><a href="defines_8h.html#a6a404189274b097f2b1d7d6bde0d490d">YOSHI</a></div><div class="ttdeci">#define YOSHI</div><div class="ttdef"><b>Definition</b> defines.h:186</div></div>
-<div class="ttc" id="adefines_8h_html_a78970dd75cad4541ac7435082258c2ea"><div class="ttname"><a href="defines_8h.html#a78970dd75cad4541ac7435082258c2ea">DK</a></div><div class="ttdeci">#define DK</div><div class="ttdef"><b>Definition</b> defines.h:188</div></div>
-<div class="ttc" id="adefines_8h_html_ade68d6c1932c4ee33cd68b2fea48157d"><div class="ttname"><a href="defines_8h.html#ade68d6c1932c4ee33cd68b2fea48157d">WARIO</a></div><div class="ttdeci">#define WARIO</div><div class="ttdef"><b>Definition</b> defines.h:189</div></div>
-<div class="ttc" id="adefines_8h_html_af96789c285aa5b40d948369c9867ba52"><div class="ttname"><a href="defines_8h.html#af96789c285aa5b40d948369c9867ba52">PEACH</a></div><div class="ttdeci">#define PEACH</div><div class="ttdef"><b>Definition</b> defines.h:190</div></div>
-<div class="ttc" id="adefines_8h_html_afd95aa649c35f54671dc41e1f757b89c"><div class="ttname"><a href="defines_8h.html#afd95aa649c35f54671dc41e1f757b89c">TOAD</a></div><div class="ttdeci">#define TOAD</div><div class="ttdef"><b>Definition</b> defines.h:187</div></div>
+<div class="ttc" id="adefines_8h_html_a1ba3226d974a364d7682f44614e311d9"><div class="ttname"><a href="defines_8h.html#a1ba3226d974a364d7682f44614e311d9">LUIGI</a></div><div class="ttdeci">#define LUIGI</div><div class="ttdef"><b>Definition</b> defines.h:197</div></div>
+<div class="ttc" id="adefines_8h_html_a25bbf0d263c780d3379040bf765369e2"><div class="ttname"><a href="defines_8h.html#a25bbf0d263c780d3379040bf765369e2">BOWSER</a></div><div class="ttdeci">#define BOWSER</div><div class="ttdef"><b>Definition</b> defines.h:203</div></div>
+<div class="ttc" id="adefines_8h_html_a4d063ca1755e7483e4d0d5d22b0bf21e"><div class="ttname"><a href="defines_8h.html#a4d063ca1755e7483e4d0d5d22b0bf21e">MARIO</a></div><div class="ttdeci">#define MARIO</div><div class="ttdoc">Character IDs Note that these are not the same as the values found in gCharacterGridSelections as tho...</div><div class="ttdef"><b>Definition</b> defines.h:196</div></div>
+<div class="ttc" id="adefines_8h_html_a6a404189274b097f2b1d7d6bde0d490d"><div class="ttname"><a href="defines_8h.html#a6a404189274b097f2b1d7d6bde0d490d">YOSHI</a></div><div class="ttdeci">#define YOSHI</div><div class="ttdef"><b>Definition</b> defines.h:198</div></div>
+<div class="ttc" id="adefines_8h_html_a78970dd75cad4541ac7435082258c2ea"><div class="ttname"><a href="defines_8h.html#a78970dd75cad4541ac7435082258c2ea">DK</a></div><div class="ttdeci">#define DK</div><div class="ttdef"><b>Definition</b> defines.h:200</div></div>
+<div class="ttc" id="adefines_8h_html_ade68d6c1932c4ee33cd68b2fea48157d"><div class="ttname"><a href="defines_8h.html#ade68d6c1932c4ee33cd68b2fea48157d">WARIO</a></div><div class="ttdeci">#define WARIO</div><div class="ttdef"><b>Definition</b> defines.h:201</div></div>
+<div class="ttc" id="adefines_8h_html_af96789c285aa5b40d948369c9867ba52"><div class="ttname"><a href="defines_8h.html#af96789c285aa5b40d948369c9867ba52">PEACH</a></div><div class="ttdeci">#define PEACH</div><div class="ttdef"><b>Definition</b> defines.h:202</div></div>
+<div class="ttc" id="adefines_8h_html_afd95aa649c35f54671dc41e1f757b89c"><div class="ttname"><a href="defines_8h.html#afd95aa649c35f54671dc41e1f757b89c">TOAD</a></div><div class="ttdeci">#define TOAD</div><div class="ttdef"><b>Definition</b> defines.h:199</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1604,10 +1626,10 @@ Here is the caller graph for this function:</div>
 <b>Initial value:</b><div class="fragment"><div class="line">= { <a class="code hl_define" href="defines_8h.html#a3a21e993535215f388e0deb8852b31f2">SCREEN_MODE_1P</a>, <a class="code hl_define" href="defines_8h.html#a367f6b5f1884f03e0479c4af7dfd3e45">SCREEN_MODE_2P_SPLITSCREEN_HORIZONTAL</a>,</div>
 <div class="line">                                      <a class="code hl_define" href="defines_8h.html#a133cc2d2348d8a6933a1fbff2b2022c8">SCREEN_MODE_2P_SPLITSCREEN_VERTICAL</a>, <a class="code hl_define" href="defines_8h.html#a4bd0445921d5c67d0d3d14c4ce81be92">SCREEN_MODE_3P_4P_SPLITSCREEN</a>,</div>
 <div class="line">                                      <a class="code hl_define" href="defines_8h.html#a4bd0445921d5c67d0d3d14c4ce81be92">SCREEN_MODE_3P_4P_SPLITSCREEN</a> }</div>
-<div class="ttc" id="adefines_8h_html_a133cc2d2348d8a6933a1fbff2b2022c8"><div class="ttname"><a href="defines_8h.html#a133cc2d2348d8a6933a1fbff2b2022c8">SCREEN_MODE_2P_SPLITSCREEN_VERTICAL</a></div><div class="ttdeci">#define SCREEN_MODE_2P_SPLITSCREEN_VERTICAL</div><div class="ttdef"><b>Definition</b> defines.h:236</div></div>
-<div class="ttc" id="adefines_8h_html_a367f6b5f1884f03e0479c4af7dfd3e45"><div class="ttname"><a href="defines_8h.html#a367f6b5f1884f03e0479c4af7dfd3e45">SCREEN_MODE_2P_SPLITSCREEN_HORIZONTAL</a></div><div class="ttdeci">#define SCREEN_MODE_2P_SPLITSCREEN_HORIZONTAL</div><div class="ttdef"><b>Definition</b> defines.h:235</div></div>
-<div class="ttc" id="adefines_8h_html_a3a21e993535215f388e0deb8852b31f2"><div class="ttname"><a href="defines_8h.html#a3a21e993535215f388e0deb8852b31f2">SCREEN_MODE_1P</a></div><div class="ttdeci">#define SCREEN_MODE_1P</div><div class="ttdoc">Options for gScreenModeSelection and gActiveScreenMode.</div><div class="ttdef"><b>Definition</b> defines.h:234</div></div>
-<div class="ttc" id="adefines_8h_html_a4bd0445921d5c67d0d3d14c4ce81be92"><div class="ttname"><a href="defines_8h.html#a4bd0445921d5c67d0d3d14c4ce81be92">SCREEN_MODE_3P_4P_SPLITSCREEN</a></div><div class="ttdeci">#define SCREEN_MODE_3P_4P_SPLITSCREEN</div><div class="ttdef"><b>Definition</b> defines.h:237</div></div>
+<div class="ttc" id="adefines_8h_html_a133cc2d2348d8a6933a1fbff2b2022c8"><div class="ttname"><a href="defines_8h.html#a133cc2d2348d8a6933a1fbff2b2022c8">SCREEN_MODE_2P_SPLITSCREEN_VERTICAL</a></div><div class="ttdeci">#define SCREEN_MODE_2P_SPLITSCREEN_VERTICAL</div><div class="ttdef"><b>Definition</b> defines.h:248</div></div>
+<div class="ttc" id="adefines_8h_html_a367f6b5f1884f03e0479c4af7dfd3e45"><div class="ttname"><a href="defines_8h.html#a367f6b5f1884f03e0479c4af7dfd3e45">SCREEN_MODE_2P_SPLITSCREEN_HORIZONTAL</a></div><div class="ttdeci">#define SCREEN_MODE_2P_SPLITSCREEN_HORIZONTAL</div><div class="ttdef"><b>Definition</b> defines.h:247</div></div>
+<div class="ttc" id="adefines_8h_html_a3a21e993535215f388e0deb8852b31f2"><div class="ttname"><a href="defines_8h.html#a3a21e993535215f388e0deb8852b31f2">SCREEN_MODE_1P</a></div><div class="ttdeci">#define SCREEN_MODE_1P</div><div class="ttdoc">Options for gScreenModeSelection and gActiveScreenMode.</div><div class="ttdef"><b>Definition</b> defines.h:246</div></div>
+<div class="ttc" id="adefines_8h_html_a4bd0445921d5c67d0d3d14c4ce81be92"><div class="ttname"><a href="defines_8h.html#a4bd0445921d5c67d0d3d14c4ce81be92">SCREEN_MODE_3P_4P_SPLITSCREEN</a></div><div class="ttdeci">#define SCREEN_MODE_3P_4P_SPLITSCREEN</div><div class="ttdef"><b>Definition</b> defines.h:249</div></div>
 </div><!-- fragment --><p>Rodata </p>
 
 </div>
@@ -1619,7 +1641,7 @@ Here is the caller graph for this function:</div>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const union <a class="el" href="unionGameModePack.html">GameModePack</a> sSoundMenuPack = { { <a class="el" href="defines_8h.html#a14799bbba35e4e84b1b7d5c5788c7cf2">SOUND_STEREO</a>, <a class="el" href="defines_8h.html#aaaaa1f121d97afbf02fcdcb0cc11e5e8">SOUND_HEADPHONES</a>, <a class="el" href="defines_8h.html#ac23e3322221bf17b68cd008dc95bca48">SOUND_UNUSED</a>, <a class="el" href="defines_8h.html#a090130d9c333ac08a748b2eac40085cb">SOUND_MONO</a> } }</td>
+          <td class="memname">const union <a class="el" href="unionGameModePack.html">GameModePack</a> sSoundMenuPack = { { <a class="el" href="defines_8h.html#a14799bbba35e4e84b1b7d5c5788c7cf2">SOUND_STEREO</a>, <a class="el" href="defines_8h.html#aaaaa1f121d97afbf02fcdcb0cc11e5e8">SOUND_HEADPHONES</a>, <a class="el" href="defines_8h.html#a8c60c63c057abd0972a9a686881f72f6">SOUND_SURROUND</a>, <a class="el" href="defines_8h.html#a090130d9c333ac08a748b2eac40085cb">SOUND_MONO</a> } }</td>
         </tr>
       </table>
 </div><div class="memdoc">

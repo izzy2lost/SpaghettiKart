@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/World.h File Reference</title>
+<title>SpaghettiKart: src/engine/World.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -106,32 +106,29 @@ $(function(){initNavTree('World_8h.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#nested-classes">Data Structures</a>  </div>
   <div class="headertitle"><div class="title">World.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;libultraship.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="CoreMath_8h_source.html">CoreMath.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Course_8h_source.html">engine/courses/Course.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Track_8h_source.html">engine/tracks/Track.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GameCamera_8h_source.html">engine/cameras/GameCamera.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Object_8h_source.html">objects/Object.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Cup_8h_source.html">Cup.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Train_8h_source.html">vehicles/Train.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Car_8h_source.html">vehicles/Car.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="BombKart_8h_source.html">objects/BombKart.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="PlayerBombKart_8h_source.html">PlayerBombKart.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TrainCrossing_8h_source.html">TrainCrossing.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Thwomp_8h_source.html">objects/Thwomp.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Penguin_8h_source.html">objects/Penguin.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Seagull_8h_source.html">objects/Seagull.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="Lakitu_8h_source.html">objects/Lakitu.h</a>&quot;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &lt;unordered_map&gt;</code><br />
+<code>#include &lt;utility&gt;</code><br />
+<code>#include &quot;<a class="el" href="RaceManager_8h_source.html">RaceManager.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Actor_8h_source.html">Actor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="StaticMeshActor_8h_source.html">StaticMeshActor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ParticleEmitter_8h_source.html">particles/ParticleEmitter.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="SkyCloud_8h_source.html">engine/sky/SkyCloud.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Editor_8h_source.html">editor/Editor.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="GameObject_8h_source.html">editor/GameObject.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Game_8h_source.html">port/Game.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="camera_8h_source.html">camera.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="objects_8h_source.html">objects.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -148,35 +145,7 @@ Data Structures</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structWorld_1_1Matrix.html">World::Matrix</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a2075aa052f40ef84e5435c3dc9c04801" id="r_a2075aa052f40ef84e5435c3dc9c04801"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classWorld.html">World</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2075aa052f40ef84e5435c3dc9c04801">gWorldInstance</a></td></tr>
-<tr class="separator:a2075aa052f40ef84e5435c3dc9c04801"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a2075aa052f40ef84e5435c3dc9c04801" name="a2075aa052f40ef84e5435c3dc9c04801"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2075aa052f40ef84e5435c3dc9c04801">&#9670;&#160;</a></span>gWorldInstance</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classWorld.html">World</a> gWorldInstance</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

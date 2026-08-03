@@ -1,10 +1,15 @@
 var structCamera =
 [
     [ "cameraId", "structCamera.html#a15388e5b99931adebdf818711a3724e0", null ],
-    [ "collision", "structCamera.html#ae87778b1cb8804985aad9c5eb7c4b36f", null ],
+    [ "collision", "structCamera.html#afbf0c5bbd0744fb79f3bc4d324b80faa", null ],
+    [ "fieldOfView", "structCamera.html#a7b3ff9e1366b31d516a32bbfb469cde4", null ],
     [ "lookAt", "structCamera.html#ae16ab2b8e885264666d7e7e20bb872a1", null ],
+    [ "lookAtMatrix", "structCamera.html#a1f91a97b1506773fa8da30908cdb89cf", null ],
+    [ "mode", "structCamera.html#a987324a5181e9e4e8006d5c0e565339b", null ],
+    [ "perspectiveMatrix", "structCamera.html#a92588b1727a590b6d902b0e1d8280aa8", null ],
     [ "playerId", "structCamera.html#a2970cfcff0b562c8033422defcc15a50", null ],
     [ "pos", "structCamera.html#aaa7eaab22236f016fd933666bd90c741", null ],
+    [ "renderMode", "structCamera.html#a7c27c5869b9371dfc10a53fa5b0a8ba7", null ],
     [ "rot", "structCamera.html#a0eac7222597bb35c86f8ab71bb2f9d2f", null ],
     [ "someBitFlags", "structCamera.html#acfaf2e76657f585308818aeb81e08c22", null ],
     [ "unk_2C", "structCamera.html#ae7e6b48883a5943ec6a5fea35724b343", null ],

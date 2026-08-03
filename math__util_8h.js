@@ -1,6 +1,5 @@
 var math__util_8h =
 [
-    [ "DEGREES_CONVERSION_FACTOR", "math__util_8h.html#a5fe5c9e278625a540997d87c80f22208", null ],
     [ "sqr", "math__util_8h.html#adee8c6d2fc20a1194cf64c481e7b6353", null ],
     [ "_atan2f", "math__util_8h.html#a89f1de3af4d3b117aa089fc1645d5335", null ],
     [ "add_translate_mat4_vec3f", "math__util_8h.html#aa2865d6af75d5a9135247ce2ef664b47", null ],

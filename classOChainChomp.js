@@ -1,6 +1,7 @@
 var classOChainChomp =
 [
     [ "OChainChomp", "classOChainChomp.html#a4c282fe2a6eb60b0b62eeb8144e56c32", null ],
+    [ "OChainChomp", "classOChainChomp.html#a1256e8d188979eaf98a7f21476491f21", null ],
     [ "~OChainChomp", "classOChainChomp.html#a144249628da675f8ec526552b3a8bfb7", null ],
     [ "Draw", "classOChainChomp.html#a2e0ea3675cbfc3f96ef1580984c6149c", null ],
     [ "func_80055AB8", "classOChainChomp.html#ab768e973e179cd46fe28eccef540a015", null ],

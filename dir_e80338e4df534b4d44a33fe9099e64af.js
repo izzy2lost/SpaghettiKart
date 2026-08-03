@@ -23,7 +23,7 @@ var dir_e80338e4df534b4d44a33fe9099e64af =
     [ "ResourceUtil.h", "ResourceUtil_8h.html", "ResourceUtil_8h" ],
     [ "TrackPathPointFactory.cpp", "TrackPathPointFactory_8cpp.html", null ],
     [ "TrackPathPointFactory.h", "TrackPathPointFactory_8h.html", "TrackPathPointFactory_8h" ],
-    [ "TrackSectionsFactory.cpp", "TrackSectionsFactory_8cpp.html", "TrackSectionsFactory_8cpp" ],
+    [ "TrackSectionsFactory.cpp", "TrackSectionsFactory_8cpp.html", null ],
     [ "TrackSectionsFactory.h", "TrackSectionsFactory_8h.html", "TrackSectionsFactory_8h" ],
     [ "UnkActorSpawnDataFactory.cpp", "UnkActorSpawnDataFactory_8cpp.html", null ],
     [ "UnkActorSpawnDataFactory.h", "UnkActorSpawnDataFactory_8h.html", "UnkActorSpawnDataFactory_8h" ],

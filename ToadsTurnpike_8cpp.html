@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/courses/ToadsTurnpike.cpp File Reference</title>
+<title>SpaghettiKart: src/engine/tracks/ToadsTurnpike.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -115,9 +115,10 @@ $(function(){initNavTree('ToadsTurnpike_8cpp.html',''); initResizable(true); });
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &quot;<a class="el" href="ToadsTurnpike_8h_source.html">ToadsTurnpike.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="World_8h_source.html">World.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="World_8h_source.html">engine/World.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="BombKart_8h_source.html">engine/objects/BombKart.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="toads__turnpike__data_8h_source.html">assets/toads_turnpike_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="models_2tracks_2toads__turnpike_2toads__turnpike__data_8h_source.html">assets/models/tracks/toads_turnpike/toads_turnpike_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="other_2tracks_2toads__turnpike_2toads__turnpike__data_8h_source.html">assets/other/tracks/toads_turnpike/toads_turnpike_data.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Finishline_8h_source.html">engine/actors/Finishline.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Bus_8h_source.html">engine/vehicles/Bus.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Car_8h_source.html">engine/vehicles/Car.h</a>&quot;</code><br />
@@ -128,23 +129,22 @@ $(function(){initNavTree('ToadsTurnpike_8cpp.html',''); initResizable(true); });
 <code>#include &quot;<a class="el" href="camera_8h_source.html">camera.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="course__offsets_8h_source.html">course_offsets.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__800029B0_8h_source.html">code_800029B0.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="render__courses_8h_source.html">render_courses.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="render__courses_8h_source.html">racing/render_courses.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__8006E9C0_8h_source.html">code_8006E9C0.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80057C60_8h_source.html">code_80057C60.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="defines_8h_source.html">defines.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="math__util_8h_source.html">math_util.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="external_8h_source.html">external.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="math__util_8h_source.html">racing/math_util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="external_8h_source.html">audio/external.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80005FD0_8h_source.html">code_80005FD0.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="spawn__players_8h_source.html">spawn_players.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="render__objects_8h_source.html">render_objects.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="common__data_8h_source.html">assets/common_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="models_2common__data_8h_source.html">assets/models/common_data.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="save_8h_source.html">save.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="replays_8h_source.html">replays.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="actors_8h_source.html">actors.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="collision_8h_source.html">collision.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="actors_8h_source.html">racing/actors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="collision_8h_source.html">racing/collision.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="memory_8h_source.html">memory.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80086E70_8h_source.html">code_80086E70.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="course_8h_source.html">course.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ToadsTurnpike.cpp:</div>
 <div class="dyncontent">
@@ -153,14 +153,12 @@ Include dependency graph for ToadsTurnpike.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a1752f55f9a1868983cdb97b5ce7e03b5" id="r_a1752f55f9a1868983cdb97b5ce7e03b5"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1752f55f9a1868983cdb97b5ce7e03b5">d_course_toads_turnpike_dl_list</a> []</td></tr>
-<tr class="separator:a1752f55f9a1868983cdb97b5ce7e03b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a938fd7b1353d683a94e7a30294aabefb" id="r_a938fd7b1353d683a94e7a30294aabefb"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a938fd7b1353d683a94e7a30294aabefb">d_course_toads_turnpike_dl_list</a> [81]</td></tr>
+<tr class="separator:a938fd7b1353d683a94e7a30294aabefb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7284ffc2e41a12ca87537ef21156453" id="r_ad7284ffc2e41a12ca87537ef21156453"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7284ffc2e41a12ca87537ef21156453">currentScreenSection</a></td></tr>
 <tr class="separator:ad7284ffc2e41a12ca87537ef21156453"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a60c6a69449720d514d1f6569c45f626e" id="r_a60c6a69449720d514d1f6569c45f626e"><td class="memItemLeft" align="right" valign="top">s8&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a60c6a69449720d514d1f6569c45f626e">gPlayerCount</a></td></tr>
 <tr class="separator:a60c6a69449720d514d1f6569c45f626e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeeb891bbe4108d042e19cbff79071421" id="r_aeeb891bbe4108d042e19cbff79071421"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structcourse__texture.html">course_texture</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeeb891bbe4108d042e19cbff79071421">toads_turnpike_textures</a> []</td></tr>
-<tr class="separator:aeeb891bbe4108d042e19cbff79071421"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="ad7284ffc2e41a12ca87537ef21156453" name="ad7284ffc2e41a12ca87537ef21156453"></a>
@@ -185,8 +183,8 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a1752f55f9a1868983cdb97b5ce7e03b5" name="a1752f55f9a1868983cdb97b5ce7e03b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1752f55f9a1868983cdb97b5ce7e03b5">&#9670;&#160;</a></span>d_course_toads_turnpike_dl_list</h2>
+<a id="a938fd7b1353d683a94e7a30294aabefb" name="a938fd7b1353d683a94e7a30294aabefb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a938fd7b1353d683a94e7a30294aabefb">&#9670;&#160;</a></span>d_course_toads_turnpike_dl_list</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -195,7 +193,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const char* d_course_toads_turnpike_dl_list[]</td>
+          <td class="memname">const char* d_course_toads_turnpike_dl_list[81]</td>
         </tr>
       </table>
   </td>
@@ -229,48 +227,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="aeeb891bbe4108d042e19cbff79071421" name="aeeb891bbe4108d042e19cbff79071421"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeeb891bbe4108d042e19cbff79071421">&#9670;&#160;</a></span>toads_turnpike_textures</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structcourse__texture.html">course_texture</a> toads_turnpike_textures[]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    { gTexture645134, 0x052C, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture64FE68, 0x0258, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture6607C0, 0x0105, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture6608C8, 0x0106, 0x0800, 0x0 },</div>
-<div class="line">    { gTextureGrass11, 0x01F8, 0x0800, 0x0 },</div>
-<div class="line">    { gTextureSignNintendoRed0, 0x02A6, 0x1000, 0x0 },</div>
-<div class="line">    { gTextureSignNintendoRed1, 0x02F7, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture671A88, 0x012D, 0x0800, 0x0 },</div>
-<div class="line">    { gTextureRoad2, 0x02AE, 0x1000, 0x0 },</div>
-<div class="line">    { gTextureRoad3, 0x0286, 0x1000, 0x0 },</div>
-<div class="line">    { gTextureRoad4, 0x0282, 0x1000, 0x0 },</div>
-<div class="line">    { gTextureRoadFinish0, 0x0338, 0x1000, 0x0 },</div>
-<div class="line">    { gTextureSignToadYellow, 0x0723, 0x1000, 0x0 },</div>
-<div class="line">    { gTextureSignToadGreen, 0x071F, 0x1000, 0x0 },</div>
-<div class="line">    { gTextureSignMergingLanes, 0x0118, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture65127C, 0x01AB, 0x0800, 0x0 },</div>
-<div class="line">    { gTextureRoad5, 0x02B9, 0x1000, 0x0 },</div>
-<div class="line">    { gTextureSignToadRed, 0x0610, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture668228, 0x0130, 0x0800, 0x0 },</div>
-<div class="line">    { 0x00000000, 0x0000, 0x0000, 0x0 },</div>
-<div class="line">}</div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="dir_361caa2d8f272974fdb8d014c7b22bcf.html">courses</a></li><li class="navelem"><a class="el" href="ToadsTurnpike_8cpp.html">ToadsTurnpike.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="dir_8955581d22ca769fa1400ba486b7589a.html">tracks</a></li><li class="navelem"><a class="el" href="ToadsTurnpike_8cpp.html">ToadsTurnpike.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

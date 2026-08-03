@@ -9,16 +9,6 @@ var namespaceGameUI =
       [ "initFunc", "namespaceGameUI_1_1Freecam.html#a81d194b3b16b9c397e3aaaa61a2ef511", null ],
       [ "sReadyUpBool", "namespaceGameUI_1_1Freecam.html#a4ed9ea924f4f812b591e82c55e59cd00", null ]
     ] ],
-    [ "Multiplayer", "namespaceGameUI_1_1Multiplayer.html", [
-      [ "DrawColumn1", "namespaceGameUI_1_1Multiplayer.html#a82477c0920d435faed20e3dd60161438", null ],
-      [ "DrawColumn2", "namespaceGameUI_1_1Multiplayer.html#af5f299cda6639c8105bd8d29ab94be3a", null ],
-      [ "RegisterMultiplayerWidgets", "namespaceGameUI_1_1Multiplayer.html#a09b2157b08aba0383c13dfc3ef8c2ef5", null ],
-      [ "initFunc", "namespaceGameUI_1_1Multiplayer.html#aaad8b6eb73bb7b2e242125cf7e0eb797", null ],
-      [ "sCharacter", "namespaceGameUI_1_1Multiplayer.html#ae7fff9e6c9cef887e83a6fda8430e0bd", null ],
-      [ "sConnectedBool", "namespaceGameUI_1_1Multiplayer.html#a506c2ec562dd456ed7abdac83962ef5d", null ],
-      [ "sCup", "namespaceGameUI_1_1Multiplayer.html#abe4ae8f6e1cfab88e2096b2fc98d849e", null ],
-      [ "sReadyUpBool", "namespaceGameUI_1_1Multiplayer.html#a651a0a642651b0014245a320aaaa9366", null ]
-    ] ],
     [ "PortMenu", "classGameUI_1_1PortMenu.html", "classGameUI_1_1PortMenu" ],
     [ "messageType", "namespaceGameUI.html#aa9e407716aed9d3d8c1bbc634b8c9b79", [
       [ "MESSAGE_ERROR", "namespaceGameUI.html#aa9e407716aed9d3d8c1bbc634b8c9b79adf3fcc5e91173aa6ef87d0b4e987e974", null ],
@@ -56,6 +46,7 @@ var namespaceGameUI =
     [ "item_aspectRatio", "namespaceGameUI.html#a6d2b4f6dd15334a7b3d9c59c654d83bd", null ],
     [ "item_pixelCount", "namespaceGameUI.html#ae409a19efedbadc64d434f2bbe87b395", null ],
     [ "logLevels", "namespaceGameUI.html#a67e005bbaa2729af7d9e65fd1a4fb892", null ],
+    [ "MAX_FPS", "namespaceGameUI.html#a291610a1b19acbf05b97d3512a50c78f", null ],
     [ "max_integerScaleFactor", "namespaceGameUI.html#abf0be3caa6c7db8c5bc8da2911a26f95", null ],
     [ "maxVerticalPixelCount", "namespaceGameUI.html#afa865c03604144e2764bf5cc75e2bd4f", null ],
     [ "mConsoleWindow", "namespaceGameUI.html#ad578e6e03a0f0901d9bd3f505d76a152", null ],
@@ -66,7 +57,6 @@ var namespaceGameUI =
     [ "mGfxDebuggerWindow", "namespaceGameUI.html#a0a095cd5e52838f92ff9f8d1c0a71064", null ],
     [ "mInputEditorWindow", "namespaceGameUI.html#a16125af0f2e0e8d2237e7a1c4e470a99", null ],
     [ "minVerticalPixelCount", "namespaceGameUI.html#a788dd35f406532d68d11b07681fecc40", null ],
-    [ "mMultiplayerWindow", "namespaceGameUI.html#a035f5c73130973d69afe5c365d4ecf27", null ],
     [ "motionBlurOptions", "namespaceGameUI.html#ab20a9c8e684dca4e2dec51739052716a", null ],
     [ "motionBlurStrength", "namespaceGameUI.html#a0ea5c530f82d3116055e023bf1987f53", null ],
     [ "mPortMenu", "namespaceGameUI.html#a0f2afd2b3403722100259cc23d38cb0c", null ],

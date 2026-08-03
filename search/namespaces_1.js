@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['editor_0',['Editor',['../namespaceEditor.html',1,'']]]
+  ['fast_0',['Fast',['../namespaceFast.html',1,'']]],
+  ['freecam_1',['Freecam',['../namespaceFreecam.html',1,'']]]
 ];

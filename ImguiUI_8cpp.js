@@ -18,7 +18,6 @@ var ImguiUI_8cpp =
     [ "GameUI::mContentBrowserWindow", "namespaceGameUI.html#ac706231c321fb011884fe479328bb1ed", null ],
     [ "GameUI::mGfxDebuggerWindow", "namespaceGameUI.html#a0a095cd5e52838f92ff9f8d1c0a71064", null ],
     [ "GameUI::mInputEditorWindow", "namespaceGameUI.html#a16125af0f2e0e8d2237e7a1c4e470a99", null ],
-    [ "GameUI::mMultiplayerWindow", "namespaceGameUI.html#a035f5c73130973d69afe5c365d4ecf27", null ],
     [ "GameUI::mPropertiesWindow", "namespaceGameUI.html#a5ad7b502d7b38e608d8a37750fda3d95", null ],
     [ "GameUI::mSceneExplorerWindow", "namespaceGameUI.html#a00df93f4c55fb502534530322fea137a", null ],
     [ "GameUI::mStatsWindow", "namespaceGameUI.html#a4b41697d18f54c1e6579b4bf85c5630d", null ],

@@ -1,10 +1,11 @@
 var classOMole =
 [
     [ "OMole", "classOMole.html#ac634aa46930f54a1dfedc316034b4b95", null ],
+    [ "~OMole", "classOMole.html#a721f12a3d1edef8d8c8f5d8b51e4c318", null ],
     [ "Draw", "classOMole.html#abe4c454a9553584219f4505b2e338f27", null ],
     [ "func_80054D00", "classOMole.html#abde7681bfbee83db4e8105925052979f", null ],
-    [ "func_80054E10", "classOMole.html#af6bea76b861bc3ec723e7b62f44a59f7", null ],
-    [ "func_80054EB8", "classOMole.html#ae2314bd111146e4c408f15630eb62228", null ],
+    [ "func_80054E10", "classOMole.html#a6aafa5d284b0f8c56735716c4a81a712", null ],
+    [ "func_80054EB8", "classOMole.html#ac12b09c3e762ff675483e74ffd4c752e", null ],
     [ "func_80054F04", "classOMole.html#a6b5ff0d1703fdc1785d17b4119bb6d1f", null ],
     [ "func_8008153C", "classOMole.html#a901eaa207b141d46b109090867e70578", null ],
     [ "func_80081790", "classOMole.html#a4212a76ae7a370bcf9044662bec84891", null ],

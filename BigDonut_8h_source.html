@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/courses/BigDonut.h Source File</title>
+<title>SpaghettiKart: src/engine/tracks/BigDonut.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -111,63 +111,62 @@ $(function(){initNavTree('BigDonut_8h_source.html',''); initResizable(true); });
 <a href="BigDonut_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;libultraship.h&gt;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="Course_8h.html">Course.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="Track_8h.html">Track.h</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">    #include &quot;<a class="code" href="big__donut__vertices_8h.html">assets/big_donut_vertices.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">    #include &quot;<a class="code" href="big__donut__displaylists_8h.html">assets/big_donut_displaylists.h</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">    #include &quot;<a class="code" href="big__donut__data_8h.html">assets/big_donut_data.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">    #include &quot;<a class="code" href="big__donut__vertices_8h.html">assets/models/tracks/big_donut/big_donut_vertices.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">    #include &quot;<a class="code" href="big__donut__displaylists_8h.html">assets/models/tracks/big_donut/big_donut_displaylists.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">    #include &quot;<a class="code" href="models_2tracks_2big__donut_2big__donut__data_8h.html">assets/models/tracks/big_donut/big_donut_data.h</a>&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">    #include &quot;<a class="code" href="course__offsets_8h.html">course_offsets.h</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">    #include &quot;<a class="code" href="camera_8h.html">camera.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">    #include &quot;<a class="code" href="src_2data_2some__data_8h.html">data/some_data.h</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">    #include &quot;<a class="code" href="objects_8h.html">objects.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">    #include &quot;<a class="code" href="path__spawn__metadata_8h.html">path_spawn_metadata.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">extern</span> <span class="keyword">const</span> <a class="code hl_struct" href="structcourse__texture.html">course_texture</a> <a class="code hl_variable" href="BigDonut_8cpp.html#ab9c841d43606bb4d01f5a2660b78d07f">big_donut_textures</a>[];</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>}</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="foldopen" id="foldopen00018" data-start="{" data-end="};">
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classBigDonut.html">   18</a></span><span class="keyword">class </span><a class="code hl_function" href="classBigDonut.html#a636400457cd3ebc620faf605b23a6d3b">BigDonut</a> : <span class="keyword">public</span> <a class="code hl_class" href="classCourse.html">Course</a> {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classBigDonut.html#a871e3340fe988dda4d4d1a7a82828c71">   20</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classBigDonut.html#a871e3340fe988dda4d4d1a7a82828c71">~BigDonut</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classBigDonut.html#a636400457cd3ebc620faf605b23a6d3b">BigDonut</a>();</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBigDonut.html#a5ba5b86385942cb20261fdfa000742bd">Load</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBigDonut.html#af07674b3f0de39da096eb1b107f9df0d">BeginPlay</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBigDonut.html#a7896213233573878a6f13f072cf8109a">Render</a>(<span class="keyword">struct</span> <a class="code hl_struct" href="structUnkStruct__800DC5EC.html">UnkStruct_800DC5EC</a>*) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBigDonut.html#a9043a829c55fc91a9ce897571796387c">RenderCredits</a>() <span class="keyword">override</span>;    </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBigDonut.html#a13feb05a7656981a30ffa8e7453b282f">Waypoints</a>(<a class="code hl_struct" href="structPlayer.html">Player</a>* player, int8_t playerId) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBigDonut.html#a7b9b3b732c7ea57ae78ecdf29c2c05de">Destroy</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">    #include &quot;<a class="code" href="path__spawn__metadata_8h.html">data/path_spawn_metadata.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">    #include &quot;<a class="code" href="code__800029B0_8h.html">code_800029B0.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keyword">extern</span> <span class="keyword">const</span> <a class="code hl_struct" href="structcourse__texture.html">course_texture</a> <a class="code hl_variable" href="BigDonut_8h.html#ab9c841d43606bb4d01f5a2660b78d07f">big_donut_textures</a>[];</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="};">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="classBigDonut.html">   19</a></span><span class="keyword">class </span><a class="code hl_function" href="classBigDonut.html#a636400457cd3ebc620faf605b23a6d3b">BigDonut</a> : <span class="keyword">public</span> <a class="code hl_class" href="classTrack.html">Track</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classBigDonut.html#a636400457cd3ebc620faf605b23a6d3b">BigDonut</a>();</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBigDonut.html#a5ba5b86385942cb20261fdfa000742bd">Load</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBigDonut.html#af07674b3f0de39da096eb1b107f9df0d">BeginPlay</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBigDonut.html#a3da687a45a89b0cca62d2acb7a470355">Draw</a>(<a class="code hl_struct" href="structScreenContext.html">ScreenContext</a>*) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBigDonut.html#a6a10bd48f4244ae336861dbdaa7afb92">DrawCredits</a>() <span class="keyword">override</span>;    </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBigDonut.html#a13feb05a7656981a30ffa8e7453b282f">Waypoints</a>(<a class="code hl_struct" href="structPlayer.html">Player</a>* player, int8_t playerId) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classBigDonut.html#a7b9b3b732c7ea57ae78ecdf29c2c05de">Destroy</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>};</div>
 </div>
-<div class="ttc" id="aBigDonut_8cpp_html_ab9c841d43606bb4d01f5a2660b78d07f"><div class="ttname"><a href="BigDonut_8cpp.html#ab9c841d43606bb4d01f5a2660b78d07f">big_donut_textures</a></div><div class="ttdeci">const course_texture big_donut_textures[]</div><div class="ttdef"><b>Definition</b> BigDonut.cpp:35</div></div>
-<div class="ttc" id="aCourse_8h_html"><div class="ttname"><a href="Course_8h.html">Course.h</a></div></div>
-<div class="ttc" id="abig__donut__data_8h_html"><div class="ttname"><a href="big__donut__data_8h.html">big_donut_data.h</a></div></div>
+<div class="ttc" id="aBigDonut_8h_html_ab9c841d43606bb4d01f5a2660b78d07f"><div class="ttname"><a href="BigDonut_8h.html#ab9c841d43606bb4d01f5a2660b78d07f">big_donut_textures</a></div><div class="ttdeci">const course_texture big_donut_textures[]</div></div>
+<div class="ttc" id="aTrack_8h_html"><div class="ttname"><a href="Track_8h.html">Track.h</a></div></div>
 <div class="ttc" id="abig__donut__displaylists_8h_html"><div class="ttname"><a href="big__donut__displaylists_8h.html">big_donut_displaylists.h</a></div></div>
 <div class="ttc" id="abig__donut__vertices_8h_html"><div class="ttname"><a href="big__donut__vertices_8h.html">big_donut_vertices.h</a></div></div>
 <div class="ttc" id="acamera_8h_html"><div class="ttname"><a href="camera_8h.html">camera.h</a></div></div>
-<div class="ttc" id="aclassBigDonut_html_a13feb05a7656981a30ffa8e7453b282f"><div class="ttname"><a href="classBigDonut.html#a13feb05a7656981a30ffa8e7453b282f">BigDonut::Waypoints</a></div><div class="ttdeci">virtual void Waypoints(Player *player, int8_t playerId) override</div><div class="ttdef"><b>Definition</b> BigDonut.cpp:173</div></div>
-<div class="ttc" id="aclassBigDonut_html_a5ba5b86385942cb20261fdfa000742bd"><div class="ttname"><a href="classBigDonut.html#a5ba5b86385942cb20261fdfa000742bd">BigDonut::Load</a></div><div class="ttdeci">virtual void Load() override</div><div class="ttdef"><b>Definition</b> BigDonut.cpp:115</div></div>
-<div class="ttc" id="aclassBigDonut_html_a636400457cd3ebc620faf605b23a6d3b"><div class="ttname"><a href="classBigDonut.html#a636400457cd3ebc620faf605b23a6d3b">BigDonut::BigDonut</a></div><div class="ttdeci">BigDonut()</div><div class="ttdef"><b>Definition</b> BigDonut.cpp:41</div></div>
-<div class="ttc" id="aclassBigDonut_html_a7896213233573878a6f13f072cf8109a"><div class="ttname"><a href="classBigDonut.html#a7896213233573878a6f13f072cf8109a">BigDonut::Render</a></div><div class="ttdeci">virtual void Render(struct UnkStruct_800DC5EC *) override</div><div class="ttdef"><b>Definition</b> BigDonut.cpp:147</div></div>
-<div class="ttc" id="aclassBigDonut_html_a7b9b3b732c7ea57ae78ecdf29c2c05de"><div class="ttname"><a href="classBigDonut.html#a7b9b3b732c7ea57ae78ecdf29c2c05de">BigDonut::Destroy</a></div><div class="ttdeci">virtual void Destroy() override</div><div class="ttdef"><b>Definition</b> BigDonut.cpp:177</div></div>
-<div class="ttc" id="aclassBigDonut_html_a871e3340fe988dda4d4d1a7a82828c71"><div class="ttname"><a href="classBigDonut.html#a871e3340fe988dda4d4d1a7a82828c71">BigDonut::~BigDonut</a></div><div class="ttdeci">virtual ~BigDonut()=default</div></div>
-<div class="ttc" id="aclassBigDonut_html_a9043a829c55fc91a9ce897571796387c"><div class="ttname"><a href="classBigDonut.html#a9043a829c55fc91a9ce897571796387c">BigDonut::RenderCredits</a></div><div class="ttdeci">virtual void RenderCredits() override</div><div class="ttdef"><b>Definition</b> BigDonut.cpp:170</div></div>
-<div class="ttc" id="aclassBigDonut_html_af07674b3f0de39da096eb1b107f9df0d"><div class="ttname"><a href="classBigDonut.html#af07674b3f0de39da096eb1b107f9df0d">BigDonut::BeginPlay</a></div><div class="ttdeci">virtual void BeginPlay() override</div><div class="ttdef"><b>Definition</b> BigDonut.cpp:131</div></div>
-<div class="ttc" id="aclassCourse_html"><div class="ttname"><a href="classCourse.html">Course</a></div></div>
+<div class="ttc" id="aclassBigDonut_html_a13feb05a7656981a30ffa8e7453b282f"><div class="ttname"><a href="classBigDonut.html#a13feb05a7656981a30ffa8e7453b282f">BigDonut::Waypoints</a></div><div class="ttdeci">virtual void Waypoints(Player *player, int8_t playerId) override</div><div class="ttdef"><b>Definition</b> BigDonut.cpp:169</div></div>
+<div class="ttc" id="aclassBigDonut_html_a3da687a45a89b0cca62d2acb7a470355"><div class="ttname"><a href="classBigDonut.html#a3da687a45a89b0cca62d2acb7a470355">BigDonut::Draw</a></div><div class="ttdeci">virtual void Draw(ScreenContext *) override</div><div class="ttdef"><b>Definition</b> BigDonut.cpp:143</div></div>
+<div class="ttc" id="aclassBigDonut_html_a5ba5b86385942cb20261fdfa000742bd"><div class="ttname"><a href="classBigDonut.html#a5ba5b86385942cb20261fdfa000742bd">BigDonut::Load</a></div><div class="ttdeci">virtual void Load() override</div><div class="ttdef"><b>Definition</b> BigDonut.cpp:106</div></div>
+<div class="ttc" id="aclassBigDonut_html_a636400457cd3ebc620faf605b23a6d3b"><div class="ttname"><a href="classBigDonut.html#a636400457cd3ebc620faf605b23a6d3b">BigDonut::BigDonut</a></div><div class="ttdeci">BigDonut()</div><div class="ttdef"><b>Definition</b> BigDonut.cpp:35</div></div>
+<div class="ttc" id="aclassBigDonut_html_a6a10bd48f4244ae336861dbdaa7afb92"><div class="ttname"><a href="classBigDonut.html#a6a10bd48f4244ae336861dbdaa7afb92">BigDonut::DrawCredits</a></div><div class="ttdeci">virtual void DrawCredits() override</div><div class="ttdef"><b>Definition</b> BigDonut.cpp:166</div></div>
+<div class="ttc" id="aclassBigDonut_html_a7b9b3b732c7ea57ae78ecdf29c2c05de"><div class="ttname"><a href="classBigDonut.html#a7b9b3b732c7ea57ae78ecdf29c2c05de">BigDonut::Destroy</a></div><div class="ttdeci">virtual void Destroy() override</div><div class="ttdef"><b>Definition</b> BigDonut.cpp:173</div></div>
+<div class="ttc" id="aclassBigDonut_html_af07674b3f0de39da096eb1b107f9df0d"><div class="ttname"><a href="classBigDonut.html#af07674b3f0de39da096eb1b107f9df0d">BigDonut::BeginPlay</a></div><div class="ttdeci">virtual void BeginPlay() override</div><div class="ttdef"><b>Definition</b> BigDonut.cpp:129</div></div>
+<div class="ttc" id="aclassTrack_html"><div class="ttname"><a href="classTrack.html">Track</a></div></div>
+<div class="ttc" id="acode__800029B0_8h_html"><div class="ttname"><a href="code__800029B0_8h.html">code_800029B0.h</a></div></div>
 <div class="ttc" id="acourse__offsets_8h_html"><div class="ttname"><a href="course__offsets_8h.html">course_offsets.h</a></div></div>
+<div class="ttc" id="amodels_2tracks_2big__donut_2big__donut__data_8h_html"><div class="ttname"><a href="models_2tracks_2big__donut_2big__donut__data_8h.html">big_donut_data.h</a></div></div>
 <div class="ttc" id="aobjects_8h_html"><div class="ttname"><a href="objects_8h.html">objects.h</a></div></div>
 <div class="ttc" id="apath__spawn__metadata_8h_html"><div class="ttname"><a href="path__spawn__metadata_8h.html">path_spawn_metadata.h</a></div></div>
 <div class="ttc" id="asrc_2data_2some__data_8h_html"><div class="ttname"><a href="src_2data_2some__data_8h.html">some_data.h</a></div></div>
 <div class="ttc" id="astructPlayer_html"><div class="ttname"><a href="structPlayer.html">Player</a></div><div class="ttdef"><b>Definition</b> common_structs.h:264</div></div>
-<div class="ttc" id="astructUnkStruct__800DC5EC_html"><div class="ttname"><a href="structUnkStruct__800DC5EC.html">UnkStruct_800DC5EC</a></div><div class="ttdef"><b>Definition</b> code_800029B0.h:9</div></div>
+<div class="ttc" id="astructScreenContext_html"><div class="ttname"><a href="structScreenContext.html">ScreenContext</a></div><div class="ttdef"><b>Definition</b> code_800029B0.h:14</div></div>
 <div class="ttc" id="astructcourse__texture_html"><div class="ttname"><a href="structcourse__texture.html">course_texture</a></div><div class="ttdef"><b>Definition</b> course_offsets.h:10</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="dir_361caa2d8f272974fdb8d014c7b22bcf.html">courses</a></li><li class="navelem"><a class="el" href="BigDonut_8h.html">BigDonut.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="dir_8955581d22ca769fa1400ba486b7589a.html">tracks</a></li><li class="navelem"><a class="el" href="BigDonut_8h.html">BigDonut.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

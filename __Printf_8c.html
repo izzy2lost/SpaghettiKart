@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/os/_Printf.c File Reference</title>
+<title>SpaghettiKart: src/os/_Printf.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -128,7 +128,7 @@ Macros</h2></td></tr>
 <tr class="separator:a10b2d890d871e1489bb02b7e70d9bdfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebab167b5338849aa942f73732bfece2" id="r_aebab167b5338849aa942f73732bfece2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aebab167b5338849aa942f73732bfece2">ATOI</a>(i,  a)</td></tr>
 <tr class="separator:aebab167b5338849aa942f73732bfece2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2bc8b7a49a07ccb955c3ea5a3c60cdf" id="r_ae2bc8b7a49a07ccb955c3ea5a3c60cdf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2bc8b7a49a07ccb955c3ea5a3c60cdf">_PROUT</a>(dst,  fmt,  _size)</td></tr>
+<tr class="memitem:ae2bc8b7a49a07ccb955c3ea5a3c60cdf" id="r_ae2bc8b7a49a07ccb955c3ea5a3c60cdf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2bc8b7a49a07ccb955c3ea5a3c60cdf">_PROUT</a>(dst,  <a class="el" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>,  _size)</td></tr>
 <tr class="separator:ae2bc8b7a49a07ccb955c3ea5a3c60cdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5a33028196be271f183bd8aff867d897" id="r_a5a33028196be271f183bd8aff867d897"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a33028196be271f183bd8aff867d897">_PAD</a>(i,  m,  c,  src,  extracond)</td></tr>
 <tr class="separator:a5a33028196be271f183bd8aff867d897"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -137,7 +137,7 @@ Macros</h2></td></tr>
 Functions</h2></td></tr>
 <tr class="memitem:ad73a5847f2d7c9de14cc2723da86bf45" id="r_ad73a5847f2d7c9de14cc2723da86bf45"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a10b2d890d871e1489bb02b7e70d9bdfb">STATIC</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad73a5847f2d7c9de14cc2723da86bf45">_Putfld</a> (<a class="el" href="structprintf__struct.html">printf_struct</a> *, <a class="el" href="stdarg_8h.html#a6e6fde95f2a221e9bcd58fa102bd90ff">va_list</a> *, u8, u8 *)</td></tr>
 <tr class="separator:ad73a5847f2d7c9de14cc2723da86bf45"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39bb05c90efce6c6790c5d58d271d72d" id="r_a39bb05c90efce6c6790c5d58d271d72d"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39bb05c90efce6c6790c5d58d271d72d">_Printf</a> (char *(*prout)(char *, const char *, size_t), char *dst, const char *fmt, <a class="el" href="stdarg_8h.html#a6e6fde95f2a221e9bcd58fa102bd90ff">va_list</a> args)</td></tr>
+<tr class="memitem:a39bb05c90efce6c6790c5d58d271d72d" id="r_a39bb05c90efce6c6790c5d58d271d72d"><td class="memItemLeft" align="right" valign="top">s32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a39bb05c90efce6c6790c5d58d271d72d">_Printf</a> (char *(*prout)(char *, const char *, size_t), char *dst, const char *<a class="el" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>, <a class="el" href="stdarg_8h.html#a6e6fde95f2a221e9bcd58fa102bd90ff">va_list</a> args)</td></tr>
 <tr class="separator:a39bb05c90efce6c6790c5d58d271d72d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -212,7 +212,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>fmt</em></span>, </td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em><a class="el" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a></em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -222,12 +222,13 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> (_size &gt; 0) {                  \</div>
-<div class="line">        dst = prout(dst, fmt, _size); \</div>
+<div class="line">        dst = prout(dst, <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>, _size); \</div>
 <div class="line">        if (dst != 0)                 \</div>
 <div class="line">            sp78.size += _size;       \</div>
 <div class="line">        else                          \</div>
 <div class="line">            return sp78.size;         \</div>
 <div class="line">    }</div>
+<div class="ttc" id="apak_8cpp_html_a24ae7463666f625674a1f1d44146784f"><div class="ttname"><a href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a></div><div class="ttdeci">#define fmt(...)</div><div class="ttdef"><b>Definition</b> pak.cpp:8</div></div>
 </div><!-- fragment -->
 </div>
 </div>

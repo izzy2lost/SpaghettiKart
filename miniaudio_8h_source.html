@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: include/audio/miniaudio.h Source File</title>
+<title>SpaghettiKart: include/audio/miniaudio.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -62483,7 +62483,7 @@ $(function(){initNavTree('miniaudio_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l61970" name="l61970"></a><span class="lineno">61970</span>    <span class="keywordtype">void</span>* pUserData;</div>
 <div class="line"><a id="l61971" name="l61971"></a><span class="lineno">61971</span>    ma_allocation_callbacks allocationCallbacks;</div>
 <div class="line"><a id="l61972" name="l61972"></a><span class="lineno">61972</span>    ma_dr_wav_container container;</div>
-<div class="line"><a id="l61973" name="l61973"></a><span class="lineno">61973</span>    ma_dr_wav_fmt fmt;</div>
+<div class="line"><a id="l61973" name="l61973"></a><span class="lineno">61973</span>    ma_dr_wav_fmt <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>;</div>
 <div class="line"><a id="l61974" name="l61974"></a><span class="lineno">61974</span>    <a class="code hl_typedef" href="miniaudio_8h.html#a46937d096112f0d30ba68ef4d568b287">ma_uint32</a> sampleRate;</div>
 <div class="line"><a id="l61975" name="l61975"></a><span class="lineno">61975</span>    <a class="code hl_typedef" href="miniaudio_8h.html#a695da6c34b9e69ee88e373e4a06f7a6c">ma_uint16</a> channels;</div>
 <div class="line"><a id="l61976" name="l61976"></a><span class="lineno">61976</span>    <a class="code hl_typedef" href="miniaudio_8h.html#a695da6c34b9e69ee88e373e4a06f7a6c">ma_uint16</a> bitsPerSample;</div>
@@ -81360,7 +81360,7 @@ $(function(){initNavTree('miniaudio_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l80847" name="l80847"></a><span class="lineno">80847</span>    <a class="code hl_typedef" href="miniaudio_8h.html#a4360475a027c8f01e79ca87226b1d96d">ma_uint64</a> cursor;</div>
 <div class="line"><a id="l80848" name="l80848"></a><span class="lineno">80848</span>    <a class="code hl_typedef" href="miniaudio_8h.html#a547261c6f1890548f4990f0cbbd39859">ma_bool32</a> sequential;</div>
 <div class="line"><a id="l80849" name="l80849"></a><span class="lineno">80849</span>    <a class="code hl_typedef" href="miniaudio_8h.html#a2fe92d57aae732f91c6e21f6425afcac">ma_uint8</a> riff[4];</div>
-<div class="line"><a id="l80850" name="l80850"></a><span class="lineno">80850</span>    ma_dr_wav_fmt fmt;</div>
+<div class="line"><a id="l80850" name="l80850"></a><span class="lineno">80850</span>    ma_dr_wav_fmt <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>;</div>
 <div class="line"><a id="l80851" name="l80851"></a><span class="lineno">80851</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">short</span> translatedFormatTag;</div>
 <div class="line"><a id="l80852" name="l80852"></a><span class="lineno">80852</span>    <a class="code hl_typedef" href="miniaudio_8h.html#a4360475a027c8f01e79ca87226b1d96d">ma_uint64</a> dataChunkSize = 0;</div>
 <div class="line"><a id="l80853" name="l80853"></a><span class="lineno">80853</span>    <a class="code hl_typedef" href="miniaudio_8h.html#a4360475a027c8f01e79ca87226b1d96d">ma_uint64</a> sampleCountFromFactChunk = 0;</div>
@@ -81373,7 +81373,7 @@ $(function(){initNavTree('miniaudio_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l80860" name="l80860"></a><span class="lineno">80860</span>    <a class="code hl_typedef" href="miniaudio_8h.html#a4360475a027c8f01e79ca87226b1d96d">ma_uint64</a> aiffFrameCount = 0;</div>
 <div class="line"><a id="l80861" name="l80861"></a><span class="lineno">80861</span>    cursor = 0;</div>
 <div class="line"><a id="l80862" name="l80862"></a><span class="lineno">80862</span>    sequential = (flags &amp; MA_DR_WAV_SEQUENTIAL) != 0;</div>
-<div class="line"><a id="l80863" name="l80863"></a><span class="lineno">80863</span>    MA_DR_WAV_ZERO_OBJECT(&amp;fmt);</div>
+<div class="line"><a id="l80863" name="l80863"></a><span class="lineno">80863</span>    MA_DR_WAV_ZERO_OBJECT(&amp;<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>);</div>
 <div class="line"><a id="l80864" name="l80864"></a><span class="lineno">80864</span>    <span class="keywordflow">if</span> (ma_dr_wav__on_read(pWav-&gt;onRead, pWav-&gt;pUserData, riff, <span class="keyword">sizeof</span>(riff), &amp;cursor) != <span class="keyword">sizeof</span>(riff)) {</div>
 <div class="line"><a id="l80865" name="l80865"></a><span class="lineno">80865</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="miniaudio_8h.html#aa287113ffd9ce3be387372483c1bf058">MA_FALSE</a>;</div>
 <div class="line"><a id="l80866" name="l80866"></a><span class="lineno">80866</span>    }</div>
@@ -81512,7 +81512,7 @@ $(function(){initNavTree('miniaudio_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l80999" name="l80999"></a><span class="lineno">80999</span>        }</div>
 <div class="line"><a id="l81000" name="l81000"></a><span class="lineno">81000</span>        chunkSize = header.sizeInBytes;</div>
 <div class="line"><a id="l81001" name="l81001"></a><span class="lineno">81001</span>        <span class="keywordflow">if</span> (!sequential &amp;&amp; onChunk != <a class="code hl_define" href="miniaudio_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>) {</div>
-<div class="line"><a id="l81002" name="l81002"></a><span class="lineno">81002</span>            <a class="code hl_typedef" href="miniaudio_8h.html#a4360475a027c8f01e79ca87226b1d96d">ma_uint64</a> callbackBytesRead = onChunk(pChunkUserData, pWav-&gt;onRead, pWav-&gt;onSeek, pWav-&gt;pUserData, &amp;header, pWav-&gt;container, &amp;fmt);</div>
+<div class="line"><a id="l81002" name="l81002"></a><span class="lineno">81002</span>            <a class="code hl_typedef" href="miniaudio_8h.html#a4360475a027c8f01e79ca87226b1d96d">ma_uint64</a> callbackBytesRead = onChunk(pChunkUserData, pWav-&gt;onRead, pWav-&gt;onSeek, pWav-&gt;pUserData, &amp;header, pWav-&gt;container, &amp;<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>);</div>
 <div class="line"><a id="l81003" name="l81003"></a><span class="lineno">81003</span>            <span class="keywordflow">if</span> (callbackBytesRead &gt; 0) {</div>
 <div class="line"><a id="l81004" name="l81004"></a><span class="lineno">81004</span>                <span class="keywordflow">if</span> (ma_dr_wav__seek_from_start(pWav-&gt;onSeek, cursor, pWav-&gt;pUserData) == <a class="code hl_define" href="miniaudio_8h.html#aa287113ffd9ce3be387372483c1bf058">MA_FALSE</a>) {</div>
 <div class="line"><a id="l81005" name="l81005"></a><span class="lineno">81005</span>                    <span class="keywordflow">return</span> <a class="code hl_define" href="miniaudio_8h.html#aa287113ffd9ce3be387372483c1bf058">MA_FALSE</a>;</div>
@@ -81527,16 +81527,16 @@ $(function(){initNavTree('miniaudio_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l81014" name="l81014"></a><span class="lineno">81014</span>                <span class="keywordflow">return</span> <a class="code hl_define" href="miniaudio_8h.html#aa287113ffd9ce3be387372483c1bf058">MA_FALSE</a>;</div>
 <div class="line"><a id="l81015" name="l81015"></a><span class="lineno">81015</span>            }</div>
 <div class="line"><a id="l81016" name="l81016"></a><span class="lineno">81016</span>            cursor += sizeof(fmtData);</div>
-<div class="line"><a id="l81017" name="l81017"></a><span class="lineno">81017</span>            fmt.formatTag      = ma_dr_wav_bytes_to_u16_ex(fmtData + 0,  pWav-&gt;container);</div>
-<div class="line"><a id="l81018" name="l81018"></a><span class="lineno">81018</span>            fmt.channels       = ma_dr_wav_bytes_to_u16_ex(fmtData + 2,  pWav-&gt;container);</div>
-<div class="line"><a id="l81019" name="l81019"></a><span class="lineno">81019</span>            fmt.sampleRate     = ma_dr_wav_bytes_to_u32_ex(fmtData + 4,  pWav-&gt;container);</div>
-<div class="line"><a id="l81020" name="l81020"></a><span class="lineno">81020</span>            fmt.avgBytesPerSec = ma_dr_wav_bytes_to_u32_ex(fmtData + 8,  pWav-&gt;container);</div>
-<div class="line"><a id="l81021" name="l81021"></a><span class="lineno">81021</span>            fmt.blockAlign     = ma_dr_wav_bytes_to_u16_ex(fmtData + 12, pWav-&gt;container);</div>
-<div class="line"><a id="l81022" name="l81022"></a><span class="lineno">81022</span>            fmt.bitsPerSample  = ma_dr_wav_bytes_to_u16_ex(fmtData + 14, pWav-&gt;container);</div>
-<div class="line"><a id="l81023" name="l81023"></a><span class="lineno">81023</span>            fmt.extendedSize       = 0;</div>
-<div class="line"><a id="l81024" name="l81024"></a><span class="lineno">81024</span>            fmt.validBitsPerSample = 0;</div>
-<div class="line"><a id="l81025" name="l81025"></a><span class="lineno">81025</span>            fmt.channelMask        = 0;</div>
-<div class="line"><a id="l81026" name="l81026"></a><span class="lineno">81026</span>            MA_DR_WAV_ZERO_MEMORY(fmt.subFormat, <span class="keyword">sizeof</span>(fmt.subFormat));</div>
+<div class="line"><a id="l81017" name="l81017"></a><span class="lineno">81017</span>            <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.formatTag      = ma_dr_wav_bytes_to_u16_ex(fmtData + 0,  pWav-&gt;container);</div>
+<div class="line"><a id="l81018" name="l81018"></a><span class="lineno">81018</span>            <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.channels       = ma_dr_wav_bytes_to_u16_ex(fmtData + 2,  pWav-&gt;container);</div>
+<div class="line"><a id="l81019" name="l81019"></a><span class="lineno">81019</span>            <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.sampleRate     = ma_dr_wav_bytes_to_u32_ex(fmtData + 4,  pWav-&gt;container);</div>
+<div class="line"><a id="l81020" name="l81020"></a><span class="lineno">81020</span>            <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.avgBytesPerSec = ma_dr_wav_bytes_to_u32_ex(fmtData + 8,  pWav-&gt;container);</div>
+<div class="line"><a id="l81021" name="l81021"></a><span class="lineno">81021</span>            <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.blockAlign     = ma_dr_wav_bytes_to_u16_ex(fmtData + 12, pWav-&gt;container);</div>
+<div class="line"><a id="l81022" name="l81022"></a><span class="lineno">81022</span>            <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.bitsPerSample  = ma_dr_wav_bytes_to_u16_ex(fmtData + 14, pWav-&gt;container);</div>
+<div class="line"><a id="l81023" name="l81023"></a><span class="lineno">81023</span>            <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.extendedSize       = 0;</div>
+<div class="line"><a id="l81024" name="l81024"></a><span class="lineno">81024</span>            <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.validBitsPerSample = 0;</div>
+<div class="line"><a id="l81025" name="l81025"></a><span class="lineno">81025</span>            <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.channelMask        = 0;</div>
+<div class="line"><a id="l81026" name="l81026"></a><span class="lineno">81026</span>            MA_DR_WAV_ZERO_MEMORY(<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.subFormat, <span class="keyword">sizeof</span>(<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.subFormat));</div>
 <div class="line"><a id="l81027" name="l81027"></a><span class="lineno">81027</span>            <span class="keywordflow">if</span> (header.sizeInBytes &gt; 16) {</div>
 <div class="line"><a id="l81028" name="l81028"></a><span class="lineno">81028</span>                <a class="code hl_typedef" href="miniaudio_8h.html#a2fe92d57aae732f91c6e21f6425afcac">ma_uint8</a> fmt_cbSize[2];</div>
 <div class="line"><a id="l81029" name="l81029"></a><span class="lineno">81029</span>                <span class="keywordtype">int</span> bytesReadSoFar = 0;</div>
@@ -81545,28 +81545,28 @@ $(function(){initNavTree('miniaudio_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l81032" name="l81032"></a><span class="lineno">81032</span>                }</div>
 <div class="line"><a id="l81033" name="l81033"></a><span class="lineno">81033</span>                cursor += sizeof(fmt_cbSize);</div>
 <div class="line"><a id="l81034" name="l81034"></a><span class="lineno">81034</span>                bytesReadSoFar = 18;</div>
-<div class="line"><a id="l81035" name="l81035"></a><span class="lineno">81035</span>                fmt.extendedSize = ma_dr_wav_bytes_to_u16_ex(fmt_cbSize, pWav-&gt;container);</div>
-<div class="line"><a id="l81036" name="l81036"></a><span class="lineno">81036</span>                <span class="keywordflow">if</span> (fmt.extendedSize &gt; 0) {</div>
-<div class="line"><a id="l81037" name="l81037"></a><span class="lineno">81037</span>                    <span class="keywordflow">if</span> (fmt.formatTag == MA_DR_WAVE_FORMAT_EXTENSIBLE) {</div>
-<div class="line"><a id="l81038" name="l81038"></a><span class="lineno">81038</span>                        <span class="keywordflow">if</span> (fmt.extendedSize != 22) {</div>
+<div class="line"><a id="l81035" name="l81035"></a><span class="lineno">81035</span>                <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.extendedSize = ma_dr_wav_bytes_to_u16_ex(fmt_cbSize, pWav-&gt;container);</div>
+<div class="line"><a id="l81036" name="l81036"></a><span class="lineno">81036</span>                <span class="keywordflow">if</span> (<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.extendedSize &gt; 0) {</div>
+<div class="line"><a id="l81037" name="l81037"></a><span class="lineno">81037</span>                    <span class="keywordflow">if</span> (<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.formatTag == MA_DR_WAVE_FORMAT_EXTENSIBLE) {</div>
+<div class="line"><a id="l81038" name="l81038"></a><span class="lineno">81038</span>                        <span class="keywordflow">if</span> (<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.extendedSize != 22) {</div>
 <div class="line"><a id="l81039" name="l81039"></a><span class="lineno">81039</span>                            <span class="keywordflow">return</span> <a class="code hl_define" href="miniaudio_8h.html#aa287113ffd9ce3be387372483c1bf058">MA_FALSE</a>;</div>
 <div class="line"><a id="l81040" name="l81040"></a><span class="lineno">81040</span>                        }</div>
 <div class="line"><a id="l81041" name="l81041"></a><span class="lineno">81041</span>                    }</div>
-<div class="line"><a id="l81042" name="l81042"></a><span class="lineno">81042</span>                    <span class="keywordflow">if</span> (fmt.formatTag == MA_DR_WAVE_FORMAT_EXTENSIBLE) {</div>
+<div class="line"><a id="l81042" name="l81042"></a><span class="lineno">81042</span>                    <span class="keywordflow">if</span> (<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.formatTag == MA_DR_WAVE_FORMAT_EXTENSIBLE) {</div>
 <div class="line"><a id="l81043" name="l81043"></a><span class="lineno">81043</span>                        <a class="code hl_typedef" href="miniaudio_8h.html#a2fe92d57aae732f91c6e21f6425afcac">ma_uint8</a> fmtext[22];</div>
-<div class="line"><a id="l81044" name="l81044"></a><span class="lineno">81044</span>                        <span class="keywordflow">if</span> (pWav-&gt;onRead(pWav-&gt;pUserData, fmtext, fmt.extendedSize) != fmt.extendedSize) {</div>
+<div class="line"><a id="l81044" name="l81044"></a><span class="lineno">81044</span>                        <span class="keywordflow">if</span> (pWav-&gt;onRead(pWav-&gt;pUserData, fmtext, <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.extendedSize) != <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.extendedSize) {</div>
 <div class="line"><a id="l81045" name="l81045"></a><span class="lineno">81045</span>                            <span class="keywordflow">return</span> <a class="code hl_define" href="miniaudio_8h.html#aa287113ffd9ce3be387372483c1bf058">MA_FALSE</a>;</div>
 <div class="line"><a id="l81046" name="l81046"></a><span class="lineno">81046</span>                        }</div>
-<div class="line"><a id="l81047" name="l81047"></a><span class="lineno">81047</span>                        fmt.validBitsPerSample = ma_dr_wav_bytes_to_u16_ex(fmtext + 0, pWav-&gt;container);</div>
-<div class="line"><a id="l81048" name="l81048"></a><span class="lineno">81048</span>                        fmt.channelMask        = ma_dr_wav_bytes_to_u32_ex(fmtext + 2, pWav-&gt;container);</div>
-<div class="line"><a id="l81049" name="l81049"></a><span class="lineno">81049</span>                        ma_dr_wav_bytes_to_guid(fmtext + 6, fmt.subFormat);</div>
+<div class="line"><a id="l81047" name="l81047"></a><span class="lineno">81047</span>                        <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.validBitsPerSample = ma_dr_wav_bytes_to_u16_ex(fmtext + 0, pWav-&gt;container);</div>
+<div class="line"><a id="l81048" name="l81048"></a><span class="lineno">81048</span>                        <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.channelMask        = ma_dr_wav_bytes_to_u32_ex(fmtext + 2, pWav-&gt;container);</div>
+<div class="line"><a id="l81049" name="l81049"></a><span class="lineno">81049</span>                        ma_dr_wav_bytes_to_guid(fmtext + 6, <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.subFormat);</div>
 <div class="line"><a id="l81050" name="l81050"></a><span class="lineno">81050</span>                    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l81051" name="l81051"></a><span class="lineno">81051</span>                        <span class="keywordflow">if</span> (pWav-&gt;onSeek(pWav-&gt;pUserData, fmt.extendedSize, MA_DR_WAV_SEEK_CUR) == <a class="code hl_define" href="miniaudio_8h.html#aa287113ffd9ce3be387372483c1bf058">MA_FALSE</a>) {</div>
+<div class="line"><a id="l81051" name="l81051"></a><span class="lineno">81051</span>                        <span class="keywordflow">if</span> (pWav-&gt;onSeek(pWav-&gt;pUserData, <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.extendedSize, MA_DR_WAV_SEEK_CUR) == <a class="code hl_define" href="miniaudio_8h.html#aa287113ffd9ce3be387372483c1bf058">MA_FALSE</a>) {</div>
 <div class="line"><a id="l81052" name="l81052"></a><span class="lineno">81052</span>                            <span class="keywordflow">return</span> <a class="code hl_define" href="miniaudio_8h.html#aa287113ffd9ce3be387372483c1bf058">MA_FALSE</a>;</div>
 <div class="line"><a id="l81053" name="l81053"></a><span class="lineno">81053</span>                        }</div>
 <div class="line"><a id="l81054" name="l81054"></a><span class="lineno">81054</span>                    }</div>
-<div class="line"><a id="l81055" name="l81055"></a><span class="lineno">81055</span>                    cursor += fmt.extendedSize;</div>
-<div class="line"><a id="l81056" name="l81056"></a><span class="lineno">81056</span>                    bytesReadSoFar += fmt.extendedSize;</div>
+<div class="line"><a id="l81055" name="l81055"></a><span class="lineno">81055</span>                    cursor += <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.extendedSize;</div>
+<div class="line"><a id="l81056" name="l81056"></a><span class="lineno">81056</span>                    bytesReadSoFar += <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.extendedSize;</div>
 <div class="line"><a id="l81057" name="l81057"></a><span class="lineno">81057</span>                }</div>
 <div class="line"><a id="l81058" name="l81058"></a><span class="lineno">81058</span>                <span class="keywordflow">if</span> (pWav-&gt;onSeek(pWav-&gt;pUserData, (<span class="keywordtype">int</span>)(header.sizeInBytes - bytesReadSoFar), MA_DR_WAV_SEEK_CUR) == <a class="code hl_define" href="miniaudio_8h.html#aa287113ffd9ce3be387372483c1bf058">MA_FALSE</a>) {</div>
 <div class="line"><a id="l81059" name="l81059"></a><span class="lineno">81059</span>                    <span class="keywordflow">return</span> <a class="code hl_define" href="miniaudio_8h.html#aa287113ffd9ce3be387372483c1bf058">MA_FALSE</a>;</div>
@@ -81687,22 +81687,22 @@ $(function(){initNavTree('miniaudio_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l81174" name="l81174"></a><span class="lineno">81174</span>                compressionFormat = MA_DR_WAVE_FORMAT_PCM;</div>
 <div class="line"><a id="l81175" name="l81175"></a><span class="lineno">81175</span>            }</div>
 <div class="line"><a id="l81176" name="l81176"></a><span class="lineno">81176</span>            aiffFrameCount = frameCount;</div>
-<div class="line"><a id="l81177" name="l81177"></a><span class="lineno">81177</span>            fmt.formatTag      = compressionFormat;</div>
-<div class="line"><a id="l81178" name="l81178"></a><span class="lineno">81178</span>            fmt.channels       = channels;</div>
-<div class="line"><a id="l81179" name="l81179"></a><span class="lineno">81179</span>            fmt.sampleRate     = (<a class="code hl_typedef" href="miniaudio_8h.html#a46937d096112f0d30ba68ef4d568b287">ma_uint32</a>)sampleRate;</div>
-<div class="line"><a id="l81180" name="l81180"></a><span class="lineno">81180</span>            fmt.bitsPerSample  = sampleSizeInBits;</div>
-<div class="line"><a id="l81181" name="l81181"></a><span class="lineno">81181</span>            fmt.blockAlign     = (<a class="code hl_typedef" href="miniaudio_8h.html#a695da6c34b9e69ee88e373e4a06f7a6c">ma_uint16</a>)(fmt.channels * fmt.bitsPerSample / 8);</div>
-<div class="line"><a id="l81182" name="l81182"></a><span class="lineno">81182</span>            fmt.avgBytesPerSec = fmt.blockAlign * fmt.sampleRate;</div>
-<div class="line"><a id="l81183" name="l81183"></a><span class="lineno">81183</span>            <span class="keywordflow">if</span> (fmt.blockAlign == 0 &amp;&amp; compressionFormat == MA_DR_WAVE_FORMAT_DVI_ADPCM) {</div>
-<div class="line"><a id="l81184" name="l81184"></a><span class="lineno">81184</span>                fmt.blockAlign = 34 * fmt.channels;</div>
+<div class="line"><a id="l81177" name="l81177"></a><span class="lineno">81177</span>            <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.formatTag      = compressionFormat;</div>
+<div class="line"><a id="l81178" name="l81178"></a><span class="lineno">81178</span>            <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.channels       = channels;</div>
+<div class="line"><a id="l81179" name="l81179"></a><span class="lineno">81179</span>            <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.sampleRate     = (<a class="code hl_typedef" href="miniaudio_8h.html#a46937d096112f0d30ba68ef4d568b287">ma_uint32</a>)sampleRate;</div>
+<div class="line"><a id="l81180" name="l81180"></a><span class="lineno">81180</span>            <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.bitsPerSample  = sampleSizeInBits;</div>
+<div class="line"><a id="l81181" name="l81181"></a><span class="lineno">81181</span>            <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.blockAlign     = (<a class="code hl_typedef" href="miniaudio_8h.html#a695da6c34b9e69ee88e373e4a06f7a6c">ma_uint16</a>)(<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.channels * <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.bitsPerSample / 8);</div>
+<div class="line"><a id="l81182" name="l81182"></a><span class="lineno">81182</span>            <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.avgBytesPerSec = <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.blockAlign * <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.sampleRate;</div>
+<div class="line"><a id="l81183" name="l81183"></a><span class="lineno">81183</span>            <span class="keywordflow">if</span> (<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.blockAlign == 0 &amp;&amp; compressionFormat == MA_DR_WAVE_FORMAT_DVI_ADPCM) {</div>
+<div class="line"><a id="l81184" name="l81184"></a><span class="lineno">81184</span>                <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.blockAlign = 34 * <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.channels;</div>
 <div class="line"><a id="l81185" name="l81185"></a><span class="lineno">81185</span>            }</div>
 <div class="line"><a id="l81186" name="l81186"></a><span class="lineno">81186</span>            <span class="keywordflow">if</span> (compressionFormat == MA_DR_WAVE_FORMAT_ALAW || compressionFormat == MA_DR_WAVE_FORMAT_MULAW) {</div>
-<div class="line"><a id="l81187" name="l81187"></a><span class="lineno">81187</span>                <span class="keywordflow">if</span> (fmt.bitsPerSample &gt; 8) {</div>
-<div class="line"><a id="l81188" name="l81188"></a><span class="lineno">81188</span>                    fmt.bitsPerSample = 8;</div>
-<div class="line"><a id="l81189" name="l81189"></a><span class="lineno">81189</span>                    fmt.blockAlign = fmt.channels;</div>
+<div class="line"><a id="l81187" name="l81187"></a><span class="lineno">81187</span>                <span class="keywordflow">if</span> (<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.bitsPerSample &gt; 8) {</div>
+<div class="line"><a id="l81188" name="l81188"></a><span class="lineno">81188</span>                    <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.bitsPerSample = 8;</div>
+<div class="line"><a id="l81189" name="l81189"></a><span class="lineno">81189</span>                    <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.blockAlign = <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.channels;</div>
 <div class="line"><a id="l81190" name="l81190"></a><span class="lineno">81190</span>                }</div>
 <div class="line"><a id="l81191" name="l81191"></a><span class="lineno">81191</span>            }</div>
-<div class="line"><a id="l81192" name="l81192"></a><span class="lineno">81192</span>            fmt.bitsPerSample += (fmt.bitsPerSample &amp; 7);</div>
+<div class="line"><a id="l81192" name="l81192"></a><span class="lineno">81192</span>            <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.bitsPerSample += (<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.bitsPerSample &amp; 7);</div>
 <div class="line"><a id="l81193" name="l81193"></a><span class="lineno">81193</span>            <span class="keywordflow">if</span> (isAIFCFormType) {</div>
 <div class="line"><a id="l81194" name="l81194"></a><span class="lineno">81194</span>                <span class="keywordflow">if</span> (ma_dr_wav__seek_forward(pWav-&gt;onSeek, (chunkSize - commDataBytesToRead), pWav-&gt;pUserData) == <a class="code hl_define" href="miniaudio_8h.html#aa287113ffd9ce3be387372483c1bf058">MA_FALSE</a>) {</div>
 <div class="line"><a id="l81195" name="l81195"></a><span class="lineno">81195</span>                    <span class="keywordflow">return</span> <a class="code hl_define" href="miniaudio_8h.html#aa287113ffd9ce3be387372483c1bf058">MA_FALSE</a>;</div>
@@ -81761,15 +81761,15 @@ $(function(){initNavTree('miniaudio_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l81248" name="l81248"></a><span class="lineno">81248</span>    <span class="keywordflow">if</span> (!foundChunk_fmt || !foundChunk_data) {</div>
 <div class="line"><a id="l81249" name="l81249"></a><span class="lineno">81249</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="miniaudio_8h.html#aa287113ffd9ce3be387372483c1bf058">MA_FALSE</a>;</div>
 <div class="line"><a id="l81250" name="l81250"></a><span class="lineno">81250</span>    }</div>
-<div class="line"><a id="l81251" name="l81251"></a><span class="lineno">81251</span>    <span class="keywordflow">if</span> ((fmt.sampleRate    == 0 || fmt.sampleRate    &gt; MA_DR_WAV_MAX_SAMPLE_RATE    ) ||</div>
-<div class="line"><a id="l81252" name="l81252"></a><span class="lineno">81252</span>        (fmt.channels      == 0 || fmt.channels      &gt; MA_DR_WAV_MAX_CHANNELS       ) ||</div>
-<div class="line"><a id="l81253" name="l81253"></a><span class="lineno">81253</span>        (fmt.bitsPerSample == 0 || fmt.bitsPerSample &gt; MA_DR_WAV_MAX_BITS_PER_SAMPLE) ||</div>
-<div class="line"><a id="l81254" name="l81254"></a><span class="lineno">81254</span>        fmt.blockAlign == 0) {</div>
+<div class="line"><a id="l81251" name="l81251"></a><span class="lineno">81251</span>    <span class="keywordflow">if</span> ((<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.sampleRate    == 0 || <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.sampleRate    &gt; MA_DR_WAV_MAX_SAMPLE_RATE    ) ||</div>
+<div class="line"><a id="l81252" name="l81252"></a><span class="lineno">81252</span>        (<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.channels      == 0 || <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.channels      &gt; MA_DR_WAV_MAX_CHANNELS       ) ||</div>
+<div class="line"><a id="l81253" name="l81253"></a><span class="lineno">81253</span>        (<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.bitsPerSample == 0 || <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.bitsPerSample &gt; MA_DR_WAV_MAX_BITS_PER_SAMPLE) ||</div>
+<div class="line"><a id="l81254" name="l81254"></a><span class="lineno">81254</span>        <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.blockAlign == 0) {</div>
 <div class="line"><a id="l81255" name="l81255"></a><span class="lineno">81255</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="miniaudio_8h.html#aa287113ffd9ce3be387372483c1bf058">MA_FALSE</a>;</div>
 <div class="line"><a id="l81256" name="l81256"></a><span class="lineno">81256</span>    }</div>
-<div class="line"><a id="l81257" name="l81257"></a><span class="lineno">81257</span>    translatedFormatTag = fmt.formatTag;</div>
+<div class="line"><a id="l81257" name="l81257"></a><span class="lineno">81257</span>    translatedFormatTag = <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.formatTag;</div>
 <div class="line"><a id="l81258" name="l81258"></a><span class="lineno">81258</span>    <span class="keywordflow">if</span> (translatedFormatTag == MA_DR_WAVE_FORMAT_EXTENSIBLE) {</div>
-<div class="line"><a id="l81259" name="l81259"></a><span class="lineno">81259</span>        translatedFormatTag = ma_dr_wav_bytes_to_u16_ex(fmt.subFormat + 0, pWav-&gt;container);</div>
+<div class="line"><a id="l81259" name="l81259"></a><span class="lineno">81259</span>        translatedFormatTag = ma_dr_wav_bytes_to_u16_ex(<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.subFormat + 0, pWav-&gt;container);</div>
 <div class="line"><a id="l81260" name="l81260"></a><span class="lineno">81260</span>    }</div>
 <div class="line"><a id="l81261" name="l81261"></a><span class="lineno">81261</span>    <span class="keywordflow">if</span> (!sequential) {</div>
 <div class="line"><a id="l81262" name="l81262"></a><span class="lineno">81262</span>        <span class="keywordflow">if</span> (!ma_dr_wav__seek_from_start(pWav-&gt;onSeek, pWav-&gt;dataChunkDataPos, pWav-&gt;pUserData)) {</div>
@@ -81828,10 +81828,10 @@ $(function(){initNavTree('miniaudio_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l81315" name="l81315"></a><span class="lineno">81315</span>        ma_dr_wav_free(pWav-&gt;pMetadata, &amp;pWav-&gt;allocationCallbacks);</div>
 <div class="line"><a id="l81316" name="l81316"></a><span class="lineno">81316</span>        <span class="keywordflow">return</span> <a class="code hl_define" href="miniaudio_8h.html#aa287113ffd9ce3be387372483c1bf058">MA_FALSE</a>;</div>
 <div class="line"><a id="l81317" name="l81317"></a><span class="lineno">81317</span>    }</div>
-<div class="line"><a id="l81318" name="l81318"></a><span class="lineno">81318</span>    pWav-&gt;fmt                 = fmt;</div>
-<div class="line"><a id="l81319" name="l81319"></a><span class="lineno">81319</span>    pWav-&gt;sampleRate          = fmt.sampleRate;</div>
-<div class="line"><a id="l81320" name="l81320"></a><span class="lineno">81320</span>    pWav-&gt;channels            = fmt.channels;</div>
-<div class="line"><a id="l81321" name="l81321"></a><span class="lineno">81321</span>    pWav-&gt;bitsPerSample       = fmt.bitsPerSample;</div>
+<div class="line"><a id="l81318" name="l81318"></a><span class="lineno">81318</span>    pWav-&gt;fmt                 = <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>;</div>
+<div class="line"><a id="l81319" name="l81319"></a><span class="lineno">81319</span>    pWav-&gt;sampleRate          = <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.sampleRate;</div>
+<div class="line"><a id="l81320" name="l81320"></a><span class="lineno">81320</span>    pWav-&gt;channels            = <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.channels;</div>
+<div class="line"><a id="l81321" name="l81321"></a><span class="lineno">81321</span>    pWav-&gt;bitsPerSample       = <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.bitsPerSample;</div>
 <div class="line"><a id="l81322" name="l81322"></a><span class="lineno">81322</span>    pWav-&gt;translatedFormatTag = translatedFormatTag;</div>
 <div class="line"><a id="l81323" name="l81323"></a><span class="lineno">81323</span>    <span class="keywordflow">if</span> (!ma_dr_wav__is_compressed_format_tag(translatedFormatTag)) {</div>
 <div class="line"><a id="l81324" name="l81324"></a><span class="lineno">81324</span>        <a class="code hl_typedef" href="miniaudio_8h.html#a46937d096112f0d30ba68ef4d568b287">ma_uint32</a> bytesPerFrame = ma_dr_wav_get_bytes_per_pcm_frame(pWav);</div>
@@ -81854,12 +81854,12 @@ $(function(){initNavTree('miniaudio_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l81341" name="l81341"></a><span class="lineno">81341</span>        pWav-&gt;totalPCMFrameCount = dataChunkSize / bytesPerFrame;</div>
 <div class="line"><a id="l81342" name="l81342"></a><span class="lineno">81342</span>        <span class="keywordflow">if</span> (pWav-&gt;translatedFormatTag == MA_DR_WAVE_FORMAT_ADPCM) {</div>
 <div class="line"><a id="l81343" name="l81343"></a><span class="lineno">81343</span>            <a class="code hl_typedef" href="miniaudio_8h.html#a4360475a027c8f01e79ca87226b1d96d">ma_uint64</a> totalBlockHeaderSizeInBytes;</div>
-<div class="line"><a id="l81344" name="l81344"></a><span class="lineno">81344</span>            <a class="code hl_typedef" href="miniaudio_8h.html#a4360475a027c8f01e79ca87226b1d96d">ma_uint64</a> blockCount = dataChunkSize / fmt.blockAlign;</div>
-<div class="line"><a id="l81345" name="l81345"></a><span class="lineno">81345</span>            <span class="keywordflow">if</span> ((blockCount * fmt.blockAlign) &lt; dataChunkSize) {</div>
+<div class="line"><a id="l81344" name="l81344"></a><span class="lineno">81344</span>            <a class="code hl_typedef" href="miniaudio_8h.html#a4360475a027c8f01e79ca87226b1d96d">ma_uint64</a> blockCount = dataChunkSize / <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.blockAlign;</div>
+<div class="line"><a id="l81345" name="l81345"></a><span class="lineno">81345</span>            <span class="keywordflow">if</span> ((blockCount * <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.blockAlign) &lt; dataChunkSize) {</div>
 <div class="line"><a id="l81346" name="l81346"></a><span class="lineno">81346</span>                blockCount += 1;</div>
 <div class="line"><a id="l81347" name="l81347"></a><span class="lineno">81347</span>            }</div>
-<div class="line"><a id="l81348" name="l81348"></a><span class="lineno">81348</span>            totalBlockHeaderSizeInBytes = blockCount * (6*fmt.channels);</div>
-<div class="line"><a id="l81349" name="l81349"></a><span class="lineno">81349</span>            pWav-&gt;totalPCMFrameCount = ((dataChunkSize - totalBlockHeaderSizeInBytes) * 2) / fmt.channels;</div>
+<div class="line"><a id="l81348" name="l81348"></a><span class="lineno">81348</span>            totalBlockHeaderSizeInBytes = blockCount * (6*<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.channels);</div>
+<div class="line"><a id="l81349" name="l81349"></a><span class="lineno">81349</span>            pWav-&gt;totalPCMFrameCount = ((dataChunkSize - totalBlockHeaderSizeInBytes) * 2) / <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.channels;</div>
 <div class="line"><a id="l81350" name="l81350"></a><span class="lineno">81350</span>        }</div>
 <div class="line"><a id="l81351" name="l81351"></a><span class="lineno">81351</span>        <span class="keywordflow">if</span> (pWav-&gt;translatedFormatTag == MA_DR_WAVE_FORMAT_DVI_ADPCM) {</div>
 <div class="line"><a id="l81352" name="l81352"></a><span class="lineno">81352</span>            ma_uint64 totalBlockHeaderSizeInBytes;</div>
@@ -81867,8 +81867,8 @@ $(function(){initNavTree('miniaudio_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l81354" name="l81354"></a><span class="lineno">81354</span>            if ((blockCount * fmt.blockAlign) &lt; dataChunkSize) {</div>
 <div class="line"><a id="l81355" name="l81355"></a><span class="lineno">81355</span>                blockCount += 1;</div>
 <div class="line"><a id="l81356" name="l81356"></a><span class="lineno">81356</span>            }</div>
-<div class="line"><a id="l81357" name="l81357"></a><span class="lineno">81357</span>            totalBlockHeaderSizeInBytes = blockCount * (4*fmt.channels);</div>
-<div class="line"><a id="l81358" name="l81358"></a><span class="lineno">81358</span>            pWav-&gt;totalPCMFrameCount = ((dataChunkSize - totalBlockHeaderSizeInBytes) * 2) / fmt.channels;</div>
+<div class="line"><a id="l81357" name="l81357"></a><span class="lineno">81357</span>            totalBlockHeaderSizeInBytes = blockCount * (4*<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.channels);</div>
+<div class="line"><a id="l81358" name="l81358"></a><span class="lineno">81358</span>            pWav-&gt;totalPCMFrameCount = ((dataChunkSize - totalBlockHeaderSizeInBytes) * 2) / <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.channels;</div>
 <div class="line"><a id="l81359" name="l81359"></a><span class="lineno">81359</span>            pWav-&gt;totalPCMFrameCount += blockCount;</div>
 <div class="line"><a id="l81360" name="l81360"></a><span class="lineno">81360</span>        }</div>
 <div class="line"><a id="l81361" name="l81361"></a><span class="lineno">81361</span>    }</div>
@@ -81884,8 +81884,8 @@ $(function(){initNavTree('miniaudio_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l81371" name="l81371"></a><span class="lineno">81371</span>    }</div>
 <div class="line"><a id="l81372" name="l81372"></a><span class="lineno">81372</span><span class="preprocessor">#ifdef MA_DR_WAV_LIBSNDFILE_COMPAT</span></div>
 <div class="line"><a id="l81373" name="l81373"></a><span class="lineno">81373</span>    <span class="keywordflow">if</span> (pWav-&gt;translatedFormatTag == MA_DR_WAVE_FORMAT_ADPCM) {</div>
-<div class="line"><a id="l81374" name="l81374"></a><span class="lineno">81374</span>        <a class="code hl_typedef" href="miniaudio_8h.html#a4360475a027c8f01e79ca87226b1d96d">ma_uint64</a> blockCount = dataChunkSize / fmt.blockAlign;</div>
-<div class="line"><a id="l81375" name="l81375"></a><span class="lineno">81375</span>        pWav-&gt;totalPCMFrameCount = (((blockCount * (fmt.blockAlign - (6*pWav-&gt;channels))) * 2)) / fmt.channels;</div>
+<div class="line"><a id="l81374" name="l81374"></a><span class="lineno">81374</span>        <a class="code hl_typedef" href="miniaudio_8h.html#a4360475a027c8f01e79ca87226b1d96d">ma_uint64</a> blockCount = dataChunkSize / <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.blockAlign;</div>
+<div class="line"><a id="l81375" name="l81375"></a><span class="lineno">81375</span>        pWav-&gt;totalPCMFrameCount = (((blockCount * (<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.blockAlign - (6*pWav-&gt;channels))) * 2)) / <a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.channels;</div>
 <div class="line"><a id="l81376" name="l81376"></a><span class="lineno">81376</span>    }</div>
 <div class="line"><a id="l81377" name="l81377"></a><span class="lineno">81377</span>    <span class="keywordflow">if</span> (pWav-&gt;translatedFormatTag == MA_DR_WAVE_FORMAT_DVI_ADPCM) {</div>
 <div class="line"><a id="l81378" name="l81378"></a><span class="lineno">81378</span>        ma_uint64 blockCount = dataChunkSize / fmt.blockAlign;</div>
@@ -82446,19 +82446,19 @@ $(function(){initNavTree('miniaudio_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l81933" name="l81933"></a><span class="lineno">81933</span>    }</div>
 <div class="line"><a id="l81934" name="l81934"></a><span class="lineno">81934</span>    <span class="keywordflow">if</span> (pFormat-&gt;container == ma_dr_wav_container_riff || pFormat-&gt;container == ma_dr_wav_container_rf64) {</div>
 <div class="line"><a id="l81935" name="l81935"></a><span class="lineno">81935</span>        chunkSizeFMT = 16;</div>
-<div class="line"><a id="l81936" name="l81936"></a><span class="lineno">81936</span>        runningPos += ma_dr_wav__write(pWav, &quot;fmt &quot;, 4);</div>
+<div class="line"><a id="l81936" name="l81936"></a><span class="lineno">81936</span>        runningPos += ma_dr_wav__write(pWav, &quot;<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a> &quot;, 4);</div>
 <div class="line"><a id="l81937" name="l81937"></a><span class="lineno">81937</span>        runningPos += ma_dr_wav__write_u32ne_to_le(pWav, (<a class="code hl_typedef" href="miniaudio_8h.html#a46937d096112f0d30ba68ef4d568b287">ma_uint32</a>)chunkSizeFMT);</div>
 <div class="line"><a id="l81938" name="l81938"></a><span class="lineno">81938</span>    } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pFormat-&gt;container == ma_dr_wav_container_w64) {</div>
 <div class="line"><a id="l81939" name="l81939"></a><span class="lineno">81939</span>        chunkSizeFMT = 40;</div>
 <div class="line"><a id="l81940" name="l81940"></a><span class="lineno">81940</span>        runningPos += ma_dr_wav__write(pWav, ma_dr_wavGUID_W64_FMT, 16);</div>
 <div class="line"><a id="l81941" name="l81941"></a><span class="lineno">81941</span>        runningPos += ma_dr_wav__write_u64ne_to_le(pWav, chunkSizeFMT);</div>
 <div class="line"><a id="l81942" name="l81942"></a><span class="lineno">81942</span>    }</div>
-<div class="line"><a id="l81943" name="l81943"></a><span class="lineno">81943</span>    runningPos += ma_dr_wav__write_u16ne_to_le(pWav, pWav-&gt;fmt.formatTag);</div>
-<div class="line"><a id="l81944" name="l81944"></a><span class="lineno">81944</span>    runningPos += ma_dr_wav__write_u16ne_to_le(pWav, pWav-&gt;fmt.channels);</div>
-<div class="line"><a id="l81945" name="l81945"></a><span class="lineno">81945</span>    runningPos += ma_dr_wav__write_u32ne_to_le(pWav, pWav-&gt;fmt.sampleRate);</div>
-<div class="line"><a id="l81946" name="l81946"></a><span class="lineno">81946</span>    runningPos += ma_dr_wav__write_u32ne_to_le(pWav, pWav-&gt;fmt.avgBytesPerSec);</div>
-<div class="line"><a id="l81947" name="l81947"></a><span class="lineno">81947</span>    runningPos += ma_dr_wav__write_u16ne_to_le(pWav, pWav-&gt;fmt.blockAlign);</div>
-<div class="line"><a id="l81948" name="l81948"></a><span class="lineno">81948</span>    runningPos += ma_dr_wav__write_u16ne_to_le(pWav, pWav-&gt;fmt.bitsPerSample);</div>
+<div class="line"><a id="l81943" name="l81943"></a><span class="lineno">81943</span>    runningPos += ma_dr_wav__write_u16ne_to_le(pWav, pWav-&gt;<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.formatTag);</div>
+<div class="line"><a id="l81944" name="l81944"></a><span class="lineno">81944</span>    runningPos += ma_dr_wav__write_u16ne_to_le(pWav, pWav-&gt;<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.channels);</div>
+<div class="line"><a id="l81945" name="l81945"></a><span class="lineno">81945</span>    runningPos += ma_dr_wav__write_u32ne_to_le(pWav, pWav-&gt;<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.sampleRate);</div>
+<div class="line"><a id="l81946" name="l81946"></a><span class="lineno">81946</span>    runningPos += ma_dr_wav__write_u32ne_to_le(pWav, pWav-&gt;<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.avgBytesPerSec);</div>
+<div class="line"><a id="l81947" name="l81947"></a><span class="lineno">81947</span>    runningPos += ma_dr_wav__write_u16ne_to_le(pWav, pWav-&gt;<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.blockAlign);</div>
+<div class="line"><a id="l81948" name="l81948"></a><span class="lineno">81948</span>    runningPos += ma_dr_wav__write_u16ne_to_le(pWav, pWav-&gt;<a class="code hl_define" href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a>.bitsPerSample);</div>
 <div class="line"><a id="l81949" name="l81949"></a><span class="lineno">81949</span>    <span class="keywordflow">if</span> (!pWav-&gt;isSequentialWrite &amp;&amp; pWav-&gt;pMetadata != <a class="code hl_define" href="miniaudio_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> &amp;&amp; pWav-&gt;metadataCount &gt; 0 &amp;&amp; (pFormat-&gt;container == ma_dr_wav_container_riff || pFormat-&gt;container == ma_dr_wav_container_rf64)) {</div>
 <div class="line"><a id="l81950" name="l81950"></a><span class="lineno">81950</span>        runningPos += ma_dr_wav__write_or_count_metadata(pWav, pWav-&gt;pMetadata, pWav-&gt;metadataCount);</div>
 <div class="line"><a id="l81951" name="l81951"></a><span class="lineno">81951</span>    }</div>
@@ -95968,12 +95968,12 @@ $(function(){initNavTree('miniaudio_8h_source.html',''); initResizable(true); })
 <div class="line"><a id="l95455" name="l95455"></a><span class="lineno">95455</span><span class="comment">*/</span></div>
 <div class="ttc" id="aAudioSequenceFactory_8cpp_html_a6730e2a8307777730b383bec2ba616c6"><div class="ttname"><a href="AudioSequenceFactory_8cpp.html#a6730e2a8307777730b383bec2ba616c6">extension</a></div><div class="ttdeci">std::vector&lt; std::string &gt; extension</div><div class="ttdef"><b>Definition</b> AudioSequenceFactory.cpp:6</div></div>
 <div class="ttc" id="aGameAudio_8h_html_a7a0bd536f9aac4336dbb776f584cfcf5"><div class="ttname"><a href="GameAudio_8h.html#a7a0bd536f9aac4336dbb776f584cfcf5">audio</a></div><div class="ttdeci">static struct @357330042345221051161372362127345240227027135012 audio</div></div>
-<div class="ttc" id="aMole_8cpp_html_aa803452c9cbfee85cf24c7a0b0a9722b"><div class="ttname"><a href="Mole_8cpp.html#aa803452c9cbfee85cf24c7a0b0a9722b">frames</a></div><div class="ttdeci">static const char * frames[]</div><div class="ttdef"><b>Definition</b> Mole.cpp:246</div></div>
+<div class="ttc" id="aMole_8cpp_html_aa803452c9cbfee85cf24c7a0b0a9722b"><div class="ttname"><a href="Mole_8cpp.html#aa803452c9cbfee85cf24c7a0b0a9722b">frames</a></div><div class="ttdeci">static const char * frames[]</div><div class="ttdef"><b>Definition</b> Mole.cpp:245</div></div>
 <div class="ttc" id="aalBnkfNew_8c_html_a96a0200a6b40350e524f536d232ecb53"><div class="ttname"><a href="alBnkfNew_8c.html#a96a0200a6b40350e524f536d232ecb53">unused</a></div><div class="ttdeci">static void unused(void)</div><div class="ttdef"><b>Definition</b> alBnkfNew.c:60</div></div>
 <div class="ttc" id="aclasschar_html"><div class="ttname"><a href="classchar.html">char</a></div></div>
 <div class="ttc" id="acommon__structs_8h_html_a5d202d94ae5f52685624a11fe72ecc7ba42a4ade1acd55a49164099104990e09f"><div class="ttname"><a href="common__structs_8h.html#a5d202d94ae5f52685624a11fe72ecc7ba42a4ade1acd55a49164099104990e09f">A</a></div><div class="ttdeci">@ A</div><div class="ttdef"><b>Definition</b> common_structs.h:29</div></div>
 <div class="ttc" id="aload_8c_html_aa8c84707b22bdc99b810d3c7d3ec5d52"><div class="ttname"><a href="load_8c.html#aa8c84707b22bdc99b810d3c7d3ec5d52">j</a></div><div class="ttdeci">#define j</div></div>
-<div class="ttc" id="amain_8c_html_ae19ed3b24f37697e5906c61f8e643ae9"><div class="ttname"><a href="main_8c.html#ae19ed3b24f37697e5906c61f8e643ae9">padding</a></div><div class="ttdeci">s32 padding[2048]</div><div class="ttdef"><b>Definition</b> main.c:149</div></div>
+<div class="ttc" id="amain_8c_html_ae19ed3b24f37697e5906c61f8e643ae9"><div class="ttname"><a href="main_8c.html#ae19ed3b24f37697e5906c61f8e643ae9">padding</a></div><div class="ttdeci">s32 padding[2048]</div><div class="ttdef"><b>Definition</b> main.c:141</div></div>
 <div class="ttc" id="amath_8h_html"><div class="ttname"><a href="math_8h.html">math.h</a></div></div>
 <div class="ttc" id="amath_8h_html_ad910bc71940a50c2a35d308c236013b6"><div class="ttname"><a href="math_8h.html#ad910bc71940a50c2a35d308c236013b6">sin</a></div><div class="ttdeci">double sin(double)</div></div>
 <div class="ttc" id="aminiaudio_8h_html_a0008fcbfc6203cc9e03354018ef2a4f2"><div class="ttname"><a href="miniaudio_8h.html#a0008fcbfc6203cc9e03354018ef2a4f2">MA_SOUND_SOURCE_CHANNEL_COUNT</a></div><div class="ttdeci">#define MA_SOUND_SOURCE_CHANNEL_COUNT</div><div class="ttdef"><b>Definition</b> miniaudio.h:11184</div></div>
@@ -97444,6 +97444,7 @@ $(function(){initNavTree('miniaudio_8h_source.html',''); initResizable(true); })
 <div class="ttc" id="anamespacepfd_html"><div class="ttname"><a href="namespacepfd.html">pfd</a></div><div class="ttdef"><b>Definition</b> portable-file-dialogs.h:70</div></div>
 <div class="ttc" id="anamespacepfd_html_a96ff6709abe317ae8eff98d92bc8db85acaf9b6b99962bf5c2264824231d7a40c"><div class="ttname"><a href="namespacepfd.html#a96ff6709abe317ae8eff98d92bc8db85acaf9b6b99962bf5c2264824231d7a40c">pfd::icon::info</a></div><div class="ttdeci">@ info</div><div class="ttdef"><b>Definition</b> portable-file-dialogs.h:92</div></div>
 <div class="ttc" id="anamespacepfd_html_a96ff6709abe317ae8eff98d92bc8db85acb5e100e5a9a3e7f6d1fd97512215282"><div class="ttname"><a href="namespacepfd.html#a96ff6709abe317ae8eff98d92bc8db85acb5e100e5a9a3e7f6d1fd97512215282">pfd::icon::error</a></div><div class="ttdeci">@ error</div><div class="ttdef"><b>Definition</b> portable-file-dialogs.h:94</div></div>
+<div class="ttc" id="apak_8cpp_html_a24ae7463666f625674a1f1d44146784f"><div class="ttname"><a href="pak_8cpp.html#a24ae7463666f625674a1f1d44146784f">fmt</a></div><div class="ttdeci">#define fmt(...)</div><div class="ttdef"><b>Definition</b> pak.cpp:8</div></div>
 <div class="ttc" id="asrc_2audio_2data_8c_html_aa7ed73e948f47fa899fce22e05095d39"><div class="ttname"><a href="src_2audio_2data_8c.html#aa7ed73e948f47fa899fce22e05095d39">fill</a></div><div class="ttdeci">u32 fill[2]</div><div class="ttdef"><b>Definition</b> data.c:141</div></div>
 <div class="ttc" id="astdarg_8h_html"><div class="ttname"><a href="stdarg_8h.html">stdarg.h</a></div></div>
 <div class="ttc" id="astdarg_8h_html_a1763b4d5c9d8e5a9bed197b316e3586a"><div class="ttname"><a href="stdarg_8h.html#a1763b4d5c9d8e5a9bed197b316e3586a">va_end</a></div><div class="ttdeci">#define va_end</div><div class="ttdef"><b>Definition</b> stdarg.h:9</div></div>

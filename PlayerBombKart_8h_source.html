@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/PlayerBombKart.h Source File</title>
+<title>SpaghettiKart: src/engine/PlayerBombKart.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -114,7 +114,7 @@ $(function(){initNavTree('PlayerBombKart_8h_source.html',''); initResizable(true
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="CoreMath_8h.html">CoreMath.h</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
 <div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classPlayerBombKart.html">    6</a></span><span class="keyword">class </span><a class="code hl_class" href="classPlayerBombKart.html">PlayerBombKart</a> {</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classPlayerBombKart.html">    6</a></span><span class="keyword">class </span><a class="code hl_function" href="classPlayerBombKart.html#a98890e9c1d01ce1d63690bf32a44e2a6">PlayerBombKart</a> {</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
@@ -124,31 +124,56 @@ $(function(){initNavTree('PlayerBombKart_8h_source.html',''); initResizable(true
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    };</div>
 </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classPlayerBombKart.html#aa059e1b19412dee184b1d1ce4cce2a6e">   14</a></span>    s16 <a class="code hl_variable" href="classPlayerBombKart.html#aa059e1b19412dee184b1d1ce4cce2a6e">state</a> = <a class="code hl_enumvalue" href="classPlayerBombKart.html#abe29bc9eaaac4f37f32fc1c67a19a1dda57d27cb4dd5224dfab2ff95ae0b33f50">PlayerBombKartState::DISABLED</a>;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classPlayerBombKart.html#aa5fd50a138061ae43d32dde449de6de5">   15</a></span>    <a class="code hl_struct" href="structFVector.html">FVector</a> <a class="code hl_variable" href="classPlayerBombKart.html#aa5fd50a138061ae43d32dde449de6de5">pos</a> = {0, 0, 0};</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classPlayerBombKart.html#a8fceb48692112d3a16ad242f9a37f84b">   16</a></span>    f32 <a class="code hl_variable" href="classPlayerBombKart.html#a8fceb48692112d3a16ad242f9a37f84b">surfaceHeight</a> = 0;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classPlayerBombKart.html#a00666bcd09e94dd7d18f440268d257cb">   17</a></span>    s32 <a class="code hl_variable" href="classPlayerBombKart.html#a00666bcd09e94dd7d18f440268d257cb">_primAlpha</a> = 0;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayerBombKart.html#ae72600675ff81bcfcfe0b3e99b72fc10">Draw</a>(<span class="keywordtype">size_t</span> playerId, s32 cameraId);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayerBombKart.html#ab3bf9332abcce97183126cb5a7bce075">func_800563DC</a>(s32 cameraId, s32 arg2);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayerBombKart.html#a2f53bd36c22062aef79e999e47d196af">func_8005669C</a>(s32 arg2);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayerBombKart.html#aa063b7ce63ddb80c6da7550630df531a">func_800568A0</a>(s32 cameraId);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>};</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <a class="code hl_function" href="classPlayerBombKart.html#a98890e9c1d01ce1d63690bf32a44e2a6">PlayerBombKart</a>();</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
+<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classPlayerBombKart.html#afe2d0550f7808871f2df9d0a6ccae624">   16</a></span>    <a class="code hl_function" href="classPlayerBombKart.html#afe2d0550f7808871f2df9d0a6ccae624">~PlayerBombKart</a>() {</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_variable" href="classPlayerBombKart.html#a09f1c22fca8810fa990743b27c1e9af8">_count</a>--;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    }</div>
+</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="}">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classPlayerBombKart.html#aebf4cbb55a9b685625a851eb1509f565">   20</a></span>    <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="classPlayerBombKart.html#aebf4cbb55a9b685625a851eb1509f565">GetCount</a>() {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classPlayerBombKart.html#a09f1c22fca8810fa990743b27c1e9af8">_count</a>;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    }</div>
+</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classPlayerBombKart.html#aa059e1b19412dee184b1d1ce4cce2a6e">   24</a></span>    s16 <a class="code hl_variable" href="classPlayerBombKart.html#aa059e1b19412dee184b1d1ce4cce2a6e">state</a> = <a class="code hl_enumvalue" href="classPlayerBombKart.html#abe29bc9eaaac4f37f32fc1c67a19a1dda57d27cb4dd5224dfab2ff95ae0b33f50">PlayerBombKartState::DISABLED</a>;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="classPlayerBombKart.html#aa5fd50a138061ae43d32dde449de6de5">   25</a></span>    <a class="code hl_struct" href="structFVector.html">FVector</a> <a class="code hl_variable" href="classPlayerBombKart.html#aa5fd50a138061ae43d32dde449de6de5">pos</a> = {0, 0, 0};</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classPlayerBombKart.html#a8fceb48692112d3a16ad242f9a37f84b">   26</a></span>    f32 <a class="code hl_variable" href="classPlayerBombKart.html#a8fceb48692112d3a16ad242f9a37f84b">surfaceHeight</a> = 0;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classPlayerBombKart.html#a00666bcd09e94dd7d18f440268d257cb">   27</a></span>    s32 <a class="code hl_variable" href="classPlayerBombKart.html#a00666bcd09e94dd7d18f440268d257cb">_primAlpha</a> = 0;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayerBombKart.html#ae72600675ff81bcfcfe0b3e99b72fc10">Draw</a>(<span class="keywordtype">size_t</span> playerId, s32 cameraId);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayerBombKart.html#ab3bf9332abcce97183126cb5a7bce075">func_800563DC</a>(s32 cameraId, s32 arg2);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayerBombKart.html#a8bd1ece2cbff2f89fc9b40437cd54605">func_800562E4</a>(s32 cameraId, s32 arg0, s32 arg1, s32 arg2, s32 <span class="keywordtype">id</span>);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayerBombKart.html#a2de83146cbc6f32fbccd5353d627feb1">func_8005669C</a>(s32 cameraId, s32 arg2);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayerBombKart.html#ab9363ab7b5a7b4c104ff997bcc82064f">LoadMtx</a>(s32 cameraId);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">static</span> u32 <a class="code hl_variable" href="classPlayerBombKart.html#a3b1c89b1eb132a032ff3acaaf880e470">vec</a>[3][3];</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classPlayerBombKart.html#a09f1c22fca8810fa990743b27c1e9af8">   36</a></span>    <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="classPlayerBombKart.html#a09f1c22fca8810fa990743b27c1e9af8">_count</a>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classPlayerBombKart.html#a0a29de17ae44882b0735aa9e64538e0a">   37</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="classPlayerBombKart.html#a0a29de17ae44882b0735aa9e64538e0a">_idx</a>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>};</div>
 </div>
 <div class="ttc" id="aCoreMath_8h_html"><div class="ttname"><a href="CoreMath_8h.html">CoreMath.h</a></div></div>
-<div class="ttc" id="aclassPlayerBombKart_html"><div class="ttname"><a href="classPlayerBombKart.html">PlayerBombKart</a></div><div class="ttdef"><b>Definition</b> PlayerBombKart.h:6</div></div>
-<div class="ttc" id="aclassPlayerBombKart_html_a00666bcd09e94dd7d18f440268d257cb"><div class="ttname"><a href="classPlayerBombKart.html#a00666bcd09e94dd7d18f440268d257cb">PlayerBombKart::_primAlpha</a></div><div class="ttdeci">s32 _primAlpha</div><div class="ttdef"><b>Definition</b> PlayerBombKart.h:17</div></div>
-<div class="ttc" id="aclassPlayerBombKart_html_a2f53bd36c22062aef79e999e47d196af"><div class="ttname"><a href="classPlayerBombKart.html#a2f53bd36c22062aef79e999e47d196af">PlayerBombKart::func_8005669C</a></div><div class="ttdeci">void func_8005669C(s32 arg2)</div><div class="ttdef"><b>Definition</b> PlayerBombKart.cpp:68</div></div>
-<div class="ttc" id="aclassPlayerBombKart_html_a8fceb48692112d3a16ad242f9a37f84b"><div class="ttname"><a href="classPlayerBombKart.html#a8fceb48692112d3a16ad242f9a37f84b">PlayerBombKart::surfaceHeight</a></div><div class="ttdeci">f32 surfaceHeight</div><div class="ttdef"><b>Definition</b> PlayerBombKart.h:16</div></div>
-<div class="ttc" id="aclassPlayerBombKart_html_aa059e1b19412dee184b1d1ce4cce2a6e"><div class="ttname"><a href="classPlayerBombKart.html#aa059e1b19412dee184b1d1ce4cce2a6e">PlayerBombKart::state</a></div><div class="ttdeci">s16 state</div><div class="ttdef"><b>Definition</b> PlayerBombKart.h:14</div></div>
-<div class="ttc" id="aclassPlayerBombKart_html_aa063b7ce63ddb80c6da7550630df531a"><div class="ttname"><a href="classPlayerBombKart.html#aa063b7ce63ddb80c6da7550630df531a">PlayerBombKart::func_800568A0</a></div><div class="ttdeci">void func_800568A0(s32 cameraId)</div><div class="ttdef"><b>Definition</b> PlayerBombKart.cpp:88</div></div>
-<div class="ttc" id="aclassPlayerBombKart_html_aa5fd50a138061ae43d32dde449de6de5"><div class="ttname"><a href="classPlayerBombKart.html#aa5fd50a138061ae43d32dde449de6de5">PlayerBombKart::pos</a></div><div class="ttdeci">FVector pos</div><div class="ttdef"><b>Definition</b> PlayerBombKart.h:15</div></div>
-<div class="ttc" id="aclassPlayerBombKart_html_ab3bf9332abcce97183126cb5a7bce075"><div class="ttname"><a href="classPlayerBombKart.html#ab3bf9332abcce97183126cb5a7bce075">PlayerBombKart::func_800563DC</a></div><div class="ttdeci">void func_800563DC(s32 cameraId, s32 arg2)</div><div class="ttdef"><b>Definition</b> PlayerBombKart.cpp:27</div></div>
+<div class="ttc" id="aclassPlayerBombKart_html_a00666bcd09e94dd7d18f440268d257cb"><div class="ttname"><a href="classPlayerBombKart.html#a00666bcd09e94dd7d18f440268d257cb">PlayerBombKart::_primAlpha</a></div><div class="ttdeci">s32 _primAlpha</div><div class="ttdef"><b>Definition</b> PlayerBombKart.h:27</div></div>
+<div class="ttc" id="aclassPlayerBombKart_html_a09f1c22fca8810fa990743b27c1e9af8"><div class="ttname"><a href="classPlayerBombKart.html#a09f1c22fca8810fa990743b27c1e9af8">PlayerBombKart::_count</a></div><div class="ttdeci">static size_t _count</div><div class="ttdef"><b>Definition</b> PlayerBombKart.h:36</div></div>
+<div class="ttc" id="aclassPlayerBombKart_html_a0a29de17ae44882b0735aa9e64538e0a"><div class="ttname"><a href="classPlayerBombKart.html#a0a29de17ae44882b0735aa9e64538e0a">PlayerBombKart::_idx</a></div><div class="ttdeci">size_t _idx</div><div class="ttdef"><b>Definition</b> PlayerBombKart.h:37</div></div>
+<div class="ttc" id="aclassPlayerBombKart_html_a2de83146cbc6f32fbccd5353d627feb1"><div class="ttname"><a href="classPlayerBombKart.html#a2de83146cbc6f32fbccd5353d627feb1">PlayerBombKart::func_8005669C</a></div><div class="ttdeci">void func_8005669C(s32 cameraId, s32 arg2)</div><div class="ttdef"><b>Definition</b> PlayerBombKart.cpp:98</div></div>
+<div class="ttc" id="aclassPlayerBombKart_html_a3b1c89b1eb132a032ff3acaaf880e470"><div class="ttname"><a href="classPlayerBombKart.html#a3b1c89b1eb132a032ff3acaaf880e470">PlayerBombKart::vec</a></div><div class="ttdeci">static u32 vec[3][3]</div><div class="ttdef"><b>Definition</b> PlayerBombKart.h:79</div></div>
+<div class="ttc" id="aclassPlayerBombKart_html_a8bd1ece2cbff2f89fc9b40437cd54605"><div class="ttname"><a href="classPlayerBombKart.html#a8bd1ece2cbff2f89fc9b40437cd54605">PlayerBombKart::func_800562E4</a></div><div class="ttdeci">void func_800562E4(s32 cameraId, s32 arg0, s32 arg1, s32 arg2, s32 id)</div><div class="ttdef"><b>Definition</b> PlayerBombKart.cpp:85</div></div>
+<div class="ttc" id="aclassPlayerBombKart_html_a8fceb48692112d3a16ad242f9a37f84b"><div class="ttname"><a href="classPlayerBombKart.html#a8fceb48692112d3a16ad242f9a37f84b">PlayerBombKart::surfaceHeight</a></div><div class="ttdeci">f32 surfaceHeight</div><div class="ttdef"><b>Definition</b> PlayerBombKart.h:26</div></div>
+<div class="ttc" id="aclassPlayerBombKart_html_a98890e9c1d01ce1d63690bf32a44e2a6"><div class="ttname"><a href="classPlayerBombKart.html#a98890e9c1d01ce1d63690bf32a44e2a6">PlayerBombKart::PlayerBombKart</a></div><div class="ttdeci">PlayerBombKart()</div><div class="ttdef"><b>Definition</b> PlayerBombKart.cpp:18</div></div>
+<div class="ttc" id="aclassPlayerBombKart_html_aa059e1b19412dee184b1d1ce4cce2a6e"><div class="ttname"><a href="classPlayerBombKart.html#aa059e1b19412dee184b1d1ce4cce2a6e">PlayerBombKart::state</a></div><div class="ttdeci">s16 state</div><div class="ttdef"><b>Definition</b> PlayerBombKart.h:24</div></div>
+<div class="ttc" id="aclassPlayerBombKart_html_aa5fd50a138061ae43d32dde449de6de5"><div class="ttname"><a href="classPlayerBombKart.html#aa5fd50a138061ae43d32dde449de6de5">PlayerBombKart::pos</a></div><div class="ttdeci">FVector pos</div><div class="ttdef"><b>Definition</b> PlayerBombKart.h:25</div></div>
+<div class="ttc" id="aclassPlayerBombKart_html_ab3bf9332abcce97183126cb5a7bce075"><div class="ttname"><a href="classPlayerBombKart.html#ab3bf9332abcce97183126cb5a7bce075">PlayerBombKart::func_800563DC</a></div><div class="ttdeci">void func_800563DC(s32 cameraId, s32 arg2)</div><div class="ttdef"><b>Definition</b> PlayerBombKart.cpp:36</div></div>
+<div class="ttc" id="aclassPlayerBombKart_html_ab9363ab7b5a7b4c104ff997bcc82064f"><div class="ttname"><a href="classPlayerBombKart.html#ab9363ab7b5a7b4c104ff997bcc82064f">PlayerBombKart::LoadMtx</a></div><div class="ttdeci">void LoadMtx(s32 cameraId)</div><div class="ttdef"><b>Definition</b> PlayerBombKart.cpp:126</div></div>
 <div class="ttc" id="aclassPlayerBombKart_html_abe29bc9eaaac4f37f32fc1c67a19a1dd"><div class="ttname"><a href="classPlayerBombKart.html#abe29bc9eaaac4f37f32fc1c67a19a1dd">PlayerBombKart::PlayerBombKartState</a></div><div class="ttdeci">PlayerBombKartState</div><div class="ttdef"><b>Definition</b> PlayerBombKart.h:9</div></div>
 <div class="ttc" id="aclassPlayerBombKart_html_abe29bc9eaaac4f37f32fc1c67a19a1dda57d27cb4dd5224dfab2ff95ae0b33f50"><div class="ttname"><a href="classPlayerBombKart.html#abe29bc9eaaac4f37f32fc1c67a19a1dda57d27cb4dd5224dfab2ff95ae0b33f50">PlayerBombKart::DISABLED</a></div><div class="ttdeci">@ DISABLED</div><div class="ttdef"><b>Definition</b> PlayerBombKart.h:10</div></div>
 <div class="ttc" id="aclassPlayerBombKart_html_abe29bc9eaaac4f37f32fc1c67a19a1ddaafc7d2c90168b26aa0cdbadd0c538b4a"><div class="ttname"><a href="classPlayerBombKart.html#abe29bc9eaaac4f37f32fc1c67a19a1ddaafc7d2c90168b26aa0cdbadd0c538b4a">PlayerBombKart::ACTIVE</a></div><div class="ttdeci">@ ACTIVE</div><div class="ttdef"><b>Definition</b> PlayerBombKart.h:11</div></div>
-<div class="ttc" id="aclassPlayerBombKart_html_ae72600675ff81bcfcfe0b3e99b72fc10"><div class="ttname"><a href="classPlayerBombKart.html#ae72600675ff81bcfcfe0b3e99b72fc10">PlayerBombKart::Draw</a></div><div class="ttdeci">void Draw(size_t playerId, s32 cameraId)</div><div class="ttdef"><b>Definition</b> PlayerBombKart.cpp:14</div></div>
-<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:18</div></div>
+<div class="ttc" id="aclassPlayerBombKart_html_ae72600675ff81bcfcfe0b3e99b72fc10"><div class="ttname"><a href="classPlayerBombKart.html#ae72600675ff81bcfcfe0b3e99b72fc10">PlayerBombKart::Draw</a></div><div class="ttdeci">void Draw(size_t playerId, s32 cameraId)</div><div class="ttdef"><b>Definition</b> PlayerBombKart.cpp:23</div></div>
+<div class="ttc" id="aclassPlayerBombKart_html_aebf4cbb55a9b685625a851eb1509f565"><div class="ttname"><a href="classPlayerBombKart.html#aebf4cbb55a9b685625a851eb1509f565">PlayerBombKart::GetCount</a></div><div class="ttdeci">static size_t GetCount()</div><div class="ttdef"><b>Definition</b> PlayerBombKart.h:20</div></div>
+<div class="ttc" id="aclassPlayerBombKart_html_afe2d0550f7808871f2df9d0a6ccae624"><div class="ttname"><a href="classPlayerBombKart.html#afe2d0550f7808871f2df9d0a6ccae624">PlayerBombKart::~PlayerBombKart</a></div><div class="ttdeci">~PlayerBombKart()</div><div class="ttdef"><b>Definition</b> PlayerBombKart.h:16</div></div>
+<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

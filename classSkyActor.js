@@ -1,0 +1,25 @@
+var classSkyActor =
+[
+    [ "SkyActor", "classSkyActor.html#ad62c5878bffa4306ced2ecbd2f7e2cdf", null ],
+    [ "SkyActor", "classSkyActor.html#a30aa1699d610a201a9850a1f8f317cd2", null ],
+    [ "~SkyActor", "classSkyActor.html#a06c35966ed0a4f4f0c02353a54e60bc7", null ],
+    [ "Draw", "classSkyActor.html#a8d0c93de5b07ced89a80b5fda33a9da4", null ],
+    [ "Tick", "classSkyActor.html#a6377a73a8a80fd1e3f359c69f027ad7f", null ],
+    [ "mCloudVariant", "classSkyActor.html#a81fa01d9362149db0427031103d74fb7", null ],
+    [ "mOldX", "classSkyActor.html#a03f16f79738819a45005212719c68495", null ],
+    [ "mOldY", "classSkyActor.html#abb02361ac4e08b817a5fc29895ce9da9", null ],
+    [ "mRotY", "classSkyActor.html#aadcd581808d9638858cf3c2f5b1b39b5", null ],
+    [ "mScale", "classSkyActor.html#ae03ff97c6f2945669ab1ffbfd060c8be", null ],
+    [ "mScreen", "classSkyActor.html#a46665c53d4981fa79dfe9f84defd9afe", null ],
+    [ "mTexture", "classSkyActor.html#abcd68fbe1e86458008228dab61d98b7b", null ],
+    [ "mTextureHeight", "classSkyActor.html#a512b37c3ea3a5f3302c3a1dc815a9c5a", null ],
+    [ "mTextureWidth", "classSkyActor.html#a48ef51fbf83774803fc9e3735c82a9ec", null ],
+    [ "mUnk1E8", "classSkyActor.html#a5e3cf2159d59edc99e1815b17f1a7fe2", null ],
+    [ "mUnk208", "classSkyActor.html#a55c655f5cef4a9bb43a3218e02b5a406", null ],
+    [ "mUnk210", "classSkyActor.html#ac940d4332e2cb7b6d4e602de98036c43", null ],
+    [ "mUnk218", "classSkyActor.html#a072810566cfc9cb62bced767198c32cc", null ],
+    [ "mVisible", "classSkyActor.html#ad225f5e7e5ea83bc1cda91e6234c35c4", null ],
+    [ "mVtx", "classSkyActor.html#affd32a10c617364d8073eee497eb499c", null ],
+    [ "mX", "classSkyActor.html#a0b75898fd8d24dabe8bbdbdf32f31ed7", null ],
+    [ "mY", "classSkyActor.html#af8d002588c0590ab31ab5634dbc32771", null ]
+];

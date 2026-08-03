@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: Cup Class Reference</title>
+<title>SpaghettiKart: Cup Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -116,23 +116,25 @@ $(function(){initNavTree('classCup.html',''); initResizable(true); });
 <div class="dynheader">
 Collaboration diagram for Cup:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="classCup__coll__graph.svg" width="538" height="139"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="classCup__coll__graph.svg" width="546" height="124"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1fb0aa54158f8563284344e26aee5902" id="r_a1fb0aa54158f8563284344e26aee5902"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1fb0aa54158f8563284344e26aee5902">Cup</a> (std::string id, const char *name, std::vector&lt; std::shared_ptr&lt; <a class="el" href="classCourse.html">Course</a> &gt; &gt; courses)</td></tr>
-<tr class="separator:a1fb0aa54158f8563284344e26aee5902"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff7d553807b8cc4d7e4b37cfb6c71227" id="r_aff7d553807b8cc4d7e4b37cfb6c71227"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff7d553807b8cc4d7e4b37cfb6c71227">ShuffleCourses</a> ()</td></tr>
-<tr class="separator:aff7d553807b8cc4d7e4b37cfb6c71227"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a3838c6d2b3024695003131c03b0f11" id="r_a9a3838c6d2b3024695003131c03b0f11"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a3838c6d2b3024695003131c03b0f11">Cup</a> (std::string id, const char *name, std::vector&lt; std::string &gt; tracks)</td></tr>
+<tr class="separator:a9a3838c6d2b3024695003131c03b0f11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d53b50434a5d47510fa60e90afd4cac" id="r_a2d53b50434a5d47510fa60e90afd4cac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d53b50434a5d47510fa60e90afd4cac">ValidateTrackIds</a> (const <a class="el" href="classRegistry.html">Registry</a>&lt; <a class="el" href="structTrackInfo.html">TrackInfo</a> &gt; &amp;registry) const</td></tr>
+<tr class="separator:a2d53b50434a5d47510fa60e90afd4cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28efb180de785a68fbe5746edf7eb230" id="r_a28efb180de785a68fbe5746edf7eb230"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28efb180de785a68fbe5746edf7eb230">ShuffleTracks</a> ()</td></tr>
+<tr class="separator:a28efb180de785a68fbe5746edf7eb230"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a979f98b885b48ae831abdd24f1f479e6" id="r_a979f98b885b48ae831abdd24f1f479e6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a979f98b885b48ae831abdd24f1f479e6">Next</a> ()</td></tr>
 <tr class="separator:a979f98b885b48ae831abdd24f1f479e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2b0454ad3bde67d712c1638aa857ac2" id="r_ae2b0454ad3bde67d712c1638aa857ac2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2b0454ad3bde67d712c1638aa857ac2">Previous</a> ()</td></tr>
 <tr class="separator:ae2b0454ad3bde67d712c1638aa857ac2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9debeba55e474427fa0ef7997b8dbbec" id="r_a9debeba55e474427fa0ef7997b8dbbec"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9debeba55e474427fa0ef7997b8dbbec">SetCourse</a> (size_t position)</td></tr>
-<tr class="separator:a9debeba55e474427fa0ef7997b8dbbec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e1ef6ca0aa13c9fbe0022809a18ba80" id="r_a0e1ef6ca0aa13c9fbe0022809a18ba80"><td class="memItemLeft" align="right" valign="top">virtual std::shared_ptr&lt; <a class="el" href="classCourse.html">Course</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e1ef6ca0aa13c9fbe0022809a18ba80">GetCourse</a> ()</td></tr>
-<tr class="separator:a0e1ef6ca0aa13c9fbe0022809a18ba80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2df105b4e6b6478ff4beef1231ee6b64" id="r_a2df105b4e6b6478ff4beef1231ee6b64"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2df105b4e6b6478ff4beef1231ee6b64">SetTrack</a> (size_t position)</td></tr>
+<tr class="separator:a2df105b4e6b6478ff4beef1231ee6b64"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5afa1e7aa9557d56343499db9f2fdc19" id="r_a5afa1e7aa9557d56343499db9f2fdc19"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5afa1e7aa9557d56343499db9f2fdc19">GetTrack</a> ()</td></tr>
+<tr class="separator:a5afa1e7aa9557d56343499db9f2fdc19"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70e18a319ef294623a7423735ff1f19b" id="r_a70e18a319ef294623a7423735ff1f19b"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a70e18a319ef294623a7423735ff1f19b">GetSize</a> ()</td></tr>
 <tr class="separator:a70e18a319ef294623a7423735ff1f19b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -146,12 +148,12 @@ Data Fields</h2></td></tr>
 <tr class="separator:abfae0ed8f4d31ec7f0b6fc55ba9a43e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29897a1ceed2b5f276287ff6ec828a02" id="r_a29897a1ceed2b5f276287ff6ec828a02"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29897a1ceed2b5f276287ff6ec828a02">CursorPosition</a> = 0</td></tr>
 <tr class="separator:a29897a1ceed2b5f276287ff6ec828a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ce7fe0c344427a390e7f48fc13f6804" id="r_a6ce7fe0c344427a390e7f48fc13f6804"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classCourse.html">Course</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6ce7fe0c344427a390e7f48fc13f6804">Courses</a></td></tr>
-<tr class="separator:a6ce7fe0c344427a390e7f48fc13f6804"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af87f586fbfd577bba3e78f1a2ffb2b8d" id="r_af87f586fbfd577bba3e78f1a2ffb2b8d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af87f586fbfd577bba3e78f1a2ffb2b8d">mTracks</a></td></tr>
+<tr class="separator:af87f586fbfd577bba3e78f1a2ffb2b8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a1fb0aa54158f8563284344e26aee5902" name="a1fb0aa54158f8563284344e26aee5902"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1fb0aa54158f8563284344e26aee5902">&#9670;&#160;</a></span>Cup()</h2>
+<a id="a9a3838c6d2b3024695003131c03b0f11" name="a9a3838c6d2b3024695003131c03b0f11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a3838c6d2b3024695003131c03b0f11">&#9670;&#160;</a></span>Cup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -172,7 +174,7 @@ Data Fields</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; std::shared_ptr&lt; <a class="el" href="classCourse.html">Course</a> &gt; &gt;</td>          <td class="paramname"><span class="paramname"><em>courses</em></span>&#160;)</td>
+          <td class="paramtype">std::vector&lt; std::string &gt;</td>          <td class="paramname"><span class="paramname"><em>tracks</em></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -185,31 +187,6 @@ Data Fields</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a0e1ef6ca0aa13c9fbe0022809a18ba80" name="a0e1ef6ca0aa13c9fbe0022809a18ba80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e1ef6ca0aa13c9fbe0022809a18ba80">&#9670;&#160;</a></span>GetCourse()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classCourse.html">Course</a> &gt; Cup::GetCourse </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a70e18a319ef294623a7423735ff1f19b" name="a70e18a319ef294623a7423735ff1f19b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a70e18a319ef294623a7423735ff1f19b">&#9670;&#160;</a></span>GetSize()</h2>
 
@@ -221,6 +198,36 @@ Data Fields</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">size_t Cup::GetSize </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel virtual">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classCup_a70e18a319ef294623a7423735ff1f19b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a5afa1e7aa9557d56343499db9f2fdc19" name="a5afa1e7aa9557d56343499db9f2fdc19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5afa1e7aa9557d56343499db9f2fdc19">&#9670;&#160;</a></span>GetTrack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Cup::GetTrack </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -285,8 +292,8 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<a id="a9debeba55e474427fa0ef7997b8dbbec" name="a9debeba55e474427fa0ef7997b8dbbec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9debeba55e474427fa0ef7997b8dbbec">&#9670;&#160;</a></span>SetCourse()</h2>
+<a id="a2df105b4e6b6478ff4beef1231ee6b64" name="a2df105b4e6b6478ff4beef1231ee6b64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2df105b4e6b6478ff4beef1231ee6b64">&#9670;&#160;</a></span>SetTrack()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -295,7 +302,7 @@ Data Fields</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Cup::SetCourse </td>
+          <td class="memname">void Cup::SetTrack </td>
           <td>(</td>
           <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>position</em></span></td><td>)</td>
           <td></td>
@@ -307,11 +314,16 @@ Data Fields</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="classCup_a2df105b4e6b6478ff4beef1231ee6b64_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
 
 </div>
 </div>
-<a id="aff7d553807b8cc4d7e4b37cfb6c71227" name="aff7d553807b8cc4d7e4b37cfb6c71227"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aff7d553807b8cc4d7e4b37cfb6c71227">&#9670;&#160;</a></span>ShuffleCourses()</h2>
+<a id="a28efb180de785a68fbe5746edf7eb230" name="a28efb180de785a68fbe5746edf7eb230"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28efb180de785a68fbe5746edf7eb230">&#9670;&#160;</a></span>ShuffleTracks()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -320,7 +332,7 @@ Data Fields</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Cup::ShuffleCourses </td>
+          <td class="memname">void Cup::ShuffleTracks </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -335,21 +347,29 @@ Data Fields</h2></td></tr>
 
 </div>
 </div>
-<h2 class="groupheader">Field Documentation</h2>
-<a id="a6ce7fe0c344427a390e7f48fc13f6804" name="a6ce7fe0c344427a390e7f48fc13f6804"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ce7fe0c344427a390e7f48fc13f6804">&#9670;&#160;</a></span>Courses</h2>
+<a id="a2d53b50434a5d47510fa60e90afd4cac" name="a2d53b50434a5d47510fa60e90afd4cac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d53b50434a5d47510fa60e90afd4cac">&#9670;&#160;</a></span>ValidateTrackIds()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::shared_ptr&lt;<a class="el" href="classCourse.html">Course</a>&gt; &gt; Cup::Courses</td>
+          <td class="memname">void Cup::ValidateTrackIds </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classRegistry.html">Registry</a>&lt; <a class="el" href="structTrackInfo.html">TrackInfo</a> &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>registry</em></span></td><td>)</td>
+          <td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="classCup_a2d53b50434a5d47510fa60e90afd4cac_cgraph.svg" width="331" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 
 </div>
 </div>
+<h2 class="groupheader">Field Documentation</h2>
 <a id="a29897a1ceed2b5f276287ff6ec828a02" name="a29897a1ceed2b5f276287ff6ec828a02"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a29897a1ceed2b5f276287ff6ec828a02">&#9670;&#160;</a></span>CursorPosition</h2>
 
@@ -372,6 +392,20 @@ Data Fields</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">std::string Cup::Id</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af87f586fbfd577bba3e78f1a2ffb2b8d" name="af87f586fbfd577bba3e78f1a2ffb2b8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af87f586fbfd577bba3e78f1a2ffb2b8d">&#9670;&#160;</a></span>mTracks</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;std::string&gt; Cup::mTracks</td>
         </tr>
       </table>
 </div><div class="memdoc">

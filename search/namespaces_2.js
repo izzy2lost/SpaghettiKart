@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['fast_0',['Fast',['../namespaceFast.html',1,'']]],
-  ['freecam_1',['Freecam',['../namespaceFreecam.html',1,'']]]
+  ['gameui_0',['GameUI',['../namespaceGameUI.html',1,'']]],
+  ['gameui_3a_3afreecam_1',['Freecam',['../namespaceGameUI_1_1Freecam.html',1,'GameUI']]]
 ];

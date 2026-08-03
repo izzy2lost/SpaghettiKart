@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/editor/Collision.h File Reference</title>
+<title>SpaghettiKart: src/engine/editor/Collision.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -115,11 +115,13 @@ $(function(){initNavTree('Collision_8h.html',''); initResizable(true); });
 <div class="textblock"><code>#include &lt;libultraship/libultraship.h&gt;</code><br />
 <code>#include &lt;libultra/gbi.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="GameObject_8h_source.html">GameObject.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Actor_8h_source.html">engine/Actor.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Object_8h_source.html">engine/objects/Object.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="EditorMath_8h_source.html">EditorMath.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Collision.h:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Collision_8h__incl.svg" width="100%" height="547"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Collision_8h__incl.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -131,7 +133,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEditor.html">Editor</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html">TrackEditor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -141,10 +143,10 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a017036e049cff3eff7aef142c0d6e4c2" id="r_a017036e049cff3eff7aef142c0d6e4c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEditor.html#a017036e049cff3eff7aef142c0d6e4c2">Editor::GenerateCollisionMesh</a> (<a class="el" href="classEditor_1_1GameObject.html">GameObject</a> *object, Gfx *model, float scale)</td></tr>
-<tr class="separator:a017036e049cff3eff7aef142c0d6e4c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7790a67d355b592a32ebcc62ecbda661" id="r_a7790a67d355b592a32ebcc62ecbda661"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceEditor.html#a7790a67d355b592a32ebcc62ecbda661">Editor::DebugCollision</a> (<a class="el" href="classEditor_1_1GameObject.html">GameObject</a> *obj, <a class="el" href="structFVector.html">FVector</a> pos, <a class="el" href="structIRotator.html">IRotator</a> rot, <a class="el" href="structFVector.html">FVector</a> scale, const std::vector&lt; <a class="el" href="structTriangle.html">Triangle</a> &gt; &amp;triangles)</td></tr>
-<tr class="separator:a7790a67d355b592a32ebcc62ecbda661"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79d25f3b85758b1d930e2eb429655ead" id="r_a79d25f3b85758b1d930e2eb429655ead"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#a79d25f3b85758b1d930e2eb429655ead">TrackEditor::GenerateCollisionMesh</a> (std::variant&lt; <a class="el" href="classAActor.html">AActor</a> *, <a class="el" href="classOObject.html">OObject</a> *, <a class="el" href="classTrackEditor_1_1GameObject.html">GameObject</a> * &gt; object, Gfx *model, float scale)</td></tr>
+<tr class="separator:a79d25f3b85758b1d930e2eb429655ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c32bf38d445b20d55a7092da6b673a5" id="r_a3c32bf38d445b20d55a7092da6b673a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTrackEditor.html#a3c32bf38d445b20d55a7092da6b673a5">TrackEditor::DebugCollision</a> (<a class="el" href="classTrackEditor_1_1GameObject.html">GameObject</a> *obj, <a class="el" href="structFVector.html">FVector</a> pos, <a class="el" href="structIRotator.html">IRotator</a> rot, <a class="el" href="structFVector.html">FVector</a> scale, const std::vector&lt; <a class="el" href="structTriangle.html">Triangle</a> &gt; &amp;triangles)</td></tr>
+<tr class="separator:a3c32bf38d445b20d55a7092da6b673a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="a55d861b7102c14c27bb01a93b5409181" name="a55d861b7102c14c27bb01a93b5409181"></a>

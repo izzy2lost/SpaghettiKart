@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/actors/Starship.h Source File</title>
+<title>SpaghettiKart: src/engine/actors/Starship.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -112,37 +112,66 @@ $(function(){initNavTree('Starship_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;libultraship.h&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;libultra/gbi.h&gt;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="Actor_8h.html">engine/Actor.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="CoreMath_8h.html">CoreMath.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="common__structs_8h.html">common_structs.h</a>&quot;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="other__textures_8h.html">assets/other_textures.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>}</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classAStarship.html">   13</a></span><span class="keyword">class </span><a class="code hl_function" href="classAStarship.html#a4794c4676c9aecf5259667aa074cf17e">AStarship</a> : <span class="keyword">public</span> <a class="code hl_function" href="classAActor.html#a679c43bacf3600fa2d7a6ab30e34a8a6">AActor</a> {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classAStarship.html#a4794c4676c9aecf5259667aa074cf17e">AStarship</a>(<a class="code hl_struct" href="structFVector.html">FVector</a> pos);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classAStarship.html#ad5fe6c8021fc0ffb00f56349da83ec72">   16</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classAStarship.html#ad5fe6c8021fc0ffb00f56349da83ec72">~AStarship</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classAStarship.html#a13d936f05c0f19811e1753f026ed3ae4">Tick</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classAStarship.html#ac9c4d8aac201bfe7f1b8d7a1db4f8e45">IsMod</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classAStarship.html#a68f095cf4d9ba8aa6b10f494128853b2">   21</a></span>    <a class="code hl_struct" href="structFVector.html">FVector</a> <a class="code hl_variable" href="classAStarship.html#a68f095cf4d9ba8aa6b10f494128853b2">Spawn</a>;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>};</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="CoreMath_8h.html">engine/CoreMath.h</a>&quot;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="RegisterContent_8h.html">engine/registry/RegisterContent.h</a>&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="Actor_8h.html">engine/Actor.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="World_8h.html">engine/World.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="common__structs_8h.html">common_structs.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="other__textures_8h.html">assets/textures/other_textures.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classAStarship.html">   15</a></span><span class="keyword">class </span><a class="code hl_function" href="classAStarship.html#a3cfda4a7c78d0fa761a3d011205d229d">AStarship</a> : <span class="keyword">public</span> <a class="code hl_function" href="classAActor.html#a679c43bacf3600fa2d7a6ab30e34a8a6">AActor</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classAStarship.html#a3cfda4a7c78d0fa761a3d011205d229d">AStarship</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a>&amp; params);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classAStarship.html#ad5fe6c8021fc0ffb00f56349da83ec72">   18</a></span>    <span class="keyword">virtual</span> <a class="code hl_function" href="classAStarship.html#ad5fe6c8021fc0ffb00f56349da83ec72">~AStarship</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="comment">// This is simply a helper function to keep Spawning code clean</span></div>
+<div class="foldopen" id="foldopen00021" data-start="{" data-end="}">
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classAStarship.html#ace9cdfe48687bdc0812b386bdd1fbd73">   21</a></span>    <span class="keyword">static</span> <a class="code hl_function" href="classAStarship.html#a3cfda4a7c78d0fa761a3d011205d229d">AStarship</a>* <a class="code hl_function" href="classAStarship.html#ace9cdfe48687bdc0812b386bdd1fbd73">Spawn</a>(<a class="code hl_struct" href="structFVector.html">FVector</a> pos, <a class="code hl_struct" href="structIRotator.html">IRotator</a> rot, <a class="code hl_struct" href="structFVector.html">FVector</a> scale, f32 speed, f32 radius) {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a> params = {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>            .Name = <span class="stringliteral">&quot;hm:starship&quot;</span>,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>            .Location = pos,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            .Rotation = rot,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            .Scale = scale,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            .Speed = speed,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            .SpeedB = radius,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        };</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><a class="code hl_function" href="classAStarship.html#a3cfda4a7c78d0fa761a3d011205d229d">AStarship</a>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="RegisterContent_8h.html#aa90aab222b9cb6a7a75c2ed09379eb4e">AddActorToWorld&lt;AStarship&gt;</a>(params));</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
+</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classAStarship.html#ac6df35abe2c0621d5588df20c38295a7">   33</a></span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="classAStarship.html#ac6df35abe2c0621d5588df20c38295a7">SpeedB</a>;</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classAStarship.html#a3e9f158cc2a989ad3194f9cdf61336b1">SetSpawnParams</a>(<a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a>&amp; params) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classAStarship.html#a13d936f05c0f19811e1753f026ed3ae4">Tick</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">virtual</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classAStarship.html#ac9c4d8aac201bfe7f1b8d7a1db4f8e45">IsMod</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classAStarship.html#afa9bcac79f4e5bc9060b6de777c89ff1">BeginPlay</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classAStarship.html#a9b1183e5f30fed4edfd24b15d0b533c2">DrawEditorProperties</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>};</div>
 </div>
 <div class="ttc" id="aActor_8h_html"><div class="ttname"><a href="Actor_8h.html">Actor.h</a></div></div>
 <div class="ttc" id="aCoreMath_8h_html"><div class="ttname"><a href="CoreMath_8h.html">CoreMath.h</a></div></div>
-<div class="ttc" id="aclassAActor_html_a679c43bacf3600fa2d7a6ab30e34a8a6"><div class="ttname"><a href="classAActor.html#a679c43bacf3600fa2d7a6ab30e34a8a6">AActor::AActor</a></div><div class="ttdeci">AActor()</div><div class="ttdef"><b>Definition</b> Actor.cpp:10</div></div>
-<div class="ttc" id="aclassAStarship_html_a13d936f05c0f19811e1753f026ed3ae4"><div class="ttname"><a href="classAStarship.html#a13d936f05c0f19811e1753f026ed3ae4">AStarship::Tick</a></div><div class="ttdeci">virtual void Tick() override</div><div class="ttdef"><b>Definition</b> Starship.cpp:21</div></div>
-<div class="ttc" id="aclassAStarship_html_a4794c4676c9aecf5259667aa074cf17e"><div class="ttname"><a href="classAStarship.html#a4794c4676c9aecf5259667aa074cf17e">AStarship::AStarship</a></div><div class="ttdeci">AStarship(FVector pos)</div><div class="ttdef"><b>Definition</b> Starship.cpp:13</div></div>
-<div class="ttc" id="aclassAStarship_html_a68f095cf4d9ba8aa6b10f494128853b2"><div class="ttname"><a href="classAStarship.html#a68f095cf4d9ba8aa6b10f494128853b2">AStarship::Spawn</a></div><div class="ttdeci">FVector Spawn</div><div class="ttdef"><b>Definition</b> Starship.h:21</div></div>
-<div class="ttc" id="aclassAStarship_html_ac9c4d8aac201bfe7f1b8d7a1db4f8e45"><div class="ttname"><a href="classAStarship.html#ac9c4d8aac201bfe7f1b8d7a1db4f8e45">AStarship::IsMod</a></div><div class="ttdeci">virtual bool IsMod() override</div><div class="ttdef"><b>Definition</b> Starship.cpp:42</div></div>
+<div class="ttc" id="aRegisterContent_8h_html"><div class="ttname"><a href="RegisterContent_8h.html">RegisterContent.h</a></div></div>
+<div class="ttc" id="aRegisterContent_8h_html_aa90aab222b9cb6a7a75c2ed09379eb4e"><div class="ttname"><a href="RegisterContent_8h.html#aa90aab222b9cb6a7a75c2ed09379eb4e">AddActorToWorld</a></div><div class="ttdeci">static AActor * AddActorToWorld(const SpawnParams &amp;params)</div><div class="ttdef"><b>Definition</b> RegisterContent.h:14</div></div>
+<div class="ttc" id="aWorld_8h_html"><div class="ttname"><a href="World_8h.html">World.h</a></div></div>
+<div class="ttc" id="aclassAActor_html_a679c43bacf3600fa2d7a6ab30e34a8a6"><div class="ttname"><a href="classAActor.html#a679c43bacf3600fa2d7a6ab30e34a8a6">AActor::AActor</a></div><div class="ttdeci">AActor()</div><div class="ttdef"><b>Definition</b> Actor.cpp:13</div></div>
+<div class="ttc" id="aclassAStarship_html_a13d936f05c0f19811e1753f026ed3ae4"><div class="ttname"><a href="classAStarship.html#a13d936f05c0f19811e1753f026ed3ae4">AStarship::Tick</a></div><div class="ttdeci">virtual void Tick() override</div><div class="ttdef"><b>Definition</b> Starship.cpp:43</div></div>
+<div class="ttc" id="aclassAStarship_html_a3cfda4a7c78d0fa761a3d011205d229d"><div class="ttname"><a href="classAStarship.html#a3cfda4a7c78d0fa761a3d011205d229d">AStarship::AStarship</a></div><div class="ttdeci">AStarship(const SpawnParams &amp;params)</div><div class="ttdef"><b>Definition</b> Starship.cpp:14</div></div>
+<div class="ttc" id="aclassAStarship_html_a3e9f158cc2a989ad3194f9cdf61336b1"><div class="ttname"><a href="classAStarship.html#a3e9f158cc2a989ad3194f9cdf61336b1">AStarship::SetSpawnParams</a></div><div class="ttdeci">virtual void SetSpawnParams(SpawnParams &amp;params) override</div><div class="ttdef"><b>Definition</b> Starship.cpp:29</div></div>
+<div class="ttc" id="aclassAStarship_html_a9b1183e5f30fed4edfd24b15d0b533c2"><div class="ttname"><a href="classAStarship.html#a9b1183e5f30fed4edfd24b15d0b533c2">AStarship::DrawEditorProperties</a></div><div class="ttdeci">virtual void DrawEditorProperties() override</div><div class="ttdef"><b>Definition</b> Starship.cpp:65</div></div>
+<div class="ttc" id="aclassAStarship_html_ac6df35abe2c0621d5588df20c38295a7"><div class="ttname"><a href="classAStarship.html#ac6df35abe2c0621d5588df20c38295a7">AStarship::SpeedB</a></div><div class="ttdeci">float SpeedB</div><div class="ttdef"><b>Definition</b> Starship.h:33</div></div>
+<div class="ttc" id="aclassAStarship_html_ac9c4d8aac201bfe7f1b8d7a1db4f8e45"><div class="ttname"><a href="classAStarship.html#ac9c4d8aac201bfe7f1b8d7a1db4f8e45">AStarship::IsMod</a></div><div class="ttdeci">virtual bool IsMod() override</div><div class="ttdef"><b>Definition</b> Starship.cpp:63</div></div>
+<div class="ttc" id="aclassAStarship_html_ace9cdfe48687bdc0812b386bdd1fbd73"><div class="ttname"><a href="classAStarship.html#ace9cdfe48687bdc0812b386bdd1fbd73">AStarship::Spawn</a></div><div class="ttdeci">static AStarship * Spawn(FVector pos, IRotator rot, FVector scale, f32 speed, f32 radius)</div><div class="ttdef"><b>Definition</b> Starship.h:21</div></div>
 <div class="ttc" id="aclassAStarship_html_ad5fe6c8021fc0ffb00f56349da83ec72"><div class="ttname"><a href="classAStarship.html#ad5fe6c8021fc0ffb00f56349da83ec72">AStarship::~AStarship</a></div><div class="ttdeci">virtual ~AStarship()=default</div></div>
+<div class="ttc" id="aclassAStarship_html_afa9bcac79f4e5bc9060b6de777c89ff1"><div class="ttname"><a href="classAStarship.html#afa9bcac79f4e5bc9060b6de777c89ff1">AStarship::BeginPlay</a></div><div class="ttdeci">virtual void BeginPlay() override</div><div class="ttdef"><b>Definition</b> Starship.cpp:34</div></div>
 <div class="ttc" id="acommon__structs_8h_html"><div class="ttname"><a href="common__structs_8h.html">common_structs.h</a></div></div>
 <div class="ttc" id="aother__textures_8h_html"><div class="ttname"><a href="other__textures_8h.html">other_textures.h</a></div></div>
-<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:18</div></div>
+<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:30</div></div>
+<div class="ttc" id="astructIRotator_html"><div class="ttname"><a href="structIRotator.html">IRotator</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:141</div></div>
+<div class="ttc" id="astructSpawnParams_html"><div class="ttname"><a href="structSpawnParams.html">SpawnParams</a></div><div class="ttdef"><b>Definition</b> SpawnParams.h:30</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

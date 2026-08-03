@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/courses/Skyscraper.cpp File Reference</title>
+<title>SpaghettiKart: src/engine/tracks/Skyscraper.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -115,27 +115,28 @@ $(function(){initNavTree('Skyscraper_8cpp.html',''); initResizable(true); });
 <code>#include &lt;vector&gt;</code><br />
 <code>#include &lt;memory&gt;</code><br />
 <code>#include &quot;<a class="el" href="Skyscraper_8h_source.html">Skyscraper.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="World_8h_source.html">World.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="World_8h_source.html">engine/World.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="BombKart_8h_source.html">engine/objects/BombKart.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="skyscraper__data_8h_source.html">assets/skyscraper_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="models_2tracks_2skyscraper_2skyscraper__data_8h_source.html">assets/models/tracks/skyscraper/skyscraper_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="other_2tracks_2skyscraper_2skyscraper__data_8h_source.html">assets/other/tracks/skyscraper/skyscraper_data.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="main_8h_source.html">main.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="camera_8h_source.html">camera.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="course__offsets_8h_source.html">course_offsets.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__800029B0_8h_source.html">code_800029B0.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="render__courses_8h_source.html">render_courses.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="render__courses_8h_source.html">racing/render_courses.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__8006E9C0_8h_source.html">code_8006E9C0.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80057C60_8h_source.html">code_80057C60.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="defines_8h_source.html">defines.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="math__util_8h_source.html">math_util.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="external_8h_source.html">external.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="math__util_8h_source.html">racing/math_util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="external_8h_source.html">audio/external.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="code__80005FD0_8h_source.html">code_80005FD0.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="spawn__players_8h_source.html">spawn_players.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="render__objects_8h_source.html">render_objects.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="common__data_8h_source.html">assets/common_data.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="models_2common__data_8h_source.html">assets/models/common_data.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="save_8h_source.html">save.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="replays_8h_source.html">replays.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="actors_8h_source.html">actors.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="collision_8h_source.html">collision.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="actors_8h_source.html">racing/actors.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="collision_8h_source.html">racing/collision.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="memory_8h_source.html">memory.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Skyscraper.cpp:</div>
@@ -145,12 +146,8 @@ Include dependency graph for Skyscraper.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a6858a6b1bde4f2989bef40b224496847" id="r_a6858a6b1bde4f2989bef40b224496847"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6858a6b1bde4f2989bef40b224496847">skyscraper_dls</a> []</td></tr>
-<tr class="separator:a6858a6b1bde4f2989bef40b224496847"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad7284ffc2e41a12ca87537ef21156453" id="r_ad7284ffc2e41a12ca87537ef21156453"><td class="memItemLeft" align="right" valign="top">s16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7284ffc2e41a12ca87537ef21156453">currentScreenSection</a></td></tr>
 <tr class="separator:ad7284ffc2e41a12ca87537ef21156453"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89d5013e027586c8372d56939d11775a" id="r_a89d5013e027586c8372d56939d11775a"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="structcourse__texture.html">course_texture</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89d5013e027586c8372d56939d11775a">skyscraper_textures</a> []</td></tr>
-<tr class="separator:a89d5013e027586c8372d56939d11775a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Variable Documentation</h2>
 <a id="ad7284ffc2e41a12ca87537ef21156453" name="ad7284ffc2e41a12ca87537ef21156453"></a>
@@ -175,74 +172,12 @@ Variables</h2></td></tr>
 
 </div>
 </div>
-<a id="a6858a6b1bde4f2989bef40b224496847" name="a6858a6b1bde4f2989bef40b224496847"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6858a6b1bde4f2989bef40b224496847">&#9670;&#160;</a></span>skyscraper_dls</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const char* skyscraper_dls[]</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel extern">extern</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a89d5013e027586c8372d56939d11775a" name="a89d5013e027586c8372d56939d11775a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89d5013e027586c8372d56939d11775a">&#9670;&#160;</a></span>skyscraper_textures</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="structcourse__texture.html">course_texture</a> skyscraper_textures[]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= {</div>
-<div class="line">    { gTexture6457D8, 0x0160, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture6462C0, 0x01B9, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture6864E8, 0x0807, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture686CF0, 0x08B7, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture6875A8, 0x093F, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture687EE8, 0x0883, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture68876C, 0x0AC2, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture689230, 0x09CE, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture689C00, 0x0884, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture68A484, 0x07D6, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture68AC5C, 0x0A47, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture68B6A4, 0x07C5, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture68BE6C, 0x04A1, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture68C310, 0x030D, 0x1000, 0x0 },</div>
-<div class="line">    { gTexture64B8D8, 0x0177, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture645660, 0x0176, 0x0800, 0x0 },</div>
-<div class="line">    { gTextureNumberYellowBlue1, 0x01AE, 0x0800, 0x0 },</div>
-<div class="line">    { gTextureNumberYellowBlue2, 0x01C6, 0x0800, 0x0 },</div>
-<div class="line">    { gTextureNumberYellowBlue3, 0x01CC, 0x0800, 0x0 },</div>
-<div class="line">    { gTextureNumberYellowBlue4, 0x01E4, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture668608, 0x0120, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture67B75C, 0x0108, 0x0800, 0x0 },</div>
-<div class="line">    { gTexture6835F0, 0x0252, 0x1000, 0x0 },</div>
-<div class="line">    { 0x00000000, 0x0000, 0x0000, 0x0 },</div>
-<div class="line">}</div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="dir_361caa2d8f272974fdb8d014c7b22bcf.html">courses</a></li><li class="navelem"><a class="el" href="Skyscraper_8cpp.html">Skyscraper.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_2052808828190f934b76e979ee65af8a.html">engine</a></li><li class="navelem"><a class="el" href="dir_8955581d22ca769fa1400ba486b7589a.html">tracks</a></li><li class="navelem"><a class="el" href="Skyscraper_8cpp.html">Skyscraper.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.13.2 </li>
   </ul>
 </div>

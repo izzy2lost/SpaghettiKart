@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/audio/synthesis.h File Reference</title>
+<title>SpaghettiKart: src/audio/synthesis.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -200,6 +200,8 @@ Functions</h2></td></tr>
 <tr class="separator:ad17eae18081d8d3600d6e23d044e5290"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6acf42e1089301d7b1959b332d22233" id="r_ab6acf42e1089301d7b1959b332d22233"><td class="memItemLeft" align="right" valign="top">Acmd *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab6acf42e1089301d7b1959b332d22233">note_apply_headset_pan_effects</a> (Acmd *acmd, struct <a class="el" href="structNoteSubEu.html">NoteSubEu</a> *noteSubEu, struct <a class="el" href="structNoteSynthesisState.html">NoteSynthesisState</a> *note, s32 bufLen, s32 flags, s32 leftRight)</td></tr>
 <tr class="separator:ab6acf42e1089301d7b1959b332d22233"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadef44fbc716080f7150c47bd4640469" id="r_aadef44fbc716080f7150c47bd4640469"><td class="memItemLeft" align="right" valign="top">Acmd *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadef44fbc716080f7150c47bd4640469">note_apply_surround_effect</a> (Acmd *cmd, struct <a class="el" href="structNote.html">Note</a> *note, s32 bufLen)</td></tr>
+<tr class="separator:aadef44fbc716080f7150c47bd4640469"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -617,6 +619,34 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+</div>
+</div>
+<a id="aadef44fbc716080f7150c47bd4640469" name="aadef44fbc716080f7150c47bd4640469"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadef44fbc716080f7150c47bd4640469">&#9670;&#160;</a></span>note_apply_surround_effect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Acmd * note_apply_surround_effect </td>
+          <td>(</td>
+          <td class="paramtype">Acmd *</td>          <td class="paramname"><span class="paramname"><em>cmd</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structNote.html">Note</a> *</td>          <td class="paramname"><span class="paramname"><em>note</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>bufLen</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Apply surround sound effect using matrix encoding based on depth position. Uses surroundEffectIndex (0x00-0x7F) calculated from Z position: 0x00-0x3F: <a class="el" href="structSound.html">Sound</a> in front (0 = far front, 0x3F = at camera) - less rear effect 0x40-0x7F: <a class="el" href="structSound.html">Sound</a> behind (0x40 = at camera, 0x7F = far behind) - more rear effect</p>
+<p>This creates a rear channel effect by phase-inverting and mixing based on pan and depth. </p>
 
 </div>
 </div>

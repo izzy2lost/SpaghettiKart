@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/objects/Bat.h Source File</title>
+<title>SpaghettiKart: src/engine/objects/Bat.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -114,84 +114,103 @@ $(function(){initNavTree('Bat_8h_source.html',''); initResizable(true); });
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="Object_8h.html">Object.h</a>&quot;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="World_8h.html">World.h</a>&quot;</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="CoreMath_8h.html">CoreMath.h</a>&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="macros_8h.html">macros.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="main_8h.html">main.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="vehicles_8h.html">vehicles.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="waypoints_8h.html">waypoints.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="common__structs_8h.html">common_structs.h</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="objects_8h.html">objects.h</a>&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="camera_8h.html">camera.h</a>&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;some_data.h&quot;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
-<div class="foldopen" id="foldopen00029" data-start="{" data-end="};">
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="classOBat.html">   29</a></span><span class="keyword">class </span><a class="code hl_function" href="classOBat.html#a3c46b254c54f92c30630ebc30957b93a">OBat</a> : <span class="keyword">public</span> <a class="code hl_function" href="classOObject.html#a629d0dcbb210e289cdf541a91321c86b">OObject</a> {</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classOBat.html#a3c46b254c54f92c30630ebc30957b93a">OBat</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structFVector.html">FVector</a>&amp; pos, <span class="keyword">const</span> <a class="code hl_struct" href="structIRotator.html">IRotator</a>&amp; rot);</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;<a class="code" href="RegisterContent_8h.html">engine/registry/RegisterContent.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="World_8h.html">engine/World.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="CoreMath_8h.html">engine/CoreMath.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="macros_8h.html">macros.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="main_8h.html">main.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="vehicles_8h.html">vehicles.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="waypoints_8h.html">waypoints.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="common__structs_8h.html">common_structs.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="objects_8h.html">objects.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="camera_8h.html">camera.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="include_2assets_2textures_2some__data_8h.html">assets/textures/some_data.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span></div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classOBat.html">   30</a></span><span class="keyword">class </span><a class="code hl_function" href="classOBat.html#aee0246fa1a7cd2b1fc23c18cdbf75256">OBat</a> : <span class="keyword">public</span> <a class="code hl_function" href="classOObject.html#a629d0dcbb210e289cdf541a91321c86b">OObject</a> {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classOBat.html#a22ed830e1b0e27063eefafa70f488b74">   33</a></span>    <a class="code hl_function" href="classOBat.html#a22ed830e1b0e27063eefafa70f488b74">~OBat</a>() {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_variable" href="classOBat.html#a3aae4f60e1f08d5eaceea5ed0b3e6f5d">_count</a>--;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// This is simply a helper function to keep Spawning code clean</span></div>
+<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="classOBat.html#a0b4df88157635514995d4d44f7ffcdc6">   34</a></span>    <span class="keyword">static</span> <span class="keyword">inline</span> <a class="code hl_function" href="classOBat.html#aee0246fa1a7cd2b1fc23c18cdbf75256">OBat</a>* <a class="code hl_function" href="classOBat.html#a0b4df88157635514995d4d44f7ffcdc6">Spawn</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structFVector.html">FVector</a>&amp; pos, <span class="keyword">const</span> <a class="code hl_struct" href="structIRotator.html">IRotator</a>&amp; rot) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a> params = {</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>            .Name = <span class="stringliteral">&quot;mk:bat&quot;</span>,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            .Location = pos,</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            .Rotation = rot,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        };</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordflow">return</span> <span class="keyword">dynamic_cast&lt;</span><a class="code hl_function" href="classOBat.html#aee0246fa1a7cd2b1fc23c18cdbf75256">OBat</a>*<span class="keyword">&gt;</span>(<a class="code hl_function" href="RegisterContent_8h.html#aa0abd506fe572b3e6491f613a4017641">AddObjectToWorld&lt;OBat&gt;</a>(params));</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
 </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classOBat.html#a712dcf05c569e6aa9e6691bdb1608604">   37</a></span>    <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="classOBat.html#a712dcf05c569e6aa9e6691bdb1608604">GetCount</a>() {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classOBat.html#a3aae4f60e1f08d5eaceea5ed0b3e6f5d">_count</a>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
-</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#ae20ad02992d817ca3c975e94cc6f1b26">Tick</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#aeda5b9b2ee8b33334a5b2b92654e087b">Draw</a>(s32 cameraId) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#a5941f0f9499e01a4d12855c8cd765f00">func_80046F60</a>(u8* tlut, u8* arg1, s32 arg2, s32 arg3, s32 arg4);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keyword">explicit</span> <a class="code hl_function" href="classOBat.html#aee0246fa1a7cd2b1fc23c18cdbf75256">OBat</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structSpawnParams.html">SpawnParams</a>&amp; params);</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#a027a43a7bf0ae99bf8dbba1d1011cc87">func_8007D8AC</a>(s32 arg0);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    s32 <a class="code hl_function" href="classOBat.html#a5349e95202aa8a8eb78ef763478e6e55">func_8007D804</a>(s32 objectIndex);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#a739f8826fb4d37ad6ec2929a307ffe71">func_8007D8D4</a>(s32 objectIndex, s32 arg1);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#abfcea8402750261c9abb041cb1784336">func_8007DA74</a>(s32 objectIndex);</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#abe6fd1771280db492f7b91bc27c5a89d">func_8007DAF8</a>(s32 objectIndex, s32 arg1);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#a9f8b6fee3e134b9b50a5fc93e2b764de">func_80089A04</a>(s32 objectIndex, f32 arg1, f32 arg2);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#a2b0ff0df439bb57547218a79f72ac77d">func_8007D794</a>(s32 objectIndex);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#a0328a08a971d74212deae9865d5d5702">func_8007DA4C</a>(s32 objectIndex);</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classOBat.html#a33ec652321ad538a8c4950cf4a943191">   55</a></span>    <a class="code hl_struct" href="structFVector.html">FVector</a> <a class="code hl_variable" href="classOBat.html#a33ec652321ad538a8c4950cf4a943191">_pos</a>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classOBat.html#a3aae4f60e1f08d5eaceea5ed0b3e6f5d">   56</a></span>    <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="classOBat.html#a3aae4f60e1f08d5eaceea5ed0b3e6f5d">_count</a>;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="classOBat.html#a0ecdcf34fbbeb47c8f572dda8bceafe5">   57</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="classOBat.html#a0ecdcf34fbbeb47c8f572dda8bceafe5">_idx</a>;</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>};</div>
+<div class="foldopen" id="foldopen00045" data-start="{" data-end="}">
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classOBat.html#a22ed830e1b0e27063eefafa70f488b74">   45</a></span>    <a class="code hl_function" href="classOBat.html#a22ed830e1b0e27063eefafa70f488b74">~OBat</a>() {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <a class="code hl_variable" href="classOBat.html#a3aae4f60e1f08d5eaceea5ed0b3e6f5d">_count</a>--;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="foldopen" id="foldopen00049" data-start="{" data-end="}">
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classOBat.html#a712dcf05c569e6aa9e6691bdb1608604">   49</a></span>    <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_function" href="classOBat.html#a712dcf05c569e6aa9e6691bdb1608604">GetCount</a>() {</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="classOBat.html#a3aae4f60e1f08d5eaceea5ed0b3e6f5d">_count</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#ae20ad02992d817ca3c975e94cc6f1b26">Tick</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#aeda5b9b2ee8b33334a5b2b92654e087b">Draw</a>(s32 cameraId) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#a5941f0f9499e01a4d12855c8cd765f00">func_80046F60</a>(u8* tlut, u8* arg1, s32 arg2, s32 arg3, s32 arg4);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#a027a43a7bf0ae99bf8dbba1d1011cc87">func_8007D8AC</a>(s32 arg0);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    s32 <a class="code hl_function" href="classOBat.html#a5349e95202aa8a8eb78ef763478e6e55">func_8007D804</a>(s32 objectIndex);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#a739f8826fb4d37ad6ec2929a307ffe71">func_8007D8D4</a>(s32 objectIndex, s32 arg1);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#abfcea8402750261c9abb041cb1784336">func_8007DA74</a>(s32 objectIndex);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#abe6fd1771280db492f7b91bc27c5a89d">func_8007DAF8</a>(s32 objectIndex, s32 arg1);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#a9f8b6fee3e134b9b50a5fc93e2b764de">func_80089A04</a>(s32 objectIndex, f32 arg1, f32 arg2);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#a2b0ff0df439bb57547218a79f72ac77d">func_8007D794</a>(s32 objectIndex);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classOBat.html#a0328a08a971d74212deae9865d5d5702">func_8007DA4C</a>(s32 objectIndex);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classOBat.html#a33ec652321ad538a8c4950cf4a943191">   67</a></span>    <a class="code hl_struct" href="structFVector.html">FVector</a> <a class="code hl_variable" href="classOBat.html#a33ec652321ad538a8c4950cf4a943191">_pos</a>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="classOBat.html#a3aae4f60e1f08d5eaceea5ed0b3e6f5d">   68</a></span>    <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="classOBat.html#a3aae4f60e1f08d5eaceea5ed0b3e6f5d">_count</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="classOBat.html#a0ecdcf34fbbeb47c8f572dda8bceafe5">   69</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="classOBat.html#a0ecdcf34fbbeb47c8f572dda8bceafe5">_idx</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>};</div>
 </div>
 <div class="ttc" id="aCoreMath_8h_html"><div class="ttname"><a href="CoreMath_8h.html">CoreMath.h</a></div></div>
 <div class="ttc" id="aObject_8h_html"><div class="ttname"><a href="Object_8h.html">Object.h</a></div></div>
+<div class="ttc" id="aRegisterContent_8h_html"><div class="ttname"><a href="RegisterContent_8h.html">RegisterContent.h</a></div></div>
+<div class="ttc" id="aRegisterContent_8h_html_aa0abd506fe572b3e6491f613a4017641"><div class="ttname"><a href="RegisterContent_8h.html#aa0abd506fe572b3e6491f613a4017641">AddObjectToWorld</a></div><div class="ttdeci">static OObject * AddObjectToWorld(const SpawnParams &amp;params)</div><div class="ttdef"><b>Definition</b> RegisterContent.h:10</div></div>
 <div class="ttc" id="aWorld_8h_html"><div class="ttname"><a href="World_8h.html">World.h</a></div></div>
 <div class="ttc" id="acamera_8h_html"><div class="ttname"><a href="camera_8h.html">camera.h</a></div></div>
-<div class="ttc" id="aclassOBat_html_a027a43a7bf0ae99bf8dbba1d1011cc87"><div class="ttname"><a href="classOBat.html#a027a43a7bf0ae99bf8dbba1d1011cc87">OBat::func_8007D8AC</a></div><div class="ttdeci">void func_8007D8AC(s32 arg0)</div><div class="ttdef"><b>Definition</b> Bat.cpp:167</div></div>
-<div class="ttc" id="aclassOBat_html_a0328a08a971d74212deae9865d5d5702"><div class="ttname"><a href="classOBat.html#a0328a08a971d74212deae9865d5d5702">OBat::func_8007DA4C</a></div><div class="ttdeci">void func_8007DA4C(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> Bat.cpp:230</div></div>
-<div class="ttc" id="aclassOBat_html_a0ecdcf34fbbeb47c8f572dda8bceafe5"><div class="ttname"><a href="classOBat.html#a0ecdcf34fbbeb47c8f572dda8bceafe5">OBat::_idx</a></div><div class="ttdeci">size_t _idx</div><div class="ttdef"><b>Definition</b> Bat.h:57</div></div>
-<div class="ttc" id="aclassOBat_html_a22ed830e1b0e27063eefafa70f488b74"><div class="ttname"><a href="classOBat.html#a22ed830e1b0e27063eefafa70f488b74">OBat::~OBat</a></div><div class="ttdeci">~OBat()</div><div class="ttdef"><b>Definition</b> Bat.h:33</div></div>
-<div class="ttc" id="aclassOBat_html_a2b0ff0df439bb57547218a79f72ac77d"><div class="ttname"><a href="classOBat.html#a2b0ff0df439bb57547218a79f72ac77d">OBat::func_8007D794</a></div><div class="ttdeci">void func_8007D794(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> Bat.cpp:264</div></div>
-<div class="ttc" id="aclassOBat_html_a33ec652321ad538a8c4950cf4a943191"><div class="ttname"><a href="classOBat.html#a33ec652321ad538a8c4950cf4a943191">OBat::_pos</a></div><div class="ttdeci">FVector _pos</div><div class="ttdef"><b>Definition</b> Bat.h:55</div></div>
-<div class="ttc" id="aclassOBat_html_a3aae4f60e1f08d5eaceea5ed0b3e6f5d"><div class="ttname"><a href="classOBat.html#a3aae4f60e1f08d5eaceea5ed0b3e6f5d">OBat::_count</a></div><div class="ttdeci">static size_t _count</div><div class="ttdef"><b>Definition</b> Bat.h:56</div></div>
-<div class="ttc" id="aclassOBat_html_a3c46b254c54f92c30630ebc30957b93a"><div class="ttname"><a href="classOBat.html#a3c46b254c54f92c30630ebc30957b93a">OBat::OBat</a></div><div class="ttdeci">OBat(const FVector &amp;pos, const IRotator &amp;rot)</div><div class="ttdef"><b>Definition</b> Bat.cpp:22</div></div>
-<div class="ttc" id="aclassOBat_html_a5349e95202aa8a8eb78ef763478e6e55"><div class="ttname"><a href="classOBat.html#a5349e95202aa8a8eb78ef763478e6e55">OBat::func_8007D804</a></div><div class="ttdeci">s32 func_8007D804(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> Bat.cpp:172</div></div>
-<div class="ttc" id="aclassOBat_html_a5941f0f9499e01a4d12855c8cd765f00"><div class="ttname"><a href="classOBat.html#a5941f0f9499e01a4d12855c8cd765f00">OBat::func_80046F60</a></div><div class="ttdeci">void func_80046F60(u8 *tlut, u8 *arg1, s32 arg2, s32 arg3, s32 arg4)</div><div class="ttdef"><b>Definition</b> Bat.cpp:161</div></div>
-<div class="ttc" id="aclassOBat_html_a712dcf05c569e6aa9e6691bdb1608604"><div class="ttname"><a href="classOBat.html#a712dcf05c569e6aa9e6691bdb1608604">OBat::GetCount</a></div><div class="ttdeci">static size_t GetCount()</div><div class="ttdef"><b>Definition</b> Bat.h:37</div></div>
-<div class="ttc" id="aclassOBat_html_a739f8826fb4d37ad6ec2929a307ffe71"><div class="ttname"><a href="classOBat.html#a739f8826fb4d37ad6ec2929a307ffe71">OBat::func_8007D8D4</a></div><div class="ttdeci">void func_8007D8D4(s32 objectIndex, s32 arg1)</div><div class="ttdef"><b>Definition</b> Bat.cpp:185</div></div>
-<div class="ttc" id="aclassOBat_html_a9f8b6fee3e134b9b50a5fc93e2b764de"><div class="ttname"><a href="classOBat.html#a9f8b6fee3e134b9b50a5fc93e2b764de">OBat::func_80089A04</a></div><div class="ttdeci">void func_80089A04(s32 objectIndex, f32 arg1, f32 arg2)</div><div class="ttdef"><b>Definition</b> Bat.cpp:246</div></div>
-<div class="ttc" id="aclassOBat_html_abe6fd1771280db492f7b91bc27c5a89d"><div class="ttname"><a href="classOBat.html#abe6fd1771280db492f7b91bc27c5a89d">OBat::func_8007DAF8</a></div><div class="ttdeci">void func_8007DAF8(s32 objectIndex, s32 arg1)</div><div class="ttdef"><b>Definition</b> Bat.cpp:235</div></div>
-<div class="ttc" id="aclassOBat_html_abfcea8402750261c9abb041cb1784336"><div class="ttname"><a href="classOBat.html#abfcea8402750261c9abb041cb1784336">OBat::func_8007DA74</a></div><div class="ttdeci">void func_8007DA74(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> Bat.cpp:217</div></div>
-<div class="ttc" id="aclassOBat_html_ae20ad02992d817ca3c975e94cc6f1b26"><div class="ttname"><a href="classOBat.html#ae20ad02992d817ca3c975e94cc6f1b26">OBat::Tick</a></div><div class="ttdeci">virtual void Tick() override</div><div class="ttdef"><b>Definition</b> Bat.cpp:35</div></div>
-<div class="ttc" id="aclassOBat_html_aeda5b9b2ee8b33334a5b2b92654e087b"><div class="ttname"><a href="classOBat.html#aeda5b9b2ee8b33334a5b2b92654e087b">OBat::Draw</a></div><div class="ttdeci">virtual void Draw(s32 cameraId) override</div><div class="ttdef"><b>Definition</b> Bat.cpp:104</div></div>
+<div class="ttc" id="aclassOBat_html_a027a43a7bf0ae99bf8dbba1d1011cc87"><div class="ttname"><a href="classOBat.html#a027a43a7bf0ae99bf8dbba1d1011cc87">OBat::func_8007D8AC</a></div><div class="ttdeci">void func_8007D8AC(s32 arg0)</div><div class="ttdef"><b>Definition</b> Bat.cpp:173</div></div>
+<div class="ttc" id="aclassOBat_html_a0328a08a971d74212deae9865d5d5702"><div class="ttname"><a href="classOBat.html#a0328a08a971d74212deae9865d5d5702">OBat::func_8007DA4C</a></div><div class="ttdeci">void func_8007DA4C(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> Bat.cpp:236</div></div>
+<div class="ttc" id="aclassOBat_html_a0b4df88157635514995d4d44f7ffcdc6"><div class="ttname"><a href="classOBat.html#a0b4df88157635514995d4d44f7ffcdc6">OBat::Spawn</a></div><div class="ttdeci">static OBat * Spawn(const FVector &amp;pos, const IRotator &amp;rot)</div><div class="ttdef"><b>Definition</b> Bat.h:34</div></div>
+<div class="ttc" id="aclassOBat_html_a0ecdcf34fbbeb47c8f572dda8bceafe5"><div class="ttname"><a href="classOBat.html#a0ecdcf34fbbeb47c8f572dda8bceafe5">OBat::_idx</a></div><div class="ttdeci">size_t _idx</div><div class="ttdef"><b>Definition</b> Bat.h:69</div></div>
+<div class="ttc" id="aclassOBat_html_a22ed830e1b0e27063eefafa70f488b74"><div class="ttname"><a href="classOBat.html#a22ed830e1b0e27063eefafa70f488b74">OBat::~OBat</a></div><div class="ttdeci">~OBat()</div><div class="ttdef"><b>Definition</b> Bat.h:45</div></div>
+<div class="ttc" id="aclassOBat_html_a2b0ff0df439bb57547218a79f72ac77d"><div class="ttname"><a href="classOBat.html#a2b0ff0df439bb57547218a79f72ac77d">OBat::func_8007D794</a></div><div class="ttdeci">void func_8007D794(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> Bat.cpp:270</div></div>
+<div class="ttc" id="aclassOBat_html_a33ec652321ad538a8c4950cf4a943191"><div class="ttname"><a href="classOBat.html#a33ec652321ad538a8c4950cf4a943191">OBat::_pos</a></div><div class="ttdeci">FVector _pos</div><div class="ttdef"><b>Definition</b> Bat.h:67</div></div>
+<div class="ttc" id="aclassOBat_html_a3aae4f60e1f08d5eaceea5ed0b3e6f5d"><div class="ttname"><a href="classOBat.html#a3aae4f60e1f08d5eaceea5ed0b3e6f5d">OBat::_count</a></div><div class="ttdeci">static size_t _count</div><div class="ttdef"><b>Definition</b> Bat.h:68</div></div>
+<div class="ttc" id="aclassOBat_html_a5349e95202aa8a8eb78ef763478e6e55"><div class="ttname"><a href="classOBat.html#a5349e95202aa8a8eb78ef763478e6e55">OBat::func_8007D804</a></div><div class="ttdeci">s32 func_8007D804(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> Bat.cpp:178</div></div>
+<div class="ttc" id="aclassOBat_html_a5941f0f9499e01a4d12855c8cd765f00"><div class="ttname"><a href="classOBat.html#a5941f0f9499e01a4d12855c8cd765f00">OBat::func_80046F60</a></div><div class="ttdeci">void func_80046F60(u8 *tlut, u8 *arg1, s32 arg2, s32 arg3, s32 arg4)</div><div class="ttdef"><b>Definition</b> Bat.cpp:167</div></div>
+<div class="ttc" id="aclassOBat_html_a712dcf05c569e6aa9e6691bdb1608604"><div class="ttname"><a href="classOBat.html#a712dcf05c569e6aa9e6691bdb1608604">OBat::GetCount</a></div><div class="ttdeci">static size_t GetCount()</div><div class="ttdef"><b>Definition</b> Bat.h:49</div></div>
+<div class="ttc" id="aclassOBat_html_a739f8826fb4d37ad6ec2929a307ffe71"><div class="ttname"><a href="classOBat.html#a739f8826fb4d37ad6ec2929a307ffe71">OBat::func_8007D8D4</a></div><div class="ttdeci">void func_8007D8D4(s32 objectIndex, s32 arg1)</div><div class="ttdef"><b>Definition</b> Bat.cpp:191</div></div>
+<div class="ttc" id="aclassOBat_html_a9f8b6fee3e134b9b50a5fc93e2b764de"><div class="ttname"><a href="classOBat.html#a9f8b6fee3e134b9b50a5fc93e2b764de">OBat::func_80089A04</a></div><div class="ttdeci">void func_80089A04(s32 objectIndex, f32 arg1, f32 arg2)</div><div class="ttdef"><b>Definition</b> Bat.cpp:252</div></div>
+<div class="ttc" id="aclassOBat_html_abe6fd1771280db492f7b91bc27c5a89d"><div class="ttname"><a href="classOBat.html#abe6fd1771280db492f7b91bc27c5a89d">OBat::func_8007DAF8</a></div><div class="ttdeci">void func_8007DAF8(s32 objectIndex, s32 arg1)</div><div class="ttdef"><b>Definition</b> Bat.cpp:241</div></div>
+<div class="ttc" id="aclassOBat_html_abfcea8402750261c9abb041cb1784336"><div class="ttname"><a href="classOBat.html#abfcea8402750261c9abb041cb1784336">OBat::func_8007DA74</a></div><div class="ttdeci">void func_8007DA74(s32 objectIndex)</div><div class="ttdef"><b>Definition</b> Bat.cpp:223</div></div>
+<div class="ttc" id="aclassOBat_html_ae20ad02992d817ca3c975e94cc6f1b26"><div class="ttname"><a href="classOBat.html#ae20ad02992d817ca3c975e94cc6f1b26">OBat::Tick</a></div><div class="ttdeci">virtual void Tick() override</div><div class="ttdef"><b>Definition</b> Bat.cpp:41</div></div>
+<div class="ttc" id="aclassOBat_html_aeda5b9b2ee8b33334a5b2b92654e087b"><div class="ttname"><a href="classOBat.html#aeda5b9b2ee8b33334a5b2b92654e087b">OBat::Draw</a></div><div class="ttdeci">virtual void Draw(s32 cameraId) override</div><div class="ttdef"><b>Definition</b> Bat.cpp:110</div></div>
+<div class="ttc" id="aclassOBat_html_aee0246fa1a7cd2b1fc23c18cdbf75256"><div class="ttname"><a href="classOBat.html#aee0246fa1a7cd2b1fc23c18cdbf75256">OBat::OBat</a></div><div class="ttdeci">OBat(const SpawnParams &amp;params)</div><div class="ttdef"><b>Definition</b> Bat.cpp:23</div></div>
 <div class="ttc" id="aclassOObject_html_a629d0dcbb210e289cdf541a91321c86b"><div class="ttname"><a href="classOObject.html#a629d0dcbb210e289cdf541a91321c86b">OObject::OObject</a></div><div class="ttdeci">OObject()</div><div class="ttdef"><b>Definition</b> Object.cpp:13</div></div>
 <div class="ttc" id="acommon__structs_8h_html"><div class="ttname"><a href="common__structs_8h.html">common_structs.h</a></div></div>
+<div class="ttc" id="ainclude_2assets_2textures_2some__data_8h_html"><div class="ttname"><a href="include_2assets_2textures_2some__data_8h.html">some_data.h</a></div></div>
 <div class="ttc" id="amacros_8h_html"><div class="ttname"><a href="macros_8h.html">macros.h</a></div></div>
 <div class="ttc" id="amain_8h_html"><div class="ttname"><a href="main_8h.html">main.h</a></div></div>
 <div class="ttc" id="aobjects_8h_html"><div class="ttname"><a href="objects_8h.html">objects.h</a></div></div>
-<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:18</div></div>
-<div class="ttc" id="astructIRotator_html"><div class="ttname"><a href="structIRotator.html">IRotator</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:123</div></div>
+<div class="ttc" id="astructFVector_html"><div class="ttname"><a href="structFVector.html">FVector</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:30</div></div>
+<div class="ttc" id="astructIRotator_html"><div class="ttname"><a href="structIRotator.html">IRotator</a></div><div class="ttdef"><b>Definition</b> CoreMath.h:141</div></div>
+<div class="ttc" id="astructSpawnParams_html"><div class="ttname"><a href="structSpawnParams.html">SpawnParams</a></div><div class="ttdef"><b>Definition</b> SpawnParams.h:30</div></div>
 <div class="ttc" id="avehicles_8h_html"><div class="ttname"><a href="vehicles_8h.html">vehicles.h</a></div></div>
 <div class="ttc" id="awaypoints_8h_html"><div class="ttname"><a href="waypoints_8h.html">waypoints.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

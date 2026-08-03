@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['ldiv_5ft_0',['ldiv_t',['../stdlib_8h.html#a10ef0aefc570d851e0e15e98758cde3e',1,'stdlib.h']]],
-  ['lldiv_5ft_1',['lldiv_t',['../stdlib_8h.html#a51d8facb71b482170b8bf45b9961df48',1,'stdlib.h']]]
+  ['kart_5ftexture_5ft_0',['kart_texture_t',['../kart__dma_8c.html#a14b98eb273b9fa59279f5c2dd34d528e',1,'kart_texture_t:&#160;kart_dma.c'],['../render__player_8c.html#a14b98eb273b9fa59279f5c2dd34d528e',1,'kart_texture_t:&#160;render_player.c']]]
 ];

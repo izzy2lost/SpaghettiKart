@@ -7,6 +7,7 @@ var synthesis_8c =
     [ "func_800B6FB4", "synthesis_8c.html#a831c7a9542071eed3e68885bd89e505b", null ],
     [ "load_wave_samples", "synthesis_8c.html#aed4d56af55356360afaebcb4f194407c", null ],
     [ "note_apply_headset_pan_effects", "synthesis_8c.html#ab6acf42e1089301d7b1959b332d22233", null ],
+    [ "note_apply_surround_effect", "synthesis_8c.html#aadef44fbc716080f7150c47bd4640469", null ],
     [ "prepare_reverb_ring_buffer", "synthesis_8c.html#a9964410947181858fecd99e63c47d6a8", null ],
     [ "process_envelope", "synthesis_8c.html#aa52f464beeceef6ff37fea7dc6b71267", null ],
     [ "synthesis_do_one_audio_update", "synthesis_8c.html#aec35bddc85303be6c4d1c22e44a77b06", null ],

@@ -47,7 +47,7 @@
   </g>
 </defs>
 <script type="application/ecmascript">
-var viewWidth = 594;
+var viewWidth = 619;
 var viewHeight = 52;
 var sectionId = 'dynsection-25';
 </script>
@@ -59,8 +59,8 @@ var sectionId = 'dynsection-25';
 <g id="Node000001" class="node">
 <title>Node1</title>
 <g id="a_Node000001"><a xlink:title=" ">
-<polygon fill="#999999" stroke="#666666" points="586,-38 459,-38 459,-19 586,-19 586,-38"/>
-<text text-anchor="middle" x="522.5" y="-26" font-family="Helvetica,sans-Serif" font-size="10.00">TransformVecByMatrix</text>
+<polygon fill="#999999" stroke="#666666" points="611,-38 484,-38 484,-19 611,-19 611,-38"/>
+<text text-anchor="middle" x="547.5" y="-26" font-family="Helvetica,sans-Serif" font-size="10.00">TransformVecByMatrix</text>
 </a>
 </g>
 </g>
@@ -68,8 +68,8 @@ var sectionId = 'dynsection-25';
 <g id="Node000002" class="node">
 <title>Node2</title>
 <g id="a_Node000002"><a xlink:href="EditorMath_8cpp.html#a6c07635c069e546e94c1d547af500c8e" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="286,-38 148,-38 148,-19 286,-19 286,-38"/>
-<text text-anchor="middle" x="217" y="-26" font-family="Helvetica,sans-Serif" font-size="10.00">QueryHandleIntersection</text>
+<polygon fill="white" stroke="#666666" points="311,-38 173,-38 173,-19 311,-19 311,-38"/>
+<text text-anchor="middle" x="242" y="-26" font-family="Helvetica,sans-Serif" font-size="10.00">QueryHandleIntersection</text>
 </a>
 </g>
 </g>
@@ -77,8 +77,8 @@ var sectionId = 'dynsection-25';
 <g id="edge1_Node000001_Node000002" class="edge">
 <title>Node1&#45;&gt;Node2</title>
 <g id="a_edge1_Node000001_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M448.7,-28.5C399.36,-28.5 334.59,-28.5 286.25,-28.5"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="448.98,-32 458.98,-28.5 448.98,-25 448.98,-32"/>
+<path fill="none" stroke="#63b8ff" d="M473.7,-28.5C424.36,-28.5 359.59,-28.5 311.25,-28.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="473.98,-32 483.98,-28.5 473.98,-25 473.98,-32"/>
 </a>
 </g>
 </g>
@@ -86,8 +86,8 @@ var sectionId = 'dynsection-25';
 <g id="Node000004" class="node">
 <title>Node4</title>
 <g id="a_Node000004"><a xlink:href="EditorMath_8cpp.html#a9c8b5418edb07797a10ec2e8546fba69" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="423,-19 322,-19 322,0 423,0 423,-19"/>
-<text text-anchor="middle" x="372.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">RayToLocalSpace</text>
+<polygon fill="white" stroke="#666666" points="448,-19 347,-19 347,0 448,0 448,-19"/>
+<text text-anchor="middle" x="397.5" y="-7" font-family="Helvetica,sans-Serif" font-size="10.00">RayToLocalSpace</text>
 </a>
 </g>
 </g>
@@ -95,18 +95,18 @@ var sectionId = 'dynsection-25';
 <g id="edge3_Node000001_Node000004" class="edge">
 <title>Node1&#45;&gt;Node4</title>
 <g id="a_edge3_Node000001_Node000004"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M448.7,-19.15C440.12,-18.05 431.51,-16.95 423.35,-15.9"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="448.37,-22.64 458.73,-20.44 449.26,-15.7 448.37,-22.64"/>
+<path fill="none" stroke="#63b8ff" d="M473.7,-19.15C465.12,-18.05 456.51,-16.95 448.35,-15.9"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="473.37,-22.64 483.73,-20.44 474.26,-15.7 473.37,-22.64"/>
 </a>
 </g>
 </g>
 <!-- Node3 -->
 <g id="Node000003" class="node">
 <title>Node3</title>
-<g id="a_Node000003"><a xlink:href="classEditor_1_1ObjectPicker.html#ae8f9eba788757b67dae37cf8bd0e0eb4" target="_top" xlink:title=" ">
-<polygon fill="white" stroke="#666666" points="112,-43.5 0,-43.5 0,-13.5 112,-13.5 112,-43.5"/>
-<text text-anchor="start" x="8" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00">Editor::ObjectPicker</text>
-<text text-anchor="middle" x="56" y="-20.5" font-family="Helvetica,sans-Serif" font-size="10.00">::DragHandle</text>
+<g id="a_Node000003"><a xlink:href="classTrackEditor_1_1ObjectPicker.html#a2362d42ab8c2c9ece252355670d1994e" target="_top" xlink:title=" ">
+<polygon fill="white" stroke="#666666" points="137,-43.5 0,-43.5 0,-13.5 137,-13.5 137,-43.5"/>
+<text text-anchor="start" x="8" y="-31.5" font-family="Helvetica,sans-Serif" font-size="10.00">TrackEditor::ObjectPicker</text>
+<text text-anchor="middle" x="68.5" y="-20.5" font-family="Helvetica,sans-Serif" font-size="10.00">::DragHandle</text>
 </a>
 </g>
 </g>
@@ -114,8 +114,8 @@ var sectionId = 'dynsection-25';
 <g id="edge2_Node000002_Node000003" class="edge">
 <title>Node2&#45;&gt;Node3</title>
 <g id="a_edge2_Node000002_Node000003"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M137.37,-28.5C128.92,-28.5 120.45,-28.5 112.36,-28.5"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="137.65,-32 147.65,-28.5 137.65,-25 137.65,-32"/>
+<path fill="none" stroke="#63b8ff" d="M162.51,-28.5C154.08,-28.5 145.55,-28.5 137.26,-28.5"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="162.73,-32 172.73,-28.5 162.73,-25 162.73,-32"/>
 </a>
 </g>
 </g>
@@ -123,8 +123,8 @@ var sectionId = 'dynsection-25';
 <g id="edge4_Node000004_Node000002" class="edge">
 <title>Node4&#45;&gt;Node2</title>
 <g id="a_edge4_Node000004_Node000002"><a xlink:title=" ">
-<path fill="none" stroke="#63b8ff" d="M311.6,-16.91C303.2,-17.95 294.53,-19.03 286,-20.08"/>
-<polygon fill="#63b8ff" stroke="#63b8ff" points="312.17,-20.37 321.66,-15.67 311.31,-13.42 312.17,-20.37"/>
+<path fill="none" stroke="#63b8ff" d="M336.6,-16.91C328.2,-17.95 319.53,-19.03 311,-20.08"/>
+<polygon fill="#63b8ff" stroke="#63b8ff" points="337.17,-20.37 346.66,-15.67 336.31,-13.42 337.17,-20.37"/>
 </a>
 </g>
 </g>

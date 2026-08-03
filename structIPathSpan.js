@@ -1,5 +1,5 @@
 var structIPathSpan =
 [
-    [ "End", "structIPathSpan.html#a7b14959bfc6536754b1e5a96a5513194", null ],
-    [ "Start", "structIPathSpan.html#a377540c3b6ef653db2271d1216f71e06", null ]
+    [ "End", "structIPathSpan.html#a99bac7be863b2d178914028ec0dfc459", null ],
+    [ "Start", "structIPathSpan.html#a52cf41c9f124a74e231805a663eb79b0", null ]
 ];

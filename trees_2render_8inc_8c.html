@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/actors/trees/render.inc.c File Reference</title>
+<title>SpaghettiKart: src/actors/trees/render.inc.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -110,13 +110,14 @@ $(function(){initNavTree('trees_2render_8inc_8c.html',''); initResizable(true); 
   <div class="headertitle"><div class="title">render.inc.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="actors_8h_source.html">actors.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="actors_8h_source.html">racing/actors.h</a>&gt;</code><br />
 <code>#include &lt;libultra/gbi.h&gt;</code><br />
 <code>#include &lt;<a class="el" href="main_8h_source.html">main.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="common__data_8h_source.html">assets/common_data.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="models_2common__data_8h_source.html">assets/models/common_data.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="textures_2common__data_8h_source.html">assets/textures/common_data.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="all__course__data_8h_source.html">courses/all_course_data.h</a>&quot;</code><br />
-<code>#include &lt;<a class="el" href="kalimari__desert__data_8h_source.html">assets/kalimari_desert_data.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="bowsers__castle__data_8h_source.html">assets/bowsers_castle_data.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="models_2tracks_2kalimari__desert_2kalimari__desert__data_8h_source.html">assets/models/tracks/kalimari_desert/kalimari_desert_data.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="models_2tracks_2bowsers__castle_2bowsers__castle__data_8h_source.html">assets/models/tracks/bowsers_castle/bowsers_castle_data.h</a>&gt;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for render.inc.c:</div>
 <div class="dyncontent">
@@ -144,11 +145,11 @@ Functions</h2></td></tr>
 <tr class="memitem:ab87e849fb7e892bf8a48df38ae2e1849" id="r_ab87e849fb7e892bf8a48df38ae2e1849"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab87e849fb7e892bf8a48df38ae2e1849">render_actor_tree_moo_moo_farm</a> (<a class="el" href="structCamera.html">Camera</a> *camera, <a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> arg1, struct <a class="el" href="structActor.html">Actor</a> *arg2)</td></tr>
 <tr class="memdesc:ab87e849fb7e892bf8a48df38ae2e1849"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the tree actor in Moo Moo Farm.  <br /></td></tr>
 <tr class="separator:ab87e849fb7e892bf8a48df38ae2e1849"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c46969c4e2c993552d8607c3c6205ce" id="r_a2c46969c4e2c993552d8607c3c6205ce"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c46969c4e2c993552d8607c3c6205ce">func_80299864</a> (<a class="el" href="structCamera.html">Camera</a> *camera, <a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> arg1, struct <a class="el" href="structActor.html">Actor</a> *arg2)</td></tr>
-<tr class="separator:a2c46969c4e2c993552d8607c3c6205ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa564af6ea62ec336f9c88ffd9351fa7f" id="r_aa564af6ea62ec336f9c88ffd9351fa7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa564af6ea62ec336f9c88ffd9351fa7f">render_actor_tree_bowser_castle</a> (<a class="el" href="structCamera.html">Camera</a> *camera, <a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> arg1, struct <a class="el" href="structActor.html">Actor</a> *arg2)</td></tr>
-<tr class="memdesc:aa564af6ea62ec336f9c88ffd9351fa7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the tree actor in Bowser's Castle.  <br /></td></tr>
-<tr class="separator:aa564af6ea62ec336f9c88ffd9351fa7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e3cc1c8979a6b324584e39b5f791a2c" id="r_a3e3cc1c8979a6b324584e39b5f791a2c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3e3cc1c8979a6b324584e39b5f791a2c">render_actor_tree_luigi_raceway</a> (<a class="el" href="structCamera.html">Camera</a> *camera, <a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> arg1, struct <a class="el" href="structActor.html">Actor</a> *arg2)</td></tr>
+<tr class="separator:a3e3cc1c8979a6b324584e39b5f791a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fa0064e750aebd59099c5a9e1a49462" id="r_a5fa0064e750aebd59099c5a9e1a49462"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5fa0064e750aebd59099c5a9e1a49462">render_actor_tree_peach_castle</a> (<a class="el" href="structCamera.html">Camera</a> *camera, <a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> arg1, struct <a class="el" href="structActor.html">Actor</a> *arg2)</td></tr>
+<tr class="memdesc:a5fa0064e750aebd59099c5a9e1a49462"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders Peach's Castle trees in Royal Raceway.  <br /></td></tr>
+<tr class="separator:a5fa0064e750aebd59099c5a9e1a49462"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad286049dc3781032de7e3a85633bb116" id="r_ad286049dc3781032de7e3a85633bb116"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad286049dc3781032de7e3a85633bb116">render_actor_bush_bowser_castle</a> (<a class="el" href="structCamera.html">Camera</a> *camera, <a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> arg1, struct <a class="el" href="structActor.html">Actor</a> *arg2)</td></tr>
 <tr class="memdesc:ad286049dc3781032de7e3a85633bb116"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the bush actor in Bowser's Castle.  <br /></td></tr>
 <tr class="separator:ad286049dc3781032de7e3a85633bb116"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,43 +167,6 @@ Functions</h2></td></tr>
 <tr class="separator:a93c363ef5063842fd6aecf2fd2435fe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a2c46969c4e2c993552d8607c3c6205ce" name="a2c46969c4e2c993552d8607c3c6205ce"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2c46969c4e2c993552d8607c3c6205ce">&#9670;&#160;</a></span>func_80299864()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void func_80299864 </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structCamera.html">Camera</a> *</td>          <td class="paramname"><span class="paramname"><em>camera</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a></td>          <td class="paramname"><span class="paramname"><em>arg1</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct <a class="el" href="structActor.html">Actor</a> *</td>          <td class="paramname"><span class="paramname"><em>arg2</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section warning"><dt>Warning</dt><dd>Possible bug:</dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="trees_2render_8inc_8c_a2c46969c4e2c993552d8607c3c6205ce_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="trees_2render_8inc_8c_a2c46969c4e2c993552d8607c3c6205ce_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
 <a id="ad286049dc3781032de7e3a85633bb116" name="ad286049dc3781032de7e3a85633bb116"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad286049dc3781032de7e3a85633bb116">&#9670;&#160;</a></span>render_actor_bush_bowser_castle()</h2>
 
@@ -245,52 +209,6 @@ Here is the call graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="trees_2render_8inc_8c_ad286049dc3781032de7e3a85633bb116_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="aa564af6ea62ec336f9c88ffd9351fa7f" name="aa564af6ea62ec336f9c88ffd9351fa7f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa564af6ea62ec336f9c88ffd9351fa7f">&#9670;&#160;</a></span>render_actor_tree_bowser_castle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void render_actor_tree_bowser_castle </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="structCamera.html">Camera</a> *</td>          <td class="paramname"><span class="paramname"><em>camera</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a></td>          <td class="paramname"><span class="paramname"><em>arg1</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct <a class="el" href="structActor.html">Actor</a> *</td>          <td class="paramname"><span class="paramname"><em>arg2</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Renders the tree actor in Bowser's Castle. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">camera</td><td></td></tr>
-    <tr><td class="paramname">arg1</td><td></td></tr>
-    <tr><td class="paramname">arg2</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="trees_2render_8inc_8c_aa564af6ea62ec336f9c88ffd9351fa7f_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="trees_2render_8inc_8c_aa564af6ea62ec336f9c88ffd9351fa7f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -479,6 +397,42 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a3e3cc1c8979a6b324584e39b5f791a2c" name="a3e3cc1c8979a6b324584e39b5f791a2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e3cc1c8979a6b324584e39b5f791a2c">&#9670;&#160;</a></span>render_actor_tree_luigi_raceway()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void render_actor_tree_luigi_raceway </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structCamera.html">Camera</a> *</td>          <td class="paramname"><span class="paramname"><em>camera</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a></td>          <td class="paramname"><span class="paramname"><em>arg1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structActor.html">Actor</a> *</td>          <td class="paramname"><span class="paramname"><em>arg2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="trees_2render_8inc_8c_a3e3cc1c8979a6b324584e39b5f791a2c_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="trees_2render_8inc_8c_a3e3cc1c8979a6b324584e39b5f791a2c_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
 <a id="a4424eacaec23826f9d392474e204d5bb" name="a4424eacaec23826f9d392474e204d5bb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4424eacaec23826f9d392474e204d5bb">&#9670;&#160;</a></span>render_actor_tree_mario_raceway()</h2>
 
@@ -567,6 +521,52 @@ Here is the call graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="trees_2render_8inc_8c_ab87e849fb7e892bf8a48df38ae2e1849_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
+<a id="a5fa0064e750aebd59099c5a9e1a49462" name="a5fa0064e750aebd59099c5a9e1a49462"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5fa0064e750aebd59099c5a9e1a49462">&#9670;&#160;</a></span>render_actor_tree_peach_castle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void render_actor_tree_peach_castle </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structCamera.html">Camera</a> *</td>          <td class="paramname"><span class="paramname"><em>camera</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a></td>          <td class="paramname"><span class="paramname"><em>arg1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">struct <a class="el" href="structActor.html">Actor</a> *</td>          <td class="paramname"><span class="paramname"><em>arg2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Renders Peach's Castle trees in Royal Raceway. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">camera</td><td></td></tr>
+    <tr><td class="paramname">arg1</td><td></td></tr>
+    <tr><td class="paramname">arg2</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="trees_2render_8inc_8c_a5fa0064e750aebd59099c5a9e1a49462_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="trees_2render_8inc_8c_a5fa0064e750aebd59099c5a9e1a49462_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>

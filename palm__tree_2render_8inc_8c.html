@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/actors/palm_tree/render.inc.c File Reference</title>
+<title>SpaghettiKart: src/actors/palm_tree/render.inc.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -110,9 +110,10 @@ $(function(){initNavTree('palm__tree_2render_8inc_8c.html',''); initResizable(tr
   <div class="headertitle"><div class="title">render.inc.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;<a class="el" href="actors_8h_source.html">actors.h</a>&gt;</code><br />
+<div class="textblock"><code>#include &lt;<a class="el" href="actors_8h_source.html">racing/actors.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="main_8h_source.html">main.h</a>&gt;</code><br />
-<code>#include &lt;<a class="el" href="koopa__troopa__beach__data_8h_source.html">assets/koopa_troopa_beach_data.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="models_2tracks_2koopa__troopa__beach_2koopa__troopa__beach__data_8h_source.html">assets/models/tracks/koopa_troopa_beach/koopa_troopa_beach_data.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="FrameInterpolation_8h_source.html">port/interpolation/FrameInterpolation.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for render.inc.c:</div>
 <div class="dyncontent">
@@ -128,13 +129,13 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9acb7afd543abd1f4794c8c2d16f13a4" id="r_a9acb7afd543abd1f4794c8c2d16f13a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9acb7afd543abd1f4794c8c2d16f13a4">render_actor_palm_tree</a> (<a class="el" href="structCamera.html">Camera</a> *arg0, <a class="el" href="macros_8h.html#addf5ec070e9499d36b7f2009ce736076">UNUSED</a> <a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> arg1, struct <a class="el" href="structPalmTree.html">PalmTree</a> *arg2)</td></tr>
-<tr class="memdesc:a9acb7afd543abd1f4794c8c2d16f13a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the palm tree actor. <a class="el" href="structActor.html">Actor</a> used in Koopa Troopa Beach.  <br /></td></tr>
-<tr class="separator:a9acb7afd543abd1f4794c8c2d16f13a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae35957e867320b51295c1c6c9066bd0b" id="r_ae35957e867320b51295c1c6c9066bd0b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae35957e867320b51295c1c6c9066bd0b">render_actor_palm_tree</a> (<a class="el" href="structCamera.html">Camera</a> *camera, <a class="el" href="macros_8h.html#addf5ec070e9499d36b7f2009ce736076">UNUSED</a> <a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> arg1, struct <a class="el" href="structPalmTree.html">PalmTree</a> *arg2)</td></tr>
+<tr class="memdesc:ae35957e867320b51295c1c6c9066bd0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Renders the palm tree actor. <a class="el" href="structActor.html">Actor</a> used in Koopa Troopa Beach.  <br /></td></tr>
+<tr class="separator:ae35957e867320b51295c1c6c9066bd0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a9acb7afd543abd1f4794c8c2d16f13a4" name="a9acb7afd543abd1f4794c8c2d16f13a4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9acb7afd543abd1f4794c8c2d16f13a4">&#9670;&#160;</a></span>render_actor_palm_tree()</h2>
+<a id="ae35957e867320b51295c1c6c9066bd0b" name="ae35957e867320b51295c1c6c9066bd0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae35957e867320b51295c1c6c9066bd0b">&#9670;&#160;</a></span>render_actor_palm_tree()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,7 +143,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void render_actor_palm_tree </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="structCamera.html">Camera</a> *</td>          <td class="paramname"><span class="paramname"><em>arg0</em></span>, </td>
+          <td class="paramtype"><a class="el" href="structCamera.html">Camera</a> *</td>          <td class="paramname"><span class="paramname"><em>camera</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -160,7 +161,7 @@ Functions</h2></td></tr>
 <p>Renders the palm tree actor. <a class="el" href="structActor.html">Actor</a> used in Koopa Troopa Beach. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">arg0</td><td></td></tr>
+    <tr><td class="paramname">camera</td><td></td></tr>
     <tr><td class="paramname">arg1</td><td></td></tr>
     <tr><td class="paramname">arg2</td><td></td></tr>
   </table>
@@ -169,12 +170,12 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="palm__tree_2render_8inc_8c_a9acb7afd543abd1f4794c8c2d16f13a4_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="palm__tree_2render_8inc_8c_ae35957e867320b51295c1c6c9066bd0b_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="palm__tree_2render_8inc_8c_a9acb7afd543abd1f4794c8c2d16f13a4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="palm__tree_2render_8inc_8c_ae35957e867320b51295c1c6c9066bd0b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>

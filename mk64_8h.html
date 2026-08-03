@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: include/mk64.h File Reference</title>
+<title>SpaghettiKart: include/mk64.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -144,8 +144,6 @@ Macros</h2></td></tr>
 <tr class="separator:a21d9543c516fffee84a7963224271f95"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8d1345c22c668be330e8ff3ee4fb2463" id="r_a8d1345c22c668be330e8ff3ee4fb2463"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d1345c22c668be330e8ff3ee4fb2463">BORDER_HEIGHT</a>&#160;&#160;&#160;1</td></tr>
 <tr class="separator:a8d1345c22c668be330e8ff3ee4fb2463"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1af10c9624fc6956bfa4bf7e77ae4b99" id="r_a1af10c9624fc6956bfa4bf7e77ae4b99"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1af10c9624fc6956bfa4bf7e77ae4b99">COURSE_NULL</a>&#160;&#160;&#160;0xFF</td></tr>
-<tr class="separator:a1af10c9624fc6956bfa4bf7e77ae4b99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6e3f1e0c50ed96c9874d794db5059917" id="r_a6e3f1e0c50ed96c9874d794db5059917"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6e3f1e0c50ed96c9874d794db5059917">GFX_GET_OPCODE</a>(var)</td></tr>
 <tr class="separator:a6e3f1e0c50ed96c9874d794db5059917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe912a838096f4707043922fb102870a" id="r_abe912a838096f4707043922fb102870a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe912a838096f4707043922fb102870a">GET_HIGH_U16_OF_32</a>(var)</td></tr>
@@ -169,37 +167,37 @@ Macros</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:acf250ad4ca05ca435a61203c41d4ca88" id="r_acf250ad4ca05ca435a61203c41d4ca88"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88">COURSES</a> { <br />
-&#160;&#160;<a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88a1013d9dfd3dc6f49c3dc2b35ce6df371">COURSE_MARIO_RACEWAY</a> = 0
-, <a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88a5be72eac26f2579975f7f17bb46378ec">COURSE_CHOCO_MOUNTAIN</a>
-, <a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88aa7fddb5027be204be3744c5bdf5b0fdf">COURSE_BOWSER_CASTLE</a>
-, <a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88a11c1ecabaa01524ea23a1576a4d44b53">COURSE_BANSHEE_BOARDWALK</a>
+<tr class="memitem:a845f5f9d73146971c78756dc81bc17a0" id="r_a845f5f9d73146971c78756dc81bc17a0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a845f5f9d73146971c78756dc81bc17a0">TRACKS</a> { <br />
+&#160;&#160;<a class="el" href="#a845f5f9d73146971c78756dc81bc17a0ab8382b3eb2dcb7b28b2232354ba8a0c0">TRACK_MARIO_RACEWAY</a> = 0
+, <a class="el" href="#a845f5f9d73146971c78756dc81bc17a0aeb1a51c1d1a54b03c89535861a5cdac3">TRACK_CHOCO_MOUNTAIN</a>
+, <a class="el" href="#a845f5f9d73146971c78756dc81bc17a0a72d867181c1a1d7732ed37d11554416d">TRACK_BOWSER_CASTLE</a>
+, <a class="el" href="#a845f5f9d73146971c78756dc81bc17a0a323f9197a7c35b8c29451d3e280306cb">TRACK_BANSHEE_BOARDWALK</a>
 , <br />
-&#160;&#160;<a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88a4b6d6cdaa7ed40498052e3c7aabc1e57">COURSE_YOSHI_VALLEY</a>
-, <a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88a389f0d184c4fbb9c292313d833c28474">COURSE_FRAPPE_SNOWLAND</a>
-, <a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88aad2aeb452d05375037e928a747061862">COURSE_KOOPA_BEACH</a>
-, <a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88a20aff87970b4015a467d7e6a2b14f72b">COURSE_ROYAL_RACEWAY</a>
+&#160;&#160;<a class="el" href="#a845f5f9d73146971c78756dc81bc17a0a4253749749987adf0de3aeea0169660f">TRACK_YOSHI_VALLEY</a>
+, <a class="el" href="#a845f5f9d73146971c78756dc81bc17a0a352e1d12d122c451e3e8b900f8d13418">TRACK_FRAPPE_SNOWLAND</a>
+, <a class="el" href="#a845f5f9d73146971c78756dc81bc17a0a11113283a7b0a8a0481296780355c925">TRACK_KOOPA_BEACH</a>
+, <a class="el" href="#a845f5f9d73146971c78756dc81bc17a0ac0fd2256daaad651c8c077d2b7c95337">TRACK_ROYAL_RACEWAY</a>
 , <br />
-&#160;&#160;<a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88a39770529445f7fbbcd4d98e5069bfcf0">COURSE_LUIGI_RACEWAY</a>
-, <a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88ac2de96c4eae26b588aa604ccfdfe17a7">COURSE_MOO_MOO_FARM</a>
-, <a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88a760b521013b956257751e8d7c181b783">COURSE_TOADS_TURNPIKE</a>
-, <a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88a338872b48fb1561d31a441aaf0a52cd0">COURSE_KALIMARI_DESERT</a>
+&#160;&#160;<a class="el" href="#a845f5f9d73146971c78756dc81bc17a0a804b7b296119334e15b87db3bc30a260">TRACK_LUIGI_RACEWAY</a>
+, <a class="el" href="#a845f5f9d73146971c78756dc81bc17a0a880a7185bfa93ee5d94f15b06710f333">TRACK_MOO_MOO_FARM</a>
+, <a class="el" href="#a845f5f9d73146971c78756dc81bc17a0a7ae66f8ffa79faa98487e22d3414235f">TRACK_TOADS_TURNPIKE</a>
+, <a class="el" href="#a845f5f9d73146971c78756dc81bc17a0af15f34075b0888881fc02fa46c7051ae">TRACK_KALIMARI_DESERT</a>
 , <br />
-&#160;&#160;<a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88adffb845d6b01049394cea12e2eea5b01">COURSE_SHERBET_LAND</a>
-, <a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88a3b9286cb989b34063c66fe7311ea92f9">COURSE_RAINBOW_ROAD</a>
-, <a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88a0ffab71be7660244b308ec7f9377b9fc">COURSE_WARIO_STADIUM</a>
-, <a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88a286f4605d59b2d837791bc5ac3a5e314">COURSE_BLOCK_FORT</a>
+&#160;&#160;<a class="el" href="#a845f5f9d73146971c78756dc81bc17a0a484fe82aef8e7c1c06167ee63e1e85b7">TRACK_SHERBET_LAND</a>
+, <a class="el" href="#a845f5f9d73146971c78756dc81bc17a0a93214bd75704d7ddaebf8fe2d1fde49f">TRACK_RAINBOW_ROAD</a>
+, <a class="el" href="#a845f5f9d73146971c78756dc81bc17a0acadd09bd7d466047f66fdcb04b926da6">TRACK_WARIO_STADIUM</a>
+, <a class="el" href="#a845f5f9d73146971c78756dc81bc17a0a21bc4d4a830bf89b7d5579ca5619d712">TRACK_BLOCK_FORT</a>
 , <br />
-&#160;&#160;<a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88a9546ec6c77641ea8cd2cca35a0078b8d">COURSE_SKYSCRAPER</a>
-, <a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88aa3ec272a814b881c2285053650e5e0d0">COURSE_DOUBLE_DECK</a>
-, <a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88ac825c98c8fe3f1d9bc84ea81d2fcb7e5">COURSE_DK_JUNGLE</a>
-, <a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88a166bae031c2161dad321e1f7460c2c2f">COURSE_BIG_DONUT</a>
+&#160;&#160;<a class="el" href="#a845f5f9d73146971c78756dc81bc17a0a3d8ef1b87998a5f156130f55bf71607b">TRACK_SKYSCRAPER</a>
+, <a class="el" href="#a845f5f9d73146971c78756dc81bc17a0ab3f223fb60e50ed097692f1c21715a80">TRACK_DOUBLE_DECK</a>
+, <a class="el" href="#a845f5f9d73146971c78756dc81bc17a0a1279530944c671cde70f99ba3182a6a3">TRACK_DK_JUNGLE</a>
+, <a class="el" href="#a845f5f9d73146971c78756dc81bc17a0ab3e2af1ecedd9d93eb628fcf60db9423">TRACK_BIG_DONUT</a>
 , <br />
-&#160;&#160;<a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88af2483ce57ec1e76a8870321f2afd6bd3">COURSE_AWARD_CEREMONY</a>
-, <a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88ab491e3c35f36dc6baccdb5ca3a2eff60">NUM_COURSES</a>
+&#160;&#160;<a class="el" href="#a845f5f9d73146971c78756dc81bc17a0a9bf08bec5338b40907c012abc50ecefc">TRACK_AWARD_CEREMONY</a>
+, <a class="el" href="#a845f5f9d73146971c78756dc81bc17a0a31e024d0557a3690869f04c7291de001">NUM_TRACKS</a>
 <br />
  }</td></tr>
-<tr class="separator:acf250ad4ca05ca435a61203c41d4ca88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a845f5f9d73146971c78756dc81bc17a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af99386c6c69e4c7491c1ca0f1a4b44cc" id="r_af99386c6c69e4c7491c1ca0f1a4b44cc"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af99386c6c69e4c7491c1ca0f1a4b44cc">TIME_TRIAL_DATA_INDEX</a> { <br />
 &#160;&#160;<a class="el" href="#af99386c6c69e4c7491c1ca0f1a4b44ccaf46b4d787194f364843e27c8f6231c03">TIME_TRIAL_DATA_LUIGI_RACEWAY</a>
 , <a class="el" href="#af99386c6c69e4c7491c1ca0f1a4b44ccaf5e33385d66d61ca989bfb67b73d8895">TIME_TRIAL_DATA_MOO_MOO_FARM</a>
@@ -312,20 +310,6 @@ Functions</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">#define BORDER_HEIGHT&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1af10c9624fc6956bfa4bf7e77ae4b99" name="a1af10c9624fc6956bfa4bf7e77ae4b99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1af10c9624fc6956bfa4bf7e77ae4b99">&#9670;&#160;</a></span>COURSE_NULL</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define COURSE_NULL&#160;&#160;&#160;0xFF</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -587,44 +571,6 @@ Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
-<a id="acf250ad4ca05ca435a61203c41d4ca88" name="acf250ad4ca05ca435a61203c41d4ca88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acf250ad4ca05ca435a61203c41d4ca88">&#9670;&#160;</a></span>COURSES</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="#acf250ad4ca05ca435a61203c41d4ca88">COURSES</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88a1013d9dfd3dc6f49c3dc2b35ce6df371" name="acf250ad4ca05ca435a61203c41d4ca88a1013d9dfd3dc6f49c3dc2b35ce6df371"></a>COURSE_MARIO_RACEWAY&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88a5be72eac26f2579975f7f17bb46378ec" name="acf250ad4ca05ca435a61203c41d4ca88a5be72eac26f2579975f7f17bb46378ec"></a>COURSE_CHOCO_MOUNTAIN&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88aa7fddb5027be204be3744c5bdf5b0fdf" name="acf250ad4ca05ca435a61203c41d4ca88aa7fddb5027be204be3744c5bdf5b0fdf"></a>COURSE_BOWSER_CASTLE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88a11c1ecabaa01524ea23a1576a4d44b53" name="acf250ad4ca05ca435a61203c41d4ca88a11c1ecabaa01524ea23a1576a4d44b53"></a>COURSE_BANSHEE_BOARDWALK&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88a4b6d6cdaa7ed40498052e3c7aabc1e57" name="acf250ad4ca05ca435a61203c41d4ca88a4b6d6cdaa7ed40498052e3c7aabc1e57"></a>COURSE_YOSHI_VALLEY&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88a389f0d184c4fbb9c292313d833c28474" name="acf250ad4ca05ca435a61203c41d4ca88a389f0d184c4fbb9c292313d833c28474"></a>COURSE_FRAPPE_SNOWLAND&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88aad2aeb452d05375037e928a747061862" name="acf250ad4ca05ca435a61203c41d4ca88aad2aeb452d05375037e928a747061862"></a>COURSE_KOOPA_BEACH&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88a20aff87970b4015a467d7e6a2b14f72b" name="acf250ad4ca05ca435a61203c41d4ca88a20aff87970b4015a467d7e6a2b14f72b"></a>COURSE_ROYAL_RACEWAY&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88a39770529445f7fbbcd4d98e5069bfcf0" name="acf250ad4ca05ca435a61203c41d4ca88a39770529445f7fbbcd4d98e5069bfcf0"></a>COURSE_LUIGI_RACEWAY&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88ac2de96c4eae26b588aa604ccfdfe17a7" name="acf250ad4ca05ca435a61203c41d4ca88ac2de96c4eae26b588aa604ccfdfe17a7"></a>COURSE_MOO_MOO_FARM&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88a760b521013b956257751e8d7c181b783" name="acf250ad4ca05ca435a61203c41d4ca88a760b521013b956257751e8d7c181b783"></a>COURSE_TOADS_TURNPIKE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88a338872b48fb1561d31a441aaf0a52cd0" name="acf250ad4ca05ca435a61203c41d4ca88a338872b48fb1561d31a441aaf0a52cd0"></a>COURSE_KALIMARI_DESERT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88adffb845d6b01049394cea12e2eea5b01" name="acf250ad4ca05ca435a61203c41d4ca88adffb845d6b01049394cea12e2eea5b01"></a>COURSE_SHERBET_LAND&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88a3b9286cb989b34063c66fe7311ea92f9" name="acf250ad4ca05ca435a61203c41d4ca88a3b9286cb989b34063c66fe7311ea92f9"></a>COURSE_RAINBOW_ROAD&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88a0ffab71be7660244b308ec7f9377b9fc" name="acf250ad4ca05ca435a61203c41d4ca88a0ffab71be7660244b308ec7f9377b9fc"></a>COURSE_WARIO_STADIUM&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88a286f4605d59b2d837791bc5ac3a5e314" name="acf250ad4ca05ca435a61203c41d4ca88a286f4605d59b2d837791bc5ac3a5e314"></a>COURSE_BLOCK_FORT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88a9546ec6c77641ea8cd2cca35a0078b8d" name="acf250ad4ca05ca435a61203c41d4ca88a9546ec6c77641ea8cd2cca35a0078b8d"></a>COURSE_SKYSCRAPER&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88aa3ec272a814b881c2285053650e5e0d0" name="acf250ad4ca05ca435a61203c41d4ca88aa3ec272a814b881c2285053650e5e0d0"></a>COURSE_DOUBLE_DECK&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88ac825c98c8fe3f1d9bc84ea81d2fcb7e5" name="acf250ad4ca05ca435a61203c41d4ca88ac825c98c8fe3f1d9bc84ea81d2fcb7e5"></a>COURSE_DK_JUNGLE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88a166bae031c2161dad321e1f7460c2c2f" name="acf250ad4ca05ca435a61203c41d4ca88a166bae031c2161dad321e1f7460c2c2f"></a>COURSE_BIG_DONUT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88af2483ce57ec1e76a8870321f2afd6bd3" name="acf250ad4ca05ca435a61203c41d4ca88af2483ce57ec1e76a8870321f2afd6bd3"></a>COURSE_AWARD_CEREMONY&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="acf250ad4ca05ca435a61203c41d4ca88ab491e3c35f36dc6baccdb5ca3a2eff60" name="acf250ad4ca05ca435a61203c41d4ca88ab491e3c35f36dc6baccdb5ca3a2eff60"></a>NUM_COURSES&#160;</td><td class="fielddoc"></td></tr>
-</table>
-
-</div>
-</div>
 <a id="a5344f2bdca4f9506c40f044e08ea8c98" name="a5344f2bdca4f9506c40f044e08ea8c98"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5344f2bdca4f9506c40f044e08ea8c98">&#9670;&#160;</a></span>SURFACE_TYPE</h2>
 
@@ -696,6 +642,44 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="af99386c6c69e4c7491c1ca0f1a4b44cca13fd4925edc5ca513958db964d6f788b" name="af99386c6c69e4c7491c1ca0f1a4b44cca13fd4925edc5ca513958db964d6f788b"></a>TIME_TRIAL_DATA_BANSHEE_BOARDWALK&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="af99386c6c69e4c7491c1ca0f1a4b44ccae2cd91989aae28452f8c64fbdb7f0563" name="af99386c6c69e4c7491c1ca0f1a4b44ccae2cd91989aae28452f8c64fbdb7f0563"></a>TIME_TRIAL_DATA_RAINBOW_ROAD&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="af99386c6c69e4c7491c1ca0f1a4b44ccadca646b71ad13bf72d1f26b440b7e187" name="af99386c6c69e4c7491c1ca0f1a4b44ccadca646b71ad13bf72d1f26b440b7e187"></a>NUM_TIME_TRIAL_DATA&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+</div>
+</div>
+<a id="a845f5f9d73146971c78756dc81bc17a0" name="a845f5f9d73146971c78756dc81bc17a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a845f5f9d73146971c78756dc81bc17a0">&#9670;&#160;</a></span>TRACKS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a845f5f9d73146971c78756dc81bc17a0">TRACKS</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0ab8382b3eb2dcb7b28b2232354ba8a0c0" name="a845f5f9d73146971c78756dc81bc17a0ab8382b3eb2dcb7b28b2232354ba8a0c0"></a>TRACK_MARIO_RACEWAY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0aeb1a51c1d1a54b03c89535861a5cdac3" name="a845f5f9d73146971c78756dc81bc17a0aeb1a51c1d1a54b03c89535861a5cdac3"></a>TRACK_CHOCO_MOUNTAIN&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0a72d867181c1a1d7732ed37d11554416d" name="a845f5f9d73146971c78756dc81bc17a0a72d867181c1a1d7732ed37d11554416d"></a>TRACK_BOWSER_CASTLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0a323f9197a7c35b8c29451d3e280306cb" name="a845f5f9d73146971c78756dc81bc17a0a323f9197a7c35b8c29451d3e280306cb"></a>TRACK_BANSHEE_BOARDWALK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0a4253749749987adf0de3aeea0169660f" name="a845f5f9d73146971c78756dc81bc17a0a4253749749987adf0de3aeea0169660f"></a>TRACK_YOSHI_VALLEY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0a352e1d12d122c451e3e8b900f8d13418" name="a845f5f9d73146971c78756dc81bc17a0a352e1d12d122c451e3e8b900f8d13418"></a>TRACK_FRAPPE_SNOWLAND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0a11113283a7b0a8a0481296780355c925" name="a845f5f9d73146971c78756dc81bc17a0a11113283a7b0a8a0481296780355c925"></a>TRACK_KOOPA_BEACH&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0ac0fd2256daaad651c8c077d2b7c95337" name="a845f5f9d73146971c78756dc81bc17a0ac0fd2256daaad651c8c077d2b7c95337"></a>TRACK_ROYAL_RACEWAY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0a804b7b296119334e15b87db3bc30a260" name="a845f5f9d73146971c78756dc81bc17a0a804b7b296119334e15b87db3bc30a260"></a>TRACK_LUIGI_RACEWAY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0a880a7185bfa93ee5d94f15b06710f333" name="a845f5f9d73146971c78756dc81bc17a0a880a7185bfa93ee5d94f15b06710f333"></a>TRACK_MOO_MOO_FARM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0a7ae66f8ffa79faa98487e22d3414235f" name="a845f5f9d73146971c78756dc81bc17a0a7ae66f8ffa79faa98487e22d3414235f"></a>TRACK_TOADS_TURNPIKE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0af15f34075b0888881fc02fa46c7051ae" name="a845f5f9d73146971c78756dc81bc17a0af15f34075b0888881fc02fa46c7051ae"></a>TRACK_KALIMARI_DESERT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0a484fe82aef8e7c1c06167ee63e1e85b7" name="a845f5f9d73146971c78756dc81bc17a0a484fe82aef8e7c1c06167ee63e1e85b7"></a>TRACK_SHERBET_LAND&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0a93214bd75704d7ddaebf8fe2d1fde49f" name="a845f5f9d73146971c78756dc81bc17a0a93214bd75704d7ddaebf8fe2d1fde49f"></a>TRACK_RAINBOW_ROAD&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0acadd09bd7d466047f66fdcb04b926da6" name="a845f5f9d73146971c78756dc81bc17a0acadd09bd7d466047f66fdcb04b926da6"></a>TRACK_WARIO_STADIUM&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0a21bc4d4a830bf89b7d5579ca5619d712" name="a845f5f9d73146971c78756dc81bc17a0a21bc4d4a830bf89b7d5579ca5619d712"></a>TRACK_BLOCK_FORT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0a3d8ef1b87998a5f156130f55bf71607b" name="a845f5f9d73146971c78756dc81bc17a0a3d8ef1b87998a5f156130f55bf71607b"></a>TRACK_SKYSCRAPER&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0ab3f223fb60e50ed097692f1c21715a80" name="a845f5f9d73146971c78756dc81bc17a0ab3f223fb60e50ed097692f1c21715a80"></a>TRACK_DOUBLE_DECK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0a1279530944c671cde70f99ba3182a6a3" name="a845f5f9d73146971c78756dc81bc17a0a1279530944c671cde70f99ba3182a6a3"></a>TRACK_DK_JUNGLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0ab3e2af1ecedd9d93eb628fcf60db9423" name="a845f5f9d73146971c78756dc81bc17a0ab3e2af1ecedd9d93eb628fcf60db9423"></a>TRACK_BIG_DONUT&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0a9bf08bec5338b40907c012abc50ecefc" name="a845f5f9d73146971c78756dc81bc17a0a9bf08bec5338b40907c012abc50ecefc"></a>TRACK_AWARD_CEREMONY&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a845f5f9d73146971c78756dc81bc17a0a31e024d0557a3690869f04c7291de001" name="a845f5f9d73146971c78756dc81bc17a0a31e024d0557a3690869f04c7291de001"></a>NUM_TRACKS&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
 </div>
@@ -779,7 +763,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="mk64_8h_a0c0bce088ba2282e188ea5c8c8123e22_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="mk64_8h_a0c0bce088ba2282e188ea5c8c8123e22_icgraph.svg" width="426" height="332"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>

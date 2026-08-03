@@ -1,15 +1,24 @@
 var classATankerTruck =
 [
-    [ "ATankerTruck", "classATankerTruck.html#a1de2135bfd639bd6f077b29dab92b1b0", null ],
+    [ "SpawnMode", "classATankerTruck.html#a17716b2b23c940fc7a84527d6a89beab", [
+      [ "POINT", "classATankerTruck.html#a17716b2b23c940fc7a84527d6a89beabab28dbc9d53cf0cdea3330e69e8ed282c", null ],
+      [ "AUTO", "classATankerTruck.html#a17716b2b23c940fc7a84527d6a89beaba70af9b8ceae1a18a91a9065017dbbfec", null ]
+    ] ],
+    [ "ATankerTruck", "classATankerTruck.html#a09577845d0c017bc5845b1cac44b5078", null ],
     [ "~ATankerTruck", "classATankerTruck.html#ae04e1b93a88b1289a6faa3129f95be66", null ],
     [ "Draw", "classATankerTruck.html#ae76615ed127a1f3e85b3faa0f701c80d", null ],
+    [ "DrawEditorProperties", "classATankerTruck.html#afe6f82a9e9708cc90678bb013b43410f", null ],
     [ "GetCount", "classATankerTruck.html#a0e38cb856d7c641bce7aa9dec5b8964a", null ],
     [ "IsMod", "classATankerTruck.html#aa510e571609e5945c36252c292195d4d", null ],
+    [ "SetSpawnParams", "classATankerTruck.html#a9ab759051eeea02a00c37c783eadce1c", null ],
+    [ "Spawn", "classATankerTruck.html#a2aacacbab3ba357a304a26523e4e3679", null ],
     [ "Tick", "classATankerTruck.html#a7a57be806639c04fa4d391a47bf09ab3", null ],
     [ "VehicleCollision", "classATankerTruck.html#a078da317114c1c0cb7b1d1ab2aa052f0", null ],
     [ "_count", "classATankerTruck.html#a89afb9b77f011d75c222899c8725644c", null ],
     [ "ActorIndex", "classATankerTruck.html#addd8d533acd8268c477b13044a4ee24a", null ],
     [ "Index", "classATankerTruck.html#af467ebfdbcea80056c60e7ce1a0a08d8", null ],
+    [ "PathIndex", "classATankerTruck.html#a80568f2defa096371cc0e5ad15d5c758", null ],
+    [ "PathPoint", "classATankerTruck.html#ab7911bdf30383b5f626ef0509912e3be", null ],
     [ "Position", "classATankerTruck.html#a54c67a7d41e7d9ba7a928c86ee81f4ab", null ],
     [ "Rotation", "classATankerTruck.html#a3eed140edd010469c66427a27a0d8e8b", null ],
     [ "SomeArg3", "classATankerTruck.html#a34f00052df48bbee80f859305b9346b4", null ],
@@ -19,7 +28,10 @@ var classATankerTruck =
     [ "SomeMultiplierTheSequel", "classATankerTruck.html#a6583b60d6cbd6d1470e026a118907afb", null ],
     [ "SomeType", "classATankerTruck.html#a52dc3d626053c65a10da9149a91f6004", null ],
     [ "SoundBits", "classATankerTruck.html#a3ce0e4c11c0732eafdf09ba2b6f5889c", null ],
+    [ "SpawnType", "classATankerTruck.html#a49cc871e74018ceb99f1d47eddb3b96f", null ],
     [ "Speed", "classATankerTruck.html#ac250fed1be85254962815b78f80df6da", null ],
+    [ "SpeedB", "classATankerTruck.html#a6f29bc734280e00e103a338460999943", null ],
+    [ "TruckCounts", "classATankerTruck.html#a4f91aeee1eaeef1c448ab0875b3d501b", null ],
     [ "Type", "classATankerTruck.html#ae9c72c0903ea86cbd22c464d93f2a9ad", null ],
     [ "Velocity", "classATankerTruck.html#a1489d8e7a4b38412f8ad4f24a43a568d", null ],
     [ "WaypointIndex", "classATankerTruck.html#a0d16855480e9d60da61fb5b0bbf94e8b", null ]

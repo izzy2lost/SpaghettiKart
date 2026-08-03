@@ -13,6 +13,5 @@ var searchData=
   ['_5f_5fospackid_10',['__OSPackId',['../struct____OSPackId.html',1,'']]],
   ['_5f_5fosthreadcontext_11',['__OSThreadContext',['../struct____OSThreadContext.html',1,'']]],
   ['_5f_5fosthreadprofile_5fs_12',['__OSThreadprofile_s',['../struct____OSThreadprofile__s.html',1,'']]],
-  ['_5f_5fosthreadtail_13',['__osThreadTail',['../struct____osThreadTail.html',1,'']]],
-  ['_5fstruct_5fgcoursepathsizes_5f0x10_14',['_struct_gCoursePathSizes_0x10',['../struct__struct__gCoursePathSizes__0x10.html',1,'']]]
+  ['_5f_5fosthreadtail_13',['__osThreadTail',['../struct____osThreadTail.html',1,'']]]
 ];

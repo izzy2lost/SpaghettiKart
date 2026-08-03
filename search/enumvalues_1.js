@@ -27,10 +27,10 @@ var searchData=
   ['blue_5fshell_5ftarget_5feliminated_24',['BLUE_SHELL_TARGET_ELIMINATED',['../actor__types_8h.html#ac01c8e97d91d8f2968ca1f8d4eb0495ba5bedeedba66ded3f9a8f54f73bc2e6fa',1,'actor_types.h']]],
   ['boost_5framp_5fasphalt_25',['BOOST_RAMP_ASPHALT',['../mk64_8h.html#a5344f2bdca4f9506c40f044e08ea8c98aa11589879ff008cf99b438493894e142',1,'mk64.h']]],
   ['boost_5framp_5fwood_26',['BOOST_RAMP_WOOD',['../mk64_8h.html#a5344f2bdca4f9506c40f044e08ea8c98a9b293f81c6f8c72814562333d5341cda',1,'mk64.h']]],
-  ['bounding_5fbox_27',['BOUNDING_BOX',['../classEditor_1_1GameObject.html#ac70f7d17c6c49208d513814ad5e30a3cafb2ea1ec7b3bc42e65a0c3969dfe74f2',1,'Editor::GameObject']]],
-  ['bounding_5fsphere_28',['BOUNDING_SPHERE',['../classEditor_1_1GameObject.html#ac70f7d17c6c49208d513814ad5e30a3ca3dff0e3fa411cc9a30f7377d0b56f85e',1,'Editor::GameObject']]],
+  ['bounding_5fbox_27',['BOUNDING_BOX',['../classTrackEditor_1_1GameObject.html#afb4234940a6f12576196401c5ffb9972afb2ea1ec7b3bc42e65a0c3969dfe74f2',1,'TrackEditor::GameObject']]],
+  ['bounding_5fsphere_28',['BOUNDING_SPHERE',['../classTrackEditor_1_1GameObject.html#afb4234940a6f12576196401c5ffb9972a3dff0e3fa411cc9a30f7377d0b56f85e',1,'TrackEditor::GameObject']]],
   ['bridge_29',['BRIDGE',['../mk64_8h.html#a5344f2bdca4f9506c40f044e08ea8c98a68d3880946f8e8f3fb64b7f635aaba1e',1,'mk64.h']]],
-  ['bronze_30',['BRONZE',['../classOTrophy.html#a6430fad04fc455c30f430b7dad14702da4d91f6e29f1a59a294eb0a787f708824',1,'OTrophy']]],
-  ['bronze_5f150_31',['BRONZE_150',['../classOTrophy.html#a6430fad04fc455c30f430b7dad14702dadd7e83223730d6f88797adde88ff9ffd',1,'OTrophy']]],
+  ['bronze_30',['BRONZE',['../classOTrophy.html#a43bb5d1394bcac120ff52ec88f765891a4d91f6e29f1a59a294eb0a787f708824',1,'OTrophy']]],
+  ['bronze_5f150_31',['BRONZE_150',['../classOTrophy.html#a43bb5d1394bcac120ff52ec88f765891add7e83223730d6f88797adde88ff9ffd',1,'OTrophy']]],
   ['brown_32',['Brown',['../namespaceUIWidgets.html#ab518b3979a369a95a6e490c6d8f87d26a498232d0967df69172d6ef5e21c6e100',1,'UIWidgets']]]
 ];

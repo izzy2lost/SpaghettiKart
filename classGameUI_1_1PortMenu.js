@@ -5,6 +5,7 @@ var classGameUI_1_1PortMenu =
     [ "AddDevTools", "classGameUI_1_1PortMenu.html#ae2b125ddd080ba7cfd4da340dfb14192", null ],
     [ "AddEnhancements", "classGameUI_1_1PortMenu.html#ad0164e1a4d1111fb2312cdec60c8d223", null ],
     [ "AddRulesets", "classGameUI_1_1PortMenu.html#acf1c08d9ed088b6b33ec91a0e0a48494", null ],
+    [ "AddSceneVisibility", "classGameUI_1_1PortMenu.html#aae9fe5836ea57a15312e9f9a17e91850", null ],
     [ "AddSettings", "classGameUI_1_1PortMenu.html#ad1010e161497fac3f609b69b0f7d6348", null ],
     [ "AddSidebarEntry", "classGameUI_1_1PortMenu.html#a13c853deed0530fa8e1810ffe6fef9a5", null ],
     [ "AddWidget", "classGameUI_1_1PortMenu.html#a35ff589db0705776ae252a50fa1cee7d", null ],

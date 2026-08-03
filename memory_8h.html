@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/racing/memory.h File Reference</title>
+<title>SpaghettiKart: src/racing/memory.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -118,7 +118,7 @@ $(function(){initNavTree('memory_8h.html',''); initResizable(true); });
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for memory.h:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="memory_8h__incl.svg" width="647" height="330"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="memory_8h__incl.svg" width="631" height="344"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 </div>
 <p><a href="memory_8h_source.html">Go to the source code of this file.</a></p>
@@ -152,34 +152,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a965d7e25d594cd29e02ed8b9a482c65d" id="r_a965d7e25d594cd29e02ed8b9a482c65d"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a965d7e25d594cd29e02ed8b9a482c65d">get_next_available_memory_addr</a> (uintptr_t)</td></tr>
 <tr class="memdesc:a965d7e25d594cd29e02ed8b9a482c65d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the address of the next available memory location and updates the memory pointer to reference the next location of available memory based provided size to allocate.  <br /></td></tr>
 <tr class="separator:a965d7e25d594cd29e02ed8b9a482c65d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ec709af22cadacdd15850adb1265d03" id="r_a3ec709af22cadacdd15850adb1265d03"><td class="memItemLeft" align="right" valign="top">uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ec709af22cadacdd15850adb1265d03">set_segment_base_addr</a> (s32, void *)</td></tr>
-<tr class="memdesc:a3ec709af22cadacdd15850adb1265d03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the physical memory addr for segmented memory in <code>gSegmentTable</code> using the segment number as an index.  <br /></td></tr>
-<tr class="separator:a3ec709af22cadacdd15850adb1265d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a125651826edd8b6e662bbf425fdd9283" id="r_a125651826edd8b6e662bbf425fdd9283"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a125651826edd8b6e662bbf425fdd9283">get_segment_base_addr</a> (s32)</td></tr>
-<tr class="memdesc:a125651826edd8b6e662bbf425fdd9283"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the physical memory location of a segment.  <br /></td></tr>
-<tr class="separator:a125651826edd8b6e662bbf425fdd9283"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a901d0d9c2a254257b4538f907196e90a" id="r_a901d0d9c2a254257b4538f907196e90a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a901d0d9c2a254257b4538f907196e90a">segmented_to_virtual</a> (const void *)</td></tr>
-<tr class="memdesc:a901d0d9c2a254257b4538f907196e90a"><td class="mdescLeft">&#160;</td><td class="mdescRight">converts an RSP segment + offset address to a normal memory address  <br /></td></tr>
-<tr class="separator:a901d0d9c2a254257b4538f907196e90a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2dbe03dcafacacda6223a616e5d86565" id="r_a2dbe03dcafacacda6223a616e5d86565"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2dbe03dcafacacda6223a616e5d86565">segment_offset_to_virtual</a> (uint32_t, uint32_t)</td></tr>
-<tr class="separator:a2dbe03dcafacacda6223a616e5d86565"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac5b454d19f3b09d299a01b2c525b8d7" id="r_aac5b454d19f3b09d299a01b2c525b8d7"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac5b454d19f3b09d299a01b2c525b8d7">segment_vtx_to_virtual</a> (size_t offset)</td></tr>
-<tr class="separator:aac5b454d19f3b09d299a01b2c525b8d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af3f6b12b97880f29af2216416e231089" id="r_af3f6b12b97880f29af2216416e231089"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3f6b12b97880f29af2216416e231089">segmented_texture_to_virtual</a> (uintptr_t addr)</td></tr>
-<tr class="separator:af3f6b12b97880f29af2216416e231089"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acfa1920251f9853845fd01e205c02345" id="r_acfa1920251f9853845fd01e205c02345"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acfa1920251f9853845fd01e205c02345">segmented_uintptr_t_to_virtual</a> (uintptr_t)</td></tr>
-<tr class="separator:acfa1920251f9853845fd01e205c02345"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa451ab6cba53432f3d979f493e148010" id="r_aa451ab6cba53432f3d979f493e148010"><td class="memItemLeft" align="right" valign="top">Gfx *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa451ab6cba53432f3d979f493e148010">segmented_gfx_to_virtual</a> (const void *)</td></tr>
-<tr class="separator:aa451ab6cba53432f3d979f493e148010"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcad15cde6603a7c29ee6c9133da317b" id="r_afcad15cde6603a7c29ee6c9133da317b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcad15cde6603a7c29ee6c9133da317b">replace_segmented_textures_with_o2r_textures</a> (Gfx *gfx, const <a class="el" href="structcourse__texture.html">course_texture</a> *textures)</td></tr>
-<tr class="separator:afcad15cde6603a7c29ee6c9133da317b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c0c87d5c791d9405698582f9128f4ec" id="r_a7c0c87d5c791d9405698582f9128f4ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c0c87d5c791d9405698582f9128f4ec">move_segment_table_to_dmem</a> (void)</td></tr>
-<tr class="separator:a7c0c87d5c791d9405698582f9128f4ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21fe0071920d58ced611cf984996eab8" id="r_a21fe0071920d58ced611cf984996eab8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21fe0071920d58ced611cf984996eab8">initialize_memory_pool</a> (void)</td></tr>
 <tr class="memdesc:a21fe0071920d58ced611cf984996eab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the starting location for allocating memory and calculates pool size.  <br /></td></tr>
 <tr class="separator:a21fe0071920d58ced611cf984996eab8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61bd66cb78e91bc239a0f7a6c9ea8d59" id="r_a61bd66cb78e91bc239a0f7a6c9ea8d59"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a61bd66cb78e91bc239a0f7a6c9ea8d59">decompress_segments</a> (u8 *, u8 *)</td></tr>
-<tr class="separator:a61bd66cb78e91bc239a0f7a6c9ea8d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acf31e85b295d4508d571d5aff8c02c5a" id="r_acf31e85b295d4508d571d5aff8c02c5a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf31e85b295d4508d571d5aff8c02c5a">allocate_memory</a> (size_t)</td></tr>
 <tr class="memdesc:acf31e85b295d4508d571d5aff8c02c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates memory and adjusts gFreeMemorySize.  <br /></td></tr>
 <tr class="separator:acf31e85b295d4508d571d5aff8c02c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -190,8 +165,6 @@ Functions</h2></td></tr>
 <tr class="separator:ad108574c2862d6903a3da3c59ef4b06e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e502f11afb3491f690d4539cb2e1a22" id="r_a2e502f11afb3491f690d4539cb2e1a22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e502f11afb3491f690d4539cb2e1a22">func_802A86A8</a> (<a class="el" href="structCourseVtx.html">CourseVtx</a> *data, Vtx *vtx, size_t arg1)</td></tr>
 <tr class="separator:a2e502f11afb3491f690d4539cb2e1a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bd68df4b6133ad4c7ab6b7da3ce8c4c" id="r_a7bd68df4b6133ad4c7ab6b7da3ce8c4c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7bd68df4b6133ad4c7ab6b7da3ce8c4c">displaylist_unpack</a> (uintptr_t *data, uintptr_t finalDisplaylistOffset, u32 arg2)</td></tr>
-<tr class="separator:a7bd68df4b6133ad4c7ab6b7da3ce8c4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1f4d35518a5ec5fee6a2cbf3c1d0f794" id="r_a1f4d35518a5ec5fee6a2cbf3c1d0f794"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f4d35518a5ec5fee6a2cbf3c1d0f794">main_pool_init</a> (uintptr_t, uintptr_t)</td></tr>
 <tr class="separator:a1f4d35518a5ec5fee6a2cbf3c1d0f794"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a62ba44aa35a5ffa90e10259c60e9a229" id="r_a62ba44aa35a5ffa90e10259c60e9a229"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62ba44aa35a5ffa90e10259c60e9a229">main_pool_alloc</a> (uintptr_t, uintptr_t)</td></tr>
@@ -208,65 +181,11 @@ Functions</h2></td></tr>
 <tr class="separator:a3a0d304f31905bacca06c397e308c047"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a35b6e161358ef80b64f67bb351a2f4f2" id="r_a35b6e161358ef80b64f67bb351a2f4f2"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a35b6e161358ef80b64f67bb351a2f4f2">func_802A80B0</a> (u8 *, u8 *, u8 *)</td></tr>
 <tr class="separator:a35b6e161358ef80b64f67bb351a2f4f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ec2d202a143ce6dc0a0ea302f7e864c" id="r_a4ec2d202a143ce6dc0a0ea302f7e864c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ec2d202a143ce6dc0a0ea302f7e864c">func_802A81EC</a> (void)</td></tr>
-<tr class="separator:a4ec2d202a143ce6dc0a0ea302f7e864c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55d75ae72531bea2f9b06d7a4addb819" id="r_a55d75ae72531bea2f9b06d7a4addb819"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structAllocOnlyPool.html">AllocOnlyPool</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55d75ae72531bea2f9b06d7a4addb819">alloc_only_pool_init</a> (uintptr_t, uintptr_t)</td></tr>
-<tr class="separator:a55d75ae72531bea2f9b06d7a4addb819"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a871b62b55eca3e10de592b1b09ac1ea5" id="r_a871b62b55eca3e10de592b1b09ac1ea5"><td class="memItemLeft" align="right" valign="top">uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a871b62b55eca3e10de592b1b09ac1ea5">func_802A82AC</a> (s32)</td></tr>
-<tr class="separator:a871b62b55eca3e10de592b1b09ac1ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7eede738f2a0af1893bb5e5c5e52dca" id="r_ab7eede738f2a0af1893bb5e5c5e52dca"><td class="memItemLeft" align="right" valign="top">uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7eede738f2a0af1893bb5e5c5e52dca">func_802A8348</a> (s32, s32, s32)</td></tr>
-<tr class="separator:ab7eede738f2a0af1893bb5e5c5e52dca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56dd580b5f9113b83709d1f11181e6a7" id="r_a56dd580b5f9113b83709d1f11181e6a7"><td class="memItemLeft" align="right" valign="top">u8 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56dd580b5f9113b83709d1f11181e6a7">dma_textures</a> (const char *texture, size_t arg1, size_t arg2)</td></tr>
-<tr class="separator:a56dd580b5f9113b83709d1f11181e6a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3291d400b4e265559e894e400cdea4ae" id="r_a3291d400b4e265559e894e400cdea4ae"><td class="memItemLeft" align="right" valign="top">uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3291d400b4e265559e894e400cdea4ae">MIO0_0F</a> (u8 *, uintptr_t, uintptr_t)</td></tr>
 <tr class="separator:a3291d400b4e265559e894e400cdea4ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21fe83456f822726fd10e0b190923172" id="r_a21fe83456f822726fd10e0b190923172"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21fe83456f822726fd10e0b190923172">func_802A8844</a> (void)</td></tr>
-<tr class="separator:a21fe83456f822726fd10e0b190923172"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14811b20ea44141f31ba87f6498c6fc9" id="r_a14811b20ea44141f31ba87f6498c6fc9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a14811b20ea44141f31ba87f6498c6fc9">unpack_lights</a> (Gfx *, u8 *, s8)</td></tr>
-<tr class="separator:a14811b20ea44141f31ba87f6498c6fc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aed4c3a06cd1c80cbdef980becd4ac06f" id="r_aed4c3a06cd1c80cbdef980becd4ac06f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aed4c3a06cd1c80cbdef980becd4ac06f">unpack_displaylist</a> (Gfx *, u8 *, s8)</td></tr>
-<tr class="separator:aed4c3a06cd1c80cbdef980becd4ac06f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae4e72aae58b4f1e046c4c6e405be863" id="r_aae4e72aae58b4f1e046c4c6e405be863"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae4e72aae58b4f1e046c4c6e405be863">unpack_end_displaylist</a> (Gfx *, u8 *, s8)</td></tr>
-<tr class="separator:aae4e72aae58b4f1e046c4c6e405be863"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7c0649ea94237e36b2590eafb890153f" id="r_a7c0649ea94237e36b2590eafb890153f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7c0649ea94237e36b2590eafb890153f">unpack_set_geometry_mode</a> (Gfx *, u8 *, s8)</td></tr>
-<tr class="separator:a7c0649ea94237e36b2590eafb890153f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cf51ab9d41d341979d7815ecb9cac0a" id="r_a7cf51ab9d41d341979d7815ecb9cac0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7cf51ab9d41d341979d7815ecb9cac0a">unpack_clear_geometry_mode</a> (Gfx *, u8 *, s8)</td></tr>
-<tr class="separator:a7cf51ab9d41d341979d7815ecb9cac0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb8ec29be4c6c7b557c4c9ab12a91eb1" id="r_acb8ec29be4c6c7b557c4c9ab12a91eb1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb8ec29be4c6c7b557c4c9ab12a91eb1">unpack_cull_displaylist</a> (Gfx *, u8 *, s8)</td></tr>
-<tr class="separator:acb8ec29be4c6c7b557c4c9ab12a91eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f3590983b3df0ddcf069021f14c7771" id="r_a1f3590983b3df0ddcf069021f14c7771"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1f3590983b3df0ddcf069021f14c7771">unpack_combine_mode1</a> (Gfx *, u8 *, uintptr_t)</td></tr>
-<tr class="separator:a1f3590983b3df0ddcf069021f14c7771"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fc911fe1b11689cb2747e4f9ee827e4" id="r_a9fc911fe1b11689cb2747e4f9ee827e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fc911fe1b11689cb2747e4f9ee827e4">unpack_combine_mode2</a> (Gfx *, u8 *, uintptr_t)</td></tr>
-<tr class="separator:a9fc911fe1b11689cb2747e4f9ee827e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a984dc86c6ecc2bf1d208bd08df154564" id="r_a984dc86c6ecc2bf1d208bd08df154564"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a984dc86c6ecc2bf1d208bd08df154564">unpack_combine_mode_shade</a> (Gfx *, u8 *, uintptr_t)</td></tr>
-<tr class="separator:a984dc86c6ecc2bf1d208bd08df154564"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25c68ab04f17587642de4eacb7354467" id="r_a25c68ab04f17587642de4eacb7354467"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a25c68ab04f17587642de4eacb7354467">unpack_combine_mode4</a> (Gfx *, u8 *, uintptr_t)</td></tr>
-<tr class="separator:a25c68ab04f17587642de4eacb7354467"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7639eaafb2d4aca1787db1f12cbdc530" id="r_a7639eaafb2d4aca1787db1f12cbdc530"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7639eaafb2d4aca1787db1f12cbdc530">unpack_combine_mode5</a> (Gfx *, u8 *, uintptr_t)</td></tr>
-<tr class="separator:a7639eaafb2d4aca1787db1f12cbdc530"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8baf5bf71679d0833f6380c89e37936" id="r_af8baf5bf71679d0833f6380c89e37936"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8baf5bf71679d0833f6380c89e37936">unpack_render_mode_opaque</a> (Gfx *, u8 *, uintptr_t)</td></tr>
-<tr class="separator:af8baf5bf71679d0833f6380c89e37936"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8177e758ab7cd50bf1dfdf56d62ca29" id="r_aa8177e758ab7cd50bf1dfdf56d62ca29"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8177e758ab7cd50bf1dfdf56d62ca29">unpack_render_mode_tex_edge</a> (Gfx *, u8 *, uintptr_t)</td></tr>
-<tr class="separator:aa8177e758ab7cd50bf1dfdf56d62ca29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02b90920a307907aab16d7d44a9da700" id="r_a02b90920a307907aab16d7d44a9da700"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a02b90920a307907aab16d7d44a9da700">unpack_render_mode_translucent</a> (Gfx *, u8 *, uintptr_t)</td></tr>
-<tr class="separator:a02b90920a307907aab16d7d44a9da700"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57159e529d24a3168e05681291f1b73c" id="r_a57159e529d24a3168e05681291f1b73c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57159e529d24a3168e05681291f1b73c">unpack_render_mode_opaque_decal</a> (Gfx *, u8 *, uintptr_t)</td></tr>
-<tr class="separator:a57159e529d24a3168e05681291f1b73c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58a6cda30c79f9dd78694217c505cdf2" id="r_a58a6cda30c79f9dd78694217c505cdf2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a58a6cda30c79f9dd78694217c505cdf2">unpack_render_mode_translucent_decal</a> (Gfx *, u8 *, uintptr_t)</td></tr>
-<tr class="separator:a58a6cda30c79f9dd78694217c505cdf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a733a97b6df019cea130dd9f97e16be6c" id="r_a733a97b6df019cea130dd9f97e16be6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a733a97b6df019cea130dd9f97e16be6c">unpack_tile_sync</a> (Gfx *, u8 *, s8)</td></tr>
-<tr class="separator:a733a97b6df019cea130dd9f97e16be6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8c631d128b88ab023a707d0dd5fc040" id="r_ad8c631d128b88ab023a707d0dd5fc040"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8c631d128b88ab023a707d0dd5fc040">unpack_tile_load_sync</a> (Gfx *, u8 *, s8)</td></tr>
-<tr class="separator:ad8c631d128b88ab023a707d0dd5fc040"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b2f61cfabcf9c0ad08dd909d9164711" id="r_a4b2f61cfabcf9c0ad08dd909d9164711"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b2f61cfabcf9c0ad08dd909d9164711">unpack_texture_on</a> (Gfx *, u8 *, s8)</td></tr>
-<tr class="separator:a4b2f61cfabcf9c0ad08dd909d9164711"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cbfb543c285c335019336b8fa5d8573" id="r_a9cbfb543c285c335019336b8fa5d8573"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cbfb543c285c335019336b8fa5d8573">unpack_texture_off</a> (Gfx *, u8 *, s8)</td></tr>
-<tr class="separator:a9cbfb543c285c335019336b8fa5d8573"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a566a5cc097e6ba71d8cd06fb8abb13b4" id="r_a566a5cc097e6ba71d8cd06fb8abb13b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a566a5cc097e6ba71d8cd06fb8abb13b4">load_course</a> (s32)</td></tr>
-<tr class="memdesc:a566a5cc097e6ba71d8cd06fb8abb13b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads &amp; DMAs course data. Vtx, textures, displaylists, etc.  <br /></td></tr>
-<tr class="separator:a566a5cc097e6ba71d8cd06fb8abb13b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe28705881d67f79a1912c475385ae06" id="r_abe28705881d67f79a1912c475385ae06"><td class="memItemLeft" align="right" valign="top">uintptr_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abe28705881d67f79a1912c475385ae06">set_segment_base_addr_x64</a> (s32, void *)</td></tr>
-<tr class="separator:abe28705881d67f79a1912c475385ae06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b705c4e7a865f5bc8157f7005df1884" id="r_a3b705c4e7a865f5bc8157f7005df1884"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b705c4e7a865f5bc8157f7005df1884">load_track</a> (s32)</td></tr>
+<tr class="memdesc:a3b705c4e7a865f5bc8157f7005df1884"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads &amp; DMAs track data. Vtx, textures, displaylists, etc.  <br /></td></tr>
+<tr class="separator:a3b705c4e7a865f5bc8157f7005df1884"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -321,32 +240,6 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a55d75ae72531bea2f9b06d7a4addb819" name="a55d75ae72531bea2f9b06d7a4addb819"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55d75ae72531bea2f9b06d7a4addb819">&#9670;&#160;</a></span>alloc_only_pool_init()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct <a class="el" href="structAllocOnlyPool.html">AllocOnlyPool</a> * alloc_only_pool_init </td>
-          <td>(</td>
-          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em>side</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="memory_8h_a55d75ae72531bea2f9b06d7a4addb819_cgraph.svg" width="338" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
 <a id="acf31e85b295d4508d571d5aff8c02c5a" name="acf31e85b295d4508d571d5aff8c02c5a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acf31e85b295d4508d571d5aff8c02c5a">&#9670;&#160;</a></span>allocate_memory()</h2>
 
@@ -366,112 +259,7 @@ Here is the call graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_acf31e85b295d4508d571d5aff8c02c5a_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="a61bd66cb78e91bc239a0f7a6c9ea8d59" name="a61bd66cb78e91bc239a0f7a6c9ea8d59"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a61bd66cb78e91bc239a0f7a6c9ea8d59">&#9670;&#160;</a></span>decompress_segments()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * decompress_segments </td>
-          <td>(</td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em>start</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em>end</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_a61bd66cb78e91bc239a0f7a6c9ea8d59_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_a61bd66cb78e91bc239a0f7a6c9ea8d59_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="a7bd68df4b6133ad4c7ab6b7da3ce8c4c" name="a7bd68df4b6133ad4c7ab6b7da3ce8c4c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7bd68df4b6133ad4c7ab6b7da3ce8c4c">&#9670;&#160;</a></span>displaylist_unpack()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void displaylist_unpack </td>
-          <td>(</td>
-          <td class="paramtype">uintptr_t *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em>finalDisplaylistOffset</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u32</td>          <td class="paramname"><span class="paramname"><em>arg2</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Unpacks course packed displaylists by iterating through each byte of the packed file. Each packed displaylist entry has an opcode and any number of arguments. The opcodes range from 0 to 87 which are used to run the relevant unpack function. The file pointer increments when arguments are used. This way, displaylist_unpack will always read an opcode and not an argument by accident.</p>
-<dl class="section warning"><dt>Warning</dt><dd>opcodes that do not contain a definition in the switch are ignored. If an undefined opcode contained arguments the unpacker might try to unpack those arguments. This issue is prevented so long as the packed file adheres to correct opcodes and unpack code increments the file pointer the correct number of times. </dd></dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_a7bd68df4b6133ad4c7ab6b7da3ce8c4c_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="memory_8h_a7bd68df4b6133ad4c7ab6b7da3ce8c4c_icgraph.svg" width="555" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a56dd580b5f9113b83709d1f11181e6a7" name="a56dd580b5f9113b83709d1f11181e6a7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56dd580b5f9113b83709d1f11181e6a7">&#9670;&#160;</a></span>dma_textures()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">u8 * dma_textures </td>
-          <td>(</td>
-          <td class="paramtype">const char *</td>          <td class="paramname"><span class="paramname"><em>texture</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>arg1</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>arg2</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_a56dd580b5f9113b83709d1f11181e6a7_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_a56dd580b5f9113b83709d1f11181e6a7_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="memory_8h_acf31e85b295d4508d571d5aff8c02c5a_icgraph.svg" width="282" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -525,81 +313,6 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_a35b6e161358ef80b64f67bb351a2f4f2_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="memory_8h_a35b6e161358ef80b64f67bb351a2f4f2_icgraph.svg" width="475" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a4ec2d202a143ce6dc0a0ea302f7e864c" name="a4ec2d202a143ce6dc0a0ea302f7e864c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ec2d202a143ce6dc0a0ea302f7e864c">&#9670;&#160;</a></span>func_802A81EC()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void func_802A81EC </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_a4ec2d202a143ce6dc0a0ea302f7e864c_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="a871b62b55eca3e10de592b1b09ac1ea5" name="a871b62b55eca3e10de592b1b09ac1ea5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a871b62b55eca3e10de592b1b09ac1ea5">&#9670;&#160;</a></span>func_802A82AC()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uintptr_t func_802A82AC </td>
-          <td>(</td>
-          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>arg0</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ab7eede738f2a0af1893bb5e5c5e52dca" name="ab7eede738f2a0af1893bb5e5c5e52dca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7eede738f2a0af1893bb5e5c5e52dca">&#9670;&#160;</a></span>func_802A8348()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uintptr_t func_802A8348 </td>
-          <td>(</td>
-          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>arg0</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>arg1</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>arg2</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_ab7eede738f2a0af1893bb5e5c5e52dca_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
 
 </div>
 </div>
@@ -623,28 +336,6 @@ Here is the call graph for this function:</div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>arg1</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="memory_8h_a2e502f11afb3491f690d4539cb2e1a22_icgraph.svg" width="535" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a21fe83456f822726fd10e0b190923172" name="a21fe83456f822726fd10e0b190923172"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a21fe83456f822726fd10e0b190923172">&#9670;&#160;</a></span>func_802A8844()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void func_802A8844 </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -682,31 +373,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="a125651826edd8b6e662bbf425fdd9283" name="a125651826edd8b6e662bbf425fdd9283"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a125651826edd8b6e662bbf425fdd9283">&#9670;&#160;</a></span>get_segment_base_addr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * get_segment_base_addr </td>
-          <td>(</td>
-          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>segment</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Returns the physical memory location of a segment. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">permits</td><td>segment numbers from 0x0 to 0xF. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a21fe0071920d58ced611cf984996eab8" name="a21fe0071920d58ced611cf984996eab8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a21fe0071920d58ced611cf984996eab8">&#9670;&#160;</a></span>initialize_memory_pool()</h2>
 
@@ -728,41 +394,6 @@ Here is the caller graph for this function:</div>
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_a21fe0071920d58ced611cf984996eab8_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="a566a5cc097e6ba71d8cd06fb8abb13b4" name="a566a5cc097e6ba71d8cd06fb8abb13b4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a566a5cc097e6ba71d8cd06fb8abb13b4">&#9670;&#160;</a></span>load_course()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void load_course </td>
-          <td>(</td>
-          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>courseId</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Loads &amp; DMAs course data. Vtx, textures, displaylists, etc. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">courseId</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="memory_8h_a566a5cc097e6ba71d8cd06fb8abb13b4_cgraph.svg" width="387" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_a566a5cc097e6ba71d8cd06fb8abb13b4_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>
@@ -826,6 +457,41 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a3b705c4e7a865f5bc8157f7005df1884" name="a3b705c4e7a865f5bc8157f7005df1884"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b705c4e7a865f5bc8157f7005df1884">&#9670;&#160;</a></span>load_track()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void load_track </td>
+          <td>(</td>
+          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>trackId</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Loads &amp; DMAs track data. Vtx, textures, displaylists, etc. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">trackId</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_a3b705c4e7a865f5bc8157f7005df1884_cgraph.svg" width="100%" height="401"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_a3b705c4e7a865f5bc8157f7005df1884_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+</div>
+
+</div>
+</div>
 <a id="a62ba44aa35a5ffa90e10259c60e9a229" name="a62ba44aa35a5ffa90e10259c60e9a229"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a62ba44aa35a5ffa90e10259c60e9a229">&#9670;&#160;</a></span>main_pool_alloc()</h2>
 
@@ -848,7 +514,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_a62ba44aa35a5ffa90e10259c60e9a229_icgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="memory_8h_a62ba44aa35a5ffa90e10259c60e9a229_icgraph.svg" width="355" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -1007,780 +673,6 @@ Here is the call graph for this function:</div>
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_a3291d400b4e265559e894e400cdea4ae_cgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="memory_8h_a3291d400b4e265559e894e400cdea4ae_icgraph.svg" width="300" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-
-</div>
-</div>
-<a id="a7c0c87d5c791d9405698582f9128f4ec" name="a7c0c87d5c791d9405698582f9128f4ec"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c0c87d5c791d9405698582f9128f4ec">&#9670;&#160;</a></span>move_segment_table_to_dmem()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void move_segment_table_to_dmem </td>
-          <td>(</td>
-          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_a7c0c87d5c791d9405698582f9128f4ec_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="afcad15cde6603a7c29ee6c9133da317b" name="afcad15cde6603a7c29ee6c9133da317b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afcad15cde6603a7c29ee6c9133da317b">&#9670;&#160;</a></span>replace_segmented_textures_with_o2r_textures()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void replace_segmented_textures_with_o2r_textures </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em>gfx</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="structcourse__texture.html">course_texture</a> *</td>          <td class="paramname"><span class="paramname"><em>textures</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="memory_8h_afcad15cde6603a7c29ee6c9133da317b_cgraph.svg" width="575" height="92"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_afcad15cde6603a7c29ee6c9133da317b_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="a2dbe03dcafacacda6223a616e5d86565" name="a2dbe03dcafacacda6223a616e5d86565"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2dbe03dcafacacda6223a616e5d86565">&#9670;&#160;</a></span>segment_offset_to_virtual()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * segment_offset_to_virtual </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>segment</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>offset</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_a2dbe03dcafacacda6223a616e5d86565_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="aac5b454d19f3b09d299a01b2c525b8d7" name="aac5b454d19f3b09d299a01b2c525b8d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac5b454d19f3b09d299a01b2c525b8d7">&#9670;&#160;</a></span>segment_vtx_to_virtual()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * segment_vtx_to_virtual </td>
-          <td>(</td>
-          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>offset</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_aac5b454d19f3b09d299a01b2c525b8d7_icgraph.svg" width="100%" height="438"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="aa451ab6cba53432f3d979f493e148010" name="aa451ab6cba53432f3d979f493e148010"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa451ab6cba53432f3d979f493e148010">&#9670;&#160;</a></span>segmented_gfx_to_virtual()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Gfx * segmented_gfx_to_virtual </td>
-          <td>(</td>
-          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>addr</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af3f6b12b97880f29af2216416e231089" name="af3f6b12b97880f29af2216416e231089"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3f6b12b97880f29af2216416e231089">&#9670;&#160;</a></span>segmented_texture_to_virtual()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * segmented_texture_to_virtual </td>
-          <td>(</td>
-          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a901d0d9c2a254257b4538f907196e90a" name="a901d0d9c2a254257b4538f907196e90a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a901d0d9c2a254257b4538f907196e90a">&#9670;&#160;</a></span>segmented_to_virtual()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * segmented_to_virtual </td>
-          <td>(</td>
-          <td class="paramtype">const void *</td>          <td class="paramname"><span class="paramname"><em>addr</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>converts an RSP segment + offset address to a normal memory address </p>
-
-</div>
-</div>
-<a id="acfa1920251f9853845fd01e205c02345" name="acfa1920251f9853845fd01e205c02345"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfa1920251f9853845fd01e205c02345">&#9670;&#160;</a></span>segmented_uintptr_t_to_virtual()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void * segmented_uintptr_t_to_virtual </td>
-          <td>(</td>
-          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em>addr</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a3ec709af22cadacdd15850adb1265d03" name="a3ec709af22cadacdd15850adb1265d03"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3ec709af22cadacdd15850adb1265d03">&#9670;&#160;</a></span>set_segment_base_addr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uintptr_t set_segment_base_addr </td>
-          <td>(</td>
-          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>segment</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Stores the physical memory addr for segmented memory in <code>gSegmentTable</code> using the segment number as an index. </p>
-<p>This function takes a segment number and a pointer to a memory address, and stores the address in the <code>gSegmentTable</code> array at the specified segment index. The stored address is truncated to a 29-bit value to ensure that it fits within the memory address. This allows converting between segmented memory and physical memory.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">segment</td><td>A segment number from 0x0 to 0xF to set the base address. </td></tr>
-    <tr><td class="paramname">addr</td><td>A pointer containing the physical memory address of the data. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The stored base address, truncated to a 29-bit value. </dd></dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_a3ec709af22cadacdd15850adb1265d03_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="abe28705881d67f79a1912c475385ae06" name="abe28705881d67f79a1912c475385ae06"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe28705881d67f79a1912c475385ae06">&#9670;&#160;</a></span>set_segment_base_addr_x64()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uintptr_t set_segment_base_addr_x64 </td>
-          <td>(</td>
-          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>segment</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>addr</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_abe28705881d67f79a1912c475385ae06_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="a7cf51ab9d41d341979d7815ecb9cac0a" name="a7cf51ab9d41d341979d7815ecb9cac0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cf51ab9d41d341979d7815ecb9cac0a">&#9670;&#160;</a></span>unpack_clear_geometry_mode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_clear_geometry_mode </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">s8</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a1f3590983b3df0ddcf069021f14c7771" name="a1f3590983b3df0ddcf069021f14c7771"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1f3590983b3df0ddcf069021f14c7771">&#9670;&#160;</a></span>unpack_combine_mode1()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_combine_mode1 </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9fc911fe1b11689cb2747e4f9ee827e4" name="a9fc911fe1b11689cb2747e4f9ee827e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9fc911fe1b11689cb2747e4f9ee827e4">&#9670;&#160;</a></span>unpack_combine_mode2()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_combine_mode2 </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a25c68ab04f17587642de4eacb7354467" name="a25c68ab04f17587642de4eacb7354467"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a25c68ab04f17587642de4eacb7354467">&#9670;&#160;</a></span>unpack_combine_mode4()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_combine_mode4 </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7639eaafb2d4aca1787db1f12cbdc530" name="a7639eaafb2d4aca1787db1f12cbdc530"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7639eaafb2d4aca1787db1f12cbdc530">&#9670;&#160;</a></span>unpack_combine_mode5()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_combine_mode5 </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a984dc86c6ecc2bf1d208bd08df154564" name="a984dc86c6ecc2bf1d208bd08df154564"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a984dc86c6ecc2bf1d208bd08df154564">&#9670;&#160;</a></span>unpack_combine_mode_shade()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_combine_mode_shade </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="acb8ec29be4c6c7b557c4c9ab12a91eb1" name="acb8ec29be4c6c7b557c4c9ab12a91eb1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb8ec29be4c6c7b557c4c9ab12a91eb1">&#9670;&#160;</a></span>unpack_cull_displaylist()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_cull_displaylist </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">s8</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aed4c3a06cd1c80cbdef980becd4ac06f" name="aed4c3a06cd1c80cbdef980becd4ac06f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed4c3a06cd1c80cbdef980becd4ac06f">&#9670;&#160;</a></span>unpack_displaylist()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_displaylist </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">s8</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aae4e72aae58b4f1e046c4c6e405be863" name="aae4e72aae58b4f1e046c4c6e405be863"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aae4e72aae58b4f1e046c4c6e405be863">&#9670;&#160;</a></span>unpack_end_displaylist()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_end_displaylist </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">s8</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a14811b20ea44141f31ba87f6498c6fc9" name="a14811b20ea44141f31ba87f6498c6fc9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14811b20ea44141f31ba87f6498c6fc9">&#9670;&#160;</a></span>unpack_lights()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_lights </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">s8</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="af8baf5bf71679d0833f6380c89e37936" name="af8baf5bf71679d0833f6380c89e37936"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8baf5bf71679d0833f6380c89e37936">&#9670;&#160;</a></span>unpack_render_mode_opaque()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_render_mode_opaque </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a57159e529d24a3168e05681291f1b73c" name="a57159e529d24a3168e05681291f1b73c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57159e529d24a3168e05681291f1b73c">&#9670;&#160;</a></span>unpack_render_mode_opaque_decal()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_render_mode_opaque_decal </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aa8177e758ab7cd50bf1dfdf56d62ca29" name="aa8177e758ab7cd50bf1dfdf56d62ca29"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa8177e758ab7cd50bf1dfdf56d62ca29">&#9670;&#160;</a></span>unpack_render_mode_tex_edge()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_render_mode_tex_edge </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a02b90920a307907aab16d7d44a9da700" name="a02b90920a307907aab16d7d44a9da700"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02b90920a307907aab16d7d44a9da700">&#9670;&#160;</a></span>unpack_render_mode_translucent()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_render_mode_translucent </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a58a6cda30c79f9dd78694217c505cdf2" name="a58a6cda30c79f9dd78694217c505cdf2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58a6cda30c79f9dd78694217c505cdf2">&#9670;&#160;</a></span>unpack_render_mode_translucent_decal()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_render_mode_translucent_decal </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uintptr_t</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7c0649ea94237e36b2590eafb890153f" name="a7c0649ea94237e36b2590eafb890153f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7c0649ea94237e36b2590eafb890153f">&#9670;&#160;</a></span>unpack_set_geometry_mode()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_set_geometry_mode </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">s8</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a9cbfb543c285c335019336b8fa5d8573" name="a9cbfb543c285c335019336b8fa5d8573"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cbfb543c285c335019336b8fa5d8573">&#9670;&#160;</a></span>unpack_texture_off()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_texture_off </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">s8</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4b2f61cfabcf9c0ad08dd909d9164711" name="a4b2f61cfabcf9c0ad08dd909d9164711"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b2f61cfabcf9c0ad08dd909d9164711">&#9670;&#160;</a></span>unpack_texture_on()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_texture_on </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">s8</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ad8c631d128b88ab023a707d0dd5fc040" name="ad8c631d128b88ab023a707d0dd5fc040"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8c631d128b88ab023a707d0dd5fc040">&#9670;&#160;</a></span>unpack_tile_load_sync()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_tile_load_sync </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em>gfx</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em>args</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">s8</td>          <td class="paramname"><span class="paramname"><em>opcode</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="memory_8h_ad8c631d128b88ab023a707d0dd5fc040_cgraph.svg" width="483" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
-</div>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_ad8c631d128b88ab023a707d0dd5fc040_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
-</div>
-
-</div>
-</div>
-<a id="a733a97b6df019cea130dd9f97e16be6c" name="a733a97b6df019cea130dd9f97e16be6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a733a97b6df019cea130dd9f97e16be6c">&#9670;&#160;</a></span>unpack_tile_sync()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void unpack_tile_sync </td>
-          <td>(</td>
-          <td class="paramtype">Gfx *</td>          <td class="paramname"><span class="paramname"><em>gfx</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">u8 *</td>          <td class="paramname"><span class="paramname"><em>args</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">s8</td>          <td class="paramname"><span class="paramname"><em>opcode</em></span>&#160;)</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="memory_8h_a733a97b6df019cea130dd9f97e16be6c_icgraph.svg" width="100%" height="300"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 
 </div>

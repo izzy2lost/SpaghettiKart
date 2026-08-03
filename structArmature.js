@@ -1,8 +1,8 @@
 var structArmature =
 [
-    [ "always_zero_never_used", "structArmature.html#a1f7bbd5d2d6eb7d572b3c0f2fe2dc5c1", null ],
+    [ "always_zero_never_used", "structArmature.html#a48718d73f9195e2f1f0c27cc552bc135", null ],
     [ "model", "structArmature.html#ab91d968c3d3991ccd6d77488c89dec1f", null ],
-    [ "pos", "structArmature.html#a52d17f5254f03133e2da1be5505823f5", null ],
-    [ "size", "structArmature.html#ad7c035a33adf8d6e40a8cff8da6d81ce", null ],
-    [ "type", "structArmature.html#a5b6ea597aa6fdf68191c9d977f88e960", null ]
+    [ "pos", "structArmature.html#a1e4107398086eb92a3bf9facc46c7d02", null ],
+    [ "size", "structArmature.html#a39f416b644620d7283618153b864fa52", null ],
+    [ "type", "structArmature.html#ac106591a5118c5a8fa8dcc7b03a8f51d", null ]
 ];

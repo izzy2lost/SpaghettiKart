@@ -1,5 +1,6 @@
 var CoreMath_8h =
 [
+    [ "RGBA8", "structRGBA8.html", "structRGBA8" ],
     [ "FVector", "structFVector.html", "structFVector" ],
     [ "FVector4", "structFVector4.html", "structFVector4" ],
     [ "FVector2D", "structFVector2D.html", "structFVector2D" ],

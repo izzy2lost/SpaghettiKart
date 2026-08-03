@@ -1,11 +1,12 @@
 var classOPodium =
 [
     [ "Behaviour", "classOPodium.html#a9ad17fa96764c5d45d238cae1de62b86", null ],
-    [ "OPodium", "classOPodium.html#a201d4327450523e20df2e1c3e72f2bd5", null ],
+    [ "OPodium", "classOPodium.html#a21120da8562fe08e32fe3cce9a7f80c9", null ],
     [ "Draw", "classOPodium.html#ac58648673830500505d316343903385a", null ],
     [ "func_8008629C", "classOPodium.html#a1d56d4eb19c586e032d8cb1deab7ba9f", null ],
     [ "func_80086424", "classOPodium.html#a56ef8afe083b4dacad00075ee493a515", null ],
     [ "func_80086528", "classOPodium.html#aba295bf7c79d4035d8c9bf9849639571", null ],
+    [ "Spawn", "classOPodium.html#af996875df76b83547d5302fe325c8634", null ],
     [ "Tick", "classOPodium.html#ae915f9876c29c308285ad3ed3202ec93", null ],
     [ "_podium1Index", "classOPodium.html#ae310997d523fcac1aaa5aeb99179f5ce", null ],
     [ "_podium2Index", "classOPodium.html#a73ea40850fe8d5cb1f399ccaa09f1e15", null ],

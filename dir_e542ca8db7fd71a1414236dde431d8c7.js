@@ -38,7 +38,7 @@ var dir_e542ca8db7fd71a1414236dde431d8c7 =
     [ "Snowman.h", "Snowman_8h.html", "Snowman_8h" ],
     [ "Thwomp.cpp", "Thwomp_8cpp.html", "Thwomp_8cpp" ],
     [ "Thwomp.h", "Thwomp_8h.html", "Thwomp_8h" ],
-    [ "TrashBin.cpp", "TrashBin_8cpp.html", "TrashBin_8cpp" ],
+    [ "TrashBin.cpp", "TrashBin_8cpp.html", null ],
     [ "TrashBin.h", "TrashBin_8h.html", "TrashBin_8h" ],
     [ "Trophy.cpp", "Trophy_8cpp.html", null ],
     [ "Trophy.h", "Trophy_8h.html", "Trophy_8h" ]

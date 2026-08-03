@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.13.2"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Mario Kart 64: src/engine/Matrix.cpp File Reference</title>
+<title>SpaghettiKart: src/engine/Matrix.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,7 +36,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">Mario Kart 64
+   <div id="projectname">SpaghettiKart
    </div>
   </td>
  </tr>
@@ -115,7 +115,7 @@ $(function(){initNavTree('Matrix_8cpp.html',''); initResizable(true); });
 <code>#include &quot;<a class="el" href="World_8h_source.html">engine/World.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="FrameInterpolation_8h_source.html">src/port/interpolation/FrameInterpolation.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="common__structs_8h_source.html">common_structs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="math__util_8h_source.html">math_util.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="math__util_8h_source.html">racing/math_util.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="math__util__2_8h_source.html">math_util_2.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for Matrix.cpp:</div>
@@ -125,7 +125,7 @@ Include dependency graph for Matrix.cpp:</div>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a67401ed1d8de1f4d3a3e5a7b72842b6a" id="r_a67401ed1d8de1f4d3a3e5a7b72842b6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67401ed1d8de1f4d3a3e5a7b72842b6a">AddMatrix</a> (std::deque&lt; Mtx &gt; &amp;stack, <a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> <a class="el" href="render__objects_8c.html#aa6d460986556744dc5e412f987bbb803">mtx</a>, s32 flags)</td></tr>
+<tr class="memitem:a67401ed1d8de1f4d3a3e5a7b72842b6a" id="r_a67401ed1d8de1f4d3a3e5a7b72842b6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a67401ed1d8de1f4d3a3e5a7b72842b6a">AddMatrix</a> (std::deque&lt; Mtx &gt; &amp;stack, <a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> mtx, s32 flags)</td></tr>
 <tr class="separator:a67401ed1d8de1f4d3a3e5a7b72842b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f7ee4f2051169027c190c642b211b2e" id="r_a7f7ee4f2051169027c190c642b211b2e"><td class="memItemLeft" align="right" valign="top">Mtx *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7f7ee4f2051169027c190c642b211b2e">GetMatrix</a> (std::deque&lt; Mtx &gt; &amp;stack)</td></tr>
 <tr class="separator:a7f7ee4f2051169027c190c642b211b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -133,13 +133,15 @@ Functions</h2></td></tr>
 <tr class="separator:a949af99d9cde560731f5b55902085620"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9818099a1ee20606a7d622e744846366" id="r_a9818099a1ee20606a7d622e744846366"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9818099a1ee20606a7d622e744846366">SetTextMatrix</a> (<a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> mf, f32 x, f32 y, f32 arg3, f32 arg4)</td></tr>
 <tr class="separator:a9818099a1ee20606a7d622e744846366"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f64c44efb9bdfff802175a9739ce1f1" id="r_a6f64c44efb9bdfff802175a9739ce1f1"><td class="memItemLeft" align="right" valign="top">Gfx *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f64c44efb9bdfff802175a9739ce1f1">AddTextMatrix</a> (Gfx *displayListHead, <a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> <a class="el" href="render__objects_8c.html#aa6d460986556744dc5e412f987bbb803">mtx</a>)</td></tr>
+<tr class="memitem:a6f64c44efb9bdfff802175a9739ce1f1" id="r_a6f64c44efb9bdfff802175a9739ce1f1"><td class="memItemLeft" align="right" valign="top">Gfx *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f64c44efb9bdfff802175a9739ce1f1">AddTextMatrix</a> (Gfx *displayListHead, <a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> mtx)</td></tr>
 <tr class="separator:a6f64c44efb9bdfff802175a9739ce1f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63625de4c7f9e2e9cd5b04eed49acfcb" id="r_a63625de4c7f9e2e9cd5b04eed49acfcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63625de4c7f9e2e9cd5b04eed49acfcb">ApplyMatrixTransformations</a> (<a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> <a class="el" href="render__objects_8c.html#aa6d460986556744dc5e412f987bbb803">mtx</a>, <a class="el" href="structFVector.html">FVector</a> pos, <a class="el" href="structIRotator.html">IRotator</a> rot, <a class="el" href="structFVector.html">FVector</a> scale)</td></tr>
+<tr class="memitem:a63625de4c7f9e2e9cd5b04eed49acfcb" id="r_a63625de4c7f9e2e9cd5b04eed49acfcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a63625de4c7f9e2e9cd5b04eed49acfcb">ApplyMatrixTransformations</a> (<a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> mtx, <a class="el" href="structFVector.html">FVector</a> pos, <a class="el" href="structIRotator.html">IRotator</a> rot, <a class="el" href="structFVector.html">FVector</a> scale)</td></tr>
 <tr class="separator:a63625de4c7f9e2e9cd5b04eed49acfcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2039e0b8df030349571010b46c2aa14b" id="r_a2039e0b8df030349571010b46c2aa14b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2039e0b8df030349571010b46c2aa14b">ApplySphericalBillBoard</a> (<a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> mat, <a class="el" href="structFVector.html">FVector</a> pos, <a class="el" href="structFVector.html">FVector</a> scale, s32 cameraIndex)</td></tr>
+<tr class="separator:a2039e0b8df030349571010b46c2aa14b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a74669a77172ddc140c5407e1925c6135" id="r_a74669a77172ddc140c5407e1925c6135"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74669a77172ddc140c5407e1925c6135">AddLocalRotation</a> (<a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> mat, <a class="el" href="structIRotator.html">IRotator</a> rot)</td></tr>
 <tr class="separator:a74669a77172ddc140c5407e1925c6135"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a329d78c031733cf22ff7518f5d38fd74" id="r_a329d78c031733cf22ff7518f5d38fd74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a329d78c031733cf22ff7518f5d38fd74">AddHudMatrix</a> (<a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> <a class="el" href="render__objects_8c.html#aa6d460986556744dc5e412f987bbb803">mtx</a>, s32 flags)</td></tr>
+<tr class="memitem:a329d78c031733cf22ff7518f5d38fd74" id="r_a329d78c031733cf22ff7518f5d38fd74"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a329d78c031733cf22ff7518f5d38fd74">AddHudMatrix</a> (<a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> mtx, s32 flags)</td></tr>
 <tr class="separator:a329d78c031733cf22ff7518f5d38fd74"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3ea5959ea0c166ba018808af2357254b" id="r_a3ea5959ea0c166ba018808af2357254b"><td class="memItemLeft" align="right" valign="top">Mtx *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3ea5959ea0c166ba018808af2357254b">GetScreenMatrix</a> (void)</td></tr>
 <tr class="separator:a3ea5959ea0c166ba018808af2357254b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -149,13 +151,13 @@ Functions</h2></td></tr>
 <tr class="separator:a01fc250c2f6e1cd103c61068f9168032"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acacd5a06b0529a80220125925294944f" id="r_acacd5a06b0529a80220125925294944f"><td class="memItemLeft" align="right" valign="top">Mtx *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acacd5a06b0529a80220125925294944f">GetLookAtMatrix</a> (size_t cameraId)</td></tr>
 <tr class="separator:acacd5a06b0529a80220125925294944f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6416f9a60a7397e8b517b1483adb96e8" id="r_a6416f9a60a7397e8b517b1483adb96e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6416f9a60a7397e8b517b1483adb96e8">AddObjectMatrix</a> (<a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> <a class="el" href="render__objects_8c.html#aa6d460986556744dc5e412f987bbb803">mtx</a>, s32 flags)</td></tr>
+<tr class="memitem:a6416f9a60a7397e8b517b1483adb96e8" id="r_a6416f9a60a7397e8b517b1483adb96e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6416f9a60a7397e8b517b1483adb96e8">AddObjectMatrix</a> (<a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> mtx, s32 flags)</td></tr>
 <tr class="separator:a6416f9a60a7397e8b517b1483adb96e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e7e6dd6020787109336d019b7cbe2f2" id="r_a2e7e6dd6020787109336d019b7cbe2f2"><td class="memItemLeft" align="right" valign="top">Mtx *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e7e6dd6020787109336d019b7cbe2f2">GetShadowMatrix</a> (size_t playerId)</td></tr>
 <tr class="separator:a2e7e6dd6020787109336d019b7cbe2f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af805a31a5c4552d53503ad9a2b228896" id="r_af805a31a5c4552d53503ad9a2b228896"><td class="memItemLeft" align="right" valign="top">Mtx *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af805a31a5c4552d53503ad9a2b228896">GetKartMatrix</a> (size_t playerId)</td></tr>
 <tr class="separator:af805a31a5c4552d53503ad9a2b228896"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abcc586bf25e812a2fcaea1cd869a626b" id="r_abcc586bf25e812a2fcaea1cd869a626b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcc586bf25e812a2fcaea1cd869a626b">AddEffectMatrix</a> (<a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> <a class="el" href="render__objects_8c.html#aa6d460986556744dc5e412f987bbb803">mtx</a>, s32 flags)</td></tr>
+<tr class="memitem:abcc586bf25e812a2fcaea1cd869a626b" id="r_abcc586bf25e812a2fcaea1cd869a626b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abcc586bf25e812a2fcaea1cd869a626b">AddEffectMatrix</a> (<a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a> mtx, s32 flags)</td></tr>
 <tr class="separator:abcc586bf25e812a2fcaea1cd869a626b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11c8471303ff583e65dfe68519c8c6cd" id="r_a11c8471303ff583e65dfe68519c8c6cd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11c8471303ff583e65dfe68519c8c6cd">AddEffectMatrixOrtho</a> (void)</td></tr>
 <tr class="separator:a11c8471303ff583e65dfe68519c8c6cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,7 +190,7 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_abcc586bf25e812a2fcaea1cd869a626b_cgraph.svg" width="100%" height="376"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_abcc586bf25e812a2fcaea1cd869a626b_cgraph.svg" width="100%" height="391"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -215,7 +217,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a11c8471303ff583e65dfe68519c8c6cd_cgraph.svg" width="296" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a11c8471303ff583e65dfe68519c8c6cd_cgraph.svg" width="304" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -246,7 +248,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a329d78c031733cf22ff7518f5d38fd74_cgraph.svg" width="100%" height="376"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a329d78c031733cf22ff7518f5d38fd74_cgraph.svg" width="100%" height="391"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -366,7 +368,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a6416f9a60a7397e8b517b1483adb96e8_cgraph.svg" width="100%" height="376"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a6416f9a60a7397e8b517b1483adb96e8_cgraph.svg" width="100%" height="391"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -397,7 +399,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a6f64c44efb9bdfff802175a9739ce1f1_cgraph.svg" width="554" height="102"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a6f64c44efb9bdfff802175a9739ce1f1_cgraph.svg" width="554" height="151"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -448,6 +450,47 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a id="a2039e0b8df030349571010b46c2aa14b" name="a2039e0b8df030349571010b46c2aa14b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2039e0b8df030349571010b46c2aa14b">&#9670;&#160;</a></span>ApplySphericalBillBoard()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ApplySphericalBillBoard </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="common__structs_8h.html#ab7160f77e736961cfa2aff581aeee005">Mat4</a></td>          <td class="paramname"><span class="paramname"><em>mat</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structFVector.html">FVector</a></td>          <td class="paramname"><span class="paramname"><em>pos</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structFVector.html">FVector</a></td>          <td class="paramname"><span class="paramname"><em>scale</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">s32</td>          <td class="paramname"><span class="paramname"><em>cameraIndex</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a2039e0b8df030349571010b46c2aa14b_cgraph.svg" width="324" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a2039e0b8df030349571010b46c2aa14b_icgraph.svg" width="528" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 <a id="a5ebb6ec3e4ef36c159c344784d791f60" name="a5ebb6ec3e4ef36c159c344784d791f60"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5ebb6ec3e4ef36c159c344784d791f60">&#9670;&#160;</a></span>ClearMatrixPools()</h2>
 
@@ -463,6 +506,11 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <p><a class="el" href="structNote.html">Note</a> that the game doesn't seem to clear all of these at the beginning of a new frame. We might need to adjust which ones we clear. </p>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a5ebb6ec3e4ef36c159c344784d791f60_cgraph.svg" width="275" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -485,6 +533,11 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_af39326f348cc7842daad2b60055f9949_cgraph.svg" width="316" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -510,7 +563,7 @@ Here is the caller graph for this function:</div>
 <div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a2d9039ed2444ffea804021594f76419d_cgraph.svg" width="270" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a2d9039ed2444ffea804021594f76419d_cgraph.svg" width="270" height="86"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -535,6 +588,11 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_af805a31a5c4552d53503ad9a2b228896_cgraph.svg" width="256" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_af805a31a5c4552d53503ad9a2b228896_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
@@ -557,9 +615,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_acacd5a06b0529a80220125925294944f_cgraph.svg" width="274" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_acacd5a06b0529a80220125925294944f_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_acacd5a06b0529a80220125925294944f_icgraph.svg" width="528" height="138"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -601,6 +664,11 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a4492684baa9aa4d5630e960595294835_cgraph.svg" width="264" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a4492684baa9aa4d5630e960595294835_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
@@ -623,9 +691,14 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 <div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a01fc250c2f6e1cd103c61068f9168032_cgraph.svg" width="264" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+<div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><div class="zoom"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a01fc250c2f6e1cd103c61068f9168032_icgraph.svg" width="100%" height="600"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a01fc250c2f6e1cd103c61068f9168032_icgraph.svg" width="519" height="138"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
@@ -644,6 +717,11 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a3ea5959ea0c166ba018808af2357254b_cgraph.svg" width="272" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -666,6 +744,11 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="Matrix_8cpp_a2e7e6dd6020787109336d019b7cbe2f2_cgraph.svg" width="280" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
